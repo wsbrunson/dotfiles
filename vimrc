@@ -171,6 +171,7 @@ let g:jsx_ext_required = 0
 " Enables syntax highlighting for Flow.
 let g:javascript_plugin_flow = 1
 
-let g:UltiSnipsExpandTrigger="<S-tab>"
+let g:UltiSnipsSnippetDirectories=["~/.vim/custom_snippets"]
+let g:UltiSnipsExpandTrigger="<CR>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
