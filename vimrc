@@ -15,7 +15,7 @@ set number
 filetype on
 filetype plugin on     " types and load plugins for them
 filetype indent on
-set laststatus=1
+set laststatus=2
 
 set autoread           " reload files changed outside vim
 
@@ -172,6 +172,13 @@ let g:ctrlp_custom_ignore = {
   \ }
 
 let g:airline_theme = 'powerlineish'
+
+" Set this. Airline will handle the rest.
+let g:airline#extensions#ale#enabled = 1
+
+let g:ale_echo_msg_error_str = 'Error'
+let g:ale_echo_msg_warning_str = 'Warning'
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 let g:ale_fixers = {}
 let g:ale_fixers['javascript'] = ['prettier']
