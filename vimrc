@@ -15,7 +15,7 @@ set number
 filetype on
 filetype plugin on     " types and load plugins for them
 filetype indent on
-set laststatus=2
+set laststatus=1
 
 set autoread           " reload files changed outside vim
 
