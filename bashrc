@@ -1,5 +1,3 @@
-source ~/.custom_bashrc
-
 PATH=/usr/local/bin:$PATH
 
 # ===============
