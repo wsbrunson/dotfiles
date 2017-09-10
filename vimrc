@@ -122,23 +122,26 @@ noremap <leader>a ggVG
 " initiate Vundle
 let &runtimepath.=',$HOME/.vim/bundle/Vundle.vim'
 call vundle#begin()
+
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
 " start plugin defintion
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'prettier/vim-prettier'
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
-Plugin 'Raimondi/delimitMate'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'w0rp/ale'
+Plugin 'tpope/vim-fugitive'
+Plugin 'terryma/vim-multiple-cursors'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
-Plugin 'terryma/vim-multiple-cursors'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tpope/vim-surround'
+Plugin 'Raimondi/delimitMate'
+
+" web development plugins
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 " end plugin definition
 call vundle#end()            " required for vundle
@@ -151,11 +154,11 @@ let g:ctrlp_custom_ignore = {
   \ 'dir':  '\.git$\|\.yardoc\|node_modules\|log\|tmp\|build\|flow-typed$',
   \ }
 
+" vim-airline configuration
 let g:airline_theme = 'powerlineish'
-
-" Set this. Airline will handle the rest.
 let g:airline#extensions#ale#enabled = 1
 
+" ALE configuration
 let g:ale_echo_msg_error_str = 'Error'
 let g:ale_echo_msg_warning_str = 'Warning'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
@@ -165,13 +168,14 @@ let g:ale_fixers['javascript'] = ['prettier']
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_options = '--single-quote --trailing-comma all'
 
-" Enable jsx highlighting in .js files
-let g:jsx_ext_required = 0
+" UltiSnips configuration
+let g:UltiSnipsSnippetDirectories = ['~/.vim/custom_snippets']
+let g:UltiSnipsExpandTrigger = '<CR>'
+let g:UltiSnipsJumpForwardTrigger = '<c-b>'
+let g:UltiSnipsJumpBackwardTrigger = '<c-z>'
 
-" Enables syntax highlighting for Flow.
+" vim-javascript configuration
 let g:javascript_plugin_flow = 1
 
-let g:UltiSnipsSnippetDirectories=["~/.vim/custom_snippets"]
-let g:UltiSnipsExpandTrigger="<CR>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+" vim-jsx configuration
+let g:jsx_ext_required = 0
