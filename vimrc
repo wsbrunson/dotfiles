@@ -65,26 +65,10 @@ noremap <leader>w :bn<CR>
 nmap <c-s> :w<CR>
 imap <c-s> <Esc>:w<CR>a
 
-" hide unnecessary gui in gVim
-if has("gui_running")
-    set guioptions-=m  " remove menu bar
-    set guioptions-=T  " remove toolbar
-    set guioptions-=r  " remove right-hand scroll bar
-    set guioptions-=L  " remove left-hand scroll bar
-end
-
 " bind vim navigation to tab switch. use Ctrl + l/h/n
 map  <C-l> :tabn<CR>
 map  <C-h> :tabp<CR>
 map  <C-n> :tabnew<CR>
-
-" set Adobe's Source Code Pro font as default
-set guifont=Source\ Code\ Pro
-
-" allow Tab and Shift+Tab to
-" tab  selection in visual mode
-vmap <Tab> >gv
-vmap <S-Tab> <gv 
 
 " remove the .ext~ files, but not the swapfiles
 set nobackup
@@ -96,12 +80,7 @@ set incsearch        " find the next match as we type the search
 set hlsearch         " hilight searches by default
 set ignorecase       " Make searches case-insensitive.
 " use ESC to remove search higlight
-nnoremap <esc> :noh<return><esc>
-
-" most of the time I should use ` instead of ' but typing it with my keyabord
-" is a pain, so just toggle them
-nnoremap ' `
-nnoremap ` '
+nnoremap <Enter> :noh<return><esc>
 
 " suggestion for normal mode commands
 set wildmode=list:longest
@@ -146,9 +125,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
-
 " start plugin defintion
-Plugin 'scrooloose/nerdtree'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tpope/vim-surround'
 Plugin 'Valloric/YouCompleteMe'
@@ -159,6 +136,9 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'Raimondi/delimitMate'
 Plugin 'w0rp/ale'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'terryma/vim-multiple-cursors'
 
 " end plugin definition
 call vundle#end()            " required for vundle
@@ -190,3 +170,7 @@ let g:jsx_ext_required = 0
 
 " Enables syntax highlighting for Flow.
 let g:javascript_plugin_flow = 1
+
+let g:UltiSnipsExpandTrigger="<S-tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
