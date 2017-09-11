@@ -118,6 +118,16 @@ set pastetoggle=<f9>
 " select all mapping
 noremap <leader>a ggVG
 
+" Move lines with alt-j/k
+nnoremap ª :m .+1<CR>==
+nnoremap º :m .-2<CR>==
+
+inoremap ª <Esc>:m .+1<CR>==gi
+inoremap º <Esc>:m .-2<CR>==gi
+
+vnoremap ª :m '>+1<CR>gv=gv
+vnoremap º :m '<-2<CR>gv=gv
+
 " ---------------------- PLUGIN CONFIGURATION ----------------------
 " initiate Vundle
 let &runtimepath.=',$HOME/.vim/bundle/Vundle.vim'
@@ -142,6 +152,9 @@ Plugin 'Raimondi/delimitMate'
 " web development plugins
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+
+" Elm plugins
+Plugin 'elmcast/elm-vim'
 
 " end plugin definition
 call vundle#end()            " required for vundle
@@ -170,7 +183,7 @@ let g:ale_javascript_prettier_options = '--single-quote --trailing-comma all'
 
 " UltiSnips configuration
 let g:UltiSnipsSnippetDirectories = ['~/.vim/custom_snippets']
-let g:UltiSnipsExpandTrigger = '<CR>'
+let g:UltiSnipsExpandTrigger = '<Alt-CR>'
 let g:UltiSnipsJumpForwardTrigger = '<c-b>'
 let g:UltiSnipsJumpBackwardTrigger = '<c-z>'
 
