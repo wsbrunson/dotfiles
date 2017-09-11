@@ -132,35 +132,43 @@ vnoremap ª :m '>+1<CR>gv=gv
 vnoremap º :m '<-2<CR>gv=gv
 
 " ---------------------- PLUGIN CONFIGURATION ----------------------
-" initiate Vundle
-let &runtimepath.=',$HOME/.vim/bundle/Vundle.vim'
-call vundle#begin()
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+" YouCompleteMe Install helper
+function! BuildYCM(info)
+  " info is a dictionary with 3 fields
+  " - name:   name of the plugin
+  " - status: 'installed', 'updated', or 'unchanged'
+  " - force:  set on PlugInstall! or PlugUpdate!
+  if a:info.status != 'unchanged' || a:info.force
+    !./install.py
+  endif
+endfunction
+
+" initialize vim-plug
+call plug#begin('~/.vim/plugged')
 
 " start plugin defintion
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'ctrlpvim/ctrlp.vim'
-Plugin 'w0rp/ale'
-Plugin 'tpope/vim-fugitive'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'tpope/vim-surround'
-Plugin 'Raimondi/delimitMate' 
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'w0rp/ale'
+Plug 'tpope/vim-fugitive'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'SirVer/ultisnips'
+Plug 'honza/vim-snippets'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'tpope/vim-surround'
+Plug 'Raimondi/delimitMate' 
 
 " web development plugins
-Plugin 'pangloss/vim-javascript'
-Plugin 'mxw/vim-jsx'
+Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
+Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 
 " Elm plugins
-Plugin 'elmcast/elm-vim'
+Plug 'elmcast/elm-vim', { 'for': 'elm' }
 
 " end plugin definition
-call vundle#end()            " required for vundle
+call plug#end()
 
 " Ctrl-p configuration
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
