@@ -56,6 +56,9 @@ endif
 
 " set , as mapleader
 let mapleader = ","
+ 
+" escape insert mode with jk 
+inoremap jk <Esc>
 
 " map <leader>q and <leader>w to buffer prev/next buffer
 noremap <leader>q :bp<CR>
@@ -147,7 +150,7 @@ Plugin 'honza/vim-snippets'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'tpope/vim-surround'
-Plugin 'Raimondi/delimitMate'
+Plugin 'Raimondi/delimitMate' 
 
 " web development plugins
 Plugin 'pangloss/vim-javascript'
@@ -176,8 +179,14 @@ let g:ale_echo_msg_error_str = 'Error'
 let g:ale_echo_msg_warning_str = 'Warning'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
-let g:ale_fixers = {}
-let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_linters = {
+  \ 'javascript': ['eslint', 'flow']
+  \ }
+
+let g:ale_fixers = {
+  \ 'javascript': ['prettier']
+  \ }
+
 let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_options = '--single-quote --trailing-comma all'
 
@@ -192,3 +201,7 @@ let g:javascript_plugin_flow = 1
 
 " vim-jsx configuration
 let g:jsx_ext_required = 0
+
+" load per directory vimrc
+set exrc
+set secure

@@ -19,6 +19,8 @@ alias blog="cd $WORKSPACE/wsbrunson.com"
 alias tcompose="cd $WORKSPACE/twitterCompose/"
 alias connect-test="ssh shaneb@test-dev"
 alias connect-stage="ssh shaneb@stage-internal-web-dfw-01"
+alias webapp="cd $WORKSPACE/web-app-core"
+alias dotfiles="cd $HOME/dotfiles"
 
 alias deploy-botscustomers="TESTSITE=botsCustomers yarn run deploy-sandbox"
 alias deploy-bots="TESTSITE=bots yarn run deploy-sandbox"

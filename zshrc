@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/Shane/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -52,7 +52,7 @@ ZSH_THEME="agnoster"
 plugins=(git)
 
 # User configuration
-DEFAULT_USER="Shane"
+DEFAULT_USER="$USER"
 prompt_context(){}
 
 export PATH="/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
@@ -78,18 +78,3 @@ source $ZSH/oh-my-zsh.sh
 
 source ~/.bashrc
 
-# ===============
-# ==== ALIAS ====
-# ===============
-export PATH=$PATH:/usr/local/m-cli
-export WORKSPACE=$HOME/workspace/
-export PATH="$PATH:`yarn global bin`"
-alias workspace="cd $WORKSPACE"
-alias quiz="cd $WORKSPACE/quizsimply.com/"
-alias wedding="cd $WORKSPACE/shanelovesmaria.com/"
-alias home="cd $HOME"
-alias blog="cd $WORKSPACE/wsbrunson.com"
-alias tcompose="cd $WORKSPACE/twitterCompose/"
-
-export NVM_DIR="/Users/Shane/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
