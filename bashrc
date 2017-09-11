@@ -11,6 +11,8 @@ export WORKSPACE=$HOME/workspace/
 # ===============
 # ==== ALIAS ====
 # ===============
+alias vim="nvim"
+
 alias workspace="cd $WORKSPACE"
 alias quiz="cd $WORKSPACE/quizsimply.com/"
 alias wedding="cd $WORKSPACE/shanelovesmaria.com/"
