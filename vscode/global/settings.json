@@ -1,0 +1,118 @@
+{
+	// Place your settings in this file to overwrite the default settings
+	"javascript.validate.enable": false,
+	"editor.fontFamily": "operator mono",
+	"editor.fontSize": 16,
+	"editor.insertSpaces": false,
+	"editor.detectIndentation": false,
+	"editor.renderWhitespace": "boundary",
+	"files.associations": {
+		"*.stache": "handlebars",
+		"*.flow": "babel"
+	},
+	"search.exclude": {
+		"**/.cache": true,
+		"**/.uglifyCache": true,
+		"**/.git": true,
+		"**/.svn": true,
+		"**/.hg": true,
+		"**/.DS_Store": true,
+		"**/dist": true,
+		"**/tests/SpecRunner/bundles": true,
+		"**/coverage": true,
+		"**/flow-typed": true,
+		"**/analysis": true,
+		"**/fonts": true,
+		"**/images": true,
+		"**/json": true,
+		"**/sounds": true,
+		"**/system": true
+	},
+	"css.validate": false,
+	"stylelint.enable": true,
+	"window.zoomLevel": 0,
+	"files.trimTrailingWhitespace": true,
+	"files.insertFinalNewline": true,
+	"elm.formatOnSave": true,
+	"editor.wordWrap": "on",
+	"workbench.colorTheme": "Panda Syntax",
+	"editor.rulers": [100],
+	"editor.autoIndent": true,
+	"git.enableSmartCommit": true,
+	"[clojure]": {
+		"editor.autoIndent": false
+	},
+	"terminal.integrated.fontSize": 16,
+	"vim.disableAnnoyingNeovimMessage": true,
+	"vim.enableNeovim": true,
+	"vim.leader": " ",
+	"vim.insertModeKeyBindings": [
+		{
+			"before": ["j", "k"],
+			"after": ["<Esc>"]
+		}
+	],
+	"vim.statusBarColorControl": true,
+	"vim.statusBarColors": {
+		"normal": "#005f5f",
+		"insert": "#5f0000",
+		"visual": "#5f00af",
+		"visualline": "#005f87",
+		"visualblock": "#86592d",
+		"replace": "#000000"
+	},
+	"workbench.colorCustomizations": {
+		"statusBar.background": "#005f5f",
+		"statusBar.noFolderBackground": "#005f5f",
+		"statusBar.debuggingBackground": "#005f5f"
+	},
+	"reason.formatOnSave": true,
+	"reason.codelens.enabled": false,
+	"vim.otherModesKeyBindingsNonRecursive": [
+		{
+			"before": ["leader", "s"],
+			"after": [],
+			"commands": [
+				{
+					"command": "workbench.action.files.save",
+					"args": []
+				}
+			]
+		},
+		{
+			"before": ["leader", "e"],
+			"after": [],
+			"commands": [
+				{
+					"command": "workbench.action.closeActiveEditor",
+					"args": []
+				}
+			]
+		},
+		{
+			"before": ["leader", "w"],
+			"after": [],
+			"commands": [
+				{
+					"command": "workbench.action.nextEditor",
+					"args": []
+				}
+			]
+		},
+		{
+			"before": ["leader", "q"],
+			"after": [],
+			"commands": [
+				{
+					"command": "workbench.action.previousEditor",
+					"args": []
+				}
+			]
+		}
+	],
+	"vim.easymotion": true,
+	"editor.formatOnSave": true,
+	"terminal.integrated.fontFamily": "fira mono for powerline",
+	"terminal.integrated.fontLigatures": true,
+	"files.autoSave": "onFocusChange"
+}

@@ -60,6 +60,7 @@ nnoremap <Enter> :noh<return><esc> " use ESC to remove search higlight
 noremap <leader>a ggVG             " select all mapping
 nnoremap <Leader><Leader> <c-^>    " move between last two files
 
+nmap <leader>s :w<CR>              " save with ctrl+s
 nnoremap <C-j> <C-w>j              " Quicker window movement
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
@@ -68,9 +69,6 @@ nnoremap <C-l> <C-w>l
 noremap <leader>q :bp<CR>          " map to buffer next/prev/delete buffer
 noremap <leader>w :bn<CR>
 noremap <leader>e :bd<CR>
-
-nmap <c-s> :w<CR>                  " save with ctrl+s
-imap <c-s> <Esc>:w<CR>a
 
 nnoremap ª :m .+1<CR>==            " Move lines with alt-j/k
 nnoremap º :m .-2<CR>==
