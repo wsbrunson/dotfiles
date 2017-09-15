@@ -30,7 +30,7 @@ alias deploy-shaneb="TESTSITE=shaneb yarn run deploy-sandbox"
 alias deploy-shaneb2="TESTSITE=shaneb2 yarn run deploy-sandbox"
 
 alias rm-cache="rm -rf ~/workspace/web-app-core/.cache/"
-
+alias test-watch="yarn run test:jestWatch"
 # ===============
 # ===== NVM =====
 # ===============
