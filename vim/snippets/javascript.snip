@@ -1,0 +1,23 @@
+snippet jdesc
+abbr jdesc
+options word
+  describe('${1}', () => {
+    ${0}
+  });
+
+snippet jit
+abbr jit
+options word
+  it('should ${1}', () => {
+    ${0}
+  });
+
+snippet immb
+abbr immb 
+options word
+  import {${1}} from 'pages/settings/bots/${2}';
+
+snippet imdb
+abbr imdb 
+options word
+  import ${1} from 'pages/settings/bots/${2}';

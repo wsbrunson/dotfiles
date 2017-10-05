@@ -1,6 +1,4 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/shanebrunson/workspace/web-app-core/script/core/redux'
-let g:netrw_dirhist_2='/Users/shanebrunson/workspace/web-app-core/script/core/redux/loading'
-let g:netrw_dirhist_3='/Users/shanebrunson/workspace/web-app-core/script/core/redux'
-let g:netrw_dirhist_4='/Users/shanebrunson/workspace/web-app-core/script/core/redux/loading'
+let g:netrw_dirhist_cnt =2
+let g:netrw_dirhist_1='/Users/shanebrunson/workspace/web-app-core/script/pages/settings/bots'
+let g:netrw_dirhist_2='/Users/shanebrunson/workspace/web-app-core/script/pages/settings/bots/utilities'

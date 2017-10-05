@@ -40,6 +40,12 @@ set shiftwidth=4               " when reading, tabs are 2 spaces
 set tabstop=4                  " in insert mode, tabs are 2 spaces
 set textwidth=120              " no lines longer than 80 cols
 
+" set up undo options
+set undodir=~/.vim/undodir
+set undofile
+set undolevels=1000 "maximum number of changes that can be undone
+set undoreload=10000 "maximum number lines to save for undo on a buffer reload
+
 highlight clear SignColumn     " use clear color for gutter
 
 " enable matchit plugin which ships with vim and greatly enhances '%'
@@ -50,18 +56,35 @@ if !has('gui_running')
   set t_Co=256
 endif
 
+
+" save when editor loses focus
+:au FocusLost * silent! wa
+
 " ---------------------- Key Mappings ----------------------
 
 let mapleader=" "                  " set space as mapleader
+" escape insert mode with jk
+inoremap jk <Esc>
 
-inoremap jk <Esc>                  " escape insert mode with jk
-nnoremap ; :                       " Use ; for commands.
-nnoremap <Enter> :noh<return><esc> " use ESC to remove search higlight
-noremap <leader>a ggVG             " select all mapping
-nnoremap <Leader><Leader> <c-^>    " move between last two files
+" use ESC to remove search higlight
+nnoremap <Enter> :noh<return><esc> 
 
-nmap <leader>s :w<CR>              " save with ctrl+s
-nnoremap <C-j> <C-w>j              " Quicker window movement
+" select all mapping
+noremap <leader>a ggVG
+
+" move between last two files
+nnoremap <Leader><Leader> <c-^>
+nnoremap j gj
+nnoremap k gk
+
+" insert blank line below
+nnoremap <leader>n o<Esc>
+
+" save with ctrl+s
+nmap <leader>s :w<CR>
+
+" Quicker window movement
+nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
@@ -70,12 +93,13 @@ noremap <leader>q :bp<CR>          " map to buffer next/prev/delete buffer
 noremap <leader>w :bn<CR>
 noremap <leader>e :bd<CR>
 
-nnoremap ª :m .+1<CR>==            " Move lines with alt-j/k
-nnoremap º :m .-2<CR>==
-inoremap ª <Esc>:m .+1<CR>==gi
-inoremap º <Esc>:m .-2<CR>==gi
-vnoremap ª :m '>+1<CR>gv=gv
-vnoremap º :m '<-2<CR>gv=gv
+" Move lines with alt-j/k
+nnoremap ∆ :m .+1<CR>==
+nnoremap ˚ :m .-2<CR>==
+inoremap ∆ <Esc>:m .+1<CR>==gi
+inoremap ˚ <Esc>:m .-2<CR>==gi
+vnoremap ∆ :m '>+1<CR>gv=gv
+vnoremap ˚ :m '<-2<CR>gv=gv
 
 " Relative numbering
 function! NumberToggle()
@@ -87,9 +111,11 @@ function! NumberToggle()
   endif
 endfunc
 
-nnoremap <leader>z :call NumberToggle()<cr> " Toggle between normal and relative numbering.
+" Toggle between normal and relative numbering.
+nnoremap <leader>z :call NumberToggle()<cr> 
 
-
+" Call prettier-eslint
+nnoremap <leader>/ :silent !{yarn run format:prettier ./script/pages/settings/bots/**/*.js}<CR>
 " ---------------------- Auto Commands ----------------------
 
 augroup vimrcEx
@@ -135,6 +161,7 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
+Plug 'mileszs/ack.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -145,10 +172,13 @@ Plug 'Raimondi/delimitMate'
 " web development plugins
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
-Plug 'prettier/vim-prettier', { 'for': ['javascript'] }
+Plug 'mattn/emmet-vim'
 
 " Elm plugins
 Plug 'elmcast/elm-vim', { 'for': 'elm' }
+
+" Themes
+Plug 'trevordmiller/nova-vim'
 
 " end plugin definition
 call plug#end()
@@ -201,7 +231,12 @@ let g:ale_linters = {
   \ 'javascript': ['eslint', 'flow']
   \ }
 
-let g:ale_fixers = {}
+let g:ale_fixers = {
+  \ 'javascript': ['prettier_eslint']
+  \ }
+
+let g:javascript_prettier_options = '--print-width=120 --use-tabs=true --singe-quotes=true --no-bracket-spacing=false --parser="flow"'
+" let g:ale_fix_on_save = 1
 
 " Move between linting errors
 nnoremap <Leader>r :ALENextWrap<CR>
@@ -210,28 +245,15 @@ nnoremap <Leader>R :ALEPreviousWrap<CR>
 " vim-javascript configuration
 let g:javascript_plugin_flow = 1
 
+
 " vim-jsx configuration
 let g:jsx_ext_required = 0
 
-let g:prettier#autoformat = 0
-autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql PrettierAsync
+" vim-emmet settings
+let g:user_emmet_settings = {
+  \  'javascript.jsx' : {
+    \      'extends' : 'jsx',
+    \  },
+  \}
 
-" max line lengh that prettier will wrap on
-let g:prettier#config#print_width = 120
-
-" number of spaces per indentation level
-let g:prettier#config#tab_width = 4
-
-" use tabs over spaces
-let g:prettier#config#use_tabs = 'true'
-
-" single quotes over double quotes
-let g:prettier#config#single_quote = 'true'
-
-" print spaces between brackets
-let g:prettier#config#bracket_spacing = 'false'
-
-" none|es5|all
-let g:prettier#config#trailing_comma = 'none'
-
-let g:prettier#config#parser = 'babylon'
+colorscheme nova
