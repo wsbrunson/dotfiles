@@ -1,4 +1,26 @@
 "
+" ---------------------- PRJOECT-SPECIFIC SETTINGS ----------------------
+" Configure based on working directory
+" web-app-core uses dumb defaults
+
+set noexpandtab                " use spaces instead of tabs
+set shiftwidth=4               " when reading, tabs are 2 spaces
+set tabstop=4                  " in insert mode, tabs are 2 spaces
+set textwidth=120              " no lines longer than 80 cols
+
+" turn off shortcut when not working in web-app-core
+nnoremap gp :silent %!./node_modules/.bin/prettier-eslint --stdin --printWidth=120 --singleQuote=true --useTabs=true --no-bracket-spacing<CR>
+
+" Turn on Prettier when not working in web-app-core
+" let g:ale_fixers = {
+"   \ 'javascript': ['prettier_eslint']
+"   \ }
+
+" let g:ale_javascript_prettier_eslint_options = '--print-width=120 --use-tabs=true --singe-quotes=true --no-bracket-spacing=false --parser="flow"'
+" let g:ale_fix_on_save = 1
+
+
+"
 " ---------------------- USABILITY CONFIGURATION ----------------------
 "  Basic and pretty much needed settings to provide a solid base for
 "  source code editting
@@ -33,12 +55,8 @@ set nobackup                   " remove the .ext~ files, but not the swapfiles
 set writebackup
 set noswapfile
 
-set noexpandtab                " use spaces instead of tabs
 set autoindent                 " autoindent based on line above, works most of the time
 set smartindent                " smarter indent for C-like languages
-set shiftwidth=4               " when reading, tabs are 2 spaces
-set tabstop=4                  " in insert mode, tabs are 2 spaces
-set textwidth=120              " no lines longer than 80 cols
 
 " set up undo options
 set undodir=~/.vim/undodir
@@ -67,10 +85,7 @@ let mapleader=" "                  " set space as mapleader
 inoremap jk <Esc>
 
 " use ESC to remove search higlight
-nnoremap <Enter> :noh<return><esc> 
-
-" select all mapping
-noremap <leader>a ggVG
+nnoremap <Enter> :noh<return><esc>
 
 " move between last two files
 nnoremap <Leader><Leader> <c-^>
@@ -112,7 +127,7 @@ function! NumberToggle()
 endfunc
 
 " Toggle between normal and relative numbering.
-nnoremap <leader>z :call NumberToggle()<cr> 
+nnoremap <leader>z :call NumberToggle()<cr>
 
 " Call prettier-eslint
 nnoremap <leader>/ :silent !{yarn run format:prettier ./script/pages/settings/bots/**/*.js}<CR>
@@ -161,12 +176,13 @@ Plug 'Shougo/neosnippet-snippets'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-surround'
 Plug 'mileszs/ack.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'bling/vim-bufferline'
-Plug 'tpope/vim-surround'
 Plug 'Raimondi/delimitMate'
 
 " web development plugins
@@ -192,6 +208,11 @@ Plug 'trevordmiller/nova-vim'
 
 " end plugin definition
 call plug#end()
+
+" ag and ack
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 " deoplete configuration
 let g:deoplete#enable_at_startup = 1
@@ -226,27 +247,20 @@ nnoremap <Leader>f :CtrlPMRUFiles<CR>
 
 " vim-airline configuration
 let g:airline#extensions#ale#enabled = 1
+let g:airline_section_y = ''
+let g:airline_section_z = ''
+let g:airline_powerline_fonts = 1
 let g:airline_theme = 'cobalt2'
 
 " ALE configuration
 let g:ale_echo_msg_error_str = 'Error'
 let g:ale_echo_msg_warning_str = 'Warning'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-highlight clear ALEErrorSign
-highlight clear ALEWarningSign
-let g:ale_sign_error = '🔴'
-let g:ale_sign_warning = '🔶'
 
 let g:ale_linters = {
   \ 'javascript': ['eslint', 'flow']
   \ }
 
-let g:ale_fixers = {
-  \ 'javascript': ['prettier_eslint']
-  \ }
-
-let g:javascript_prettier_options = '--print-width=120 --use-tabs=true --singe-quotes=true --no-bracket-spacing=false --parser="flow"'
-" let g:ale_fix_on_save = 1
 let g:LanguageClient_serverCommands = {
     \ 'reason': ['ocaml-language-server', '--stdio'],
     \ 'ocaml': ['ocaml-language-server', '--stdio'],
@@ -259,7 +273,6 @@ nnoremap <Leader>R :ALEPreviousWrap<CR>
 " vim-javascript configuration
 let g:javascript_plugin_flow = 1
 
-
 " vim-jsx configuration
 let g:jsx_ext_required = 0
 
@@ -271,3 +284,20 @@ let g:user_emmet_settings = {
   \}
 
 colorscheme nova
+
+
+" Writing Mode
+func! WordProcessorMode()
+  setlocal formatoptions=1
+  setlocal noexpandtab
+  map j gj
+  map k gk
+  setlocal spell spelllang=en_us
+  set thesaurus+=/Users/sbrown/.vim/thesaurus/mthesaur.txt
+  set complete+=s
+  set formatprg=par
+  set nonumber
+  setlocal wrap
+  setlocal linebreak
+endfu
+com! WP call WordProcessorMode()
