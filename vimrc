@@ -3,21 +3,20 @@
 " Configure based on working directory
 " web-app-core uses dumb defaults
 
-set noexpandtab                " use spaces instead of tabs
-set shiftwidth=4               " when reading, tabs are 2 spaces
-set tabstop=4                  " in insert mode, tabs are 2 spaces
-set textwidth=120              " no lines longer than 80 cols
+set expandtab                " use spaces instead of tabs
+set shiftwidth=2               " when reading, tabs are 2 spaces
+set tabstop=2                  " in insert mode, tabs are 2 spaces
+set textwidth=80              " no lines longer than 80 cols
 
 " turn off shortcut when not working in web-app-core
-nnoremap gp :silent %!./node_modules/.bin/prettier-eslint --stdin --printWidth=120 --singleQuote=true --useTabs=true --no-bracket-spacing<CR>
+" nnoremap gp :silent %!./node_modules/.bin/prettier-eslint --stdin --printWidth=120 --singleQuote=true --useTabs=true --no-bracket-spacing<CR>
 
 " Turn on Prettier when not working in web-app-core
-" let g:ale_fixers = {
-"   \ 'javascript': ['prettier_eslint']
-"   \ }
+let g:ale_fixers = {
+  \ 'javascript': ['prettier']
+  \ }
 
-" let g:ale_javascript_prettier_eslint_options = '--print-width=120 --use-tabs=true --singe-quotes=true --no-bracket-spacing=false --parser="flow"'
-" let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 1
 
 
 "
