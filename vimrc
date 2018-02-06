@@ -177,6 +177,16 @@ Plug 'mattn/emmet-vim'
 " Elm plugins
 Plug 'elmcast/elm-vim', { 'for': 'elm' }
 
+" Ethereum
+Plug 'tomlion/vim-solidity'
+
+" Reason
+Plug 'reasonml-editor/vim-reason-plus'
+Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': './install.sh'
+    \ }
+
 " Themes
 Plug 'trevordmiller/nova-vim'
 
@@ -237,6 +247,10 @@ let g:ale_fixers = {
 
 let g:javascript_prettier_options = '--print-width=120 --use-tabs=true --singe-quotes=true --no-bracket-spacing=false --parser="flow"'
 " let g:ale_fix_on_save = 1
+let g:LanguageClient_serverCommands = {
+    \ 'reason': ['ocaml-language-server', '--stdio'],
+    \ 'ocaml': ['ocaml-language-server', '--stdio'],
+    \ }
 
 " Move between linting errors
 nnoremap <Leader>r :ALENextWrap<CR>
