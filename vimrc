@@ -3,20 +3,27 @@
 " Configure based on working directory
 " web-app-core uses dumb defaults
 
-set expandtab                " use spaces instead of tabs
-set shiftwidth=2               " when reading, tabs are 2 spaces
-set tabstop=2                  " in insert mode, tabs are 2 spaces
-set textwidth=80              " no lines longer than 80 cols
+set noexpandtab                " use spaces instead of tabs
+set shiftwidth=4               " when reading, tabs are 2 spaces
+set tabstop=4                  " in insert mode, tabs are 2 spaces
+set textwidth=120              " no lines longer than 80 cols
+
+" set expandtab                " use spaces instead of tabs
+" set shiftwidth=2             " when reading, tabs are 2 spaces
+" set tabstop=2                " in insert mode, tabs are 2 spaces
+" set textwidth=80             " no lines longer than 80 cols
+
 
 " turn off shortcut when not working in web-app-core
-" nnoremap gp :silent %!./node_modules/.bin/prettier-eslint --stdin --printWidth=120 --singleQuote=true --useTabs=true --no-bracket-spacing<CR>
+nnoremap gp :silent %!./node_modules/.bin/prettier-eslint --stdin --printWidth=120 --singleQuote=true --useTabs=true --no-bracket-spacing<CR>
 
 " Turn on Prettier when not working in web-app-core
-let g:ale_fixers = {
-  \ 'javascript': ['prettier']
-  \ }
+" let g:ale_fixers = {
+"   \ 'javascript': ['prettier'],
+"   \ 'reason': ['refmt']
+"   \ }
 
-let g:ale_fix_on_save = 1
+" let g:ale_fix_on_save = 1
 
 
 "
@@ -68,20 +75,47 @@ highlight clear SignColumn     " use clear color for gutter
 " enable matchit plugin which ships with vim and greatly enhances '%'
 runtime macros/matchit.vim
 
-" set colors
-if !has('gui_running')
-  set t_Co=256
-endif
-
-
 " save when editor loses focus
 :au FocusLost * silent! wa
+
+
+" ---------------------- Status Line ----------------------
+"
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=%{StatuslineGit()}
+set statusline+=%#LineNr#
+set statusline+=\ %f
+set statusline+=%=
+set statusline+=%{LinterStatus()}
+
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
+
+function! LinterStatus() abort
+    let l:counts = ale#statusline#Count(bufnr(''))
+
+    let l:all_errors = l:counts.error + l:counts.style_error
+    let l:all_non_errors = l:counts.total - l:all_errors
+
+    return l:counts.total == 0 ? 'OK' : printf(
+    \   '%d Errors | %d Warnings',
+    \   all_errors,
+    \   all_non_errors,
+    \)
+endfunction
 
 " ---------------------- Key Mappings ----------------------
 
 let mapleader=" "                  " set space as mapleader
-" escape insert mode with jk
-inoremap jk <Esc>
+
+nnoremap <leader>g :silent execute "grep! -R --exclude-dir={\"dist\", \".cache\", \"coverage\", \"flow-typed\", \"node_modules\"} " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
 
 " use ESC to remove search higlight
 nnoremap <Enter> :noh<return><esc>
@@ -127,9 +161,6 @@ endfunc
 
 " Toggle between normal and relative numbering.
 nnoremap <leader>z :call NumberToggle()<cr>
-
-" Call prettier-eslint
-nnoremap <leader>/ :silent !{yarn run format:prettier ./script/pages/settings/bots/**/*.js}<CR>
 " ---------------------- Auto Commands ----------------------
 
 augroup vimrcEx
@@ -177,17 +208,12 @@ Plug 'w0rp/ale'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'mileszs/ack.vim'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'bling/vim-bufferline'
 Plug 'Raimondi/delimitMate'
 
 " web development plugins
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
-Plug 'mattn/emmet-vim'
 
 " Elm plugins
 Plug 'elmcast/elm-vim', { 'for': 'elm' }
@@ -203,15 +229,14 @@ Plug 'autozimu/LanguageClient-neovim', {
     \ }
 
 " Themes
-Plug 'trevordmiller/nova-vim'
+Plug 'mhartington/oceanic-next'
+
 
 " end plugin definition
 call plug#end()
 
-" ag and ack
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
+" Color Scheme
+colorscheme OceanicNext
 
 " deoplete configuration
 let g:deoplete#enable_at_startup = 1
@@ -234,9 +259,11 @@ let g:neosnippet#enable_snipmate_compatibility = 1
 let g:neosnippet#snippets_directory='~/.vim/snippets/'
 
 " Ctrl-p configuration
+set wildmenu
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+set wildignore+=node_modules/*,.git/*,flow-typed/*,dist/*,cache/*,coverage/*,system/*,build/*
 let g:ctrlp_show_hidden = 1
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|build\|flow-typed\|dist\|cache\|coverage\|system'
+let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|build\|flow-typed\|dist\|cache\|coverage\|system\|.live-deploy'
 " Open file menu
 nnoremap <Leader>o :CtrlP<CR>
 " Open buffer menu
@@ -244,12 +271,11 @@ nnoremap <Leader>b :CtrlPBuffer<CR>
 " Open most recently used files
 nnoremap <Leader>f :CtrlPMRUFiles<CR>
 
-" vim-airline configuration
-let g:airline#extensions#ale#enabled = 1
-let g:airline_section_y = ''
-let g:airline_section_z = ''
-let g:airline_powerline_fonts = 1
-let g:airline_theme = 'cobalt2'
+" vim-bufferline
+let g:bufferline_modified = '*'
+let g:bufferline_show_bufnr = 0
+let g:bufferline_active_highlight = 'PmenuSel'
+let g:bufferline_pathshorten = 1
 
 " ALE configuration
 let g:ale_echo_msg_error_str = 'Error'
@@ -257,7 +283,8 @@ let g:ale_echo_msg_warning_str = 'Warning'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 let g:ale_linters = {
-  \ 'javascript': ['eslint', 'flow']
+  \ 'javascript': ['eslint', 'flow'],
+  \ 'reason': ['merlin', 'ols']
   \ }
 
 let g:LanguageClient_serverCommands = {
@@ -274,16 +301,6 @@ let g:javascript_plugin_flow = 1
 
 " vim-jsx configuration
 let g:jsx_ext_required = 0
-
-" vim-emmet settings
-let g:user_emmet_settings = {
-  \  'javascript.jsx' : {
-    \      'extends' : 'jsx',
-    \  },
-  \}
-
-colorscheme nova
-
 
 " Writing Mode
 func! WordProcessorMode()
