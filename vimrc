@@ -18,10 +18,10 @@ set textwidth=120              " no lines longer than 80 cols
 nnoremap gp :silent %!./node_modules/.bin/prettier-eslint --stdin --printWidth=120 --singleQuote=true --useTabs=true --no-bracket-spacing<CR>
 
 " Turn on Prettier when not working in web-app-core
-" let g:ale_fixers = {
-"   \ 'javascript': ['prettier'],
-"   \ 'reason': ['refmt']
-"   \ }
+let g:ale_fixers = {
+  \ 'javascript': ['prettier'],
+  \ 'reason': ['refmt']
+  \ }
 
 " let g:ale_fix_on_save = 1
 
@@ -78,6 +78,8 @@ runtime macros/matchit.vim
 " save when editor loses focus
 :au FocusLost * silent! wa
 
+set timeoutlen=1000 ttimeoutlen=0
+
 
 " ---------------------- Status Line ----------------------
 "
@@ -115,18 +117,11 @@ endfunction
 
 let mapleader=" "                  " set space as mapleader
 
-nnoremap <leader>g :silent execute "grep! -R --exclude-dir={\"dist\", \".cache\", \"coverage\", \"flow-typed\", \"node_modules\"} " . shellescape(expand("<cWORD>")) . " ."<cr>:copen<cr>
-
 " use ESC to remove search higlight
 nnoremap <Enter> :noh<return><esc>
 
-" move between last two files
-nnoremap <Leader><Leader> <c-^>
 nnoremap j gj
 nnoremap k gk
-
-" insert blank line below
-nnoremap <leader>n o<Esc>
 
 " save with ctrl+s
 nmap <leader>s :w<CR>
@@ -140,6 +135,7 @@ nnoremap <C-l> <C-w>l
 noremap <leader>q :bp<CR>          " map to buffer next/prev/delete buffer
 noremap <leader>w :bn<CR>
 noremap <leader>e :bd<CR>
+noremap <leader>E :bd!<CR>
 
 " Move lines with alt-j/k
 nnoremap ∆ :m .+1<CR>==
@@ -177,12 +173,6 @@ augroup vimrcEx
   " On file types...
   "   .md files are markdown files
   autocmd BufNewFile,BufRead *.md setlocal ft=markdown
-  "   .twig files use html syntax
-  autocmd BufNewFile,BufRead *.twig setlocal ft=html
-  "   .less files use less syntax
-  autocmd BufNewFile,BufRead *.less setlocal ft=less
-  "   .jade files use jade syntax
-  autocmd BufNewFile,BufRead *.jade setlocal ft=jade
 augroup END
 
 
@@ -205,7 +195,6 @@ Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
-Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'bling/vim-bufferline'
@@ -214,12 +203,13 @@ Plug 'Raimondi/delimitMate'
 " web development plugins
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+Plug 'ap/vim-css-color'
+Plug 'shmargum/vim-sass-colors'
+Plug 'hail2u/vim-css3-syntax'
+Plug 'cakebaker/scss-syntax.vim'
 
 " Elm plugins
 Plug 'elmcast/elm-vim', { 'for': 'elm' }
-
-" Ethereum
-Plug 'tomlion/vim-solidity'
 
 " Reason
 Plug 'reasonml-editor/vim-reason-plus'
