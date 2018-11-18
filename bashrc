@@ -6,13 +6,12 @@ PATH=/usr/local/bin:$PATH
 
 export SPROUT_LDAP_USER="shaneb"
 export PATH=$PATH:/usr/local/m-cli
+export PATH=${PATH}:/usr/local/mysql/bin
 export WORKSPACE=$HOME/workspace/
 
 # ===============
 # ==== ALIAS ====
 # ===============
-alias vim="nvim"
-
 alias workspace="cd $WORKSPACE"
 alias quiz="cd $WORKSPACE/quizsimply.com/"
 alias wedding="cd $WORKSPACE/shanelovesmaria.com/"
@@ -31,6 +30,9 @@ alias deploy-shaneb2="TESTSITE=shaneb2 yarn run sandbox-deploy"
 
 alias rm-cache="rm -rf ~/workspace/web-app-core/.cache/"
 alias test-watch="yarn run test:jestWatch"
+
+alias python="python3"
+alias vim="nvim"
 # ===============
 # ===== NVM =====
 # ===============
@@ -59,3 +61,6 @@ load-nvmrc() {
 } 
 add-zsh-hook chpwd load-nvmrc 
 load-nvmrc 
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"

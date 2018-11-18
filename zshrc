@@ -78,3 +78,13 @@ source $ZSH/oh-my-zsh.sh
 unsetopt correct_all
 source ~/.bashrc
 
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/Shane/workspace/spaceships/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/Shane/workspace/spaceships/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/Shane/workspace/spaceships/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/Shane/workspace/spaceships/node_modules/tabtab/.completions/sls.zsh
