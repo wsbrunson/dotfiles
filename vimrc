@@ -3,27 +3,29 @@
 " Configure based on working directory
 " web-app-core uses dumb defaults
 
-set noexpandtab                " use spaces instead of tabs
-set shiftwidth=4               " when reading, tabs are 2 spaces
-set tabstop=4                  " in insert mode, tabs are 2 spaces
-set textwidth=120              " no lines longer than 80 cols
+" set noexpandtab                " use spaces instead of tabs
+" set shiftwidth=4               " when reading, tabs are 2 spaces
+" set tabstop=4                  " in insert mode, tabs are 2 spaces
+" set textwidth=120              " no lines longer than 80 cols
 
-" set expandtab                " use spaces instead of tabs
-" set shiftwidth=2             " when reading, tabs are 2 spaces
-" set tabstop=2                " in insert mode, tabs are 2 spaces
-" set textwidth=80             " no lines longer than 80 cols
+set expandtab                " use spaces instead of tabs
+set shiftwidth=2             " when reading, tabs are 2 spaces
+set tabstop=2                " in insert mode, tabs are 2 spaces
+set textwidth=80             " no lines longer than 80 cols
 
 
 " turn off shortcut when not working in web-app-core
-nnoremap gp :silent %!./node_modules/.bin/prettier-eslint --stdin --printWidth=120 --singleQuote=true --useTabs=true --no-bracket-spacing<CR>
+" nnoremap gp :silent %!./node_modules/.bin/prettier-eslint --stdin --printWidth=120 --singleQuote=true --useTabs=true --no-bracket-spacing<CR>
 
 " Turn on Prettier when not working in web-app-core
 let g:ale_fixers = {
-  \ 'javascript': ['prettier'],
-  \ 'reason': ['refmt']
+  \ 'javascript': ['eslint'],
+  \ 'reason': ['refmt'],
+  \ 'json': ['prettier'],
+  \ 'css': ['prettier']
   \ }
 
-" let g:ale_fix_on_save = 1
+let g:ale_fix_on_save = 1
 
 
 "
@@ -189,24 +191,16 @@ augroup END
 call plug#begin('~/.vim/plugged')
 
 " start plugin defintion
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'wokalski/autocomplete-flow'
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'bling/vim-bufferline'
-Plug 'Raimondi/delimitMate'
+Plug 'scrooloose/nerdtree'
 
 " web development plugins
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
-Plug 'ap/vim-css-color'
-Plug 'shmargum/vim-sass-colors'
-Plug 'hail2u/vim-css3-syntax'
-Plug 'cakebaker/scss-syntax.vim'
+Plug 'flowtype/vim-flow', { 'for': 'javascript' }
 
 " Elm plugins
 Plug 'elmcast/elm-vim', { 'for': 'elm' }
@@ -221,32 +215,11 @@ Plug 'autozimu/LanguageClient-neovim', {
 " Themes
 Plug 'mhartington/oceanic-next'
 
-
 " end plugin definition
 call plug#end()
 
 " Color Scheme
 colorscheme OceanicNext
-
-" deoplete configuration
-let g:deoplete#enable_at_startup = 1
-
-" neosnippets configuration
-" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" For conceal markers.
-if has('conceal')
-  set conceallevel=2 concealcursor=niv
-endif
-
-" Enable snipMate compatibility feature.
-let g:neosnippet#enable_snipmate_compatibility = 1
-
-" Tell Neosnippet about the other snippets
-let g:neosnippet#snippets_directory='~/.vim/snippets/'
 
 " Ctrl-p configuration
 set wildmenu
@@ -261,11 +234,9 @@ nnoremap <Leader>b :CtrlPBuffer<CR>
 " Open most recently used files
 nnoremap <Leader>f :CtrlPMRUFiles<CR>
 
-" vim-bufferline
-let g:bufferline_modified = '*'
-let g:bufferline_show_bufnr = 0
-let g:bufferline_active_highlight = 'PmenuSel'
-let g:bufferline_pathshorten = 1
+" NERDTree
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " ALE configuration
 let g:ale_echo_msg_error_str = 'Error'
@@ -291,6 +262,9 @@ let g:javascript_plugin_flow = 1
 
 " vim-jsx configuration
 let g:jsx_ext_required = 0
+
+" vim-flow configuration
+let g:flow#autoclose = 1
 
 " Writing Mode
 func! WordProcessorMode()
