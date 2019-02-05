@@ -3,30 +3,25 @@
 " Configure based on working directory
 " web-app-core uses dumb defaults
 
-" set noexpandtab                " use spaces instead of tabs
-" set shiftwidth=4               " when reading, tabs are 2 spaces
-" set tabstop=4                  " in insert mode, tabs are 2 spaces
-" set textwidth=120              " no lines longer than 80 cols
+set noexpandtab                " use spaces instead of tabs
+set shiftwidth=4               " when reading, tabs are 2 spaces
+set tabstop=4                  " in insert mode, tabs are 2 spaces
+set textwidth=120              " no lines longer than 80 cols
 
-set expandtab                " use spaces instead of tabs
-set shiftwidth=2             " when reading, tabs are 2 spaces
-set tabstop=2                " in insert mode, tabs are 2 spaces
-set textwidth=80             " no lines longer than 80 cols
+" set expandtab                " use spaces instead of tabs
+" set shiftwidth=2             " when reading, tabs are 2 spaces
+" set tabstop=2                " in insert mode, tabs are 2 spaces
+" set textwidth=80             " no lines longer than 80 cols
 
 
-" turn off shortcut when not working in web-app-core
-" nnoremap gp :silent %!./node_modules/.bin/prettier-eslint --stdin --printWidth=120 --singleQuote=true --useTabs=true --no-bracket-spacing<CR>
-
-" Turn on Prettier when not working in web-app-core
 let g:ale_fixers = {
-  \ 'javascript': ['eslint'],
   \ 'reason': ['refmt'],
   \ 'json': ['prettier'],
-  \ 'css': ['prettier']
+  \ 'css': ['prettier'],
+  \ 'javascript': ['prettier-eslint'],
   \ }
 
 let g:ale_fix_on_save = 1
-
 
 "
 " ---------------------- USABILITY CONFIGURATION ----------------------
@@ -79,6 +74,7 @@ runtime macros/matchit.vim
 
 " save when editor loses focus
 :au FocusLost * silent! wa
+:set autowriteall
 
 set timeoutlen=1000 ttimeoutlen=0
 
@@ -117,7 +113,9 @@ endfunction
 
 " ---------------------- Key Mappings ----------------------
 
-let mapleader=" "                  " set space as mapleader
+let mapleader = ";"
+noremap . ;
+noremap <Space> .
 
 " use ESC to remove search higlight
 nnoremap <Enter> :noh<return><esc>
@@ -196,11 +194,20 @@ Plug 'w0rp/ale'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-fugitive'
+Plug 'Raimondi/delimitMate'
+
+" auto-complete
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'Shougo/neosnippet.vim'
+Plug 'Shougo/neosnippet-snippets'
+Plug 'wokalski/autocomplete-flow'
 
 " web development plugins
 Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
 Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'flowtype/vim-flow', { 'for': 'javascript' }
+Plug 'mustache/vim-mustache-handlebars'
 
 " Elm plugins
 Plug 'elmcast/elm-vim', { 'for': 'elm' }
@@ -257,6 +264,23 @@ let g:LanguageClient_serverCommands = {
 nnoremap <Leader>r :ALENextWrap<CR>
 nnoremap <Leader>R :ALEPreviousWrap<CR>
 
+" Deoplete
+let g:deoplete#enable_at_startup = 1
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-k>     <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
 " vim-javascript configuration
 let g:javascript_plugin_flow = 1
 
@@ -264,7 +288,10 @@ let g:javascript_plugin_flow = 1
 let g:jsx_ext_required = 0
 
 " vim-flow configuration
-let g:flow#autoclose = 1
+let g:flow#showquickfix = 0
+
+" vim-mustache
+autocmd BufNewFile,BufRead *.stache set syntax=mustache
 
 " Writing Mode
 func! WordProcessorMode()
@@ -281,3 +308,6 @@ func! WordProcessorMode()
   setlocal linebreak
 endfu
 com! WP call WordProcessorMode()
+
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif

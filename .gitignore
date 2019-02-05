@@ -3,5 +3,6 @@
 /vim/bundle/
 /vim/plugged/
 /vim/undodir/
-/config/yarn/
+/config/config/
 /config/configstore/
+/config/yarn/
