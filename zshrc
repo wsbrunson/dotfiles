@@ -88,3 +88,5 @@ export PATH="$PATH:$HOME/.rvm/bin"
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /Users/Shane/workspace/spaceships/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/Shane/workspace/spaceships/node_modules/tabtab/.completions/sls.zsh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
