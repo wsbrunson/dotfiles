@@ -189,13 +189,18 @@ augroup END
 call plug#begin('~/.vim/plugged')
 
 " start plugin defintion
-Plug 'ctrlpvim/ctrlp.vim'
 Plug 'w0rp/ale'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
-Plug 'scrooloose/nerdtree'
+Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/nerdtree'
 Plug 'Raimondi/delimitMate'
+Plug 'mileszs/ack.vim'
+
+" PlugInstall and PlugUpdate will clone fzf in ~/.fzf and run the install script
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " auto-complete
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -228,18 +233,16 @@ call plug#end()
 " Color Scheme
 colorscheme OceanicNext
 
-" Ctrl-p configuration
-set wildmenu
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
-set wildignore+=node_modules/*,.git/*,flow-typed/*,dist/*,cache/*,coverage/*,system/*,build/*
-let g:ctrlp_show_hidden = 1
-let g:ctrlp_custom_ignore = 'node_modules\|DS_Store\|git\|build\|flow-typed\|dist\|cache\|coverage\|system\|.live-deploy'
 " Open file menu
-nnoremap <Leader>o :CtrlP<CR>
+nnoremap <Leader>o :Files<CR>
 " Open buffer menu
-nnoremap <Leader>b :CtrlPBuffer<CR>
+nnoremap <Leader>b :Buffers<CR>
 " Open most recently used files
-nnoremap <Leader>f :CtrlPMRUFiles<CR>
+nnoremap <Leader>f :History<CR>
+
+if executable('ag')
+  let g:ackprg = 'ag --vimgrep'
+endif
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
