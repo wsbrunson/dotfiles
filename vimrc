@@ -90,8 +90,10 @@ nnoremap <Enter> :noh<return><esc>
 nnoremap j gj
 nnoremap k gk
 
-" save with ctrl+s
+" save with leader + s
 nmap <leader>s :w<CR>
+" quit with leader + a
+nmap <leader>a :a<CR>
 
 " Quicker window movement
 nnoremap <C-j> <C-w>j
@@ -124,6 +126,12 @@ endfunc
 
 " Toggle between normal and relative numbering.
 nnoremap <leader>z :call NumberToggle()<cr>
+
+" This searches for the text under the cursor and shows the results in a “quickfix” window
+nnoremap K :Ggrep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+" Grep for anything after pressing \
+nnoremap \ :Ggrep<SPACE><Paste>
+
 " ---------------------- Auto Commands ----------------------
 
 augroup vimrcEx
@@ -181,8 +189,9 @@ Plug 'mxw/vim-jsx', { 'for': 'javascript' }
 Plug 'mustache/vim-mustache-handlebars'
 
 " Themes
-Plug 'mhartington/oceanic-next'
-Plug 'balanceiskey/gloom-vim'
+Plug 'mhartington/oceanic-next' " OceanicNext
+Plug 'balanceiskey/gloom-vim'   " gloom-vim
+Plug 'cseelus/vim-colors-tone'  " tone
 
 " end plugin definition
 call plug#end()
