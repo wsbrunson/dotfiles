@@ -18,7 +18,7 @@ let g:ale_fixers = {
   \ 'reason': ['refmt'],
   \ 'json': ['prettier'],
   \ 'css': ['prettier'],
-  \ 'javascript': ['prettier-eslint'],
+  \ 'javascript': ['eslint'],
   \ }
 
 let g:ale_fix_on_save = 1
@@ -77,39 +77,6 @@ runtime macros/matchit.vim
 :set autowriteall
 
 set timeoutlen=1000 ttimeoutlen=0
-
-
-" ---------------------- Status Line ----------------------
-"
-set statusline=
-set statusline+=%#PmenuSel#
-set statusline+=%{StatuslineGit()}
-set statusline+=%#LineNr#
-set statusline+=\ %f
-set statusline+=%=
-set statusline+=%{LinterStatus()}
-
-function! GitBranch()
-  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
-
-function! StatuslineGit()
-  let l:branchname = GitBranch()
-  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-endfunction
-
-function! LinterStatus() abort
-    let l:counts = ale#statusline#Count(bufnr(''))
-
-    let l:all_errors = l:counts.error + l:counts.style_error
-    let l:all_non_errors = l:counts.total - l:all_errors
-
-    return l:counts.total == 0 ? 'OK' : printf(
-    \   '%d Errors | %d Warnings',
-    \   all_errors,
-    \   all_non_errors,
-    \)
-endfunction
 
 " ---------------------- Key Mappings ----------------------
 
@@ -197,6 +164,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'Raimondi/delimitMate'
 Plug 'mileszs/ack.vim'
+Plug 'itchyny/lightline.vim'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 " PlugInstall and PlugUpdate will clone fzf in ~/.fzf and run the install script
@@ -214,12 +182,13 @@ Plug 'mustache/vim-mustache-handlebars'
 
 " Themes
 Plug 'mhartington/oceanic-next'
+Plug 'balanceiskey/gloom-vim'
 
 " end plugin definition
 call plug#end()
 
 " Color Scheme
-colorscheme OceanicNext
+colorscheme gloom-vim
 
 " Open file menu
 nnoremap <Leader>o :Files<CR>
@@ -258,26 +227,26 @@ let g:jsx_ext_required = 0
 " vim-mustache
 autocmd BufNewFile,BufRead *.stache set syntax=mustache
 
-" Writing Mode
-func! WordProcessorMode()
-  setlocal formatoptions=1
-  setlocal noexpandtab
-  map j gj
-  map k gk
-  setlocal spell spelllang=en_us
-  set thesaurus+=/Users/sbrown/.vim/thesaurus/mthesaur.txt
-  set complete+=s
-  set formatprg=par
-  set nonumber
-  setlocal wrap
-  setlocal linebreak
-endfu
-com! WP call WordProcessorMode()
-
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-" Coc Config
+" ---------------------- STATUS LINE ----------------------
+let g:lightline = {
+    \ 'active': {
+    \ 'left':  [ [ 'mode', 'paste' ],
+    \            [ 'gitbranch', 'readonly', 'filename', 'modified' ]
+	\		   ],
+	\ 'right': [ [ 'lineinfo' ],
+	\            [ 'percent' ],
+	\            [ 'filetype' ]
+    \   	   ]
+	\ },
+    \ 'component_function': {
+    \   'gitbranch': 'fugitive#head'
+	\ },
+	\ }
+
+" ---------------------- COC CONFIG ----------------------
 " " Use tab for trigger completion with characters ahead and navigate.
 " Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
 inoremap <silent><expr> <TAB>
