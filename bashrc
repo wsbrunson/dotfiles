@@ -87,3 +87,5 @@ if _has fzf && _has ag; then
   '
 fi
 
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
