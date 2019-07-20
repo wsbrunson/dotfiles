@@ -15,7 +15,6 @@ set textwidth=120              " no lines longer than 80 cols
 
 
 let g:ale_fixers = {
-  \ 'reason': ['refmt'],
   \ 'json': ['prettier'],
   \ 'css': ['prettier'],
   \ 'javascript': ['eslint'],
@@ -184,8 +183,9 @@ Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 
 " web development plugins
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+Plug 'pangloss/vim-javascript'
+Plug 'mxw/vim-jsx' 
+Plug 'leafgarland/typescript-vim'
 Plug 'mustache/vim-mustache-handlebars'
 
 " Themes
@@ -197,7 +197,7 @@ Plug 'cseelus/vim-colors-tone'  " tone
 call plug#end()
 
 " Color Scheme
-colorscheme gloom-vim
+colorscheme OceanicNext
 
 " Open file menu
 nnoremap <Leader>o :Files<CR>
@@ -220,7 +220,7 @@ let g:ale_echo_msg_warning_str = 'Warning'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 let g:ale_linters = {
-  \ 'javascript': ['eslint', 'flow'],
+  \ 'javascript': ['eslint'],
   \ }
 
 " Move between linting errors
