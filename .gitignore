@@ -6,3 +6,5 @@
 /config/configstore
 /config/yarn
 /config/coc/extenstions
+config/coc/extensions/node_modules
+oh-my-zsh
