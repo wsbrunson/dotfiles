@@ -18,7 +18,8 @@ let g:ale_fixers = {
   \ 'reason': ['refmt'],
   \ 'json': ['prettier'],
   \ 'css': ['prettier'],
-  \ 'javascript': ['eslint'],
+  \ 'html': ['prettier'],
+  \ 'javascript': ['prettier-eslint'],
   \ }
 
 let g:ale_fix_on_save = 1
@@ -128,9 +129,11 @@ endfunc
 nnoremap <leader>z :call NumberToggle()<cr>
 
 " This searches for the text under the cursor and shows the results in a “quickfix” window
-nnoremap K :Ggrep! "\b<C-R><C-W>\b"<CR>:cw<CR>
+nnoremap K :Ag <C-R><C-W><CR>
+" This searches for the text under the cursor and shows the results in a “quickfix” window
+" only searches for the filetype
 " Grep for anything after pressing \
-nnoremap \ :Ggrep<SPACE><Paste>
+nnoremap \ :Ag<SPACE><Paste>
 
 " ---------------------- Auto Commands ----------------------
 
@@ -150,7 +153,6 @@ augroup vimrcEx
   autocmd BufNewFile,BufRead *.md setlocal ft=markdown
 augroup END
 
-
 " ---------------------- PLUGIN CONFIGURATION ----------------------
 
 " Install Vim Plug if not installed
@@ -169,6 +171,7 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-unimpaired'
 Plug 'scrooloose/nerdtree'
 Plug 'Raimondi/delimitMate'
 Plug 'mileszs/ack.vim'
@@ -184,8 +187,8 @@ Plug 'Shougo/neosnippet.vim'
 Plug 'Shougo/neosnippet-snippets'
 
 " web development plugins
-Plug 'pangloss/vim-javascript', { 'for': 'javascript' }
-Plug 'mxw/vim-jsx', { 'for': 'javascript' }
+Plug 'pangloss/vim-javascript' 
+Plug 'mxw/vim-jsx' 
 Plug 'mustache/vim-mustache-handlebars'
 
 " Themes
@@ -197,7 +200,7 @@ Plug 'cseelus/vim-colors-tone'  " tone
 call plug#end()
 
 " Color Scheme
-colorscheme gloom-vim
+colorscheme OceanicNext
 
 " Open file menu
 nnoremap <Leader>o :Files<CR>
@@ -235,9 +238,6 @@ let g:jsx_ext_required = 0
 
 " vim-mustache
 autocmd BufNewFile,BufRead *.stache set syntax=mustache
-
-map <C-n> :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " ---------------------- STATUS LINE ----------------------
 let g:lightline = {
