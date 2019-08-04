@@ -6,3 +6,7 @@
 /config/configstore
 /config/yarn
 /config/coc/extenstions
+config/gatsby
+config/coc/extensions/coc-phpls-data
+config/coc/extensions/node_modules
+config/coc/extensions/db.json
