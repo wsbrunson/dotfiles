@@ -3,25 +3,49 @@
 " Configure based on working directory
 " web-app-core uses dumb defaults
 
-set noexpandtab                " use spaces instead of tabs
-set shiftwidth=4               " when reading, tabs are 2 spaces
-set tabstop=4                  " in insert mode, tabs are 2 spaces
-set textwidth=120              " no lines longer than 80 cols
-
-" set expandtab                " use spaces instead of tabs
-" set shiftwidth=2             " when reading, tabs are 2 spaces
-" set tabstop=2                " in insert mode, tabs are 2 spaces
-" set textwidth=80             " no lines longer than 80 cols
-
+" Default settings. These should mirror the WorkspaceNormal function
+set expandtab                " use spaces instead of tabs
+set shiftwidth=2             " when reading, tabs are 2 spaces
+set tabstop=2                " in insert mode, tabs are 2 spaces
+set textwidth=80             " no lines longer than 80 cols
 
 let g:ale_fixers = {
   \ 'json': ['prettier'],
   \ 'css': ['prettier'],
   \ 'html': ['prettier'],
-  \ 'javascript': ['prettier-eslint'],
+  \ 'javascript': ['eslint'],
   \ }
 
-let g:ale_fix_on_save = 1
+function! WorkspaceNormal()
+	set expandtab                " use spaces instead of tabs
+	set shiftwidth=2             " when reading, tabs are 2 spaces
+	set tabstop=2                " in insert mode, tabs are 2 spaces
+	set textwidth=80             " no lines longer than 80 cols
+
+	let g:ale_fixers = {
+	  \ 'json': ['prettier'],
+	  \ 'css': ['prettier'],
+	  \ 'html': ['prettier'],
+	  \ 'javascript': ['eslint'],
+	  \ }
+endfunc
+
+function! WorkspaceSprout()
+	set noexpandtab                " use tabs instead of spaces
+	set shiftwidth=4               " when reading, tabs are 4 spaces
+	set tabstop=4                  " in insert mode, tabs are 4 spaces
+	set textwidth=120              " no lines longer than 120 cols
+
+	let g:ale_fixers = {
+	  \ 'json': [],
+	  \ 'css': [],
+	  \ 'html': [],
+	  \ 'javascript': ['prettier-eslint'],
+	  \ }
+endfunc
+
+command WorkspaceNormal :call WorkspaceNormal()
+command WorkspaceSprout :call WorkspaceSprout()
 
 "
 " ---------------------- USABILITY CONFIGURATION ----------------------
@@ -129,10 +153,9 @@ nnoremap <leader>z :call NumberToggle()<cr>
 
 " This searches for the text under the cursor and shows the results in a “quickfix” window
 nnoremap K :Ag <C-R><C-W><CR>
-" This searches for the text under the cursor and shows the results in a “quickfix” window
-" only searches for the filetype
-" Grep for anything after pressing \
-nnoremap \ :Ag<SPACE><Paste>
+
+" Grep for anything after pressing leader a
+nnoremap <leader>a :Ag<SPACE><Paste>
 
 " ---------------------- Auto Commands ----------------------
 
@@ -218,6 +241,7 @@ map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " ALE configuration
+let g:ale_fix_on_save = 1
 let g:ale_echo_msg_error_str = 'Error'
 let g:ale_echo_msg_warning_str = 'Warning'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'

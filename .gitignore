@@ -10,3 +10,4 @@
 
 /vim/plugged/
 /vim/undodir/
+config/coc/extensions/db.json
