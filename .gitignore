@@ -1,12 +1,12 @@
 .DS_Store
 
-/vim/plugged/
-/vim/undodir/
+/config/coc/extensions/coc-phpls-data
+/config/coc/extensions/node_modules
+/config/coc/extensions/db.json
 /config/config
 /config/configstore
+/config/gatsby
 /config/yarn
-/config/coc/extenstions
-config/coc/extensions/node_modules
-oh-my-zsh
-config/configstore
-oh-my-zsh
+
+/vim/plugged/
+/vim/undodir/
