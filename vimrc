@@ -9,25 +9,11 @@ set shiftwidth=2             " when reading, tabs are 2 spaces
 set tabstop=2                " in insert mode, tabs are 2 spaces
 set textwidth=80             " no lines longer than 80 cols
 
-let g:ale_fixers = {
-  \ 'json': ['prettier'],
-  \ 'css': ['prettier'],
-  \ 'html': ['prettier'],
-  \ 'javascript': ['eslint'],
-  \ }
-
 function! WorkspaceNormal()
 	set expandtab                " use spaces instead of tabs
 	set shiftwidth=2             " when reading, tabs are 2 spaces
 	set tabstop=2                " in insert mode, tabs are 2 spaces
 	set textwidth=80             " no lines longer than 80 cols
-
-	let g:ale_fixers = {
-	  \ 'json': ['prettier'],
-	  \ 'css': ['prettier'],
-	  \ 'html': ['prettier'],
-	  \ 'javascript': ['eslint'],
-	  \ }
 endfunc
 
 function! WorkspaceSprout()
@@ -35,17 +21,12 @@ function! WorkspaceSprout()
 	set shiftwidth=4               " when reading, tabs are 4 spaces
 	set tabstop=4                  " in insert mode, tabs are 4 spaces
 	set textwidth=120              " no lines longer than 120 cols
-
-	let g:ale_fixers = {
-	  \ 'json': [],
-	  \ 'css': [],
-	  \ 'html': [],
-	  \ 'javascript': ['prettier-eslint'],
-	  \ }
 endfunc
 
 command WorkspaceNormal :call WorkspaceNormal()
 command WorkspaceSprout :call WorkspaceSprout()
+
+call WorkspaceSprout()
 
 "
 " ---------------------- USABILITY CONFIGURATION ----------------------
@@ -213,6 +194,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx' 
 Plug 'leafgarland/typescript-vim'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'burner/vim-svelte'
 
 " Themes
 Plug 'mhartington/oceanic-next' " OceanicNext
@@ -247,6 +229,12 @@ let g:ale_echo_msg_warning_str = 'Warning'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 let g:ale_linters = {
+  \ 'javascript': ['eslint'],
+  \ }
+let g:ale_fixers = {
+  \ 'json': ['prettier'],
+  \ 'css': ['prettier'],
+  \ 'html': ['prettier'],
   \ 'javascript': ['eslint'],
   \ }
 
