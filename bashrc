@@ -15,17 +15,13 @@ _append_to_path() {
 # === EXPORTS ===
 # ===============
 
-export PATH=$PATH:/usr/local/m-cli
-export PATH=${PATH}:/usr/local/mysql/bin
 export WORKSPACE=$HOME/workspace/
 
 # ===============
 # ==== ALIAS ====
 # ===============
 alias workspace="cd $WORKSPACE"
-alias dotfiles="cd $HOME/dotfiles"
-alias python="python3"
-alias vim="nvim"
+alias dotfiles="cd $WORKSPACE/dotfiles"
 
 # ===============
 # ===== NVM =====
@@ -89,3 +85,5 @@ fi
 
 
 [ -z "$ZSH_NAME" ] && [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+[[ ! -f ~/.custom_bashrc ]] || source ~/.custom_bashrc
