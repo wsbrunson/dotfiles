@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/Vundle.vim" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/YouCompleteMe" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/YouCompleteMe/third_party/requests-futures" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/YouCompleteMe/third_party/ycmd" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/YouCompleteMe/third_party/ycmd/third_party/JediHTTP" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/YouCompleteMe/third_party/ycmd/third_party/OmniSharpServer" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/YouCompleteMe/third_party/ycmd/third_party/OmniSharpServer/NRefactory" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/YouCompleteMe/third_party/ycmd/third_party/OmniSharpServer/cecil" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/YouCompleteMe/third_party/ycmd/third_party/argparse" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/YouCompleteMe/third_party/ycmd/third_party/bottle" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/YouCompleteMe/third_party/ycmd/third_party/frozendict" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/YouCompleteMe/third_party/ycmd/third_party/gocode" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/YouCompleteMe/third_party/ycmd/third_party/godef" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/YouCompleteMe/third_party/ycmd/third_party/python-future" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/YouCompleteMe/third_party/ycmd/third_party/racerd" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/YouCompleteMe/third_party/ycmd/third_party/requests" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/YouCompleteMe/third_party/ycmd/third_party/waitress" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/ale" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/ctrlp.vim" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/delimitMate" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/elm-vim" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/ultisnips" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/vim-airline" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/vim-airline-themes" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/vim-fugitive" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/vim-javascript" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/vim-jsx" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/vim-multiple-cursors" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/vim-snippets" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/vim/bundle/vim-surround" vcs="Git" />
+  </component>
+</project>
