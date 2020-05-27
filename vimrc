@@ -196,6 +196,9 @@ Plug 'leafgarland/typescript-vim'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'burner/vim-svelte'
 
+" clojure
+Plug 'tpope/vim-fireplace'
+
 " Themes
 Plug 'mhartington/oceanic-next' " OceanicNext
 Plug 'balanceiskey/gloom-vim'   " gloom-vim
