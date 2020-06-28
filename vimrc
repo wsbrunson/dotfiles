@@ -9,25 +9,6 @@ set shiftwidth=2             " when reading, tabs are 2 spaces
 set tabstop=2                " in insert mode, tabs are 2 spaces
 set textwidth=80             " no lines longer than 80 cols
 
-function! WorkspaceNormal()
-	set expandtab                " use spaces instead of tabs
-	set shiftwidth=2             " when reading, tabs are 2 spaces
-	set tabstop=2                " in insert mode, tabs are 2 spaces
-	set textwidth=80             " no lines longer than 80 cols
-endfunc
-
-function! WorkspaceSprout()
-	set noexpandtab                " use tabs instead of spaces
-	set shiftwidth=4               " when reading, tabs are 4 spaces
-	set tabstop=4                  " in insert mode, tabs are 4 spaces
-	set textwidth=120              " no lines longer than 120 cols
-endfunc
-
-command WorkspaceNormal :call WorkspaceNormal()
-command WorkspaceSprout :call WorkspaceSprout()
-
-call WorkspaceSprout()
-
 "
 " ---------------------- USABILITY CONFIGURATION ----------------------
 "  Basic and pretty much needed settings to provide a solid base for
@@ -82,6 +63,10 @@ runtime macros/matchit.vim
 :set autowriteall
 
 set timeoutlen=1000 ttimeoutlen=0
+
+if (has("termguicolors"))
+  set termguicolors
+ endif
 
 " ---------------------- Key Mappings ----------------------
 
@@ -177,32 +162,29 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'scrooloose/nerdtree'
 Plug 'Raimondi/delimitMate'
-Plug 'mileszs/ack.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 " PlugInstall and PlugUpdate will clone fzf in ~/.fzf and run the install script
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" auto-complete
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
+" Writing Mode Plugins
+Plug 'logico/typewriter-vim'
+Plug 'junegunn/limelight.vim'
+Plug 'amix/vim-zenroom2'
+Plug 'junegunn/goyo.vim'
+Plug 'lgalke/vim-ernest'
+
+" Python
+Plug 'vim-scripts/indentpython.vim'
 
 " web development plugins
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx' 
 Plug 'leafgarland/typescript-vim'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'burner/vim-svelte'
-
-" clojure
-Plug 'tpope/vim-fireplace'
 
 " Themes
 Plug 'mhartington/oceanic-next' " OceanicNext
-Plug 'balanceiskey/gloom-vim'   " gloom-vim
-Plug 'cseelus/vim-colors-tone'  " tone
 
 " end plugin definition
 call plug#end()
@@ -217,10 +199,6 @@ nnoremap <Leader>b :Buffers<CR>
 " Open most recently used files
 nnoremap <Leader>f :History<CR>
 
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
-
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -232,9 +210,11 @@ let g:ale_echo_msg_warning_str = 'Warning'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 let g:ale_linters = {
+  \ 'python': ['flake8', 'pylint'],
   \ 'javascript': ['eslint'],
   \ }
 let g:ale_fixers = {
+  \ 'python': ['yapf'],
   \ 'json': ['prettier'],
   \ 'css': ['prettier'],
   \ 'html': ['prettier'],
@@ -251,8 +231,6 @@ let g:javascript_plugin_flow = 1
 " vim-jsx configuration
 let g:jsx_ext_required = 0
 
-" vim-mustache
-autocmd BufNewFile,BufRead *.stache set syntax=mustache
 
 " ---------------------- STATUS LINE ----------------------
 let g:lightline = {
@@ -270,36 +248,36 @@ let g:lightline = {
 	\ },
 	\ }
 
-" ---------------------- COC CONFIG ----------------------
-" " Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+let g:goyo_height = '100%'
 
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
+
+nnoremap <leader>x :call WritingMode()<cr>
+
+let g:writing_mode_on = 0
+
+function! WritingMode()
+  if g:writing_mode_on == 0
+        colorscheme typewriter
+        Goyo
+        Limelight
+        Ernest
+
+         let &t_SI = "\e[5 q"
+          let &t_EI = "\e[1 q"
+          augroup myCmds
+            au!
+            autocmd VimEnter * silent !echo -ne "\e[1 q"
+          augroup END
+
+
+        let g:writing_mode_on = 1
+    else
+        colorscheme OceanicNext
+        Goyo!
+        Limelight!
+        Ernest!
+
+        let g:writing_mode_on = 0
+  endif
+
 endfunction
-
-" Use <c-space> for trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" Use <cr> for confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-" Use `[c` and `]c` for navigate diagnostics
-nmap <silent> [c <Plug>(coc-diagnostic-prev)
-nmap <silent> ]c <Plug>(coc-diagnostic-next)
-
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')
