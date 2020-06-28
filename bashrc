@@ -1,4 +1,4 @@
-PATH=/usr/local/bin:$PATH
+PATH=/usr/local/bin:/home/shane/.local/bin:$PATH
 
 # Returns whether the given command is executable or aliased.
 _has() {
@@ -14,7 +14,6 @@ _append_to_path() {
 # ===============
 # === EXPORTS ===
 # ===============
-
 export WORKSPACE=$HOME/workspace/
 
 # ===============
@@ -24,33 +23,12 @@ alias workspace="cd $WORKSPACE"
 alias dotfiles="cd $WORKSPACE/dotfiles"
 
 # ===============
-# ===== NVM =====
+# === PYTHON  ===
 # ===============
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
-autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
-  fi
-}
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+PATH="/home/shane/.pyenv/bin:$PATH"
+PATH="/home/shane/.poetry/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
@@ -58,7 +36,9 @@ if [ -f ~/.sproutrc ]; then
   source ~/.sproutrc
 fi
 
-
+# ===============
+# ====  FZF  ====
+# ===============
 # fzf via Homebrew
 if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
   source /usr/local/opt/fzf/shell/key-bindings.zsh
@@ -83,7 +63,7 @@ if _has fzf && _has ag; then
   '
 fi
 
-
 [ -z "$ZSH_NAME" ] && [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 [[ ! -f ~/.custom_bashrc ]] || source ~/.custom_bashrc
+
