@@ -22,6 +22,7 @@ export WORKSPACE=$HOME/workspace/
 # ===============
 alias workspace="cd $WORKSPACE"
 alias dotfiles="cd $WORKSPACE/dotfiles"
+alias git-vim="git difftool --tool=vimdiff --no-prompt"
 
 # ===============
 # ===== NVM =====
@@ -54,10 +55,6 @@ load-nvmrc
 
 # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
 export PATH="$PATH:$HOME/.rvm/bin"
-if [ -f ~/.sproutrc ]; then
-  source ~/.sproutrc
-fi
-
 
 # fzf via Homebrew
 if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
@@ -83,7 +80,6 @@ if _has fzf && _has ag; then
   '
 fi
 
-
 [ -z "$ZSH_NAME" ] && [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-[[ ! -f ~/.custom_bashrc ]] || source ~/.custom_bashrc
+source ~/.custom_bashrc
