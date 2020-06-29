@@ -9,25 +9,6 @@ set shiftwidth=2             " when reading, tabs are 2 spaces
 set tabstop=2                " in insert mode, tabs are 2 spaces
 set textwidth=80             " no lines longer than 80 cols
 
-function! WorkspaceNormalFunc()
-	set expandtab                " use spaces instead of tabs
-	set shiftwidth=2             " when reading, tabs are 2 spaces
-	set tabstop=2                " in insert mode, tabs are 2 spaces
-	set textwidth=80             " no lines longer than 80 cols
-endfunc
-
-function! WorkspaceSproutFunc()
-	set noexpandtab                " use tabs instead of spaces
-	set shiftwidth=4               " when reading, tabs are 4 spaces
-	set tabstop=4                  " in insert mode, tabs are 4 spaces
-	set textwidth=120              " no lines longer than 120 cols
-endfunc
-
-command WorkspaceNormal :call WorkspaceNormalFunc()
-command WorkspaceSprout :call WorkspaceSproutFunc()
-
-call WorkspaceSproutFunc()
-
 "
 " ---------------------- USABILITY CONFIGURATION ----------------------
 "  Basic and pretty much needed settings to provide a solid base for
@@ -82,6 +63,10 @@ runtime macros/matchit.vim
 :set autowriteall
 
 set timeoutlen=1000 ttimeoutlen=0
+
+if (has("termguicolors"))
+  set termguicolors
+ endif
 
 " Cursor settings for macOS iTerm
 let &t_SI = "\<Esc>]50;CursorShape=1\x7"
@@ -187,28 +172,29 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-unimpaired'
 Plug 'scrooloose/nerdtree'
 Plug 'Raimondi/delimitMate'
-Plug 'mileszs/ack.vim'
 Plug 'itchyny/lightline.vim'
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 " PlugInstall and PlugUpdate will clone fzf in ~/.fzf and run the install script
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 
-" auto-complete
-Plug 'Shougo/neosnippet.vim'
-Plug 'Shougo/neosnippet-snippets'
+" Writing Mode Plugins
+Plug 'logico/typewriter-vim'
+Plug 'junegunn/limelight.vim'
+Plug 'amix/vim-zenroom2'
+Plug 'junegunn/goyo.vim'
+Plug 'lgalke/vim-ernest'
+
+" Python
+Plug 'vim-scripts/indentpython.vim'
 
 " web development plugins
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx' 
 Plug 'leafgarland/typescript-vim'
-Plug 'mustache/vim-mustache-handlebars'
 
 " Themes
 Plug 'mhartington/oceanic-next' " OceanicNext
-Plug 'balanceiskey/gloom-vim'   " gloom-vim
-Plug 'cseelus/vim-colors-tone'  " tone
 
 " end plugin definition
 call plug#end()
@@ -222,10 +208,6 @@ nnoremap <Leader>o :Files<CR>
 nnoremap <Leader>b :Buffers<CR>
 " Open most recently used files
 nnoremap <Leader>f :History<CR>
-
-if executable('ag')
-  let g:ackprg = 'ag --vimgrep'
-endif
 
 " NERDTree
 map <C-n> :NERDTreeToggle<CR>
@@ -247,8 +229,6 @@ let g:javascript_plugin_flow = 1
 " vim-jsx configuration
 let g:jsx_ext_required = 0
 
-" vim-mustache
-autocmd BufNewFile,BufRead *.stache set syntax=mustache
 
 " ---------------------- STATUS LINE ----------------------
 let g:lightline = {
@@ -267,3 +247,37 @@ let g:lightline = {
 	\ },
 	\ }
 
+
+" ---------------------- WRITING MODE ----------------------
+let g:goyo_height = '100%'
+
+nnoremap <leader>x :call WritingMode()<cr>
+
+let g:writing_mode_on = 0
+
+function! WritingMode()
+  if g:writing_mode_on == 0
+        colorscheme typewriter
+        Goyo
+        Limelight
+        Ernest
+
+         let &t_SI = "\e[5 q"
+          let &t_EI = "\e[1 q"
+          augroup myCmds
+            au!
+            autocmd VimEnter * silent !echo -ne "\e[1 q"
+          augroup END
+
+
+        let g:writing_mode_on = 1
+    else
+        colorscheme OceanicNext
+        Goyo!
+        Limelight!
+        Ernest!
+
+        let g:writing_mode_on = 0
+  endif
+
+endfunction

@@ -1,4 +1,8 @@
-PATH=/usr/local/bin:$PATH
+PATH=/usr/local/bin:/home/shane/.local/bin:$PATH
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
 
 # Returns whether the given command is executable or aliased.
 _has() {
@@ -14,7 +18,6 @@ _append_to_path() {
 # ===============
 # === EXPORTS ===
 # ===============
-
 export WORKSPACE=$HOME/workspace/
 
 # ===============
@@ -53,9 +56,17 @@ load-nvmrc() {
 add-zsh-hook chpwd load-nvmrc
 load-nvmrc
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
+# ===============
+# === PYTHON  ===
+# ===============
+PATH="/home/shane/.pyenv/bin:$PATH"
+PATH="/home/shane/.poetry/bin:$PATH"
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
 
+# ===============
+# ====  FZF  ====
+# ===============
 # fzf via Homebrew
 if [ -e /usr/local/opt/fzf/shell/completion.zsh ]; then
   source /usr/local/opt/fzf/shell/key-bindings.zsh
