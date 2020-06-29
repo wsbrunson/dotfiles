@@ -1,5 +1,5 @@
 "
-" ---------------------- PRJOECT-SPECIFIC SETTINGS ----------------------
+" ---------------------- PROJECT-SPECIFIC SETTINGS ----------------------
 " Configure based on working directory
 " web-app-core uses dumb defaults
 
@@ -9,24 +9,24 @@ set shiftwidth=2             " when reading, tabs are 2 spaces
 set tabstop=2                " in insert mode, tabs are 2 spaces
 set textwidth=80             " no lines longer than 80 cols
 
-function! WorkspaceNormal()
+function! WorkspaceNormalFunc()
 	set expandtab                " use spaces instead of tabs
 	set shiftwidth=2             " when reading, tabs are 2 spaces
 	set tabstop=2                " in insert mode, tabs are 2 spaces
 	set textwidth=80             " no lines longer than 80 cols
 endfunc
 
-function! WorkspaceSprout()
+function! WorkspaceSproutFunc()
 	set noexpandtab                " use tabs instead of spaces
 	set shiftwidth=4               " when reading, tabs are 4 spaces
 	set tabstop=4                  " in insert mode, tabs are 4 spaces
 	set textwidth=120              " no lines longer than 120 cols
 endfunc
 
-command WorkspaceNormal :call WorkspaceNormal()
-command WorkspaceSprout :call WorkspaceSprout()
+command WorkspaceNormal :call WorkspaceNormalFunc()
+command WorkspaceSprout :call WorkspaceSproutFunc()
 
-call WorkspaceSprout()
+call WorkspaceSproutFunc()
 
 "
 " ---------------------- USABILITY CONFIGURATION ----------------------
@@ -37,7 +37,7 @@ syntax on                      " turn on syntax highlighting
 set number                     " and show line numbers
 set laststatus=2               " for statusline
 set autoread                   " reload files changed outside vim
-set hidden                     " dont't unload buffers when they are abandoned
+set hidden                     " do not unload buffers when they are abandoned
 set fileformat=unix            " set unix line endings
 set viminfo='100,f1            " save up to 100 marks, enable capital marks
 set lazyredraw                 " do not redraw
@@ -46,7 +46,7 @@ set backspace=indent,eol,start " normalize backspace in insert
 set splitbelow                 " Open new split panes to right and bottom
 set splitright                 " which feels more natural
 set incsearch                  " find the next match as we type the search
-set hlsearch                   " hilight searches by default
+set hlsearch                   " highlight searches by default
 set ignorecase                 " Make searches case-insensitive.
 set smartcase                  " ... unless the query has capital letters.
 set gdefault                   " Use 'g' flag by default with :s/foo/bar/.
@@ -82,6 +82,16 @@ runtime macros/matchit.vim
 :set autowriteall
 
 set timeoutlen=1000 ttimeoutlen=0
+
+" Cursor settings for macOS iTerm
+let &t_SI = "\<Esc>]50;CursorShape=1\x7"
+let &t_SR = "\<Esc>]50;CursorShape=2\x7"
+let &t_EI = "\<Esc>]50;CursorShape=0\x7"
+
+" Cursor settings for tmux
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 
 " ---------------------- Key Mappings ----------------------
 
@@ -194,7 +204,6 @@ Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx' 
 Plug 'leafgarland/typescript-vim'
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'burner/vim-svelte'
 
 " Themes
 Plug 'mhartington/oceanic-next' " OceanicNext
@@ -228,16 +237,6 @@ let g:ale_echo_msg_error_str = 'Error'
 let g:ale_echo_msg_warning_str = 'Warning'
 let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
-let g:ale_linters = {
-  \ 'javascript': ['eslint'],
-  \ }
-let g:ale_fixers = {
-  \ 'json': ['prettier'],
-  \ 'css': ['prettier'],
-  \ 'html': ['prettier'],
-  \ 'javascript': ['eslint'],
-  \ }
-
 " Move between linting errors
 nnoremap <Leader>r :ALENextWrap<CR>
 nnoremap <Leader>R :ALEPreviousWrap<CR>
@@ -253,6 +252,7 @@ autocmd BufNewFile,BufRead *.stache set syntax=mustache
 
 " ---------------------- STATUS LINE ----------------------
 let g:lightline = {
+ 	\ 'colorscheme': 'wombat',
     \ 'active': {
     \ 'left':  [ [ 'mode', 'paste' ],
     \            [ 'gitbranch', 'readonly', 'filename', 'modified' ]
@@ -267,36 +267,3 @@ let g:lightline = {
 	\ },
 	\ }
 
-" ---------------------- COC CONFIG ----------------------
-" " Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Use <c-space> for trigger completion.
-inoremap <silent><expr> <c-space> coc#refresh()
-
-" Use <cr> for confirm completion, `<C-g>u` means break undo chain at current position.
-" Coc only does snippet and additional edit on confirm.
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-
-" Use `[c` and `]c` for navigate diagnostics
-nmap <silent> [c <Plug>(coc-diagnostic-prev)
-nmap <silent> ]c <Plug>(coc-diagnostic-next)
-
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
-
-" Highlight symbol under cursor on CursorHold
-autocmd CursorHold * silent call CocActionAsync('highlight')

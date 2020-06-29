@@ -1,0 +1,15 @@
+
+# Tireswing Python Shit
+if command -v pyenv 1>/dev/null 2>&1; then
+  eval "$(pyenv init -)"
+fi
+
+export LIBRARY_PATH=$LIBRARY_PATH:/usr/local/opt/openssl/lib/
+export PATH=$PATH:/usr/local/opt/mysql\@5.5/bin/:/usr/local/opt/openssl/bin/
+export PATH="/usr/local/opt/mysql@5.5/bin:$PATH"
+export WORKON_HOME=~/.venvs
+source /usr/local/bin/virtualenvwrapper.sh
+
+
+
+source ~/.sproutrc
