@@ -18,7 +18,7 @@ _append_to_path() {
 # ===============
 # === EXPORTS ===
 # ===============
-export WORKSPACE=$HOME/workspace/
+export WORKSPACE=$HOME/workspace
 
 # ===============
 # ==== ALIAS ====
@@ -27,42 +27,41 @@ alias workspace="cd $WORKSPACE"
 alias dotfiles="cd $WORKSPACE/dotfiles"
 alias git-vim="git difftool --tool=vimdiff --no-prompt"
 
-# ===============
-# ===== NVM =====
-# ===============
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# ===============
+# ===== fnm =====
+# ===============
+eval "$(fnm env --multi)"
 
 autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
+load-fnmrc() {
+  local node_version="$(fnm current)"
+  local nvmrc_path="$(cat ./.nvmrc)"
 
   if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
+    local nvmrc_node_version=$(fnm current $(nvmrc_path))
 
     if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
+      fnm install
     elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
+      fnm use
     fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
+  elif [ "$node_version" != "$(fnm ls | grep "default" | sed 's/ //' | sed 's/*//' | sed 's/(default)//')" ]; then
+    echo "Reverting to fnm default version"
+    fnm use default
   fi
 }
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+
+add-zsh-hook chpwd load-fnmrc
+load-fnmrc
 
 # ===============
 # === PYTHON  ===
 # ===============
-PATH="/home/shane/.pyenv/bin:$PATH"
-PATH="/home/shane/.poetry/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# PATH="/home/shane/.pyenv/bin:$PATH"
+# PATH="/home/shane/.poetry/bin:$PATH"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 # ===============
 # ====  FZF  ====
