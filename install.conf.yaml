@@ -1,23 +1,29 @@
+---
 - defaults:
-    link:
-      relink: true
+  link:
+    create: true
+    relink: true
+
+- create:
+    - ~/workspace
+    - ~/.vim/undo-history
 
 - clean: ['~']
 
 - link:
-    ~/.bash_profile: bash_profile  
-    ~/.bashrc: bashrc 
-    ~/.config: config
+    ~/.bash_profile: bash_profile
+    ~/.bashrc: bashrc
+    ~/.config/coc: config/coc
+    ~/.config/neofetch: config/neofetch
+    ~/.config/nvim: config/nvim
+    ~/.config/vim: config/vim
     ~/.custom_bashrc: custom_bashrc
-    ~/.dotfiles: ''
     ~/.p10k.zsh: p10k.zsh
     ~/.tmux.conf: tmux.conf
     ~/.vim: vim
     ~/.vimrc: vimrc
-    ~/.zshrc: zshrc  
-
-- create:
-    - ~/.vim/undo-history
+    ~/.zshrc: zshrc
 
 - shell:
-  - [git submodule update --init --recursive, Installing submodules]
+    - [cp -an ~/workspace/dotfiles/fonts/* /Library/Fonts]
+    - [chmod a+x brew_install.sh]
