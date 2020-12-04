@@ -91,3 +91,4 @@ fi
 [ -z "$ZSH_NAME" ] && [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 source ~/.custom_bashrc
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi

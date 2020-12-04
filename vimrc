@@ -78,6 +78,9 @@ let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_SR = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=2\x7\<Esc>\\"
 let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 
+" setup yaml file defaults
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
 " ---------------------- Key Mappings ----------------------
 
 let mapleader = ";"
@@ -173,6 +176,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'scrooloose/nerdtree'
 Plug 'Raimondi/delimitMate'
 Plug 'itchyny/lightline.vim'
+Plug 'Yggdroot/indentLine'
 
 " PlugInstall and PlugUpdate will clone fzf in ~/.fzf and run the install script
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
@@ -229,6 +233,8 @@ let g:javascript_plugin_flow = 1
 " vim-jsx configuration
 let g:jsx_ext_required = 0
 
+" indent
+let g:indentLine_char = '⦙'
 
 " ---------------------- STATUS LINE ----------------------
 let g:lightline = {

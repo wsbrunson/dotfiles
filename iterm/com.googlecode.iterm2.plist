@@ -12,16 +12,6 @@
 	<false/>
 	<key>AnimateDimming</key>
 	<false/>
-	<key>AppleAntiAliasingThreshold</key>
-	<integer>1</integer>
-	<key>ApplePressAndHoldEnabled</key>
-	<false/>
-	<key>AppleScrollAnimationEnabled</key>
-	<integer>0</integer>
-	<key>AppleSmoothFixedFontsSizeThreshold</key>
-	<integer>1</integer>
-	<key>AppleWindowTabbingMode</key>
-	<string>manual</string>
 	<key>AutoHideTmuxClientSession</key>
 	<true/>
 	<key>CheckTestRelease</key>
@@ -969,8 +959,6 @@
 	<integer>7</integer>
 	<key>LeftOption</key>
 	<integer>2</integer>
-	<key>LoadPrefsFromCustomFolder</key>
-	<true/>
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSNavLastRootDirectory</key>
@@ -1371,7 +1359,7 @@
 			<key>Non Ascii Font</key>
 			<string>Menlo-Regular 11</string>
 			<key>Normal Font</key>
-			<string>MesloLGSNer-Regular 16</string>
+			<string>MesloLGS-NF-Regular 16</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
