@@ -18,7 +18,7 @@ _append_to_path() {
 # ===============
 # === EXPORTS ===
 # ===============
-export WORKSPACE=$HOME/workspace/
+export WORKSPACE=$HOME/workspace
 
 # ===============
 # ==== ALIAS ====
@@ -27,42 +27,39 @@ alias workspace="cd $WORKSPACE"
 alias dotfiles="cd $WORKSPACE/dotfiles"
 alias git-vim="git difftool --tool=vimdiff --no-prompt"
 
-# ===============
-# ===== NVM =====
-# ===============
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# ===============
+# ===== fnm =====
+# ===============
+eval "$(fnm env --multi)"
+
+export PATH=/Users/shanebrunson/.fnm/current/bin:$PATH
+export FNM_MULTISHELL_PATH=/Users/shanebrunson/.fnm/current
+export FNM_DIR=/Users/shanebrunson/.fnm/
+export FNM_NODE_DIST_MIRROR=https://nodejs.org/dist
+export FNM_LOGLEVEL=info
 
 autoload -U add-zsh-hook
-load-nvmrc() {
-  local node_version="$(nvm version)"
-  local nvmrc_path="$(nvm_find_nvmrc)"
-
-  if [ -n "$nvmrc_path" ]; then
-    local nvmrc_node_version=$(nvm version "$(cat "${nvmrc_path}")")
-
-    if [ "$nvmrc_node_version" = "N/A" ]; then
-      nvm install
-    elif [ "$nvmrc_node_version" != "$node_version" ]; then
-      nvm use
-    fi
-  elif [ "$node_version" != "$(nvm version default)" ]; then
-    echo "Reverting to nvm default version"
-    nvm use default
+_fnm_autoload_hook () {
+  if [[ -f .node-version && -r .node-version ]]; then
+    echo "fnm: Found .node-version"
+    fnm use
+  elif [[ -f .nvmrc && -r .nvmrc ]]; then
+    echo "fnm: Found .nvmrc"
+    fnm use
   fi
 }
-add-zsh-hook chpwd load-nvmrc
-load-nvmrc
+
+add-zsh-hook chpwd _fnm_autoload_hook \
+  && _fnm_autoload_hook
 
 # ===============
 # === PYTHON  ===
 # ===============
-PATH="/home/shane/.pyenv/bin:$PATH"
-PATH="/home/shane/.poetry/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+# PATH="/home/shane/.pyenv/bin:$PATH"
+# PATH="/home/shane/.poetry/bin:$PATH"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
 # ===============
 # ====  FZF  ====
