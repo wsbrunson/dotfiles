@@ -5,11 +5,12 @@ fi
 
 brew install yamllint
 brew install neofetch
+brew install fnm
 
-brew install firefox
-brew install spotify
-brew install iterm2
-brew install 1password
-brew install spectacle
-brew install steam
+# brew install firefox
+# brew install spotify
+# brew install iterm2
+# brew install 1password
+# brew install spectacle
+# brew install steam
 
