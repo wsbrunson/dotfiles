@@ -9,6 +9,8 @@ brew install caskroom/cask/brew-cask
 
 brew install yamllint
 brew install neofetch
+brew install fnm
+brew install awscli
 
 brew install --cask firefox
 brew install --cask spotify
