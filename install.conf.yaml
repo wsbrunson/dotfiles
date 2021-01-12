@@ -1,31 +1,27 @@
 ---
-- defaults:
-  link:
-    create: true
-    relink: true
-
-- create:
-    - ~/workspace
-    - ~/.vim/undo-history
-
 - clean: ["~"]
 
 - link:
     ~/.bash_profile: bash_profile
     ~/.bashrc: bashrc
     ~/.config/coc: config/coc
-    ~/.config/neofetch: config/neofetch
-    ~/.config/nvim: config/nvim
-    ~/.config/vim: config/vim
     ~/.custom_bashrc: custom_bashrc
+    ~/Library/LaunchAgents/com.shane.dotfiles.LaunchAgents.plist: launchAgent.plist
     ~/.oh-my-zsh: ohmyzsh
-    ~/.oh-my-zsh/custom/themes/powerlevel10k: powerlevel10k
+    ./ohmyzsh/custom/themes/powerlevel10k: powerlevel10k
     ~/.p10k.zsh: p10k.zsh
     ~/.tmux.conf: tmux.conf
-    ~/.vim: vim
+    ~/.vim:
+      path: vim
+      force: true
     ~/.vimrc: vimrc
     ~/.zshrc: zshrc
 
 - shell:
-    - [cp -an ~/workspace/dotfiles/fonts/* /Library/Fonts]
-    - [chmod a+x brew_install.sh]
+    - [
+        launchctl load ~/Library/LaunchAgents/com.shane.dotfiles.LaunchAgents.plist,
+      ]
+    - [defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false]
+    - [defaults write -g KeyRepeat -int 0.0001]
+    - [defaults write com.apple.finder ShowPathbar -bool true]
+    - [cp -v ./fonts/* ~/Library/Fonts]
