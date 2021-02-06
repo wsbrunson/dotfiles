@@ -31,7 +31,7 @@ alias git-vim="git difftool --tool=vimdiff --no-prompt"
 # ===============
 # ===== fnm =====
 # ===============
-eval "$(fnm env --multi)"
+eval "$(fnm env)"
 
 export PATH=/Users/shanebrunson/.fnm/current/bin:$PATH
 export FNM_MULTISHELL_PATH=/Users/shanebrunson/.fnm/current
