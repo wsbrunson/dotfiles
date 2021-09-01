@@ -1,6 +1,9 @@
 ---
 - clean: ["~"]
 
+- shell:
+    - ["git submodule update --init --recursive", "Installing submodules"]
+
 - link:
     ~/.bash_profile: bash_profile
     ~/.bashrc: bashrc
@@ -22,6 +25,6 @@
         launchctl load ~/Library/LaunchAgents/com.shane.dotfiles.LaunchAgents.plist,
       ]
     - [defaults write com.microsoft.VSCode ApplePressAndHoldEnabled -bool false]
-    - [defaults write -g KeyRepeat -int 0.0001]
+    - [defaults write -g KeyRepeat -int 0.1]
     - [defaults write com.apple.finder ShowPathbar -bool true]
     - [cp -v ./fonts/* ~/Library/Fonts]
