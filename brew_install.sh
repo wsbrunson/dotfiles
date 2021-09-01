@@ -5,6 +5,8 @@ fi
 
 brew install 1password
 brew install awscli
+brew install cloudapp
+brew install docker
 brew install firefox
 brew install fnm
 brew install google-chrome
