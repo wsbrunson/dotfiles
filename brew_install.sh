@@ -16,6 +16,6 @@ brew install numi
 brew install slack
 brew install spectacle
 brew install spotify
+brew install starship
 brew install steam
 brew install visual-studio-code
-brew install yamllint
