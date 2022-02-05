@@ -1,16 +1,15 @@
 # ===============
 # ===   ENV   ===
 # ===============
-if [ ! -f .env ]
-then
-  export $(cat .env | xargs)
+if test -e "$HOME/.env"; then
+  export $(cat $HOME/.env | xargs)
 fi
 
 # ===============
 # ===  CUSTOM ===
 # ===============
-if test -f "~/.custom_bashrc"; then
-  source ~/.custom_bashrc
+if test -e "$HOME/.custom_bashrc"; then
+  source $HOME/.custom_bashrc
 fi
 
 # ===============
@@ -45,11 +44,9 @@ eval "$(starship init zsh)"
 # ===============
 # ===   NODE  ===
 # ===============
-if [ $NODE_MANAGER = "nvm" ]
-then
+if [[ $NODE_MANAGER == "nvm" ]]; then
   source ~/.include_nvm
-elif [ $NODE_MANAGER = "fnm" ]
-then
+elif [[ $NODE_MANAGER == "fnm" ]]; then
   source ~/.include_fnm
 fi
 

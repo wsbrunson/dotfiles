@@ -7,6 +7,7 @@
 - link:
     ~/.config/coc: config/coc
     ~/.custom_bashrc: custom_bashrc
+    ~/.env: .env
     ~/.include_fnm: include_fnm
     ~/.include_nvm: include_nvm
     ~/Library/LaunchAgents/com.shane.dotfiles.LaunchAgents.plist: launchAgent.plist
