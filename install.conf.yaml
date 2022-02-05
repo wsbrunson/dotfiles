@@ -5,14 +5,11 @@
     - ["git submodule update --init --recursive", "Installing submodules"]
 
 - link:
-    ~/.bash_profile: bash_profile
-    ~/.bashrc: bashrc
     ~/.config/coc: config/coc
     ~/.custom_bashrc: custom_bashrc
+    ~/.include_fnm: include_fnm
+    ~/.include_nvm: include_nvm
     ~/Library/LaunchAgents/com.shane.dotfiles.LaunchAgents.plist: launchAgent.plist
-    ~/.oh-my-zsh: ohmyzsh
-    ./ohmyzsh/custom/themes/powerlevel10k: powerlevel10k
-    ~/.p10k.zsh: p10k.zsh
     ~/.tmux.conf: tmux.conf
     ~/.vim:
       path: vim

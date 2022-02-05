@@ -1,22 +1,65 @@
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# ===============
+# ===   ENV   ===
+# ===============
+if [ ! -f .env ]
+then
+  export $(cat .env | xargs)
 fi
 
-# Path to your oh-my-zsh installation.
-export ZSH=$HOME/.oh-my-zsh
+# ===============
+# ===  CUSTOM ===
+# ===============
+if test -f "~/.custom_bashrc"; then
+  source ~/.custom_bashrc
+fi
 
-ZSH_THEME="powerlevel10k/powerlevel10k"
+# ===============
+# ===   PATH  ===
+# ===============
+PATH=/usr/local/bin:/home/shane/.local/bin:$HOME/.rvm/bin:$PATH
 
-plugins=(git yarn npm osx vi-mode history-substring-search)
+# ===============
+# === EXPORTS ===
+# ===============
+export WORKSPACE=$HOME/workspace
 
-source $ZSH/oh-my-zsh.sh
+# ===============
+# ==== ALIAS ====
+# ===============
+alias workspace="cd $WORKSPACE"
+alias dotfiles="cd $WORKSPACE/dotfiles"
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# ===============
+# ==  STARSHIP ==
+# ===============
+eval "$(starship init zsh)"
 
-source ~/.bashrc
+# ===============
+# === PYTHON  ===
+# ===============
+# PATH="/home/shane/.pyenv/bin:$PATH"
+# PATH="/home/shane/.poetry/bin:$PATH"
+# eval "$(pyenv init -)"
+# eval "$(pyenv virtualenv-init -)"
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# ===============
+# ===   NODE  ===
+# ===============
+if [ $NODE_MANAGER = "nvm" ]
+then
+  source ~/.include_nvm
+elif [ $NODE_MANAGER = "fnm" ]
+then
+  source ~/.include_fnm
+fi
+
+# ===============
+# === PLUGINS ===
+# ===============
+source $WORKSPACE/dotfiles/antigen/antigen.zsh
+
+antigen bundle git
+antigen bundle dashixiong91/zsh-vscode
+antigen bundle zsh-users/zsh-syntax-highlighting
+
+antigen apply
