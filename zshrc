@@ -1,7 +1,17 @@
 # ===============
+# ===   ENV   ===
+# ===============
+if [ ! -f .env ]
+then
+  export $(cat .env | xargs)
+fi
+
+# ===============
 # ===  CUSTOM ===
 # ===============
-source ~/.custom_bashrc
+if test -f "~/.custom_bashrc"; then
+  source ~/.custom_bashrc
+fi
 
 # ===============
 # ===   PATH  ===
@@ -35,8 +45,6 @@ eval "$(starship init zsh)"
 # ===============
 # ===   NODE  ===
 # ===============
-NODE_MANAGER="nvm"
-
 if [ $NODE_MANAGER = "nvm" ]
 then
   source ~/.include_nvm
