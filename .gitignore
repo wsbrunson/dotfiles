@@ -5,4 +5,4 @@
 .config/coc/extensions/db.json
 
 .env
-custom_bashrc
+.customrc

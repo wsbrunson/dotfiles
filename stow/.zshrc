@@ -8,8 +8,8 @@ fi
 # ===============
 # ===  CUSTOM ===
 # ===============
-if test -e "$HOME/.custom_bashrc"; then
-  source $HOME/.custom_bashrc
+if test -e "$HOME/.customrc"; then
+  source $HOME/.customrc
 fi
 
 
@@ -46,8 +46,8 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # ===============
 # === PYTHON  ===
 # ===============
-export PATH="~/.pyenv/bin:$PATH"
-eval "$(pyenv init --path)"
+# export PATH="~/.pyenv/bin:$PATH"
+# eval "$(pyenv init --path)"
 
 
 # ===============
@@ -59,7 +59,7 @@ source ~/.node_manager
 # ===============
 # === PLUGINS ===
 # ===============
-source /opt/homebrew/share/antigen/antigen.zsh
+source $(brew --prefix)/share/antigen/antigen.zsh
 
 antigen bundle git
 antigen bundle belak/zsh-utils
