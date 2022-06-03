@@ -62,8 +62,12 @@ source ~/.node_manager
 source $WORKSPACE/dotfiles/antigen/antigen.zsh
 
 antigen bundle git
+antigen bundle belak/zsh-utils
 antigen bundle dashixiong91/zsh-vscode
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle joshskidmore/zsh-fzf-history-search
+antigen bundle changyuheng/fz
+antigen bundle rupa/z
 
 antigen apply
 
