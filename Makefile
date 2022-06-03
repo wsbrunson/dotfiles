@@ -1,4 +1,4 @@
-include stow/env/.env
+include stow/.env
 
 .DEFAULT: install
 
@@ -16,13 +16,12 @@ install_brew:
 setup_node_manager:
 ifeq ($(NODE_MANAGER), "fnm")
 	@echo "Use fnm as node manager"
-	stow -d node_manager -t ~/ fnm
+	stow -R -d node_manager -t ~/ fnm
 else
 	@echo "Use nvm as node manager"
-	stow -d node_manager -t ~/ nvm
+	stow -R -d node_manager -t ~/ nvm
 endif
 
 .PHONY: stow
-stow: stow_folders = bash config git tmux vim zsh
 stow: setup_node_manager
-	$(foreach folder,$(stow_folders),stow -d stow -t ~/ $(folder);)
+	stow -R -t ~/ stow

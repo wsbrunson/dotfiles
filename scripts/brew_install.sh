@@ -9,6 +9,7 @@ brew install cloudapp
 brew install docker
 brew install firefox
 brew install fnm
+brew install fzf
 brew install google-chrome
 brew install iterm2
 brew install numi
