@@ -1,0 +1,13 @@
+[user]
+  email = brunson.ws@gmail.com
+  name = Shane Brunson
+[credential]
+  helper = osxkeychain
+
+# Work Config
+[includeIf "gitdir:~/workspace/corporate/"]
+  path = ~/.gitconfig.paypal
+[url "https://github.com"]
+  insteadof = ssh://git@github.com
+[url "https://github.com/"]
+  insteadof = git@github.com:
