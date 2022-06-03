@@ -17,4 +17,7 @@ brew install rectangle
 brew install spotify
 brew install starship
 brew install steam
+brew install stow
+brew install superfly/tap/flyctl
 brew install visual-studio-code
+brew install z
