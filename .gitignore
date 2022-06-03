@@ -1,16 +1,8 @@
 .DS_Store
 
-/config/coc/extensions/coc-phpls-data
-/config/coc/extensions/node_modules
-/config/coc/extensions/db.json
-/config/config
-/config/configstore
-/config/gatsby
-/config/yarn
-
-/vim/plugged/
-/vim/undodir/
-config/coc/extensions/db.json
+/stow/.vim/plugged/
+/stow/.vim/undodir/
+.config/coc/extensions/db.json
 
 .env
 custom_bashrc

@@ -12,10 +12,12 @@ if test -e "$HOME/.custom_bashrc"; then
   source $HOME/.custom_bashrc
 fi
 
+
 # ===============
 # ===   PATH  ===
 # ===============
-PATH=/usr/local/bin:/home/shane/.local/bin:$HOME/.rvm/bin:$PATH
+PATH=/usr/local/bin:/home/shane/.local/bin:$HOME/.rvm/bin:/opt/homebrew/bin:$PATH
+
 
 # ===============
 # === EXPORTS ===
@@ -28,35 +30,46 @@ export WORKSPACE=$HOME/workspace
 alias workspace="cd $WORKSPACE"
 alias dotfiles="cd $WORKSPACE/dotfiles"
 
+
 # ===============
 # ==  STARSHIP ==
 # ===============
 eval "$(starship init zsh)"
 
+
+# ===============
+# ==    BREW   ==
+# ===============
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+
 # ===============
 # === PYTHON  ===
 # ===============
-# PATH="/home/shane/.pyenv/bin:$PATH"
-# PATH="/home/shane/.poetry/bin:$PATH"
-# eval "$(pyenv init -)"
-# eval "$(pyenv virtualenv-init -)"
+export PATH="~/.pyenv/bin:$PATH"
+eval "$(pyenv init --path)"
+
 
 # ===============
 # ===   NODE  ===
 # ===============
-if [[ $NODE_MANAGER == "nvm" ]]; then
-  source ~/.include_nvm
-elif [[ $NODE_MANAGER == "fnm" ]]; then
-  source ~/.include_fnm
-fi
+source ~/.node_manager
+
 
 # ===============
 # === PLUGINS ===
 # ===============
-source $WORKSPACE/dotfiles/antigen/antigen.zsh
+source /opt/homebrew/share/antigen/antigen.zsh
 
 antigen bundle git
+antigen bundle belak/zsh-utils
 antigen bundle dashixiong91/zsh-vscode
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle joshskidmore/zsh-fzf-history-search
+antigen bundle changyuheng/fz
+antigen bundle rupa/z
 
 antigen apply
+
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terraform terraform
