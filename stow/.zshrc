@@ -59,7 +59,7 @@ source ~/.node_manager
 # ===============
 # === PLUGINS ===
 # ===============
-source $WORKSPACE/dotfiles/antigen/antigen.zsh
+source /opt/homebrew/share/antigen/antigen.zsh
 
 antigen bundle git
 antigen bundle belak/zsh-utils

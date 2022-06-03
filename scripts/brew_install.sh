@@ -4,6 +4,7 @@ if [[ $? != 0 ]] ; then
 fi
 
 brew install 1password
+brew install antigen
 brew install awscli
 brew install cloudapp
 brew install docker
