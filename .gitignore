@@ -2,7 +2,9 @@
 
 /stow/.vim/plugged/
 /stow/.vim/undodir/
-.config/coc/extensions/db.json
+*/.config/coc/extensions/db.json
+*/.config/planetscale/*
+*/.config/configstore/*
 
 .env
 .customrc

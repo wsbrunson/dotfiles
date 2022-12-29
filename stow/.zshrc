@@ -23,6 +23,7 @@ PATH=/usr/local/bin:/home/shane/.local/bin:$HOME/.rvm/bin:/opt/homebrew/bin:$PAT
 # === EXPORTS ===
 # ===============
 export WORKSPACE=$HOME/workspace
+export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
 # ===============
 # ==== ALIAS ====
@@ -54,6 +55,13 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 # ===   NODE  ===
 # ===============
 source ~/.node_manager
+
+
+# ===============
+# ===    GO   ===
+# ===============
+export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
 
 
 # ===============

@@ -11,3 +11,5 @@
   insteadof = ssh://git@github.com
 [url "https://github.com/"]
   insteadof = git@github.com:
+[init]
+	defaultBranch = main
