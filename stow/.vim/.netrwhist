@@ -1,4 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =2
+let g:netrw_dirhistcnt =4
+let g:netrw_dirhist_4='/Users/wbrunson/workspace/corporate/eslint-plugin-no-array-side-effects/.git'
+let g:netrw_dirhist_3='/Users/wbrunson/workspace/corporate/eslint-plugin-no-array-side-effects'
 let g:netrw_dirhist_2='/Users/wbrunson/workspace/dotfiles'
 let g:netrw_dirhist_1='/home/shane/.config'
