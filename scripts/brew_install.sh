@@ -8,7 +8,6 @@ brew install antigen
 brew install awscli
 brew install cloudapp
 brew install docker
-brew install firefox
 brew install fnm
 brew install fzf
 brew install google-chrome
@@ -20,6 +19,5 @@ brew install spotify
 brew install starship
 brew install steam
 brew install stow
-brew install superfly/tap/flyctl
 brew install visual-studio-code
 brew install z

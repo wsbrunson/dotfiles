@@ -5,11 +5,19 @@
   helper = osxkeychain
 
 # Work Config
-[includeIf "gitdir:~/workspace/corporate/"]
-  path = ~/.gitconfig.paypal
+[includeIf "gitdir:~/workspace/braintree"]
+  path = ~/.gitconfig-braintree
+[includeIf "gitdir:~/workspace/public"]
+  path = ~/.gitconfig-public
+[includeIf "gitdir:~/workspace/internal"]
+  path = ~/.gitconfig-internal
 [url "https://github.com"]
   insteadof = ssh://git@github.com
 [url "https://github.com/"]
   insteadof = git@github.com:
 [init]
 	defaultBranch = main
+[pull]
+	rebase = true
+[core]
+	editor = vim

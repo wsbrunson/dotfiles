@@ -25,6 +25,7 @@ PATH=/usr/local/bin:/home/shane/.local/bin:$HOME/.rvm/bin:/opt/homebrew/bin:$PAT
 export WORKSPACE=$HOME/workspace
 export SSH_AUTH_SOCK=~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 
+
 # ===============
 # ==== ALIAS ====
 # ===============
@@ -41,7 +42,7 @@ eval "$(starship init zsh)"
 # ===============
 # ==    BREW   ==
 # ===============
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# eval "$(/opt/homebrew/bin/brew shellenv)"
 
 
 # ===============
@@ -70,14 +71,24 @@ export PATH="$GOPATH/bin:$PATH"
 source $(brew --prefix)/share/antigen/antigen.zsh
 
 antigen bundle git
+antigen bundle rupa/z
 antigen bundle belak/zsh-utils
 antigen bundle dashixiong91/zsh-vscode
 antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle joshskidmore/zsh-fzf-history-search
 antigen bundle changyuheng/fz
-antigen bundle rupa/z
 
 antigen apply
 
 autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /opt/homebrew/bin/terraform terraform
+
+export $_Z_EXCLUDE_DIRS=('node_modules', '.git')
+
+
+# Configuration to load nvm - node version manager
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+# Configuration for node to trust the PayPal Proxy Certificates
+export NODE_EXTRA_CA_CERTS='/usr/local/etc/openssl/certs/paypal_proxy_cacerts.pem'
+export CURL_SSL_BACKEND=secure-transport
