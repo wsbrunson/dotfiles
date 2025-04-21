@@ -11,6 +11,7 @@ starship = "latest"
 lazygit = "latest"
 tmux = "latest"
 neovim = "latest"
+starship = "latest"
 
 [tasks.setup]
 description = "First-time setup for a new machine"

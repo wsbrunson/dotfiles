@@ -1,0 +1,627 @@
+2024-11-25 09:42:31,894 DEBUG    root            Metrics collector initialized...
+2024-11-25 09:42:31,894 DEBUG    root            Loaded Command Group: ['gcloud', 'components']
+2024-11-25 09:42:31,896 DEBUG    root            Loaded Command Group: ['gcloud', 'components', 'update']
+2024-11-25 09:42:31,897 DEBUG    root            Running [gcloud.components.update] with arguments: [--no-compile-python: "False", --quiet: "True", COMPONENT-IDS:6: "['alpha', 'beta', 'gke-gcloud-auth-plugin', 'kubectl', 'skaffold', 'minikube']"]
+2024-11-25 09:42:31,897 INFO     ___FILE_ONLY___ Beginning update. This process may take several minutes.
+
+2024-11-25 09:42:31,907 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): dl.google.com:443
+2024-11-25 09:42:32,112 DEBUG    urllib3.connectionpool https://dl.google.com:443 "GET /dl/cloudsdk/channels/rapid/components-2.json HTTP/1.1" 200 227816
+2024-11-25 09:42:32,234 INFO     ___FILE_ONLY___ 
+
+2024-11-25 09:42:32,235 INFO     ___FILE_ONLY___ 
+Your current Google Cloud CLI version is: 502.0.0
+
+2024-11-25 09:42:32,235 INFO     ___FILE_ONLY___ Installing components from version: 502.0.0
+
+2024-11-25 09:42:32,235 INFO     ___FILE_ONLY___ 
+
+2024-11-25 09:42:32,235 DEBUG    root            Chosen display Format:table[box,title="These components will be removed."](details.display_name:label=Name:align=left,version.version_string:label=Version:align=right,data.size.size(zero="",min=1048576):label=Size:align=right)
+2024-11-25 09:42:32,235 DEBUG    root            Chosen display Format:table[box,title="These components will be updated."](details.display_name:label=Name:align=left,version.version_string:label=Version:align=right,data.size.size(zero="",min=1048576):label=Size:align=right)
+2024-11-25 09:42:32,235 DEBUG    root            Chosen display Format:table[box,title="These components will be installed."](details.display_name:label=Name:align=left,version.version_string:label=Version:align=right,data.size.size(zero="",min=1048576):label=Size:align=right)
+2024-11-25 09:42:32,250 INFO     ___FILE_ONLY___ ┌─────────────────────────────────────────────────────────────────────────────┐
+2024-11-25 09:42:32,250 INFO     ___FILE_ONLY___ 
+
+2024-11-25 09:42:32,250 INFO     ___FILE_ONLY___ │                     These components will be installed.                     │
+2024-11-25 09:42:32,250 INFO     ___FILE_ONLY___ 
+
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ ├─────────────────────────────────────────────────────┬────────────┬──────────┤
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ 
+
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ │                         Name                        │  Version   │   Size   │
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ 
+
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ ├─────────────────────────────────────────────────────┼────────────┼──────────┤
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ 
+
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ Google Cloud CLI Core Libraries (Platform Specific)
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ 2024.08.30
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___  < 1 MiB
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ │
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ 
+
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ Minikube (Platform Specific)                       
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___     1.34.0
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ 37.2 MiB
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ │
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ 
+
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ Skaffold (Platform Specific)                       
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___     2.13.1
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ 22.9 MiB
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ │
+2024-11-25 09:42:32,251 INFO     ___FILE_ONLY___ 
+
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___ gcloud Alpha Commands                              
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___ 2024.11.15
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___  < 1 MiB
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___ │
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___ 
+
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___ gcloud Beta Commands                               
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___ 2024.11.15
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___  < 1 MiB
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___ │
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___ 
+
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___ gcloud cli dependencies (Platform Specific)        
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___ 2021.04.16
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___  < 1 MiB
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___ │
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___ 
+
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___ gke-gcloud-auth-plugin (Platform Specific)         
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___      0.5.9
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,252 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___  4.0 MiB
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___ │
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___ 
+
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___ kubectl                                            
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___     1.30.5
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___  < 1 MiB
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___ │
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___ 
+
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___ kubectl (Platform Specific)                        
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___     1.30.6
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___ │ 
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___ 86.1 MiB
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___  
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___ │
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___ 
+
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___ └─────────────────────────────────────────────────────┴────────────┴──────────┘
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___ 
+
+2024-11-25 09:42:32,253 INFO     ___FILE_ONLY___ 
+
+2024-11-25 09:42:32,255 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): dl.google.com:443
+2024-11-25 09:42:32,477 DEBUG    urllib3.connectionpool https://dl.google.com:443 "GET /dl/cloudsdk/channels/rapid/RELEASE_NOTES HTTP/1.1" 200 1314602
+2024-11-25 09:42:32,890 INFO     ___FILE_ONLY___ For the latest full release notes, please visit:
+  https://cloud.google.com/sdk/release_notes
+
+
+2024-11-25 09:42:32,890 INFO     ___FILE_ONLY___ Performing in place update...
+
+
+2024-11-25 09:42:32,895 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-25 09:42:32,895 INFO     ___FILE_ONLY___ ╠═ Downloading: Google Cloud CLI Core Libraries (Platfor... ═╣
+
+2024-11-25 09:42:32,895 INFO     ___FILE_ONLY___ ╚
+2024-11-25 09:42:32,897 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): dl.google.com:443
+2024-11-25 09:42:33,125 DEBUG    urllib3.connectionpool https://dl.google.com:443 "GET /dl/cloudsdk/channels/rapid/components/google-cloud-sdk-core-nix-20240830134514.tar.gz HTTP/1.1" 200 2306
+2024-11-25 09:42:33,127 INFO     ___FILE_ONLY___ ════════════════════════════════════════════════════════════
+2024-11-25 09:42:33,127 INFO     ___FILE_ONLY___ ╝
+
+2024-11-25 09:42:33,139 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-25 09:42:33,140 INFO     ___FILE_ONLY___ ╠═ Downloading: Minikube                                    ═╣
+
+2024-11-25 09:42:33,140 INFO     ___FILE_ONLY___ ╚
+2024-11-25 09:42:33,140 INFO     ___FILE_ONLY___ ════════════════════════════════════════════════════════════
+2024-11-25 09:42:33,140 INFO     ___FILE_ONLY___ ╝
+
+2024-11-25 09:42:33,145 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-25 09:42:33,145 INFO     ___FILE_ONLY___ ╠═ Downloading: Minikube (Platform Specific)                ═╣
+
+2024-11-25 09:42:33,145 INFO     ___FILE_ONLY___ ╚
+2024-11-25 09:42:33,149 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): dl.google.com:443
+2024-11-25 09:42:33,364 DEBUG    urllib3.connectionpool https://dl.google.com:443 "GET /dl/cloudsdk/channels/rapid/components/google-cloud-sdk-minikube-darwin-arm-20240927140238.tar.gz HTTP/1.1" 200 38981244
+2024-11-25 09:42:42,339 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,339 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,340 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,340 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,340 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,340 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,341 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,341 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,341 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,342 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,342 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,342 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,343 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,343 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,343 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,344 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,344 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,344 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,344 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,345 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,345 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,345 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,346 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,346 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,346 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,347 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,347 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,347 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,347 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,348 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,348 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,348 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,349 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,349 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,349 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,350 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,350 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,350 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,351 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,351 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,351 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,352 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,352 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,352 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,353 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,353 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,353 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,353 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,354 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,354 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,354 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,355 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,355 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,355 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,356 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,356 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,356 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,357 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,357 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,357 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:42,357 INFO     ___FILE_ONLY___ ╝
+
+2024-11-25 09:42:42,363 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-25 09:42:42,363 INFO     ___FILE_ONLY___ ╠═ Downloading: Skaffold                                    ═╣
+
+2024-11-25 09:42:42,363 INFO     ___FILE_ONLY___ ╚
+2024-11-25 09:42:42,363 INFO     ___FILE_ONLY___ ════════════════════════════════════════════════════════════
+2024-11-25 09:42:42,363 INFO     ___FILE_ONLY___ ╝
+
+2024-11-25 09:42:42,367 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-25 09:42:42,368 INFO     ___FILE_ONLY___ ╠═ Downloading: Skaffold (Platform Specific)                ═╣
+
+2024-11-25 09:42:42,368 INFO     ___FILE_ONLY___ ╚
+2024-11-25 09:42:42,370 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): dl.google.com:443
+2024-11-25 09:42:42,605 DEBUG    urllib3.connectionpool https://dl.google.com:443 "GET /dl/cloudsdk/channels/rapid/components/google-cloud-sdk-skaffold-darwin-arm-20240806142304.tar.gz HTTP/1.1" 200 24031362
+2024-11-25 09:42:48,884 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,885 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,886 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,887 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,887 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,887 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,887 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,888 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,888 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,888 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,888 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,888 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,889 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,889 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,889 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,889 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,890 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,890 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,890 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,890 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,891 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,891 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,891 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,891 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,891 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,892 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,892 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,892 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,892 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,893 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,893 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,893 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,893 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,893 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,894 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,894 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,894 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,894 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,895 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,895 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,895 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,895 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,896 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,896 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,896 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,896 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,896 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,897 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,897 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,897 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,897 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,898 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,898 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,898 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,898 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,898 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,899 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,899 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,899 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,899 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:48,899 INFO     ___FILE_ONLY___ ╝
+
+2024-11-25 09:42:48,906 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-25 09:42:48,906 INFO     ___FILE_ONLY___ ╠═ Downloading: gcloud Alpha Commands                       ═╣
+
+2024-11-25 09:42:48,906 INFO     ___FILE_ONLY___ ╚
+2024-11-25 09:42:48,908 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): dl.google.com:443
+2024-11-25 09:42:49,118 DEBUG    urllib3.connectionpool https://dl.google.com:443 "GET /dl/cloudsdk/channels/rapid/components/google-cloud-sdk-alpha-20241115154308.tar.gz HTTP/1.1" 200 800
+2024-11-25 09:42:49,120 INFO     ___FILE_ONLY___ ════════════════════════════════════════════════════════════
+2024-11-25 09:42:49,120 INFO     ___FILE_ONLY___ ╝
+
+2024-11-25 09:42:49,133 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-25 09:42:49,134 INFO     ___FILE_ONLY___ ╠═ Downloading: gcloud Beta Commands                        ═╣
+
+2024-11-25 09:42:49,134 INFO     ___FILE_ONLY___ ╚
+2024-11-25 09:42:49,139 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): dl.google.com:443
+2024-11-25 09:42:49,365 DEBUG    urllib3.connectionpool https://dl.google.com:443 "GET /dl/cloudsdk/channels/rapid/components/google-cloud-sdk-beta-20241115154308.tar.gz HTTP/1.1" 200 797
+2024-11-25 09:42:49,367 INFO     ___FILE_ONLY___ ════════════════════════════════════════════════════════════
+2024-11-25 09:42:49,367 INFO     ___FILE_ONLY___ ╝
+
+2024-11-25 09:42:49,378 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-25 09:42:49,379 INFO     ___FILE_ONLY___ ╠═ Downloading: gcloud cli dependencies (Platform Specific) ═╣
+
+2024-11-25 09:42:49,379 INFO     ___FILE_ONLY___ ╚
+2024-11-25 09:42:49,382 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): dl.google.com:443
+2024-11-25 09:42:49,585 DEBUG    urllib3.connectionpool https://dl.google.com:443 "GET /dl/cloudsdk/channels/rapid/components/google-cloud-sdk-gcloud-deps-darwin-x86_64-20210416153011.tar.gz HTTP/1.1" 200 105
+2024-11-25 09:42:49,587 INFO     ___FILE_ONLY___ ════════════════════════════════════════════════════════════
+2024-11-25 09:42:49,587 INFO     ___FILE_ONLY___ ╝
+
+2024-11-25 09:42:49,600 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-25 09:42:49,602 INFO     ___FILE_ONLY___ ╠═ Downloading: gke-gcloud-auth-plugin                      ═╣
+
+2024-11-25 09:42:49,602 INFO     ___FILE_ONLY___ ╚
+2024-11-25 09:42:49,603 INFO     ___FILE_ONLY___ ════════════════════════════════════════════════════════════
+2024-11-25 09:42:49,603 INFO     ___FILE_ONLY___ ╝
+
+2024-11-25 09:42:49,608 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-25 09:42:49,608 INFO     ___FILE_ONLY___ ╠═ Downloading: gke-gcloud-auth-plugin (Platform Specific)  ═╣
+
+2024-11-25 09:42:49,608 INFO     ___FILE_ONLY___ ╚
+2024-11-25 09:42:49,611 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): dl.google.com:443
+2024-11-25 09:42:49,820 DEBUG    urllib3.connectionpool https://dl.google.com:443 "GET /dl/cloudsdk/channels/rapid/components/google-cloud-sdk-gke-gcloud-auth-plugin-darwin-arm-20240628141907.tar.gz HTTP/1.1" 200 4148014
+2024-11-25 09:42:50,725 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,726 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,726 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,727 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,727 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,727 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,727 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,727 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,728 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,728 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,728 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,728 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,729 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,729 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,729 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,730 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,730 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,730 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,730 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,731 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,731 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,731 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,731 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,731 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,731 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,732 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,732 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,732 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,732 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,732 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,733 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,733 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,733 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,733 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,733 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,733 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,733 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,733 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,733 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,733 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,733 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,733 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,733 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,733 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,734 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,734 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,734 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,734 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,734 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,734 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,734 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,734 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,734 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,734 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,734 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,734 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,734 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,734 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,734 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,734 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:42:50,735 INFO     ___FILE_ONLY___ ╝
+
+2024-11-25 09:42:50,740 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-25 09:42:50,740 INFO     ___FILE_ONLY___ ╠═ Downloading: kubectl                                     ═╣
+
+2024-11-25 09:42:50,740 INFO     ___FILE_ONLY___ ╚
+2024-11-25 09:42:50,746 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): dl.google.com:443
+2024-11-25 09:42:50,958 DEBUG    urllib3.connectionpool https://dl.google.com:443 "GET /dl/cloudsdk/channels/rapid/components/google-cloud-sdk-kubectl-20241004144944.tar.gz HTTP/1.1" 200 36206
+2024-11-25 09:42:51,022 INFO     ___FILE_ONLY___ ═══════════════════════════
+2024-11-25 09:42:51,022 INFO     ___FILE_ONLY___ ═══════════════════════════
+2024-11-25 09:42:51,023 INFO     ___FILE_ONLY___ ══════
+2024-11-25 09:42:51,023 INFO     ___FILE_ONLY___ ╝
+
+2024-11-25 09:42:51,035 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-25 09:42:51,035 INFO     ___FILE_ONLY___ ╠═ Downloading: kubectl (Platform Specific)                 ═╣
+
+2024-11-25 09:42:51,035 INFO     ___FILE_ONLY___ ╚
+2024-11-25 09:42:51,038 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): dl.google.com:443
+2024-11-25 09:42:51,251 DEBUG    urllib3.connectionpool https://dl.google.com:443 "GET /dl/cloudsdk/channels/rapid/components/google-cloud-sdk-kubectl-darwin-arm-20241108162203.tar.gz HTTP/1.1" 200 90277960
+2024-11-25 09:43:14,282 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,283 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,284 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,284 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,285 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,286 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,287 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,287 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,288 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,289 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,289 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,290 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,291 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,292 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,292 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,293 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,294 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,294 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,295 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,295 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,296 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,297 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,297 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,298 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,299 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,299 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,300 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,301 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,301 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,302 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,302 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,303 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,304 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,304 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,305 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,306 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,306 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,307 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,308 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,309 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,309 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,310 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,311 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,311 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,312 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,313 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,313 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,314 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,315 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,315 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,316 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,317 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,317 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,318 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,319 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,319 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,320 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,321 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,321 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,322 INFO     ___FILE_ONLY___ ═
+2024-11-25 09:43:14,322 INFO     ___FILE_ONLY___ ╝
+
+2024-11-25 09:43:14,330 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-25 09:43:14,331 INFO     ___FILE_ONLY___ ╠═ Installing: Google Cloud CLI Core Libraries (Platform... ═╣
+
+2024-11-25 09:43:14,331 INFO     ___FILE_ONLY___ ╚
+2024-11-25 09:43:14,334 INFO     ___FILE_ONLY___ ══════════════════════════════
+2024-11-25 09:43:14,334 INFO     ___FILE_ONLY___ ══════════════════════════════
+2024-11-25 09:43:14,334 INFO     ___FILE_ONLY___ ╝
+
+2024-11-25 09:43:14,343 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-25 09:43:14,344 INFO     ___FILE_ONLY___ ╠═ Installing: Minikube                                     ═╣
+
+2024-11-25 09:43:14,344 INFO     ___FILE_ONLY___ ╚
+2024-11-25 09:43:14,349 INFO     ___FILE_ONLY___ ════════════════════════════════════════════════════════════
+2024-11-25 09:43:14,349 INFO     ___FILE_ONLY___ ╝
+
+2024-11-25 09:43:14,353 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-25 09:43:14,353 INFO     ___FILE_ONLY___ ╠═ Installing: Minikube (Platform Specific)                 ═╣
+
+2024-11-25 09:43:14,353 INFO     ___FILE_ONLY___ ╚
+2024-11-25 09:43:14,689 INFO     ___FILE_ONLY___ ════════════════════════════════════════════════════════════
+2024-11-25 09:43:14,689 INFO     ___FILE_ONLY___ ╝
+
+2024-11-25 09:43:14,699 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-25 09:43:14,699 INFO     ___FILE_ONLY___ ╠═ Installing: Skaffold                                     ═╣
+
+2024-11-25 09:43:14,700 INFO     ___FILE_ONLY___ ╚
+2024-11-25 09:43:14,702 INFO     ___FILE_ONLY___ ════════════════════════════════════════════════════════════
+2024-11-25 09:43:14,702 INFO     ___FILE_ONLY___ ╝
+
+2024-11-25 09:43:14,706 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-25 09:43:14,706 INFO     ___FILE_ONLY___ ╠═ Installing: Skaffold (Platform Specific)                 ═╣
+
+2024-11-25 09:43:14,706 INFO     ___FILE_ONLY___ ╚
+2024-11-25 09:43:14,988 INFO     ___FILE_ONLY___ ════════════════════════════════════════════════════════════
+2024-11-25 09:43:14,988 INFO     ___FILE_ONLY___ ╝
+
+2024-11-25 09:43:14,995 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-25 09:43:14,995 INFO     ___FILE_ONLY___ ╠═ Installing: gcloud Alpha Commands                        ═╣
+
+2024-11-25 09:43:14,995 INFO     ___FILE_ONLY___ ╚
+2024-11-25 09:43:14,998 INFO     ___FILE_ONLY___ ════════════════════════════════════════════════════════════
+2024-11-25 09:43:14,998 INFO     ___FILE_ONLY___ ╝
+
+2024-11-25 09:43:15,004 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-25 09:43:15,004 INFO     ___FILE_ONLY___ ╠═ Installing: gcloud Beta Commands                         ═╣
+
+2024-11-25 09:43:15,005 INFO     ___FILE_ONLY___ ╚
+2024-11-25 09:43:15,007 INFO     ___FILE_ONLY___ ════════════════════════════════════════════════════════════
+2024-11-25 09:43:15,007 INFO     ___FILE_ONLY___ ╝
+
+2024-11-25 09:43:15,013 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-25 09:43:15,013 INFO     ___FILE_ONLY___ ╠═ Installing: gcloud cli dependencies (Platform Specific)  ═╣
+
+2024-11-25 09:43:15,013 INFO     ___FILE_ONLY___ ╚
+2024-11-25 09:43:15,014 INFO     ___FILE_ONLY___ ════════════════════════════════════════════════════════════
+2024-11-25 09:43:15,015 INFO     ___FILE_ONLY___ ╝
+
+2024-11-25 09:43:15,021 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-25 09:43:15,021 INFO     ___FILE_ONLY___ ╠═ Installing: gke-gcloud-auth-plugin                       ═╣
+
+2024-11-25 09:43:15,021 INFO     ___FILE_ONLY___ ╚
+2024-11-25 09:43:15,023 INFO     ___FILE_ONLY___ ════════════════════════════════════════════════════════════
+2024-11-25 09:43:15,023 INFO     ___FILE_ONLY___ ╝
+
+2024-11-25 09:43:15,028 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-25 09:43:15,028 INFO     ___FILE_ONLY___ ╠═ Installing: gke-gcloud-auth-plugin (Platform Specific)   ═╣
+
+2024-11-25 09:43:15,028 INFO     ___FILE_ONLY___ ╚
+2024-11-25 09:43:15,077 INFO     ___FILE_ONLY___ ════════════════════════════════════════════════════════════
+2024-11-25 09:43:15,077 INFO     ___FILE_ONLY___ ╝
+
+2024-11-25 09:43:15,085 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-25 09:43:15,085 INFO     ___FILE_ONLY___ ╠═ Installing: kubectl                                      ═╣
+
+2024-11-25 09:43:15,085 INFO     ___FILE_ONLY___ ╚
+2024-11-25 09:43:15,088 INFO     ___FILE_ONLY___ ════════════════════════════════════════════════════════════
+2024-11-25 09:43:15,088 INFO     ___FILE_ONLY___ ╝
+
+2024-11-25 09:43:15,095 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-25 09:43:15,095 INFO     ___FILE_ONLY___ ╠═ Installing: kubectl (Platform Specific)                  ═╣
+
+2024-11-25 09:43:15,095 INFO     ___FILE_ONLY___ ╚
+2024-11-25 09:43:15,631 INFO     ___FILE_ONLY___ ══════════
+2024-11-25 09:43:15,724 INFO     ___FILE_ONLY___ ══════════
+2024-11-25 09:43:15,819 INFO     ___FILE_ONLY___ ══════════
+2024-11-25 09:43:15,915 INFO     ___FILE_ONLY___ ══════════
+2024-11-25 09:43:16,017 INFO     ___FILE_ONLY___ ══════════
+2024-11-25 09:43:16,121 INFO     ___FILE_ONLY___ ══════════
+2024-11-25 09:43:16,121 INFO     ___FILE_ONLY___ ╝
+
+2024-11-25 09:43:16,170 DEBUG    root            Updating notification cache...
+2024-11-25 09:43:16,171 INFO     ___FILE_ONLY___ 
+
+2024-11-25 09:43:16,177 INFO     ___FILE_ONLY___ Performing post processing steps...
+2024-11-25 09:43:16,177 DEBUG    root            Executing command: ['/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/bin/gcloud', 'components', 'post-process', '--no-compile-python']
+2024-11-25 09:43:16,700 DEBUG    ___FILE_ONLY___ 
+2024-11-25 09:43:16,700 DEBUG    ___FILE_ONLY___ 
+2024-11-25 09:43:16,945 INFO     ___FILE_ONLY___ 
+Update done!
+
+
+2024-11-25 09:43:16,947 DEBUG    root            Chosen display Format:none
+2024-11-25 09:43:16,947 INFO     root            Display format: "none"
+2024-11-25 09:43:16,950 DEBUG    root            Executing command: ['curl', '--silent', '-O', 'https://dl.google.com/dl/cloudsdk/channels/rapid/python-3.11.6-macos11.tar.gz']
+2024-11-25 09:43:27,694 DEBUG    root            Executing command: ['tar', '-xf', 'python-3.11.6-macos11.tar.gz']
+2024-11-25 09:43:27,795 DEBUG    root            Executing command: ['sudo', 'installer', '-target', '/', '-pkg', './python-3.11.6-macos11.pkg']

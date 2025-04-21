@@ -1,5 +1,5 @@
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-set --export --prepend PATH "$HOME/.rd/bin"
+set --export --prepend PATH "/Users/wbrunson/.rd/bin"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 set fish_greeting ""
