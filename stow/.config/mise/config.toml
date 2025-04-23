@@ -1,0 +1,17 @@
+[env]
+CURL_SSL_BACKEND = 'secure-transport'
+NODE_EXTRA_CA_CERTS = '/usr/local/etc/openssl/certs/paypal_proxy_cacerts.pem'
+
+[tools]
+fzf = "latest"
+starship = "latest"
+
+[tasks.setup]
+description = "First-time setup for a new machine"
+run = """
+cp -v ./fonts/* ~/Library/Fonts
+"""
+
+[tasks.stow]
+description = "Stow the dotfiles"
+run = "stow -t ~/ stow"
