@@ -42,7 +42,7 @@ eval "$(starship init zsh)"
 # ===============
 # ==    BREW   ==
 # ===============
-# eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 
 # ===============
@@ -82,7 +82,7 @@ antigen apply
 
 autoload -U +X bashcompinit && bashcompinit
 
-export $_Z_EXCLUDE_DIRS=('node_modules', '.git')
+# export $_Z_EXCLUDE_DIRS=('node_modules', '.git')
 
 
 # Configuration to load nvm - node version manager
@@ -92,3 +92,7 @@ export NVM_DIR="$HOME/.nvm"
 # Configuration for node to trust the PayPal Proxy Certificates
 export NODE_EXTRA_CA_CERTS='/usr/local/etc/openssl/certs/paypal_proxy_cacerts.pem'
 export CURL_SSL_BACKEND=secure-transport
+
+### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
+export PATH="/Users/wbrunson/.rd/bin:$PATH"
+### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
