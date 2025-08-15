@@ -1,0 +1,63 @@
+#!/bin/bash
+# ~/workspace/dotfiles/scripts/project-setup
+
+PROJECT_NAME=$(basename "$PWD")
+
+# Function to create a new session
+create_session() {
+    echo "Creating new session '$PROJECT_NAME'..."
+    
+    tmux new-session -d -s "$PROJECT_NAME"
+    tmux rename-window -t "$PROJECT_NAME":1 lazygit
+    tmux send-keys -t "$PROJECT_NAME":lazygit 'lazygit' Enter
+
+    tmux new-window -t "$PROJECT_NAME" -n vim
+    tmux send-keys -t "$PROJECT_NAME":vim 'nvim .' Enter
+
+    tmux new-window -t "$PROJECT_NAME" -n claude
+    tmux send-keys -t "$PROJECT_NAME":claude 'claude-code' Enter
+
+    tmux select-window -t "$PROJECT_NAME":lazygit
+    tmux attach -t "$PROJECT_NAME"
+}
+
+# Function to check if session exists
+session_exists() {
+    tmux has-session -t "$PROJECT_NAME" 2>/dev/null
+}
+
+case "${1:-start}" in
+    "create")
+        if session_exists; then
+            echo "Deleting existing session '$PROJECT_NAME'..."
+            tmux kill-session -t "$PROJECT_NAME"
+        fi
+        create_session
+        ;;
+    
+    "start")
+        if session_exists; then
+            echo "Session '$PROJECT_NAME' already exists. Attaching..."
+            tmux attach -t "$PROJECT_NAME"
+        else
+            create_session
+        fi
+        ;;
+    
+    "delete")
+        if session_exists; then
+            echo "Deleting session '$PROJECT_NAME'..."
+            tmux kill-session -t "$PROJECT_NAME"
+        else
+            echo "No session named '$PROJECT_NAME' found."
+        fi
+        ;;
+    
+    *)
+        echo "Usage: project-setup [start|create|delete]"
+        echo "  start  - Create session if none exists, otherwise attach (default)"
+        echo "  create - Delete existing session and create new one"
+        echo "  delete - Delete session if it exists"
+        exit 1
+        ;;
+esac
