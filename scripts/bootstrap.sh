@@ -1,4 +1,4 @@
-// setup brew
+// Install Brew and Packages
 which -s brew
 if [[ $? != 0 ]] ; then
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -25,3 +25,7 @@ brew install z
 // set up fish shell
 echo /opt/homebrew/bin/fish | sudo tee -a /etc/shells
 chsh -s /opt/homebrew/bin/fish
+
+fisher install jethrokuan/z
+fisher install patrickf1/fzf.fish
+
