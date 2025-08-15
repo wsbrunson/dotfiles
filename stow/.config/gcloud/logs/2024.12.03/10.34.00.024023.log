@@ -1,0 +1,647 @@
+2024-12-03 10:34:00,024 DEBUG    root            Loaded Command Group: ['gcloud', 'meta']
+2024-12-03 10:34:00,039 DEBUG    root            Loaded Command Group: ['gcloud', 'meta', 'list_commands']
+2024-12-03 10:34:00,040 DEBUG    root            Running [gcloud.meta.list-commands] with arguments: []
+2024-12-03 10:34:00,040 DEBUG    root            Loaded Command Group: ['gcloud', 'services']
+2024-12-03 10:34:00,041 DEBUG    root            No implementation for release track [GA] for element: [/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/surface/services/policies]
+2024-12-03 10:34:00,042 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'peered_dns_domains']
+2024-12-03 10:34:00,090 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'peered-dns-domains', 'list']
+2024-12-03 10:34:00,090 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'peered-dns-domains', 'delete']
+2024-12-03 10:34:00,091 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'peered-dns-domains', 'create']
+2024-12-03 10:34:00,111 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'enable']
+2024-12-03 10:34:00,112 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'disable']
+2024-12-03 10:34:00,113 DEBUG    root            No implementation for release track [GA] for element: [/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/surface/services/identity]
+2024-12-03 10:34:00,113 DEBUG    root            No implementation for release track [GA] for element: [/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/surface/services/groups]
+2024-12-03 10:34:00,113 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'api_keys']
+2024-12-03 10:34:00,114 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'api-keys', 'describe']
+2024-12-03 10:34:00,129 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'api-keys', 'update']
+2024-12-03 10:34:00,131 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'api-keys', 'create']
+2024-12-03 10:34:00,132 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'api-keys', 'undelete']
+2024-12-03 10:34:00,133 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'api-keys', 'lookup']
+2024-12-03 10:34:00,134 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'api-keys', 'delete']
+2024-12-03 10:34:00,135 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'api-keys', 'list']
+2024-12-03 10:34:00,136 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'api-keys', 'get_key_string']
+2024-12-03 10:34:00,137 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'vpc_peerings']
+2024-12-03 10:34:00,138 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'vpc-peerings', 'get_vpc_service_controls']
+2024-12-03 10:34:00,138 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'vpc-peerings', 'connect']
+2024-12-03 10:34:00,139 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'vpc-peerings', 'enable_vpc_service_controls']
+2024-12-03 10:34:00,139 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'vpc-peerings', 'update']
+2024-12-03 10:34:00,140 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'vpc-peerings', 'disable_vpc_service_controls']
+2024-12-03 10:34:00,141 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'vpc-peerings', 'delete']
+2024-12-03 10:34:00,142 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'vpc-peerings', 'list']
+2024-12-03 10:34:00,142 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'vpc-peerings', 'operations']
+2024-12-03 10:34:00,143 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'vpc-peerings', 'operations', 'describe']
+2024-12-03 10:34:00,144 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'vpc-peerings', 'operations', 'wait']
+2024-12-03 10:34:00,144 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'list']
+2024-12-03 10:34:00,145 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'operations']
+2024-12-03 10:34:00,146 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'operations', 'describe']
+2024-12-03 10:34:00,147 DEBUG    root            Loaded Command Group: ['gcloud', 'services', 'operations', 'wait']
+2024-12-03 10:34:00,147 DEBUG    root            No implementation for release track [GA] for element: [/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/surface/services/quota]
+2024-12-03 10:34:00,147 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services']
+2024-12-03 10:34:00,148 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'policies']
+2024-12-03 10:34:00,149 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'policies', 'add_enable_rules']
+2024-12-03 10:34:00,150 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'policies', 'remove_enable_rules']
+2024-12-03 10:34:00,150 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'policies', 'test_enabled']
+2024-12-03 10:34:00,151 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'policies', 'get_effective']
+2024-12-03 10:34:00,151 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'policies', 'get']
+2024-12-03 10:34:00,152 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'peered_dns_domains']
+2024-12-03 10:34:00,152 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'peered-dns-domains', 'list']
+2024-12-03 10:34:00,153 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'peered-dns-domains', 'delete']
+2024-12-03 10:34:00,153 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'peered-dns-domains', 'create']
+2024-12-03 10:34:00,153 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'enable']
+2024-12-03 10:34:00,154 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'disable']
+2024-12-03 10:34:00,154 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'identity']
+2024-12-03 10:34:00,155 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'identity', 'create']
+2024-12-03 10:34:00,156 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'groups']
+2024-12-03 10:34:00,156 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'groups', 'list_members']
+2024-12-03 10:34:00,157 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'groups', 'list_descendant_services']
+2024-12-03 10:34:00,158 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'groups', 'list_ancestor_groups']
+2024-12-03 10:34:00,158 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'api_keys']
+2024-12-03 10:34:00,159 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'api-keys', 'describe']
+2024-12-03 10:34:00,160 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'api-keys', 'update']
+2024-12-03 10:34:00,161 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'api-keys', 'create']
+2024-12-03 10:34:00,161 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'api-keys', 'undelete']
+2024-12-03 10:34:00,162 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'api-keys', 'lookup']
+2024-12-03 10:34:00,163 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'api-keys', 'delete']
+2024-12-03 10:34:00,164 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'api-keys', 'list']
+2024-12-03 10:34:00,164 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'api-keys', 'get_key_string']
+2024-12-03 10:34:00,165 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'vpc_peerings']
+2024-12-03 10:34:00,166 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'vpc-peerings', 'get_vpc_service_controls']
+2024-12-03 10:34:00,166 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'vpc-peerings', 'connect']
+2024-12-03 10:34:00,166 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'vpc-peerings', 'enable_vpc_service_controls']
+2024-12-03 10:34:00,167 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'vpc-peerings', 'update']
+2024-12-03 10:34:00,168 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'vpc-peerings', 'disable_vpc_service_controls']
+2024-12-03 10:34:00,168 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'vpc-peerings', 'delete']
+2024-12-03 10:34:00,168 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'vpc-peerings', 'list']
+2024-12-03 10:34:00,169 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'vpc-peerings', 'operations']
+2024-12-03 10:34:00,169 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'vpc-peerings', 'operations', 'describe']
+2024-12-03 10:34:00,169 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'vpc-peerings', 'operations', 'wait']
+2024-12-03 10:34:00,170 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'list']
+2024-12-03 10:34:00,170 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'operations']
+2024-12-03 10:34:00,171 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'operations', 'describe']
+2024-12-03 10:34:00,171 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'operations', 'wait']
+2024-12-03 10:34:00,171 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'quota']
+2024-12-03 10:34:00,172 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'quota', 'list']
+2024-12-03 10:34:00,173 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'quota', 'update']
+2024-12-03 10:34:00,173 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'quota', 'delete']
+2024-12-03 10:34:00,174 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'services', 'quota', 'create']
+2024-12-03 10:34:00,175 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'terraform']
+2024-12-03 10:34:00,206 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'terraform', 'vet']
+2024-12-03 10:34:00,207 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'terraform', 'recommendations']
+2024-12-03 10:34:00,211 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'terraform', 'recommendations', 'list']
+2024-12-03 10:34:00,212 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'model_armor']
+2024-12-03 10:34:00,213 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'model-armor', 'templates']
+2024-12-03 10:34:00,240 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'model-armor', 'templates', 'describe']
+2024-12-03 10:34:00,265 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'model-armor', 'templates', 'sanitize_user_prompt']
+2024-12-03 10:34:00,274 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'model-armor', 'templates', 'delete']
+2024-12-03 10:34:00,296 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'model-armor', 'templates', 'update']
+2024-12-03 10:34:00,304 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'model-armor', 'templates', 'list']
+2024-12-03 10:34:00,324 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'model-armor', 'templates', 'create']
+2024-12-03 10:34:00,348 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'model-armor', 'templates', 'sanitize_model_response']
+2024-12-03 10:34:00,352 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'access_approval']
+2024-12-03 10:34:00,353 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'access-approval', 'requests']
+2024-12-03 10:34:00,364 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'access-approval', 'requests', 'dismiss']
+2024-12-03 10:34:00,367 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'access-approval', 'requests', 'list']
+2024-12-03 10:34:00,367 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'access-approval', 'requests', 'approve']
+2024-12-03 10:34:00,368 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'access-approval', 'requests', 'invalidate']
+2024-12-03 10:34:00,368 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'access-approval', 'requests', 'get']
+2024-12-03 10:34:00,369 DEBUG    root            No implementation for release track [ALPHA] for element: [/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/surface/access_approval/service_account]
+2024-12-03 10:34:00,369 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'access-approval', 'settings']
+2024-12-03 10:34:00,371 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'access-approval', 'settings', 'update']
+2024-12-03 10:34:00,372 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'access-approval', 'settings', 'get']
+2024-12-03 10:34:00,373 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'access-approval', 'settings', 'delete']
+2024-12-03 10:34:00,373 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media']
+2024-12-03 10:34:00,374 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset']
+2024-12-03 10:34:00,375 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset', 'annotations']
+2024-12-03 10:34:00,389 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset', 'annotations', 'delete']
+2024-12-03 10:34:00,404 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset', 'annotations', 'create']
+2024-12-03 10:34:00,414 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset', 'annotations', 'update']
+2024-12-03 10:34:00,423 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset', 'annotations', 'list']
+2024-12-03 10:34:00,431 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset', 'annotations', 'get']
+2024-12-03 10:34:00,438 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset', 'transformers']
+2024-12-03 10:34:00,444 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset', 'transformers', 'create']
+2024-12-03 10:34:00,448 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset', 'asset_types']
+2024-12-03 10:34:00,453 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset', 'asset-types', 'delete']
+2024-12-03 10:34:00,660 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset', 'asset-types', 'create']
+2024-12-03 10:34:00,683 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset', 'asset-types', 'update']
+2024-12-03 10:34:00,700 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset', 'asset-types', 'list']
+2024-12-03 10:34:00,716 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset', 'asset-types', 'get']
+2024-12-03 10:34:00,726 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset', 'complex_types']
+2024-12-03 10:34:00,745 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset', 'complex-types', 'delete']
+2024-12-03 10:34:00,761 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset', 'complex-types', 'create']
+2024-12-03 10:34:00,779 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset', 'complex-types', 'update']
+2024-12-03 10:34:00,794 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset', 'complex-types', 'list']
+2024-12-03 10:34:00,808 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset', 'complex-types', 'get']
+2024-12-03 10:34:00,818 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset', 'assets']
+2024-12-03 10:34:00,842 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset', 'assets', 'delete']
+2024-12-03 10:34:00,878 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset', 'assets', 'create']
+2024-12-03 10:34:00,895 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset', 'assets', 'update']
+2024-12-03 10:34:00,910 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset', 'assets', 'list']
+2024-12-03 10:34:00,925 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'media', 'asset', 'assets', 'get']
+2024-12-03 10:34:00,937 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'datastore']
+2024-12-03 10:34:00,980 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'datastore', 'export']
+2024-12-03 10:34:00,985 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'datastore', 'import']
+2024-12-03 10:34:00,991 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'datastore', 'indexes']
+2024-12-03 10:34:01,033 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'datastore', 'indexes', 'describe']
+2024-12-03 10:34:01,719 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'datastore', 'indexes', 'cleanup']
+2024-12-03 10:34:01,732 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'datastore', 'indexes', 'list']
+2024-12-03 10:34:01,739 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'datastore', 'indexes', 'create']
+2024-12-03 10:34:01,742 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'datastore', 'operations']
+2024-12-03 10:34:01,745 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'datastore', 'operations', 'cancel']
+2024-12-03 10:34:01,749 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'datastore', 'operations', 'list']
+2024-12-03 10:34:01,752 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'datastore', 'operations', 'describe']
+2024-12-03 10:34:01,754 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'datastore', 'operations', 'delete']
+2024-12-03 10:34:01,761 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'orglifecycle']
+2024-12-03 10:34:01,768 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'orglifecycle', 'operations']
+2024-12-03 10:34:01,810 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'orglifecycle', 'operations', 'cancel']
+2024-12-03 10:34:01,834 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'orglifecycle', 'operations', 'describe']
+2024-12-03 10:34:01,857 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'orglifecycle', 'operations', 'delete']
+2024-12-03 10:34:01,876 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'orglifecycle', 'operations', 'wait']
+2024-12-03 10:34:01,893 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'orglifecycle', 'operations', 'list']
+2024-12-03 10:34:01,900 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'orglifecycle', 'managed_organizations']
+2024-12-03 10:34:01,918 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'orglifecycle', 'managed-organizations', 'describe']
+2024-12-03 10:34:01,936 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'orglifecycle', 'managed-organizations', 'delete']
+2024-12-03 10:34:01,954 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'orglifecycle', 'managed-organizations', 'undelete']
+2024-12-03 10:34:01,974 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'orglifecycle', 'managed-organizations', 'update']
+2024-12-03 10:34:01,993 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'orglifecycle', 'managed-organizations', 'list']
+2024-12-03 10:34:02,014 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'orglifecycle', 'managed-organizations', 'create']
+2024-12-03 10:34:02,023 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'projects']
+2024-12-03 10:34:02,033 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'projects', 'describe']
+2024-12-03 10:34:02,067 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'projects', 'get_ancestors']
+2024-12-03 10:34:02,081 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'projects', 'get_iam_policy']
+2024-12-03 10:34:02,098 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'projects', 'move']
+2024-12-03 10:34:02,103 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'projects', 'update']
+2024-12-03 10:34:02,115 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'projects', 'add_iam_policy_binding']
+2024-12-03 10:34:02,126 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'projects', 'create']
+2024-12-03 10:34:02,132 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'projects', 'undelete']
+2024-12-03 10:34:02,143 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'projects', 'delete']
+2024-12-03 10:34:02,153 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'projects', 'remove_iam_policy_binding']
+2024-12-03 10:34:02,159 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'projects', 'search']
+2024-12-03 10:34:02,167 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'projects', 'get_ancestors_iam_policy']
+2024-12-03 10:34:02,179 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'projects', 'list']
+2024-12-03 10:34:02,206 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'projects', 'set_iam_policy']
+2024-12-03 10:34:02,215 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'dlp']
+2024-12-03 10:34:02,222 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'dlp', 'jobs']
+2024-12-03 10:34:02,288 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'dlp', 'jobs', 'cancel']
+2024-12-03 10:34:02,311 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'dlp', 'jobs', 'list']
+2024-12-03 10:34:02,326 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'dlp', 'jobs', 'describe']
+2024-12-03 10:34:02,342 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'dlp', 'jobs', 'delete']
+2024-12-03 10:34:02,355 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'dlp', 'images']
+2024-12-03 10:34:02,392 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'dlp', 'images', 'inspect']
+2024-12-03 10:34:02,410 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'dlp', 'images', 'redact']
+2024-12-03 10:34:02,421 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'dlp', 'text']
+2024-12-03 10:34:02,437 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'dlp', 'text', 'inspect']
+2024-12-03 10:34:02,458 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'dlp', 'text', 'redact']
+2024-12-03 10:34:02,469 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'dlp', 'datasources']
+2024-12-03 10:34:02,473 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'dlp', 'datasources', 'gcs']
+2024-12-03 10:34:02,487 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'dlp', 'datasources', 'gcs', 'inspect']
+2024-12-03 10:34:02,496 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'dlp', 'datasources', 'datastore']
+2024-12-03 10:34:02,509 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'dlp', 'datasources', 'datastore', 'inspect']
+2024-12-03 10:34:02,518 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'dlp', 'datasources', 'bigquery']
+2024-12-03 10:34:02,536 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'dlp', 'datasources', 'bigquery', 'analyze']
+2024-12-03 10:34:02,554 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'dlp', 'datasources', 'bigquery', 'inspect']
+2024-12-03 10:34:02,564 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'dlp', 'job_triggers']
+2024-12-03 10:34:02,574 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'dlp', 'job-triggers', 'describe']
+2024-12-03 10:34:02,592 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'dlp', 'job-triggers', 'list']
+2024-12-03 10:34:02,605 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'dlp', 'job-triggers', 'delete']
+2024-12-03 10:34:02,629 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'dlp', 'job-triggers', 'create']
+2024-12-03 10:34:02,641 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'pam']
+2024-12-03 10:34:02,649 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'pam', 'entitlements']
+2024-12-03 10:34:02,707 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'pam', 'entitlements', 'describe']
+2024-12-03 10:34:02,757 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'pam', 'entitlements', 'export']
+2024-12-03 10:34:02,797 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'pam', 'entitlements', 'delete']
+2024-12-03 10:34:02,829 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'pam', 'entitlements', 'search']
+2024-12-03 10:34:02,851 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'pam', 'entitlements', 'update']
+2024-12-03 10:34:02,879 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'pam', 'entitlements', 'list']
+2024-12-03 10:34:02,908 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'pam', 'entitlements', 'create']
+2024-12-03 10:34:02,928 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'pam', 'grants']
+2024-12-03 10:34:02,936 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'pam', 'grants', 'describe']
+2024-12-03 10:34:02,965 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'pam', 'grants', 'revoke']
+2024-12-03 10:34:02,993 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'pam', 'grants', 'list']
+2024-12-03 10:34:03,022 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'pam', 'grants', 'search']
+2024-12-03 10:34:03,044 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'pam', 'grants', 'create']
+2024-12-03 10:34:03,064 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'pam', 'grants', 'approve']
+2024-12-03 10:34:03,108 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'pam', 'grants', 'deny']
+2024-12-03 10:34:03,133 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'pam', 'operations']
+2024-12-03 10:34:03,144 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'pam', 'operations', 'describe']
+2024-12-03 10:34:03,170 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'pam', 'operations', 'wait']
+2024-12-03 10:34:03,197 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'pam', 'operations', 'list']
+2024-12-03 10:34:03,220 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'pam', 'operations', 'delete']
+2024-12-03 10:34:03,247 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'pam', 'check_onboarding_status']
+2024-12-03 10:34:03,266 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle_database']
+2024-12-03 10:34:03,271 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'autonomous_database_backups']
+2024-12-03 10:34:03,276 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'autonomous-database-backups', 'list']
+2024-12-03 10:34:03,300 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'cloud_exadata_infrastructures']
+2024-12-03 10:34:03,386 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'cloud-exadata-infrastructures', 'describe']
+2024-12-03 10:34:03,417 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'cloud-exadata-infrastructures', 'delete']
+2024-12-03 10:34:03,433 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'cloud-exadata-infrastructures', 'db_servers']
+2024-12-03 10:34:03,453 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'cloud-exadata-infrastructures', 'db-servers', 'list']
+2024-12-03 10:34:03,480 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'cloud-exadata-infrastructures', 'list']
+2024-12-03 10:34:03,554 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'cloud-exadata-infrastructures', 'create']
+2024-12-03 10:34:03,570 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'autonomous_database_character_sets']
+2024-12-03 10:34:03,589 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'autonomous-database-character-sets', 'list']
+2024-12-03 10:34:03,602 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'db_system_shapes']
+2024-12-03 10:34:03,624 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'db-system-shapes', 'list']
+2024-12-03 10:34:03,639 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'entitlements']
+2024-12-03 10:34:03,650 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'entitlements', 'describe']
+2024-12-03 10:34:03,677 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'entitlements', 'list']
+2024-12-03 10:34:03,690 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'cloud_vm_clusters']
+2024-12-03 10:34:03,706 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'cloud-vm-clusters', 'describe']
+2024-12-03 10:34:03,730 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'cloud-vm-clusters', 'delete']
+2024-12-03 10:34:03,739 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'cloud-vm-clusters', 'db_nodes']
+2024-12-03 10:34:03,755 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'cloud-vm-clusters', 'db-nodes', 'list']
+2024-12-03 10:34:03,773 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'cloud-vm-clusters', 'list']
+2024-12-03 10:34:03,842 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'cloud-vm-clusters', 'create']
+2024-12-03 10:34:03,864 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'gi_versions']
+2024-12-03 10:34:03,887 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'gi-versions', 'list']
+2024-12-03 10:34:03,898 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'autonomous_databases']
+2024-12-03 10:34:03,911 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'autonomous-databases', 'describe']
+2024-12-03 10:34:03,933 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'autonomous-databases', 'restore']
+2024-12-03 10:34:03,962 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'autonomous-databases', 'generate_wallet']
+2024-12-03 10:34:03,985 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'autonomous-databases', 'delete']
+2024-12-03 10:34:04,008 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'autonomous-databases', 'list']
+2024-12-03 10:34:04,084 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'autonomous-databases', 'create']
+2024-12-03 10:34:04,102 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'operations']
+2024-12-03 10:34:04,122 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'operations', 'cancel']
+2024-12-03 10:34:04,140 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'operations', 'describe']
+2024-12-03 10:34:04,158 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'operations', 'delete']
+2024-12-03 10:34:04,179 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'operations', 'wait']
+2024-12-03 10:34:04,200 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'operations', 'list']
+2024-12-03 10:34:04,212 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'autonomous_db_versions']
+2024-12-03 10:34:04,231 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'oracle-database', 'autonomous-db-versions', 'list']
+2024-12-03 10:34:04,239 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'source_manager']
+2024-12-03 10:34:04,245 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'source-manager', 'operations']
+2024-12-03 10:34:04,288 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'source-manager', 'operations', 'describe']
+2024-12-03 10:34:04,302 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'source-manager', 'operations', 'list']
+2024-12-03 10:34:04,310 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'source-manager', 'repos']
+2024-12-03 10:34:04,319 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'source-manager', 'repos', 'describe']
+2024-12-03 10:34:04,333 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'source-manager', 'repos', 'get_iam_policy']
+2024-12-03 10:34:04,347 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'source-manager', 'repos', 'add_iam_policy_binding']
+2024-12-03 10:34:04,377 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'source-manager', 'repos', 'create']
+2024-12-03 10:34:04,383 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'source-manager', 'repos', 'delete']
+2024-12-03 10:34:04,393 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'source-manager', 'repos', 'remove_iam_policy_binding']
+2024-12-03 10:34:04,404 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'source-manager', 'repos', 'list']
+2024-12-03 10:34:04,414 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'source-manager', 'repos', 'set_iam_policy']
+2024-12-03 10:34:04,424 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'source-manager', 'instances']
+2024-12-03 10:34:04,432 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'source-manager', 'instances', 'describe']
+2024-12-03 10:34:04,447 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'source-manager', 'instances', 'get_iam_policy']
+2024-12-03 10:34:04,460 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'source-manager', 'instances', 'add_iam_policy_binding']
+2024-12-03 10:34:04,473 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'source-manager', 'instances', 'create']
+2024-12-03 10:34:04,477 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'source-manager', 'instances', 'delete']
+2024-12-03 10:34:04,485 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'source-manager', 'instances', 'remove_iam_policy_binding']
+2024-12-03 10:34:04,498 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'source-manager', 'instances', 'list']
+2024-12-03 10:34:04,509 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'source-manager', 'instances', 'set_iam_policy']
+2024-12-03 10:34:04,518 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'source-manager', 'locations']
+2024-12-03 10:34:04,526 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'source-manager', 'locations', 'list']
+2024-12-03 10:34:04,533 DEBUG    root            No implementation for release track [ALPHA] for element: [/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/surface/transcoder]
+2024-12-03 10:34:04,537 DEBUG    root            No implementation for release track [ALPHA] for element: [/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/surface/workbench]
+2024-12-03 10:34:04,541 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'remote_build_execution']
+2024-12-03 10:34:04,546 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'remote-build-execution', 'instances']
+2024-12-03 10:34:04,592 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'remote-build-execution', 'instances', 'describe']
+2024-12-03 10:34:04,606 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'remote-build-execution', 'instances', 'delete_binding']
+2024-12-03 10:34:04,619 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'remote-build-execution', 'instances', 'create_binding']
+2024-12-03 10:34:04,670 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'remote-build-execution', 'instances', 'create']
+2024-12-03 10:34:04,689 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'remote-build-execution', 'instances', 'delete_drained_zones']
+2024-12-03 10:34:04,700 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'remote-build-execution', 'instances', 'delete_feature_policy']
+2024-12-03 10:34:04,712 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'remote-build-execution', 'instances', 'set_drained_zones']
+2024-12-03 10:34:04,725 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'remote-build-execution', 'instances', 'delete']
+2024-12-03 10:34:04,735 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'remote-build-execution', 'instances', 'list']
+2024-12-03 10:34:04,780 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'remote-build-execution', 'instances', 'set_feature_policy']
+2024-12-03 10:34:04,789 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'remote-build-execution', 'worker_pools']
+2024-12-03 10:34:04,800 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'remote-build-execution', 'worker-pools', 'describe']
+2024-12-03 10:34:04,813 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'remote-build-execution', 'worker-pools', 'delete']
+2024-12-03 10:34:04,904 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'remote-build-execution', 'worker-pools', 'update']
+2024-12-03 10:34:04,916 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'remote-build-execution', 'worker-pools', 'list']
+2024-12-03 10:34:04,958 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'remote-build-execution', 'worker-pools', 'create']
+2024-12-03 10:34:04,968 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'looker']
+2024-12-03 10:34:04,974 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'looker', 'backups']
+2024-12-03 10:34:05,020 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'looker', 'backups', 'describe']
+2024-12-03 10:34:05,037 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'looker', 'backups', 'list']
+2024-12-03 10:34:05,050 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'looker', 'backups', 'delete']
+2024-12-03 10:34:05,080 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'looker', 'backups', 'create']
+2024-12-03 10:34:05,085 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'looker', 'instances']
+2024-12-03 10:34:05,095 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'looker', 'instances', 'describe']
+2024-12-03 10:34:05,109 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'looker', 'instances', 'restart']
+2024-12-03 10:34:05,129 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'looker', 'instances', 'restore']
+2024-12-03 10:34:05,179 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'looker', 'instances', 'update']
+2024-12-03 10:34:05,213 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'looker', 'instances', 'create']
+2024-12-03 10:34:05,225 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'looker', 'instances', 'list']
+2024-12-03 10:34:05,240 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'looker', 'instances', 'export']
+2024-12-03 10:34:05,249 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'looker', 'instances', 'delete']
+2024-12-03 10:34:05,258 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'looker', 'instances', 'import']
+2024-12-03 10:34:05,262 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'looker', 'operations']
+2024-12-03 10:34:05,277 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'looker', 'operations', 'cancel']
+2024-12-03 10:34:05,293 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'looker', 'operations', 'list']
+2024-12-03 10:34:05,305 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'looker', 'operations', 'describe']
+2024-12-03 10:34:05,315 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'looker', 'regions']
+2024-12-03 10:34:05,324 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'looker', 'regions', 'list']
+2024-12-03 10:34:05,330 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'policy_intelligence']
+2024-12-03 10:34:05,348 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'policy-intelligence', 'query_activity']
+2024-12-03 10:34:05,353 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'policy-intelligence', 'troubleshoot_policy']
+2024-12-03 10:34:05,366 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'policy-intelligence', 'troubleshoot-policy', 'iam']
+2024-12-03 10:34:05,371 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'policy-intelligence', 'simulate']
+2024-12-03 10:34:05,418 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'policy-intelligence', 'simulate', 'orgpolicy']
+2024-12-03 10:34:05,424 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'config']
+2024-12-03 10:34:05,431 DEBUG    root            No implementation for release track [ALPHA] for element: [/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/surface/config/virtualenv]
+2024-12-03 10:34:05,435 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'config', 'configurations']
+2024-12-03 10:34:05,449 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'config', 'configurations', 'describe']
+2024-12-03 10:34:05,454 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'config', 'configurations', 'rename']
+2024-12-03 10:34:05,470 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'config', 'configurations', 'delete']
+2024-12-03 10:34:05,642 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'config', 'configurations', 'activate']
+2024-12-03 10:34:05,647 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'config', 'configurations', 'list']
+2024-12-03 10:34:05,660 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'config', 'configurations', 'create']
+2024-12-03 10:34:05,668 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'config', 'get_value']
+2024-12-03 10:34:05,674 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'config', 'set']
+2024-12-03 10:34:05,677 DEBUG    root            No implementation for release track [ALPHA] for element: [/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/surface/config/universe_descriptors]
+2024-12-03 10:34:05,679 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'config', 'get']
+2024-12-03 10:34:05,686 DEBUG    root            No implementation for release track [ALPHA] for element: [/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/surface/config/config_helper]
+2024-12-03 10:34:05,688 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'config', 'unset']
+2024-12-03 10:34:05,691 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'config', 'list']
+2024-12-03 10:34:05,695 DEBUG    root            No implementation for release track [ALPHA] for element: [/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/surface/colab]
+2024-12-03 10:34:05,699 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'network_management']
+2024-12-03 10:34:05,706 DEBUG    root            No implementation for release track [ALPHA] for element: [/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/surface/network_management/vpc_flow_logs_configs]
+2024-12-03 10:34:05,709 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'network-management', 'simulation']
+2024-12-03 10:34:05,758 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'network-management', 'simulation', 'describe']
+2024-12-03 10:34:05,777 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'network-management', 'simulation', 'delete']
+2024-12-03 10:34:05,789 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'network-management', 'simulation', 'update']
+2024-12-03 10:34:05,798 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'network-management', 'simulation', 'list']
+2024-12-03 10:34:05,808 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'network-management', 'simulation', 'create']
+2024-12-03 10:34:05,811 DEBUG    root            No implementation for release track [ALPHA] for element: [/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/surface/network_management/operations]
+2024-12-03 10:34:05,812 DEBUG    root            No implementation for release track [ALPHA] for element: [/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/surface/network_management/connectivity_tests]
+2024-12-03 10:34:05,816 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run']
+2024-12-03 10:34:05,966 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'revisions']
+2024-12-03 10:34:06,025 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'revisions', 'describe']
+2024-12-03 10:34:06,030 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'revisions', 'list']
+2024-12-03 10:34:06,032 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'revisions', 'logs']
+2024-12-03 10:34:06,043 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'revisions', 'logs', 'read']
+2024-12-03 10:34:06,047 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'revisions', 'logs', 'tail']
+2024-12-03 10:34:06,050 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'revisions', 'delete']
+2024-12-03 10:34:06,056 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'integrations']
+2024-12-03 10:34:06,094 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'integrations', 'describe']
+2024-12-03 10:34:06,096 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'integrations', 'delete']
+2024-12-03 10:34:06,097 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'integrations', 'types']
+2024-12-03 10:34:06,100 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'integrations', 'types', 'describe']
+2024-12-03 10:34:06,102 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'integrations', 'types', 'list']
+2024-12-03 10:34:06,103 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'integrations', 'update']
+2024-12-03 10:34:06,105 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'integrations', 'list']
+2024-12-03 10:34:06,106 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'integrations', 'create']
+2024-12-03 10:34:06,107 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'integrations', 'deploy']
+2024-12-03 10:34:06,109 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'workers']
+2024-12-03 10:34:06,110 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'workers', 'revisions']
+2024-12-03 10:34:06,112 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'workers', 'revisions', 'describe']
+2024-12-03 10:34:06,114 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'workers', 'revisions', 'list']
+2024-12-03 10:34:06,117 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'workers', 'revisions', 'delete']
+2024-12-03 10:34:06,123 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'workers', 'describe']
+2024-12-03 10:34:06,126 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'workers', 'update_instance_split']
+2024-12-03 10:34:06,128 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'workers', 'delete']
+2024-12-03 10:34:06,130 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'workers', 'update']
+2024-12-03 10:34:06,134 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'workers', 'list']
+2024-12-03 10:34:06,149 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'workers', 'deploy']
+2024-12-03 10:34:06,155 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'configurations']
+2024-12-03 10:34:06,158 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'configurations', 'describe']
+2024-12-03 10:34:06,160 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'configurations', 'list']
+2024-12-03 10:34:06,162 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'services']
+2024-12-03 10:34:06,168 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'services', 'describe']
+2024-12-03 10:34:06,187 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'services', 'get_iam_policy']
+2024-12-03 10:34:06,198 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'services', 'replace']
+2024-12-03 10:34:06,200 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'services', 'update_traffic']
+2024-12-03 10:34:06,208 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'services', 'update']
+2024-12-03 10:34:06,222 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'services', 'add_iam_policy_binding']
+2024-12-03 10:34:06,231 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'services', 'logs']
+2024-12-03 10:34:06,235 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'services', 'logs', 'read']
+2024-12-03 10:34:06,238 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'services', 'logs', 'tail']
+2024-12-03 10:34:06,243 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'services', 'proxy']
+2024-12-03 10:34:06,246 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'services', 'delete']
+2024-12-03 10:34:06,256 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'services', 'remove_iam_policy_binding']
+2024-12-03 10:34:06,265 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'services', 'list']
+2024-12-03 10:34:06,275 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'services', 'set_iam_policy']
+2024-12-03 10:34:06,285 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'deploy']
+2024-12-03 10:34:06,292 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs']
+2024-12-03 10:34:06,298 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs', 'describe']
+2024-12-03 10:34:06,306 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs', 'get_iam_policy']
+2024-12-03 10:34:06,315 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs', 'replace']
+2024-12-03 10:34:06,318 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs', 'update']
+2024-12-03 10:34:06,328 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs', 'add_iam_policy_binding']
+2024-12-03 10:34:06,346 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs', 'execute']
+2024-12-03 10:34:06,349 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs', 'logs']
+2024-12-03 10:34:06,355 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs', 'logs', 'read']
+2024-12-03 10:34:06,359 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs', 'logs', 'tail']
+2024-12-03 10:34:06,364 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs', 'create']
+2024-12-03 10:34:06,369 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs', 'deploy']
+2024-12-03 10:34:06,376 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs', 'list']
+2024-12-03 10:34:06,378 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs', 'delete']
+2024-12-03 10:34:06,428 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs', 'remove_iam_policy_binding']
+2024-12-03 10:34:06,468 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs', 'executions']
+2024-12-03 10:34:06,476 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs', 'executions', 'cancel']
+2024-12-03 10:34:06,478 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs', 'executions', 'tasks']
+2024-12-03 10:34:06,481 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs', 'executions', 'tasks', 'describe']
+2024-12-03 10:34:06,483 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs', 'executions', 'tasks', 'list']
+2024-12-03 10:34:06,487 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs', 'executions', 'describe']
+2024-12-03 10:34:06,491 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs', 'executions', 'delete']
+2024-12-03 10:34:06,496 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs', 'executions', 'list']
+2024-12-03 10:34:06,500 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs', 'executions', 'logs']
+2024-12-03 10:34:06,508 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs', 'executions', 'logs', 'read']
+2024-12-03 10:34:06,511 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs', 'executions', 'logs', 'tail']
+2024-12-03 10:34:06,520 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'jobs', 'set_iam_policy']
+2024-12-03 10:34:06,529 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'multi_region_services']
+2024-12-03 10:34:06,532 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'multi-region-services', 'describe']
+2024-12-03 10:34:06,536 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'multi-region-services', 'replace']
+2024-12-03 10:34:06,544 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'multi-region-services', 'delete']
+2024-12-03 10:34:06,548 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'multi-region-services', 'update']
+2024-12-03 10:34:06,553 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'multi-region-services', 'list']
+2024-12-03 10:34:06,556 DEBUG    root            Loaded Command Group: ['gcloud', 'alpha', 'run', 'worker_pools']
+2024-12-03 10:34:06,628 DEBUG    root            Problem loading gcloud.alpha.run.worker-pools.describe: No module named 'grpc'.
+Traceback (most recent call last):
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/command_loading.py", line 558, in _GetModuleFromPath
+    return pkg_resources.GetModuleFromPath(name_to_give, impl_file)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/util/pkg_resources.py", line 137, in GetModuleFromPath
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/surface/run/worker_pools/describe.py", line 23, in <module>
+    from googlecloudsdk.command_lib.run.v2 import worker_pools_operations
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/command_lib/run/v2/worker_pools_operations.py", line 24, in <module>
+    from googlecloudsdk.command_lib.run.v2 import config_changes as config_changes_mod
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/command_lib/run/v2/config_changes.py", line 30, in <module>
+    from googlecloudsdk.generated_clients.gapic_clients.run_v2.types import k8s_min
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/generated_clients/gapic_clients/run_v2/__init__.py", line 21, in <module>
+    from .services.builds import BuildsClient
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/generated_clients/gapic_clients/run_v2/services/builds/__init__.py", line 16, in <module>
+    from .client import BuildsClient
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/generated_clients/gapic_clients/run_v2/services/builds/client.py", line 26, in <module>
+    from google.api_core import gapic_v1
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/third_party/google/api_core/gapic_v1/__init__.py", line 16, in <module>
+    from google.api_core.gapic_v1 import config
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/third_party/google/api_core/gapic_v1/config.py", line 23, in <module>
+    import grpc
+ModuleNotFoundError: No module named 'grpc'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 998, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 843, in Run
+    resources = command_instance.Run(args)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/surface/meta/list_commands.py", line 181, in Run
+    return walker_util.CommandTreeGenerator(
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/walker_util.py", line 470, in __init__
+    super(CommandTreeGenerator, self).__init__(cli, **kwargs)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/walker.py", line 71, in __init__
+    self._num_nodes += 1.0 + root.LoadAllSubElements(
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 652, in LoadAllSubElements
+    total += element.LoadAllSubElements(
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 652, in LoadAllSubElements
+    total += element.LoadAllSubElements(
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 652, in LoadAllSubElements
+    total += element.LoadAllSubElements(
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 643, in LoadAllSubElements
+    element = self.LoadSubElement(name)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 692, in LoadSubElement
+    element = Command(
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 805, in __init__
+    common_type = command_loading.LoadCommonType(
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/command_loading.py", line 165, in LoadCommonType
+    implementations = _GetAllImplementations(
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/command_loading.py", line 236, in _GetAllImplementations
+    module = _GetModuleFromPath(impl_file, path, construction_id)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/command_loading.py", line 563, in _GetModuleFromPath
+    exceptions.reraise(CommandLoadFailure('.'.join(path), e))
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/exceptions.py", line 149, in reraise
+    six.reraise(type(exc_value), exc_value, tb)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/third_party/six/__init__.py", line 718, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/command_loading.py", line 558, in _GetModuleFromPath
+    return pkg_resources.GetModuleFromPath(name_to_give, impl_file)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/util/pkg_resources.py", line 137, in GetModuleFromPath
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/surface/run/worker_pools/describe.py", line 23, in <module>
+    from googlecloudsdk.command_lib.run.v2 import worker_pools_operations
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/command_lib/run/v2/worker_pools_operations.py", line 24, in <module>
+    from googlecloudsdk.command_lib.run.v2 import config_changes as config_changes_mod
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/command_lib/run/v2/config_changes.py", line 30, in <module>
+    from googlecloudsdk.generated_clients.gapic_clients.run_v2.types import k8s_min
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/generated_clients/gapic_clients/run_v2/__init__.py", line 21, in <module>
+    from .services.builds import BuildsClient
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/generated_clients/gapic_clients/run_v2/services/builds/__init__.py", line 16, in <module>
+    from .client import BuildsClient
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/generated_clients/gapic_clients/run_v2/services/builds/client.py", line 26, in <module>
+    from google.api_core import gapic_v1
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/third_party/google/api_core/gapic_v1/__init__.py", line 16, in <module>
+    from google.api_core.gapic_v1 import config
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/third_party/google/api_core/gapic_v1/config.py", line 23, in <module>
+    import grpc
+googlecloudsdk.calliope.command_loading.CommandLoadFailure: Problem loading gcloud.alpha.run.worker-pools.describe: No module named 'grpc'.
+2024-12-03 10:34:06,746 ERROR    ___FILE_ONLY___ BEGIN CRASH STACKTRACE
+Traceback (most recent call last):
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/command_loading.py", line 558, in _GetModuleFromPath
+    return pkg_resources.GetModuleFromPath(name_to_give, impl_file)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/util/pkg_resources.py", line 137, in GetModuleFromPath
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/surface/run/worker_pools/describe.py", line 23, in <module>
+    from googlecloudsdk.command_lib.run.v2 import worker_pools_operations
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/command_lib/run/v2/worker_pools_operations.py", line 24, in <module>
+    from googlecloudsdk.command_lib.run.v2 import config_changes as config_changes_mod
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/command_lib/run/v2/config_changes.py", line 30, in <module>
+    from googlecloudsdk.generated_clients.gapic_clients.run_v2.types import k8s_min
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/generated_clients/gapic_clients/run_v2/__init__.py", line 21, in <module>
+    from .services.builds import BuildsClient
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/generated_clients/gapic_clients/run_v2/services/builds/__init__.py", line 16, in <module>
+    from .client import BuildsClient
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/generated_clients/gapic_clients/run_v2/services/builds/client.py", line 26, in <module>
+    from google.api_core import gapic_v1
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/third_party/google/api_core/gapic_v1/__init__.py", line 16, in <module>
+    from google.api_core.gapic_v1 import config
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/third_party/google/api_core/gapic_v1/config.py", line 23, in <module>
+    import grpc
+ModuleNotFoundError: No module named 'grpc'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/command_lib/crash_handling.py", line 199, in Wrapper
+    target_function(*args, **kwargs)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/gcloud_main.py", line 199, in main
+    gcloud_cli.Execute()
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 1024, in Execute
+    self._HandleAllErrors(exc, command_path_string, specified_arg_names)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 1061, in _HandleAllErrors
+    exceptions.HandleError(exc, command_path_string, self.__known_error_handler)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/exceptions.py", line 557, in HandleError
+    core_exceptions.reraise(exc)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/exceptions.py", line 149, in reraise
+    six.reraise(type(exc_value), exc_value, tb)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/third_party/six/__init__.py", line 719, in reraise
+    raise value
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 998, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 843, in Run
+    resources = command_instance.Run(args)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/surface/meta/list_commands.py", line 181, in Run
+    return walker_util.CommandTreeGenerator(
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/walker_util.py", line 470, in __init__
+    super(CommandTreeGenerator, self).__init__(cli, **kwargs)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/walker.py", line 71, in __init__
+    self._num_nodes += 1.0 + root.LoadAllSubElements(
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 652, in LoadAllSubElements
+    total += element.LoadAllSubElements(
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 652, in LoadAllSubElements
+    total += element.LoadAllSubElements(
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 652, in LoadAllSubElements
+    total += element.LoadAllSubElements(
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 643, in LoadAllSubElements
+    element = self.LoadSubElement(name)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 692, in LoadSubElement
+    element = Command(
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 805, in __init__
+    common_type = command_loading.LoadCommonType(
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/command_loading.py", line 165, in LoadCommonType
+    implementations = _GetAllImplementations(
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/command_loading.py", line 236, in _GetAllImplementations
+    module = _GetModuleFromPath(impl_file, path, construction_id)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/command_loading.py", line 563, in _GetModuleFromPath
+    exceptions.reraise(CommandLoadFailure('.'.join(path), e))
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/exceptions.py", line 149, in reraise
+    six.reraise(type(exc_value), exc_value, tb)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/third_party/six/__init__.py", line 718, in reraise
+    raise value.with_traceback(tb)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/command_loading.py", line 558, in _GetModuleFromPath
+    return pkg_resources.GetModuleFromPath(name_to_give, impl_file)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/util/pkg_resources.py", line 137, in GetModuleFromPath
+    spec.loader.exec_module(module)
+  File "<frozen importlib._bootstrap_external>", line 850, in exec_module
+  File "<frozen importlib._bootstrap>", line 228, in _call_with_frames_removed
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/surface/run/worker_pools/describe.py", line 23, in <module>
+    from googlecloudsdk.command_lib.run.v2 import worker_pools_operations
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/command_lib/run/v2/worker_pools_operations.py", line 24, in <module>
+    from googlecloudsdk.command_lib.run.v2 import config_changes as config_changes_mod
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/command_lib/run/v2/config_changes.py", line 30, in <module>
+    from googlecloudsdk.generated_clients.gapic_clients.run_v2.types import k8s_min
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/generated_clients/gapic_clients/run_v2/__init__.py", line 21, in <module>
+    from .services.builds import BuildsClient
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/generated_clients/gapic_clients/run_v2/services/builds/__init__.py", line 16, in <module>
+    from .client import BuildsClient
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/generated_clients/gapic_clients/run_v2/services/builds/client.py", line 26, in <module>
+    from google.api_core import gapic_v1
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/third_party/google/api_core/gapic_v1/__init__.py", line 16, in <module>
+    from google.api_core.gapic_v1 import config
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/third_party/google/api_core/gapic_v1/config.py", line 23, in <module>
+    import grpc
+googlecloudsdk.calliope.command_loading.CommandLoadFailure: Problem loading gcloud.alpha.run.worker-pools.describe: No module named 'grpc'.
+2024-12-03 10:34:06,770 ERROR    root            gcloud failed to load (gcloud.alpha.run.worker-pools.describe): Problem loading gcloud.alpha.run.worker-pools.describe: No module named 'grpc'.
+
+This usually indicates corruption in your gcloud installation or problems with your Python interpreter.
+
+Please verify that the following is the path to a working Python 3.8+ executable:
+    /Applications/Xcode.app/Contents/Developer/usr/bin/python3
+If it is not, please set the CLOUDSDK_PYTHON environment variable to point to a working Python 3.8+ executable.
+
+If you are still experiencing problems, please run the following command to reinstall:
+    $ gcloud components reinstall
+
+If that command fails, please reinstall the Google Cloud CLI using the instructions here:
+    https://cloud.google.com/sdk/
+2024-12-03 10:34:06,777 DEBUG    root            Metrics reporting process started...

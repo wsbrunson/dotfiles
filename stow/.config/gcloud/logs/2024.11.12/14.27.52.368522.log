@@ -1,0 +1,256 @@
+2024-11-12 14:27:52,432 DEBUG    root            Metrics collector initialized...
+2024-11-12 14:27:52,437 DEBUG    root            Loaded Command Group: ['gcloud', 'components']
+2024-11-12 14:27:52,446 DEBUG    root            Loaded Command Group: ['gcloud', 'components', 'update']
+2024-11-12 14:27:52,449 DEBUG    root            Running [gcloud.components.update] with arguments: [--no-compile-python: "False", --quiet: "True", COMPONENT-IDS:6: "['alpha', 'beta', 'gke-gcloud-auth-plugin', 'kubectl', 'skaffold', 'minikube']"]
+2024-11-12 14:27:52,450 INFO     ___FILE_ONLY___ Beginning update. This process may take several minutes.
+
+2024-11-12 14:27:52,481 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): dl.google.com:443
+2024-11-12 14:27:52,967 DEBUG    urllib3.connectionpool https://dl.google.com:443 "GET /dl/cloudsdk/channels/rapid/components-2.json HTTP/1.1" 200 226997
+2024-11-12 14:27:53,328 INFO     ___FILE_ONLY___ 
+
+2024-11-12 14:27:53,329 INFO     ___FILE_ONLY___ 
+Your current Google Cloud CLI version is: 501.0.0
+
+2024-11-12 14:27:53,329 INFO     ___FILE_ONLY___ Installing components from version: 501.0.0
+
+2024-11-12 14:27:53,329 INFO     ___FILE_ONLY___ 
+
+2024-11-12 14:27:53,329 DEBUG    root            Chosen display Format:table[box,title="These components will be removed."](details.display_name:label=Name:align=left,version.version_string:label=Version:align=right,data.size.size(zero="",min=1048576):label=Size:align=right)
+2024-11-12 14:27:53,329 DEBUG    root            Chosen display Format:table[box,title="These components will be updated."](details.display_name:label=Name:align=left,version.version_string:label=Version:align=right,data.size.size(zero="",min=1048576):label=Size:align=right)
+2024-11-12 14:27:53,329 DEBUG    root            Chosen display Format:table[box,title="These components will be installed."](details.display_name:label=Name:align=left,version.version_string:label=Version:align=right,data.size.size(zero="",min=1048576):label=Size:align=right)
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___ ┌─────────────────────────────────────────────────────────────────────────────┐
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___ 
+
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___ │                     These components will be installed.                     │
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___ 
+
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___ ├─────────────────────────────────────────────────────┬────────────┬──────────┤
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___ 
+
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___ │                         Name                        │  Version   │   Size   │
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___ 
+
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___ ├─────────────────────────────────────────────────────┼────────────┼──────────┤
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___ 
+
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___ Google Cloud CLI Core Libraries (Platform Specific)
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___ 2024.08.30
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___  < 1 MiB
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___ │
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___ 
+
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___ Minikube (Platform Specific)                       
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___     1.34.0
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___ 37.2 MiB
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___ │
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___ 
+
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,396 INFO     ___FILE_ONLY___ Skaffold (Platform Specific)                       
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___     2.13.1
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ 22.9 MiB
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ │
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ 
+
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ gcloud Alpha Commands                              
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ 2024.11.08
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___  < 1 MiB
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ │
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ 
+
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ gcloud Beta Commands                               
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ 2024.11.08
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___  < 1 MiB
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ │
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ 
+
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ gcloud cli dependencies (Platform Specific)        
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ 2021.04.16
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___  < 1 MiB
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ │
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ 
+
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ gke-gcloud-auth-plugin (Platform Specific)         
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,397 INFO     ___FILE_ONLY___      0.5.9
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___  4.0 MiB
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___ │
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___ 
+
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___ kubectl                                            
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___     1.30.5
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___  < 1 MiB
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___ │
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___ 
+
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___ kubectl (Platform Specific)                        
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___     1.30.6
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___ │ 
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___ 86.1 MiB
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___  
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___ │
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___ 
+
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___ └─────────────────────────────────────────────────────┴────────────┴──────────┘
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___ 
+
+2024-11-12 14:27:53,398 INFO     ___FILE_ONLY___ 
+
+2024-11-12 14:27:53,401 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): dl.google.com:443
+2024-11-12 14:27:53,895 DEBUG    urllib3.connectionpool https://dl.google.com:443 "GET /dl/cloudsdk/channels/rapid/RELEASE_NOTES HTTP/1.1" 200 1311270
+2024-11-12 14:27:54,665 INFO     ___FILE_ONLY___ For the latest full release notes, please visit:
+  https://cloud.google.com/sdk/release_notes
+
+
+2024-11-12 14:27:54,665 INFO     ___FILE_ONLY___ Performing in place update...
+
+
+2024-11-12 14:27:54,728 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-12 14:27:54,728 INFO     ___FILE_ONLY___ ╠═ Downloading: Google Cloud CLI Core Libraries (Platfor... ═╣
+
+2024-11-12 14:27:54,728 INFO     ___FILE_ONLY___ ╚
+2024-11-12 14:27:54,732 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): dl.google.com:443
+2024-11-12 14:27:55,195 DEBUG    urllib3.connectionpool https://dl.google.com:443 "GET /dl/cloudsdk/channels/rapid/components/google-cloud-sdk-core-nix-20240830134514.tar.gz HTTP/1.1" 200 2306
+2024-11-12 14:27:55,196 INFO     ___FILE_ONLY___ ════════════════════════════════════════════════════════════
+2024-11-12 14:27:55,196 INFO     ___FILE_ONLY___ ╝
+
+2024-11-12 14:27:55,259 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-12 14:27:55,260 INFO     ___FILE_ONLY___ ╠═ Downloading: Minikube                                    ═╣
+
+2024-11-12 14:27:55,260 INFO     ___FILE_ONLY___ ╚
+2024-11-12 14:27:55,260 INFO     ___FILE_ONLY___ ════════════════════════════════════════════════════════════
+2024-11-12 14:27:55,260 INFO     ___FILE_ONLY___ ╝
+
+2024-11-12 14:27:55,329 INFO     ___FILE_ONLY___ ╔════════════════════════════════════════════════════════════╗
+
+2024-11-12 14:27:55,330 INFO     ___FILE_ONLY___ ╠═ Downloading: Minikube (Platform Specific)                ═╣
+
+2024-11-12 14:27:55,330 INFO     ___FILE_ONLY___ ╚
+2024-11-12 14:27:55,335 DEBUG    urllib3.connectionpool Starting new HTTPS connection (1): dl.google.com:443
+2024-11-12 14:27:55,936 DEBUG    urllib3.connectionpool https://dl.google.com:443 "GET /dl/cloudsdk/channels/rapid/components/google-cloud-sdk-minikube-darwin-arm-20240927140238.tar.gz HTTP/1.1" 200 38981244
+2024-11-12 14:28:02,152 INFO     ___FILE_ONLY___ ═
+2024-11-12 14:28:02,153 INFO     ___FILE_ONLY___ ════════════════════════════════════════════════════════════
+2024-11-12 14:28:02,153 DEBUG    root            [Errno 32] Broken pipe
+Traceback (most recent call last):
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/updater/installers.py", line 235, in DownloadTar
+    progress_callback(total_written / total_size)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/console/console_io.py", line 872, in SetProgress
+    self._Write(self._box.d_h * new_ticks)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/console/console_io.py", line 884, in _Write
+    self._stream.write(msg)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/log.py", line 237, in write
+    self._Write(plain_text, styled_text)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/log.py", line 232, in _Write
+    self.flush()
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/log.py", line 247, in flush
+    self.__stream_wrapper.stream.flush()
+BrokenPipeError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/updater/installers.py", line 395, in _DownloadTar
+    return DownloadTar(
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/updater/installers.py", line 238, in DownloadTar
+    raise URLFetchError(e)
+googlecloudsdk.core.updater.installers.URLFetchError: [Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py", line 908, in _UpdateWithProgressBar
+    result = action_func(component.id, progress_callback=pb.SetProgress)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py", line 927, in Inner
+    return install_state.Download(
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/updater/local_state.py", line 104, in _TryFunc
+    return func(*args, **kwargs)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/updater/local_state.py", line 465, in Download
+    downloaded_archive = self._component_installer.Download(
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/updater/installers.py", line 333, in Download
+    return self._DownloadTar(
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/updater/installers.py", line 399, in _DownloadTar
+    raise ComponentDownloadFailedError(component.id, e)
+googlecloudsdk.core.updater.installers.ComponentDownloadFailedError: The component [minikube-darwin-arm] failed to download.
+
+[Errno 32] Broken pipe
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/cli.py", line 998, in Execute
+    resources = calliope_command.Run(cli=self, args=args)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/calliope/backend.py", line 842, in Run
+    resources = command_instance.Run(args)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/surface/components/update.py", line 119, in Run
+    update_manager.Update(args.component_ids, version=args.version)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py", line 1078, in Update
+    downloads_map = self._UpdateWithProgressBar(
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/updater/update_manager.py", line 909, in _UpdateWithProgressBar
+    results_map[component.id] = result
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/console/console_io.py", line 891, in __exit__
+    self.Finish()
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/console/console_io.py", line 881, in Finish
+    self.SetProgress(1)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/console/console_io.py", line 872, in SetProgress
+    self._Write(self._box.d_h * new_ticks)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/console/console_io.py", line 884, in _Write
+    self._stream.write(msg)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/log.py", line 237, in write
+    self._Write(plain_text, styled_text)
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/log.py", line 232, in _Write
+    self.flush()
+  File "/Users/wbrunson/Library/Application Support/cloud-code/installer/google-cloud-sdk/lib/googlecloudsdk/core/log.py", line 247, in flush
+    self.__stream_wrapper.stream.flush()
+BrokenPipeError: [Errno 32] Broken pipe
