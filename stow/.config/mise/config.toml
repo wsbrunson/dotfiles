@@ -4,7 +4,13 @@ NODE_EXTRA_CA_CERTS = '/usr/local/etc/openssl/certs/paypal_proxy_cacerts.pem'
 
 [tools]
 fzf = "latest"
+gh = "latest"
+node = "latest"
+rust = "latest"
 starship = "latest"
+lazygit = "latest"
+tmux = "latest"
+neovim = "latest"
 
 [tasks.setup]
 description = "First-time setup for a new machine"
