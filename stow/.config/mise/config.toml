@@ -1,8 +1,10 @@
 [env]
 CURL_SSL_BACKEND = 'secure-transport'
 NODE_EXTRA_CA_CERTS = '/usr/local/etc/openssl/certs/paypal_proxy_cacerts.pem'
+AWS_PROFILE='PowerUser-120569643495'
 
 [tools]
+awscli = "latest"
 fzf = "latest"
 gh = "latest"
 node = "latest"
@@ -11,6 +13,12 @@ starship = "latest"
 lazygit = "latest"
 tmux = "latest"
 neovim = "latest"
+"npm:@anthropic-ai/claude-code" = "latest"
+"npm:graphql-cli" = "latest"
+"npm:pm2" = "latest"
+rust = "latest"
+starship = "latest"
+terraform = "1.8.0"
 
 [tasks.setup]
 description = "First-time setup for a new machine"
