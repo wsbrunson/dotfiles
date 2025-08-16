@@ -220,7 +220,7 @@ Plug 'ocaml/vim-ocaml'
 Plug 'reasonml-editor/vim-reason-plus'
 
 " Themes
-Plug 'mhartington/oceanic-next' " OceanicNext
+Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
 
 " Better file explorer than NERDTree
 Plug 'nvim-tree/nvim-tree.lua'
@@ -236,7 +236,7 @@ Plug 'christoomey/vim-tmux-navigator'
 call plug#end()
 
 " Color Scheme
-colorscheme OceanicNext
+colorscheme catppuccin-mocha " catppuccin catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 
 " Enhanced fzf with ripgrep
 let g:fzf_preview_window = 'right:50%'
