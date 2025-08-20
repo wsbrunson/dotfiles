@@ -69,10 +69,6 @@ set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
 " setup yaml file defaults
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
-" OCaml-specific settings
-autocmd FileType ocaml setlocal ts=2 sts=2 sw=2 expandtab
-autocmd FileType ocaml setlocal commentstring=(*\ %s\ *)
-
 " ---------------------- Key Mappings ----------------------
 
 let mapleader = ";"
@@ -171,9 +167,6 @@ augroup vimrcEx
   " On file types...
   "   .md files are markdown files
   autocmd BufNewFile,BufRead *.md setlocal ft=markdown
-  
-  " OCaml file types
-  autocmd BufNewFile,BufRead *.ml,*.mli setlocal ft=ocaml
 augroup END
 
 " ---------------------- PLUGIN CONFIGURATION ----------------------
@@ -214,10 +207,6 @@ Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'L3MON4D3/LuaSnip'
 Plug 'saadparwaiz1/cmp_luasnip'
-
-" OCaml support
-Plug 'ocaml/vim-ocaml'
-Plug 'reasonml-editor/vim-reason-plus'
 
 " Themes
 Plug 'catppuccin/nvim', { 'as': 'catppuccin' }
@@ -294,7 +283,7 @@ require("nvim-tree").setup({
 
 -- Treesitter setup
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "javascript", "typescript", "python", "lua", "json", "yaml", "html", "css", "ocaml" },
+  ensure_installed = { "javascript", "typescript", "python", "lua", "json", "yaml", "html", "css" },
   highlight = { enable = true },
   indent = { enable = true },
 }
@@ -305,7 +294,7 @@ require('gitsigns').setup()
 -- Mason setup (LSP installer)
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls", "ts_ls", "eslint", "pyright", "ocamllsp" }
+  ensure_installed = { "lua_ls", "ts_ls", "eslint", "pyright" }
 })
 
 -- nvim-cmp setup
@@ -378,16 +367,6 @@ lspconfig.lua_ls.setup{
     }
   }
 }
-
--- OCaml
-lspconfig.ocamllsp.setup{
-  capabilities = capabilities,
-  settings = {
-    codelens = { enable = true },
-    inlayHints = { enable = true },
-  }
-}
-EOF
 
 " ---------------------- STATUS LINE ----------------------
 let g:lightline = {
