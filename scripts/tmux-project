@@ -12,7 +12,7 @@ create_session() {
     tmux send-keys -t "$PROJECT_NAME":lazygit 'lazygit' Enter
 
     tmux new-window -t "$PROJECT_NAME" -n vim
-    tmux send-keys -t "$PROJECT_NAME":vim 'nvim .' Enter
+    tmux send-keys -t "$PROJECT_NAME":vim 'nvim' Enter
 
     tmux new-window -t "$PROJECT_NAME" -n claude
     tmux send-keys -t "$PROJECT_NAME":claude 'claude' Enter
