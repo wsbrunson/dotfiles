@@ -367,6 +367,7 @@ lspconfig.lua_ls.setup{
     }
   }
 }
+EOF
 
 " ---------------------- STATUS LINE ----------------------
 let g:lightline = {
@@ -384,3 +385,4 @@ let g:lightline = {
     \   'gitbranch': 'fugitive#head'
 	\ },
 	\ }
+
