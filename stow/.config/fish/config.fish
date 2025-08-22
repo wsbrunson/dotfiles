@@ -31,6 +31,10 @@ fish_add_path /opt/homebrew/bin
 set --export --prepend PATH "/Users/wbrunson/.rd/bin"
 ### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
+# Used by the z directory utility
+set -U Z_DATA $HOME/.local/share/z/data
+set -U Z_DATA_DIR $HOME/.local/share/z
+
 # ==============================================================================
 # Work Environment Configuration
 # ==============================================================================
