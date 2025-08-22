@@ -2,9 +2,13 @@
 
 /stow/.vim/plugged/
 /stow/.vim/undodir/
-*/.config/coc/extensions/db.json
-*/.config/planetscale/*
-*/.config/configstore/*
+/stow/.claude/local/
+/stow/.claude/projects/
+/stow/.claude/shell-snapshots/
+/stow/.claude/statsig/
+/stow/.claude/todos/
+/stow/.config/fish/fish_variables
+/stow/.config/configstore
 
 .env
 .customrc

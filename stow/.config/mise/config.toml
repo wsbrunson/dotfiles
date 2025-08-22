@@ -4,16 +4,9 @@ CURL_SSL_BACKEND = "secure-transport"
 NODE_EXTRA_CA_CERTS = "/usr/local/etc/openssl/certs/paypal_proxy_cacerts.pem"
 
 [tools]
-awscli = "latest"
-fzf = "latest"
-gh = "latest"
-lazygit = "latest"
 neovim = "latest"
 node = "latest"
 rust = "latest"
-starship = "latest"
-terraform = "1.8.0"
-tmux = "latest"
 
 [tasks.setup]
 description = "First-time setup for a new machine"
