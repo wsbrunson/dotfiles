@@ -69,6 +69,10 @@ set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
 " setup yaml file defaults
 autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
+" setup go file defaults
+autocmd FileType go setlocal ts=4 sts=4 sw=4 noexpandtab
+autocmd BufWritePre *.go lua vim.lsp.buf.format()
+
 " ---------------------- Key Mappings ----------------------
 
 nnoremap <SPACE> <Nop>
@@ -271,7 +275,7 @@ require("nvim-tree").setup({
 
 -- Treesitter setup
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = { "javascript", "typescript", "python", "lua", "json", "yaml", "html", "css" },
+  ensure_installed = { "go", "javascript", "typescript", "python", "lua", "json", "yaml", "html", "css" },
   highlight = { enable = true },
   indent = { enable = true },
 }
@@ -332,7 +336,7 @@ require('telescope').setup{
 -- Mason setup (LSP installer)
 require("mason").setup()
 require("mason-lspconfig").setup({
-  ensure_installed = { "lua_ls", "ts_ls", "eslint", "pyright" }
+  ensure_installed = { "gopls", "lua_ls", "ts_ls", "eslint", "pyright" }
 })
 
 -- nvim-cmp setup
@@ -394,6 +398,20 @@ lspconfig.eslint.setup{
 -- Python  
 lspconfig.pyright.setup{
   capabilities = capabilities
+}
+
+-- Go
+lspconfig.gopls.setup{
+  capabilities = capabilities,
+  settings = {
+    gopls = {
+      analyses = {
+        unusedparams = true,
+      },
+      staticcheck = true,
+      gofumpt = true,
+    },
+  },
 }
 
 -- Lua

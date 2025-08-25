@@ -1,0 +1,102 @@
+#!/usr/bin/env fish
+
+# AWS Profile Switcher
+# Switches AWS profiles based on configuration in config/aws-profiles.yaml
+
+set script_dir (dirname (status --current-filename))
+set config_file "$script_dir/../config/aws-profiles.yaml"
+
+function show_help
+    echo "AWS Profile Switcher"
+    echo ""
+    echo "Usage:"
+    echo "  aws-profile <profile-key>    Switch to the specified profile"
+    echo "  aws-profile list             List all available profiles"
+    echo "  aws-profile current          Show current AWS profile"
+    echo "  aws-profile help             Show this help message"
+    echo ""
+    echo "Available profiles are defined in: $config_file"
+end
+
+function list_profiles
+    if not test -f $config_file
+        echo "Error: Config file not found at $config_file"
+        return 1
+    end
+    
+    echo "Available AWS profiles:"
+    echo ""
+    
+    # Parse YAML and display profiles
+    yq eval '.profiles | to_entries | .[] | "  " + .key + " -> " + .value.description + " (" + .value.name + ")"' $config_file 2>/dev/null
+    or begin
+        echo "Error: Could not parse config file. Make sure 'yq' is installed."
+        echo "Install with: brew install yq"
+        return 1
+    end
+end
+
+function show_current
+    if set -q AWS_PROFILE
+        echo "Current AWS profile: $AWS_PROFILE"
+        
+        # Try to find which profile key this corresponds to
+        if test -f $config_file
+            set profile_key (yq eval ".profiles | to_entries | .[] | select(.value.name == \"$AWS_PROFILE\") | .key" $config_file 2>/dev/null)
+            if test -n "$profile_key"
+                set description (yq eval ".profiles.$profile_key.description" $config_file 2>/dev/null)
+                echo "Profile key: $profile_key"
+                echo "Description: $description"
+            end
+        end
+    else
+        echo "No AWS profile is currently set"
+    end
+end
+
+function switch_profile
+    set profile_key $argv[1]
+    
+    if not test -f $config_file
+        echo "Error: Config file not found at $config_file"
+        return 1
+    end
+    
+    # Get profile name from config
+    set profile_name (yq eval ".profiles.$profile_key.name" $config_file 2>/dev/null)
+    
+    if test "$profile_name" = "null" -o -z "$profile_name"
+        echo "Error: Profile '$profile_key' not found in config"
+        echo "Run 'aws-profile list' to see available profiles"
+        return 1
+    end
+    
+    # Set the AWS_PROFILE environment variable
+    set -gx AWS_PROFILE $profile_name
+    
+    # Get description for confirmation
+    set description (yq eval ".profiles.$profile_key.description" $config_file 2>/dev/null)
+    
+    echo "Switched to AWS profile: $profile_name"
+    echo "Description: $description"
+    echo ""
+    echo "To make this permanent across shell sessions, add the following to your fish config:"
+    echo "set -gx AWS_PROFILE $profile_name"
+end
+
+# Main logic
+if test (count $argv) -eq 0
+    show_help
+    exit 0
+end
+
+switch $argv[1]
+    case "help" "-h" "--help"
+        show_help
+    case "list" "ls"
+        list_profiles
+    case "current" "show"
+        show_current
+    case "*"
+        switch_profile $argv[1]
+end

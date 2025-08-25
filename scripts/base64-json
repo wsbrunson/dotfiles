@@ -1,0 +1,100 @@
+#!/usr/bin/env python3
+
+import base64
+import json
+import sys
+import subprocess
+import shutil
+
+def decode_command(encoded_data):
+    try:
+        # Decode base64
+        decoded_bytes = base64.b64decode(encoded_data)
+        decoded_string = decoded_bytes.decode('utf-8')
+        
+        # Parse JSON to validate it
+        json_data = json.loads(decoded_string)
+        
+        # Use jq for pretty printing with colors if available
+        if shutil.which('jq'):
+            try:
+                process = subprocess.run(['jq', '.'], 
+                                       input=decoded_string, 
+                                       text=True, 
+                                       capture_output=True)
+                if process.returncode == 0:
+                    print(process.stdout.rstrip())
+                    return
+            except Exception:
+                pass
+        
+        # Fallback to Python pretty printing
+        print(json.dumps(json_data, indent=2, sort_keys=True))
+        
+    except Exception as e:
+        print(f"Error: {e}", file=sys.stderr)
+        sys.exit(1)
+
+def encode_command(json_string):
+    try:
+        # Parse JSON to validate it
+        json_data = json.loads(json_string)
+        
+        # Convert back to compact JSON string
+        compact_json = json.dumps(json_data, separators=(',', ':'))
+        
+        # Encode as base64
+        encoded_bytes = base64.b64encode(compact_json.encode('utf-8'))
+        encoded_string = encoded_bytes.decode('utf-8')
+        
+        print(encoded_string)
+        
+    except Exception as e:
+        print(f"Error: {e}", file=sys.stderr)
+        sys.exit(1)
+
+def show_help():
+    print("""base64-json - Encode and decode base64 JSON data
+
+USAGE:
+    base64-json <command> <data>
+    base64-json --help
+
+COMMANDS:
+    decode <base64-data>    Decode base64 data, parse as JSON, and pretty-print
+    encode <json-string>    Validate JSON string and encode as base64
+
+OPTIONS:
+    --help                  Show this help message
+
+EXAMPLES:
+    # Encode JSON to base64
+    base64-json encode '{"name": "John", "age": 30}'
+    
+    # Decode base64 back to pretty JSON
+    base64-json decode eyJuYW1lIjoiSm9obiIsImFnZSI6MzB9""")
+
+def main():
+    if len(sys.argv) == 2 and sys.argv[1] in ["--help", "-h", "help"]:
+        show_help()
+        sys.exit(0)
+    
+    if len(sys.argv) != 3:
+        print("Usage: base64-json <decode|encode> <data>", file=sys.stderr)
+        print("Use 'base64-json --help' for more information", file=sys.stderr)
+        sys.exit(1)
+    
+    command = sys.argv[1]
+    data = sys.argv[2]
+    
+    if command == "decode":
+        decode_command(data)
+    elif command == "encode":
+        encode_command(data)
+    else:
+        print(f"Unknown command: {command}. Use 'decode' or 'encode'", file=sys.stderr)
+        print("Use 'base64-json --help' for more information", file=sys.stderr)
+        sys.exit(1)
+
+if __name__ == "__main__":
+    main()
