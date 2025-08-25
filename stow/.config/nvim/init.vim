@@ -71,9 +71,8 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " ---------------------- Key Mappings ----------------------
 
-let mapleader = ";"
-noremap . ;
-noremap <Space> .
+nnoremap <SPACE> <Nop>
+let mapleader=" "
 
 " use ESC to remove search higlight
 nnoremap <Enter> :noh<return><esc>
@@ -126,15 +125,16 @@ nnoremap <leader>ca :lua vim.lsp.buf.code_action()<CR>
 nnoremap [d :lua vim.diagnostic.goto_prev()<CR>
 nnoremap ]d :lua vim.diagnostic.goto_next()<CR>
 
-" Project search
-nnoremap <leader>/ :Rg<CR>
-nnoremap <leader>* :Rg <C-R><C-W><CR>
-
-" Better file navigation
-nnoremap <leader>p :GFiles<CR>     " Git files (most common)
-nnoremap <leader>P :Files<CR>      " All files
-nnoremap <leader>ll :Lines<CR>     " Search in open buffers (changed from <leader>l which conflicts with buffer nav)
-nnoremap <leader>: :Commands<CR>   " Command palette
+" Telescope navigation and search
+nnoremap <leader>ff <cmd>Telescope find_files<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fb <cmd>Telescope buffers<cr>
+nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+nnoremap <leader>p <cmd>Telescope git_files<cr>
+nnoremap <leader>P <cmd>Telescope find_files<cr>
+nnoremap <leader>/ <cmd>Telescope live_grep<cr>
+nnoremap <leader>* <cmd>Telescope grep_string<cr>
+nnoremap <leader>: <cmd>Telescope commands<cr>
 
 " Git hunk navigation (since you have gitsigns)
 nnoremap <leader>gn :lua require('gitsigns').next_hunk()<CR>
@@ -193,9 +193,9 @@ Plug 'Raimondi/delimitMate'
 Plug 'itchyny/lightline.vim'
 Plug 'Yggdroot/indentLine'
 
-" PlugInstall and PlugUpdate will clone fzf in ~/.fzf and run the install script
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
+" Modern fuzzy finder and picker
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim', { 'tag': '0.1.8' }
 
 " LSP and completion
 Plug 'neovim/nvim-lspconfig'
@@ -227,22 +227,10 @@ call plug#end()
 " Color Scheme
 colorscheme catppuccin-mocha " catppuccin catppuccin-latte, catppuccin-frappe, catppuccin-macchiato, catppuccin-mocha
 
-" Enhanced fzf with ripgrep
-let g:fzf_preview_window = 'right:50%'
-let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.8 } }
-
-" Project-wide search command
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
-  \   fzf#vim#with_preview(), <bang>0)
-
-" Open file menu
-nnoremap <Leader>o :Files<CR>
-" Open buffer menu
-nnoremap <Leader>b :Buffers<CR>
-" Open most recently used files
-nnoremap <Leader>f :History<CR>
+" Additional telescope shortcuts
+nnoremap <Leader>o <cmd>Telescope find_files<cr>
+nnoremap <Leader>b <cmd>Telescope buffers<cr>
+nnoremap <Leader>f <cmd>Telescope oldfiles<cr>
 
 " indent
 let g:indentLine_char = '⦙'
@@ -290,6 +278,56 @@ require'nvim-treesitter.configs'.setup {
 
 -- gitsigns setup
 require('gitsigns').setup()
+
+-- Telescope setup
+require('telescope').setup{
+  defaults = {
+    mappings = {
+      i = {
+        ["<C-h>"] = "which_key",
+        ["<C-u>"] = false,
+        ["<C-d>"] = false,
+      }
+    },
+    file_ignore_patterns = {
+      "node_modules",
+      ".git/",
+      "target/",
+      "build/",
+      "dist/"
+    },
+    prompt_prefix = "🔍 ",
+    selection_caret = "➤ ",
+    layout_strategy = "horizontal",
+    layout_config = {
+      width = 0.9,
+      height = 0.8,
+      preview_cutoff = 120,
+      horizontal = {
+        preview_width = 0.6
+      }
+    }
+  },
+  pickers = {
+    find_files = {
+      theme = "dropdown"
+    },
+    git_files = {
+      theme = "dropdown"
+    },
+    buffers = {
+      show_all_buffers = true,
+      sort_lastused = true,
+      theme = "dropdown",
+      previewer = false,
+      mappings = {
+        i = {
+          ["<c-d>"] = "delete_buffer",
+        }
+      }
+    }
+  }
+}
 
 -- Mason setup (LSP installer)
 require("mason").setup()
