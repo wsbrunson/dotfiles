@@ -86,7 +86,7 @@ end
 # ==============================================================================
 
 # Claude CLI
-alias claude="$HOME/.claude/local/claude"
+# alias claude="$HOME/.claude/local/claude"
 
 # Editor aliases - use neovim everywhere
 alias vim="nvim"
