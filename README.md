@@ -1,18 +1,14 @@
-## How To Use
-`stow -t ~/ stow`
-`mise install`
+## Quick Start
 
-## Project Worflow
-### In iTerm, create new tab for project
-cd ~/my-project
+```bash
+# Install Homebrew packages
+brew bundle
 
-### Start tmux session
-tmux new-session -d -s myproject
+# Symlink dotfiles to home directory
+stow -t ~/ stow
 
-### Create your three windows
-tmux new-window -t myproject -n lazygit 'lazygit'
-tmux new-window -t myproject -n vim 'vim'
-tmux new-window -t myproject -n claude 'claude-code'
+# Install mise-managed tools
+mise install
+```
 
-### Attach to session
-tmux attach -t myproject
+See [CLAUDE.md](CLAUDE.md) for detailed documentation.
