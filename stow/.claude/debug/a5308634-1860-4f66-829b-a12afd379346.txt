@@ -1,0 +1,597 @@
+[DEBUG] Watching for changes in setting files /Users/wbrunson/.claude/settings.json, /Users/wbrunson/workspace/commerce-platform/.claude/settings.json, /Users/wbrunson/workspace/commerce-platform/.claude/settings.local.json...
+[DEBUG] [LSP MANAGER] initializeLspServerManager() called
+[DEBUG] [LSP MANAGER] Created manager instance, state=pending
+[DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+[DEBUG] [LSP SERVER MANAGER] initialize() called
+[DEBUG] [LSP SERVER MANAGER] Calling getAllLspServers()
+[DEBUG] Applying permission update: Adding 82 allow rule(s) to destination 'projectSettings': ["Bash(awk:*)","Bash(cat:*)","Bash(cp:*)","Bash(diff:*)","Bash(eslint:*)","Bash(find:*)","Bash(gh api:*)","Bash(gh auth:*)","Bash(gh pr diff:*)","Bash(gh pr edit:*)","Bash(gh pr list:*)","Bash(gh pr view:*)","Bash(gh search prs:*)","Bash(git add:*)","Bash(git checkout:*)","Bash(git config:*)","Bash(git fetch:*)","Bash(git pull:*)","Bash(git push:*)","Bash(git rebase:*)","Bash(git stash:*)","Bash(grep:*)","Bash(ls:*)","Bash(mkdir:*)","Bash(npm install:*)","Bash(npm run:*)","Bash(npm test:*)","Bash(npx tsc:*)","Bash(npx vitest run:*)","Bash(pnpm -w run lint)","Bash(pnpm add:*)","Bash(pnpm build)","Bash(pnpm eslint:*)","Bash(pnpm install:*)","Bash(pnpm lint:*)","Bash(pnpm run eslint:*)","Bash(pnpm run lint:*)","Bash(pnpm test:*)","Bash(pnpm typecheck:*)","Bash(pnpm vitest run:*)","Bash(rg:*)","Bash(sed:*)","WebFetch(domain:academy.shopware.com)","WebFetch(domain:appexchange.salesforce.com)","WebFetch(domain:blog.demandware.com)","WebFetch(domain:codex.wordpress.org)","WebFetch(domain:developer.salesforce.com)","WebFetch(domain:developer.shopware.com)","WebFetch(domain:developer.woocommerce.com)","WebFetch(domain:developer.wordpress.org)","WebFetch(domain:docs.shopware.com)","WebFetch(domain:docs.woocommerce.com)","WebFetch(domain:documentation.b2c.commercecloud.salesforce.com)","WebFetch(domain:github.com)","WebFetch(domain:help.salesforce.com)","WebFetch(domain:infocenter.demandware.com)","WebFetch(domain:make.wordpress.org)","WebFetch(domain:medium.com)","WebFetch(domain:partners.salesforce.com)","WebFetch(domain:pnpm.io)","WebFetch(domain:salesforce.com)","WebFetch(domain:salesforce.stackexchange.com)","WebFetch(domain:store.shopware.com)","WebFetch(domain:trailhead.salesforce.com)","WebFetch(domain:woocommerce.com)","WebFetch(domain:woocommerce.github.io)","WebFetch(domain:wordpress.org)","WebFetch(domain:www.demandware.com)","WebFetch(domain:www.npmjs.com)","WebFetch(domain:www.salesforce.com)","WebFetch(domain:www.shopware.com)","WebFetch(domain:xchange.demandware.com)","mcp__atlassian__createJiraIssue","mcp__atlassian__editJiraIssue","mcp__atlassian__getAccessibleAtlassianResources","mcp__atlassian__getJiraIssue","mcp__atlassian__getJiraProjectIssueTypesMetadata","mcp__atlassian__getTransitionsForJiraIssue","mcp__atlassian__getVisibleJiraProjects","mcp__atlassian__lookupJiraAccountId","mcp__atlassian__searchJiraIssuesUsingJql","mcp__atlassian__transitionJiraIssue"]
+[DEBUG] Applying permission update: Adding 20 allow rule(s) to destination 'localSettings': ["Bash(gh repo clone:*)","Bash(gh repo view:*)","Bash(git log:*)","Bash(xargs sed:*)","Read(//Users/wbrunson/.claude/**)","Read(//Users/wbrunson/workspace/dotfiles/stow/.claude/**)","Bash(git show-branch:*)","WebFetch(domain:developers.openai.com)","Bash(pnpm generate:*)","Bash(node:*)","Bash(pnpm config get:*)","Bash(pnpm test:unit src/functions/acp/translate.test.ts)","Bash(npx eslint:*)","WebFetch(domain:docs.datadoghq.com)","Bash(curl:*)","Bash(aws logs filter-log-events:*)","WebFetch(domain:heyapi.dev)","Bash(npm start)","Bash(npm-registry-switch:*)","Bash(pnpm test:unit:*)"]
+[DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+[DEBUG] Total LSP servers loaded: 0
+[DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+[DEBUG] LSP manager initialized with 0 servers
+[DEBUG] LSP server manager initialized successfully
+[DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+[DEBUG] Loading skills from directories: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/wbrunson/.claude/skills, project=/Users/wbrunson/workspace/commerce-platform/.claude/skills
+[DEBUG] >>>>> getPluginSkills CALLED <<<<<
+[DEBUG] Creating shell snapshot for zsh (/bin/zsh)
+[DEBUG] Looking for shell config file: /Users/wbrunson/.zshrc
+[DEBUG] Snapshots directory: /Users/wbrunson/.claude/shell-snapshots
+[DEBUG] Creating snapshot at: /Users/wbrunson/.claude/shell-snapshots/snapshot-zsh-1763136365850-350swm.sh
+[DEBUG] Shell binary exists: true
+[DEBUG] Execution timeout: 10000ms
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/a5308634-1860-4f66-829b-a12afd379346-agent-a5308634-1860-4f66-829b-a12afd379346.json.tmp.88463.1763136365853
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/a5308634-1860-4f66-829b-a12afd379346-agent-a5308634-1860-4f66-829b-a12afd379346.json.tmp.88463.1763136365853 to /Users/wbrunson/.claude/todos/a5308634-1860-4f66-829b-a12afd379346-agent-a5308634-1860-4f66-829b-a12afd379346.json
+[DEBUG] File /Users/wbrunson/.claude/todos/a5308634-1860-4f66-829b-a12afd379346-agent-a5308634-1860-4f66-829b-a12afd379346.json written atomically
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763136365864
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763136365864 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] getPluginSkills: Processing 0 enabled plugins
+[DEBUG] Total plugin skills loaded: 0
+[DEBUG] Total plugin commands loaded: 0
+[DEBUG] Registered 0 hooks from 0 plugins
+[DEBUG] Loaded 0 unique skills (managed: 0, user: 0, project: 0, duplicates removed: 0)
+[DEBUG] getSkillsIfEnabled returning: 0 skill dir commands, 0 plugin skills
+[DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg)
+[DEBUG] Total plugin agents loaded: 0
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763136366003
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763136366003 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Getting matching hook commands for SessionStart with query: startup
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "startup" (0 before deduplication)
+[DEBUG] MCP server "atlassian": SSE transport initialized, awaiting connection
+[DEBUG] MCP server "atlassian": Starting connection with timeout of 30000ms
+[DEBUG] MCP server "atlassian": Token expires in -417316s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763136366101
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51444 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763136366101 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763136366108
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51444 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763136366108 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+[DEBUG] performStartupChecks called
+[DEBUG] Starting background plugin installations
+[DEBUG] performBackgroundPluginInstallations called
+[DEBUG] Setting installation status: 0 marketplaces, 0 installable plugins, 0 uninstallable plugins
+[DEBUG] Loaded plugins - Enabled: 0, Disabled: 0, Commands: 0, Agents: 0, Errors: 0
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763136366134
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51444 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763136366134 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763136366141
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51444 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763136366141 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763136366151
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763136366151 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Shell snapshot created successfully (1466 bytes)
+[DEBUG] Summarizing all 3 messages (~0 tokens)
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] MCP server "atlassian": Token refresh failed: Invalid refresh token
+[DEBUG] MCP server "atlassian": Token refresh failed, returning current tokens
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: -417316s
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+[DEBUG] Summarizing all 152 messages (~65422 tokens)
+[DEBUG] Stream started - received first chunk
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token expires in -417318s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh failed: Invalid refresh token
+[DEBUG] MCP server "atlassian": Token refresh failed, returning current tokens
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: -417318s
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token expires in -417319s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] Stream started - received first chunk
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh failed: Invalid refresh token
+[DEBUG] MCP server "atlassian": Token refresh failed, returning current tokens
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: -417319s
+[DEBUG] MCP server "atlassian": SSE Connection failed after 3457ms: {"url":"https://mcp.atlassian.com/v1/sse","error":"Invalid refresh token","errorType":"VAA","stack":"VAA: Invalid refresh token\n    at l81 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:49:14913)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async n81 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:49:22999)\n    at async p81 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:49:16427)\n    at async IM (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:49:15360)\n    at async _MA._authThenStart (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:49:24056)\n    at async _MA.start (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:49:26119)\n    at async VMA.connect (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:43:76094)\n    at async VMA.connect (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:43:208705)"}
+[ERROR] MCP server "atlassian" VAA: Invalid refresh token
+[DEBUG] MCP server "atlassian": Connection failed after 3458ms: Invalid refresh token
+[ERROR] MCP server "atlassian" Connection failed: Invalid refresh token
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Summarizing all 260 messages (~91460 tokens)
+[DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[ERROR] Error: Error: 404 The specified resource does not exist.
+    at $4.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:231:83170)
+    at q_.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:716:2117)
+    at q_.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:716:5341)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async XDA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1621:2379)
+    at async vEA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1989:97)
+    at async yaA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1989:306)
+    at async udQ (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1999:530)
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+[DEBUG] Stream started - received first chunk
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+[DEBUG] UserCommandMessage rendering: "doctor" (args: "none")
+[DEBUG] isSkillFormat: false, prefix: "/"
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763136392182
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763136392182 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+[DEBUG] Metadata string for statusline:
+[DEBUG] <command-message>statusline is setting up statusLine…</command-message>
+<command-name>/statusline</command-name>
+[DEBUG] command-message tags in metadata: 1
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] processPromptSlashCommand creating 4 messages for statusline
+[DEBUG] Message 1: <command-message>statusline is setting up statusLine…</command-message>
+<command-name>/statusline</command-name>
+[DEBUG] Message 2 [META]: [{"type":"text","text":"Create a Task with subagent_type \"statusline-setup\" and the prompt \"Configure my statusLine from my shell PS1 configuration\""}]
+[DEBUG] Message 3: [ATTACHMENT]
+[DEBUG] Message 4: [ATTACHMENT]
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Added snapshot for 24d2ddea-edb1-4a4a-abe3-865c6f596d60, tracking 0 files
+[DEBUG] Rendering user message with 1 content blocks
+[DEBUG] Block 0: <command-message>statusline is setting up statusLine…</command-message>
+<command-name>/statusline</c...
+[DEBUG] UserCommandMessage rendering: "statusline is setting up statusLine…" (args: "none")
+[DEBUG] isSkillFormat: false, prefix: "/"
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Task
+[DEBUG] Getting matching hook commands for PreToolUse with query: Task
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Task" (0 before deduplication)
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Permission suggestions for Read: [
+  {
+    "type": "addRules",
+    "rules": [
+      {
+        "toolName": "Read",
+        "ruleContent": "//Users/wbrunson/**"
+      }
+    ],
+    "behavior": "allow",
+    "destination": "session"
+  }
+]
+[DEBUG] Permission suggestions for Read: [
+  {
+    "type": "addRules",
+    "rules": [
+      {
+        "toolName": "Read",
+        "ruleContent": "//Users/wbrunson/**"
+      }
+    ],
+    "behavior": "allow",
+    "destination": "session"
+  }
+]
+[DEBUG] Permission suggestions for Read: [
+  {
+    "type": "addRules",
+    "rules": [
+      {
+        "toolName": "Read",
+        "ruleContent": "//Users/wbrunson/**"
+      }
+    ],
+    "behavior": "allow",
+    "destination": "session"
+  }
+]
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763136440802
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763136440802 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Metrics opt-out check failed: No API key available
+[DEBUG] Metrics check failed, defaulting to disabled
+[DEBUG] Metrics export disabled by organization setting
+[DEBUG] Detected change to /Users/wbrunson/.claude/settings.json
+[DEBUG] Replacing all allow rules for destination 'projectSettings' with 82 rule(s): ["Bash(awk:*)","Bash(cat:*)","Bash(cp:*)","Bash(diff:*)","Bash(eslint:*)","Bash(find:*)","Bash(gh api:*)","Bash(gh auth:*)","Bash(gh pr diff:*)","Bash(gh pr edit:*)","Bash(gh pr list:*)","Bash(gh pr view:*)","Bash(gh search prs:*)","Bash(git add:*)","Bash(git checkout:*)","Bash(git config:*)","Bash(git fetch:*)","Bash(git pull:*)","Bash(git push:*)","Bash(git rebase:*)","Bash(git stash:*)","Bash(grep:*)","Bash(ls:*)","Bash(mkdir:*)","Bash(npm install:*)","Bash(npm run:*)","Bash(npm test:*)","Bash(npx tsc:*)","Bash(npx vitest run:*)","Bash(pnpm -w run lint)","Bash(pnpm add:*)","Bash(pnpm build)","Bash(pnpm eslint:*)","Bash(pnpm install:*)","Bash(pnpm lint:*)","Bash(pnpm run eslint:*)","Bash(pnpm run lint:*)","Bash(pnpm test:*)","Bash(pnpm typecheck:*)","Bash(pnpm vitest run:*)","Bash(rg:*)","Bash(sed:*)","WebFetch(domain:academy.shopware.com)","WebFetch(domain:appexchange.salesforce.com)","WebFetch(domain:blog.demandware.com)","WebFetch(domain:codex.wordpress.org)","WebFetch(domain:developer.salesforce.com)","WebFetch(domain:developer.shopware.com)","WebFetch(domain:developer.woocommerce.com)","WebFetch(domain:developer.wordpress.org)","WebFetch(domain:docs.shopware.com)","WebFetch(domain:docs.woocommerce.com)","WebFetch(domain:documentation.b2c.commercecloud.salesforce.com)","WebFetch(domain:github.com)","WebFetch(domain:help.salesforce.com)","WebFetch(domain:infocenter.demandware.com)","WebFetch(domain:make.wordpress.org)","WebFetch(domain:medium.com)","WebFetch(domain:partners.salesforce.com)","WebFetch(domain:pnpm.io)","WebFetch(domain:salesforce.com)","WebFetch(domain:salesforce.stackexchange.com)","WebFetch(domain:store.shopware.com)","WebFetch(domain:trailhead.salesforce.com)","WebFetch(domain:woocommerce.com)","WebFetch(domain:woocommerce.github.io)","WebFetch(domain:wordpress.org)","WebFetch(domain:www.demandware.com)","WebFetch(domain:www.npmjs.com)","WebFetch(domain:www.salesforce.com)","WebFetch(domain:www.shopware.com)","WebFetch(domain:xchange.demandware.com)","mcp__atlassian__createJiraIssue","mcp__atlassian__editJiraIssue","mcp__atlassian__getAccessibleAtlassianResources","mcp__atlassian__getJiraIssue","mcp__atlassian__getJiraProjectIssueTypesMetadata","mcp__atlassian__getTransitionsForJiraIssue","mcp__atlassian__getVisibleJiraProjects","mcp__atlassian__lookupJiraAccountId","mcp__atlassian__searchJiraIssuesUsingJql","mcp__atlassian__transitionJiraIssue"]
+[DEBUG] Replacing all allow rules for destination 'localSettings' with 20 rule(s): ["Bash(gh repo clone:*)","Bash(gh repo view:*)","Bash(git log:*)","Bash(xargs sed:*)","Read(//Users/wbrunson/.claude/**)","Read(//Users/wbrunson/workspace/dotfiles/stow/.claude/**)","Bash(git show-branch:*)","WebFetch(domain:developers.openai.com)","Bash(pnpm generate:*)","Bash(node:*)","Bash(pnpm config get:*)","Bash(pnpm test:unit src/functions/acp/translate.test.ts)","Bash(npx eslint:*)","WebFetch(domain:docs.datadoghq.com)","Bash(curl:*)","Bash(aws logs filter-log-events:*)","WebFetch(domain:heyapi.dev)","Bash(npm start)","Bash(npm-registry-switch:*)","Bash(pnpm test:unit:*)"]
+[DEBUG] Detected change to /Users/wbrunson/.claude/settings.json
+[DEBUG] Replacing all allow rules for destination 'projectSettings' with 82 rule(s): ["Bash(awk:*)","Bash(cat:*)","Bash(cp:*)","Bash(diff:*)","Bash(eslint:*)","Bash(find:*)","Bash(gh api:*)","Bash(gh auth:*)","Bash(gh pr diff:*)","Bash(gh pr edit:*)","Bash(gh pr list:*)","Bash(gh pr view:*)","Bash(gh search prs:*)","Bash(git add:*)","Bash(git checkout:*)","Bash(git config:*)","Bash(git fetch:*)","Bash(git pull:*)","Bash(git push:*)","Bash(git rebase:*)","Bash(git stash:*)","Bash(grep:*)","Bash(ls:*)","Bash(mkdir:*)","Bash(npm install:*)","Bash(npm run:*)","Bash(npm test:*)","Bash(npx tsc:*)","Bash(npx vitest run:*)","Bash(pnpm -w run lint)","Bash(pnpm add:*)","Bash(pnpm build)","Bash(pnpm eslint:*)","Bash(pnpm install:*)","Bash(pnpm lint:*)","Bash(pnpm run eslint:*)","Bash(pnpm run lint:*)","Bash(pnpm test:*)","Bash(pnpm typecheck:*)","Bash(pnpm vitest run:*)","Bash(rg:*)","Bash(sed:*)","WebFetch(domain:academy.shopware.com)","WebFetch(domain:appexchange.salesforce.com)","WebFetch(domain:blog.demandware.com)","WebFetch(domain:codex.wordpress.org)","WebFetch(domain:developer.salesforce.com)","WebFetch(domain:developer.shopware.com)","WebFetch(domain:developer.woocommerce.com)","WebFetch(domain:developer.wordpress.org)","WebFetch(domain:docs.shopware.com)","WebFetch(domain:docs.woocommerce.com)","WebFetch(domain:documentation.b2c.commercecloud.salesforce.com)","WebFetch(domain:github.com)","WebFetch(domain:help.salesforce.com)","WebFetch(domain:infocenter.demandware.com)","WebFetch(domain:make.wordpress.org)","WebFetch(domain:medium.com)","WebFetch(domain:partners.salesforce.com)","WebFetch(domain:pnpm.io)","WebFetch(domain:salesforce.com)","WebFetch(domain:salesforce.stackexchange.com)","WebFetch(domain:store.shopware.com)","WebFetch(domain:trailhead.salesforce.com)","WebFetch(domain:woocommerce.com)","WebFetch(domain:woocommerce.github.io)","WebFetch(domain:wordpress.org)","WebFetch(domain:www.demandware.com)","WebFetch(domain:www.npmjs.com)","WebFetch(domain:www.salesforce.com)","WebFetch(domain:www.shopware.com)","WebFetch(domain:xchange.demandware.com)","mcp__atlassian__createJiraIssue","mcp__atlassian__editJiraIssue","mcp__atlassian__getAccessibleAtlassianResources","mcp__atlassian__getJiraIssue","mcp__atlassian__getJiraProjectIssueTypesMetadata","mcp__atlassian__getTransitionsForJiraIssue","mcp__atlassian__getVisibleJiraProjects","mcp__atlassian__lookupJiraAccountId","mcp__atlassian__searchJiraIssuesUsingJql","mcp__atlassian__transitionJiraIssue"]
+[DEBUG] Replacing all allow rules for destination 'localSettings' with 20 rule(s): ["Bash(gh repo clone:*)","Bash(gh repo view:*)","Bash(git log:*)","Bash(xargs sed:*)","Read(//Users/wbrunson/.claude/**)","Read(//Users/wbrunson/workspace/dotfiles/stow/.claude/**)","Bash(git show-branch:*)","WebFetch(domain:developers.openai.com)","Bash(pnpm generate:*)","Bash(node:*)","Bash(pnpm config get:*)","Bash(pnpm test:unit src/functions/acp/translate.test.ts)","Bash(npx eslint:*)","WebFetch(domain:docs.datadoghq.com)","Bash(curl:*)","Bash(aws logs filter-log-events:*)","WebFetch(domain:heyapi.dev)","Bash(npm start)","Bash(npm-registry-switch:*)","Bash(pnpm test:unit:*)"]
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763149050886
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763149050886 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763150845774
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763150845774 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763152647010
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763152647010 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763156245869
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763156245869 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763158046386
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763158046386 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763159845831
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763159845831 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763172634973
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763172634973 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[ERROR] Failed to save config with lock: Error: Lock file is already being held
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763174388059
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763174388059 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763176187695
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763176187695 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763177988378
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763177988378 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763222533143
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763222533143 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763229010081
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763229010081 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763232932028
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763232932028 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763234731803
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763234731803 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763305409951
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763305409951 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763307208718
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763307208718 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763309008359
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763309008359 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763320781886
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763320781886 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763322582531
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763322582531 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763324382393
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763324382393 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763326181875
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763326181875 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763327981863
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763327981863 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763329782170
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.88463.1763329782170 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)

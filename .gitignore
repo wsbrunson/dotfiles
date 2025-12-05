@@ -8,6 +8,7 @@
 /stow/.claude/statsig/
 /stow/.claude/todos/
 /stow/.config/fish/fish_variables
+/stow/.config/fish/secrets.fish
 /stow/.config/configstore
 
 .env

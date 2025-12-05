@@ -1,0 +1,95 @@
+variable "team_members" {
+  description = "List of Datadog user IDs for commerce orchestrator team membership"
+  type        = list(string)
+  default = []
+}
+
+# Environment-specific team member defaults
+locals {
+  default_team_members = {
+    test = [
+      "642c2d45-b0fa-11f0-bc0a-025c3db407ac", # wbrunson
+    ]
+    sandbox = []
+    prod = [
+      "852284f9-b414-11f0-b4fe-36533f190988", # wbrunson
+    ]
+  }
+
+  # Use provided team_members or fall back to environment defaults
+  team_members_final = length(var.team_members) > 0 ? var.team_members : local.default_team_members[local.environment]
+}
+
+variable "team_notification_channels" {
+  description = "Notification channels for team alerts"
+  type        = list(string)
+  default     = []
+}
+
+# Main team resource
+resource "datadog_team" "commerce_orchestrator" {
+  name        = "Commerce Orchestrator"
+  handle      = "commerce-orchestrator"
+  description = "Team responsible for PayPal agentic commerce platform orchestration services - serverless Lambda functions for unified cart creation and completion flows across multiple e-commerce platforms"
+
+  banner = "#0070BA"  # PayPal blue
+}
+
+resource "datadog_team_membership" "members" {
+  for_each = toset(local.team_members_final)
+
+  team_id = datadog_team.commerce_orchestrator.id
+  user_id = each.value
+  role    = "admin"  # Options: "admin", "member"
+}
+
+# Team links - Integration with external tools
+resource "datadog_team_link" "jira" {
+  team_id = datadog_team.commerce_orchestrator.id
+  label   = "JIRA Board - DTMCPTGR"
+  url     = "https://paypal.atlassian.net/secure/RapidBoard.jspa?projectKey=DTMCPTGR"
+}
+
+resource "datadog_team_link" "github" {
+  team_id = datadog_team.commerce_orchestrator.id
+  label   = "GitHub Repository"
+  url     = "https://github.com/PayPal-Zettle/commerce-orchestrator"
+}
+
+resource "datadog_team_link" "confluence" {
+  team_id = datadog_team.commerce_orchestrator.id
+  label   = "Team Documentation"
+  url     = "https://paypal.atlassian.net/wiki/spaces/DT/overview"
+}
+
+resource "datadog_team_link" "slack" {
+  team_id = datadog_team.commerce_orchestrator.id
+  label   = "Team Slack Channel"
+  url     = "https://paypal.slack.com/channels/commerce-orchestrator"
+}
+
+# Output team information for use in other resources
+output "commerce_orchestrator_team_id" {
+  description = "ID of the commerce orchestrator team"
+  value       = datadog_team.commerce_orchestrator.id
+}
+
+output "commerce_orchestrator_team_handle" {
+  description = "Handle of the commerce orchestrator team"
+  value       = datadog_team.commerce_orchestrator.handle
+}
+
+# Tags for use in monitors and dashboards
+locals {
+  team_tags = [
+    "team:${datadog_team.commerce_orchestrator.handle}",
+    "service:${local.app_name}",
+    "environment:${local.environment}",
+    "managed_by:terraform"
+  ]
+}
+
+output "team_tags" {
+  description = "Standard team tags for use in monitors and dashboards"
+  value       = local.team_tags
+}

@@ -1,0 +1,479 @@
+import { describe, test, expect, beforeEach, vi } from "vitest";
+import { ALBEvent } from "aws-lambda";
+import { app } from "./app";
+import { PayPalOrderManager } from "shared/helpers/PayPalOrderManager";
+
+vi.mock("../../shared/helpers/SecretsManagerHelper");
+vi.mock("../../shared/helpers/PayPalOrderManager");
+
+// Mock the commerce onboarding service to prevent real API calls
+vi.mock("../../shared/commerce-onboarding", () => {
+  const mockService = {
+    setStoreContext: vi.fn(),
+    getStoreConfig: vi.fn().mockResolvedValue({
+      platformConfig: {
+        integration: {
+          baseUrl: "https://merchant.example.com",
+        },
+      },
+    }),
+  };
+
+  return {
+    createCommerceOnboardingService: vi.fn(() => mockService),
+    CommerceOnboardingService: vi.fn(() => mockService),
+  };
+});
+
+vi.mock("@aws-sdk/client-cloudwatch", async () => {
+  const originalModule = await vi.importActual("@aws-sdk/client-cloudwatch");
+  return {
+    __esModule: true,
+    ...originalModule,
+    CloudWatch: vi.fn(() => ({
+      send: vi.fn().mockResolvedValue({}),
+    })),
+  };
+});
+
+vi.mock("../../shared/cache/cacheFactory", async () => {
+  const { InMemoryCacheSingleton } = await vi.importActual(
+    "../../shared/cache/inMemoryCache",
+  );
+  // @ts-expect-error vitest mocking craziness
+  InMemoryCacheSingleton.init();
+  return {
+    getCacheImplementation: InMemoryCacheSingleton,
+  };
+});
+
+vi.mock("../../shared/middleware/auth", () => {
+  const auth = vi.fn(async (_c: any, next: any) => next());
+  return { __esModule: true, auth };
+});
+
+// Mock the setStoreMetaData middleware to provide fake store metadata
+vi.mock("../../shared/middleware/setStoreMetaData", () => {
+  const setStoreMetaData = vi.fn(() => {
+    return async (c: any, next: any) => {
+      // Set fake store metadata that getPlatformBaseUrl expects
+      c.set("storeMetaData", {
+        honeyStoreId: "mock-store-id",
+        platformName: "acp",
+      });
+      await next();
+    };
+  });
+  return { __esModule: true, setStoreMetaData };
+});
+
+const baseURL = "/commerceorchnodeserv/v1/acp";
+const createCartURL = `${baseURL}/cart`;
+
+const headers = {
+  authorization: "Bearer test-token",
+  "content-type": "application/json",
+};
+
+const createCartCreateEvent = (
+  options: {
+    email?: string;
+    items?: Array<{ variant_id: string; quantity: number }>;
+    customer?: {
+      name?: { given_name: string; surname: string };
+      phone?: { country_code: string; national_number: string };
+      email_address?: string;
+    };
+    shipping_address?: {
+      address_line_1: string;
+      address_line_2?: string;
+      admin_area_1: string;
+      admin_area_2: string;
+      country_code: string;
+      postal_code: string;
+    };
+    billing_address?: {
+      address_line_1: string;
+      address_line_2?: string;
+      admin_area_1: string;
+      admin_area_2: string;
+      country_code: string;
+      postal_code: string;
+    };
+  } = {},
+): ALBEvent => {
+  const {
+    email = "success@email.com",
+    items = [{ item_id: "32725005860924", quantity: 1 }],
+    customer = {
+      name: { given_name: "shane", surname: "brunson" },
+      phone: { country_code: "1", national_number: "7658675309" },
+      email_address: email,
+    },
+    shipping_address = {
+      address_line_1: "222 Merchandise Mart Plz",
+      address_line_2: "Ste 970",
+      admin_area_1: "IL",
+      admin_area_2: "CHICAGO",
+      country_code: "US",
+      postal_code: "60654-1133",
+    },
+    billing_address = {
+      address_line_1: "234 W Russell St.",
+      admin_area_1: "IL",
+      admin_area_2: "Barrington",
+      country_code: "US",
+      postal_code: "60010",
+    },
+  } = options;
+
+  if (customer && !customer.email_address) {
+    customer.email_address = email;
+  }
+
+  return {
+    requestContext: {
+      elb: {
+        targetGroupArn: "fake-arn",
+      },
+    },
+    httpMethod: "POST",
+    path: createCartURL,
+    headers: headers,
+    body: JSON.stringify({
+      items,
+      customer,
+      shipping_address,
+      billing_address,
+    }),
+    isBase64Encoded: false,
+  } as ALBEvent;
+};
+
+const createCartCompleteEvent = (
+  { cartId }: { cartId: string },
+  options: {
+    paymentToken: string;
+    customer?: {
+      name?: { given_name: string; surname: string };
+      phone?: { country_code: string; national_number: string };
+      email_address?: string;
+    };
+    billing_address?: {
+      address_line_1: string;
+      address_line_2?: string;
+      admin_area_1: string;
+      admin_area_2: string;
+      country_code: string;
+      postal_code: string;
+    };
+  },
+): ALBEvent => {
+  const {
+    paymentToken,
+    customer = {
+      name: { given_name: "John", surname: "Doe" },
+      phone: { country_code: "1", national_number: "5551234567" },
+      email_address: "john.doe@example.com",
+    },
+    billing_address = {
+      address_line_1: "456 Oak Ave",
+      admin_area_1: "CA",
+      admin_area_2: "Los Angeles",
+      country_code: "US",
+      postal_code: "90210",
+    },
+  } = options;
+
+  return {
+    requestContext: {
+      elb: {
+        targetGroupArn: "fake-arn",
+      },
+    },
+    httpMethod: "POST",
+    path: `${createCartURL}/${cartId}/complete`,
+    headers: headers,
+    body: JSON.stringify({
+      customer,
+      billing_address,
+      payment_method: {
+        token: paymentToken,
+        type: "paypal",
+      },
+    }),
+    isBase64Encoded: false,
+  } as ALBEvent;
+};
+
+const createCartUpdateEvent = (
+  { cartId }: { cartId: string },
+  options: {
+    email?: string;
+    items?: Array<{ item_id: string; quantity: number }>;
+    customer?: {
+      name?: { given_name: string; surname: string };
+      phone?: { country_code: string; national_number: string };
+      email_address?: string;
+    };
+    shipping_address?: {
+      address_line_1: string;
+      address_line_2?: string;
+      admin_area_1: string;
+      admin_area_2: string;
+      country_code: string;
+      postal_code: string;
+    };
+    billing_address?: {
+      address_line_1: string;
+      address_line_2?: string;
+      admin_area_1: string;
+      admin_area_2: string;
+      country_code: string;
+      postal_code: string;
+    };
+    available_shipping_options?: Array<{
+      id: string;
+      name: string;
+      price: { currency_code: string; value: string };
+      is_selected: boolean;
+    }>;
+  } = {},
+): ALBEvent => {
+  const {
+    email = "updated@email.com",
+    items = [{ item_id: "32725005860924", quantity: 2 }],
+    customer = {
+      name: { given_name: "updated", surname: "buyer" },
+      phone: { country_code: "1", national_number: "7658675309" },
+      email_address: email,
+    },
+    shipping_address = {
+      address_line_1: "333 North Avenue",
+      address_line_2: "Suite 500",
+      admin_area_1: "CA",
+      admin_area_2: "SAN FRANCISCO",
+      country_code: "US",
+      postal_code: "94102",
+    },
+    billing_address = {
+      address_line_1: "333 North Avenue",
+      admin_area_1: "CA",
+      admin_area_2: "San Francisco",
+      country_code: "US",
+      postal_code: "94102",
+    },
+    available_shipping_options,
+  } = options;
+
+  if (customer && !customer.email_address) {
+    customer.email_address = email;
+  }
+
+  const bodyData: any = {
+    items,
+    customer,
+    shipping_address,
+    billing_address,
+  };
+
+  if (available_shipping_options) {
+    bodyData.available_shipping_options = available_shipping_options;
+  }
+
+  return {
+    requestContext: {
+      elb: {
+        targetGroupArn: "fake-arn",
+      },
+    },
+    httpMethod: "PUT",
+    path: `${createCartURL}/${cartId}`,
+    headers: headers,
+    body: JSON.stringify(bodyData),
+    isBase64Encoded: false,
+  } as ALBEvent;
+};
+
+describe("ACP Orchestrator", () => {
+  beforeEach(() => {
+    process.env.APP_ENV = "test";
+    PayPalOrderManager.getPayPalAPISecrets = vi.fn().mockResolvedValue({
+      clientId:
+        "B_AxqJZnX9Fg6HifHgzGWffqQhnRxsdiXR2eGsIS50nBpG8IPJXi7-bZA4zgvlDGaEs0QwxlTGbuGdRmo0",
+      clientSecret:
+        "EFcrHy2ic0_GjjKswqjxt3JiDhx4zWaKJInqvo4jh6uGhR_hcDPjD2vPNX8c3b91bVO9gDWF1bbYrnSA",
+      host: "https://msmaster.qa.paypal.com",
+    });
+
+    PayPalOrderManager.prototype.createOrder = vi.fn().mockResolvedValue({
+      id: "MOCK_PAYPAL_ORDER",
+      status: "CREATED",
+      purchase_units: [{ amount: { currency_code: "USD", value: "100.00" } }],
+    });
+
+    PayPalOrderManager.prototype.updateOrder = vi.fn().mockResolvedValue({
+      status: "success",
+    });
+
+    PayPalOrderManager.prototype.captureOrder = vi.fn().mockResolvedValue({
+      id: "MOCK_PAYPAL_ORDER",
+      status: "COMPLETED",
+      purchase_units: [
+        {
+          payments: {
+            captures: [
+              {
+                id: `CAPTURE_ID_123`,
+                status: "COMPLETED",
+              },
+            ],
+          },
+        },
+      ],
+    });
+  });
+
+  test.each([
+    {
+      case: "successful event",
+      event: createCartCreateEvent(),
+    },
+    {
+      case: "complicated totals breakdown with multiple items and fees",
+      event: createCartCreateEvent({
+        items: [{ variant_id: "prod-101", quantity: 3 }],
+      }),
+    },
+  ])("create cart: $case", async ({ event }) => {
+    const response = await app.request(
+      createCartURL,
+      {
+        method: "POST",
+      },
+      {
+        event,
+      },
+    );
+    const responseBody = await response.json();
+
+    expect(responseBody.id).toBeDefined();
+    expect(responseBody).toMatchSnapshot();
+  });
+
+  test.each([
+    {
+      case: "successful complete with payment token",
+      event: createCartCreateEvent(),
+    },
+  ])("complete cart: $case", async ({ event }) => {
+    const createResponse = await app.request(
+      createCartURL,
+      {
+        method: "POST",
+      },
+      {
+        event,
+      },
+    );
+    const createResponseBody = await createResponse.json();
+    expect(createResponseBody.id).toBeDefined();
+    expect(createResponseBody.payment_method?.token).toBeDefined();
+
+    const ecToken = createResponseBody.payment_method.token;
+    const cartId = createResponseBody.id;
+
+    // Now complete the cart using the EC token
+    const completeEvent = createCartCompleteEvent(
+      { cartId },
+      {
+        paymentToken: ecToken,
+      },
+    );
+
+    const completeResponse = await app.request(
+      `${createCartURL}/${cartId}/complete`,
+      {
+        method: "POST",
+      },
+      {
+        event: completeEvent,
+      },
+    );
+    const completeResponseBody = await completeResponse.json();
+
+    console.log("look here", completeResponseBody);
+
+    expect(completeResponseBody.id).toBeDefined();
+    expect(completeResponseBody).toMatchSnapshot();
+  });
+
+  test.each([
+    {
+      case: "successful update with new shipping address and customer info",
+      cartId: "checkout_session_sample_id",
+      updateEvent: createCartUpdateEvent({
+        cartId: "checkout_session_sample_id",
+      }),
+    },
+    {
+      case: "complicated totals after updating quantities and shipping method",
+      cartId: "checkout_session_sample_id",
+      updateEvent: createCartUpdateEvent(
+        { cartId: "checkout_session_sample_id" },
+        {
+          items: [
+            { item_id: "prod-101", quantity: 5 },
+            { item_id: "prod-202", quantity: 3 },
+          ],
+          customer: {
+            name: { given_name: "Updated", surname: "Buyer" },
+            phone: { country_code: "1", national_number: "2125551234" },
+            email_address: "updated@example.com",
+          },
+          shipping_address: {
+            address_line_1: "200 Park Ave",
+            admin_area_1: "NY",
+            admin_area_2: "NEW YORK",
+            country_code: "US",
+            postal_code: "10022",
+          },
+          available_shipping_options: [
+            {
+              id: "shipping-standard",
+              name: "Standard Shipping",
+              price: { currency_code: "USD", value: "5.99" },
+              is_selected: false,
+            },
+            {
+              id: "shipping-express",
+              name: "Express Shipping",
+              price: { currency_code: "USD", value: "19.99" },
+              is_selected: true,
+            },
+            {
+              id: "shipping-overnight",
+              name: "Overnight Shipping",
+              price: { currency_code: "USD", value: "49.99" },
+              is_selected: false,
+            },
+          ],
+        },
+      ),
+    },
+  ])("update cart: $case", async ({ cartId, updateEvent }) => {
+    const updateResponse = await app.request(
+      `${createCartURL}/${cartId}`,
+      {
+        method: "PUT",
+      },
+      {
+        event: updateEvent,
+      },
+    );
+    const updateResponseBody = await updateResponse.json();
+
+    expect(updateResponseBody.id).toBeDefined();
+    expect(updateResponseBody).toMatchSnapshot();
+  });
+});

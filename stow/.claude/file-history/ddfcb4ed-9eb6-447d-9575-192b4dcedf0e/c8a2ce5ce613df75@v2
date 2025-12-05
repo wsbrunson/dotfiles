@@ -1,0 +1,647 @@
+import { describe, it, beforeEach, afterEach, vi, expect } from "vitest";
+import { ALBEvent } from "aws-lambda";
+import { getMockALBEvent } from "../../shared/test-utils/mockALBEvent";
+import { ShopifyRequestClient } from "../../shared/shopify/shopify-client";
+import { exampleProposal } from "../../shared/shopify/test-data";
+import {
+  InternalServerError,
+  ProductDiscontinuedError,
+  OutOfStockError,
+  PaymentDeclinedError,
+  PaymentExpiredError,
+  ShippingZoneNotCoveredError,
+  ConnectionResetError,
+  ServiceUnavailableError,
+} from "../../shared/errors";
+import { verifyAppContext } from "../../shared/helpers/AppContextAuthorizer";
+import { getCacheImplementation } from "../../shared/cache/cacheFactory";
+import {
+  trackInitiatedAddCart,
+  trackSuccessAddCart,
+  trackFailedAddCart,
+} from "../../shared/metrics/emitMetric";
+// @ts-ignore: Using CommonJS exports syntax
+import { handler } from "./index";
+
+vi.mock("../../shared/shopify/shopify-client");
+vi.mock("../../shared/cache/cacheFactory");
+vi.mock("../../shared/helpers/AppContextAuthorizer");
+vi.mock("../../shared/metrics/emitMetric");
+
+const validCreateCartRequest = {
+  cartId: "valid-cart",
+  merchantUrl: "https://merchant.com",
+  products: [
+    {
+      productId: "product-1",
+      quantity: 1,
+    },
+  ],
+  shippingAddress: {
+    addressLine1: "123 Main St",
+    addressLine2: "Apartment 4B",
+    adminArea2: "Los Angeles",
+    adminArea1: "CA",
+    postalCode: "90001",
+    countryCode: "US",
+  },
+  customer: {
+    id: "customer-1",
+    email: "customer@example.com",
+  },
+};
+
+describe("Shopify Create Cart Lambda Handler", () => {
+  let mockEvent: ALBEvent;
+
+  beforeEach(() => {
+    mockEvent = getMockALBEvent({
+      body: JSON.stringify(validCreateCartRequest),
+      headers: {
+        "paypal-application-context": "valid-token",
+      },
+    });
+
+    vi.mocked(verifyAppContext).mockReturnValue(true);
+
+    const mockCache = {
+      set: vi.fn().mockResolvedValue(undefined),
+      get: vi.fn().mockResolvedValue(null),
+      delete: vi.fn().mockResolvedValue(undefined),
+    };
+    vi.mocked(getCacheImplementation).mockReturnValue(mockCache);
+
+    vi.mocked(trackInitiatedAddCart).mockResolvedValue(undefined);
+    vi.mocked(trackSuccessAddCart).mockResolvedValue(undefined);
+    vi.mocked(trackFailedAddCart).mockResolvedValue(undefined);
+  });
+
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
+
+  it("should create a cart successfully", async () => {
+    ShopifyRequestClient.getInitialMerchantPageValues = vi
+      .fn()
+      .mockResolvedValue({
+        accessToken: "access-token",
+        cookies: "cookies",
+      });
+
+    ShopifyRequestClient.prototype.createCart = vi.fn().mockResolvedValue({
+      checkoutToken: "checkout-token",
+      cart: { checkoutUrl: "https://shopify.com/checkout" },
+    });
+
+    ShopifyRequestClient.prototype.extractProposalFromCheckoutUrl = vi
+      .fn()
+      .mockResolvedValue({
+        proposal: exampleProposal,
+        sessionToken: "session-token",
+      });
+
+    ShopifyRequestClient.prototype.pollForUsableProposal = vi
+      .fn()
+      .mockResolvedValue(exampleProposal);
+
+    ShopifyRequestClient.prototype.createPayPalToken = vi
+      .fn()
+      .mockResolvedValue({ ecToken: "paypal-token" });
+
+    const response = await handler(mockEvent);
+
+    // expect(response.statusCode).toEqual(200);
+    expect(JSON.parse(response.body)).toMatchObject({
+      ecToken: "paypal-token",
+      status: "success",
+      paymentMethodOptions: expect.arrayContaining([
+        expect.objectContaining({
+          type: "PAYPAL",
+          description: "PAYPAL_EXPRESS",
+        }),
+      ]),
+      shippingOptions: expect.any(Array),
+      totalAmount: expect.objectContaining({
+        currency: "USD",
+        value: "110.25",
+      }),
+      taxAmount: expect.objectContaining({
+        currency: "USD",
+        value: "10.25",
+      }),
+    });
+  });
+
+  it("should throw UnauthorizedError when app context verification fails", async () => {
+    vi.mocked(verifyAppContext).mockReturnValue(false);
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(401);
+    expect(JSON.parse(response.body)).toMatchObject({
+      message: expect.stringContaining("Unauthorized"),
+    });
+  });
+
+  it("should throw BadRequestError when merchant URL is missing", async () => {
+    const requestWithoutMerchantUrl = { ...validCreateCartRequest };
+    // @ts-expect-error deleting a required field
+    delete requestWithoutMerchantUrl.merchantUrl;
+
+    mockEvent = getMockALBEvent({
+      body: JSON.stringify(requestWithoutMerchantUrl),
+      headers: {
+        "paypal-application-context": "valid-token",
+      },
+    });
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(400);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody).toMatchObject({
+      details: expect.arrayContaining([
+        expect.objectContaining({
+          description: expect.stringContaining("Merchant URL is required"),
+        }),
+      ]),
+    });
+  });
+
+  it("should handle ProductDiscontinuedError when Shopify returns product variant does not exist error", async () => {
+    ShopifyRequestClient.getInitialMerchantPageValues = vi
+      .fn()
+      .mockResolvedValue({
+        accessToken: "access-token",
+        cookies: "cookies",
+      });
+
+    ShopifyRequestClient.prototype.createCart = vi.fn().mockRejectedValue(
+      new ProductDiscontinuedError("test-debug-id", {
+        details: [
+          {
+            description:
+              "The merchandise with id gid://shopify/ProductVariant/49436667773232 does not exist.",
+          },
+        ],
+      })
+    );
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(422);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody).toMatchObject({
+      details: expect.arrayContaining([
+        expect.objectContaining({
+          description: expect.stringContaining("does not exist"),
+        }),
+      ]),
+    });
+  });
+
+  it("should handle OutOfStockError when Shopify returns DELIVERY_OUT_OF_STOCK_AT_ORIGIN_LOCATION error", async () => {
+    ShopifyRequestClient.getInitialMerchantPageValues = vi
+      .fn()
+      .mockResolvedValue({
+        accessToken: "access-token",
+        cookies: "cookies",
+      });
+
+    ShopifyRequestClient.prototype.createCart = vi.fn().mockRejectedValue(
+      new OutOfStockError("test-debug-id", {
+        details: [
+          {
+            description:
+              "Product is out of stock at the origin location for delivery",
+          },
+        ],
+      })
+    );
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(422);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody).toMatchObject({
+      details: expect.arrayContaining([
+        expect.objectContaining({
+          description: expect.stringContaining(
+            "out of stock at the origin location"
+          ),
+        }),
+      ]),
+    });
+  });
+
+  it("should handle invalid request schema", async () => {
+    const invalidRequest = {
+      cartId: "valid-cart",
+    };
+
+    mockEvent = getMockALBEvent({
+      body: JSON.stringify(invalidRequest),
+      headers: {
+        "paypal-application-context": "valid-token",
+      },
+    });
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(400);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody.name).toBe("BadRequestError");
+  });
+
+  it("should handle errors during cart creation", async () => {
+    ShopifyRequestClient.getInitialMerchantPageValues = vi
+      .fn()
+      .mockRejectedValue(new Error("Network error"));
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(500);
+    expect(JSON.parse(response.body)).toMatchObject({
+      name: "InternalServerError",
+    });
+  });
+
+  it("should handle errors during proposal extraction", async () => {
+    ShopifyRequestClient.getInitialMerchantPageValues = vi
+      .fn()
+      .mockResolvedValue({
+        accessToken: "access-token",
+        cookies: "cookies",
+      });
+
+    ShopifyRequestClient.prototype.createCart = vi.fn().mockResolvedValue({
+      checkoutToken: "checkout-token",
+      cart: { checkoutUrl: "https://shopify.com/checkout" },
+    });
+
+    ShopifyRequestClient.prototype.extractProposalFromCheckoutUrl = vi
+      .fn()
+      .mockRejectedValue(
+        new InternalServerError("test-debug-id", {
+          details: [{ description: "Failed to extract proposal" }],
+        })
+      );
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(500);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody).toMatchObject({
+      details: expect.arrayContaining([
+        expect.objectContaining({
+          description: expect.stringContaining("Failed to extract proposal"),
+        }),
+      ]),
+    });
+  });
+
+  it("should handle errors during PayPal token creation", async () => {
+    ShopifyRequestClient.getInitialMerchantPageValues = vi
+      .fn()
+      .mockResolvedValue({
+        accessToken: "access-token",
+        cookies: "cookies",
+      });
+
+    ShopifyRequestClient.prototype.createCart = vi.fn().mockResolvedValue({
+      checkoutToken: "checkout-token",
+      cart: { checkoutUrl: "https://shopify.com/checkout" },
+    });
+
+    ShopifyRequestClient.prototype.extractProposalFromCheckoutUrl = vi
+      .fn()
+      .mockResolvedValue({
+        proposal: exampleProposal,
+        sessionToken: "session-token",
+      });
+
+    ShopifyRequestClient.prototype.pollForUsableProposal = vi
+      .fn()
+      .mockResolvedValue(exampleProposal);
+
+    ShopifyRequestClient.prototype.createPayPalToken = vi
+      .fn()
+      .mockRejectedValue(new Error("PayPal token creation failed"));
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(500);
+    expect(JSON.parse(response.body)).toMatchObject({
+      name: "InternalServerError",
+    });
+  });
+
+  it("should track metrics for successful operations", async () => {
+    ShopifyRequestClient.getInitialMerchantPageValues = vi
+      .fn()
+      .mockResolvedValue({
+        accessToken: "access-token",
+        cookies: "cookies",
+      });
+
+    ShopifyRequestClient.prototype.createCart = vi.fn().mockResolvedValue({
+      checkoutToken: "checkout-token",
+      cart: { checkoutUrl: "https://shopify.com/checkout" },
+    });
+
+    ShopifyRequestClient.prototype.extractProposalFromCheckoutUrl = vi
+      .fn()
+      .mockResolvedValue({
+        proposal: exampleProposal,
+        sessionToken: "session-token",
+      });
+
+    ShopifyRequestClient.prototype.pollForUsableProposal = vi
+      .fn()
+      .mockResolvedValue(exampleProposal);
+
+    ShopifyRequestClient.prototype.createPayPalToken = vi
+      .fn()
+      .mockResolvedValue({ ecToken: "paypal-token" });
+
+    await handler(mockEvent);
+
+    expect(trackInitiatedAddCart).toHaveBeenCalledWith({
+      orchestrator: "Shopify",
+      merchantUrl: "https://merchant.com",
+    });
+
+    expect(trackSuccessAddCart).toHaveBeenCalledWith({
+      orchestrator: "Shopify",
+      merchantUrl: "https://merchant.com",
+      status: "201",
+      duration: expect.any(Number),
+    });
+  });
+
+  it("should track metrics for failed operations", async () => {
+    ShopifyRequestClient.getInitialMerchantPageValues = vi
+      .fn()
+      .mockRejectedValue(new Error("Network error"));
+
+    await handler(mockEvent);
+
+    expect(trackInitiatedAddCart).toHaveBeenCalledWith({
+      orchestrator: "Shopify",
+      merchantUrl: "https://merchant.com",
+    });
+
+    expect(trackFailedAddCart).toHaveBeenCalledWith({
+      orchestrator: "Shopify",
+      merchantUrl: "https://merchant.com",
+      status: "500",
+    });
+  });
+
+  describe("Additional Error Scenarios", () => {
+    it("should handle PaymentDeclinedError", async () => {
+      ShopifyRequestClient.getInitialMerchantPageValues = vi
+        .fn()
+        .mockResolvedValue({
+          accessToken: "access-token",
+          cookies: "cookies",
+        });
+
+      ShopifyRequestClient.prototype.createCart = vi.fn().mockRejectedValue(
+        new PaymentDeclinedError("test-debug-id", {
+          details: [
+            {
+              description: "Payment was declined by the payment processor",
+            },
+          ],
+        })
+      );
+
+      const response = await handler(mockEvent);
+
+      expect(response.statusCode).toBe(422);
+      const responseBody = JSON.parse(response.body);
+      expect(responseBody).toMatchObject({
+        name: "PaymentDeclinedError",
+        details: expect.arrayContaining([
+          expect.objectContaining({
+            issue: "PAYMENT_DECLINED",
+          }),
+        ]),
+      });
+    });
+
+    it("should handle PaymentExpiredError", async () => {
+      ShopifyRequestClient.getInitialMerchantPageValues = vi
+        .fn()
+        .mockResolvedValue({
+          accessToken: "access-token",
+          cookies: "cookies",
+        });
+
+      ShopifyRequestClient.prototype.createCart = vi.fn().mockRejectedValue(
+        new PaymentExpiredError("test-debug-id", {
+          details: [
+            {
+              description: "Payment authorization has expired",
+            },
+          ],
+        })
+      );
+
+      const response = await handler(mockEvent);
+
+      expect(response.statusCode).toBe(422);
+      const responseBody = JSON.parse(response.body);
+      expect(responseBody).toMatchObject({
+        name: "PaymentExpiredError",
+        details: expect.arrayContaining([
+          expect.objectContaining({
+            issue: "PAYMENT_EXPIRED",
+          }),
+        ]),
+      });
+    });
+
+    it("should handle ShippingZoneNotCoveredError", async () => {
+      ShopifyRequestClient.getInitialMerchantPageValues = vi
+        .fn()
+        .mockResolvedValue({
+          accessToken: "access-token",
+          cookies: "cookies",
+        });
+
+      ShopifyRequestClient.prototype.createCart = vi.fn().mockRejectedValue(
+        new ShippingZoneNotCoveredError("test-debug-id", {
+          details: [
+            {
+              description: "Shipping is not available to this location",
+            },
+          ],
+        })
+      );
+
+      const response = await handler(mockEvent);
+
+      expect(response.statusCode).toBe(422);
+      const responseBody = JSON.parse(response.body);
+      expect(responseBody).toMatchObject({
+        name: "ShippingZoneNotCoveredError",
+        details: expect.arrayContaining([
+          expect.objectContaining({
+            issue: "SHIPPING_ZONE_NOT_COVERED",
+          }),
+        ]),
+      });
+    });
+
+    it("should handle ConnectionResetError", async () => {
+      ShopifyRequestClient.getInitialMerchantPageValues = vi
+        .fn()
+        .mockRejectedValue(
+          new ConnectionResetError("test-debug-id", {
+            details: [
+              {
+                description: "Connection was reset by Shopify server",
+              },
+            ],
+          })
+        );
+
+      const response = await handler(mockEvent);
+
+      expect(response.statusCode).toBe(503);
+      const responseBody = JSON.parse(response.body);
+      expect(responseBody).toMatchObject({
+        name: "ConnectionResetError",
+        details: expect.arrayContaining([
+          expect.objectContaining({
+            issue: "CONNECTION_RESET",
+          }),
+        ]),
+      });
+    });
+
+    it("should handle ServiceUnavailableError", async () => {
+      ShopifyRequestClient.getInitialMerchantPageValues = vi
+        .fn()
+        .mockRejectedValue(
+          new ServiceUnavailableError("test-debug-id", {
+            details: [
+              {
+                description: "Shopify service is temporarily unavailable",
+              },
+            ],
+          })
+        );
+
+      const response = await handler(mockEvent);
+
+      expect(response.statusCode).toBe(503);
+      const responseBody = JSON.parse(response.body);
+      expect(responseBody).toMatchObject({
+        name: "ServiceUnavailableError",
+      });
+    });
+
+    it("should handle cache set failure gracefully", async () => {
+      const mockCache = {
+        set: vi.fn().mockRejectedValue(new Error("Redis connection failed")),
+        get: vi.fn().mockResolvedValue(null),
+        delete: vi.fn().mockResolvedValue(undefined),
+      };
+      vi.mocked(getCacheImplementation).mockReturnValue(mockCache);
+
+      ShopifyRequestClient.getInitialMerchantPageValues = vi
+        .fn()
+        .mockResolvedValue({
+          accessToken: "access-token",
+          cookies: "cookies",
+        });
+
+      ShopifyRequestClient.prototype.createCart = vi.fn().mockResolvedValue({
+        checkoutToken: "checkout-token",
+        cart: { checkoutUrl: "https://shopify.com/checkout" },
+      });
+
+      ShopifyRequestClient.prototype.extractProposalFromCheckoutUrl = vi
+        .fn()
+        .mockResolvedValue({
+          proposal: exampleProposal,
+          sessionToken: "session-token",
+        });
+
+      ShopifyRequestClient.prototype.pollForUsableProposal = vi
+        .fn()
+        .mockResolvedValue(exampleProposal);
+
+      const response = await handler(mockEvent);
+
+      expect(response.statusCode).toBe(500);
+      expect(JSON.parse(response.body)).toMatchObject({
+        name: "InternalServerError",
+      });
+    });
+
+    it("should handle malformed JSON in request body", async () => {
+      mockEvent = getMockALBEvent({
+        body: '{"cartId": "test", "malformed": }',
+        headers: {
+          "paypal-application-context": "valid-token",
+        },
+      });
+
+      const response = await handler(mockEvent);
+
+      expect(response.statusCode).toBe(500);
+      expect(JSON.parse(response.body)).toMatchObject({
+        name: "InternalServerError",
+      });
+    });
+
+    it("should handle missing billingAddress gracefully", async () => {
+      const requestWithoutBillingAddress = {
+        ...validCreateCartRequest,
+        billingAddress: undefined,
+      };
+
+      mockEvent = getMockALBEvent({
+        body: JSON.stringify(requestWithoutBillingAddress),
+        headers: {
+          "paypal-application-context": "valid-token",
+        },
+      });
+
+      ShopifyRequestClient.getInitialMerchantPageValues = vi
+        .fn()
+        .mockResolvedValue({
+          accessToken: "access-token",
+          cookies: "cookies",
+        });
+
+      ShopifyRequestClient.prototype.createCart = vi.fn().mockResolvedValue({
+        checkoutToken: "checkout-token",
+        cart: { checkoutUrl: "https://shopify.com/checkout" },
+      });
+
+      ShopifyRequestClient.prototype.extractProposalFromCheckoutUrl = vi
+        .fn()
+        .mockResolvedValue({
+          proposal: exampleProposal,
+          sessionToken: "session-token",
+        });
+
+      ShopifyRequestClient.prototype.pollForUsableProposal = vi
+        .fn()
+        .mockResolvedValue(exampleProposal);
+
+      ShopifyRequestClient.prototype.createPayPalToken = vi
+        .fn()
+        .mockResolvedValue({ ecToken: "paypal-token" });
+
+      const response = await handler(mockEvent);
+
+      expect(response.statusCode).toBe(200);
+    });
+  });
+});

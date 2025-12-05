@@ -1,0 +1,157 @@
+'use strict';
+
+var Passport = require('passport');
+var Thing = require('core-util-is');
+var Authorize = require('./authorize');
+var Handler = require('./handler');
+var ValidateST = require('@paypalcorp/st-validation');
+var Utils = require('./utils');
+var authUtilsGeo = require('@paypalcorp/auth-utils-geo');
+var ValidateAT = require('@paypalcorp/at-validation');
+var SecurityContext = require('@paypalcorp/securitycontext-model');
+const { encryptedCookieNames, loadUserFromSecurityContext } = require('./utils');
+const authUtils = require('@paypalcorp/auth-utils');
+
+module.exports = function authpaypal(options) {
+    var passportInit,
+        validateST,
+        authStates,
+        populateUser,
+        loadCapability,
+        loadAccessPoints,
+        loadUsingPartyId,
+        validateAT,
+        authGeoValidation,
+        accessTokenLoginOption,
+        stCookied,
+        atCookied,
+        userTypes,
+        authScopes,
+        unAuthenticatedFlowEligible,
+        excludeUserSessionCookieRewrite;
+
+    options = options || {};
+
+    options.strategies = options.strategies || {};
+
+    options.strategies.authorize = Authorize;
+
+    authStates = Array.isArray(options.authStates) && options.authStates || ['LOGGEDIN'];
+    authScopes = Array.isArray(options.scopes) && options.scopes || options.args?.scopes;
+    userTypes = Array.isArray(options.userType) && options.userType || options.args?.userType || ['CONSUMER', 'MERCHANT'];
+    accessTokenLoginOption = options.accessTokenLogin;
+    unAuthenticatedFlowEligible = options.unAuthenticatedFlowEligible || false;
+
+    populateUser = !(options.populateUser === 'false' || options.populateUser === false);
+
+    // This option is directly passed into `user-paypal`.  If set it will
+    // add the `Capability` call when retrieving user data (prepaid property).
+    loadCapability = (options.loadCapability === 'true' || options.loadCapability === true);
+    loadAccessPoints = (options.loadAccessPoints === 'true' || options.loadAccessPoints === true);
+    loadUsingPartyId = (options.loadUsingPartyId === 'true' || options.loadUsingPartyId === true);
+    excludeUserSessionCookieRewrite = options.excludeUserSessionCookieRewrite || [];
+
+
+    // Initialise auth geo module with custom options
+    authGeoValidation = authUtilsGeo.authGeoValidation(options.geoOptions);
+    //Custom strategies
+    Object.keys(options.strategies).forEach(function (name) {
+        var ctor, strategy, strategyName;
+
+        if (Thing.isObject(options.strategies[name])) {
+            ctor = options.strategies[name].strategy;
+            strategy = new ctor();
+            options.strategies[name].arguments && (strategy = ctor.apply(strategy, options.strategies[name].arguments) || strategy);
+        }
+        else {
+            ctor = options.strategies[name];
+            strategy = new ctor();
+        }
+
+        strategyName = strategy.name || name;
+
+        Passport.use(strategyName, strategy);
+
+        module.exports[name] = Handler.create(strategyName, options);
+        module.exports[name].Strategy = ctor;
+    });
+
+    passportInit = Passport.initialize(options);
+    validateST = ValidateST(options);
+    validateAT = ValidateAT({ ...options, cookieNotRequired: false });
+
+
+    return function initializeauth(req, res, next) {
+        Utils.debug('initializing passport.js.');
+
+        atCookied = req.cookies && req.cookies[encryptedCookieNames.ACCESSTOKENCOOKIE];
+        stCookied = req.cookies && req.cookies[encryptedCookieNames.SESSIONTOKENCOOKIE];
+
+        //passport must be initialized for downstream strategies to work
+        passportInit(req, res, async function (error) {
+            if (error) {
+                Utils.calLogEvent({
+                    msg: 'error_initializing_authentication_module',
+                    error: error.message
+                }, 'ERROR');
+                Utils.debug('error initializing passport.js: %s.', error.message);
+                next(error);
+                return;
+            }
+
+            let additionalProperties = {
+                loadAccessPoints,
+                loadCapability,
+                loadUsingPartyId,
+                authGeoValidation,
+                authStates,
+                populateUser,
+                authScopes,
+                userTypes,
+                accessTokenLoginOption,
+                unAuthenticatedFlowEligible
+            };
+
+            if (atCookied && ATCookieValidation(req, additionalProperties, next)) {
+                additionalProperties = {...additionalProperties, tokenType: 'ACCESS_TOKEN'};
+                Utils.calLogEvent({
+                    msg: `AUTH_PAYPAL_AT_VALIDATION`
+                }, 'INFO');
+                req.cookies = {...req.cookies, access_token: atCookied };
+                validateAT(req, res, loadUserFromSecurityContext(req, res, next, additionalProperties));
+            } else if (stCookied && !excludeUserSessionCookieRewrite.includes(req.path)) {
+                additionalProperties = {...additionalProperties, tokenType: 'SESSION_TOKEN'};
+                Utils.calLogEvent({
+                    msg: `AUTH_PAYPAL_ST_VALIDATION`
+                }, 'INFO');
+                validateST(req, res, loadUserFromSecurityContext(req, res, next, additionalProperties));
+            } else {
+                if (!atCookied && !stCookied) {
+                    Utils.calLogEvent({ msg: `No token Cookies found`}, 'INFO');
+                }
+                req.securityContext = req.securityContext ||
+                    (additionalProperties.unAuthenticatedFlowEligible && await authUtils.createInternalAppSecurityContext(req));
+                next();
+            }
+        });
+    };
+};
+
+function ATCookieValidation(req, options, next){
+
+    // Reading rcs/ucp config to control the access token enablement
+    const accessTokenLoginConfig = Utils.getRemoteConfigValue(req,'authUpgrade:allowAccessTokenLogin', true);
+    const scopeOverrideConfigValue = Utils.getRemoteConfigValue(req,'authUpgrade:overrideScopeCheck', false);
+    const { accessTokenLoginOption = true, authScopes} = options;
+
+    Utils.calLogEvent({msg: `RemoteConfigValue=${accessTokenLoginConfig}&&accessTokenLoginOption=${accessTokenLoginOption}
+    &&scopeOptions=${authScopes}&&scopeOverrideConfigValue=${scopeOverrideConfigValue}`}, 'INFO');
+
+    if (accessTokenLoginConfig && accessTokenLoginOption) {
+        return true;
+    }
+
+    return false;
+}
+
+module.exports.utils = Utils;

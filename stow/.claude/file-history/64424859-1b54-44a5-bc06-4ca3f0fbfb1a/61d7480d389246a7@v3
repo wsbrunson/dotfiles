@@ -1,0 +1,603 @@
+resource "aws_security_group" "hello_world_SG" {
+  name        = "${local.app_name}-hello-world"
+  description = "Security group to allow hello-world to connect to Elasticache"
+  vpc_id      = data.aws_vpc.current.id
+  tags        = local.default_tags
+}
+
+resource "aws_security_group_rule" "allow_all_outbound_tcp" {
+  type              = "egress"
+  from_port         = 443
+  to_port           = 65535
+  protocol          = "tcp"
+  cidr_blocks       = ["0.0.0.0/0"]
+  security_group_id = aws_security_group.hello_world_SG.id
+}
+
+# The commerce-orchestrator-monitor Lambda is now defined in the locals.lambdas list above
+# to ensure it gets the proper blue/green/live aliases like other Lambda functions
+
+locals {
+  # Internal orchestrator lambdas (cart operations) - use internal ALB
+  orchestrator_lambdas = [
+     {
+      name         = "commerce-orchestrator-monitor"
+      secret_path  = null
+      path         = null
+      priority     = null
+      memory_size  = 512  # Monitor needs moderate memory
+      disable_otel = true
+      environment = {
+        COMMERCE_ONBOARDING_URL = data.aws_ssm_parameter.commerce_onboarding_url.value
+        AUTH_TOKEN_SECRET_NAME  = aws_secretsmanager_secret.commerce_orchestrator_auth_token.name
+        DISABLE_THRESHOLD       = "90"
+        ENABLE_THRESHOLD        = "95"
+        MIN_REQUESTS            = "10"
+        COOLDOWN_MINUTES        = "15"
+        SLIDING_WINDOW_MINUTES  = "5"
+        API_TIMEOUT             = "30000"
+        MAX_RETRIES             = "3"
+        RETRY_DELAY             = "1000"
+      }
+    },
+     {
+      name        = "cloud-watch-alert"
+      secret_path = null
+      path        = null
+      priority    = null
+      memory_size = 512 # Override default memory size
+      environment = {
+        NOTIFICATION_URL = data.aws_ssm_parameter.slack_hook_url.value
+      }
+    },
+    {
+      name        = "apple-create-cart"
+      secret_path = null
+      path        = "/commerceorchnodeserv/apple/cart"
+      priority    = 10
+    },
+    {
+      name        = "apple-complete-cart"
+      secret_path = null
+      path        = "/commerceorchnodeserv/apple/cart/*/complete"
+      priority    = 20
+    },
+    {
+      name        = "mock-create-cart"
+      secret_path = local.secret_paths["mock"][local.environment]
+      path        = "/commerceorchnodeserv/mock/cart"
+      priority    = 30
+    },
+    {
+      name        = "mock-complete-cart"
+      secret_path = local.secret_paths["mock"][local.environment]
+      path        = "/commerceorchnodeserv/mock/cart/*/complete"
+      priority    = 40
+    },
+    {
+      name        = "wix-create-cart"
+      secret_path = local.secret_paths["wix"][local.environment]
+      path        = "/commerceorchnodeserv/wix/cart"
+      priority    = 50
+    },
+    {
+      name        = "wix-complete-cart"
+      secret_path = local.secret_paths["wix"][local.environment]
+      path        = "/commerceorchnodeserv/wix/cart/*/complete"
+      priority    = 60
+    },
+    {
+      name        = "wix-update-cart"
+      secret_path = local.secret_paths["wix"][local.environment]
+      path        = "/commerceorchnodeserv/wix/cart/*"
+      priority    = 65
+      http_method = ["PUT"]
+    },
+    {
+      name        = "shopify-create-cart"
+      secret_path = local.secret_paths["mock"][local.environment]
+      path        = "/commerceorchnodeserv/shopify/cart"
+      priority    = 70
+    },
+    {
+      name        = "shopify-complete-cart"
+      secret_path = local.secret_paths["mock"][local.environment]
+      path        = "/commerceorchnodeserv/shopify/cart/*/complete"
+      priority    = 80
+    },
+    {
+      name        = "shopify-update-cart"
+      secret_path = local.secret_paths["mock"][local.environment]
+      path        = "/commerceorchnodeserv/shopify/cart/*"
+      priority    = 85
+      http_method = ["PUT"]
+    },
+    {
+      name        = "firmly-create-cart"
+      secret_path = local.secret_paths["firmly"][local.environment]
+      path        = "/commerceorchnodeserv/firmly/cart"
+      priority    = 90
+    },
+    {
+      name        = "firmly-complete-cart"
+      secret_path = local.secret_paths["firmly"][local.environment]
+      path        = "/commerceorchnodeserv/firmly/cart/*/complete"
+      priority    = 91
+    },
+    {
+      name        = "firmly-update-cart"
+      secret_path = local.secret_paths["firmly"][local.environment]
+      path        = "/commerceorchnodeserv/firmly/cart/*"
+      priority    = 95
+      http_method = ["PUT"]
+    },
+    {
+      name        = "adorama-create-cart"
+      secret_path = local.secret_paths["adorama"][local.environment]
+      path        = "/commerceorchnodeserv/adorama/cart"
+      priority    = 110
+      environment = {
+        CONFIG = data.aws_ssm_parameter.adorama_config.value
+      }
+    },
+    {
+      name        = "adorama-complete-cart"
+      secret_path = local.secret_paths["adorama"][local.environment]
+      path        = "/commerceorchnodeserv/adorama/cart/*/complete"
+      priority    = 120
+      environment = {
+        CONFIG = data.aws_ssm_parameter.adorama_config.value
+      }
+    },
+    {
+      name        = "adorama-update-cart"
+      secret_path = local.secret_paths["adorama"][local.environment]
+      path        = "/commerceorchnodeserv/adorama/cart/*"
+      priority    = 125
+      http_method = ["PATCH"]
+      environment = {
+        CONFIG = data.aws_ssm_parameter.adorama_config.value
+      }
+    },
+    {
+      name        = "bigc-create-cart"
+      secret_path = local.secret_paths["bigc"][local.environment]
+      path        = "/commerceorchnodeserv/big-commerce/cart"
+      priority    = 130
+    },
+    {
+      name        = "bigc-complete-cart"
+      secret_path = local.secret_paths["bigc"][local.environment]
+      path        = "/commerceorchnodeserv/big-commerce/cart/*/complete"
+      priority    = 140
+    },
+    {
+      name        = "bigc-update-cart"
+      secret_path = local.secret_paths["bigc"][local.environment]
+      path        = "/commerceorchnodeserv/big-commerce/cart/*"
+      priority    = 145
+      http_method = ["PUT"]
+    },
+    {
+      name        = "generic-create-cart"
+      secret_path = local.secret_paths["generic"][local.environment]
+      path        = "/commerceorchnodeserv/generic/cart"
+      priority    = 150
+      environment = {
+        PLATFORM_SECRET_IDS = jsonencode(local.platform_secret_ids[local.environment])
+      }
+    },
+    {
+      name        = "generic-complete-cart"
+      secret_path = local.secret_paths["generic"][local.environment]
+      path        = "/commerceorchnodeserv/generic/cart/*/complete"
+      priority    = 151
+      environment = {
+        PLATFORM_SECRET_IDS = jsonencode(local.platform_secret_ids[local.environment])
+      }
+    },
+    {
+      name        = "generic-update-cart"
+      secret_path = local.secret_paths["generic"][local.environment]
+      path        = "/commerceorchnodeserv/generic/cart/*"
+      priority    = 155
+      http_method = ["PUT"]
+      environment = {
+        PLATFORM_SECRET_IDS = jsonencode(local.platform_secret_ids[local.environment])
+      }
+    },
+    {
+      name        = "paypal-commerce-protocol"
+      secret_path = null
+      path        = "/commerceorchnodeserv/v1/pcp*"
+      priority    = 159
+      http_method = ["POST", "PUT"]
+    },
+    {
+      name        = "shopify"
+      secret_path = null
+      path        = "/commerceorchnodeserv/v2/shopify*"
+      priority    = 170
+      http_method = ["POST", "PUT"]
+    },
+    {
+      name        = "gap"
+      secret_path = null
+      path        = "/commerceorchnodeserv/v1/gap*"
+      priority    = 185
+      http_method = ["POST", "PUT"]
+    },
+    {
+      name        = "acp"
+      secret_path = null
+      path        = "/commerceorchnodeserv/v1/acp*"
+      priority    = 195
+      http_method = ["POST", "PUT"]
+    },
+    {
+      name        = "adorama"
+      secret_path = local.secret_paths["adorama"][local.environment]
+      path        = "/commerceorchnodeserv/v2/adorama*"
+      priority    = 175
+      http_method = ["POST", "PUT"]
+      environment = {
+        CONFIG = data.aws_ssm_parameter.adorama_config.value
+      }
+    },
+    {
+      name        = "firmly"
+      secret_path = local.secret_paths["firmly"][local.environment]
+      path        = "/commerceorchnodeserv/v2/firmly*"
+      priority    = 180
+      http_method = ["POST", "PUT"]
+    },
+    {
+      name        = "bigc"
+      secret_path = local.secret_paths["bigc"][local.environment]
+      path        = "/commerceorchnodeserv/v2/bigcommerce*"
+      priority    = 190
+      http_method = ["POST", "PUT"]
+    },
+    {
+      name        = "wix"
+      secret_path = local.secret_paths["wix"][local.environment]
+      path        = "/commerceorchnodeserv/v2/wix*"
+      priority    = 200
+      http_method = ["POST", "PUT"]
+    },
+    {
+      name        = "back-book-onboarding"
+      secret_path = null
+      path        = "/commerceorchnodeserv/back-book-onboarding/*"
+      priority    = 210
+      http_method = ["POST"],
+      environment = {
+        BACK_BOOK_ONBOARDING_QUEUE_URL = aws_sqs_queue.back_book_onboarding_queue.id
+        HONEY_API_TOKEN                = "arn:aws:secretsmanager:${local.region}:${local.account_id}:secret:${local.honey_secret_path[local.environment]}"
+      }
+    },
+    {
+      name        = "back-book-processing"
+      secret_path = null
+      path        = "/commerceorchnodeserv/back-book-processing/*"
+      priority    = 215
+      http_method = ["POST"],
+      environment = {
+        BACK_BOOK_ONBOARDING_QUEUE_URL = aws_sqs_queue.back_book_onboarding_queue.id
+        HONEY_API_TOKEN                = "arn:aws:secretsmanager:${local.region}:${local.account_id}:secret:${local.honey_secret_path[local.environment]}"
+      }
+    }
+  ]
+
+  # Public lambdas (notifications, webhooks) - use public ALB
+  public_lambdas = [
+    {
+      name        = "onboarding-notif-processor"
+      secret_path = null
+      path        = "/commerceorchnodeserv/notifications/onboarding"
+      priority    = 160
+      http_method = ["POST"]
+      environment = {
+        PUBSUB_AUDIENCE = "commerce-orchestrator-notifications"
+      }
+    },
+  ]
+
+  # Combined lambdas for module creation (maintains compatibility)
+  lambdas = concat(local.orchestrator_lambdas, local.public_lambdas)
+
+  datadog_secret = jsondecode(data.aws_secretsmanager_secret_version.datadog.secret_string)
+}
+
+
+module "lambda_functions" {
+  for_each = { for lambda in local.lambdas : lambda.name => lambda }
+
+  source             = "./lambda_function"
+  function_name      = each.value.name
+  role_arn           = aws_iam_role.lambda_executor.arn
+  memory_size        = lookup(each.value, "memory_size", 1024) # Default to 1024 for better performance
+  timeout            = 900
+  security_group_ids = [aws_security_group.hello_world_SG.id]
+  subnet_ids         = data.aws_subnets.protected.ids
+  environment_name   = local.environment
+  app_version        = local.app_version
+  disable_otel       = lookup(each.value, "disable_otel", false)
+  environment = merge(
+    {
+      REGION           = local.region
+      APP_ENV          = local.environment
+      REDIS_HOST       = aws_elasticache_replication_group.elasticache.primary_endpoint_address
+      REDIS_PORT       = aws_elasticache_replication_group.elasticache.port
+      REDIS_PASSWORD   = aws_elasticache_replication_group.elasticache.auth_token
+      VERIFICATION_PEM = data.aws_ssm_parameter.appcontext_verification_pem.value
+      SANDBOX_VERIFICATION_PEM = data.aws_ssm_parameter.appcontext_sandbox_verification_pem.value
+      JWT_VERIFICATION_PEM = data.aws_ssm_parameter.appcontext_jwt_verification_pem.value
+      JWT_AWS_VERIFICATION_PEM = data.aws_ssm_parameter.appcontext_jwt_aws_verification_pem.value
+      COMMERCE_ONBOARDING_URL = data.aws_ssm_parameter.commerce_onboarding_url.value
+      # API key used by monitor Lambda and notification processor
+      # Fetched from SSM Parameter Store (parameter must be manually created in AWS Console)
+      # Web app and CartAPI use APPLICATION_CONTEXT authentication instead
+
+      # Datadog Configuration
+      DD_SITE    = "datadoghq.eu"
+      DD_SERVICE = "commerce-orchestrator"
+      DD_ENV     = local.environment
+      DD_VERSION = "2.0.0"
+      DD_API_KEY = local.datadog_secret.apikey
+
+      # Datadog tracer settings
+      DD_TRACE_ENABLED           = "true"
+      DD_SERVERLESS_LOGS_ENABLED = "true"
+      DD_CAPTURE_LAMBDA_PAYLOAD  = "true"
+      DD_LOG_LEVEL               = "info"
+      DD_TRACE_AGENT_URL         = "http://localhost:8126"  # Datadog Extension agent endpoint
+
+      # Enable custom span tags to be searchable in DataDog APM
+      DD_TRACE_SPAN_ATTRIBUTE_SCHEMA = "v1"
+      DD_TRACE_REMOVE_INTEGRATION_SERVICE_NAMES_ENABLED = "false"
+
+      COMMERCE_ONBOARDING_API_KEY = data.aws_ssm_parameter.commerce_onboarding_api_key.value
+      APPCONFIG_APP_ID = local.appconfig[local.environment]["app_id"]
+      APPCONFIG_ENV_ID = local.appconfig[local.environment]["env_id"]
+      APPCONFIG_PROFILE_ID = local.appconfig[local.environment]["profile_id"]
+      MOCK_SECRET_PATH = "arn:aws:secretsmanager:${local.region}:${local.account_id}:secret:${local.secret_paths["mock"][local.environment]}"
+    },
+    each.value.secret_path != null ? { SECRET_PATH = "arn:aws:secretsmanager:${local.region}:${local.account_id}:secret:${each.value.secret_path}" } : {},
+    lookup(each.value, "environment", {}) # Use an empty map if "environment" is not defined
+  )
+}
+
+# Store deployment state in SSM Parameter Store
+resource "aws_ssm_parameter" "deployment_state" {
+  for_each = { for lambda in local.lambdas : lambda.name => lambda }
+  name     = "/commerce-orchestrator/${local.environment}/lambda/${each.key}/deployment-state"
+  type     = "String"
+  value    = jsonencode({
+    active_color = "blue"
+    blue_version = "$LATEST"
+    green_version = "$LATEST"
+    traffic_weight = {
+      blue = 100
+      green = 0
+    }
+    last_deployment = formatdate("YYYY-MM-DD'T'HH:mm:ssZ", timestamp())
+  })
+  
+  lifecycle {
+    ignore_changes = [value]
+  }
+  
+  tags = local.default_tags
+}
+
+# Blue alias - represents stable/production version
+resource "aws_lambda_alias" "blue" {
+  for_each         = { for lambda in local.lambdas : lambda.name => lambda }
+  name             = "blue"
+  function_name    = module.lambda_functions[each.key].function_name
+  function_version = module.lambda_functions[each.key].lambda_version
+
+  lifecycle {
+    ignore_changes = [function_version]
+  }
+}
+
+# Green alias - represents new deployment version
+resource "aws_lambda_alias" "green" {
+  for_each         = { for lambda in local.lambdas : lambda.name => lambda }
+  name             = "green"
+  function_name    = module.lambda_functions[each.key].function_name
+  function_version = module.lambda_functions[each.key].lambda_version
+
+  lifecycle {
+    ignore_changes = [function_version]
+  }
+}
+
+# Live alias - routes traffic between blue and green
+resource "aws_lambda_alias" "live" {
+  for_each         = { for lambda in local.lambdas : lambda.name => lambda }
+  name             = "live"
+  function_name    = module.lambda_functions[each.key].function_name
+  function_version = aws_lambda_alias.blue[each.key].function_version
+
+  dynamic "routing_config" {
+    for_each = var.blue_green_traffic_weight > 0 ? [1] : []
+    content {
+      additional_version_weights = {
+        (aws_lambda_alias.green[each.key].function_version) = var.blue_green_traffic_weight / 100
+      }
+    }
+  }
+
+  lifecycle {
+    ignore_changes = [function_version, routing_config]
+  }
+}
+
+# Provisioned concurrency for commerce orchestrator functions to reduce cold starts
+# Apply to all functions that handle customer traffic (contain "commerceorchnodeserv" in path)
+resource "aws_lambda_provisioned_concurrency_config" "commerce_functions" {
+  for_each = {
+    for lambda in local.orchestrator_lambdas : lambda.name => lambda
+    if lambda.path != null && can(regex("commerceorchnodeserv", lambda.path))
+  }
+
+  function_name                     = module.lambda_functions[each.key].function_name
+  provisioned_concurrent_executions = 3  # Conservative starting point
+  qualifier                         = aws_lambda_alias.live[each.key].name
+
+  depends_on = [
+    aws_lambda_alias.live
+  ]
+}
+
+# Internal ALB configurations for orchestrator lambdas (cart operations)
+module "alb_configurations" {
+  for_each = { for lambda in local.orchestrator_lambdas : lambda.name => lambda if lambda.path != null && lambda.priority != null }
+
+  source               = "./alb_configuration"
+  name                 = each.value.name
+  lambda_function_name = module.lambda_functions[each.key].function_name
+  lambda_function_arn  = aws_lambda_alias.live[each.key].arn
+  lambda_alias         = "live"
+  listener_arn         = aws_lb_listener.https.arn
+  path_pattern         = each.value.path
+  priority             = each.value.priority
+  http_method          = lookup(each.value, "http_method", ["POST"])
+
+  depends_on = [
+    module.lambda_functions,
+    aws_lambda_alias.live
+  ]
+}
+
+# Public ALB configurations for public lambdas (notifications, webhooks)
+module "alb_configurations_public" {
+  for_each = { for lambda in local.public_lambdas : lambda.name => lambda if lambda.path != null && lambda.priority != null }
+
+  source               = "./alb_configuration"
+  name                 = "${each.value.name}"
+  lambda_function_name = module.lambda_functions[each.key].function_name
+  lambda_function_arn  = aws_lambda_alias.live[each.key].arn
+  lambda_alias         = "live"
+  listener_arn         = aws_lb_listener.public_https.arn
+  path_pattern         = each.value.path
+  priority             = each.value.priority
+  http_method          = lookup(each.value, "http_method", "POST")
+  host_header          = var.cname[local.environment]
+
+  depends_on = [
+    module.lambda_functions,
+    aws_lambda_alias.live,
+    aws_lb_listener.public_https
+  ]
+}
+
+module "appcontext_authorizer_lambda" {
+  source = "./lambda_function"
+  environment_name = local.environment
+
+  function_name = "orchestrator-appcontext-authorizer"
+  role_arn      = aws_iam_role.lambda_executor.arn
+  memory_size   = 256  # Authorizer needs moderate memory for JWT processing
+  timeout       = 120
+
+  environment = {
+    APP_ENV          = local.environment
+    NODE_ENV         = "prod"
+    VERIFICATION_PEM = data.aws_ssm_parameter.appcontext_verification_pem.value
+    SANDBOX_VERIFICATION_PEM = data.aws_ssm_parameter.appcontext_sandbox_verification_pem.value
+    JWT_VERIFICATION_PEM = data.aws_ssm_parameter.appcontext_jwt_verification_pem.value
+    JWT_AWS_VERIFICATION_PEM = data.aws_ssm_parameter.appcontext_jwt_aws_verification_pem.value
+  }
+}
+
+# Blue alias for appcontext-authorizer - represents stable/production version
+resource "aws_lambda_alias" "appcontext_authorizer_blue" {
+  name             = "blue"
+  function_name    = module.appcontext_authorizer_lambda.function_name
+  function_version = module.appcontext_authorizer_lambda.lambda_version
+
+  lifecycle {
+    ignore_changes = [function_version]
+  }
+}
+
+# Green alias for appcontext-authorizer - represents new deployment version
+resource "aws_lambda_alias" "appcontext_authorizer_green" {
+  name             = "green"
+  function_name    = module.appcontext_authorizer_lambda.function_name
+  function_version = module.appcontext_authorizer_lambda.lambda_version
+
+  lifecycle {
+    ignore_changes = [function_version]
+  }
+}
+
+# Live alias for appcontext-authorizer - routes traffic between blue and green
+resource "aws_lambda_alias" "appcontext_authorizer_live" {
+  name             = "live"
+  function_name    = module.appcontext_authorizer_lambda.function_name
+  function_version = aws_lambda_alias.appcontext_authorizer_blue.function_version
+
+  dynamic "routing_config" {
+    for_each = var.blue_green_traffic_weight > 0 ? [1] : []
+    content {
+      additional_version_weights = {
+        (aws_lambda_alias.appcontext_authorizer_green.function_version) = var.blue_green_traffic_weight / 100
+      }
+    }
+  }
+
+  lifecycle {
+    ignore_changes = [function_version, routing_config]
+  }
+}
+
+resource "aws_lambda_permission" "appcontext_authorizer_lambda_permission" {
+  statement_id  = "AllowInvocationFromApiGateway"
+  action        = "lambda:InvokeFunction"
+  function_name = module.appcontext_authorizer_lambda.function_name
+  principal     = "apigateway.amazonaws.com"
+  source_arn    = "${aws_apigatewayv2_api.orchestrator_api.execution_arn}/*"
+}
+
+resource "aws_apigatewayv2_authorizer" "appcontext_authorizer" {
+  api_id                            = aws_apigatewayv2_api.orchestrator_api.id
+  name                              = "orchestrator-appcontext_authorizer"
+  authorizer_type                   = "REQUEST"
+  authorizer_uri                    = aws_lambda_alias.appcontext_authorizer_live.invoke_arn
+  identity_sources                  = ["$request.header.Paypal-Application-Context"]
+  authorizer_payload_format_version = "2.0"
+  enable_simple_responses           = true
+}
+
+variable "blue_green_traffic_weight" {
+  description = "Percentage of traffic to route to green alias (0-100)"
+  type        = number
+  default     = 0
+}
+
+variable "blue_green_deployment_mode" {
+  description = "Blue-green deployment mode: canary, all-at-once, or manual"
+  type        = string
+  default     = "canary"
+  validation {
+    condition     = contains(["canary", "all-at-once", "manual"], var.blue_green_deployment_mode)
+    error_message = "Deployment mode must be one of: canary, all-at-once, manual."
+  }
+}
+
+variable "blue_green_canary_steps" {
+  description = "Canary deployment traffic distribution steps (percentages)"
+  type        = list(number)
+  default     = [10, 25, 50, 100]
+}
+
+variable "blue_green_health_check_grace_period" {
+  description = "Grace period in minutes before health checks start after deployment"
+  type        = number
+  default     = 1
+}

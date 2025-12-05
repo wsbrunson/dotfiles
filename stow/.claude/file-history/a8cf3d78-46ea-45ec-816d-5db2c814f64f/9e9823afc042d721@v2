@@ -1,0 +1,168 @@
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Repository Overview
+
+This is an agentic shopping orchestrator built as a serverless application using AWS Lambda functions. The system integrates with multiple e-commerce platforms (Apple, Shopify, Wix, Big Commerce, Adorama, Firmly, or our Generic handler) to provide unified cart creation and completion flows for PayPal commerce.
+
+## Architecture
+
+The codebase follows a **monorepo pattern** using **pnpm workspaces** with serverless Lambda functions:
+
+- **Functions**: Individual Lambda handlers for platform-specific operations (`/lambda/src/functions/`)
+- **Shared**: Common utilities, schemas, and services (`/lambda/src/shared/`)
+- **Infrastructure**: Terraform configurations for AWS resources (`/tools/terraform/`)
+
+### Key Design Patterns
+
+- **Handler Pattern**: All Lambda functions follow consistent structure with authorization, validation, metrics tracking, and error handling
+- **Schema-First API**: Zod schemas define request/response contracts with TypeScript type inference
+- **Platform Strategy**: Separate implementations for each e-commerce platform (Apple, Shopify, Wix, Big Commerce, Adorama, Firmly, Generic)
+- **Shared Services**: Centralized logging, caching (Redis), metrics (CloudWatch), and error handling
+
+### Data Flow
+
+1. **ALB Event** → Lambda handler receives Application Load Balancer events
+2. **Authorization** → JWT-based app context verification using `paypal-application-context` token
+3. **Validation** → Zod schema validation for type safety
+4. **Caching** → Session/cart data stored in Redis for multi-step flows
+5. **Platform Integration** → Platform-specific API calls (Shopify GraphQL, Apple APIs, etc.)
+6. **Response** → Standardized JSON response with correlation tracking
+
+## Common Commands
+
+### Development Setup
+
+```bash
+cd lambda
+pnpm install
+```
+
+### Building and Testing
+
+```bash
+pnpm build           # Build all Lambda packages
+pnpm test            # Run all tests (unit + functional)
+pnpm test:unit       # Run unit tests only
+pnpm test:unit:watch # Watch mode for development
+pnpm test:coverage   # Run tests with coverage report
+pnpm lint            # ESLint validation
+pnpm typecheck       # TypeScript type checking
+```
+
+### Development
+
+```bash
+pnpm start          # Start with hot reload (node --watch)
+```
+
+**Important**: This repository uses **pnpm** as the package manager, not npm. Always use `pnpm` commands for dependency management and script execution.
+
+### Deployment
+
+- Use PR comments "deploy" or "deploy functions:function-name" to deploy to staging
+- Terraform handles infrastructure provisioning
+
+## Function Development Guidelines
+
+### Adding New Lambda Functions
+
+1. Create function directory under `/lambda/src/functions/new-function/`
+2. Follow the standard handler pattern with these components:
+   - Authorization check using `verifyAppContext()`
+   - Request validation with Zod schemas
+   - Metrics tracking with `trackInitiatedAction()`, `trackSuccessAction()`, `trackFailedAction()`
+   - Structured error handling with correlation IDs
+3. Add validation schemas to `/lambda/src/shared/schemas/`
+4. Include unit tests using Vitest
+5. Update function's `package.json` with specific dependencies
+
+### Standard Handler Structure
+
+```typescript
+exports.handler = async (event: ALBEvent) => {
+  const startTime = performance.now();
+  try {
+    const isAuthorized = verifyAppContext(event);
+    const data = RequestSchema.parse(body);
+    await trackInitiatedAction(baseMetricParams);
+    const result = await processRequest(data);
+    await trackSuccessAction(params);
+    return successResponse(result);
+  } catch (error) {
+    await trackFailedAction(params);
+    return errorResponse(error);
+  }
+};
+```
+
+### Shared Components Usage
+
+- **Schemas**: Use Zod for all request/response validation
+- **Logging**: Use shared logger with correlation IDs and PII masking
+- **Caching**: Use Redis cache factory for session management
+- **Metrics**: Emit CloudWatch metrics for monitoring
+- **Errors**: Extend `APIError` classes for consistent error handling
+
+### Testing Patterns
+
+- Use Vitest for unit testing with modern async support
+- Mock external dependencies (Redis, HTTP clients, AWS services)
+- Test both success and error scenarios
+- Follow naming convention: `*.test.ts`
+
+## Configuration
+
+- Environment-specific configs in `/lambda/config/`
+- Use AWS Secrets Manager for sensitive data
+- Runtime configuration via environment variables
+- TypeScript with strict type checking enabled
+
+## Pull Request Guidelines
+
+### Change Traceability Requirements
+
+All changes must be digitally traceable. When creating PRs, ensure:
+
+**For Stakeholder-Initiated Changes:**
+
+- Link to Jira ticket in PR description
+- Changes affect customer-perceived functionality
+- Backed by company strategy
+
+**For Team/Developer-Initiated Changes:**
+
+- Use appropriate GitHub tags:
+  - `Lights On`: System maintenance
+  - `Technical Debt`: Cleanup, refactoring
+  - `Technical Design`: Architecture improvements
+
+**PR Description Checklist:**
+
+- [ ] Include ticket link (if applicable) or select appropriate tag
+- [ ] Briefly explain change motivation
+- [ ] Ensure all changes are digitally traceable
+- [ ] Apply appropriate GitHub label using: `gh pr edit <PR_NUMBER> --add-label "<LABEL_NAME>"`
+- [ ] If unsure about categorization, consult team via Slack
+
+### Applying Labels to PRs
+
+After creating a PR, apply the appropriate label using the GitHub CLI:
+
+```bash
+# For system maintenance (CI/CD, build scripts, deployment configs)
+gh pr edit <PR_NUMBER> --add-label "Lights On"
+
+# For cleanup and refactoring (code improvements, dependency updates)
+gh pr edit <PR_NUMBER> --add-label "Technical Debt"
+
+# For architecture improvements (design patterns, new frameworks)
+gh pr edit <PR_NUMBER> --add-label "Technical Design"
+```
+
+**Label Classification Guidelines:**
+
+- **Lights On**: CI/CD workflows, build configurations, deployment scripts, monitoring setup
+- **Technical Debt**: Code refactoring, dependency updates, performance improvements, test improvements
+- **Technical Design**: New architectural patterns, framework additions, major design changes

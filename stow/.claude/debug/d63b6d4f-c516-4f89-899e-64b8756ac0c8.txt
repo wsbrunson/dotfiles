@@ -1,0 +1,1478 @@
+[DEBUG] Getting matching hook commands for SessionStart with query: clear
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+[DEBUG] FileHistory: Added snapshot for 7529afa1-8d91-458a-9e5d-f483711720a9, tracking 0 files
+[DEBUG] Rendering user message with 1 content blocks
+[DEBUG] Block 0: <command-name>/clear</command-name>
+            <command-message>clear</command-message>
+           ...
+[DEBUG] UserCommandMessage rendering: "clear" (args: "none")
+[DEBUG] isSkillFormat: false, prefix: "/"
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.49509.1763176257475
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.49509.1763176257475 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.49509.1763176261710
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.49509.1763176261710 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message 8f624800-d4a9-4106-9b89-74d6ed124b5e
+[DEBUG] FileHistory: Added snapshot for 8f624800-d4a9-4106-9b89-74d6ed124b5e, tracking 0 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json.tmp.49509.1763176275322
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json.tmp.49509.1763176275322 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json.tmp.49509.1763176275329
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json.tmp.49509.1763176275329 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json.tmp.49509.1763176275333
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json.tmp.49509.1763176275333 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json.tmp.49509.1763176275340
+[DEBUG] Temp file written successfully, size: 172 bytes
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json.tmp.49509.1763176275340 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Write
+[DEBUG] Getting matching hook commands for PreToolUse with query: Write
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+[DEBUG] FileHistory: Tracked file modification for /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763176315482
+[DEBUG] Temp file written successfully, size: 10771 bytes
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763176315482 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Write
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763176337866
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 10802 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763176337866 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Grep
+[DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763176350340
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 10800 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763176350340 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763176357972
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 10882 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763176357972 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763176365035
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 10986 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763176365035 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763176368876
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 10984 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763176368876 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Grep
+[DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763176379775
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 10976 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763176379775 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.49509.1763176381799
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.49509.1763176381799 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Streaming aborted by user: Request was aborted.
+[ERROR] Error in non-streaming fallback: Request was aborted.
+[ERROR] Error: Error: Request was aborted.
+    at zi._createMessage (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:235:4515)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.49509.1763176381834
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.49509.1763176381834 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message 2f27eb3f-cabe-4827-a39c-55e5929df2d2
+[DEBUG] FileHistory: Added snapshot for 2f27eb3f-cabe-4827-a39c-55e5929df2d2, tracking 1 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json.tmp.49509.1763176409112
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json.tmp.49509.1763176409112 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json.tmp.49509.1763176409119
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json.tmp.49509.1763176409119 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json.tmp.49509.1763176409123
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json.tmp.49509.1763176409123 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json.tmp.49509.1763176409127
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 180 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json.tmp.49509.1763176409127 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Write
+[DEBUG] Getting matching hook commands for PreToolUse with query: Write
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+[DEBUG] FileHistory: Tracked file modification for /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.demo.ts
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.demo.ts.tmp.49509.1763176427410
+[DEBUG] Temp file written successfully, size: 1216 bytes
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.demo.ts.tmp.49509.1763176427410 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.demo.ts
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.demo.ts written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Write
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Permission suggestions for Bash: [
+  {
+    "type": "addRules",
+    "rules": [
+      {
+        "toolName": "Bash",
+        "ruleContent": "npx tsx:*"
+      }
+    ],
+    "behavior": "allow",
+    "destination": "localSettings"
+  }
+]
+[DEBUG] Getting matching hook commands for Notification with query: permission_prompt
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "permission_prompt" (0 before deduplication)
+[DEBUG] Metrics opt-out check failed: No API key available
+[DEBUG] Metrics check failed, defaulting to disabled
+[DEBUG] Metrics export disabled by organization setting
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[ERROR] Error streaming, falling back to non-streaming mode: Connection error.
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.49509.1763220450708
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.49509.1763220450708 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[ERROR] Error in non-streaming fallback: Request was aborted.
+[ERROR] Error: Error: Request was aborted.
+    at AbortSignal.Z (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1679:2908)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:827:20)
+    at AbortSignal.dispatchEvent (node:internal/event_target:762:26)
+    at runAbort (node:internal/abort_controller:447:10)
+    at abortSignal (node:internal/abort_controller:433:3)
+    at AbortController.abort (node:internal/abort_controller:466:5)
+    at q3 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2355:63998)
+    at file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2342:3290
+    at file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:222:499
+    at Q.batchedUpdates (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:107:51068)
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.49509.1763220450739
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.49509.1763220450739 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message 909447d1-9d38-48b1-a7f8-8c3bf88292d0
+[DEBUG] FileHistory: Added snapshot for 909447d1-9d38-48b1-a7f8-8c3bf88292d0, tracking 2 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[ERROR] Error streaming, falling back to non-streaming mode: Connection error.
+[ERROR] Error streaming, falling back to non-streaming mode: Connection error.
+[ERROR] Error in non-streaming fallback: Connection error.
+[ERROR] Error: Error: Connection error.
+    at q_.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:716:4463)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Qs2.xnA.model (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3534:15306)
+    at async xnA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1833:39781)
+    at async Qs2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3534:15460)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3534:8691
+    at async w00 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3534:1970)
+    at async oj (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3534:8662)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3534:18596
+    at async U00 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3533:2614)
+[ERROR] SyntaxError: SyntaxError: Expected property name or '}' in JSON at position 1 (line 1 column 2)
+    at JSON.parse (<anonymous>)
+    at file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:89:708
+    at Q (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:8:15070)
+    at kQQ (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:887:10079)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[ERROR] Error in non-streaming fallback: Connection error.
+[ERROR] Error: Error: Connection error.
+    at q_.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:716:4463)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Qs2.xnA.model (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3534:15306)
+    at async xnA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1833:39781)
+    at async Qs2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3534:15460)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3534:8933
+    at async w00 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3534:1970)
+    at async S8A (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3534:8903)
+    at async CS (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2027:35797)
+    at async $L (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2357:4408)
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.49509.1763220634277
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.49509.1763220634277 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Metrics opt-out check failed: No API key available
+[DEBUG] Metrics check failed, defaulting to disabled
+[DEBUG] Metrics export disabled by organization setting
+[DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message f5dfde3a-d986-495c-990f-35dcb289a3f9
+[DEBUG] FileHistory: Added snapshot for f5dfde3a-d986-495c-990f-35dcb289a3f9, tracking 2 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Write
+[DEBUG] Getting matching hook commands for PreToolUse with query: Write
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+[DEBUG] FileHistory: Tracked file modification for /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.demo.test.ts
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.demo.test.ts.tmp.49509.1763221771454
+[DEBUG] Temp file written successfully, size: 4887 bytes
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.demo.test.ts.tmp.49509.1763221771454 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.demo.test.ts
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.demo.test.ts written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Write
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json.tmp.49509.1763221780909
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json.tmp.49509.1763221780909 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json.tmp.49509.1763221780923
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json.tmp.49509.1763221780923 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json.tmp.49509.1763221780934
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json.tmp.49509.1763221780934 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json.tmp.49509.1763221780940
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 349 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json.tmp.49509.1763221780940 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[ERROR] Error: Error: Language not supported while highlighting code, falling back to markdown: 
+    at xD (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1278:4413)
+    at file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1278:4141
+    at Array.map (<anonymous>)
+    at bC (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1278:4132)
+    at S$Q (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1653:2875)
+    at ow (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:105:19414)
+    at bt (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:107:42806)
+    at b9 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:107:38347)
+    at Tp (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:107:38275)
+    at X$ (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:107:38129)
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json.tmp.49509.1763221797615
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json.tmp.49509.1763221797615 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json.tmp.49509.1763221797622
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json.tmp.49509.1763221797622 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json.tmp.49509.1763221797627
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json.tmp.49509.1763221797627 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json.tmp.49509.1763221797632
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json.tmp.49509.1763221797632 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.49509.1763221801707
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.49509.1763221801707 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.49509.1763221801730
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.49509.1763221801730 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+[DEBUG] Metrics opt-out check failed: No API key available
+[DEBUG] Metrics check failed, defaulting to disabled
+[DEBUG] Metrics export disabled by organization setting
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.49509.1763222203755
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.49509.1763222203755 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message 5a037f09-9c4e-49a0-8384-05c2b223c9ed
+[DEBUG] FileHistory: Added snapshot for 5a037f09-9c4e-49a0-8384-05c2b223c9ed, tracking 3 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json.tmp.49509.1763232534178
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json.tmp.49509.1763232534178 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json.tmp.49509.1763232534184
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json.tmp.49509.1763232534184 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json.tmp.49509.1763232534190
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json.tmp.49509.1763232534190 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json.tmp.49509.1763232534196
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 165 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json.tmp.49509.1763232534196 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] FileHistory: Tracked file modification for /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.ts
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.ts.tmp.49509.1763232546320
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 5201 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.ts.tmp.49509.1763232546320 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.ts
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.ts written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Write
+[DEBUG] Getting matching hook commands for PreToolUse with query: Write
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+[DEBUG] FileHistory: Tracked file modification for /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.direct.test.ts
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.direct.test.ts.tmp.49509.1763232568977
+[DEBUG] Temp file written successfully, size: 2659 bytes
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.direct.test.ts.tmp.49509.1763232568977 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.direct.test.ts
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.direct.test.ts written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Write
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.direct.test.ts.tmp.49509.1763232578927
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2722 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.direct.test.ts.tmp.49509.1763232578927 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.direct.test.ts
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.direct.test.ts written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.ts.tmp.49509.1763232589920
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 5215 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.ts.tmp.49509.1763232589920 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.ts
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.ts written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.direct.test.ts.tmp.49509.1763232594753
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2712 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.direct.test.ts.tmp.49509.1763232594753 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.direct.test.ts
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.direct.test.ts written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.direct.test.ts.tmp.49509.1763232599127
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2797 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.direct.test.ts.tmp.49509.1763232599127 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.direct.test.ts
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.direct.test.ts written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.ts.tmp.49509.1763232613640
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 5321 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.ts.tmp.49509.1763232613640 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.ts
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.ts written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.direct.test.ts.tmp.49509.1763232619352
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2766 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.direct.test.ts.tmp.49509.1763232619352 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.direct.test.ts
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.direct.test.ts written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json.tmp.49509.1763232634567
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json.tmp.49509.1763232634567 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json.tmp.49509.1763232634574
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json.tmp.49509.1763232634574 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json.tmp.49509.1763232634581
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json.tmp.49509.1763232634581 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json.tmp.49509.1763232634588
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 355 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json.tmp.49509.1763232634588 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763232643515
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 10901 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763232643515 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763232647400
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 10900 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763232647400 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763232652286
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 10942 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763232652286 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Metrics opt-out check failed: No API key available
+[DEBUG] Metrics check failed, defaulting to disabled
+[DEBUG] Metrics export disabled by organization setting
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763232658195
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 10900 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763232658195 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763232668625
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 10403 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763232668625 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763232675806
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 10355 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763232675806 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763232681110
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 10426 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763232681110 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763232688570
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 10307 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763232688570 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763232696831
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 10292 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts.tmp.49509.1763232696831 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/logger/maskPii.test.ts written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json.tmp.49509.1763232709271
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json.tmp.49509.1763232709271 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-2ba02cc3-9eb4-4187-857f-ee9c0bb18843.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json.tmp.49509.1763232709277
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json.tmp.49509.1763232709277 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-de6b1499-8ca5-4f9c-9969-413354dedc7a.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json.tmp.49509.1763232709283
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json.tmp.49509.1763232709283 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-42161967-93cd-4619-8ff3-20e6ff702b24.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json.tmp.49509.1763232709289
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json.tmp.49509.1763232709289 to /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json
+[DEBUG] File /Users/wbrunson/.claude/todos/d63b6d4f-c516-4f89-899e-64b8756ac0c8-agent-d63b6d4f-c516-4f89-899e-64b8756ac0c8.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.49509.1763232721634
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.49509.1763232721634 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.49509.1763232721655
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.49509.1763232721655 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.49509.1763232931480
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51549 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.49509.1763232931480 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Metrics opt-out check failed: No API key available
+[DEBUG] Metrics check failed, defaulting to disabled
+[DEBUG] Metrics export disabled by organization setting
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+[DEBUG] Getting matching hook commands for SessionEnd with query: clear
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+[DEBUG] Cleared all session hooks for session d63b6d4f-c516-4f89-899e-64b8756ac0c8

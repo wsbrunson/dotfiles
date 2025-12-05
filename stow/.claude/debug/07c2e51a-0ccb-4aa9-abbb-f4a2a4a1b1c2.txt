@@ -1,0 +1,391 @@
+[DEBUG] Getting matching hook commands for SessionStart with query: clear
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+[DEBUG] FileHistory: Added snapshot for 3547fec1-0ff3-4fb2-b567-ee651df908cc, tracking 0 files
+[DEBUG] Rendering user message with 1 content blocks
+[DEBUG] Block 0: <command-name>/clear</command-name>
+            <command-message>clear</command-message>
+           ...
+[DEBUG] UserCommandMessage rendering: "clear" (args: "none")
+[DEBUG] isSkillFormat: false, prefix: "/"
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.9153.1762964819476
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51323 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.9153.1762964819476 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.9153.1762964824430
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51323 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.9153.1762964824430 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message df3e280f-ce80-461f-a69d-bf6245835290
+[DEBUG] FileHistory: Added snapshot for df3e280f-ce80-461f-a69d-bf6245835290, tracking 0 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-ea07984a-c4bd-4b38-a1d8-d7d5ea2a3fbb.json.tmp.9153.1762964960269
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-ea07984a-c4bd-4b38-a1d8-d7d5ea2a3fbb.json.tmp.9153.1762964960269 to /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-ea07984a-c4bd-4b38-a1d8-d7d5ea2a3fbb.json
+[DEBUG] File /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-ea07984a-c4bd-4b38-a1d8-d7d5ea2a3fbb.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-7a832a54-1a10-4ffc-8e73-706720ffef22.json.tmp.9153.1762964960277
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-7a832a54-1a10-4ffc-8e73-706720ffef22.json.tmp.9153.1762964960277 to /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-7a832a54-1a10-4ffc-8e73-706720ffef22.json
+[DEBUG] File /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-7a832a54-1a10-4ffc-8e73-706720ffef22.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2.json.tmp.9153.1762964960281
+[DEBUG] Temp file written successfully, size: 607 bytes
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2.json.tmp.9153.1762964960281 to /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2.json
+[DEBUG] File /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-ea07984a-c4bd-4b38-a1d8-d7d5ea2a3fbb.json.tmp.9153.1762964964713
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-ea07984a-c4bd-4b38-a1d8-d7d5ea2a3fbb.json.tmp.9153.1762964964713 to /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-ea07984a-c4bd-4b38-a1d8-d7d5ea2a3fbb.json
+[DEBUG] File /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-ea07984a-c4bd-4b38-a1d8-d7d5ea2a3fbb.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-7a832a54-1a10-4ffc-8e73-706720ffef22.json.tmp.9153.1762964964722
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-7a832a54-1a10-4ffc-8e73-706720ffef22.json.tmp.9153.1762964964722 to /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-7a832a54-1a10-4ffc-8e73-706720ffef22.json
+[DEBUG] File /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-7a832a54-1a10-4ffc-8e73-706720ffef22.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2.json.tmp.9153.1762964964729
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 611 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2.json.tmp.9153.1762964964729 to /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2.json
+[DEBUG] File /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Getting matching hook commands for Notification with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Metrics opt-out check failed: No API key available
+[DEBUG] Metrics check failed, defaulting to disabled
+[DEBUG] Metrics export disabled by organization setting
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.9153.1762965019894
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51323 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.9153.1762965019894 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-ea07984a-c4bd-4b38-a1d8-d7d5ea2a3fbb.json.tmp.9153.1762965024494
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-ea07984a-c4bd-4b38-a1d8-d7d5ea2a3fbb.json.tmp.9153.1762965024494 to /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-ea07984a-c4bd-4b38-a1d8-d7d5ea2a3fbb.json
+[DEBUG] File /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-ea07984a-c4bd-4b38-a1d8-d7d5ea2a3fbb.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-7a832a54-1a10-4ffc-8e73-706720ffef22.json.tmp.9153.1762965024504
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-7a832a54-1a10-4ffc-8e73-706720ffef22.json.tmp.9153.1762965024504 to /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-7a832a54-1a10-4ffc-8e73-706720ffef22.json
+[DEBUG] File /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-7a832a54-1a10-4ffc-8e73-706720ffef22.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2.json.tmp.9153.1762965024508
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 615 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2.json.tmp.9153.1762965024508 to /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2.json
+[DEBUG] File /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Write
+[DEBUG] Getting matching hook commands for PreToolUse with query: Write
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+[DEBUG] FileHistory: Tracked file modification for /Users/wbrunson/workspace/commerce-platform/filter_merchants.js
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/filter_merchants.js.tmp.9153.1762965031917
+[DEBUG] Temp file written successfully, size: 942 bytes
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/filter_merchants.js.tmp.9153.1762965031917 to /Users/wbrunson/workspace/commerce-platform/filter_merchants.js
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/filter_merchants.js written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Write
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.9153.1762965072389
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51323 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.9153.1762965072389 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-ea07984a-c4bd-4b38-a1d8-d7d5ea2a3fbb.json.tmp.9153.1762965078233
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-ea07984a-c4bd-4b38-a1d8-d7d5ea2a3fbb.json.tmp.9153.1762965078233 to /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-ea07984a-c4bd-4b38-a1d8-d7d5ea2a3fbb.json
+[DEBUG] File /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-ea07984a-c4bd-4b38-a1d8-d7d5ea2a3fbb.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-7a832a54-1a10-4ffc-8e73-706720ffef22.json.tmp.9153.1762965078240
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-7a832a54-1a10-4ffc-8e73-706720ffef22.json.tmp.9153.1762965078240 to /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-7a832a54-1a10-4ffc-8e73-706720ffef22.json
+[DEBUG] File /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-7a832a54-1a10-4ffc-8e73-706720ffef22.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2.json.tmp.9153.1762965078244
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2.json.tmp.9153.1762965078244 to /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2.json
+[DEBUG] File /Users/wbrunson/.claude/todos/07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2-agent-07c2e51a-0ccb-4aa9-abbb-f4a2a4a1b1c2.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+[DEBUG] LSP Diagnostics: Checking registry - 0 pending
+[DEBUG] LSP Diagnostics: Returning 0 diagnostic set(s) for delivery
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.9153.1762965091951
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51323 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.9153.1762965091951 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.9153.1762965091974
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51323 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.9153.1762965091974 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Metrics opt-out check failed: No API key available
+[DEBUG] Metrics check failed, defaulting to disabled
+[DEBUG] Metrics export disabled by organization setting
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.9153.1762966873849
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51323 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.9153.1762966873849 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.9153.1762968673495
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51323 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.9153.1762968673495 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.9153.1762973249882
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 51323 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.9153.1762973249882 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+[DEBUG] Getting matching hook commands for SessionEnd with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)

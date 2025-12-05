@@ -1,0 +1,1840 @@
+[DEBUG] Getting matching hook commands for SessionStart with query: clear
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+[DEBUG] FileHistory: Added snapshot for 377024ec-d373-42c9-bad0-ecc5c17e754c, tracking 0 files
+[DEBUG] Rendering user message with 1 content blocks
+[DEBUG] Block 0: <command-name>/clear</command-name>
+            <command-message>clear</command-message>
+           ...
+[DEBUG] UserCommandMessage rendering: "clear" (args: "none")
+[DEBUG] isSkillFormat: false, prefix: "/"
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937060946
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 326252 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937060946 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937060959
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 326229 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937060959 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937062968
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 326229 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937062968 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937063623
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 326229 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937063623 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937063639
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 326229 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937063639 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937063666
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 326229 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937063666 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message 5e14f5f1-6c63-4dd9-a09d-2eafcf7b4432
+[DEBUG] FileHistory: Added snapshot for 5e14f5f1-6c63-4dd9-a09d-2eafcf7b4432, tracking 0 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937132111
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 326229 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937132111 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937132146
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 326229 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937132146 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937132158
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 326347 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937132158 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message 9f3db7ed-52eb-49fc-9524-9f718b42e4b7
+[DEBUG] FileHistory: Added snapshot for 9f3db7ed-52eb-49fc-9524-9f718b42e4b7, tracking 0 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Stream started - received first chunk
+[DEBUG] Permission suggestions for Bash: [
+  {
+    "type": "addRules",
+    "rules": [
+      {
+        "toolName": "Bash",
+        "ruleContent": "gh pr close:*"
+      }
+    ],
+    "behavior": "allow",
+    "destination": "localSettings"
+  }
+]
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-local, using native: false
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937194016
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 326347 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937194016 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937196312
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 326347 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937196312 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937196335
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 326347 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937196335 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937196366
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 326256 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937196366 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message 1d157dae-cbfc-4f99-b087-7f48b3469f34
+[DEBUG] FileHistory: Added snapshot for 1d157dae-cbfc-4f99-b087-7f48b3469f34, tracking 0 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937249973
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 326256 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937249973 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937250006
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 326256 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937250006 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937250020
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 326168 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937250020 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message 3207450e-9fe5-4dc2-afe5-90e6f3ed086e
+[DEBUG] FileHistory: Added snapshot for 3207450e-9fe5-4dc2-afe5-90e6f3ed086e, tracking 0 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937275679
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 326168 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937275679 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937275703
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 326168 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937275703 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937275718
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 326109 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937275718 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message bb30e7bb-ed9f-4e7f-83ba-e764ff6cfd5b
+[DEBUG] FileHistory: Added snapshot for bb30e7bb-ed9f-4e7f-83ba-e764ff6cfd5b, tracking 0 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937325649
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 326109 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937325649 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937325679
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 326109 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937325679 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937325696
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 326074 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937325696 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Metrics opt-out check failed: No API key available
+[DEBUG] Metrics check failed, defaulting to disabled
+[DEBUG] Metrics export disabled by organization setting
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message 97af7604-763c-417b-88f3-8b6d3cbc6d9f
+[DEBUG] FileHistory: Added snapshot for 97af7604-763c-417b-88f3-8b6d3cbc6d9f, tracking 0 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937363334
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 326074 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937363334 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937363364
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 326074 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937363364 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937363379
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 326098 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761937363379 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Metrics opt-out check failed: No API key available
+[DEBUG] Metrics check failed, defaulting to disabled
+[DEBUG] Metrics export disabled by organization setting
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761938995081
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48268 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761938995081 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] MCP server "atlassian": SSE connection dropped after 173306s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -350s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761940795200
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48268 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1761940795200 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] MCP server "atlassian": SSE connection dropped after 174951s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 1656s
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 175818s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 789s
+[DEBUG] MCP server "atlassian": SSE connection dropped after 176848s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -241s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 177881s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 2268s
+[DEBUG] MCP server "atlassian": SSE connection dropped after 178512s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 1638s
+[DEBUG] MCP server "atlassian": SSE connection dropped after 179473s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 676s
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 180434s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -285s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 188608s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -4872s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] MCP server "atlassian": SSE connection dropped after 189018s uptime
+[DEBUG] MCP server "atlassian": Connection error: SSE error: TypeError: terminated: other side closed
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 2891s
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 192588s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -679s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 197154s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -1265s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 205391s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -4903s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 209942s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -1248s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 211964s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 1279s
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 216557s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -3314s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 224415s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -4557s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 228934s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -1218s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] MCP server "atlassian": SSE connection dropped after 230466s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 1769s
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 234980s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -2745s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 240717s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -2435s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 244136s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -119s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 252411s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -4973s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 256869s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -1156s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 261510s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -1340s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 264940s uptime
+[DEBUG] MCP server "atlassian": Connection error: SSE error: undefined
+[DEBUG] MCP server "atlassian": Token expires in -129s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 269725s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -1483s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 274372s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -1347s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 278528s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -854s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 286678s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -4849s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 291314s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -1335s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 299503s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -4888s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 300571s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 2233s
+[DEBUG] MCP server "atlassian": SSE connection dropped after 301602s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 1202s
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 303218s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -414s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] MCP server "atlassian": SSE connection dropped after 304592s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 1927s
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 309190s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -2671s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 311336s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 1157s
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 314359s uptime
+[DEBUG] MCP server "atlassian": Connection error: SSE error: undefined
+[DEBUG] MCP server "atlassian": Token expires in -1867s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 315922s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 1738s
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 320553s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -2893s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 325058s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -1204s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 333255s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -4895s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 337910s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -1355s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 342136s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -925s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 346647s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -1210s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 351177s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -1230s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 355743s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -1265s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 371089s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -12045s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 375716s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -1326s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 380253s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -1236s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 382381s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 1173s
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 384108s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -554s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 384899s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 2510s
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 391241s uptime
+[DEBUG] MCP server "atlassian": Connection error: SSE error: undefined
+[DEBUG] MCP server "atlassian": Token expires in -3832s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 393114s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 1428s
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 397659s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -3117s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 400244s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 716s
+[DEBUG] MCP server "atlassian": SSE connection dropped after 400608s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 352s
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 405837s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -4878s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 413200s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -4062s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762181956487
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48268 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762181956487 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762183756671
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48855 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762183756671 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762185556376
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48855 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762185556376 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] MCP server "atlassian": SSE connection dropped after 418875s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 3291s
+[DEBUG] MCP server "atlassian": SSE connection dropped after 419368s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 2798s
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762187355777
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48855 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762187355777 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762189156568
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48855 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762189156568 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Detected change to /Users/wbrunson/workspace/commerce-platform/.claude/settings.local.json
+[DEBUG] Replacing all allow rules for destination 'projectSettings' with 82 rule(s): ["Bash(awk:*)","Bash(cat:*)","Bash(cp:*)","Bash(diff:*)","Bash(eslint:*)","Bash(find:*)","Bash(gh api:*)","Bash(gh auth:*)","Bash(gh pr diff:*)","Bash(gh pr edit:*)","Bash(gh pr list:*)","Bash(gh pr view:*)","Bash(gh search prs:*)","Bash(git add:*)","Bash(git checkout:*)","Bash(git config:*)","Bash(git fetch:*)","Bash(git pull:*)","Bash(git push:*)","Bash(git rebase:*)","Bash(git stash:*)","Bash(grep:*)","Bash(ls:*)","Bash(mkdir:*)","Bash(npm install:*)","Bash(npm run:*)","Bash(npm test:*)","Bash(npx tsc:*)","Bash(npx vitest run:*)","Bash(pnpm -w run lint)","Bash(pnpm add:*)","Bash(pnpm build)","Bash(pnpm eslint:*)","Bash(pnpm install:*)","Bash(pnpm lint:*)","Bash(pnpm run eslint:*)","Bash(pnpm run lint:*)","Bash(pnpm test:*)","Bash(pnpm typecheck:*)","Bash(pnpm vitest run:*)","Bash(rg:*)","Bash(sed:*)","WebFetch(domain:academy.shopware.com)","WebFetch(domain:appexchange.salesforce.com)","WebFetch(domain:blog.demandware.com)","WebFetch(domain:codex.wordpress.org)","WebFetch(domain:developer.salesforce.com)","WebFetch(domain:developer.shopware.com)","WebFetch(domain:developer.woocommerce.com)","WebFetch(domain:developer.wordpress.org)","WebFetch(domain:docs.shopware.com)","WebFetch(domain:docs.woocommerce.com)","WebFetch(domain:documentation.b2c.commercecloud.salesforce.com)","WebFetch(domain:github.com)","WebFetch(domain:help.salesforce.com)","WebFetch(domain:infocenter.demandware.com)","WebFetch(domain:make.wordpress.org)","WebFetch(domain:medium.com)","WebFetch(domain:partners.salesforce.com)","WebFetch(domain:pnpm.io)","WebFetch(domain:salesforce.com)","WebFetch(domain:salesforce.stackexchange.com)","WebFetch(domain:store.shopware.com)","WebFetch(domain:trailhead.salesforce.com)","WebFetch(domain:woocommerce.com)","WebFetch(domain:woocommerce.github.io)","WebFetch(domain:wordpress.org)","WebFetch(domain:www.demandware.com)","WebFetch(domain:www.npmjs.com)","WebFetch(domain:www.salesforce.com)","WebFetch(domain:www.shopware.com)","WebFetch(domain:xchange.demandware.com)","mcp__atlassian__createJiraIssue","mcp__atlassian__editJiraIssue","mcp__atlassian__getAccessibleAtlassianResources","mcp__atlassian__getJiraIssue","mcp__atlassian__getJiraProjectIssueTypesMetadata","mcp__atlassian__getTransitionsForJiraIssue","mcp__atlassian__getVisibleJiraProjects","mcp__atlassian__lookupJiraAccountId","mcp__atlassian__searchJiraIssuesUsingJql","mcp__atlassian__transitionJiraIssue"]
+[DEBUG] Replacing all allow rules for destination 'localSettings' with 18 rule(s): ["Bash(gh repo clone:*)","Bash(gh repo view:*)","Bash(git log:*)","Bash(xargs sed:*)","Read(//Users/wbrunson/.claude/**)","Read(//Users/wbrunson/workspace/dotfiles/stow/.claude/**)","Bash(git show-branch:*)","WebFetch(domain:developers.openai.com)","Bash(pnpm generate:*)","Bash(node:*)","Bash(pnpm config get:*)","Bash(pnpm test:unit src/functions/acp/translate.test.ts)","Bash(npx eslint:*)","WebFetch(domain:docs.datadoghq.com)","Bash(curl:*)","Bash(aws logs filter-log-events:*)","WebFetch(domain:heyapi.dev)","Bash(npm start)"]
+[DEBUG] MCP server "atlassian": SSE connection dropped after 423665s uptime
+[DEBUG] MCP server "atlassian": Connection error: SSE error: undefined
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 2266s
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762190955941
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48855 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762190955941 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762192755682
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48856 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762192755682 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 427516s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -1694s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762196439198
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48856 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762196439198 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762198238782
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48856 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762198238782 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] MCP server "atlassian": SSE connection dropped after 431806s uptime
+[DEBUG] MCP server "atlassian": Connection error: SSE error: undefined
+[DEBUG] MCP server "atlassian": Token expires in -879s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762200038355
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48856 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762200038355 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] MCP server "atlassian": SSE connection dropped after 433641s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 1466s
+[DEBUG] MCP server "atlassian": SSE connection dropped after 434275s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 833s
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762201840160
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48856 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762201840160 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762203640018
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48856 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762203640018 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] MCP server "atlassian": SSE connection dropped after 437987s uptime
+[DEBUG] MCP server "atlassian": Connection error: SSE error: undefined
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 612s
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762205439379
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48856 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762205439379 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762207239235
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48856 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762207239235 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762209040065
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48856 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762209040065 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762210838940
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48856 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762210838940 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 445745s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -755s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] MCP server "atlassian": SSE connection dropped after 446911s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 2135s
+[DEBUG] MCP server "atlassian": SSE connection dropped after 447318s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 1728s
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 448411s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 635s
+[DEBUG] MCP server "atlassian": SSE connection dropped after 448974s uptime
+[DEBUG] MCP server "atlassian": Connection error: SSE error: undefined
+[DEBUG] MCP server "atlassian": Token expires in 72s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] MCP server "atlassian": SSE connection dropped after 450150s uptime
+[DEBUG] MCP server "atlassian": Connection error: SSE error: undefined
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 2126s
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 452751s uptime
+[DEBUG] MCP server "atlassian": Connection error: SSE error: TypeError: terminated: other side closed
+[DEBUG] MCP server "atlassian": Token expires in -475s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 454212s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 1841s
+[DEBUG] MCP server "atlassian": SSE connection dropped after 455293s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 759s
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 456267s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 3293s
+[DEBUG] MCP server "atlassian": SSE connection dropped after 457188s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 2372s
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 461785s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -2225s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] MCP server "atlassian": SSE connection dropped after 462848s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 2239s
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 467446s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 3288s
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 471637s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 3293s
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 472874s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 2056s
+[DEBUG] MCP server "atlassian": SSE connection dropped after 474373s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 556s
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 475468s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 3296s
+[DEBUG] MCP server "atlassian": SSE connection dropped after 476484s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 2280s
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 477473s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 1291s
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 479587s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 3297s
+[DEBUG] MCP server "atlassian": SSE connection dropped after 479814s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 3069s
+[DEBUG] MCP server "atlassian": SSE connection dropped after 480927s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 1957s
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 481959s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 925s
+[DEBUG] MCP server "atlassian": SSE connection dropped after 483056s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -173s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 484406s uptime
+[DEBUG] MCP server "atlassian": Connection error: SSE error: undefined
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 1952s
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 487069s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -712s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 491641s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -1271s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] MCP server "atlassian": SSE connection dropped after 492701s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 2241s
+[DEBUG] MCP server "atlassian": SSE connection dropped after 492892s uptime
+[DEBUG] MCP server "atlassian": Connection error: SSE error: TypeError: terminated: other side closed
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 2050s
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 497332s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Token expires in -2390s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[DEBUG] MCP server "atlassian": SSE connection dropped after 499548s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 1085s
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[ERROR] Error: Error: Failed to install Claude CLI package: npm error code ENOTEMPTY
+npm error syscall rename
+npm error path /Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code
+npm error dest /Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/.claude-code-cL8LfjAc
+npm error errno -66
+npm error ENOTEMPTY: directory not empty, rename '/Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code' -> '/Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/.claude-code-cL8LfjAc'
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-11-04T14_58_09_628Z-debug-0.log
+    at Sa (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1820:572)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async Object.current (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2811:32379)
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762270091387
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48856 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762270091387 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762271891682
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48856 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762271891682 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] MCP server "atlassian": SSE connection dropped after 505610s uptime
+[DEBUG] MCP server "atlassian": Connection error: SSE error: TypeError: terminated: other side closed
+[DEBUG] MCP server "atlassian": Token expires in -1597s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[ERROR] Failed to save config with lock: Error: Lock file is already being held
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762273690872
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48856 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762273690872 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] MCP server "atlassian": SSE connection dropped after 507223s uptime
+[DEBUG] MCP server "atlassian": Connection error: SSE error: TypeError: terminated: other side closed
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 1689s
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762275491406
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48856 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762275491406 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] MCP server "atlassian": SSE connection dropped after 509863s uptime
+[DEBUG] MCP server "atlassian": Connection error: SSE error: TypeError: terminated: other side closed
+[DEBUG] MCP server "atlassian": Token expires in -950s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762277290822
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48856 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762277290822 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762279091255
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48856 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762279091255 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] MCP server "atlassian": SSE connection dropped after 512844s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 320s
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762280890519
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48856 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762280890519 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] MCP server "atlassian": SSE connection dropped after 513930s uptime
+[DEBUG] MCP server "atlassian": Connection timeout - network issue or server unresponsive
+[DEBUG] MCP server "atlassian": Token expires in -766s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] MCP server "atlassian": SSE connection dropped after 514457s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 2786s
+[DEBUG] MCP server "atlassian": SSE connection dropped after 514997s uptime
+[DEBUG] MCP server "atlassian": Connection error: SSE error: undefined
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 2245s
+[DEBUG] MCP server "atlassian": SSE connection dropped after 515071s uptime
+[DEBUG] MCP server "atlassian": Connection timeout - network issue or server unresponsive
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 2171s
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762282691174
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48856 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762282691174 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] MCP server "atlassian": SSE connection dropped after 517307s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 3282s
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762284491242
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48856 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762284491242 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762286291109
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48856 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762286291109 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-local, using native: false
+[DEBUG] Getting matching hook commands for SessionEnd with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)

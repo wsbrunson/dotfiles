@@ -1,0 +1,1147 @@
+2025-12-04T22:00:14.347Z [DEBUG] Watching for changes in setting files /Users/wbrunson/.claude/settings.json, /Users/wbrunson/workspace/commerce-platform/.claude/settings.json, /Users/wbrunson/workspace/commerce-platform/.claude/settings.local.json...
+2025-12-04T22:00:14.432Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2025-12-04T22:00:14.432Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2025-12-04T22:00:14.432Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2025-12-04T22:00:14.432Z [DEBUG] [LSP SERVER MANAGER] initialize() called
+2025-12-04T22:00:14.432Z [DEBUG] [LSP SERVER MANAGER] Calling getAllLspServers()
+2025-12-04T22:00:14.446Z [DEBUG] Applying permission update: Adding 82 allow rule(s) to destination 'projectSettings': ["Bash(awk:*)","Bash(cat:*)","Bash(cp:*)","Bash(diff:*)","Bash(eslint:*)","Bash(find:*)","Bash(gh api:*)","Bash(gh auth:*)","Bash(gh pr diff:*)","Bash(gh pr edit:*)","Bash(gh pr list:*)","Bash(gh pr view:*)","Bash(gh search prs:*)","Bash(git add:*)","Bash(git checkout:*)","Bash(git config:*)","Bash(git fetch:*)","Bash(git pull:*)","Bash(git push:*)","Bash(git rebase:*)","Bash(git stash:*)","Bash(grep:*)","Bash(ls:*)","Bash(mkdir:*)","Bash(npm install:*)","Bash(npm run:*)","Bash(npm test:*)","Bash(npx tsc:*)","Bash(npx vitest run:*)","Bash(pnpm -w run lint)","Bash(pnpm add:*)","Bash(pnpm build)","Bash(pnpm eslint:*)","Bash(pnpm install:*)","Bash(pnpm lint:*)","Bash(pnpm run eslint:*)","Bash(pnpm run lint:*)","Bash(pnpm test:*)","Bash(pnpm typecheck:*)","Bash(pnpm vitest run:*)","Bash(rg:*)","Bash(sed:*)","WebFetch(domain:academy.shopware.com)","WebFetch(domain:appexchange.salesforce.com)","WebFetch(domain:blog.demandware.com)","WebFetch(domain:codex.wordpress.org)","WebFetch(domain:developer.salesforce.com)","WebFetch(domain:developer.shopware.com)","WebFetch(domain:developer.woocommerce.com)","WebFetch(domain:developer.wordpress.org)","WebFetch(domain:docs.shopware.com)","WebFetch(domain:docs.woocommerce.com)","WebFetch(domain:documentation.b2c.commercecloud.salesforce.com)","WebFetch(domain:github.com)","WebFetch(domain:help.salesforce.com)","WebFetch(domain:infocenter.demandware.com)","WebFetch(domain:make.wordpress.org)","WebFetch(domain:medium.com)","WebFetch(domain:partners.salesforce.com)","WebFetch(domain:pnpm.io)","WebFetch(domain:salesforce.com)","WebFetch(domain:salesforce.stackexchange.com)","WebFetch(domain:store.shopware.com)","WebFetch(domain:trailhead.salesforce.com)","WebFetch(domain:woocommerce.com)","WebFetch(domain:woocommerce.github.io)","WebFetch(domain:wordpress.org)","WebFetch(domain:www.demandware.com)","WebFetch(domain:www.npmjs.com)","WebFetch(domain:www.salesforce.com)","WebFetch(domain:www.shopware.com)","WebFetch(domain:xchange.demandware.com)","mcp__atlassian__createJiraIssue","mcp__atlassian__editJiraIssue","mcp__atlassian__getAccessibleAtlassianResources","mcp__atlassian__getJiraIssue","mcp__atlassian__getJiraProjectIssueTypesMetadata","mcp__atlassian__getTransitionsForJiraIssue","mcp__atlassian__getVisibleJiraProjects","mcp__atlassian__lookupJiraAccountId","mcp__atlassian__searchJiraIssuesUsingJql","mcp__atlassian__transitionJiraIssue"]
+2025-12-04T22:00:14.446Z [DEBUG] Applying permission update: Adding 24 allow rule(s) to destination 'localSettings': ["Bash(gh repo clone:*)","Bash(gh repo view:*)","Bash(git log:*)","Bash(xargs sed:*)","Read(//Users/wbrunson/.claude/**)","Read(//Users/wbrunson/workspace/dotfiles/stow/.claude/**)","Bash(git show-branch:*)","WebFetch(domain:developers.openai.com)","Bash(pnpm generate:*)","Bash(node:*)","Bash(pnpm config get:*)","Bash(pnpm test:unit src/functions/acp/translate.test.ts)","Bash(npx eslint:*)","WebFetch(domain:docs.datadoghq.com)","Bash(curl:*)","Bash(aws logs filter-log-events:*)","WebFetch(domain:heyapi.dev)","Bash(npm start)","Bash(npm-registry-switch:*)","Bash(pnpm test:unit:*)","Bash(pnpm test:coverage:*)","Bash(aws-profile:*)","mcp__atlassian__getConfluencePage","Bash(npm uninstall auth-paypal)"]
+2025-12-04T22:00:14.447Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+2025-12-04T22:00:14.451Z [DEBUG] Total LSP servers loaded: 0
+2025-12-04T22:00:14.482Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2025-12-04T22:00:14.482Z [DEBUG] LSP manager initialized with 0 servers
+2025-12-04T22:00:14.483Z [DEBUG] LSP server manager initialized successfully
+2025-12-04T22:00:14.483Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2025-12-04T22:00:14.488Z [DEBUG] Loading skills from directories: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/wbrunson/.claude/skills, project=/Users/wbrunson/workspace/commerce-platform/.claude/skills
+2025-12-04T22:00:14.488Z [DEBUG] >>>>> getPluginSkills CALLED <<<<<
+2025-12-04T22:00:14.599Z [DEBUG] installed_plugins.json doesn't exist yet at /Users/wbrunson/.claude/plugins/installed_plugins.json, returning empty object
+2025-12-04T22:00:14.660Z [DEBUG] Creating shell snapshot for zsh (/bin/zsh)
+2025-12-04T22:00:14.660Z [DEBUG] Looking for shell config file: /Users/wbrunson/.zshrc
+2025-12-04T22:00:14.660Z [DEBUG] Snapshots directory: /Users/wbrunson/.claude/shell-snapshots
+2025-12-04T22:00:14.660Z [DEBUG] Creating snapshot at: /Users/wbrunson/.claude/shell-snapshots/snapshot-zsh-1764885614660-5rgwlv.sh
+2025-12-04T22:00:14.660Z [DEBUG] Shell binary exists: true
+2025-12-04T22:00:14.660Z [DEBUG] Execution timeout: 10000ms
+2025-12-04T22:00:14.662Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/df3107aa-297c-4f7d-96a1-9f1e87a39497-agent-df3107aa-297c-4f7d-96a1-9f1e87a39497.json.tmp.51965.1764885614662
+2025-12-04T22:00:14.668Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-04T22:00:14.668Z [DEBUG] Renaming /Users/wbrunson/.claude/todos/df3107aa-297c-4f7d-96a1-9f1e87a39497-agent-df3107aa-297c-4f7d-96a1-9f1e87a39497.json.tmp.51965.1764885614662 to /Users/wbrunson/.claude/todos/df3107aa-297c-4f7d-96a1-9f1e87a39497-agent-df3107aa-297c-4f7d-96a1-9f1e87a39497.json
+2025-12-04T22:00:14.669Z [DEBUG] File /Users/wbrunson/.claude/todos/df3107aa-297c-4f7d-96a1-9f1e87a39497-agent-df3107aa-297c-4f7d-96a1-9f1e87a39497.json written atomically
+2025-12-04T22:00:14.670Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
+2025-12-04T22:00:14.670Z [DEBUG] Total plugin skills loaded: 0
+2025-12-04T22:00:14.670Z [DEBUG] Total plugin commands loaded: 0
+2025-12-04T22:00:14.670Z [DEBUG] Registered 0 hooks from 0 plugins
+2025-12-04T22:00:14.672Z [DEBUG] Loaded 0 unique skills (managed: 0, user: 0, project: 0, duplicates removed: 0)
+2025-12-04T22:00:14.672Z [DEBUG] getSkills returning: 0 skill dir commands, 0 plugin skills
+2025-12-04T22:00:14.714Z [DEBUG] Git remote URL: null
+2025-12-04T22:00:14.714Z [DEBUG] No git remote URL found
+2025-12-04T22:00:14.714Z [DEBUG] Not in a GitHub repository, skipping path mapping update
+2025-12-04T22:00:14.716Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg)
+2025-12-04T22:00:14.721Z [DEBUG] Total plugin agents loaded: 0
+2025-12-04T22:00:14.752Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-04T22:00:14.752Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.51965.1764885614752
+2025-12-04T22:00:14.752Z [DEBUG] Preserving file permissions: 100644
+2025-12-04T22:00:14.757Z [DEBUG] Temp file written successfully, size: 57972 bytes
+2025-12-04T22:00:14.757Z [DEBUG] Applied original permissions to temp file
+2025-12-04T22:00:14.757Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.51965.1764885614752 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-04T22:00:14.758Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-12-04T22:00:14.771Z [DEBUG] Getting matching hook commands for SessionStart with query: startup
+2025-12-04T22:00:14.771Z [DEBUG] Found 0 hook matchers in settings
+2025-12-04T22:00:14.771Z [DEBUG] Matched 0 unique hooks for query "startup" (0 before deduplication)
+2025-12-04T22:00:14.771Z [DEBUG] MCP server "atlassian": SSE transport initialized, awaiting connection
+2025-12-04T22:00:14.784Z [DEBUG] MCP server "atlassian": Starting connection with timeout of 30000ms
+2025-12-04T22:00:14.826Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-04T22:00:14.826Z [DEBUG] MCP server "atlassian": Token length: 74
+2025-12-04T22:00:14.827Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-04T22:00:14.827Z [DEBUG] MCP server "atlassian": Expires in: 1480s
+2025-12-04T22:00:14.846Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-04T22:00:14.846Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.51965.1764885614846
+2025-12-04T22:00:14.846Z [DEBUG] Preserving file permissions: 100644
+2025-12-04T22:00:14.850Z [DEBUG] Temp file written successfully, size: 57867 bytes
+2025-12-04T22:00:14.850Z [DEBUG] Applied original permissions to temp file
+2025-12-04T22:00:14.850Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.51965.1764885614846 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-04T22:00:14.850Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-12-04T22:00:14.855Z [DEBUG] performStartupChecks called
+2025-12-04T22:00:14.855Z [DEBUG] Starting background plugin installations
+2025-12-04T22:00:14.855Z [DEBUG] performBackgroundPluginInstallations called
+2025-12-04T22:00:14.860Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-12-04T22:00:14.863Z [DEBUG] Setting installation status: 0 marketplaces, 0 installable plugins, 0 uninstallable plugins
+2025-12-04T22:00:14.865Z [DEBUG] Loaded plugins - Enabled: 0, Disabled: 0, Commands: 0, Agents: 0, Errors: 0
+2025-12-04T22:00:14.868Z [DEBUG] Shell snapshot created successfully (1484 bytes)
+2025-12-04T22:00:14.869Z [DEBUG] Getting matching hook commands for SubagentStart with query: Explore
+2025-12-04T22:00:14.869Z [DEBUG] Found 0 hook matchers in settings
+2025-12-04T22:00:14.869Z [DEBUG] Matched 0 unique hooks for query "Explore" (0 before deduplication)
+2025-12-04T22:00:14.870Z [DEBUG] Getting matching hook commands for SubagentStart with query: Plan
+2025-12-04T22:00:14.870Z [DEBUG] Found 0 hook matchers in settings
+2025-12-04T22:00:14.870Z [DEBUG] Matched 0 unique hooks for query "Plan" (0 before deduplication)
+2025-12-04T22:00:15.067Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-04T22:00:15.067Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.51965.1764885615067
+2025-12-04T22:00:15.067Z [DEBUG] Preserving file permissions: 100644
+2025-12-04T22:00:15.071Z [DEBUG] Temp file written successfully, size: 57867 bytes
+2025-12-04T22:00:15.071Z [DEBUG] Applied original permissions to temp file
+2025-12-04T22:00:15.071Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.51965.1764885615067 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-04T22:00:15.074Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-12-04T22:00:15.080Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-04T22:00:15.080Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.51965.1764885615080
+2025-12-04T22:00:15.080Z [DEBUG] Preserving file permissions: 100644
+2025-12-04T22:00:15.084Z [DEBUG] Temp file written successfully, size: 57867 bytes
+2025-12-04T22:00:15.084Z [DEBUG] Applied original permissions to temp file
+2025-12-04T22:00:15.084Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.51965.1764885615080 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-04T22:00:15.086Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-12-04T22:00:15.090Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-04T22:00:15.090Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.51965.1764885615090
+2025-12-04T22:00:15.090Z [DEBUG] Preserving file permissions: 100644
+2025-12-04T22:00:15.094Z [DEBUG] Temp file written successfully, size: 57972 bytes
+2025-12-04T22:00:15.094Z [DEBUG] Applied original permissions to temp file
+2025-12-04T22:00:15.094Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.51965.1764885615090 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-04T22:00:15.095Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-12-04T22:00:15.499Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-04T22:00:15.499Z [DEBUG] MCP server "atlassian": Token length: 74
+2025-12-04T22:00:15.499Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-04T22:00:15.500Z [DEBUG] MCP server "atlassian": Expires in: 1480s
+2025-12-04T22:00:15.799Z [ERROR] Error streaming, falling back to non-streaming mode: 400 Unsupported model: claude-sonnet-4-20250514
+2025-12-04T22:00:16.015Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-04T22:00:16.016Z [DEBUG] MCP server "atlassian": Token length: 74
+2025-12-04T22:00:16.016Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-04T22:00:16.017Z [DEBUG] MCP server "atlassian": Expires in: 1479s
+2025-12-04T22:00:16.132Z [DEBUG] Stream started - received first chunk
+2025-12-04T22:00:16.288Z [DEBUG] npm view failed with code 1
+2025-12-04T22:00:16.288Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-04T22_00_15_320Z-debug-0.log
+2025-12-04T22:00:16.314Z [DEBUG] MCP server "atlassian": Successfully connected to sse server in 1567ms
+2025-12-04T22:00:16.315Z [DEBUG] MCP server "atlassian": Connection established with capabilities: {"hasTools":true,"hasPrompts":false,"hasResources":true,"serverVersion":{"name":"atlassian-mcp-server","version":"1.0.0"}}
+2025-12-04T22:00:16.353Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-04T22:00:16.353Z [DEBUG] MCP server "atlassian": Token length: 74
+2025-12-04T22:00:16.353Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-04T22:00:16.354Z [DEBUG] MCP server "atlassian": Expires in: 1479s
+2025-12-04T22:00:16.386Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-04T22:00:16.386Z [DEBUG] MCP server "atlassian": Token length: 74
+2025-12-04T22:00:16.387Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-04T22:00:16.387Z [DEBUG] MCP server "atlassian": Expires in: 1479s
+2025-12-04T22:00:16.390Z [ERROR] Error in non-streaming fallback: 400 Unsupported model: claude-sonnet-4-20250514
+2025-12-04T22:00:16.391Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async IK9.a81.model (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:10432)
+    at async a81 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2139:1872)
+    at async IK9 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:10586)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:3873
+    at async Po1 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2037)
+    at async JYA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:3843)
+2025-12-04T22:00:16.397Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+2025-12-04T22:00:16.397Z [DEBUG] Found 0 hook matchers in settings
+2025-12-04T22:00:16.397Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-04T22:00:16.800Z [ERROR] MCP server "atlassian" Failed to fetch resources: MCP error -32601: Method not found
+2025-12-04T22:00:16.986Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:16.993Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:17.338Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-04T22:00:17.338Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.51965.1764885617338
+2025-12-04T22:00:17.338Z [DEBUG] Preserving file permissions: 100644
+2025-12-04T22:00:17.342Z [DEBUG] Temp file written successfully, size: 57972 bytes
+2025-12-04T22:00:17.343Z [DEBUG] Applied original permissions to temp file
+2025-12-04T22:00:17.343Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.51965.1764885617338 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-04T22:00:17.344Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-12-04T22:00:17.430Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:17.433Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:17.434Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:17.437Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:17.438Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:17.443Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:17.444Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:17.445Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:17.447Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:17.448Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:17.448Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:17.449Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:17.452Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:17.458Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:17.459Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:17.459Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:17.460Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:17.461Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:17.462Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:17.462Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:17.463Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:17.464Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:17.465Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:17.466Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:17.466Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:18.190Z [DEBUG] Skills and commands included in Skill tool:
+2025-12-04T22:00:18.190Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-12-04T22:00:18.471Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-04T22:00:19.346Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+2025-12-04T22:00:19.346Z [DEBUG] Found 0 hook matchers in settings
+2025-12-04T22:00:19.346Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-04T22:03:41.759Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-12-04T22:03:44.637Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/settings.json.tmp.51965.1764885824637
+2025-12-04T22:03:44.637Z [DEBUG] Preserving file permissions: 100644
+2025-12-04T22:03:44.641Z [DEBUG] Temp file written successfully, size: 172 bytes
+2025-12-04T22:03:44.642Z [DEBUG] Applied original permissions to temp file
+2025-12-04T22:03:44.642Z [DEBUG] Renaming /Users/wbrunson/.claude/settings.json.tmp.51965.1764885824637 to /Users/wbrunson/.claude/settings.json
+2025-12-04T22:03:44.642Z [DEBUG] File /Users/wbrunson/.claude/settings.json written atomically
+2025-12-04T22:03:44.666Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-12-04T22:03:44.667Z [DEBUG] FileHistory: Added snapshot for 8466bd5f-0328-4c52-8db0-42f95e1fc1ea, tracking 0 files
+2025-12-04T22:03:44.670Z [DEBUG] Rendering user message with 1 content blocks
+2025-12-04T22:03:44.670Z [DEBUG] Block 0: <command-name>/model</command-name>
+            <command-message>model</command-message>
+           ...
+2025-12-04T22:03:44.671Z [DEBUG] UserCommandMessage rendering: "model" (args: "none")
+2025-12-04T22:03:44.671Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-12-04T22:03:44.804Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-04T22:03:44.804Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.51965.1764885824804
+2025-12-04T22:03:44.804Z [DEBUG] Preserving file permissions: 100644
+2025-12-04T22:03:44.807Z [DEBUG] Temp file written successfully, size: 57972 bytes
+2025-12-04T22:03:44.807Z [DEBUG] Applied original permissions to temp file
+2025-12-04T22:03:44.807Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.51965.1764885824804 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-04T22:03:44.808Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-12-04T22:03:45.829Z [DEBUG] npm view failed with code 1
+2025-12-04T22:03:45.829Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-04T22_03_44_945Z-debug-0.log
+2025-12-04T22:05:14.394Z [DEBUG] Metrics opt-out check failed: No API key available
+2025-12-04T22:05:14.394Z [DEBUG] Metrics check failed, defaulting to disabled
+2025-12-04T22:05:14.394Z [DEBUG] Metrics export disabled by organization setting
+2025-12-04T22:20:17.611Z [DEBUG] MCP server "atlassian": SSE connection dropped after 1201s uptime
+2025-12-04T22:20:17.614Z [DEBUG] MCP server "atlassian": Connection error: SSE error: undefined
+2025-12-04T22:20:20.746Z [DEBUG] MCP server "atlassian": Token expires in 275s, attempting proactive refresh
+2025-12-04T22:20:20.748Z [DEBUG] MCP server "atlassian": Starting token refresh
+2025-12-04T22:20:21.428Z [DEBUG] MCP server "atlassian": Found client info
+2025-12-04T22:20:22.652Z [DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+2025-12-04T22:20:22.752Z [DEBUG] MCP server "atlassian": Saving tokens
+2025-12-04T22:20:22.754Z [DEBUG] MCP server "atlassian": Token expires in: 3300
+2025-12-04T22:20:22.755Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-04T22:20:22.940Z [DEBUG] MCP server "atlassian": Token refreshed successfully
+2025-12-04T22:33:46.084Z [DEBUG] npm view failed with code 1
+2025-12-04T22:33:46.085Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-04T22_33_45_122Z-debug-0.log
+2025-12-04T23:03:45.903Z [DEBUG] npm view failed with code 1
+2025-12-04T23:03:45.904Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-04T23_03_45_046Z-debug-0.log
+2025-12-04T23:33:46.028Z [DEBUG] npm view failed with code 1
+2025-12-04T23:33:46.028Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-04T23_33_45_136Z-debug-0.log
+2025-12-05T00:03:45.892Z [DEBUG] npm view failed with code 1
+2025-12-05T00:03:45.892Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T00_03_45_080Z-debug-0.log
+2025-12-05T00:16:33.117Z [DEBUG] MCP server "atlassian": SSE connection dropped after 8176s uptime
+2025-12-05T00:16:33.124Z [DEBUG] MCP server "atlassian": Connection error: SSE error: TypeError: terminated: other side closed
+2025-12-05T00:16:36.259Z [DEBUG] MCP server "atlassian": Token expires in -3674s, attempting proactive refresh
+2025-12-05T00:16:36.260Z [DEBUG] MCP server "atlassian": Starting token refresh
+2025-12-05T00:16:37.005Z [DEBUG] MCP server "atlassian": Found client info
+2025-12-05T00:16:38.117Z [DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+2025-12-05T00:16:38.274Z [DEBUG] MCP server "atlassian": Saving tokens
+2025-12-05T00:16:38.277Z [DEBUG] MCP server "atlassian": Token expires in: 3300
+2025-12-05T00:16:38.279Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-05T00:16:38.468Z [DEBUG] MCP server "atlassian": Token refreshed successfully
+2025-12-05T00:33:46.128Z [DEBUG] npm view failed with code 1
+2025-12-05T00:33:46.128Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T00_33_45_132Z-debug-0.log
+2025-12-05T01:03:45.830Z [DEBUG] npm view failed with code 1
+2025-12-05T01:03:45.830Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T01_03_45_027Z-debug-0.log
+2025-12-05T01:33:47.154Z [DEBUG] npm view failed with code 1
+2025-12-05T01:33:47.154Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T01_33_45_263Z-debug-0.log
+2025-12-05T02:03:45.788Z [DEBUG] npm view failed with code 1
+2025-12-05T02:03:45.788Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T02_03_45_016Z-debug-0.log
+2025-12-05T02:04:03.350Z [DEBUG] MCP server "atlassian": SSE connection dropped after 14627s uptime
+2025-12-05T02:04:03.353Z [DEBUG] MCP server "atlassian": Connection error: SSE error: undefined
+2025-12-05T02:04:06.477Z [DEBUG] MCP server "atlassian": Token expires in -3149s, attempting proactive refresh
+2025-12-05T02:04:06.478Z [DEBUG] MCP server "atlassian": Starting token refresh
+2025-12-05T02:04:07.121Z [DEBUG] MCP server "atlassian": Found client info
+2025-12-05T02:04:08.241Z [DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+2025-12-05T02:04:08.342Z [DEBUG] MCP server "atlassian": Saving tokens
+2025-12-05T02:04:08.344Z [DEBUG] MCP server "atlassian": Token expires in: 3300
+2025-12-05T02:04:08.345Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-05T02:04:08.543Z [DEBUG] MCP server "atlassian": Token refreshed successfully
+2025-12-05T02:33:45.913Z [DEBUG] npm view failed with code 1
+2025-12-05T02:33:45.913Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T02_33_45_057Z-debug-0.log
+2025-12-05T02:47:08.875Z [DEBUG] MCP server "atlassian": SSE connection dropped after 17212s uptime
+2025-12-05T02:47:08.880Z [DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+2025-12-05T02:47:12.005Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-05T02:47:12.006Z [DEBUG] MCP server "atlassian": Token length: 74
+2025-12-05T02:47:12.007Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-05T02:47:12.007Z [DEBUG] MCP server "atlassian": Expires in: 716s
+2025-12-05T03:00:42.757Z [DEBUG] MCP server "atlassian": SSE connection dropped after 18026s uptime
+2025-12-05T03:00:42.761Z [DEBUG] MCP server "atlassian": Connection error: SSE error: undefined
+2025-12-05T03:00:45.882Z [DEBUG] MCP server "atlassian": Token expires in -98s, attempting proactive refresh
+2025-12-05T03:00:45.884Z [DEBUG] MCP server "atlassian": Starting token refresh
+2025-12-05T03:00:46.554Z [DEBUG] MCP server "atlassian": Found client info
+2025-12-05T03:00:47.715Z [DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+2025-12-05T03:00:47.855Z [DEBUG] MCP server "atlassian": Saving tokens
+2025-12-05T03:00:47.857Z [DEBUG] MCP server "atlassian": Token expires in: 3300
+2025-12-05T03:00:47.858Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-05T03:00:48.085Z [DEBUG] MCP server "atlassian": Token refreshed successfully
+2025-12-05T03:03:45.834Z [DEBUG] npm view failed with code 1
+2025-12-05T03:03:45.834Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T03_03_45_012Z-debug-0.log
+2025-12-05T03:33:46.016Z [DEBUG] npm view failed with code 1
+2025-12-05T03:33:46.017Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T03_33_45_085Z-debug-0.log
+2025-12-05T04:03:45.804Z [DEBUG] npm view failed with code 1
+2025-12-05T04:03:45.804Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T04_03_45_035Z-debug-0.log
+2025-12-05T04:33:46.007Z [DEBUG] npm view failed with code 1
+2025-12-05T04:33:46.007Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T04_33_45_070Z-debug-0.log
+2025-12-05T05:03:46.162Z [DEBUG] npm view failed with code 1
+2025-12-05T05:03:46.162Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T05_03_45_124Z-debug-0.log
+2025-12-05T05:13:18.583Z [DEBUG] MCP server "atlassian": SSE connection dropped after 25982s uptime
+2025-12-05T05:13:18.589Z [DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+2025-12-05T05:13:21.746Z [DEBUG] MCP server "atlassian": Token expires in -4654s, attempting proactive refresh
+2025-12-05T05:13:21.747Z [DEBUG] MCP server "atlassian": Starting token refresh
+2025-12-05T05:13:22.488Z [DEBUG] MCP server "atlassian": Found client info
+2025-12-05T05:13:23.672Z [DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+2025-12-05T05:13:23.778Z [DEBUG] MCP server "atlassian": Saving tokens
+2025-12-05T05:13:23.779Z [DEBUG] MCP server "atlassian": Token expires in: 3300
+2025-12-05T05:13:23.780Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-05T05:13:23.977Z [DEBUG] MCP server "atlassian": Token refreshed successfully
+2025-12-05T05:33:45.962Z [DEBUG] npm view failed with code 1
+2025-12-05T05:33:45.962Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T05_33_45_081Z-debug-0.log
+2025-12-05T06:03:45.844Z [DEBUG] npm view failed with code 1
+2025-12-05T06:03:45.845Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T06_03_45_047Z-debug-0.log
+2025-12-05T06:13:54.190Z [DEBUG] MCP server "atlassian": SSE connection dropped after 29617s uptime
+2025-12-05T06:13:54.195Z [DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+2025-12-05T06:13:57.353Z [DEBUG] MCP server "atlassian": Token expires in -334s, attempting proactive refresh
+2025-12-05T06:13:57.355Z [DEBUG] MCP server "atlassian": Starting token refresh
+2025-12-05T06:13:58.200Z [DEBUG] MCP server "atlassian": Found client info
+2025-12-05T06:13:59.361Z [DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+2025-12-05T06:13:59.468Z [DEBUG] MCP server "atlassian": Saving tokens
+2025-12-05T06:13:59.469Z [DEBUG] MCP server "atlassian": Token expires in: 3300
+2025-12-05T06:13:59.470Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-05T06:13:59.666Z [DEBUG] MCP server "atlassian": Token refreshed successfully
+2025-12-05T06:15:30.012Z [DEBUG] MCP server "atlassian": SSE connection dropped after 29713s uptime
+2025-12-05T06:15:30.015Z [DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+2025-12-05T06:15:33.136Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-05T06:15:33.138Z [DEBUG] MCP server "atlassian": Token length: 74
+2025-12-05T06:15:33.139Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-05T06:15:33.141Z [DEBUG] MCP server "atlassian": Expires in: 3206s
+2025-12-05T06:24:05.948Z [DEBUG] MCP server "atlassian": SSE connection dropped after 30229s uptime
+2025-12-05T06:24:05.952Z [DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+2025-12-05T06:24:09.092Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-05T06:24:09.094Z [DEBUG] MCP server "atlassian": Token length: 74
+2025-12-05T06:24:09.095Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-05T06:24:09.098Z [DEBUG] MCP server "atlassian": Expires in: 2690s
+2025-12-05T06:25:48.891Z [DEBUG] MCP server "atlassian": SSE connection dropped after 30332s uptime
+2025-12-05T06:25:48.894Z [DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+2025-12-05T06:25:52.020Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-05T06:25:52.022Z [DEBUG] MCP server "atlassian": Token length: 74
+2025-12-05T06:25:52.023Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-05T06:25:52.024Z [DEBUG] MCP server "atlassian": Expires in: 2587s
+2025-12-05T06:33:46.091Z [DEBUG] npm view failed with code 1
+2025-12-05T06:33:46.091Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T06_33_45_205Z-debug-0.log
+2025-12-05T07:03:45.934Z [DEBUG] npm view failed with code 1
+2025-12-05T07:03:45.934Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T07_03_45_101Z-debug-0.log
+2025-12-05T07:33:45.976Z [DEBUG] npm view failed with code 1
+2025-12-05T07:33:45.976Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T07_33_45_098Z-debug-0.log
+2025-12-05T08:03:45.785Z [DEBUG] npm view failed with code 1
+2025-12-05T08:03:45.785Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T08_03_45_037Z-debug-0.log
+2025-12-05T08:33:45.952Z [DEBUG] npm view failed with code 1
+2025-12-05T08:33:45.952Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T08_33_45_036Z-debug-0.log
+2025-12-05T09:03:45.813Z [DEBUG] npm view failed with code 1
+2025-12-05T09:03:45.814Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T09_03_44_959Z-debug-0.log
+2025-12-05T09:33:45.932Z [DEBUG] npm view failed with code 1
+2025-12-05T09:33:45.932Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T09_33_45_045Z-debug-0.log
+2025-12-05T10:03:45.924Z [DEBUG] npm view failed with code 1
+2025-12-05T10:03:45.924Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T10_03_45_066Z-debug-0.log
+2025-12-05T10:33:45.922Z [DEBUG] npm view failed with code 1
+2025-12-05T10:33:45.922Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T10_33_45_041Z-debug-0.log
+2025-12-05T11:03:45.898Z [DEBUG] npm view failed with code 1
+2025-12-05T11:03:45.898Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T11_03_45_086Z-debug-0.log
+2025-12-05T11:33:46.009Z [DEBUG] npm view failed with code 1
+2025-12-05T11:33:46.009Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T11_33_45_050Z-debug-0.log
+2025-12-05T12:03:45.847Z [DEBUG] npm view failed with code 1
+2025-12-05T12:03:45.847Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T12_03_45_037Z-debug-0.log
+2025-12-05T12:33:45.947Z [DEBUG] npm view failed with code 1
+2025-12-05T12:33:45.947Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T12_33_45_059Z-debug-0.log
+2025-12-05T13:03:45.794Z [DEBUG] npm view failed with code 1
+2025-12-05T13:03:45.795Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T13_03_45_015Z-debug-0.log
+2025-12-05T13:33:46.010Z [DEBUG] npm view failed with code 1
+2025-12-05T13:33:46.010Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T13_33_45_101Z-debug-0.log
+2025-12-05T14:03:45.869Z [DEBUG] npm view failed with code 1
+2025-12-05T14:03:45.869Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T14_03_45_047Z-debug-0.log
+2025-12-05T14:33:45.981Z [DEBUG] npm view failed with code 1
+2025-12-05T14:33:45.982Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T14_33_45_063Z-debug-0.log
+2025-12-05T15:03:45.794Z [DEBUG] npm view failed with code 1
+2025-12-05T15:03:45.794Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T15_03_45_033Z-debug-0.log
+2025-12-05T15:33:45.980Z [DEBUG] npm view failed with code 1
+2025-12-05T15:33:45.980Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T15_33_45_092Z-debug-0.log
+2025-12-05T16:03:45.861Z [DEBUG] npm view failed with code 1
+2025-12-05T16:03:45.861Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T16_03_45_000Z-debug-0.log
+2025-12-05T16:33:45.979Z [DEBUG] npm view failed with code 1
+2025-12-05T16:33:45.979Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T16_33_45_055Z-debug-0.log
+2025-12-05T17:03:45.888Z [DEBUG] npm view failed with code 1
+2025-12-05T17:03:45.888Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T17_03_45_028Z-debug-0.log
+2025-12-05T17:33:45.818Z [DEBUG] npm view failed with code 1
+2025-12-05T17:33:45.818Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T17_33_44_948Z-debug-0.log
+2025-12-05T18:03:45.814Z [DEBUG] npm view failed with code 1
+2025-12-05T18:03:45.814Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T18_03_45_038Z-debug-0.log
+2025-12-05T18:14:23.964Z [DEBUG] Detected change to /Users/wbrunson/.claude/settings.json
+2025-12-05T18:14:23.982Z [DEBUG] Replacing all allow rules for destination 'projectSettings' with 82 rule(s): ["Bash(awk:*)","Bash(cat:*)","Bash(cp:*)","Bash(diff:*)","Bash(eslint:*)","Bash(find:*)","Bash(gh api:*)","Bash(gh auth:*)","Bash(gh pr diff:*)","Bash(gh pr edit:*)","Bash(gh pr list:*)","Bash(gh pr view:*)","Bash(gh search prs:*)","Bash(git add:*)","Bash(git checkout:*)","Bash(git config:*)","Bash(git fetch:*)","Bash(git pull:*)","Bash(git push:*)","Bash(git rebase:*)","Bash(git stash:*)","Bash(grep:*)","Bash(ls:*)","Bash(mkdir:*)","Bash(npm install:*)","Bash(npm run:*)","Bash(npm test:*)","Bash(npx tsc:*)","Bash(npx vitest run:*)","Bash(pnpm -w run lint)","Bash(pnpm add:*)","Bash(pnpm build)","Bash(pnpm eslint:*)","Bash(pnpm install:*)","Bash(pnpm lint:*)","Bash(pnpm run eslint:*)","Bash(pnpm run lint:*)","Bash(pnpm test:*)","Bash(pnpm typecheck:*)","Bash(pnpm vitest run:*)","Bash(rg:*)","Bash(sed:*)","WebFetch(domain:academy.shopware.com)","WebFetch(domain:appexchange.salesforce.com)","WebFetch(domain:blog.demandware.com)","WebFetch(domain:codex.wordpress.org)","WebFetch(domain:developer.salesforce.com)","WebFetch(domain:developer.shopware.com)","WebFetch(domain:developer.woocommerce.com)","WebFetch(domain:developer.wordpress.org)","WebFetch(domain:docs.shopware.com)","WebFetch(domain:docs.woocommerce.com)","WebFetch(domain:documentation.b2c.commercecloud.salesforce.com)","WebFetch(domain:github.com)","WebFetch(domain:help.salesforce.com)","WebFetch(domain:infocenter.demandware.com)","WebFetch(domain:make.wordpress.org)","WebFetch(domain:medium.com)","WebFetch(domain:partners.salesforce.com)","WebFetch(domain:pnpm.io)","WebFetch(domain:salesforce.com)","WebFetch(domain:salesforce.stackexchange.com)","WebFetch(domain:store.shopware.com)","WebFetch(domain:trailhead.salesforce.com)","WebFetch(domain:woocommerce.com)","WebFetch(domain:woocommerce.github.io)","WebFetch(domain:wordpress.org)","WebFetch(domain:www.demandware.com)","WebFetch(domain:www.npmjs.com)","WebFetch(domain:www.salesforce.com)","WebFetch(domain:www.shopware.com)","WebFetch(domain:xchange.demandware.com)","mcp__atlassian__createJiraIssue","mcp__atlassian__editJiraIssue","mcp__atlassian__getAccessibleAtlassianResources","mcp__atlassian__getJiraIssue","mcp__atlassian__getJiraProjectIssueTypesMetadata","mcp__atlassian__getTransitionsForJiraIssue","mcp__atlassian__getVisibleJiraProjects","mcp__atlassian__lookupJiraAccountId","mcp__atlassian__searchJiraIssuesUsingJql","mcp__atlassian__transitionJiraIssue"]
+2025-12-05T18:14:23.982Z [DEBUG] Replacing all allow rules for destination 'localSettings' with 24 rule(s): ["Bash(gh repo clone:*)","Bash(gh repo view:*)","Bash(git log:*)","Bash(xargs sed:*)","Read(//Users/wbrunson/.claude/**)","Read(//Users/wbrunson/workspace/dotfiles/stow/.claude/**)","Bash(git show-branch:*)","WebFetch(domain:developers.openai.com)","Bash(pnpm generate:*)","Bash(node:*)","Bash(pnpm config get:*)","Bash(pnpm test:unit src/functions/acp/translate.test.ts)","Bash(npx eslint:*)","WebFetch(domain:docs.datadoghq.com)","Bash(curl:*)","Bash(aws logs filter-log-events:*)","WebFetch(domain:heyapi.dev)","Bash(npm start)","Bash(npm-registry-switch:*)","Bash(pnpm test:unit:*)","Bash(pnpm test:coverage:*)","Bash(aws-profile:*)","mcp__atlassian__getConfluencePage","Bash(npm uninstall auth-paypal)"]
+2025-12-05T18:14:29.081Z [DEBUG] Detected change to /Users/wbrunson/.claude/settings.json
+2025-12-05T18:14:29.088Z [DEBUG] Replacing all allow rules for destination 'projectSettings' with 82 rule(s): ["Bash(awk:*)","Bash(cat:*)","Bash(cp:*)","Bash(diff:*)","Bash(eslint:*)","Bash(find:*)","Bash(gh api:*)","Bash(gh auth:*)","Bash(gh pr diff:*)","Bash(gh pr edit:*)","Bash(gh pr list:*)","Bash(gh pr view:*)","Bash(gh search prs:*)","Bash(git add:*)","Bash(git checkout:*)","Bash(git config:*)","Bash(git fetch:*)","Bash(git pull:*)","Bash(git push:*)","Bash(git rebase:*)","Bash(git stash:*)","Bash(grep:*)","Bash(ls:*)","Bash(mkdir:*)","Bash(npm install:*)","Bash(npm run:*)","Bash(npm test:*)","Bash(npx tsc:*)","Bash(npx vitest run:*)","Bash(pnpm -w run lint)","Bash(pnpm add:*)","Bash(pnpm build)","Bash(pnpm eslint:*)","Bash(pnpm install:*)","Bash(pnpm lint:*)","Bash(pnpm run eslint:*)","Bash(pnpm run lint:*)","Bash(pnpm test:*)","Bash(pnpm typecheck:*)","Bash(pnpm vitest run:*)","Bash(rg:*)","Bash(sed:*)","WebFetch(domain:academy.shopware.com)","WebFetch(domain:appexchange.salesforce.com)","WebFetch(domain:blog.demandware.com)","WebFetch(domain:codex.wordpress.org)","WebFetch(domain:developer.salesforce.com)","WebFetch(domain:developer.shopware.com)","WebFetch(domain:developer.woocommerce.com)","WebFetch(domain:developer.wordpress.org)","WebFetch(domain:docs.shopware.com)","WebFetch(domain:docs.woocommerce.com)","WebFetch(domain:documentation.b2c.commercecloud.salesforce.com)","WebFetch(domain:github.com)","WebFetch(domain:help.salesforce.com)","WebFetch(domain:infocenter.demandware.com)","WebFetch(domain:make.wordpress.org)","WebFetch(domain:medium.com)","WebFetch(domain:partners.salesforce.com)","WebFetch(domain:pnpm.io)","WebFetch(domain:salesforce.com)","WebFetch(domain:salesforce.stackexchange.com)","WebFetch(domain:store.shopware.com)","WebFetch(domain:trailhead.salesforce.com)","WebFetch(domain:woocommerce.com)","WebFetch(domain:woocommerce.github.io)","WebFetch(domain:wordpress.org)","WebFetch(domain:www.demandware.com)","WebFetch(domain:www.npmjs.com)","WebFetch(domain:www.salesforce.com)","WebFetch(domain:www.shopware.com)","WebFetch(domain:xchange.demandware.com)","mcp__atlassian__createJiraIssue","mcp__atlassian__editJiraIssue","mcp__atlassian__getAccessibleAtlassianResources","mcp__atlassian__getJiraIssue","mcp__atlassian__getJiraProjectIssueTypesMetadata","mcp__atlassian__getTransitionsForJiraIssue","mcp__atlassian__getVisibleJiraProjects","mcp__atlassian__lookupJiraAccountId","mcp__atlassian__searchJiraIssuesUsingJql","mcp__atlassian__transitionJiraIssue"]
+2025-12-05T18:14:29.089Z [DEBUG] Replacing all allow rules for destination 'localSettings' with 24 rule(s): ["Bash(gh repo clone:*)","Bash(gh repo view:*)","Bash(git log:*)","Bash(xargs sed:*)","Read(//Users/wbrunson/.claude/**)","Read(//Users/wbrunson/workspace/dotfiles/stow/.claude/**)","Bash(git show-branch:*)","WebFetch(domain:developers.openai.com)","Bash(pnpm generate:*)","Bash(node:*)","Bash(pnpm config get:*)","Bash(pnpm test:unit src/functions/acp/translate.test.ts)","Bash(npx eslint:*)","WebFetch(domain:docs.datadoghq.com)","Bash(curl:*)","Bash(aws logs filter-log-events:*)","WebFetch(domain:heyapi.dev)","Bash(npm start)","Bash(npm-registry-switch:*)","Bash(pnpm test:unit:*)","Bash(pnpm test:coverage:*)","Bash(aws-profile:*)","mcp__atlassian__getConfluencePage","Bash(npm uninstall auth-paypal)"]
+2025-12-05T18:16:53.583Z [DEBUG] Detected change to /Users/wbrunson/.claude/settings.json
+2025-12-05T18:16:53.594Z [DEBUG] Replacing all allow rules for destination 'projectSettings' with 82 rule(s): ["Bash(awk:*)","Bash(cat:*)","Bash(cp:*)","Bash(diff:*)","Bash(eslint:*)","Bash(find:*)","Bash(gh api:*)","Bash(gh auth:*)","Bash(gh pr diff:*)","Bash(gh pr edit:*)","Bash(gh pr list:*)","Bash(gh pr view:*)","Bash(gh search prs:*)","Bash(git add:*)","Bash(git checkout:*)","Bash(git config:*)","Bash(git fetch:*)","Bash(git pull:*)","Bash(git push:*)","Bash(git rebase:*)","Bash(git stash:*)","Bash(grep:*)","Bash(ls:*)","Bash(mkdir:*)","Bash(npm install:*)","Bash(npm run:*)","Bash(npm test:*)","Bash(npx tsc:*)","Bash(npx vitest run:*)","Bash(pnpm -w run lint)","Bash(pnpm add:*)","Bash(pnpm build)","Bash(pnpm eslint:*)","Bash(pnpm install:*)","Bash(pnpm lint:*)","Bash(pnpm run eslint:*)","Bash(pnpm run lint:*)","Bash(pnpm test:*)","Bash(pnpm typecheck:*)","Bash(pnpm vitest run:*)","Bash(rg:*)","Bash(sed:*)","WebFetch(domain:academy.shopware.com)","WebFetch(domain:appexchange.salesforce.com)","WebFetch(domain:blog.demandware.com)","WebFetch(domain:codex.wordpress.org)","WebFetch(domain:developer.salesforce.com)","WebFetch(domain:developer.shopware.com)","WebFetch(domain:developer.woocommerce.com)","WebFetch(domain:developer.wordpress.org)","WebFetch(domain:docs.shopware.com)","WebFetch(domain:docs.woocommerce.com)","WebFetch(domain:documentation.b2c.commercecloud.salesforce.com)","WebFetch(domain:github.com)","WebFetch(domain:help.salesforce.com)","WebFetch(domain:infocenter.demandware.com)","WebFetch(domain:make.wordpress.org)","WebFetch(domain:medium.com)","WebFetch(domain:partners.salesforce.com)","WebFetch(domain:pnpm.io)","WebFetch(domain:salesforce.com)","WebFetch(domain:salesforce.stackexchange.com)","WebFetch(domain:store.shopware.com)","WebFetch(domain:trailhead.salesforce.com)","WebFetch(domain:woocommerce.com)","WebFetch(domain:woocommerce.github.io)","WebFetch(domain:wordpress.org)","WebFetch(domain:www.demandware.com)","WebFetch(domain:www.npmjs.com)","WebFetch(domain:www.salesforce.com)","WebFetch(domain:www.shopware.com)","WebFetch(domain:xchange.demandware.com)","mcp__atlassian__createJiraIssue","mcp__atlassian__editJiraIssue","mcp__atlassian__getAccessibleAtlassianResources","mcp__atlassian__getJiraIssue","mcp__atlassian__getJiraProjectIssueTypesMetadata","mcp__atlassian__getTransitionsForJiraIssue","mcp__atlassian__getVisibleJiraProjects","mcp__atlassian__lookupJiraAccountId","mcp__atlassian__searchJiraIssuesUsingJql","mcp__atlassian__transitionJiraIssue"]
+2025-12-05T18:16:53.594Z [DEBUG] Replacing all allow rules for destination 'localSettings' with 24 rule(s): ["Bash(gh repo clone:*)","Bash(gh repo view:*)","Bash(git log:*)","Bash(xargs sed:*)","Read(//Users/wbrunson/.claude/**)","Read(//Users/wbrunson/workspace/dotfiles/stow/.claude/**)","Bash(git show-branch:*)","WebFetch(domain:developers.openai.com)","Bash(pnpm generate:*)","Bash(node:*)","Bash(pnpm config get:*)","Bash(pnpm test:unit src/functions/acp/translate.test.ts)","Bash(npx eslint:*)","WebFetch(domain:docs.datadoghq.com)","Bash(curl:*)","Bash(aws logs filter-log-events:*)","WebFetch(domain:heyapi.dev)","Bash(npm start)","Bash(npm-registry-switch:*)","Bash(pnpm test:unit:*)","Bash(pnpm test:coverage:*)","Bash(aws-profile:*)","mcp__atlassian__getConfluencePage","Bash(npm uninstall auth-paypal)"]
+2025-12-05T18:18:57.490Z [DEBUG] Detected change to /Users/wbrunson/.claude/settings.json
+2025-12-05T18:18:57.510Z [DEBUG] Replacing all allow rules for destination 'projectSettings' with 82 rule(s): ["Bash(awk:*)","Bash(cat:*)","Bash(cp:*)","Bash(diff:*)","Bash(eslint:*)","Bash(find:*)","Bash(gh api:*)","Bash(gh auth:*)","Bash(gh pr diff:*)","Bash(gh pr edit:*)","Bash(gh pr list:*)","Bash(gh pr view:*)","Bash(gh search prs:*)","Bash(git add:*)","Bash(git checkout:*)","Bash(git config:*)","Bash(git fetch:*)","Bash(git pull:*)","Bash(git push:*)","Bash(git rebase:*)","Bash(git stash:*)","Bash(grep:*)","Bash(ls:*)","Bash(mkdir:*)","Bash(npm install:*)","Bash(npm run:*)","Bash(npm test:*)","Bash(npx tsc:*)","Bash(npx vitest run:*)","Bash(pnpm -w run lint)","Bash(pnpm add:*)","Bash(pnpm build)","Bash(pnpm eslint:*)","Bash(pnpm install:*)","Bash(pnpm lint:*)","Bash(pnpm run eslint:*)","Bash(pnpm run lint:*)","Bash(pnpm test:*)","Bash(pnpm typecheck:*)","Bash(pnpm vitest run:*)","Bash(rg:*)","Bash(sed:*)","WebFetch(domain:academy.shopware.com)","WebFetch(domain:appexchange.salesforce.com)","WebFetch(domain:blog.demandware.com)","WebFetch(domain:codex.wordpress.org)","WebFetch(domain:developer.salesforce.com)","WebFetch(domain:developer.shopware.com)","WebFetch(domain:developer.woocommerce.com)","WebFetch(domain:developer.wordpress.org)","WebFetch(domain:docs.shopware.com)","WebFetch(domain:docs.woocommerce.com)","WebFetch(domain:documentation.b2c.commercecloud.salesforce.com)","WebFetch(domain:github.com)","WebFetch(domain:help.salesforce.com)","WebFetch(domain:infocenter.demandware.com)","WebFetch(domain:make.wordpress.org)","WebFetch(domain:medium.com)","WebFetch(domain:partners.salesforce.com)","WebFetch(domain:pnpm.io)","WebFetch(domain:salesforce.com)","WebFetch(domain:salesforce.stackexchange.com)","WebFetch(domain:store.shopware.com)","WebFetch(domain:trailhead.salesforce.com)","WebFetch(domain:woocommerce.com)","WebFetch(domain:woocommerce.github.io)","WebFetch(domain:wordpress.org)","WebFetch(domain:www.demandware.com)","WebFetch(domain:www.npmjs.com)","WebFetch(domain:www.salesforce.com)","WebFetch(domain:www.shopware.com)","WebFetch(domain:xchange.demandware.com)","mcp__atlassian__createJiraIssue","mcp__atlassian__editJiraIssue","mcp__atlassian__getAccessibleAtlassianResources","mcp__atlassian__getJiraIssue","mcp__atlassian__getJiraProjectIssueTypesMetadata","mcp__atlassian__getTransitionsForJiraIssue","mcp__atlassian__getVisibleJiraProjects","mcp__atlassian__lookupJiraAccountId","mcp__atlassian__searchJiraIssuesUsingJql","mcp__atlassian__transitionJiraIssue"]
+2025-12-05T18:18:57.511Z [DEBUG] Replacing all allow rules for destination 'localSettings' with 24 rule(s): ["Bash(gh repo clone:*)","Bash(gh repo view:*)","Bash(git log:*)","Bash(xargs sed:*)","Read(//Users/wbrunson/.claude/**)","Read(//Users/wbrunson/workspace/dotfiles/stow/.claude/**)","Bash(git show-branch:*)","WebFetch(domain:developers.openai.com)","Bash(pnpm generate:*)","Bash(node:*)","Bash(pnpm config get:*)","Bash(pnpm test:unit src/functions/acp/translate.test.ts)","Bash(npx eslint:*)","WebFetch(domain:docs.datadoghq.com)","Bash(curl:*)","Bash(aws logs filter-log-events:*)","WebFetch(domain:heyapi.dev)","Bash(npm start)","Bash(npm-registry-switch:*)","Bash(pnpm test:unit:*)","Bash(pnpm test:coverage:*)","Bash(aws-profile:*)","mcp__atlassian__getConfluencePage","Bash(npm uninstall auth-paypal)"]

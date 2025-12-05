@@ -1,0 +1,169 @@
+import { describe, it, expect, vi, beforeEach } from "vitest";
+// @ts-ignore: Using CommonJS exports syntax
+import { handler } from "./index";
+import { APIGatewayRequestAuthorizerEventV2 } from "aws-lambda";
+import { verifyAppContext } from "shared/helpers/AppContextAuthorizer";
+
+// Mock the shared helper
+vi.mock("shared/helpers/AppContextAuthorizer", () => ({
+  verifyAppContext: vi.fn()
+}));
+
+describe("AppContext Authorizer", () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+  });
+
+  const createMockEvent = (headers: Record<string, string> = {}): APIGatewayRequestAuthorizerEventV2 => ({
+    type: "REQUEST",
+    headers,
+    requestContext: {
+      accountId: "123456789012",
+      apiId: "abcdef123",
+      domainName: "api.example.com",
+      stage: "test",
+      requestId: "test-request-id",
+      http: {
+        method: "GET",
+        path: "/test",
+        protocol: "HTTP/1.1",
+        sourceIp: "127.0.0.1",
+        userAgent: "test-agent",
+      },
+      time: new Date().toISOString(),
+      timeEpoch: Date.now(),
+    },
+  } as APIGatewayRequestAuthorizerEventV2);
+
+  it("should authorize successfully when shared helper returns true", async () => {
+    vi.mocked(verifyAppContext).mockReturnValue(true);
+
+    const mockEvent = createMockEvent({
+      "paypal-application-context": "valid.jwt.token",
+    });
+
+    const result = await handler(mockEvent);
+
+    expect(result).toEqual({ isAuthorized: true });
+    expect(verifyAppContext).toHaveBeenCalledWith(
+      expect.objectContaining({
+        headers: mockEvent.headers,
+        requestContext: expect.any(Object)
+      })
+    );
+  });
+
+  it("should throw error when shared helper returns false", async () => {
+    vi.mocked(verifyAppContext).mockReturnValue(false);
+
+    const mockEvent = createMockEvent({
+      "paypal-application-context": "invalid.jwt.token",
+    });
+
+    await expect(handler(mockEvent)).rejects.toThrow("Unauthorized");
+  });
+
+  it("should throw error when paypal-application-context header is missing", async () => {
+    const mockEvent = createMockEvent({});
+
+    await expect(handler(mockEvent)).rejects.toThrow("Unauthorized");
+
+    // Should not call shared helper for missing header
+    expect(verifyAppContext).not.toHaveBeenCalled();
+  });
+
+  it("should throw error when paypal-application-context header is empty", async () => {
+    const mockEvent = createMockEvent({
+      "paypal-application-context": "",
+    });
+
+    await expect(handler(mockEvent)).rejects.toThrow("Unauthorized");
+
+    // Should not call shared helper for empty header
+    expect(verifyAppContext).not.toHaveBeenCalled();
+  });
+
+  it("should throw error when paypal-application-context header is whitespace only", async () => {
+    const mockEvent = createMockEvent({
+      "paypal-application-context": "   ",
+    });
+
+    await expect(handler(mockEvent)).rejects.toThrow("Unauthorized");
+
+    // Should not call shared helper for whitespace-only header
+    expect(verifyAppContext).not.toHaveBeenCalled();
+  });
+
+  it("should work when headers object is undefined", async () => {
+    const mockEvent = createMockEvent();
+    (mockEvent as any).headers = undefined;
+
+    await expect(handler(mockEvent)).rejects.toThrow("Unauthorized");
+
+    // Should not call shared helper when headers are undefined
+    expect(verifyAppContext).not.toHaveBeenCalled();
+  });
+
+  it("should properly transform API Gateway event to ALB-compatible structure", async () => {
+    vi.mocked(verifyAppContext).mockReturnValue(true);
+
+    const mockEvent = createMockEvent({
+      "paypal-application-context": "test.token",
+      "custom-header": "test-value"
+    });
+
+    await handler(mockEvent);
+
+    expect(verifyAppContext).toHaveBeenCalledWith({
+      headers: {
+        "paypal-application-context": "test.token",
+        "custom-header": "test-value"
+      },
+      requestContext: {
+        elb: {
+          targetGroupArn: expect.stringContaining("api-gateway-authorizer")
+        }
+      },
+      httpMethod: "GET",
+      path: "/test",
+      queryStringParameters: {},
+      body: "",
+      multiValueHeaders: {},
+      multiValueQueryStringParameters: {},
+      isBase64Encoded: false
+    });
+  });
+
+  it("should handle shared helper throwing errors", async () => {
+    vi.mocked(verifyAppContext).mockImplementation(() => {
+      throw new Error("Verification failed");
+    });
+
+    const mockEvent = createMockEvent({
+      "paypal-application-context": "test.token",
+    });
+
+    await expect(handler(mockEvent)).rejects.toThrow("Unauthorized");
+  });
+
+  it("should preserve all headers in transformation", async () => {
+    vi.mocked(verifyAppContext).mockReturnValue(true);
+
+    const headers = {
+      "paypal-application-context": "test.token",
+      "user-agent": "test-agent",
+      "content-type": "application/json",
+      "authorization": "Bearer xyz"
+    };
+
+    const mockEvent = createMockEvent(headers);
+
+    await handler(mockEvent);
+
+    expect(verifyAppContext).toHaveBeenCalledWith(
+      expect.objectContaining({
+        headers: headers
+      })
+    );
+  });
+});

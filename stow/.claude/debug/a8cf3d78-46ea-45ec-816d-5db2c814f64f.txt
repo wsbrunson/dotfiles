@@ -1,0 +1,897 @@
+2025-11-25T17:11:52.848Z [DEBUG] Watching for changes in setting files /Users/wbrunson/.claude/settings.json, /Users/wbrunson/workspace/commerce-platform/.claude/settings.json, /Users/wbrunson/workspace/commerce-platform/.claude/settings.local.json...
+2025-11-25T17:11:52.940Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2025-11-25T17:11:52.941Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2025-11-25T17:11:52.941Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2025-11-25T17:11:52.941Z [DEBUG] [LSP SERVER MANAGER] initialize() called
+2025-11-25T17:11:52.941Z [DEBUG] [LSP SERVER MANAGER] Calling getAllLspServers()
+2025-11-25T17:11:52.955Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+2025-11-25T17:11:52.957Z [DEBUG] Applying permission update: Adding 82 allow rule(s) to destination 'projectSettings': ["Bash(awk:*)","Bash(cat:*)","Bash(cp:*)","Bash(diff:*)","Bash(eslint:*)","Bash(find:*)","Bash(gh api:*)","Bash(gh auth:*)","Bash(gh pr diff:*)","Bash(gh pr edit:*)","Bash(gh pr list:*)","Bash(gh pr view:*)","Bash(gh search prs:*)","Bash(git add:*)","Bash(git checkout:*)","Bash(git config:*)","Bash(git fetch:*)","Bash(git pull:*)","Bash(git push:*)","Bash(git rebase:*)","Bash(git stash:*)","Bash(grep:*)","Bash(ls:*)","Bash(mkdir:*)","Bash(npm install:*)","Bash(npm run:*)","Bash(npm test:*)","Bash(npx tsc:*)","Bash(npx vitest run:*)","Bash(pnpm -w run lint)","Bash(pnpm add:*)","Bash(pnpm build)","Bash(pnpm eslint:*)","Bash(pnpm install:*)","Bash(pnpm lint:*)","Bash(pnpm run eslint:*)","Bash(pnpm run lint:*)","Bash(pnpm test:*)","Bash(pnpm typecheck:*)","Bash(pnpm vitest run:*)","Bash(rg:*)","Bash(sed:*)","WebFetch(domain:academy.shopware.com)","WebFetch(domain:appexchange.salesforce.com)","WebFetch(domain:blog.demandware.com)","WebFetch(domain:codex.wordpress.org)","WebFetch(domain:developer.salesforce.com)","WebFetch(domain:developer.shopware.com)","WebFetch(domain:developer.woocommerce.com)","WebFetch(domain:developer.wordpress.org)","WebFetch(domain:docs.shopware.com)","WebFetch(domain:docs.woocommerce.com)","WebFetch(domain:documentation.b2c.commercecloud.salesforce.com)","WebFetch(domain:github.com)","WebFetch(domain:help.salesforce.com)","WebFetch(domain:infocenter.demandware.com)","WebFetch(domain:make.wordpress.org)","WebFetch(domain:medium.com)","WebFetch(domain:partners.salesforce.com)","WebFetch(domain:pnpm.io)","WebFetch(domain:salesforce.com)","WebFetch(domain:salesforce.stackexchange.com)","WebFetch(domain:store.shopware.com)","WebFetch(domain:trailhead.salesforce.com)","WebFetch(domain:woocommerce.com)","WebFetch(domain:woocommerce.github.io)","WebFetch(domain:wordpress.org)","WebFetch(domain:www.demandware.com)","WebFetch(domain:www.npmjs.com)","WebFetch(domain:www.salesforce.com)","WebFetch(domain:www.shopware.com)","WebFetch(domain:xchange.demandware.com)","mcp__atlassian__createJiraIssue","mcp__atlassian__editJiraIssue","mcp__atlassian__getAccessibleAtlassianResources","mcp__atlassian__getJiraIssue","mcp__atlassian__getJiraProjectIssueTypesMetadata","mcp__atlassian__getTransitionsForJiraIssue","mcp__atlassian__getVisibleJiraProjects","mcp__atlassian__lookupJiraAccountId","mcp__atlassian__searchJiraIssuesUsingJql","mcp__atlassian__transitionJiraIssue"]
+2025-11-25T17:11:52.957Z [DEBUG] Applying permission update: Adding 20 allow rule(s) to destination 'localSettings': ["Bash(gh repo clone:*)","Bash(gh repo view:*)","Bash(git log:*)","Bash(xargs sed:*)","Read(//Users/wbrunson/.claude/**)","Read(//Users/wbrunson/workspace/dotfiles/stow/.claude/**)","Bash(git show-branch:*)","WebFetch(domain:developers.openai.com)","Bash(pnpm generate:*)","Bash(node:*)","Bash(pnpm config get:*)","Bash(pnpm test:unit src/functions/acp/translate.test.ts)","Bash(npx eslint:*)","WebFetch(domain:docs.datadoghq.com)","Bash(curl:*)","Bash(aws logs filter-log-events:*)","WebFetch(domain:heyapi.dev)","Bash(npm start)","Bash(npm-registry-switch:*)","Bash(pnpm test:unit:*)"]
+2025-11-25T17:11:52.959Z [DEBUG] Total LSP servers loaded: 0
+2025-11-25T17:11:52.963Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2025-11-25T17:11:52.963Z [DEBUG] LSP manager initialized with 0 servers
+2025-11-25T17:11:52.993Z [DEBUG] LSP server manager initialized successfully
+2025-11-25T17:11:52.993Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2025-11-25T17:11:53.001Z [DEBUG] Loading skills from directories: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/wbrunson/.claude/skills, project=/Users/wbrunson/workspace/commerce-platform/.claude/skills
+2025-11-25T17:11:53.001Z [DEBUG] >>>>> getPluginSkills CALLED <<<<<
+2025-11-25T17:11:53.179Z [DEBUG] Creating shell snapshot for zsh (/bin/zsh)
+2025-11-25T17:11:53.179Z [DEBUG] Looking for shell config file: /Users/wbrunson/.zshrc
+2025-11-25T17:11:53.179Z [DEBUG] Snapshots directory: /Users/wbrunson/.claude/shell-snapshots
+2025-11-25T17:11:53.179Z [DEBUG] Creating snapshot at: /Users/wbrunson/.claude/shell-snapshots/snapshot-zsh-1764090713179-rtzbha.sh
+2025-11-25T17:11:53.179Z [DEBUG] Shell binary exists: true
+2025-11-25T17:11:53.179Z [DEBUG] Execution timeout: 10000ms
+2025-11-25T17:11:53.180Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/a8cf3d78-46ea-45ec-816d-5db2c814f64f-agent-a8cf3d78-46ea-45ec-816d-5db2c814f64f.json.tmp.19969.1764090713180
+2025-11-25T17:11:53.186Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-25T17:11:53.186Z [DEBUG] Renaming /Users/wbrunson/.claude/todos/a8cf3d78-46ea-45ec-816d-5db2c814f64f-agent-a8cf3d78-46ea-45ec-816d-5db2c814f64f.json.tmp.19969.1764090713180 to /Users/wbrunson/.claude/todos/a8cf3d78-46ea-45ec-816d-5db2c814f64f-agent-a8cf3d78-46ea-45ec-816d-5db2c814f64f.json
+2025-11-25T17:11:53.186Z [DEBUG] File /Users/wbrunson/.claude/todos/a8cf3d78-46ea-45ec-816d-5db2c814f64f-agent-a8cf3d78-46ea-45ec-816d-5db2c814f64f.json written atomically
+2025-11-25T17:11:53.193Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:11:53.193Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764090713193
+2025-11-25T17:11:53.193Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:11:53.197Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T17:11:53.197Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:11:53.197Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764090713193 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:11:53.198Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:11:53.198Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
+2025-11-25T17:11:53.198Z [DEBUG] Total plugin skills loaded: 0
+2025-11-25T17:11:53.199Z [DEBUG] Total plugin commands loaded: 0
+2025-11-25T17:11:53.199Z [DEBUG] Registered 0 hooks from 0 plugins
+2025-11-25T17:11:53.201Z [DEBUG] Loaded 0 unique skills (managed: 0, user: 0, project: 0, duplicates removed: 0)
+2025-11-25T17:11:53.201Z [DEBUG] getSkills returning: 0 skill dir commands, 0 plugin skills
+2025-11-25T17:11:53.229Z [DEBUG] Git remote URL: null
+2025-11-25T17:11:53.229Z [DEBUG] No git remote URL found
+2025-11-25T17:11:53.229Z [DEBUG] Not in a GitHub repository, skipping path mapping update
+2025-11-25T17:11:53.231Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg)
+2025-11-25T17:11:53.234Z [DEBUG] Total plugin agents loaded: 0
+2025-11-25T17:11:53.265Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:11:53.266Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764090713266
+2025-11-25T17:11:53.266Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:11:53.270Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T17:11:53.270Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:11:53.270Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764090713266 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:11:53.272Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:11:53.279Z [DEBUG] Getting matching hook commands for SessionStart with query: startup
+2025-11-25T17:11:53.279Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:11:53.279Z [DEBUG] Matched 0 unique hooks for query "startup" (0 before deduplication)
+2025-11-25T17:11:53.279Z [DEBUG] MCP server "atlassian": SSE transport initialized, awaiting connection
+2025-11-25T17:11:53.291Z [DEBUG] MCP server "atlassian": Starting connection with timeout of 30000ms
+2025-11-25T17:11:53.340Z [DEBUG] MCP server "atlassian": Token expires in -1371663s, attempting proactive refresh
+2025-11-25T17:11:53.341Z [DEBUG] MCP server "atlassian": Starting token refresh
+2025-11-25T17:11:53.362Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:11:53.362Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764090713362
+2025-11-25T17:11:53.362Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:11:53.367Z [DEBUG] Temp file written successfully, size: 57196 bytes
+2025-11-25T17:11:53.367Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:11:53.367Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764090713362 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:11:53.368Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:11:53.371Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:11:53.371Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764090713371
+2025-11-25T17:11:53.371Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:11:53.374Z [DEBUG] Temp file written successfully, size: 57196 bytes
+2025-11-25T17:11:53.375Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:11:53.375Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764090713371 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:11:53.376Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:11:53.381Z [DEBUG] performStartupChecks called
+2025-11-25T17:11:53.381Z [DEBUG] Starting background plugin installations
+2025-11-25T17:11:53.381Z [DEBUG] performBackgroundPluginInstallations called
+2025-11-25T17:11:53.386Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-25T17:11:53.391Z [DEBUG] Setting installation status: 0 marketplaces, 0 installable plugins, 0 uninstallable plugins
+2025-11-25T17:11:53.393Z [DEBUG] Loaded plugins - Enabled: 0, Disabled: 0, Commands: 0, Agents: 0, Errors: 0
+2025-11-25T17:11:53.397Z [DEBUG] Getting matching hook commands for SubagentStart with query: Explore
+2025-11-25T17:11:53.397Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:11:53.397Z [DEBUG] Matched 0 unique hooks for query "Explore" (0 before deduplication)
+2025-11-25T17:11:53.398Z [DEBUG] Getting matching hook commands for SubagentStart with query: Plan
+2025-11-25T17:11:53.398Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:11:53.398Z [DEBUG] Matched 0 unique hooks for query "Plan" (0 before deduplication)
+2025-11-25T17:11:53.413Z [DEBUG] Shell snapshot created successfully (1496 bytes)
+2025-11-25T17:11:53.578Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:11:53.578Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764090713578
+2025-11-25T17:11:53.578Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:11:53.583Z [DEBUG] Temp file written successfully, size: 57196 bytes
+2025-11-25T17:11:53.583Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:11:53.583Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764090713578 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:11:53.584Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:11:53.598Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:11:53.598Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764090713598
+2025-11-25T17:11:53.598Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:11:53.601Z [DEBUG] Temp file written successfully, size: 57196 bytes
+2025-11-25T17:11:53.601Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:11:53.601Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764090713598 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:11:53.603Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:11:53.631Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:11:53.633Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764090713633
+2025-11-25T17:11:53.633Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:11:53.637Z [DEBUG] Temp file written successfully, size: 57196 bytes
+2025-11-25T17:11:53.637Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:11:53.637Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764090713633 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:11:53.638Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:11:53.641Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:11:53.641Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764090713641
+2025-11-25T17:11:53.641Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:11:53.646Z [DEBUG] Temp file written successfully, size: 57196 bytes
+2025-11-25T17:11:53.646Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:11:53.646Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764090713641 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:11:53.646Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:11:53.648Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:11:53.648Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764090713648
+2025-11-25T17:11:53.648Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:11:53.653Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T17:11:53.653Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:11:53.653Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764090713648 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:11:53.653Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:11:54.119Z [DEBUG] MCP server "atlassian": Found client info
+2025-11-25T17:11:54.128Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:11:54.128Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764090714128
+2025-11-25T17:11:54.128Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:11:54.133Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T17:11:54.133Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:11:54.133Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764090714128 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:11:54.133Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:11:54.712Z [DEBUG] MCP server "atlassian": Token refresh failed: Invalid refresh token
+2025-11-25T17:11:54.714Z [DEBUG] MCP server "atlassian": Token refresh failed, returning current tokens
+2025-11-25T17:11:54.715Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-11-25T17:11:54.715Z [DEBUG] MCP server "atlassian": Token length: 74
+2025-11-25T17:11:54.716Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-11-25T17:11:54.716Z [DEBUG] MCP server "atlassian": Expires in: -1371663s
+2025-11-25T17:11:54.920Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:11:54.991Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:11:55.519Z [DEBUG] MCP server "atlassian": Found client info
+2025-11-25T17:11:55.585Z [DEBUG] MCP server "atlassian": Token expires in -1371666s, attempting proactive refresh
+2025-11-25T17:11:55.586Z [DEBUG] MCP server "atlassian": Starting token refresh
+2025-11-25T17:11:55.890Z [DEBUG] MCP server "atlassian": Found client info
+2025-11-25T17:11:55.971Z [DEBUG] MCP server "atlassian": Token refresh failed: Invalid refresh token
+2025-11-25T17:11:55.972Z [DEBUG] MCP server "atlassian": Token refresh failed, returning current tokens
+2025-11-25T17:11:55.973Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-11-25T17:11:55.973Z [DEBUG] MCP server "atlassian": Token length: 74
+2025-11-25T17:11:55.973Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-11-25T17:11:55.974Z [DEBUG] MCP server "atlassian": Expires in: -1371666s
+2025-11-25T17:11:56.409Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-25T17:11:56.650Z [DEBUG] MCP server "atlassian": Found client info
+2025-11-25T17:11:56.723Z [DEBUG] MCP server "atlassian": Token expires in -1371667s, attempting proactive refresh
+2025-11-25T17:11:56.724Z [DEBUG] MCP server "atlassian": Starting token refresh
+2025-11-25T17:11:57.009Z [DEBUG] MCP server "atlassian": Found client info
+2025-11-25T17:11:57.090Z [DEBUG] MCP server "atlassian": Token refresh failed: Invalid refresh token
+2025-11-25T17:11:57.091Z [DEBUG] MCP server "atlassian": Token refresh failed, returning current tokens
+2025-11-25T17:11:57.092Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-11-25T17:11:57.093Z [DEBUG] MCP server "atlassian": Token length: 74
+2025-11-25T17:11:57.093Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-11-25T17:11:57.094Z [DEBUG] MCP server "atlassian": Expires in: -1371667s
+2025-11-25T17:11:57.166Z [DEBUG] MCP server "atlassian": SSE Connection failed after 3903ms: {"url":"https://mcp.atlassian.com/v1/sse","error":"Invalid refresh token","errorType":"eZA","stack":"eZA: Invalid refresh token\n    at ht1 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1525:14921)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async ut1 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1525:23007)\n    at async ft1 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1525:16435)\n    at async bT (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1525:15368)\n    at async u01._authThenStart (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1525:24064)\n    at async u01.start (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1525:26127)\n    at async w01.connect (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1519:29890)\n    at async w01.connect (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1519:162485)"}
+2025-11-25T17:11:57.168Z [ERROR] MCP server "atlassian" eZA: Invalid refresh token
+2025-11-25T17:11:57.170Z [DEBUG] MCP server "atlassian": Connection failed after 3908ms: Invalid refresh token
+2025-11-25T17:11:57.172Z [ERROR] MCP server "atlassian" Connection failed: Invalid refresh token
+2025-11-25T17:11:57.185Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-25T17:11:57.185Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-25T17:11:57.345Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+2025-11-25T17:11:57.345Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:11:57.345Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-25T17:11:57.412Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+2025-11-25T17:11:57.412Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:11:57.412Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-25T17:11:57.885Z [ERROR] Error: Error: 404 The specified resource does not exist.
+    at I9.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9527)
+    at XT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at XT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2698
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2196
+    at async m15 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async N12 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2129)
+    at async MOA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2194:52)
+    at async q81 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2194:261)
+2025-11-25T17:11:59.730Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/settings.json.tmp.19969.1764090719730
+2025-11-25T17:11:59.730Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:11:59.734Z [DEBUG] Temp file written successfully, size: 171 bytes
+2025-11-25T17:11:59.734Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:11:59.734Z [DEBUG] Renaming /Users/wbrunson/.claude/settings.json.tmp.19969.1764090719730 to /Users/wbrunson/.claude/settings.json
+2025-11-25T17:11:59.735Z [DEBUG] File /Users/wbrunson/.claude/settings.json written atomically
+2025-11-25T17:11:59.756Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-25T17:11:59.758Z [DEBUG] FileHistory: Added snapshot for bfbc0aae-57ac-428b-8ddb-11159cb200fa, tracking 0 files
+2025-11-25T17:11:59.762Z [DEBUG] Rendering user message with 1 content blocks
+2025-11-25T17:11:59.762Z [DEBUG] Block 0: <command-name>/model</command-name>
+            <command-message>model</command-message>
+           ...
+2025-11-25T17:11:59.762Z [DEBUG] UserCommandMessage rendering: "model" (args: "none")
+2025-11-25T17:11:59.762Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-11-25T17:11:59.781Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:11:59.781Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764090719781
+2025-11-25T17:11:59.781Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:11:59.785Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T17:11:59.785Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:11:59.785Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764090719781 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:11:59.785Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:12:17.168Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:12:17.168Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:12:17.170Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:12:17.170Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:12:17.185Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-25T17:12:17.185Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:12:17.185Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-25T17:12:17.187Z [DEBUG] FileHistory: Making snapshot for message 67eba584-e64b-434a-af00-e0fa0624dcf7
+2025-11-25T17:12:17.188Z [DEBUG] FileHistory: Added snapshot for 67eba584-e64b-434a-af00-e0fa0624dcf7, tracking 0 files
+2025-11-25T17:12:17.204Z [DEBUG] Total plugin output styles loaded: 0
+2025-11-25T17:12:18.000Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:12:19.153Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:12:22.961Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-11-25T17:12:22.965Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-25T17:12:22.967Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-11-25T17:12:22.967Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:12:22.967Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-25T17:12:22.968Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-25T17:12:22.968Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:12:22.968Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-25T17:12:22.996Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-25T17:12:22.996Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:12:22.996Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-25T17:12:24.744Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-11-25T17:12:24.744Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:12:24.744Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-25T17:12:24.757Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:12:24.757Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:12:24.759Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:12:24.759Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:12:26.880Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:12:29.644Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-25T17:12:29.646Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-25T17:12:29.648Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-25T17:12:29.648Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:12:29.648Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-25T17:12:29.648Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-25T17:12:29.648Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:12:29.648Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-25T17:12:29.675Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-25T17:12:29.675Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:12:29.675Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-25T17:12:29.675Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-25T17:12:29.675Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:12:29.675Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-25T17:12:29.697Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:12:29.697Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:12:29.700Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:12:29.700Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:12:31.801Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:13:07.947Z [DEBUG] executePreToolHooks called for tool: Write
+2025-11-25T17:13:07.949Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-11-25T17:13:07.949Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:13:07.949Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-11-25T17:13:07.956Z [DEBUG] FileHistory: Tracked file modification for /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/datadogMetrics.test.ts
+2025-11-25T17:13:08.589Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/datadogMetrics.test.ts.tmp.19969.1764090788589
+2025-11-25T17:13:08.595Z [DEBUG] Temp file written successfully, size: 7571 bytes
+2025-11-25T17:13:08.595Z [DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/datadogMetrics.test.ts.tmp.19969.1764090788589 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/datadogMetrics.test.ts
+2025-11-25T17:13:08.595Z [DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/datadogMetrics.test.ts written atomically
+2025-11-25T17:13:08.602Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-11-25T17:13:08.602Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:13:08.602Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-11-25T17:13:08.627Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:13:08.627Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:13:08.629Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:13:08.629Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:13:10.771Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:13:12.423Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-25T17:13:12.426Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-25T17:13:12.426Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:13:12.426Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:13:12.442Z [DEBUG] No session environment scripts found
+2025-11-25T17:13:13.815Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-25T17:13:13.815Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:13:13.815Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:13:13.831Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:13:13.831Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:13:13.833Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:13:13.833Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:13:14.552Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:13:15.953Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:13:21.889Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-25T17:13:21.889Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:13:21.889Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-25T17:13:21.894Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:13:21.894Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764090801894
+2025-11-25T17:13:21.894Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:13:21.899Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T17:13:21.900Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:13:21.900Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764090801894 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:13:21.900Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:13:21.905Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:13:21.905Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764090801905
+2025-11-25T17:13:21.905Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:13:21.909Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T17:13:21.909Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:13:21.909Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764090801905 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:13:21.910Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:14:21.895Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2025-11-25T17:14:21.895Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:14:21.895Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2025-11-25T17:16:52.893Z [DEBUG] Metrics opt-out check failed: No API key available
+2025-11-25T17:16:52.893Z [DEBUG] Metrics check failed, defaulting to disabled
+2025-11-25T17:16:52.893Z [DEBUG] Metrics export disabled by organization setting
+2025-11-25T17:20:33.803Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:20:33.803Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:20:33.808Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:20:33.808Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:20:33.826Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-25T17:20:33.826Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:20:33.826Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-25T17:20:33.828Z [DEBUG] FileHistory: Making snapshot for message 2811ee76-a336-439b-968e-93e91d3d632b
+2025-11-25T17:20:33.836Z [DEBUG] FileHistory: Added snapshot for 2811ee76-a336-439b-968e-93e91d3d632b, tracking 1 files
+2025-11-25T17:20:34.719Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:20:35.907Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:20:39.038Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-25T17:20:39.041Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-25T17:20:39.041Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:20:39.041Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-25T17:20:39.057Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-25T17:20:39.057Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:20:39.057Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-25T17:20:39.072Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:20:39.072Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:20:39.074Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:20:39.074Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:20:40.911Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:21:09.190Z [DEBUG] executePreToolHooks called for tool: Write
+2025-11-25T17:21:09.192Z [DEBUG] Getting matching hook commands for PreToolUse with query: Write
+2025-11-25T17:21:09.192Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:21:09.192Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-11-25T17:21:09.201Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/datadogMetrics.test.ts.tmp.19969.1764091269201
+2025-11-25T17:21:09.201Z [DEBUG] Preserving file permissions: 100600
+2025-11-25T17:21:09.206Z [DEBUG] Temp file written successfully, size: 6955 bytes
+2025-11-25T17:21:09.206Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:21:09.206Z [DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/datadogMetrics.test.ts.tmp.19969.1764091269201 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/datadogMetrics.test.ts
+2025-11-25T17:21:09.207Z [DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/datadogMetrics.test.ts written atomically
+2025-11-25T17:21:09.214Z [DEBUG] Getting matching hook commands for PostToolUse with query: Write
+2025-11-25T17:21:09.214Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:21:09.214Z [DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+2025-11-25T17:21:09.245Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:21:09.245Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:21:09.248Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:21:09.248Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:21:11.210Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:21:13.573Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-25T17:21:13.577Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-25T17:21:13.577Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:21:13.577Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:21:14.834Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-25T17:21:14.834Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:21:14.834Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:21:14.852Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:21:14.852Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:21:14.855Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:21:14.855Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:21:16.016Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:21:16.754Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:21:18.546Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-25T17:21:18.546Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:21:18.546Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-25T17:21:18.553Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:21:18.553Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764091278553
+2025-11-25T17:21:18.553Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:21:18.557Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T17:21:18.557Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:21:18.557Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764091278553 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:21:18.558Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:21:18.561Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:21:18.561Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764091278561
+2025-11-25T17:21:18.561Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:21:18.565Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T17:21:18.565Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:21:18.565Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764091278561 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:21:18.568Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:21:52.880Z [DEBUG] Metrics opt-out check failed: No API key available
+2025-11-25T17:21:52.880Z [DEBUG] Metrics check failed, defaulting to disabled
+2025-11-25T17:21:52.880Z [DEBUG] Metrics export disabled by organization setting
+2025-11-25T17:27:35.347Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:27:35.347Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:27:35.351Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:27:35.351Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:27:35.363Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-25T17:27:35.363Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:27:35.363Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-25T17:27:35.365Z [DEBUG] FileHistory: Making snapshot for message 0fa10b45-8ad4-4b32-bd44-1fde6ec39848
+2025-11-25T17:27:35.372Z [DEBUG] FileHistory: Added snapshot for 0fa10b45-8ad4-4b32-bd44-1fde6ec39848, tracking 1 files
+2025-11-25T17:27:36.472Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:27:37.279Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:27:39.737Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-25T17:27:39.740Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-25T17:27:39.740Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:27:39.740Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:27:41.182Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:27:41.182Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:27:41.186Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:27:41.186Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:27:43.262Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:27:46.017Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-25T17:27:46.019Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-25T17:27:46.019Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:27:46.019Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-25T17:27:46.034Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-25T17:27:46.034Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:27:46.034Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-25T17:27:46.051Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:27:46.051Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:27:46.054Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:27:46.054Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:27:47.979Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:27:51.437Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-25T17:27:51.440Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-25T17:27:51.440Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:27:51.440Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-25T17:27:51.463Z [DEBUG] FileHistory: Tracked file modification for /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/httpMetrics.test.ts
+2025-11-25T17:27:51.466Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/httpMetrics.test.ts.tmp.19969.1764091671466
+2025-11-25T17:27:51.466Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:27:51.471Z [DEBUG] Temp file written successfully, size: 11507 bytes
+2025-11-25T17:27:51.471Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:27:51.471Z [DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/httpMetrics.test.ts.tmp.19969.1764091671466 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/httpMetrics.test.ts
+2025-11-25T17:27:51.473Z [DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/httpMetrics.test.ts written atomically
+2025-11-25T17:27:51.484Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-25T17:27:51.484Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:27:51.484Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-25T17:27:51.531Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:27:51.531Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:27:51.533Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:27:51.533Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:27:53.571Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:27:55.888Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-25T17:27:55.892Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-25T17:27:55.892Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:27:55.892Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-25T17:27:55.904Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/httpMetrics.test.ts.tmp.19969.1764091675904
+2025-11-25T17:27:55.904Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:27:55.909Z [DEBUG] Temp file written successfully, size: 11498 bytes
+2025-11-25T17:27:55.909Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:27:55.909Z [DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/httpMetrics.test.ts.tmp.19969.1764091675904 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/httpMetrics.test.ts
+2025-11-25T17:27:55.909Z [DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/httpMetrics.test.ts written atomically
+2025-11-25T17:27:55.922Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-25T17:27:55.922Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:27:55.922Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-25T17:27:55.940Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:27:55.940Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:27:55.943Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:27:55.943Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:27:57.848Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:27:59.332Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-25T17:27:59.335Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-25T17:27:59.335Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:27:59.335Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:28:00.643Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-25T17:28:00.643Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:28:00.643Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:28:00.658Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:28:00.658Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:28:00.661Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:28:00.661Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:28:01.622Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:28:02.402Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:28:03.343Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-25T17:28:03.343Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:28:03.343Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-25T17:28:03.352Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:28:03.352Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764091683352
+2025-11-25T17:28:03.352Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:28:03.359Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T17:28:03.359Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:28:03.359Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764091683352 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:28:03.359Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:28:03.363Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:28:03.363Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764091683363
+2025-11-25T17:28:03.363Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:28:03.367Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T17:28:03.367Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:28:03.367Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764091683363 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:28:03.368Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:28:36.379Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:28:36.379Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:28:36.382Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:28:36.382Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:28:36.395Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-25T17:28:36.395Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:28:36.395Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-25T17:28:36.397Z [DEBUG] FileHistory: Making snapshot for message 5e9d41a7-f7dd-4eb5-a645-16b9ffef6fa0
+2025-11-25T17:28:36.404Z [DEBUG] FileHistory: Added snapshot for 5e9d41a7-f7dd-4eb5-a645-16b9ffef6fa0, tracking 2 files
+2025-11-25T17:28:37.262Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:28:39.239Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:28:40.883Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-25T17:28:40.886Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-25T17:28:40.886Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:28:40.886Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:28:48.446Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-25T17:28:48.446Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:28:48.446Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:28:48.462Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:28:48.462Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:28:48.464Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:28:48.464Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:28:49.454Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:28:50.448Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:28:50.823Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-25T17:28:50.823Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:28:50.823Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-25T17:28:50.827Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:28:50.827Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764091730827
+2025-11-25T17:28:50.827Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:28:50.832Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T17:28:50.832Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:28:50.832Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764091730827 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:28:50.833Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:28:50.835Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:28:50.835Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764091730835
+2025-11-25T17:28:50.835Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:28:50.839Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T17:28:50.839Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:28:50.839Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764091730835 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:28:50.839Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:28:58.102Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:28:58.102Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:28:58.103Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:28:58.103Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:28:58.111Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-25T17:28:58.111Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:28:58.111Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-25T17:28:58.113Z [DEBUG] FileHistory: Making snapshot for message d891996a-ab38-4fa6-a59e-a50e5bc849bb
+2025-11-25T17:28:58.114Z [DEBUG] FileHistory: Added snapshot for d891996a-ab38-4fa6-a59e-a50e5bc849bb, tracking 2 files
+2025-11-25T17:28:59.135Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:29:00.670Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:29:02.797Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-25T17:29:02.799Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-25T17:29:02.799Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:29:02.799Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:29:04.834Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:29:04.834Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:29:04.836Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:29:04.836Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:29:06.960Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:29:09.901Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-25T17:29:09.903Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-25T17:29:09.903Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:29:09.903Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:29:11.043Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-25T17:29:11.043Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:29:11.043Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:29:11.059Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:29:11.059Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:29:11.062Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:29:11.062Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:29:12.025Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:29:13.132Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:29:15.084Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-25T17:29:15.086Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-25T17:29:15.086Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:29:15.086Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:29:16.231Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:29:16.231Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:29:16.234Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:29:16.234Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:29:16.551Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:29:16.551Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764091756551
+2025-11-25T17:29:16.551Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:29:16.557Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T17:29:16.558Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:29:16.558Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764091756551 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:29:16.558Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:29:16.562Z [DEBUG] Streaming aborted by user: Request was aborted.
+2025-11-25T17:29:16.562Z [ERROR] Error in non-streaming fallback: Request was aborted.
+2025-11-25T17:29:16.563Z [ERROR] Error: Error: Request was aborted.
+    at XT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:3939)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-25T17:29:16.604Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:29:16.604Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764091756604
+2025-11-25T17:29:16.604Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:29:16.607Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T17:29:16.607Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:29:16.607Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764091756604 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:29:16.608Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:29:16.612Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:29:16.612Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764091756612
+2025-11-25T17:29:16.612Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:29:16.615Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T17:29:16.615Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:29:16.615Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764091756612 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:29:16.616Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:29:43.581Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:29:43.581Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:29:43.583Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:29:43.583Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:29:43.598Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-25T17:29:43.598Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:29:43.598Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-25T17:29:43.603Z [DEBUG] FileHistory: Making snapshot for message ac679f3a-5a18-43dd-8572-08e3b8b8ac79
+2025-11-25T17:29:43.604Z [DEBUG] FileHistory: Added snapshot for ac679f3a-5a18-43dd-8572-08e3b8b8ac79, tracking 2 files
+2025-11-25T17:29:44.611Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:29:45.823Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:29:47.603Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-25T17:29:47.606Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-25T17:29:47.606Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:29:47.606Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-25T17:29:47.627Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-25T17:29:47.627Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:29:47.627Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-25T17:29:47.641Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:29:47.641Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:29:47.645Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:29:47.645Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:29:49.692Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:29:52.879Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-25T17:29:52.881Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-25T17:29:52.881Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:29:52.881Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-25T17:29:52.895Z [DEBUG] FileHistory: Tracked file modification for /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/CLAUDE.md
+2025-11-25T17:29:52.897Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/CLAUDE.md.tmp.19969.1764091792897
+2025-11-25T17:29:52.897Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:29:52.901Z [DEBUG] Temp file written successfully, size: 6236 bytes
+2025-11-25T17:29:52.901Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:29:52.901Z [DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/CLAUDE.md.tmp.19969.1764091792897 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/CLAUDE.md
+2025-11-25T17:29:52.902Z [DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/CLAUDE.md written atomically
+2025-11-25T17:29:52.911Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-25T17:29:52.911Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:29:52.911Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-25T17:29:52.934Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:29:52.934Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:29:52.937Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:29:52.937Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:29:54.906Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:29:56.832Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-25T17:29:56.835Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-25T17:29:56.835Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:29:56.835Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:29:57.598Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:29:58.099Z [DEBUG] Permission suggestions for Bash: [
+  {
+    "type": "addRules",
+    "rules": [
+      {
+        "toolName": "Bash",
+        "ruleContent": "pnpm test:coverage:*"
+      }
+    ],
+    "behavior": "allow",
+    "destination": "localSettings"
+  }
+]
+2025-11-25T17:29:58.119Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-25T17:29:58.123Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-25T17:29:58.123Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:29:58.123Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:30:01.309Z [DEBUG] Persisting permission update: addRules to source 'localSettings'
+2025-11-25T17:30:01.309Z [DEBUG] Persisting 1 allow rule(s) to localSettings
+2025-11-25T17:30:01.314Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/.claude/settings.local.json.tmp.19969.1764091801314
+2025-11-25T17:30:01.314Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:30:01.324Z [DEBUG] Temp file written successfully, size: 840 bytes
+2025-11-25T17:30:01.324Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:30:01.324Z [DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/.claude/settings.local.json.tmp.19969.1764091801314 to /Users/wbrunson/workspace/commerce-platform/.claude/settings.local.json
+2025-11-25T17:30:01.331Z [DEBUG] File /Users/wbrunson/workspace/commerce-platform/.claude/settings.local.json written atomically
+2025-11-25T17:30:01.359Z [DEBUG] Applying permission update: Adding 1 allow rule(s) to destination 'localSettings': ["Bash(pnpm test:coverage:*)"]
+2025-11-25T17:30:01.364Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-25T17:30:03.463Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:30:03.463Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:30:03.465Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:30:03.465Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:30:05.561Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:30:10.979Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-25T17:30:10.979Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:30:10.979Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-25T17:30:10.982Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:30:10.982Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764091810982
+2025-11-25T17:30:10.982Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:30:10.989Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T17:30:10.989Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:30:10.989Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764091810982 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:30:10.990Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:30:10.999Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:30:10.999Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764091810999
+2025-11-25T17:30:10.999Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:30:11.004Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T17:30:11.004Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:30:11.004Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764091810999 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:30:11.005Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:30:54.368Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:30:54.368Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:30:54.372Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:30:54.372Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:30:54.383Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-25T17:30:54.383Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:30:54.383Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-25T17:30:54.384Z [DEBUG] FileHistory: Making snapshot for message 4a2e3107-facc-48c5-b025-361b62e5019c
+2025-11-25T17:30:54.390Z [DEBUG] FileHistory: Added snapshot for 4a2e3107-facc-48c5-b025-361b62e5019c, tracking 3 files
+2025-11-25T17:30:55.272Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:30:56.907Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:30:59.409Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-25T17:30:59.411Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-25T17:30:59.411Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:30:59.411Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-25T17:30:59.427Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-25T17:30:59.427Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:30:59.427Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-25T17:30:59.438Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:30:59.438Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:30:59.440Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:30:59.440Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:31:01.511Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:31:06.051Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-25T17:31:06.054Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-25T17:31:06.054Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:31:06.054Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-25T17:31:06.066Z [DEBUG] FileHistory: Tracked file modification for /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/datadogMetrics.ts
+2025-11-25T17:31:06.069Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/datadogMetrics.ts.tmp.19969.1764091866069
+2025-11-25T17:31:06.069Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:31:06.072Z [DEBUG] Temp file written successfully, size: 2813 bytes
+2025-11-25T17:31:06.072Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:31:06.072Z [DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/datadogMetrics.ts.tmp.19969.1764091866069 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/datadogMetrics.ts
+2025-11-25T17:31:06.074Z [DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/datadogMetrics.ts written atomically
+2025-11-25T17:31:06.089Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-25T17:31:06.089Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:31:06.089Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-25T17:31:06.110Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:31:06.110Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:31:06.112Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:31:06.112Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:31:08.438Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:31:11.251Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-25T17:31:11.253Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-25T17:31:11.253Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:31:11.253Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:31:13.678Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-25T17:31:13.678Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:31:13.678Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:31:13.694Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:31:13.694Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:31:13.696Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:31:13.696Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:31:14.623Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:31:15.082Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:31:19.938Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-25T17:31:19.941Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-25T17:31:19.941Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:31:19.941Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-25T17:31:19.949Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/datadogMetrics.ts.tmp.19969.1764091879949
+2025-11-25T17:31:19.949Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:31:19.953Z [DEBUG] Temp file written successfully, size: 2812 bytes
+2025-11-25T17:31:19.953Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:31:19.953Z [DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/datadogMetrics.ts.tmp.19969.1764091879949 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/datadogMetrics.ts
+2025-11-25T17:31:19.953Z [DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/datadogMetrics.ts written atomically
+2025-11-25T17:31:19.960Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-25T17:31:19.960Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:31:19.960Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-25T17:31:19.987Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:31:19.987Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:31:19.989Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:31:19.989Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:31:22.533Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:31:24.396Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-25T17:31:24.398Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-25T17:31:24.398Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:31:24.398Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:31:25.862Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-25T17:31:25.862Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:31:25.862Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:31:25.890Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:31:25.890Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:31:25.893Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:31:25.893Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:31:26.473Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:31:27.901Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:31:30.293Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-25T17:31:30.293Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:31:30.293Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-25T17:31:30.297Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:31:30.297Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764091890297
+2025-11-25T17:31:30.297Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:31:30.304Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T17:31:30.304Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:31:30.304Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764091890297 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:31:30.307Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:31:30.313Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:31:30.313Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764091890313
+2025-11-25T17:31:30.313Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:31:30.321Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T17:31:30.321Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:31:30.321Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764091890313 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:31:30.321Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:31:52.862Z [DEBUG] Metrics opt-out check failed: No API key available
+2025-11-25T17:31:52.862Z [DEBUG] Metrics check failed, defaulting to disabled
+2025-11-25T17:31:52.862Z [DEBUG] Metrics export disabled by organization setting
+2025-11-25T17:32:03.456Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:32:03.456Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:32:03.461Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:32:03.461Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:32:03.473Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-25T17:32:03.473Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:32:03.473Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-25T17:32:03.474Z [DEBUG] FileHistory: Making snapshot for message c381e2b0-faeb-4d7c-9390-5dee578c72b2
+2025-11-25T17:32:03.481Z [DEBUG] FileHistory: Added snapshot for c381e2b0-faeb-4d7c-9390-5dee578c72b2, tracking 4 files
+2025-11-25T17:32:04.477Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:32:05.849Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:32:07.684Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-25T17:32:07.687Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-25T17:32:07.687Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:32:07.687Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:32:19.192Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-25T17:32:19.192Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:32:19.192Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:32:19.210Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:32:19.210Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:32:19.212Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:32:19.212Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:32:20.411Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:32:21.719Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:32:23.207Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-25T17:32:23.210Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-25T17:32:23.210Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:32:23.210Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:32:29.064Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-25T17:32:29.064Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:32:29.064Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:32:29.094Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:32:29.094Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:32:29.097Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:32:29.097Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:32:30.263Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:32:31.550Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:32:32.781Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-25T17:32:32.784Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-25T17:32:32.784Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:32:32.784Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:32:33.588Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:32:33.808Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:32:33.868Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:32:34.284Z [DEBUG] Permission suggestions for Bash: [
+  {
+    "type": "addRules",
+    "rules": [
+      {
+        "toolName": "Bash",
+        "ruleContent": "echo \"Exit code: $?\""
+      }
+    ],
+    "behavior": "allow",
+    "destination": "localSettings"
+  }
+]
+2025-11-25T17:32:34.295Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-25T17:32:34.297Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-25T17:32:34.297Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:32:34.297Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:32:35.840Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-25T17:32:56.063Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-25T17:32:56.063Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:32:56.063Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:32:56.132Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:32:56.132Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:32:56.136Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:32:56.136Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:32:57.588Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:32:59.060Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:33:00.659Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-25T17:33:00.667Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-25T17:33:00.667Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:33:00.667Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:33:30.454Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-25T17:33:30.454Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:33:30.454Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:33:30.554Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T17:33:30.554Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T17:33:30.558Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T17:33:30.558Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T17:33:32.314Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:33:33.754Z [DEBUG] Stream started - received first chunk
+2025-11-25T17:33:34.586Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-25T17:33:34.589Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-25T17:33:34.589Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T17:33:34.589Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T17:33:47.412Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:33:47.412Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764092027412
+2025-11-25T17:33:47.412Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:33:47.449Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T17:33:47.449Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:33:47.449Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764092027412 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:33:47.455Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:33:47.755Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:33:47.755Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764092027755
+2025-11-25T17:33:47.755Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:33:47.773Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T17:33:47.773Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:33:47.773Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764092027755 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:33:47.790Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T17:33:47.870Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:33:47.870Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764092027870
+2025-11-25T17:33:47.870Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T17:33:48.021Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T17:33:48.022Z [DEBUG] Applied original permissions to temp file
+2025-11-25T17:33:48.022Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.19969.1764092027870 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T17:33:48.062Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically

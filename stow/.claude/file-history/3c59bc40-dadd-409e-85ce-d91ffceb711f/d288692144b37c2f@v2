@@ -1,0 +1,73 @@
+########################
+## escalation policy
+########################
+
+resource "pagerduty_escalation_policy" "oac-escalation-commerce-orchestration" {
+  name        = "Commerce Orchestration Escalation Policy"
+  description = "Managed by OaC in github, https://go/pd-config"
+  teams       = [pagerduty_team.oac-team-commerce-orchestration.id]
+
+  ########################
+  ## Alert Schedule
+  ########################
+  rule {
+    escalation_delay_in_minutes = 2
+
+    target {
+      type = "schedule_reference"
+      id   = pagerduty_schedule.oac-schedule-commerce-orchestration-holiday.id
+    }
+  }
+
+  rule {
+    escalation_delay_in_minutes = 10
+
+    target {
+      type = "schedule_reference"
+      id   = pagerduty_schedule.oac-schedule-commerce-orchestration-primary.id
+    }
+  }
+
+  rule {
+    escalation_delay_in_minutes = 10
+
+    target {
+      type = "schedule_reference"
+      id   = pagerduty_schedule.oac-schedule-commerce-orchestration-secondary.id
+    }
+  }
+
+  rule {
+    escalation_delay_in_minutes = 10
+
+    target {
+      type = "schedule_reference"
+      id   = pagerduty_schedule.oac-schedule-commerce-orchestration-leadership.id
+    }
+  }
+
+  rule {
+    escalation_delay_in_minutes = 10
+    target {
+      type = "user_reference"
+      id   = pagerduty_user.sgadkari.id
+    }
+  }
+
+  rule {
+    escalation_delay_in_minutes = 10
+    target {
+      type = "user_reference"
+      id   = pagerduty_user.gabalaji.id
+    }
+  }
+
+  rule {
+    escalation_delay_in_minutes = 10
+    target {
+      type = "user_reference"
+      id   = pagerduty_user.oalfares.id
+    }
+  }
+
+}

@@ -1,0 +1,1292 @@
+import { describe, it, beforeEach, afterEach, vi, expect } from "vitest";
+import { ALBEvent } from "aws-lambda";
+import { getMockALBEvent } from "shared/test-utils/mockALBEvent";
+import { OAuth2Client } from "google-auth-library";
+// @ts-ignore: Using CommonJS exports syntax
+import { handler } from "./index";
+import { createCommerceOnboardingService } from "shared/commerce-onboarding";
+import axios from "axios";
+
+// Mock axios
+vi.mock("axios");
+
+// Mock Google OAuth2Client
+vi.mock("google-auth-library", () => ({
+  OAuth2Client: vi.fn(),
+}));
+
+// Mock commerce onboarding service
+const mockCommerceOnboardingService = {
+  processOnboardingNotification: vi.fn(),
+};
+
+vi.mock("../../shared/commerce-onboarding", () => ({
+  createCommerceOnboardingService: vi.fn(() => mockCommerceOnboardingService),
+}));
+
+// Mock isProduction to return true by default for auth tests
+vi.mock("../../shared/utils", () => ({
+  isProduction: vi.fn(() => true),
+}));
+
+const validPubSubMessage = {
+  message: {
+    data: Buffer.from(
+      JSON.stringify({
+        honeyStoreId: "393914911834861447",
+        paypalEncryptedMerchantId: "ENC124234",
+        paypalMerchantId: "1440479790427072156",
+        platform: "wix",
+        storeName: "Performance",
+        storeUrl: "https://www.performancesxsbushings.com/",
+        catalogState: "READY",
+      }),
+    ).toString("base64"),
+    messageId: "test-message-id",
+    publishTime: "2023-01-01T00:00:00Z",
+    attributes: {
+      key: "value",
+    },
+  },
+  subscription: "projects/test-project/subscriptions/test-subscription",
+};
+
+const validTokenPayload = {
+  aud: "commerce-orchestrator-notifications",
+  email: "test-service-account@test-project.iam.gserviceaccount.com",
+  email_verified: true,
+  exp: Math.floor(Date.now() / 1000) + 3600,
+  iat: Math.floor(Date.now() / 1000),
+  iss: "https://accounts.google.com",
+  sub: "12345",
+};
+
+describe("Onboarding Notification Processor Lambda Handler", () => {
+  let mockEvent: ALBEvent;
+  let mockOAuth2Client: any;
+  let mockTicket: any;
+
+  beforeEach(() => {
+    // Mock the COMMERCE_ONBOARDING environment variables
+    process.env.COMMERCE_ONBOARDING_API_KEY = "test-api-key";
+    process.env.COMMERCE_ONBOARDING_URL =
+      "https://test-commerce-onboarding.com";
+
+    mockEvent = getMockALBEvent({
+      body: JSON.stringify(validPubSubMessage),
+      headers: {
+        Authorization: "Bearer valid-oidc-token",
+      },
+    });
+
+    process.env.PUBSUB_AUDIENCE = "commerce-orchestrator-notifications";
+
+    mockTicket = {
+      getPayload: vi.fn().mockReturnValue(validTokenPayload),
+    };
+
+    mockOAuth2Client = {
+      verifyIdToken: vi.fn().mockResolvedValue(mockTicket),
+    };
+
+    (OAuth2Client as any).mockImplementation(() => mockOAuth2Client);
+
+    // Set up commerce onboarding service mock response
+    mockCommerceOnboardingService.processOnboardingNotification.mockResolvedValue(
+      {
+        data: {
+          honeyStoreId: "393914911834861447",
+          encryptedMerchantId: "ENC124234",
+          decryptedMerchantId: "1440479790427072156",
+          name: "Performance",
+          enabled: 1,
+          domainUrl: "https://www.performancesxsbushings.com/",
+          platformConfig: {
+            name: "wix",
+            version: 1,
+          },
+          paymentSettings: {
+            currency: "USD",
+            paymentType: "PayPal",
+          },
+          features: ["one-time-payment"],
+          supportedCountries: ["US"],
+          createdAt: 1704067200000,
+          updatedAt: 1704067200000,
+        },
+        statusCode: 201,
+      },
+    );
+  });
+
+  afterEach(() => {
+    vi.clearAllMocks();
+    delete process.env.PUBSUB_AUDIENCE;
+  });
+
+  it("should process onboarding notification successfully", async () => {
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(201);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody).toMatchObject({
+      message: "Notification processed successfully",
+      messageId: "test-message-id",
+    });
+
+    /*expect(mockOAuth2Client.verifyIdToken).toHaveBeenCalledWith({
+      idToken: "valid-oidc-token",
+      audience: "honey-to-commerce-onboard",
+    });*/
+
+    // Verify commerce onboarding service was called correctly
+    expect(createCommerceOnboardingService).toHaveBeenCalledWith({
+      debugId: expect.any(String),
+      logger: expect.any(Object),
+    });
+
+    expect(
+      mockCommerceOnboardingService.processOnboardingNotification,
+    ).toHaveBeenCalledWith({
+      honeyStoreId: "393914911834861447",
+      paypalEncryptedMerchantId: "ENC124234",
+      paypalMerchantId: "1440479790427072156",
+      platform: "wix",
+      storeName: "Performance",
+      storeUrl: "https://www.performancesxsbushings.com/",
+      catalogState: "READY",
+    });
+  });
+  /*
+  it("should reject request without Authorization header in production", async () => {
+    mockEvent = getMockALBEvent({
+      body: JSON.stringify(validPubSubMessage),
+      headers: {},
+    });
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(401);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody).toMatchObject({
+      name: "UnauthorizedError",
+      message: "Missing Authorization header",
+    });
+  });
+
+  it("should bypass auth in non-production environments", async () => {
+    const { isProduction } = await import("../../shared/utils");
+
+    // Mock isProduction to return false for non-prod
+    vi.mocked(isProduction).mockReturnValueOnce(false);
+
+    mockEvent = getMockALBEvent({
+      body: JSON.stringify(validPubSubMessage),
+      headers: {}, // No auth header
+    });
+
+    const response = await handler(mockEvent);
+
+    // Should succeed even without auth
+    expect(response.statusCode).toBe(201);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody).toMatchObject({
+      message: "Notification processed successfully",
+      messageId: "test-message-id",
+    });
+
+    // Verify OAuth2Client was not used
+    expect(mockOAuth2Client.verifyIdToken).not.toHaveBeenCalled();
+  });
+
+  it("should reject request with invalid Authorization header format in production", async () => {
+    mockEvent = getMockALBEvent({
+      body: JSON.stringify(validPubSubMessage),
+      headers: {
+        Authorization: "InvalidFormat token123",
+      },
+    });
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(401);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody).toMatchObject({
+      name: "UnauthorizedError",
+      message: "Invalid Authorization header format",
+    });
+  });
+
+  it("should reject token with unverified email", async () => {
+    const invalidTokenPayload = {
+      ...validTokenPayload,
+      email_verified: false,
+    };
+    mockTicket.getPayload.mockReturnValue(invalidTokenPayload);
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(401);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody).toMatchObject({
+      name: "UnauthorizedError",
+      message: "Email not verified",
+    });
+  });
+
+  it("should reject token with invalid issuer", async () => {
+    const invalidTokenPayload = {
+      ...validTokenPayload,
+      iss: "https://malicious.com",
+    };
+    mockTicket.getPayload.mockReturnValue(invalidTokenPayload);
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(401);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody).toMatchObject({
+      name: "UnauthorizedError",
+      message: "Invalid token issuer",
+    });
+  });
+
+  it("should handle token verification failure", async () => {
+    mockOAuth2Client.verifyIdToken.mockRejectedValue(
+      new Error("Invalid token")
+    );
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(401);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody).toMatchObject({
+      name: "UnauthorizedError",
+      message: "Token validation failed",
+    });
+  });
+
+  it("should handle missing token payload", async () => {
+    mockTicket.getPayload.mockReturnValue(null);
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(401);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody).toMatchObject({
+      name: "UnauthorizedError",
+      message: "Invalid token payload",
+    });
+  });
+*/
+  it("should reject invalid Pub/Sub message structure", async () => {
+    const invalidPubSubMessage = {
+      invalidField: "invalid-value",
+    };
+
+    mockEvent = getMockALBEvent({
+      body: JSON.stringify(invalidPubSubMessage),
+      headers: {
+        Authorization: "Bearer valid-oidc-token",
+      },
+    });
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(400);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody.name).toBe("BadRequestError");
+  });
+
+  it("should reject invalid notification data in message", async () => {
+    const invalidNotificationData = {
+      honeyStoreId: "123",
+      // Missing required fields
+    };
+
+    const invalidPubSubMessage = {
+      ...validPubSubMessage,
+      message: {
+        ...validPubSubMessage.message,
+        data: Buffer.from(JSON.stringify(invalidNotificationData)).toString(
+          "base64",
+        ),
+      },
+    };
+
+    mockEvent = getMockALBEvent({
+      body: JSON.stringify(invalidPubSubMessage),
+      headers: {
+        Authorization: "Bearer valid-oidc-token",
+      },
+    });
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(400);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody.name).toBe("BadRequestError");
+  });
+
+  // The test for invalid platform enum value has been removed because we now allow
+  // any string value for platform and let the downstream service (CCM) handle validation
+  // instead of validating at the schema level.
+  // This change allows us to support new platforms without needing code changes in multiple places.
+
+  it("should reject invalid URL format", async () => {
+    const invalidNotificationData = {
+      honeyStoreId: "393914911834861447",
+      paypalEncryptedMerchantId: "ENC124234",
+      paypalMerchantId: "1440479790427072156",
+      platform: "wix",
+      storeName: "Performance",
+      storeUrl: "invalid-url", // Invalid URL format
+      catalogState: "READY",
+    };
+
+    const invalidPubSubMessage = {
+      ...validPubSubMessage,
+      message: {
+        ...validPubSubMessage.message,
+        data: Buffer.from(JSON.stringify(invalidNotificationData)).toString(
+          "base64",
+        ),
+      },
+    };
+
+    mockEvent = getMockALBEvent({
+      body: JSON.stringify(invalidPubSubMessage),
+      headers: {
+        Authorization: "Bearer valid-oidc-token",
+      },
+    });
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(400);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody.name).toBe("BadRequestError");
+  });
+
+  it("should handle malformed JSON in message data", async () => {
+    const invalidPubSubMessage = {
+      ...validPubSubMessage,
+      message: {
+        ...validPubSubMessage.message,
+        data: Buffer.from("invalid-json").toString("base64"),
+      },
+    };
+
+    mockEvent = getMockALBEvent({
+      body: JSON.stringify(invalidPubSubMessage),
+      headers: {
+        Authorization: "Bearer valid-oidc-token",
+      },
+    });
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(400);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody.name).toBe("BadRequestError");
+    expect(responseBody.details).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          description: "Invalid JSON in message data",
+        }),
+      ]),
+    );
+  });
+
+  it("should handle different catalog states", async () => {
+    const catalogStates = ["READY", "PENDING", "FAILED"];
+
+    for (const catalogState of catalogStates) {
+      const notificationData = {
+        honeyStoreId: "393914911834861447",
+        paypalEncryptedMerchantId: "ENC124234",
+        paypalMerchantId: "1440479790427072156",
+        platform: "shopify",
+        storeName: "Test Store",
+        storeUrl: "https://test-store.com/",
+        catalogState,
+      };
+
+      const pubSubMessage = {
+        ...validPubSubMessage,
+        message: {
+          ...validPubSubMessage.message,
+          data: Buffer.from(JSON.stringify(notificationData)).toString(
+            "base64",
+          ),
+        },
+      };
+
+      mockEvent = getMockALBEvent({
+        body: JSON.stringify(pubSubMessage),
+        headers: {
+          Authorization: "Bearer valid-oidc-token",
+        },
+      });
+
+      const response = await handler(mockEvent);
+
+      expect(response.statusCode).toBe(201);
+      const responseBody = JSON.parse(response.body);
+      expect(responseBody.message).toBe("Notification processed successfully");
+    }
+  });
+
+  it("should handle DISABLED catalog state and delete store config", async () => {
+    const disabledNotificationData = {
+      honeyStoreId: "393914911834861447",
+      paypalEncryptedMerchantId: "ENC124234",
+      paypalMerchantId: "1440479790427072156",
+      platform: "wix",
+      storeName: "Performance",
+      storeUrl: "https://www.performancesxsbushings.com/",
+      catalogState: "DISABLED",
+    };
+
+    const disabledPubSubMessage = {
+      ...validPubSubMessage,
+      message: {
+        ...validPubSubMessage.message,
+        data: Buffer.from(JSON.stringify(disabledNotificationData)).toString(
+          "base64",
+        ),
+      },
+    };
+
+    mockEvent = getMockALBEvent({
+      body: JSON.stringify(disabledPubSubMessage),
+      headers: {
+        Authorization: "Bearer valid-oidc-token",
+      },
+    });
+
+    // Set up mock response for delete operation
+    mockCommerceOnboardingService.processOnboardingNotification.mockResolvedValue(
+      {
+        data: {
+          message: "Store configuration deleted successfully",
+          honeyStoreId: "393914911834861447",
+        },
+        statusCode: 200,
+      },
+    );
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(200);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody.message).toBe("Notification processed successfully");
+
+    // Verify commerce onboarding service was called with disabled data
+    expect(
+      mockCommerceOnboardingService.processOnboardingNotification,
+    ).toHaveBeenCalledWith(
+      expect.objectContaining({
+        honeyStoreId: "393914911834861447",
+        paypalEncryptedMerchantId: "ENC124234",
+        paypalMerchantId: "1440479790427072156",
+        platform: "wix",
+        storeName: "Performance",
+        storeUrl: "https://www.performancesxsbushings.com/",
+        catalogState: "DISABLED",
+      }),
+    );
+  });
+
+  it("should handle DISABLED catalog state for all platforms", async () => {
+    const platforms = [
+      "wix",
+      "shopify",
+      "adorama",
+      "bigcommerce",
+      "firmly",
+      "ultracart",
+      "shopware",
+    ];
+
+    for (const platform of platforms) {
+      const disabledNotificationData = {
+        honeyStoreId: "393914911834861447",
+        paypalEncryptedMerchantId: "ENC124234",
+        paypalMerchantId: "1440479790427072156",
+        platform,
+        storeName: "Test Store",
+        storeUrl: "https://test-store.com/",
+        catalogState: "DISABLED",
+      };
+
+      const disabledPubSubMessage = {
+        ...validPubSubMessage,
+        message: {
+          ...validPubSubMessage.message,
+          data: Buffer.from(JSON.stringify(disabledNotificationData)).toString(
+            "base64",
+          ),
+        },
+      };
+
+      mockEvent = getMockALBEvent({
+        body: JSON.stringify(disabledPubSubMessage),
+        headers: {
+          Authorization: "Bearer valid-oidc-token",
+        },
+      });
+
+      // Reset and set up mock response for each platform delete operation
+      mockCommerceOnboardingService.processOnboardingNotification.mockResolvedValue(
+        {
+          data: {
+            message: "Store configuration deleted successfully",
+            honeyStoreId: "393914911834861447",
+          },
+          statusCode: 200,
+        },
+      );
+
+      const response = await handler(mockEvent);
+
+      expect(response.statusCode).toBe(200);
+      const responseBody = JSON.parse(response.body);
+      expect(responseBody.message).toBe("Notification processed successfully");
+
+      // Verify commerce onboarding service was called with disabled data for each platform
+      expect(
+        mockCommerceOnboardingService.processOnboardingNotification,
+      ).toHaveBeenCalledWith(
+        expect.objectContaining({
+          platform,
+          catalogState: "DISABLED",
+        }),
+      );
+    }
+  });
+
+  it("should handle service error when disabling merchant", async () => {
+    const disabledNotificationData = {
+      honeyStoreId: "393914911834861447",
+      paypalEncryptedMerchantId: "ENC124234",
+      paypalMerchantId: "1440479790427072156",
+      platform: "wix",
+      storeName: "Performance",
+      storeUrl: "https://www.performancesxsbushings.com/",
+      catalogState: "DISABLED",
+    };
+
+    const disabledPubSubMessage = {
+      ...validPubSubMessage,
+      message: {
+        ...validPubSubMessage.message,
+        data: Buffer.from(JSON.stringify(disabledNotificationData)).toString(
+          "base64",
+        ),
+      },
+    };
+
+    mockEvent = getMockALBEvent({
+      body: JSON.stringify(disabledPubSubMessage),
+      headers: {
+        Authorization: "Bearer valid-oidc-token",
+      },
+    });
+
+    const serviceError = new Error("Failed to disable merchant");
+    mockCommerceOnboardingService.processOnboardingNotification.mockRejectedValue(
+      serviceError,
+    );
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(500);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody.name).toBe("UnknownError");
+    expect(responseBody.message).toBe("Internal Server Error");
+
+    // Verify service was called with disabled data
+    expect(
+      mockCommerceOnboardingService.processOnboardingNotification,
+    ).toHaveBeenCalledWith(
+      expect.objectContaining({
+        catalogState: "DISABLED",
+      }),
+    );
+  });
+
+  it("should handle 500 error when deleting store config", async () => {
+    const disabledNotificationData = {
+      honeyStoreId: "393914911834861447",
+      paypalEncryptedMerchantId: "ENC124234",
+      paypalMerchantId: "1440479790427072156",
+      platform: "wix",
+      storeName: "Performance",
+      storeUrl: "https://www.performancesxsbushings.com/",
+      catalogState: "DISABLED",
+    };
+
+    const disabledPubSubMessage = {
+      ...validPubSubMessage,
+      message: {
+        ...validPubSubMessage.message,
+        data: Buffer.from(JSON.stringify(disabledNotificationData)).toString(
+          "base64",
+        ),
+      },
+    };
+
+    mockEvent = getMockALBEvent({
+      body: JSON.stringify(disabledPubSubMessage),
+      headers: {
+        Authorization: "Bearer valid-oidc-token",
+      },
+    });
+
+    // Mock service to return 422 for delete operation error
+    mockCommerceOnboardingService.processOnboardingNotification.mockResolvedValue(
+      {
+        data: {
+          error: "INTERNAL_SERVER_ERROR",
+          message: "An error occurred while deleting the store configuration",
+          details: "DynamoDB operation failed",
+        },
+        statusCode: 422,
+      },
+    );
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(422);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody.error).toBe("INTERNAL_SERVER_ERROR");
+    expect(responseBody.message).toBe(
+      "An error occurred while deleting the store configuration",
+    );
+  });
+
+  it("should handle different platforms", async () => {
+    const platforms = ["wix", "shopify", "adorama", "bigcommerce"];
+
+    for (const platform of platforms) {
+      const notificationData = {
+        honeyStoreId: "393914911834861447",
+        paypalEncryptedMerchantId: "ENC124234",
+        paypalMerchantId: "1440479790427072156",
+        platform,
+        storeName: "Test Store",
+        storeUrl: "https://test-store.com/",
+        catalogState: "READY",
+      };
+
+      const pubSubMessage = {
+        ...validPubSubMessage,
+        message: {
+          ...validPubSubMessage.message,
+          data: Buffer.from(JSON.stringify(notificationData)).toString(
+            "base64",
+          ),
+        },
+      };
+
+      mockEvent = getMockALBEvent({
+        body: JSON.stringify(pubSubMessage),
+        headers: {
+          Authorization: "Bearer valid-oidc-token",
+        },
+      });
+
+      const response = await handler(mockEvent);
+
+      expect(response.statusCode).toBe(201);
+      const responseBody = JSON.parse(response.body);
+      expect(responseBody.message).toBe("Notification processed successfully");
+    }
+  });
+
+  it("should handle case-sensitive Authorization header", async () => {
+    mockEvent = getMockALBEvent({
+      body: JSON.stringify(validPubSubMessage),
+      headers: {
+        authorization: "Bearer valid-oidc-token", // lowercase
+      },
+    });
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(201);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody.message).toBe("Notification processed successfully");
+  });
+
+  it("should handle malformed request body JSON", async () => {
+    mockEvent = getMockALBEvent({
+      body: '{"message": {"data": "invalid json"}',
+      headers: {
+        Authorization: "Bearer valid-oidc-token",
+      },
+    });
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(500);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody.name).toBe("UnknownError");
+  });
+
+  it("should handle commerce onboarding service failure", async () => {
+    const serviceError = new Error("Service unavailable");
+    mockCommerceOnboardingService.processOnboardingNotification.mockRejectedValue(
+      serviceError,
+    );
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(500);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody.name).toBe("UnknownError");
+    expect(responseBody.message).toBe("Internal Server Error");
+
+    // Verify service was still called
+    expect(
+      mockCommerceOnboardingService.processOnboardingNotification,
+    ).toHaveBeenCalledWith({
+      honeyStoreId: "393914911834861447",
+      paypalEncryptedMerchantId: "ENC124234",
+      paypalMerchantId: "1440479790427072156",
+      platform: "wix",
+      storeName: "Performance",
+      storeUrl: "https://www.performancesxsbushings.com/",
+      catalogState: "READY",
+    });
+  });
+
+  it("should handle store config that already exists and return 200", async () => {
+    // Mock service to return 200 when store config already exists
+    mockCommerceOnboardingService.processOnboardingNotification.mockResolvedValue(
+      {
+        data: {
+          honeyStoreId: "393914911834861447",
+          encryptedMerchantId: "ENC124234",
+          decryptedMerchantId: "1440479790427072156",
+          name: "Performance",
+          enabled: 1,
+          domainUrl: "https://www.performancesxsbushings.com/",
+          platformConfig: {
+            name: "wix",
+            version: 1,
+          },
+          paymentSettings: {
+            currency: "USD",
+            paymentType: "PayPal",
+          },
+          features: ["one-time-payment"],
+          supportedCountries: ["US"],
+          createdAt: 1704067200000,
+          updatedAt: 1704067200000,
+        },
+        statusCode: 200,
+      },
+    );
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(200);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody.message).toBe("Notification processed successfully");
+  });
+
+  it("should handle other 422 errors and return 422", async () => {
+    // Mock service to return 422 for other validation errors
+    mockCommerceOnboardingService.processOnboardingNotification.mockResolvedValue(
+      {
+        data: {
+          name: "UNPROCESSABLE_ENTITY",
+          details: [
+            {
+              issue: "VALIDATION_ERROR",
+              description: "Some other validation error",
+            },
+          ],
+          message: "Validation failed",
+          debug_id: "test-correlation-id",
+        },
+        statusCode: 422,
+      },
+    );
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(422);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody.name).toBe("UNPROCESSABLE_ENTITY");
+    expect(responseBody.details[0].issue).toBe("VALIDATION_ERROR");
+  });
+
+  it("should send Slack notification with error details when 422 error occurs", async () => {
+    // Set up NOTIFICATION_URL environment variable
+    process.env.NOTIFICATION_URL =
+      "https://slack-webhook.example.com/webhook";
+
+    // Reset axios mock
+    vi.mocked(axios.post).mockResolvedValue({ data: { ok: true } });
+
+    const errorData = {
+      name: "UNPROCESSABLE_ENTITY",
+      details: [
+        {
+          issue: "VALIDATION_ERROR",
+          description: "Invalid store configuration",
+        },
+      ],
+      message: "Validation failed",
+      debug_id: "test-correlation-id",
+    };
+
+    // Mock service to return 422 error
+    mockCommerceOnboardingService.processOnboardingNotification.mockResolvedValue(
+      {
+        data: errorData,
+        statusCode: 422,
+      },
+    );
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(422);
+
+    // Verify Slack notification was sent with error details
+    expect(axios.post).toHaveBeenCalledWith(
+      "https://slack-webhook.example.com/webhook",
+      expect.objectContaining({
+        environment: process.env.APP_ENV,
+        catalogState: "FAILED",
+        honeyStoreId: "393914911834861447",
+        paypalEncryptedMerchantId: "ENC124234",
+        paypalMerchantId: "1440479790427072156",
+        platform: "wix",
+        storeName: "Performance",
+        storeUrl: "https://www.performancesxsbushings.com/",
+        errorDetails: errorData,
+      }),
+      {
+        headers: { "Content-Type": "application/json" },
+      },
+    );
+
+    // Clean up
+    delete process.env.NOTIFICATION_URL;
+  });
+
+  it("should continue processing even if Slack notification fails on 422 error", async () => {
+    // Set up NOTIFICATION_URL environment variable
+    process.env.NOTIFICATION_URL =
+      "https://slack-webhook.example.com/webhook";
+
+    // Mock axios to fail
+    vi.mocked(axios.post).mockRejectedValue(
+      new Error("Slack webhook failed"),
+    );
+
+    const errorData = {
+      name: "UNPROCESSABLE_ENTITY",
+      details: [
+        {
+          issue: "VALIDATION_ERROR",
+          description: "Invalid store configuration",
+        },
+      ],
+      message: "Validation failed",
+      debug_id: "test-correlation-id",
+    };
+
+    // Mock service to return 422 error
+    mockCommerceOnboardingService.processOnboardingNotification.mockResolvedValue(
+      {
+        data: errorData,
+        statusCode: 422,
+      },
+    );
+
+    const response = await handler(mockEvent);
+
+    // Should still return 422 with error data despite Slack failure
+    expect(response.statusCode).toBe(422);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody.name).toBe("UNPROCESSABLE_ENTITY");
+
+    // Verify Slack notification was attempted
+    expect(axios.post).toHaveBeenCalled();
+
+    // Clean up
+    delete process.env.NOTIFICATION_URL;
+  });
+
+  it("should handle unsupported platform from service", async () => {
+    // Use a supported platform in schema but mock service to reject it with UnprocessableEntityError
+    // Mock the service to throw UnprocessableEntityError
+    const { UnprocessableEntityError } = await import("shared/errors");
+    const platformError = new UnprocessableEntityError("test-debug-id", {
+      name: "PLATFORM_NOT_SUPPORTED",
+      message: "Platform 'wix' is not supported",
+      details: [
+        {
+          field: "platform",
+          description:
+            "Unsupported platform: wix. Service temporarily unavailable for this platform",
+        },
+      ],
+    });
+    mockCommerceOnboardingService.processOnboardingNotification.mockRejectedValue(
+      platformError,
+    );
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(422);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody.name).toBe("PLATFORM_NOT_SUPPORTED");
+    expect(responseBody.message).toBe("Platform 'wix' is not supported");
+
+    // Verify service was called with the data
+    expect(
+      mockCommerceOnboardingService.processOnboardingNotification,
+    ).toHaveBeenCalledWith({
+      honeyStoreId: "393914911834861447",
+      paypalEncryptedMerchantId: "ENC124234",
+      paypalMerchantId: "1440479790427072156",
+      platform: "wix",
+      storeName: "Performance",
+      storeUrl: "https://www.performancesxsbushings.com/",
+      catalogState: "READY",
+    });
+  });
+
+  describe("Slack Notification for READY Catalog State", () => {
+    beforeEach(() => {
+      // Set up NOTIFICATION_URL environment variable
+      process.env.NOTIFICATION_URL =
+        "https://slack-webhook.example.com/webhook";
+
+      // Reset axios mock
+      vi.mocked(axios.post).mockResolvedValue({ data: { ok: true } });
+    });
+
+    afterEach(() => {
+      delete process.env.NOTIFICATION_URL;
+    });
+
+    it("should send Slack notification when catalogState is READY", async () => {
+      const readyNotificationData = {
+        honeyStoreId: "store-12345",
+        paypalEncryptedMerchantId: "encrypted-merchant-abc123",
+        paypalMerchantId: "MERCHANT12345",
+        platform: "wix",
+        storeName: "Test Store Name",
+        storeUrl: "https://test-store.example.com",
+        catalogState: "READY",
+      };
+
+      const readyPubSubMessage = {
+        ...validPubSubMessage,
+        message: {
+          ...validPubSubMessage.message,
+          data: Buffer.from(JSON.stringify(readyNotificationData)).toString(
+            "base64",
+          ),
+        },
+      };
+
+      mockEvent = getMockALBEvent({
+        body: JSON.stringify(readyPubSubMessage),
+        headers: {
+          Authorization: "Bearer valid-oidc-token",
+        },
+      });
+
+      const response = await handler(mockEvent);
+
+      expect(response.statusCode).toBe(201);
+
+      // Verify Slack notification was sent
+      expect(axios.post).toHaveBeenCalledWith(
+        "https://slack-webhook.example.com/webhook",
+        {
+          environment: process.env.APP_ENV,
+          catalogState: "READY",
+          honeyStoreId: "store-12345",
+          paypalEncryptedMerchantId: "encrypted-merchant-abc123",
+          paypalMerchantId: "MERCHANT12345",
+          platform: "wix",
+          storeName: "Test Store Name",
+          storeUrl: "https://test-store.example.com",
+        },
+        {
+          headers: { "Content-Type": "application/json" },
+        },
+      );
+    });
+
+    it("should NOT send Slack notification when catalogState is PENDING", async () => {
+      const pendingNotificationData = {
+        honeyStoreId: "store-12345",
+        paypalEncryptedMerchantId: "encrypted-merchant-abc123",
+        paypalMerchantId: "MERCHANT12345",
+        platform: "shopify",
+        storeName: "Pending Store",
+        storeUrl: "https://pending-store.example.com",
+        catalogState: "PENDING",
+      };
+
+      const pendingPubSubMessage = {
+        ...validPubSubMessage,
+        message: {
+          ...validPubSubMessage.message,
+          data: Buffer.from(JSON.stringify(pendingNotificationData)).toString(
+            "base64",
+          ),
+        },
+      };
+
+      mockEvent = getMockALBEvent({
+        body: JSON.stringify(pendingPubSubMessage),
+        headers: {
+          Authorization: "Bearer valid-oidc-token",
+        },
+      });
+
+      const response = await handler(mockEvent);
+
+      expect(response.statusCode).toBe(201);
+
+      // Verify Slack notification was NOT sent
+      expect(axios.post).not.toHaveBeenCalled();
+    });
+
+    it("should NOT send Slack notification when catalogState is FAILED", async () => {
+      const failedNotificationData = {
+        honeyStoreId: "store-12345",
+        paypalEncryptedMerchantId: "encrypted-merchant-abc123",
+        paypalMerchantId: "MERCHANT12345",
+        platform: "bigcommerce",
+        storeName: "Failed Store",
+        storeUrl: "https://failed-store.example.com",
+        catalogState: "FAILED",
+      };
+
+      const failedPubSubMessage = {
+        ...validPubSubMessage,
+        message: {
+          ...validPubSubMessage.message,
+          data: Buffer.from(JSON.stringify(failedNotificationData)).toString(
+            "base64",
+          ),
+        },
+      };
+
+      mockEvent = getMockALBEvent({
+        body: JSON.stringify(failedPubSubMessage),
+        headers: {
+          Authorization: "Bearer valid-oidc-token",
+        },
+      });
+
+      const response = await handler(mockEvent);
+
+      expect(response.statusCode).toBe(201);
+
+      // Verify Slack notification was NOT sent
+      expect(axios.post).not.toHaveBeenCalled();
+    });
+
+    it("should NOT send Slack notification when catalogState is DISABLED", async () => {
+      const disabledNotificationData = {
+        honeyStoreId: "store-12345",
+        paypalEncryptedMerchantId: "encrypted-merchant-abc123",
+        paypalMerchantId: "MERCHANT12345",
+        platform: "wix",
+        storeName: "Disabled Store",
+        storeUrl: "https://disabled-store.example.com",
+        catalogState: "DISABLED",
+      };
+
+      const disabledPubSubMessage = {
+        ...validPubSubMessage,
+        message: {
+          ...validPubSubMessage.message,
+          data: Buffer.from(JSON.stringify(disabledNotificationData)).toString(
+            "base64",
+          ),
+        },
+      };
+
+      mockEvent = getMockALBEvent({
+        body: JSON.stringify(disabledPubSubMessage),
+        headers: {
+          Authorization: "Bearer valid-oidc-token",
+        },
+      });
+
+      // Mock response for DISABLED state
+      mockCommerceOnboardingService.processOnboardingNotification.mockResolvedValue(
+        {
+          data: {
+            message: "Store configuration deleted successfully",
+            honeyStoreId: "store-12345",
+          },
+          statusCode: 200,
+        },
+      );
+
+      const response = await handler(mockEvent);
+
+      expect(response.statusCode).toBe(200);
+
+      // Verify Slack notification was NOT sent (DISABLED is in else branch but no notification)
+      expect(axios.post).not.toHaveBeenCalled();
+    });
+
+    it("should continue processing if Slack notification fails", async () => {
+      const readyNotificationData = {
+        honeyStoreId: "store-12345",
+        paypalEncryptedMerchantId: "encrypted-merchant-abc123",
+        paypalMerchantId: "MERCHANT12345",
+        platform: "wix",
+        storeName: "Test Store",
+        storeUrl: "https://test-store.example.com",
+        catalogState: "READY",
+      };
+
+      const readyPubSubMessage = {
+        ...validPubSubMessage,
+        message: {
+          ...validPubSubMessage.message,
+          data: Buffer.from(JSON.stringify(readyNotificationData)).toString(
+            "base64",
+          ),
+        },
+      };
+
+      mockEvent = getMockALBEvent({
+        body: JSON.stringify(readyPubSubMessage),
+        headers: {
+          Authorization: "Bearer valid-oidc-token",
+        },
+      });
+
+      // Mock axios to fail
+      vi.mocked(axios.post).mockRejectedValue(
+        new Error("Slack webhook failed"),
+      );
+
+      const response = await handler(mockEvent);
+
+      // Should still succeed despite Slack failure
+      expect(response.statusCode).toBe(201);
+      const responseBody = JSON.parse(response.body);
+      expect(responseBody.message).toBe("Notification processed successfully");
+
+      // Verify Slack notification was attempted
+      expect(axios.post).toHaveBeenCalled();
+    });
+
+    it("should throw error if NOTIFICATION_URL is not set", async () => {
+      delete process.env.NOTIFICATION_URL;
+
+      const readyNotificationData = {
+        honeyStoreId: "store-12345",
+        paypalEncryptedMerchantId: "encrypted-merchant-abc123",
+        paypalMerchantId: "MERCHANT12345",
+        platform: "wix",
+        storeName: "Test Store",
+        storeUrl: "https://test-store.example.com",
+        catalogState: "READY",
+      };
+
+      const readyPubSubMessage = {
+        ...validPubSubMessage,
+        message: {
+          ...validPubSubMessage.message,
+          data: Buffer.from(JSON.stringify(readyNotificationData)).toString(
+            "base64",
+          ),
+        },
+      };
+
+      mockEvent = getMockALBEvent({
+        body: JSON.stringify(readyPubSubMessage),
+        headers: {
+          Authorization: "Bearer valid-oidc-token",
+        },
+      });
+
+      const response = await handler(mockEvent);
+
+      // Should still succeed (error is caught and logged)
+      expect(response.statusCode).toBe(201);
+      const responseBody = JSON.parse(response.body);
+      expect(responseBody.message).toBe("Notification processed successfully");
+    });
+
+    it("should send Slack notification for all supported platforms when READY", async () => {
+      const platforms = [
+        "wix",
+        "shopify",
+        "adorama",
+        "bigcommerce",
+        "firmly",
+        "ultracart",
+        "shopware",
+      ];
+
+      for (const platform of platforms) {
+        vi.clearAllMocks();
+
+        const readyNotificationData = {
+          honeyStoreId: `store-${platform}`,
+          paypalEncryptedMerchantId: "encrypted-merchant-abc123",
+          paypalMerchantId: "MERCHANT12345",
+          platform,
+          storeName: `${platform} Store`,
+          storeUrl: `https://${platform}-store.example.com`,
+          catalogState: "READY",
+        };
+
+        const readyPubSubMessage = {
+          ...validPubSubMessage,
+          message: {
+            ...validPubSubMessage.message,
+            data: Buffer.from(JSON.stringify(readyNotificationData)).toString(
+              "base64",
+            ),
+          },
+        };
+
+        mockEvent = getMockALBEvent({
+          body: JSON.stringify(readyPubSubMessage),
+          headers: {
+            Authorization: "Bearer valid-oidc-token",
+          },
+        });
+
+        const response = await handler(mockEvent);
+
+        expect(response.statusCode).toBe(201);
+
+        // Verify Slack notification was sent with correct platform
+        expect(axios.post).toHaveBeenCalledWith(
+          "https://slack-webhook.example.com/webhook",
+          expect.objectContaining({
+            platform,
+            catalogState: "READY",
+            honeyStoreId: `store-${platform}`,
+          }),
+          {
+            headers: { "Content-Type": "application/json" },
+          },
+        );
+      }
+    });
+  });
+});

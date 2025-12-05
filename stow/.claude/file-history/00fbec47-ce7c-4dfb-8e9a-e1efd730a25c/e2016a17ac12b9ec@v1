@@ -1,0 +1,730 @@
+# Datadog Dashboard for Commerce Orchestrator
+# Uses custom Datadog metrics emitted directly from Lambda functions
+# Metric namespace: commerce_orchestrator.*
+
+resource "datadog_dashboard" "commerce_orchestrator" {
+  title       = "Commerce Orchestrator - Performance Metrics"
+  description = "Lambda performance using custom Datadog metrics: latency (P90), success/failure rates by operation"
+  layout_type = "ordered"
+
+  # Template variables for filtering
+  template_variable {
+    name     = "orchestrator"
+    prefix   = "orchestrator"
+    defaults = ["*"]
+  }
+
+  template_variable {
+    name     = "env"
+    prefix   = "env"
+    defaults = ["*"]
+  }
+
+  # ========================================
+  # LATENCY METRICS (APM Traces)
+  # ========================================
+
+  widget {
+    group_definition {
+      title            = "📊 Latency Metrics"
+      layout_type      = "ordered"
+      background_color = "blue"
+
+      # P90 Latency by Lambda Function
+      widget {
+        timeseries_definition {
+          title       = "P90 Response Time by Lambda Function"
+          show_legend = true
+
+          request {
+            formula {
+              formula_expression = "query1 * 1000"
+              alias              = "P90 (ms)"
+            }
+
+            query {
+              metric_query {
+                name  = "query1"
+                query = "p90:trace.aws.lambda{service:commerce-orchestrator} by {resource_name}"
+              }
+            }
+
+            style {
+              palette    = "dog_classic"
+              line_type  = "solid"
+              line_width = "normal"
+            }
+
+            display_type = "line"
+          }
+
+          yaxis {
+            include_zero = true
+            label        = "Milliseconds"
+          }
+
+          marker {
+            value        = "y = 5000"
+            display_type = "error dashed"
+            label        = "Critical (5s)"
+          }
+
+          marker {
+            value        = "y = 4000"
+            display_type = "warning dashed"
+            label        = "Warning (4s)"
+          }
+        }
+      }
+    }
+  }
+
+  # ========================================
+  # SUCCESS/FAILURE METRICS (Custom Datadog Metrics)
+  # ========================================
+
+  widget {
+    group_definition {
+      title            = "✅ Success & Failure Counts by Orchestrator"
+      layout_type      = "ordered"
+      background_color = "green"
+
+      # Create Cart - Success vs Failure Table
+      widget {
+        query_table_definition {
+          title = "Create Cart - Success vs Failure by Orchestrator"
+
+          request {
+            formula {
+              formula_expression = "success"
+              alias              = "Success"
+              cell_display_mode  = "bar"
+            }
+
+            formula {
+              formula_expression = "failure"
+              alias              = "Failure"
+              cell_display_mode  = "bar"
+            }
+
+            formula {
+              formula_expression = "(success / (success + failure)) * 100"
+              alias              = "Success Rate %"
+            }
+
+            query {
+              metric_query {
+                name       = "success"
+                query      = "sum:commerce_orchestrator.add_cart_success{$orchestrator,$env} by {orchestrator}.as_count()"
+                aggregator = "sum"
+              }
+            }
+
+            query {
+              metric_query {
+                name       = "failure"
+                query      = "sum:commerce_orchestrator.add_cart_failure{$orchestrator,$env} by {orchestrator}.as_count()"
+                aggregator = "sum"
+              }
+            }
+          }
+        }
+      }
+
+      # Update Cart - Success vs Failure Table
+      widget {
+        query_table_definition {
+          title = "Update Cart - Success vs Failure by Orchestrator"
+
+          request {
+            formula {
+              formula_expression = "success"
+              alias              = "Success"
+              cell_display_mode  = "bar"
+            }
+
+            formula {
+              formula_expression = "failure"
+              alias              = "Failure"
+              cell_display_mode  = "bar"
+            }
+
+            formula {
+              formula_expression = "(success / (success + failure)) * 100"
+              alias              = "Success Rate %"
+            }
+
+            query {
+              metric_query {
+                name       = "success"
+                query      = "sum:commerce_orchestrator.update_cart_success{$orchestrator,$env} by {orchestrator}.as_count()"
+                aggregator = "sum"
+              }
+            }
+
+            query {
+              metric_query {
+                name       = "failure"
+                query      = "sum:commerce_orchestrator.update_cart_failure{$orchestrator,$env} by {orchestrator}.as_count()"
+                aggregator = "sum"
+              }
+            }
+          }
+        }
+      }
+
+      # Payment/Complete - Success vs Failure Table
+      widget {
+        query_table_definition {
+          title = "Payment/Complete - Success vs Failure by Orchestrator"
+
+          request {
+            formula {
+              formula_expression = "success"
+              alias              = "Success"
+              cell_display_mode  = "bar"
+            }
+
+            formula {
+              formula_expression = "failure"
+              alias              = "Failure"
+              cell_display_mode  = "bar"
+            }
+
+            formula {
+              formula_expression = "(success / (success + failure)) * 100"
+              alias              = "Success Rate %"
+            }
+
+            query {
+              metric_query {
+                name       = "success"
+                query      = "sum:commerce_orchestrator.payment_success{$orchestrator,$env} by {orchestrator}.as_count()"
+                aggregator = "sum"
+              }
+            }
+
+            query {
+              metric_query {
+                name       = "failure"
+                query      = "sum:commerce_orchestrator.payment_failure{$orchestrator,$env} by {orchestrator}.as_count()"
+                aggregator = "sum"
+              }
+            }
+          }
+        }
+      }
+
+      # Overall Success Rate
+      widget {
+        timeseries_definition {
+          title       = "Overall Success Rate (%)"
+          show_legend = false
+
+          request {
+            formula {
+              formula_expression = "((add_success + update_success + payment_success) / (add_success + update_success + payment_success + add_failure + update_failure + payment_failure)) * 100"
+              alias              = "Success Rate"
+            }
+
+            query {
+              metric_query {
+                name  = "add_success"
+                query = "sum:commerce_orchestrator.add_cart_success{$orchestrator,$env}.as_count()"
+              }
+            }
+
+            query {
+              metric_query {
+                name  = "update_success"
+                query = "sum:commerce_orchestrator.update_cart_success{$orchestrator,$env}.as_count()"
+              }
+            }
+
+            query {
+              metric_query {
+                name  = "payment_success"
+                query = "sum:commerce_orchestrator.payment_success{$orchestrator,$env}.as_count()"
+              }
+            }
+
+            query {
+              metric_query {
+                name  = "add_failure"
+                query = "sum:commerce_orchestrator.add_cart_failure{$orchestrator,$env}.as_count()"
+              }
+            }
+
+            query {
+              metric_query {
+                name  = "update_failure"
+                query = "sum:commerce_orchestrator.update_cart_failure{$orchestrator,$env}.as_count()"
+              }
+            }
+
+            query {
+              metric_query {
+                name  = "payment_failure"
+                query = "sum:commerce_orchestrator.payment_failure{$orchestrator,$env}.as_count()"
+              }
+            }
+
+            style {
+              palette    = "semantic"
+              line_type  = "solid"
+              line_width = "thick"
+            }
+
+            display_type = "line"
+          }
+
+          yaxis {
+            include_zero = true
+            min          = "0"
+            max          = "100"
+            label        = "Success %"
+          }
+
+          marker {
+            value        = "y = 95"
+            display_type = "warning dashed"
+            label        = "95% Target"
+          }
+
+          marker {
+            value        = "y = 99"
+            display_type = "ok dashed"
+            label        = "99% Target"
+          }
+        }
+      }
+
+      # Overall Error Rate
+      widget {
+        timeseries_definition {
+          title       = "Overall Error Rate (%)"
+          show_legend = false
+
+          request {
+            formula {
+              formula_expression = "((add_failure + update_failure + payment_failure) / (add_success + update_success + payment_success + add_failure + update_failure + payment_failure)) * 100"
+              alias              = "Error Rate"
+            }
+
+            query {
+              metric_query {
+                name  = "add_success"
+                query = "sum:commerce_orchestrator.add_cart_success{$orchestrator,$env}.as_count()"
+              }
+            }
+
+            query {
+              metric_query {
+                name  = "update_success"
+                query = "sum:commerce_orchestrator.update_cart_success{$orchestrator,$env}.as_count()"
+              }
+            }
+
+            query {
+              metric_query {
+                name  = "payment_success"
+                query = "sum:commerce_orchestrator.payment_success{$orchestrator,$env}.as_count()"
+              }
+            }
+
+            query {
+              metric_query {
+                name  = "add_failure"
+                query = "sum:commerce_orchestrator.add_cart_failure{$orchestrator,$env}.as_count()"
+              }
+            }
+
+            query {
+              metric_query {
+                name  = "update_failure"
+                query = "sum:commerce_orchestrator.update_cart_failure{$orchestrator,$env}.as_count()"
+              }
+            }
+
+            query {
+              metric_query {
+                name  = "payment_failure"
+                query = "sum:commerce_orchestrator.payment_failure{$orchestrator,$env}.as_count()"
+              }
+            }
+
+            style {
+              palette    = "warm"
+              line_type  = "solid"
+              line_width = "thick"
+            }
+
+            display_type = "line"
+          }
+
+          yaxis {
+            include_zero = true
+            min          = "0"
+            label        = "Error %"
+          }
+
+          marker {
+            value        = "y = 5"
+            display_type = "error dashed"
+            label        = "5% Threshold"
+          }
+        }
+      }
+    }
+  }
+
+  # ========================================
+  # REQUEST VOLUME
+  # ========================================
+
+  widget {
+    group_definition {
+      title            = "📈 Request Volume by Operation"
+      layout_type      = "ordered"
+      background_color = "purple"
+
+      # Total Requests by Operation Type
+      widget {
+        timeseries_definition {
+          title       = "Total Requests by Operation"
+          show_legend = true
+
+          request {
+            formula {
+              formula_expression = "create"
+              alias              = "Create Cart"
+            }
+
+            query {
+              metric_query {
+                name  = "create"
+                query = "sum:commerce_orchestrator.add_cart_initiated{$orchestrator,$env} by {orchestrator}.as_count()"
+              }
+            }
+
+            style {
+              palette = "blue"
+            }
+
+            display_type = "bars"
+          }
+
+          request {
+            formula {
+              formula_expression = "update"
+              alias              = "Update Cart"
+            }
+
+            query {
+              metric_query {
+                name  = "update"
+                query = "sum:commerce_orchestrator.update_cart_initiated{$orchestrator,$env} by {orchestrator}.as_count()"
+              }
+            }
+
+            style {
+              palette = "purple"
+            }
+
+            display_type = "bars"
+          }
+
+          request {
+            formula {
+              formula_expression = "payment"
+              alias              = "Payment/Complete"
+            }
+
+            query {
+              metric_query {
+                name  = "payment"
+                query = "sum:commerce_orchestrator.payment_initiated{$orchestrator,$env} by {orchestrator}.as_count()"
+              }
+            }
+
+            style {
+              palette = "orange"
+            }
+
+            display_type = "bars"
+          }
+
+          yaxis {
+            include_zero = true
+            label        = "Requests"
+          }
+        }
+      }
+    }
+  }
+
+  # ========================================
+  # SUMMARY STATISTICS
+  # ========================================
+
+  widget {
+    group_definition {
+      title       = "📋 Summary Statistics (Last 1h)"
+      layout_type = "ordered"
+
+      # Overall Success Rate
+      widget {
+        query_value_definition {
+          title      = "✅ Overall Success Rate"
+          autoscale  = true
+          precision  = 2
+          text_align = "center"
+
+          request {
+            formula {
+              formula_expression = "((add_success + update_success + payment_success) / (add_success + update_success + payment_success + add_failure + update_failure + payment_failure)) * 100"
+            }
+
+            query {
+              metric_query {
+                name       = "add_success"
+                query      = "sum:commerce_orchestrator.add_cart_success{$orchestrator,$env}.as_count()"
+                aggregator = "sum"
+              }
+            }
+
+            query {
+              metric_query {
+                name       = "update_success"
+                query      = "sum:commerce_orchestrator.update_cart_success{$orchestrator,$env}.as_count()"
+                aggregator = "sum"
+              }
+            }
+
+            query {
+              metric_query {
+                name       = "payment_success"
+                query      = "sum:commerce_orchestrator.payment_success{$orchestrator,$env}.as_count()"
+                aggregator = "sum"
+              }
+            }
+
+            query {
+              metric_query {
+                name       = "add_failure"
+                query      = "sum:commerce_orchestrator.add_cart_failure{$orchestrator,$env}.as_count()"
+                aggregator = "sum"
+              }
+            }
+
+            query {
+              metric_query {
+                name       = "update_failure"
+                query      = "sum:commerce_orchestrator.update_cart_failure{$orchestrator,$env}.as_count()"
+                aggregator = "sum"
+              }
+            }
+
+            query {
+              metric_query {
+                name       = "payment_failure"
+                query      = "sum:commerce_orchestrator.payment_failure{$orchestrator,$env}.as_count()"
+                aggregator = "sum"
+              }
+            }
+
+            conditional_formats {
+              comparator = ">="
+              value      = 99
+              palette    = "white_on_green"
+            }
+
+            conditional_formats {
+              comparator = ">="
+              value      = 95
+              palette    = "white_on_yellow"
+            }
+
+            conditional_formats {
+              comparator = "<"
+              value      = 95
+              palette    = "white_on_red"
+            }
+          }
+
+          custom_unit = "%"
+        }
+      }
+
+      # Overall Error Rate
+      widget {
+        query_value_definition {
+          title      = "🔴 Overall Error Rate"
+          autoscale  = true
+          precision  = 2
+          text_align = "center"
+
+          request {
+            formula {
+              formula_expression = "((add_failure + update_failure + payment_failure) / (add_success + update_success + payment_success + add_failure + update_failure + payment_failure)) * 100"
+            }
+
+            query {
+              metric_query {
+                name       = "add_success"
+                query      = "sum:commerce_orchestrator.add_cart_success{$orchestrator,$env}.as_count()"
+                aggregator = "sum"
+              }
+            }
+
+            query {
+              metric_query {
+                name       = "update_success"
+                query      = "sum:commerce_orchestrator.update_cart_success{$orchestrator,$env}.as_count()"
+                aggregator = "sum"
+              }
+            }
+
+            query {
+              metric_query {
+                name       = "payment_success"
+                query      = "sum:commerce_orchestrator.payment_success{$orchestrator,$env}.as_count()"
+                aggregator = "sum"
+              }
+            }
+
+            query {
+              metric_query {
+                name       = "add_failure"
+                query      = "sum:commerce_orchestrator.add_cart_failure{$orchestrator,$env}.as_count()"
+                aggregator = "sum"
+              }
+            }
+
+            query {
+              metric_query {
+                name       = "update_failure"
+                query      = "sum:commerce_orchestrator.update_cart_failure{$orchestrator,$env}.as_count()"
+                aggregator = "sum"
+              }
+            }
+
+            query {
+              metric_query {
+                name       = "payment_failure"
+                query      = "sum:commerce_orchestrator.payment_failure{$orchestrator,$env}.as_count()"
+                aggregator = "sum"
+              }
+            }
+
+            conditional_formats {
+              comparator = "<="
+              value      = 1
+              palette    = "white_on_green"
+            }
+
+            conditional_formats {
+              comparator = "<="
+              value      = 5
+              palette    = "white_on_yellow"
+            }
+
+            conditional_formats {
+              comparator = ">"
+              value      = 5
+              palette    = "white_on_red"
+            }
+          }
+
+          custom_unit = "%"
+        }
+      }
+
+      # Total Successful Requests
+      widget {
+        query_value_definition {
+          title      = "✅ Total Successful Requests"
+          autoscale  = true
+          precision  = 0
+          text_align = "center"
+
+          request {
+            formula {
+              formula_expression = "add_success + update_success + payment_success"
+            }
+
+            query {
+              metric_query {
+                name       = "add_success"
+                query      = "sum:commerce_orchestrator.add_cart_success{$orchestrator,$env}.as_count()"
+                aggregator = "sum"
+              }
+            }
+
+            query {
+              metric_query {
+                name       = "update_success"
+                query      = "sum:commerce_orchestrator.update_cart_success{$orchestrator,$env}.as_count()"
+                aggregator = "sum"
+              }
+            }
+
+            query {
+              metric_query {
+                name       = "payment_success"
+                query      = "sum:commerce_orchestrator.payment_success{$orchestrator,$env}.as_count()"
+                aggregator = "sum"
+              }
+            }
+          }
+        }
+      }
+
+      # Total Failed Requests
+      widget {
+        query_value_definition {
+          title      = "🔴 Total Failed Requests"
+          autoscale  = true
+          precision  = 0
+          text_align = "center"
+
+          request {
+            formula {
+              formula_expression = "add_failure + update_failure + payment_failure"
+            }
+
+            query {
+              metric_query {
+                name       = "add_failure"
+                query      = "sum:commerce_orchestrator.add_cart_failure{$orchestrator,$env}.as_count()"
+                aggregator = "sum"
+              }
+            }
+
+            query {
+              metric_query {
+                name       = "update_failure"
+                query      = "sum:commerce_orchestrator.update_cart_failure{$orchestrator,$env}.as_count()"
+                aggregator = "sum"
+              }
+            }
+
+            query {
+              metric_query {
+                name       = "payment_failure"
+                query      = "sum:commerce_orchestrator.payment_failure{$orchestrator,$env}.as_count()"
+                aggregator = "sum"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+# Output dashboard URL
+output "datadog_dashboard_url" {
+  description = "URL of the Commerce Orchestrator Performance Dashboard"
+  value       = "https://app.datadoghq.eu/dashboard/${datadog_dashboard.commerce_orchestrator.id}"
+}

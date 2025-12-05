@@ -1,0 +1,181 @@
+import { Context, Hono } from 'hono';
+import { auth } from 'shared/middleware/auth';
+import { datadogTracing } from 'shared/middleware/datadogTracing';
+import { ALBEvent } from 'aws-lambda';
+import { WixClient } from 'shared/wix/wix-client';
+import { payPalCartSchema, completeCheckoutRequestSchema } from 'shared/schemas/openapi-schemas';
+import { StatusCode } from 'hono/utils/http-status';
+import { requestLogger } from 'shared/middleware/requestLogger';
+import { parseRequestBodyWithZod } from 'shared/middleware/parseRequestBodyWithZod';
+import { cartMetrics } from 'shared/middleware/cartMetrics';
+import { createErrorHandler } from 'shared/handlers/createErrorHandler';
+import { paymentMetrics } from 'shared/middleware/paymentMetrics';
+import { updateCartMetrics } from 'shared/middleware/updateCartMetric';
+import { getCacheImplementation } from 'shared/cache/cacheFactory';
+import { BadRequestError } from 'shared/errors';
+import type { PayPalCart } from 'shared/schemas/openapi-schemas';
+import { getWixCredentials } from './secrets';
+import { createCartSimulator, updateCartSimulator, completeCartSimulator } from 'shared/middleware/simulator';
+import { datadogCartMetrics, datadogUpdateCartMetrics, datadogPaymentMetrics } from 'shared/middleware/datadogMetrics';
+import { httpMetricsMiddleware } from 'shared/middleware/httpMetricsMiddleware';
+
+const app = new Hono();
+
+
+const BASE_PATH = '/commerceorchnodeserv/v2/wix';
+
+app.post(
+    `${BASE_PATH}/cart`,
+    requestLogger({ type: 'wix' }),
+    httpMetricsMiddleware({ orchestrator: 'wix', partner: "wix" }),
+    datadogTracing('wix'),
+    auth,
+    parseRequestBodyWithZod({ schema: payPalCartSchema }),
+    createCartSimulator('wix'),
+    datadogCartMetrics({ orchestrator: 'Wix' }),
+    async (c: Context) => {
+        const event = c.env.event as unknown as ALBEvent;
+        const data: PayPalCart = c.get('data');
+
+        // Process items to nullify variant_id when it equals item_id
+        if (data.items) {
+            data.items?.forEach((item) => {
+                if (item.variant_id === item.item_id) {
+                    item.variant_id = undefined;
+                }
+            });
+        }
+
+        const { clientId, clientSecret } = await getWixCredentials();
+        const wixClient = await WixClient.create(event, clientId, clientSecret);
+        const wixCartData = await wixClient.createCart(data);
+
+        // Cache the original request and Wix response
+        const cache = getCacheImplementation();
+        if (data.id) {
+            await cache.set(
+                data.id,
+                JSON.stringify({
+                    originalRequest: data,
+                    wixResponse: wixCartData,
+                })
+            );
+        }
+
+        c.status(201 as StatusCode);
+        return c.json(wixCartData);
+    }
+);
+
+app.post(
+    `${BASE_PATH}/cart/:cartId/complete`,
+    requestLogger({ type: 'wix' }),
+    httpMetricsMiddleware({ orchestrator: 'wix', partner: "wix" }),
+    datadogTracing('wix'),
+    auth,
+    parseRequestBodyWithZod({ schema: completeCheckoutRequestSchema }),
+    datadogPaymentMetrics({ orchestrator: 'Wix' }),
+    completeCartSimulator('wix'),
+    async (c: Context) => {
+        const event = c.env.event as unknown as ALBEvent;
+        const cartId = c.req.param('cartId');
+        const data = c.get('data');
+
+        // Get cached data to retrieve Wix cart ID
+        const cache = getCacheImplementation();
+        const cachedDataString = await cache.get(cartId);
+
+        if (!cachedDataString) {
+            throw new BadRequestError(cartId, {
+                details: [
+                    {
+                        description: `No cached data found for the provided cartId: ${cartId}`,
+                    },
+                ],
+            });
+        }
+
+        const cachedData = JSON.parse(cachedDataString);
+        const wixCartId = cachedData.wixResponse.id;
+
+        if (!wixCartId) {
+            throw new BadRequestError(cartId, {
+                details: [
+                    {
+                        description: 'Wix Cart ID not found in cache',
+                    },
+                ],
+            });
+        }
+
+        const { clientId, clientSecret } = await getWixCredentials();
+        const wixClient = await WixClient.create(event, clientId, clientSecret);
+        const wixCheckoutData = await wixClient.completeCart(wixCartId, data);
+
+        c.status(201 as StatusCode);
+        return c.json(wixCheckoutData);
+    }
+);
+
+app.put(
+    `${BASE_PATH}/cart/:cartId`,
+    requestLogger({ type: 'wix' }),
+    httpMetricsMiddleware({ orchestrator: 'wix', partner: "wix" }),
+    datadogTracing('wix'),
+    auth,
+    parseRequestBodyWithZod({ schema: payPalCartSchema }),
+    datadogUpdateCartMetrics({ orchestrator: 'Wix' }),
+    updateCartSimulator('wix'),
+    async (c: Context) => {
+        const event = c.env.event as unknown as ALBEvent;
+        const cartId = c.req.param('cartId');
+        const data: PayPalCart = c.get('data');
+
+        // Get cached data to retrieve Wix cart ID
+        const cache = getCacheImplementation();
+        const cachedDataString = await cache.get(cartId);
+
+        if (!cachedDataString) {
+            throw new BadRequestError(cartId, {
+                details: [
+                    {
+                        description: `No cached data found for the provided cartId: ${cartId}`,
+                    },
+                ],
+            });
+        }
+
+        const cachedData = JSON.parse(cachedDataString);
+        const wixCartId = cachedData.wixResponse.id;
+
+        if (!wixCartId) {
+            throw new BadRequestError(cartId, {
+                details: [
+                    {
+                        description: 'Wix Cart ID not found in cache',
+                    },
+                ],
+            });
+        }
+
+        const { clientId, clientSecret } = await getWixCredentials();
+        const wixClient = await WixClient.create(event, clientId, clientSecret);
+        const wixCartData = await wixClient.updateCart(wixCartId, data);
+
+        // Cache the original request and Wix response for updated cart
+        await cache.set(
+            cartId,
+            JSON.stringify({
+                originalRequest: data,
+                wixResponse: wixCartData,
+            })
+        );
+
+        c.status(200 as StatusCode);
+        return c.json(wixCartData);
+    }
+);
+
+app.onError(createErrorHandler('Wix'));
+
+export { app };

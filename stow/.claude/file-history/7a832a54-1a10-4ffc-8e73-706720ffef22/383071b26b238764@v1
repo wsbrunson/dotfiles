@@ -1,0 +1,38 @@
+import { APIGatewayRequestAuthorizerEventV2 } from "aws-lambda";
+import jwt from "jsonwebtoken";
+import { logger } from "shared/logger/logger";
+
+exports.handler = async (event: APIGatewayRequestAuthorizerEventV2) => {
+  const log = logger("AppContextAuthorizer", event);
+  const appContext = event.headers?.["paypal-application-context"];
+
+  if (!appContext || appContext.trim().length < 1) {
+    log.warn("AppContext is missing");
+    throw new Error("Unauthorized");
+  }
+
+  try {
+    const VERIFICATION_PEM = process.env.VERIFICATION_PEM;
+    if (!VERIFICATION_PEM) {
+      throw new Error("VERIFICATION_PEM environment variable is not set");
+    }
+    const publicKey =
+      "-----BEGIN PUBLIC KEY-----\n" +
+      VERIFICATION_PEM +
+      "\n-----END PUBLIC KEY-----";
+    log.info("Using public key for verification", {
+      hasPublicKey: !!publicKey,
+    });
+    jwt.verify(appContext, publicKey, { algorithms: ["RS256"] });
+
+    return {
+      isAuthorized: true,
+    };
+  } catch (err) {
+    log.error(
+      "JWT verification failed",
+      err instanceof Error ? err : new Error(String(err))
+    );
+    throw new Error("Unauthorized");
+  }
+};

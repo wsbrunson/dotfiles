@@ -1,0 +1,58 @@
+import { createMiddleware } from "hono/factory";
+import {
+  httpRequestInit,
+  httpRequestSuccess,
+  httpRequestError,
+  type HttpRequestMetrics,
+} from "./honoMetrics";
+
+export function honoMetricsMiddleware(platform?: string) {
+  return createMiddleware(async (c, next) => {
+    const metrics = httpRequestInit(c, platform);
+    c.set("requestMetrics", metrics);
+
+    try {
+      await next();
+      httpRequestSuccess(metrics, c.res.status);
+    } catch (error) {
+      httpRequestError(metrics, error);
+      throw error;
+    }
+  });
+}
+
+export function honoMetricsMiddlewareAdvanced(options: {
+  platform?: string;
+  skipRoutes?: string[];
+  enableDurationHistogram?: boolean;
+}) {
+  const {
+    platform,
+    skipRoutes = [],
+    enableDurationHistogram = false,
+  } = options;
+
+  return createMiddleware(async (c, next) => {
+    if (skipRoutes.some((route) => c.req.path.startsWith(route))) {
+      await next();
+      return;
+    }
+
+    const metrics = httpRequestInit(c, platform);
+    c.set("requestMetrics", metrics);
+
+    try {
+      await next();
+      httpRequestSuccess(c.get("requestMetrics"), c.res.status);
+    } catch (error) {
+      httpRequestError(c.get("requestMetrics"), error);
+      throw error;
+    }
+  });
+}
+
+declare module "hono" {
+  interface ContextVariableMap {
+    requestMetrics: HttpRequestMetrics;
+  }
+}

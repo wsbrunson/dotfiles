@@ -1,0 +1,1115 @@
+2025-11-19T16:02:31.954Z [DEBUG] Watching for changes in setting files /Users/wbrunson/.claude/settings.json...
+2025-11-19T16:02:32.049Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2025-11-19T16:02:32.049Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2025-11-19T16:02:32.050Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2025-11-19T16:02:32.050Z [DEBUG] [LSP SERVER MANAGER] initialize() called
+2025-11-19T16:02:32.050Z [DEBUG] [LSP SERVER MANAGER] Calling getAllLspServers()
+2025-11-19T16:02:32.078Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+2025-11-19T16:02:32.080Z [DEBUG] Total LSP servers loaded: 0
+2025-11-19T16:02:32.084Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2025-11-19T16:02:32.084Z [DEBUG] LSP manager initialized with 0 servers
+2025-11-19T16:02:32.116Z [DEBUG] LSP server manager initialized successfully
+2025-11-19T16:02:32.116Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2025-11-19T16:02:32.121Z [DEBUG] Loading skills from directories: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/wbrunson/.claude/skills, project=/Users/wbrunson/workspace/pagerduty-configurations/.claude/skills
+2025-11-19T16:02:32.121Z [DEBUG] >>>>> getPluginSkills CALLED <<<<<
+2025-11-19T16:02:32.182Z [DEBUG] Creating shell snapshot for zsh (/bin/zsh)
+2025-11-19T16:02:32.182Z [DEBUG] Looking for shell config file: /Users/wbrunson/.zshrc
+2025-11-19T16:02:32.182Z [DEBUG] Snapshots directory: /Users/wbrunson/.claude/shell-snapshots
+2025-11-19T16:02:32.183Z [DEBUG] Creating snapshot at: /Users/wbrunson/.claude/shell-snapshots/snapshot-zsh-1763568152182-o5bolo.sh
+2025-11-19T16:02:32.183Z [DEBUG] Shell binary exists: true
+2025-11-19T16:02:32.183Z [DEBUG] Execution timeout: 10000ms
+2025-11-19T16:02:32.186Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568152186
+2025-11-19T16:02:32.191Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-19T16:02:32.191Z [DEBUG] Renaming /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568152186 to /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json
+2025-11-19T16:02:32.192Z [DEBUG] File /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json written atomically
+2025-11-19T16:02:32.198Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
+2025-11-19T16:02:32.198Z [DEBUG] Total plugin skills loaded: 0
+2025-11-19T16:02:32.198Z [DEBUG] Total plugin commands loaded: 0
+2025-11-19T16:02:32.199Z [DEBUG] Registered 0 hooks from 0 plugins
+2025-11-19T16:02:32.199Z [DEBUG] Loaded 0 unique skills (managed: 0, user: 0, project: 0, duplicates removed: 0)
+2025-11-19T16:02:32.199Z [DEBUG] getSkillsIfEnabled returning: 0 skill dir commands, 0 plugin skills
+2025-11-19T16:02:32.275Z [DEBUG] Shell snapshot created successfully (1496 bytes)
+2025-11-19T16:02:32.475Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:02:32.475Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568152475
+2025-11-19T16:02:32.475Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:02:32.481Z [DEBUG] Temp file written successfully, size: 53492 bytes
+2025-11-19T16:02:32.481Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:02:32.481Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568152475 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:02:32.482Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-19T16:02:32.484Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:02:32.484Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568152484
+2025-11-19T16:02:32.484Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:02:32.487Z [DEBUG] Temp file written successfully, size: 53492 bytes
+2025-11-19T16:02:32.488Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:02:32.488Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568152484 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:02:32.489Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-19T16:02:32.523Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:02:32.523Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568152523
+2025-11-19T16:02:32.523Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:02:32.528Z [DEBUG] Temp file written successfully, size: 53614 bytes
+2025-11-19T16:02:32.528Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:02:32.528Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568152523 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:02:32.530Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-19T16:02:32.579Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg)
+2025-11-19T16:02:32.582Z [DEBUG] Total plugin agents loaded: 0
+2025-11-19T16:02:32.612Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:02:32.612Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568152612
+2025-11-19T16:02:32.612Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:02:32.617Z [DEBUG] Temp file written successfully, size: 53614 bytes
+2025-11-19T16:02:32.618Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:02:32.618Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568152612 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:02:32.619Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-19T16:02:32.631Z [DEBUG] Getting matching hook commands for SessionStart with query: startup
+2025-11-19T16:02:32.631Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:02:32.631Z [DEBUG] Matched 0 unique hooks for query "startup" (0 before deduplication)
+2025-11-19T16:02:32.655Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:02:32.656Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568152656
+2025-11-19T16:02:32.656Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:02:32.660Z [DEBUG] Temp file written successfully, size: 53509 bytes
+2025-11-19T16:02:32.660Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:02:32.660Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568152656 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:02:32.661Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-19T16:02:32.663Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:02:32.663Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568152663
+2025-11-19T16:02:32.663Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:02:32.667Z [DEBUG] Temp file written successfully, size: 53509 bytes
+2025-11-19T16:02:32.667Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:02:32.668Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568152663 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:02:32.668Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-19T16:02:32.673Z [DEBUG] performStartupChecks called
+2025-11-19T16:02:32.673Z [DEBUG] Trust not accepted for current directory - skipping plugin installations
+2025-11-19T16:02:32.678Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-19T16:02:32.682Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:02:32.683Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568152683
+2025-11-19T16:02:32.683Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:02:32.687Z [DEBUG] Temp file written successfully, size: 53614 bytes
+2025-11-19T16:02:32.687Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:02:32.687Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568152683 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:02:32.688Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-19T16:02:32.696Z [DEBUG] Loaded plugins - Enabled: 0, Disabled: 0, Commands: 0, Agents: 0, Errors: 0
+2025-11-19T16:02:32.741Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:02:32.741Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568152741
+2025-11-19T16:02:32.742Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:02:32.744Z [DEBUG] Temp file written successfully, size: 53614 bytes
+2025-11-19T16:02:32.744Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:02:32.745Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568152741 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:02:32.745Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-19T16:02:32.802Z [DEBUG] Getting matching hook commands for SubagentStart with query: Explore
+2025-11-19T16:02:32.802Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:02:32.802Z [DEBUG] Matched 0 unique hooks for query "Explore" (0 before deduplication)
+2025-11-19T16:02:32.803Z [DEBUG] Getting matching hook commands for SubagentStart with query: Plan
+2025-11-19T16:02:32.803Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:02:32.803Z [DEBUG] Matched 0 unique hooks for query "Plan" (0 before deduplication)
+2025-11-19T16:02:32.806Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:02:32.807Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:02:33.229Z [ERROR] Error: Error: 404 The specified resource does not exist.
+    at D9.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:436:20153)
+    at YT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:778:2195)
+    at YT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:778:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1729:2699
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1729:2197
+    at async Ez5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1728:2364)
+    at async f92 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1729:2130)
+    at async ZMA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2102:97)
+    at async m21 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2102:306)
+2025-11-19T16:02:33.433Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:02:33.571Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:02:33.832Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:02:33.860Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:02:33.860Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568153860
+2025-11-19T16:02:33.861Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:02:33.866Z [DEBUG] Temp file written successfully, size: 53643 bytes
+2025-11-19T16:02:33.867Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:02:33.867Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568153860 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:02:33.867Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-19T16:02:34.014Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:02:34.014Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568154014
+2025-11-19T16:02:34.015Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:02:34.019Z [DEBUG] Temp file written successfully, size: 54271 bytes
+2025-11-19T16:02:34.020Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:02:34.020Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568154014 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:02:34.021Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-19T16:02:35.476Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+2025-11-19T16:02:35.476Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:02:35.477Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-19T16:02:36.371Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+2025-11-19T16:02:36.371Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:02:36.371Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-19T16:03:41.372Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:03:41.373Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:03:41.378Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:03:41.378Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:03:41.408Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-19T16:03:41.408Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:03:41.408Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-19T16:03:41.410Z [DEBUG] FileHistory: Added snapshot for 9dc614f7-3c46-46f3-a6c6-aadef409eea3, tracking 0 files
+2025-11-19T16:03:41.429Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:03:41.430Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568221430
+2025-11-19T16:03:41.431Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:03:41.437Z [DEBUG] Temp file written successfully, size: 54316 bytes
+2025-11-19T16:03:41.439Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:03:41.439Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568221430 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:03:41.440Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-19T16:03:41.453Z [DEBUG] Total plugin output styles loaded: 0
+2025-11-19T16:03:41.468Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:03:41.469Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:03:42.406Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:03:42.962Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:03:46.147Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-19T16:03:46.149Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-19T16:03:46.151Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-19T16:03:46.151Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:03:46.151Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T16:03:46.152Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-19T16:03:46.152Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:03:46.152Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T16:03:46.173Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-19T16:03:46.173Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:03:46.173Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T16:03:46.174Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-19T16:03:46.174Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:03:46.174Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T16:03:46.200Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:03:46.201Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:03:46.204Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:03:46.204Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:03:46.219Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:03:46.219Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:03:48.021Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:03:51.299Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-19T16:03:51.301Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-19T16:03:51.302Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:03:51.302Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:03:51.309Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568231309
+2025-11-19T16:03:51.310Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T16:03:51.315Z [DEBUG] Temp file written successfully, size: 400 bytes
+2025-11-19T16:03:51.316Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:03:51.316Z [DEBUG] Renaming /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568231309 to /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json
+2025-11-19T16:03:51.317Z [DEBUG] File /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json written atomically
+2025-11-19T16:03:51.324Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-19T16:03:51.324Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:03:51.325Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:03:51.337Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:03:51.338Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:03:51.340Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:03:51.340Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:03:51.351Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:03:51.352Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:03:53.001Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:03:54.036Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-19T16:03:54.038Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-19T16:03:54.038Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:03:54.038Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:03:54.043Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568234043
+2025-11-19T16:03:54.043Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T16:03:54.050Z [DEBUG] Temp file written successfully, size: 404 bytes
+2025-11-19T16:03:54.050Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:03:54.051Z [DEBUG] Renaming /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568234043 to /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json
+2025-11-19T16:03:54.051Z [DEBUG] File /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json written atomically
+2025-11-19T16:03:54.058Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-19T16:03:54.058Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:03:54.058Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:03:54.071Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:03:54.071Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:03:54.074Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:03:54.074Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:03:54.085Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:03:54.086Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:03:55.513Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:03:59.209Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-19T16:03:59.211Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-19T16:03:59.212Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:03:59.212Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T16:03:59.223Z [DEBUG] Permission suggestions for Edit: [
+  {
+    "type": "setMode",
+    "mode": "acceptEdits",
+    "destination": "session"
+  }
+]
+2025-11-19T16:03:59.240Z [DEBUG] executePermissionRequestHooks called for tool: Edit
+2025-11-19T16:03:59.245Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Edit
+2025-11-19T16:03:59.245Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:03:59.246Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T16:04:05.239Z [DEBUG] Getting matching hook commands for Notification with query: permission_prompt
+2025-11-19T16:04:05.240Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:04:05.240Z [DEBUG] Matched 0 unique hooks for query "permission_prompt" (0 before deduplication)
+2025-11-19T16:04:24.569Z [DEBUG] Applying permission update: Setting mode to 'acceptEdits'
+2025-11-19T16:04:24.579Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-19T16:04:24.589Z [DEBUG] FileHistory: Tracked file modification for /Users/wbrunson/workspace/pagerduty-configurations/paypal/ryprichard/oalfares/gabalaji/oac-escalation-commerce-orchestration.tf
+2025-11-19T16:04:24.596Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/pagerduty-configurations/paypal/ryprichard/oalfares/gabalaji/oac-escalation-commerce-orchestration.tf.tmp.5007.1763568264596
+2025-11-19T16:04:24.599Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:04:24.605Z [DEBUG] Temp file written successfully, size: 2180 bytes
+2025-11-19T16:04:24.606Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:04:24.606Z [DEBUG] Renaming /Users/wbrunson/workspace/pagerduty-configurations/paypal/ryprichard/oalfares/gabalaji/oac-escalation-commerce-orchestration.tf.tmp.5007.1763568264596 to /Users/wbrunson/workspace/pagerduty-configurations/paypal/ryprichard/oalfares/gabalaji/oac-escalation-commerce-orchestration.tf
+2025-11-19T16:04:24.607Z [DEBUG] File /Users/wbrunson/workspace/pagerduty-configurations/paypal/ryprichard/oalfares/gabalaji/oac-escalation-commerce-orchestration.tf written atomically
+2025-11-19T16:04:24.617Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-19T16:04:24.617Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:04:24.617Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T16:04:24.649Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:04:24.650Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:04:24.653Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:04:24.654Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:04:24.668Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:04:24.669Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:04:26.602Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:04:28.105Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-19T16:04:28.112Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-19T16:04:28.112Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:04:28.112Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T16:04:28.121Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/pagerduty-configurations/paypal/ryprichard/oalfares/gabalaji/oac-escalation-commerce-orchestration.tf.tmp.5007.1763568268121
+2025-11-19T16:04:28.122Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:04:28.129Z [DEBUG] Temp file written successfully, size: 2194 bytes
+2025-11-19T16:04:28.129Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:04:28.130Z [DEBUG] Renaming /Users/wbrunson/workspace/pagerduty-configurations/paypal/ryprichard/oalfares/gabalaji/oac-escalation-commerce-orchestration.tf.tmp.5007.1763568268121 to /Users/wbrunson/workspace/pagerduty-configurations/paypal/ryprichard/oalfares/gabalaji/oac-escalation-commerce-orchestration.tf
+2025-11-19T16:04:28.131Z [DEBUG] File /Users/wbrunson/workspace/pagerduty-configurations/paypal/ryprichard/oalfares/gabalaji/oac-escalation-commerce-orchestration.tf written atomically
+2025-11-19T16:04:28.139Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-19T16:04:28.139Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:04:28.140Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T16:04:28.160Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:04:28.161Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:04:28.165Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:04:28.166Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:04:28.180Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:04:28.180Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:04:29.801Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:04:31.087Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-19T16:04:31.089Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-19T16:04:31.090Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:04:31.090Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T16:04:31.100Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/pagerduty-configurations/paypal/ryprichard/oalfares/gabalaji/oac-escalation-commerce-orchestration.tf.tmp.5007.1763568271100
+2025-11-19T16:04:31.101Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:04:31.105Z [DEBUG] Temp file written successfully, size: 2208 bytes
+2025-11-19T16:04:31.106Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:04:31.106Z [DEBUG] Renaming /Users/wbrunson/workspace/pagerduty-configurations/paypal/ryprichard/oalfares/gabalaji/oac-escalation-commerce-orchestration.tf.tmp.5007.1763568271100 to /Users/wbrunson/workspace/pagerduty-configurations/paypal/ryprichard/oalfares/gabalaji/oac-escalation-commerce-orchestration.tf
+2025-11-19T16:04:31.106Z [DEBUG] File /Users/wbrunson/workspace/pagerduty-configurations/paypal/ryprichard/oalfares/gabalaji/oac-escalation-commerce-orchestration.tf written atomically
+2025-11-19T16:04:31.116Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-19T16:04:31.117Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:04:31.117Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T16:04:31.138Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:04:31.139Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:04:31.141Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:04:31.142Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:04:31.156Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:04:31.156Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:04:32.689Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:04:34.028Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-19T16:04:34.030Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-19T16:04:34.031Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:04:34.031Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T16:04:34.041Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/pagerduty-configurations/paypal/ryprichard/oalfares/gabalaji/oac-escalation-commerce-orchestration.tf.tmp.5007.1763568274041
+2025-11-19T16:04:34.041Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:04:34.045Z [DEBUG] Temp file written successfully, size: 2221 bytes
+2025-11-19T16:04:34.046Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:04:34.046Z [DEBUG] Renaming /Users/wbrunson/workspace/pagerduty-configurations/paypal/ryprichard/oalfares/gabalaji/oac-escalation-commerce-orchestration.tf.tmp.5007.1763568274041 to /Users/wbrunson/workspace/pagerduty-configurations/paypal/ryprichard/oalfares/gabalaji/oac-escalation-commerce-orchestration.tf
+2025-11-19T16:04:34.047Z [DEBUG] File /Users/wbrunson/workspace/pagerduty-configurations/paypal/ryprichard/oalfares/gabalaji/oac-escalation-commerce-orchestration.tf written atomically
+2025-11-19T16:04:34.053Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-19T16:04:34.053Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:04:34.054Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T16:04:34.078Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:04:34.079Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:04:34.082Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:04:34.083Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:04:34.094Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:04:34.095Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:04:36.060Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:04:38.048Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-19T16:04:38.050Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-19T16:04:38.050Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:04:38.051Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:04:38.061Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568278061
+2025-11-19T16:04:38.061Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T16:04:38.066Z [DEBUG] Temp file written successfully, size: 406 bytes
+2025-11-19T16:04:38.066Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:04:38.067Z [DEBUG] Renaming /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568278061 to /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json
+2025-11-19T16:04:38.068Z [DEBUG] File /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json written atomically
+2025-11-19T16:04:38.074Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-19T16:04:38.074Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:04:38.075Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:04:38.089Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:04:38.089Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:04:38.092Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:04:38.092Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:04:38.105Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:04:38.105Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:04:40.044Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:04:43.393Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-19T16:04:43.395Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-19T16:04:43.398Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:04:43.399Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T16:04:43.411Z [DEBUG] FileHistory: Tracked file modification for /Users/wbrunson/workspace/pagerduty-configurations/paypal/ryprichard/oalfares/gabalaji/oac-schedule-commerce-orchestration.tf
+2025-11-19T16:04:43.413Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/pagerduty-configurations/paypal/ryprichard/oalfares/gabalaji/oac-schedule-commerce-orchestration.tf.tmp.5007.1763568283413
+2025-11-19T16:04:43.413Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:04:43.415Z [DEBUG] Temp file written successfully, size: 913 bytes
+2025-11-19T16:04:43.415Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:04:43.419Z [DEBUG] Renaming /Users/wbrunson/workspace/pagerduty-configurations/paypal/ryprichard/oalfares/gabalaji/oac-schedule-commerce-orchestration.tf.tmp.5007.1763568283413 to /Users/wbrunson/workspace/pagerduty-configurations/paypal/ryprichard/oalfares/gabalaji/oac-schedule-commerce-orchestration.tf
+2025-11-19T16:04:43.420Z [DEBUG] File /Users/wbrunson/workspace/pagerduty-configurations/paypal/ryprichard/oalfares/gabalaji/oac-schedule-commerce-orchestration.tf written atomically
+2025-11-19T16:04:43.427Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-19T16:04:43.427Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:04:43.428Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T16:04:43.451Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:04:43.452Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:04:43.454Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:04:43.455Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:04:43.470Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:04:43.471Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:04:45.251Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:04:46.348Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-19T16:04:46.350Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-19T16:04:46.351Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:04:46.351Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:04:46.357Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568286357
+2025-11-19T16:04:46.357Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T16:04:46.362Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-19T16:04:46.363Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:04:46.363Z [DEBUG] Renaming /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568286357 to /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json
+2025-11-19T16:04:46.364Z [DEBUG] File /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json written atomically
+2025-11-19T16:04:46.369Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-19T16:04:46.370Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:04:46.370Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:04:46.381Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:04:46.381Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:04:46.384Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:04:46.385Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:04:46.397Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:04:46.397Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:04:48.897Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:04:54.121Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-19T16:04:54.122Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:04:54.122Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-19T16:04:54.139Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:04:54.139Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568294139
+2025-11-19T16:04:54.140Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:04:54.146Z [DEBUG] Temp file written successfully, size: 54316 bytes
+2025-11-19T16:04:54.147Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:04:54.147Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568294139 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:04:54.148Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-19T16:04:54.154Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:04:54.154Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568294154
+2025-11-19T16:04:54.154Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:04:54.159Z [DEBUG] Temp file written successfully, size: 54316 bytes
+2025-11-19T16:04:54.160Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:04:54.161Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568294154 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:04:54.162Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-19T16:06:54.034Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:06:54.034Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:06:54.038Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:06:54.039Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:06:54.066Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-19T16:06:54.067Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:06:54.067Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-19T16:06:54.069Z [DEBUG] FileHistory: Making snapshot for message e7dea17a-8312-4b7d-92d7-122cf54590dc
+2025-11-19T16:06:54.079Z [DEBUG] FileHistory: Added snapshot for e7dea17a-8312-4b7d-92d7-122cf54590dc, tracking 2 files
+2025-11-19T16:06:54.138Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:06:54.139Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:06:54.806Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:06:55.911Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:06:59.493Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-19T16:06:59.495Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-19T16:06:59.495Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:06:59.496Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:06:59.505Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568419505
+2025-11-19T16:06:59.506Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T16:06:59.511Z [DEBUG] Temp file written successfully, size: 695 bytes
+2025-11-19T16:06:59.511Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:06:59.511Z [DEBUG] Renaming /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568419505 to /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json
+2025-11-19T16:06:59.512Z [DEBUG] File /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json written atomically
+2025-11-19T16:06:59.517Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-19T16:06:59.518Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:06:59.518Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:06:59.531Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:06:59.531Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:06:59.534Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:06:59.535Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:06:59.547Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:06:59.547Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:07:01.589Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:07:03.195Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-19T16:07:03.198Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-19T16:07:03.198Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:03.198Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:07:03.203Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568423203
+2025-11-19T16:07:03.204Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T16:07:03.210Z [DEBUG] Temp file written successfully, size: 699 bytes
+2025-11-19T16:07:03.211Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:07:03.212Z [DEBUG] Renaming /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568423203 to /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json
+2025-11-19T16:07:03.213Z [DEBUG] File /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json written atomically
+2025-11-19T16:07:03.220Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-19T16:07:03.221Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:03.221Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:07:03.234Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:07:03.235Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:07:03.237Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:07:03.238Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:07:03.249Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:07:03.250Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:07:05.039Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:07:06.807Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-19T16:07:06.809Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-19T16:07:06.812Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-19T16:07:06.812Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:06.813Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T16:07:06.813Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-19T16:07:06.813Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:06.814Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T16:07:06.834Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-19T16:07:06.834Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:06.835Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T16:07:06.835Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-19T16:07:06.835Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:06.836Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T16:07:06.861Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:07:06.861Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:07:06.864Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:07:06.865Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:07:06.880Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:07:06.880Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:07:08.657Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:07:11.813Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-19T16:07:11.816Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-19T16:07:11.817Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:11.817Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:07:11.823Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568431823
+2025-11-19T16:07:11.823Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T16:07:11.828Z [DEBUG] Temp file written successfully, size: 701 bytes
+2025-11-19T16:07:11.828Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:07:11.828Z [DEBUG] Renaming /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568431823 to /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json
+2025-11-19T16:07:11.829Z [DEBUG] File /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json written atomically
+2025-11-19T16:07:11.835Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-19T16:07:11.835Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:11.835Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:07:11.846Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:07:11.847Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:07:11.850Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:07:11.850Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:07:11.868Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:07:11.868Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:07:14.165Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:07:16.494Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-19T16:07:16.496Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-19T16:07:16.498Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:16.500Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T16:07:17.000Z [ERROR] Error: Error: 404 The specified resource does not exist.
+    at D9.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:436:20153)
+    at YT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:778:2195)
+    at YT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:778:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1729:2699
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1729:2197
+    at async Ez5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1728:2364)
+    at async f92 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1729:2130)
+    at async j62 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1788:28484)
+    at async Object.call (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1797:963)
+2025-11-19T16:07:17.010Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-19T16:07:17.011Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:17.012Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T16:07:17.029Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:07:17.031Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:07:17.035Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:07:17.037Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:07:17.057Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:07:17.057Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:07:20.156Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:07:22.525Z [DEBUG] executePreToolHooks called for tool: Grep
+2025-11-19T16:07:22.528Z [DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+2025-11-19T16:07:22.528Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:22.529Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-19T16:07:22.723Z [DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+2025-11-19T16:07:22.723Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:22.723Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-19T16:07:22.736Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:07:22.736Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:07:22.739Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:07:22.740Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:07:22.752Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:07:22.752Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:07:24.688Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:07:27.195Z [DEBUG] executePreToolHooks called for tool: Grep
+2025-11-19T16:07:27.197Z [DEBUG] executePreToolHooks called for tool: Grep
+2025-11-19T16:07:27.200Z [DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+2025-11-19T16:07:27.201Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:27.201Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-19T16:07:27.201Z [DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+2025-11-19T16:07:27.201Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:27.201Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-19T16:07:27.494Z [DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+2025-11-19T16:07:27.494Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:27.494Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-19T16:07:27.510Z [DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+2025-11-19T16:07:27.510Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:27.510Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-19T16:07:27.527Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:07:27.527Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:07:27.531Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:07:27.531Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:07:27.553Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:07:27.553Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:07:29.410Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:07:31.483Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-19T16:07:31.485Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-19T16:07:31.486Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:31.486Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:07:31.492Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568451492
+2025-11-19T16:07:31.493Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T16:07:31.499Z [DEBUG] Temp file written successfully, size: 703 bytes
+2025-11-19T16:07:31.501Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:07:31.501Z [DEBUG] Renaming /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568451492 to /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json
+2025-11-19T16:07:31.502Z [DEBUG] File /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json written atomically
+2025-11-19T16:07:31.508Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-19T16:07:31.508Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:31.509Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:07:31.523Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:07:31.524Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:07:31.527Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:07:31.528Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:07:31.544Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:07:31.544Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:07:32.003Z [DEBUG] Metrics opt-out check failed: No API key available
+2025-11-19T16:07:32.004Z [DEBUG] Metrics check failed, defaulting to disabled
+2025-11-19T16:07:32.004Z [DEBUG] Metrics export disabled by organization setting
+2025-11-19T16:07:33.774Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:07:35.078Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-19T16:07:35.081Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-19T16:07:35.082Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:35.083Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T16:07:35.100Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-19T16:07:35.100Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:35.100Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T16:07:35.116Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:07:35.117Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:07:35.120Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:07:35.120Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:07:35.134Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:07:35.135Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:07:36.954Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:07:40.268Z [DEBUG] executePreToolHooks called for tool: Grep
+2025-11-19T16:07:40.271Z [DEBUG] executePreToolHooks called for tool: Grep
+2025-11-19T16:07:40.274Z [DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+2025-11-19T16:07:40.274Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:40.275Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-19T16:07:40.275Z [DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+2025-11-19T16:07:40.275Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:40.275Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-19T16:07:40.317Z [DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+2025-11-19T16:07:40.318Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:40.318Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-19T16:07:40.332Z [DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+2025-11-19T16:07:40.332Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:40.332Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-19T16:07:40.347Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:07:40.347Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:07:40.351Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:07:40.351Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:07:40.366Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:07:40.366Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:07:42.515Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:07:43.863Z [DEBUG] executePreToolHooks called for tool: Grep
+2025-11-19T16:07:43.867Z [DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+2025-11-19T16:07:43.868Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:43.868Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-19T16:07:43.891Z [DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+2025-11-19T16:07:43.891Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:43.892Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-19T16:07:43.905Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:07:43.905Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:07:43.908Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:07:43.909Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:07:43.928Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:07:43.928Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:07:45.694Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:07:47.661Z [DEBUG] executePreToolHooks called for tool: Grep
+2025-11-19T16:07:47.665Z [DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+2025-11-19T16:07:47.667Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:47.667Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-19T16:07:47.694Z [DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+2025-11-19T16:07:47.694Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:47.694Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-19T16:07:47.708Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:07:47.709Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:07:47.712Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:07:47.712Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:07:47.726Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:07:47.726Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:07:49.613Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:07:51.699Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-19T16:07:51.701Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-19T16:07:51.701Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:51.702Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:07:51.707Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568471707
+2025-11-19T16:07:51.707Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T16:07:51.714Z [DEBUG] Temp file written successfully, size: 705 bytes
+2025-11-19T16:07:51.715Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:07:51.715Z [DEBUG] Renaming /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568471707 to /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json
+2025-11-19T16:07:51.715Z [DEBUG] File /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json written atomically
+2025-11-19T16:07:51.721Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-19T16:07:51.721Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:51.721Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:07:51.734Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:07:51.734Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:07:51.737Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:07:51.738Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:07:51.750Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:07:51.750Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:07:54.098Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:07:56.957Z [DEBUG] executePreToolHooks called for tool: Grep
+2025-11-19T16:07:56.961Z [DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+2025-11-19T16:07:56.962Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:56.962Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-19T16:07:56.994Z [DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+2025-11-19T16:07:56.994Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:07:56.995Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-19T16:07:57.010Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:07:57.011Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:07:57.014Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:07:57.014Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:07:57.028Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:07:57.029Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:07:59.397Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:08:00.136Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-19T16:08:00.139Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-19T16:08:00.140Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:08:00.141Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T16:08:00.153Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-19T16:08:00.153Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:08:00.154Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T16:08:00.169Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:08:00.170Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:08:00.173Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:08:00.173Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:08:00.188Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:08:00.189Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:08:02.132Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:08:04.109Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-19T16:08:04.111Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-19T16:08:04.112Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:08:04.115Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:08:04.123Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568484123
+2025-11-19T16:08:04.123Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T16:08:04.127Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-19T16:08:04.128Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:08:04.128Z [DEBUG] Renaming /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568484123 to /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json
+2025-11-19T16:08:04.128Z [DEBUG] File /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json written atomically
+2025-11-19T16:08:04.134Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-19T16:08:04.134Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:08:04.134Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:08:04.146Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:08:04.147Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:08:04.150Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:08:04.150Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:08:04.165Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:08:04.166Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:08:05.749Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:08:16.573Z [ERROR] Error: Error: Language not supported while highlighting code, falling back to markdown: terraform
+    at IE (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1105:4489)
+    at file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1105:4217
+    at Array.map (<anonymous>)
+    at QD (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1105:4208)
+    at X32 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1828:3681)
+    at lq (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:105:19416)
+    at hQA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:107:42839)
+    at p9 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:107:38371)
+    at Na (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:107:38299)
+    at BN (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:107:38153)
+2025-11-19T16:08:16.636Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-19T16:08:16.640Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:08:16.640Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-19T16:08:16.653Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:08:16.653Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568496653
+2025-11-19T16:08:16.653Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:08:16.660Z [DEBUG] Temp file written successfully, size: 54316 bytes
+2025-11-19T16:08:16.660Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:08:16.661Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568496653 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:08:16.663Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-19T16:08:16.667Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:08:16.667Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568496667
+2025-11-19T16:08:16.668Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:08:16.670Z [DEBUG] Temp file written successfully, size: 54316 bytes
+2025-11-19T16:08:16.670Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:08:16.670Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568496667 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:08:16.671Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-19T16:08:40.423Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:08:40.423Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:08:40.426Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:08:40.426Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:08:40.444Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-19T16:08:40.444Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:08:40.444Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-19T16:08:40.446Z [DEBUG] FileHistory: Making snapshot for message 22686694-7e7e-403d-94c1-409f40ef8780
+2025-11-19T16:08:40.448Z [DEBUG] FileHistory: Added snapshot for 22686694-7e7e-403d-94c1-409f40ef8780, tracking 2 files
+2025-11-19T16:08:40.482Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:08:40.483Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:08:41.119Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:08:42.560Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:08:45.055Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-19T16:08:45.057Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-19T16:08:45.057Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:08:45.059Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:08:45.066Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568525066
+2025-11-19T16:08:45.067Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T16:08:45.070Z [DEBUG] Temp file written successfully, size: 514 bytes
+2025-11-19T16:08:45.072Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:08:45.072Z [DEBUG] Renaming /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568525066 to /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json
+2025-11-19T16:08:45.073Z [DEBUG] File /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json written atomically
+2025-11-19T16:08:45.079Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-19T16:08:45.079Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:08:45.079Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:08:45.092Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:08:45.092Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:08:45.094Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:08:45.095Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:08:45.108Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:08:45.108Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:08:47.192Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:08:48.509Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-19T16:08:48.511Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-19T16:08:48.512Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:08:48.512Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:08:48.517Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568528517
+2025-11-19T16:08:48.518Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T16:08:48.522Z [DEBUG] Temp file written successfully, size: 518 bytes
+2025-11-19T16:08:48.522Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:08:48.522Z [DEBUG] Renaming /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568528517 to /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json
+2025-11-19T16:08:48.523Z [DEBUG] File /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json written atomically
+2025-11-19T16:08:48.529Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-19T16:08:48.530Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:08:48.530Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:08:48.542Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:08:48.543Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:08:48.546Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:08:48.546Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:08:48.560Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:08:48.560Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:08:50.469Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:08:51.998Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-19T16:08:52.002Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-19T16:08:52.005Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:08:52.006Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T16:08:52.020Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-19T16:08:52.020Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:08:52.020Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T16:08:52.036Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:08:52.036Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:08:52.039Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:08:52.039Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:08:52.052Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:08:52.053Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:08:53.786Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:08:57.311Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-19T16:08:57.314Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-19T16:08:57.314Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:08:57.315Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T16:08:57.327Z [DEBUG] FileHistory: Tracked file modification for /Users/wbrunson/workspace/pagerduty-configurations/paypal/teams.tf
+2025-11-19T16:08:57.332Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/pagerduty-configurations/paypal/teams.tf.tmp.5007.1763568537332
+2025-11-19T16:08:57.333Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:08:57.336Z [DEBUG] Temp file written successfully, size: 167638 bytes
+2025-11-19T16:08:57.337Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:08:57.337Z [DEBUG] Renaming /Users/wbrunson/workspace/pagerduty-configurations/paypal/teams.tf.tmp.5007.1763568537332 to /Users/wbrunson/workspace/pagerduty-configurations/paypal/teams.tf
+2025-11-19T16:08:57.339Z [DEBUG] File /Users/wbrunson/workspace/pagerduty-configurations/paypal/teams.tf written atomically
+2025-11-19T16:08:57.346Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-19T16:08:57.346Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:08:57.346Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T16:08:57.367Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:08:57.367Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:08:57.371Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:08:57.371Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:08:57.384Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:08:57.384Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:08:59.814Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:09:02.012Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-19T16:09:02.014Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-19T16:09:02.015Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:09:02.015Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:09:02.022Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568542022
+2025-11-19T16:09:02.022Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T16:09:02.027Z [DEBUG] Temp file written successfully, size: 520 bytes
+2025-11-19T16:09:02.027Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:09:02.028Z [DEBUG] Renaming /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568542022 to /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json
+2025-11-19T16:09:02.028Z [DEBUG] File /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json written atomically
+2025-11-19T16:09:02.034Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-19T16:09:02.035Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:09:02.035Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:09:02.047Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:09:02.048Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:09:02.051Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:09:02.051Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:09:02.064Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:09:02.066Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:09:04.395Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:09:08.029Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-19T16:09:08.034Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-19T16:09:08.035Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:09:08.038Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T16:09:08.048Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/pagerduty-configurations/paypal/ryprichard/oalfares/gabalaji/oac-escalation-commerce-orchestration.tf.tmp.5007.1763568548048
+2025-11-19T16:09:08.048Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:09:08.052Z [DEBUG] Temp file written successfully, size: 2039 bytes
+2025-11-19T16:09:08.052Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:09:08.052Z [DEBUG] Renaming /Users/wbrunson/workspace/pagerduty-configurations/paypal/ryprichard/oalfares/gabalaji/oac-escalation-commerce-orchestration.tf.tmp.5007.1763568548048 to /Users/wbrunson/workspace/pagerduty-configurations/paypal/ryprichard/oalfares/gabalaji/oac-escalation-commerce-orchestration.tf
+2025-11-19T16:09:08.053Z [DEBUG] File /Users/wbrunson/workspace/pagerduty-configurations/paypal/ryprichard/oalfares/gabalaji/oac-escalation-commerce-orchestration.tf written atomically
+2025-11-19T16:09:08.060Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-19T16:09:08.061Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:09:08.061Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T16:09:08.084Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:09:08.085Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:09:08.088Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:09:08.089Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:09:08.104Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:09:08.105Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:09:10.684Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:09:11.959Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-19T16:09:11.963Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-19T16:09:11.966Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:09:11.966Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:09:11.972Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568551972
+2025-11-19T16:09:11.973Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T16:09:11.978Z [DEBUG] Temp file written successfully, size: 522 bytes
+2025-11-19T16:09:11.978Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:09:11.978Z [DEBUG] Renaming /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568551972 to /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json
+2025-11-19T16:09:11.979Z [DEBUG] File /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json written atomically
+2025-11-19T16:09:11.985Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-19T16:09:11.985Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:09:11.987Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:09:12.000Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:09:12.001Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:09:12.004Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:09:12.006Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:09:12.023Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:09:12.023Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:09:13.718Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:09:19.111Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-19T16:09:19.113Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-19T16:09:19.114Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:09:19.114Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:09:19.123Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568559123
+2025-11-19T16:09:19.124Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T16:09:19.129Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-19T16:09:19.130Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:09:19.130Z [DEBUG] Renaming /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568559123 to /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json
+2025-11-19T16:09:19.130Z [DEBUG] File /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json written atomically
+2025-11-19T16:09:19.136Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-19T16:09:19.136Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:09:19.136Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:09:19.148Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:09:19.148Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:09:19.152Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:09:19.153Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:09:19.164Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:09:19.164Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:09:21.327Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:09:27.592Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:09:27.592Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568567592
+2025-11-19T16:09:27.592Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:09:27.596Z [DEBUG] Temp file written successfully, size: 54316 bytes
+2025-11-19T16:09:27.596Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:09:27.597Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568567592 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:09:27.598Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-19T16:09:27.600Z [DEBUG] Streaming aborted by user: Request was aborted.
+2025-11-19T16:09:27.600Z [ERROR] Error in non-streaming fallback: Request was aborted.
+2025-11-19T16:09:27.601Z [ERROR] Error: Error: Request was aborted.
+    at _o._createMessage (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:440:3151)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+2025-11-19T16:09:27.617Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:09:27.618Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568567618
+2025-11-19T16:09:27.621Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:09:27.625Z [DEBUG] Temp file written successfully, size: 54316 bytes
+2025-11-19T16:09:27.635Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:09:27.638Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568567618 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:09:27.639Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-19T16:09:27.643Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:09:27.644Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568567644
+2025-11-19T16:09:27.645Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:09:27.652Z [DEBUG] Temp file written successfully, size: 54316 bytes
+2025-11-19T16:09:27.653Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:09:27.653Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568567644 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:09:27.654Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-19T16:10:02.260Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:10:02.260Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:10:02.264Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:10:02.264Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:10:02.284Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-19T16:10:02.285Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:10:02.286Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-19T16:10:02.290Z [DEBUG] FileHistory: Making snapshot for message 4371cc0e-4a05-435d-b18b-905e21d187b6
+2025-11-19T16:10:02.300Z [DEBUG] FileHistory: Added snapshot for 4371cc0e-4a05-435d-b18b-905e21d187b6, tracking 3 files
+2025-11-19T16:10:02.333Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:10:02.334Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:10:03.026Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:10:04.463Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:10:06.169Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-19T16:10:06.172Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-19T16:10:06.173Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:10:06.174Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:10:06.181Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568606181
+2025-11-19T16:10:06.182Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T16:10:06.187Z [DEBUG] Temp file written successfully, size: 194 bytes
+2025-11-19T16:10:06.188Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:10:06.188Z [DEBUG] Renaming /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568606181 to /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json
+2025-11-19T16:10:06.189Z [DEBUG] File /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json written atomically
+2025-11-19T16:10:06.196Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-19T16:10:06.196Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:10:06.197Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:10:06.210Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:10:06.211Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:10:06.218Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:10:06.218Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:10:06.231Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:10:06.232Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:10:08.326Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:10:10.083Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-19T16:10:10.086Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-19T16:10:10.087Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:10:10.087Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-19T16:10:10.100Z [DEBUG] No hook environment files found
+2025-11-19T16:10:10.319Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-19T16:10:10.320Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:10:10.321Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-19T16:10:10.350Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:10:10.351Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:10:10.354Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:10:10.356Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:10:10.373Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:10:10.373Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:10:10.831Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:10:12.657Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:10:14.079Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-19T16:10:14.084Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-19T16:10:14.084Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:10:14.084Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T16:10:14.098Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-19T16:10:14.099Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:10:14.101Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-19T16:10:14.116Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:10:14.117Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:10:14.120Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:10:14.120Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:10:14.135Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:10:14.136Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:10:15.838Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:10:20.288Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-19T16:10:20.291Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-19T16:10:20.292Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:10:20.292Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T16:10:20.308Z [DEBUG] FileHistory: Tracked file modification for /Users/wbrunson/workspace/pagerduty-configurations/paypal/services.tf
+2025-11-19T16:10:20.326Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/pagerduty-configurations/paypal/services.tf.tmp.5007.1763568620326
+2025-11-19T16:10:20.327Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:10:20.330Z [DEBUG] Temp file written successfully, size: 2090301 bytes
+2025-11-19T16:10:20.330Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:10:20.330Z [DEBUG] Renaming /Users/wbrunson/workspace/pagerduty-configurations/paypal/services.tf.tmp.5007.1763568620326 to /Users/wbrunson/workspace/pagerduty-configurations/paypal/services.tf
+2025-11-19T16:10:20.331Z [DEBUG] File /Users/wbrunson/workspace/pagerduty-configurations/paypal/services.tf written atomically
+2025-11-19T16:10:20.348Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-19T16:10:20.348Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:10:20.349Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-19T16:10:20.372Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:10:20.372Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:10:20.376Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:10:20.376Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:10:20.397Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:10:20.398Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:10:22.783Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:10:23.962Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-19T16:10:23.966Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-19T16:10:23.966Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:10:23.967Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:10:23.974Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568623974
+2025-11-19T16:10:23.975Z [DEBUG] Preserving file permissions: 100600
+2025-11-19T16:10:23.982Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-19T16:10:23.982Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:10:23.982Z [DEBUG] Renaming /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json.tmp.5007.1763568623974 to /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json
+2025-11-19T16:10:23.983Z [DEBUG] File /Users/wbrunson/.claude/todos/c0d5f906-476b-4a5e-b166-6c22ed8a39a9-agent-c0d5f906-476b-4a5e-b166-6c22ed8a39a9.json written atomically
+2025-11-19T16:10:23.989Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-19T16:10:23.989Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:10:23.990Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-19T16:10:24.003Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T16:10:24.004Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T16:10:24.007Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T16:10:24.007Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T16:10:24.020Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T16:10:24.020Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T16:10:26.514Z [DEBUG] Stream started - received first chunk
+2025-11-19T16:10:34.038Z [ERROR] Error: Error: Language not supported while highlighting code, falling back to markdown: terraform
+    at IE (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1105:4489)
+    at file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1105:5469
+    at Array.map (<anonymous>)
+    at IE (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1105:5440)
+    at file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1105:5356
+    at Array.map (<anonymous>)
+    at IE (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1105:5345)
+    at file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1105:4217
+    at Array.map (<anonymous>)
+    at QD (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1105:4208)
+2025-11-19T16:10:34.040Z [ERROR] Error: Error: Language not supported while highlighting code, falling back to markdown: terraform
+    at IE (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1105:4489)
+    at file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1105:5469
+    at Array.map (<anonymous>)
+    at IE (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1105:5440)
+    at file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1105:5356
+    at Array.map (<anonymous>)
+    at IE (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1105:5345)
+    at file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1105:4217
+    at Array.map (<anonymous>)
+    at QD (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1105:4208)
+2025-11-19T16:10:34.077Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-19T16:10:34.077Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T16:10:34.077Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-19T16:10:34.089Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:10:34.089Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568634089
+2025-11-19T16:10:34.089Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:10:34.094Z [DEBUG] Temp file written successfully, size: 54316 bytes
+2025-11-19T16:10:34.095Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:10:34.095Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568634089 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:10:34.096Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-19T16:10:34.099Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:10:34.100Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568634100
+2025-11-19T16:10:34.100Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T16:10:34.103Z [DEBUG] Temp file written successfully, size: 54316 bytes
+2025-11-19T16:10:34.103Z [DEBUG] Applied original permissions to temp file
+2025-11-19T16:10:34.103Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763568634100 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T16:10:34.104Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-19T16:12:32.003Z [DEBUG] Metrics opt-out check failed: No API key available
+2025-11-19T16:12:32.005Z [DEBUG] Metrics check failed, defaulting to disabled
+2025-11-19T16:12:32.006Z [DEBUG] Metrics export disabled by organization setting
+2025-11-19T20:34:08.474Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-19T20:34:08.475Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-19T20:34:08.480Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-19T20:34:08.480Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-19T20:34:08.511Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-19T20:34:08.511Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T20:34:08.511Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-19T20:34:08.513Z [DEBUG] FileHistory: Making snapshot for message ad3ad06f-582e-44f0-b5ca-29a60794556d
+2025-11-19T20:34:08.532Z [DEBUG] FileHistory: Added snapshot for ad3ad06f-582e-44f0-b5ca-29a60794556d, tracking 4 files
+2025-11-19T20:34:08.573Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-19T20:34:08.573Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-19T20:34:09.563Z [DEBUG] Stream started - received first chunk
+2025-11-19T20:34:10.594Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T20:34:10.595Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763584450595
+2025-11-19T20:34:10.595Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T20:34:10.600Z [DEBUG] Temp file written successfully, size: 54316 bytes
+2025-11-19T20:34:10.601Z [DEBUG] Applied original permissions to temp file
+2025-11-19T20:34:10.601Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763584450595 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T20:34:10.602Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-19T20:34:10.604Z [DEBUG] Streaming aborted by user: Request was aborted.
+2025-11-19T20:34:10.604Z [ERROR] Error in non-streaming fallback: Request was aborted.
+2025-11-19T20:34:10.604Z [ERROR] Error: Error: Request was aborted.
+    at _o._createMessage (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:440:3151)
+    at processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at runNextTicks (node:internal/process/task_queues:69:3)
+    at process.processTimers (node:internal/timers:526:9)
+2025-11-19T20:34:10.619Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T20:34:10.620Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763584450620
+2025-11-19T20:34:10.620Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T20:34:10.624Z [DEBUG] Temp file written successfully, size: 54316 bytes
+2025-11-19T20:34:10.626Z [DEBUG] Applied original permissions to temp file
+2025-11-19T20:34:10.626Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763584450620 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T20:34:10.627Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-19T20:34:10.631Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T20:34:10.631Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763584450631
+2025-11-19T20:34:10.631Z [DEBUG] Preserving file permissions: 100644
+2025-11-19T20:34:10.633Z [DEBUG] Temp file written successfully, size: 54316 bytes
+2025-11-19T20:34:10.634Z [DEBUG] Applied original permissions to temp file
+2025-11-19T20:34:10.634Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.5007.1763584450631 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-19T20:34:10.634Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-19T20:34:12.669Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-19T20:34:12.670Z [DEBUG] Getting matching hook commands for SessionEnd with query: clear
+2025-11-19T20:34:12.674Z [DEBUG] Found 0 hook matchers in settings
+2025-11-19T20:34:12.675Z [DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+2025-11-19T20:34:12.680Z [DEBUG] Cleared all session hooks for session c0d5f906-476b-4a5e-b166-6c22ed8a39a9

@@ -1,0 +1,292 @@
+import { emitDatadogMetricFireAndForget } from "./datadogMetrics";
+import type { Context } from "hono";
+import { routePath } from "hono/route";
+
+export type HttpRequestMetrics = {
+  method: string;
+  routePath: string;
+  startTime: number;
+  env?: string;
+};
+
+type BaseMetricParams = {
+  method: string;
+  routePath: string;
+  env?: string;
+};
+
+export function httpRequestInit({ c }: { c: Context }): HttpRequestMetrics {
+  const method = c.req.method;
+
+  // TEMPORARY: Gracefully handle routePath failures for generic Lambda functions
+  // TODO: Remove this when generic orchestrator lambdas are removed
+  let extractedRoutePath: string;
+  try {
+    extractedRoutePath = routePath(c) || c.req.path;
+  } catch {
+    extractedRoutePath = c.req.path;
+  }
+
+  const env = process.env.APP_ENV;
+
+  const baseParams: BaseMetricParams = {
+    method,
+    routePath: extractedRoutePath,
+    env,
+  };
+
+  emitDatadogMetricFireAndForget("http.requests.count", baseParams, 1);
+
+  return {
+    method,
+    routePath: extractedRoutePath,
+    startTime: performance.now(),
+    env,
+  };
+}
+
+export function httpRequestSuccess({
+  metrics,
+  statusCode,
+}: {
+  metrics: HttpRequestMetrics;
+  statusCode: number;
+}): void {
+  const duration = performance.now() - metrics.startTime;
+
+  const successParams = {
+    method: metrics.method,
+    routePath: metrics.routePath,
+    env: metrics.env,
+    statusCode: statusCode.toString(),
+    statusClass: getStatusClass(statusCode),
+  };
+
+  emitDatadogMetricFireAndForget(
+    "http.requests.success.count",
+    successParams,
+    1,
+  );
+  emitDatadogMetricFireAndForget(
+    "http.request.duration",
+    successParams,
+    duration,
+  );
+}
+
+export function httpRequestError({
+  metrics,
+  error,
+}: {
+  metrics: HttpRequestMetrics;
+  error: Error | number | unknown;
+}): void {
+  const duration = performance.now() - metrics.startTime;
+
+  let statusCode = 500;
+  let errorType = "unknown";
+
+  if (typeof error === "number") {
+    statusCode = error;
+    errorType = "http_error";
+  } else if (error instanceof Error) {
+    errorType = error.constructor.name;
+    if ("statusCode" in error && typeof error.statusCode === "number") {
+      statusCode = error.statusCode;
+    } else if ("status" in error && typeof error.status === "number") {
+      statusCode = error.status;
+    }
+  }
+
+  const errorParams = {
+    method: metrics.method,
+    routePath: metrics.routePath,
+    env: metrics.env,
+    statusCode: statusCode.toString(),
+    statusClass: getStatusClass(statusCode),
+    errorType: errorType,
+  };
+
+  emitDatadogMetricFireAndForget("http.requests.error.count", errorParams, 1);
+  emitDatadogMetricFireAndForget(
+    "http.request.duration",
+    errorParams,
+    duration,
+  );
+}
+
+export type CommerceOrchestratorMetrics = {
+  orchestrator: string;
+  merchant?: string;
+  partner?: string;
+  env?: string;
+  operation: "create" | "update" | "complete";
+  startTime: number;
+};
+
+type CommerceMetricParams = {
+  orchestrator: string;
+  merchant?: string;
+  partner?: string;
+  env?: string;
+  operation: "create" | "update" | "complete";
+};
+
+export function commerceOrchestratorRequestInit({
+  c,
+  orchestrator,
+  merchant,
+  partner,
+}: {
+  c: Context;
+  orchestrator: string;
+  merchant?: string;
+  partner?: string;
+}): CommerceOrchestratorMetrics {
+  const env = process.env.APP_ENV;
+
+  // Determine operation from HTTP method and path
+  const method = c.req.method;
+  let path: string;
+  try {
+    path = routePath(c) || c.req.path;
+  } catch {
+    path = c.req.path;
+  }
+  const operation = determineOperation(method, path);
+
+  const baseParams: CommerceMetricParams = {
+    orchestrator,
+    env,
+    operation,
+    ...(merchant && { merchant }),
+    ...(partner && { partner }),
+  };
+
+  emitDatadogMetricFireAndForget("orchestrator.requests.count", baseParams, 1);
+
+  return {
+    orchestrator,
+    env,
+    operation,
+    startTime: performance.now(),
+    ...(merchant && { merchant }),
+    ...(partner && { partner }),
+  };
+}
+
+export function commerceOrchestratorRequestSuccess({
+  metrics,
+  statusCode,
+}: {
+  metrics: CommerceOrchestratorMetrics;
+  statusCode: number;
+}): void {
+  const duration = performance.now() - metrics.startTime;
+
+  const successParams = {
+    orchestrator: metrics.orchestrator,
+    env: metrics.env,
+    operation: metrics.operation,
+    statusCode: statusCode.toString(),
+    statusClass: getStatusClass(statusCode),
+    ...(metrics.merchant && { merchant: metrics.merchant }),
+    ...(metrics.partner && { partner: metrics.partner }),
+  };
+
+  emitDatadogMetricFireAndForget(
+    "orchestrator.requests.success.count",
+    successParams,
+    1,
+  );
+  emitDatadogMetricFireAndForget(
+    "orchestrator.request.duration",
+    successParams,
+    duration,
+  );
+}
+
+export function commerceOrchestratorRequestError({
+  metrics,
+  error,
+  statusCode,
+}: {
+  metrics: CommerceOrchestratorMetrics;
+  error: Error | number | unknown;
+  statusCode?: number;
+}): void {
+  const duration = performance.now() - metrics.startTime;
+
+  let finalStatusCode = statusCode || 500;
+  let errorType = "unknown";
+
+  if (typeof error === "number") {
+    finalStatusCode = error;
+    errorType = "http_error";
+  } else if (error instanceof Error) {
+    errorType = error.constructor.name;
+    if (!statusCode) {
+      if ("statusCode" in error && typeof error.statusCode === "number") {
+        finalStatusCode = error.statusCode;
+      } else if ("status" in error && typeof error.status === "number") {
+        finalStatusCode = error.status;
+      }
+    }
+  }
+
+  const errorParams = {
+    orchestrator: metrics.orchestrator,
+    env: metrics.env,
+    operation: metrics.operation,
+    statusCode: finalStatusCode.toString(),
+    statusClass: getStatusClass(finalStatusCode),
+    errorType: errorType,
+    ...(metrics.merchant && { merchant: metrics.merchant }),
+    ...(metrics.partner && { partner: metrics.partner }),
+  };
+
+  emitDatadogMetricFireAndForget(
+    "orchestrator.requests.error.count",
+    errorParams,
+    1,
+  );
+  emitDatadogMetricFireAndForget(
+    "orchestrator.request.duration",
+    errorParams,
+    duration,
+  );
+}
+
+function getStatusClass(statusCode: number): string {
+  if (statusCode >= 200 && statusCode < 300) return "2xx";
+  if (statusCode >= 300 && statusCode < 400) return "3xx";
+  if (statusCode >= 400 && statusCode < 500) return "4xx";
+  if (statusCode >= 500 && statusCode < 600) return "5xx";
+  return "unknown";
+}
+
+function determineOperation(method: string, path: string): "create" | "update" | "complete" {
+  // Normalize method to uppercase
+  const httpMethod = method.toUpperCase();
+
+  // Check for complete operation first (POST with /complete endpoint)
+  if (httpMethod === "POST" && path.includes("/complete")) {
+    return "complete";
+  }
+
+  // Check for create operation (POST to cart endpoint without ID parameter)
+  if (httpMethod === "POST" && path.includes("/cart") && !path.includes("/complete")) {
+    return "create";
+  }
+
+  // Check for update operation (PUT to cart endpoint)
+  if (httpMethod === "PUT" && path.includes("/cart")) {
+    return "update";
+  }
+
+  // Default fallback based on method
+  if (httpMethod === "POST") return "create";
+  if (httpMethod === "PUT") return "update";
+
+  return "create"; // Default fallback
+}

@@ -1,0 +1,451 @@
+// src/shared/simulator/server.test.ts
+import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
+import { CreateCartRequest, UpdateCartRequest } from '../schemas';
+import { BadRequestError } from '../errors';
+
+// ------- HOISTED STATE FOR MOCK FACTORIES -------
+const h = vi.hoisted(() => {
+  return {
+    // spies for logger
+    infoSpy: vi.fn(),
+    errorSpy: vi.fn(),
+
+    // spies for msw server instance
+    listenMock: vi.fn(),
+    closeMock: vi.fn(),
+
+    // storage for created msw instance
+    lastInstance: { value: null as any },
+
+    // mocks for Shopify handler modules
+    shopifyHandlersMock: vi.fn(async (context: any) => [
+      { name: 'handler1', context },
+      { name: 'handler2', context },
+    ]),
+    shopifyCompleteHandlersMock: vi.fn(async ({ merchantUrl }: any) => [
+      { name: 'completeHandler1', merchantUrl },
+      { name: 'completeHandler2', merchantUrl },
+    ]),
+    shopifyUpdateCartHandlersMock: vi.fn(async (context: any) => [
+      { name: 'updateHandler1', context },
+      { name: 'updateHandler2', context },
+    ]),
+
+    // mocks for error-triggers validation functions
+    isValidForShopifyCreateCartMock: vi.fn(),
+    isValidForShopifyUpdateCartMock: vi.fn(),
+    getErrorIdFromEmailMock: vi.fn()
+  };
+});
+
+// Example request
+const validCreateCartRequest: CreateCartRequest = {
+  cartId: 'cart-123',
+  merchantUrl: 'https://www.adorama.com',
+  products: [{ productId: 'US1944637', quantity: 1 }],
+  customer: {
+    firstName: 'John',
+    lastName: 'Doe',
+    email: 'test@paypal.com',
+    phone: '1234567890',
+  },
+  shippingAddress: {
+    addressLine1: '222 W Merchandise Mart Plaza',
+    addressLine2: '970',
+    adminArea1: 'IL',
+    adminArea2: 'Chicago',
+    postalCode: '60654',
+    countryCode: 'US',
+  },
+  billingAddress: {
+    addressLine1: '222 W Merchandise Mart Plaza',
+    addressLine2: '970',
+    adminArea1: 'IL',
+    adminArea2: 'Chicago',
+    postalCode: '60654',
+    countryCode: 'US',
+  },
+} as CreateCartRequest;
+
+const validCompelteCartRequest = {
+  cartId: "test-cart-123",
+  paymentDetails: {
+    paymentMethod: "PAYPAL",
+    payerId: "test-payer-id",
+  },
+} as CompleteCartRequest;
+
+const validUpdateCartRequest = {
+  cart: {
+    products: [
+      {
+        productId: "test-product",
+        quantity: 2,
+      },
+    ],
+    customer: {
+      email: "test@example.com",
+      firstName: "John",
+      lastName: "Doe",
+    },
+    shippingAddress: {
+      addressLine1: "123 Main St",
+      adminArea1: "CA",
+      adminArea2: "San Francisco",
+      postalCode: "94105",
+      countryCode: "US",
+    },
+    billingAddress: {
+      addressLine1: "123 Main St",
+      adminArea1: "CA",
+      adminArea2: "San Francisco",
+      postalCode: "94105",
+      countryCode: "US",
+    },
+  },
+  operations: [
+    {
+      op: "replace",
+      path: "/products/0/quantity",
+      value: 3,
+    },
+  ],
+} as UpdateCartRequest;
+
+// ------- MOCKS (factories are hoisted by Vitest) -------
+// IMPORTANT: paths must EXACTLY match imports in server.ts
+vi.mock('../logger/logger', () => ({
+  logger: () => ({ info: h.infoSpy, error: h.errorSpy }),
+}));
+
+vi.mock('msw/node', () => {
+  const makeEmitter = () => {
+    const map = new Map<string, Array<(req: any) => void>>();
+    return {
+      on(ev: string, cb: (req: any) => void) {
+        map.set(ev, [...(map.get(ev) ?? []), cb]);
+      },
+      emit(ev: string, req: any) {
+        (map.get(ev) ?? []).forEach((cb) => cb(req));
+      },
+    };
+  };
+
+  return {
+    setupServer: vi.fn((...handlers: any[]) => {
+      const inst = {
+        listen: h.listenMock,
+        close: h.closeMock,
+        events: makeEmitter(),
+        _handlers: handlers,
+      };
+      h.lastInstance.value = inst;
+      return inst;
+    }),
+  };
+});
+
+// ✅ Mock the modules that server.ts calls inside dispatchShopifyHandlers
+vi.mock('../shopify/simulator/shopify-create-handlers', () => ({
+  shopifyCreateHandlers: h.shopifyHandlersMock,
+}));
+vi.mock('../shopify/simulator/shopify-complete-handlers', () => ({
+  shopifyCompleteHandlers: h.shopifyCompleteHandlersMock,
+}));
+vi.mock('../shopify/simulator/shopify-update-cart-handlers', () => ({
+  shopifyUpdateCartHandlers: h.shopifyUpdateCartHandlersMock,
+}));
+vi.mock('../shopify/simulator/error-triggers', () => ({
+  validateForShopifyCreateCart: h.isValidForShopifyCreateCartMock,
+  validateForShopifyUpdateCart: h.isValidForShopifyUpdateCartMock,
+  getErrorIdFromEmail: h.getErrorIdFromEmailMock
+}));
+
+// ------- IMPORT UNDER TEST AFTER MOCKS -------
+import { startSimulator, stopSimulator } from './server';
+import { CompleteCartRequest } from '../helpers/paypalTestSchema';
+
+describe('startSimulator', () => {
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+    h.lastInstance.value = null;
+    // Set APP_ENV to 'test' to enable simulation
+    process.env.APP_ENV = 'test';
+    // Default to successful validation
+    h.isValidForShopifyCreateCartMock.mockReturnValue({ isValid: true });
+    h.isValidForShopifyUpdateCartMock.mockReturnValue({ isValid: true });
+    // Default getErrorIdFromEmail to return null (no valid simulation pattern)
+    h.getErrorIdFromEmailMock.mockReturnValue(null);
+  });
+
+  afterEach(() => {
+    // Clean up environment variable
+    delete process.env.APP_ENV;
+  });
+
+  it('uses onUnhandledRequest="error" in replay mode', async () => {
+
+    await startSimulator({ type: 'create', data: validCreateCartRequest, merchantUrl: 'https://example.com', orchestrator: 'shopify' }, 'replay');
+
+    expect(h.listenMock).toHaveBeenCalledWith({ onUnhandledRequest: 'error' });
+    // Check that info log contains the correct mode, but don't require exact match
+    // since the log message now includes context type and lambda information
+    expect(h.infoSpy).toHaveBeenCalledWith(
+      expect.stringContaining('Simulator started in replay mode')
+    );
+
+    // server.ts calls shopifyHandlers(...) with the entire context object
+    expect(h.shopifyHandlersMock).toHaveBeenCalledWith({
+      type: 'create',
+      data: validCreateCartRequest,
+      merchantUrl: 'https://example.com',
+      orchestrator: 'shopify'
+    });
+  });
+
+  it('uses onUnhandledRequest="bypass" in bypass mode', async () => {
+    await startSimulator({ type: 'complete', data: validCompelteCartRequest, merchantUrl: 'https://example.com', orchestrator: 'shopify' }, 'bypass');
+
+    expect(h.listenMock).toHaveBeenCalledWith({ onUnhandledRequest: 'bypass' });
+    // Check that info log contains the correct mode, but don't require exact match
+    // since the log message now includes context type information
+    expect(h.infoSpy).toHaveBeenCalledWith(
+      expect.stringContaining('Simulator started in bypass mode')
+    );
+
+    // Update the assertion to match the expected arguments
+    expect(h.shopifyCompleteHandlersMock).toHaveBeenCalledWith({
+      type: 'complete',
+      data: validCompelteCartRequest,
+      merchantUrl: 'https://example.com',
+      orchestrator: 'shopify'
+    });
+  });
+
+  it('stops and restarts the server if already running', async () => {
+    await startSimulator({ type: 'create', data: validCreateCartRequest, merchantUrl: 'https://example.com', orchestrator: 'shopify' }, 'bypass');
+    expect(h.listenMock).toHaveBeenCalledTimes(1);
+
+    await startSimulator({ type: 'update', data: validUpdateCartRequest, merchantUrl: 'https://example.com', ecToken: 'test-ec-token', orchestrator: 'shopify' }, 'bypass');
+    expect(h.closeMock).toHaveBeenCalled();
+    expect(h.listenMock).toHaveBeenCalledTimes(2);
+  });
+
+  it('wires event listeners that log request lifecycle events', async () => {
+    await startSimulator({ type: 'create', data: validCreateCartRequest, merchantUrl: 'https://example.com', orchestrator: 'shopify' }, 'bypass');
+    const inst = h.lastInstance.value;
+    const fakeReq = { url: new URL('https://example.test'), method: 'GET', headers: new Map() };
+
+    inst.events.emit('request:start', fakeReq);
+    inst.events.emit('request:match', fakeReq);
+    inst.events.emit('request:unhandled', fakeReq);
+  });
+
+  it('validates email patterns for shopify-create-cart lambda', async () => {
+    // Prepare mock data
+    const createRequestWithInvalidEmail = {
+      ...validCreateCartRequest,
+      customer: {
+        ...validCreateCartRequest.customer,
+        email: 'invalid-pattern@example.com'
+      }
+    };
+
+    // Ensure getErrorIdFromEmail returns null (not a valid simulation pattern)
+    h.getErrorIdFromEmailMock.mockReturnValue(null);
+
+    // Mock isValidForShopifyCreateCart to return invalid
+    h.isValidForShopifyCreateCartMock.mockReturnValue({
+      isValid: false,
+      pattern: {
+        pattern: 'invalid-pattern',
+        id: 'INVALID_SCENARIO',
+        description: 'This is an invalid pattern'
+      },
+      message: 'Invalid simulation scenario for testing'
+    });
+
+    // Expect the startSimulator to throw a BadRequestError with specific message
+    await expect(startSimulator({
+      type: 'create',
+      data: createRequestWithInvalidEmail,
+      merchantUrl: 'https://example.com', 
+      orchestrator: 'shopify'
+    }, 'bypass'))
+      .rejects.toThrow(BadRequestError);
+
+    // Expect the error message to contain our validation message
+    try {
+      await startSimulator({
+        type: 'create',
+        data: createRequestWithInvalidEmail,
+        merchantUrl: 'https://example.com',
+        orchestrator: 'shopify'
+      }, 'bypass');
+    } catch (error) {
+      expect(error instanceof BadRequestError).toBe(true);
+      expect((error as BadRequestError).message).toContain('Invalid simulation scenario for shopify-create-cart');
+      expect((error as BadRequestError).status).toBe(400); // Ensure it's a 400 Bad Request
+    }
+
+    // Verify both validation functions were called with the email
+    expect(h.getErrorIdFromEmailMock).toHaveBeenCalledWith('invalid-pattern@example.com');
+    expect(h.isValidForShopifyCreateCartMock).toHaveBeenCalledWith('invalid-pattern@example.com');
+
+    // Verify the server was not started
+    expect(h.listenMock).not.toHaveBeenCalled();
+  });
+
+  it('allows valid email patterns for shopify-create-cart lambda', async () => {
+    // Prepare mock data with a valid email pattern
+    const createRequestWithValidEmail = {
+      ...validCreateCartRequest,
+      customer: {
+        ...validCreateCartRequest.customer,
+        email: 'valid-pattern@example.com'
+      }
+    };
+
+    // Mock isValidForShopifyCreateCart to return valid
+    h.isValidForShopifyCreateCartMock.mockReturnValue({
+      isValid: true,
+      errorId: 'SOME_ERROR_TYPE' // This won't trigger an error, just used for validation
+    });
+
+    // Should not throw an error
+    await startSimulator({
+      type: 'create',
+      data: createRequestWithValidEmail,
+      merchantUrl: 'https://example.com', 
+      orchestrator: 'shopify'
+    }, 'bypass');
+
+    // Verify the validation functions were called with the email
+    expect(h.getErrorIdFromEmailMock).toHaveBeenCalledWith('valid-pattern@example.com');
+    expect(h.isValidForShopifyCreateCartMock).toHaveBeenCalledWith('valid-pattern@example.com');
+
+    // Verify the server was started
+    expect(h.listenMock).toHaveBeenCalled();
+  });
+
+  it('allows GET_PROPOSAL error patterns for shopify-create-cart lambda', async () => {
+    // Prepare mock data with a GET_PROPOSAL error pattern
+    const createRequestWithGetProposalError = {
+      ...validCreateCartRequest,
+      customer: {
+        ...validCreateCartRequest.customer,
+        email: 'out-of-stock@example.com'
+      }
+    };
+
+    // Mock getErrorIdFromEmail to return a valid error ID (bypassing flow validation)
+    h.getErrorIdFromEmailMock.mockReturnValue('MERCHANDISE_OUT_OF_STOCK');
+
+    // Should not throw an error
+    await startSimulator({
+      type: 'create',
+      data: createRequestWithGetProposalError,
+      merchantUrl: 'https://example.com',
+      orchestrator: 'shopify'
+    }, 'bypass');
+
+    // Verify the getErrorIdFromEmail function was called with the email
+    expect(h.getErrorIdFromEmailMock).toHaveBeenCalledWith('out-of-stock@example.com');
+
+    // Verify validateForShopifyCreateCart wasn't called since we already found a valid pattern
+    expect(h.isValidForShopifyCreateCartMock).not.toHaveBeenCalled();
+
+    // Verify the server was started
+    expect(h.listenMock).toHaveBeenCalled();
+  });
+
+  it('does not start simulator when PayPal-Commerce-Simulation header is false', async () => {
+    // Create context with header that disables simulation
+    const contextWithDisabledHeader = {
+      type: 'create' as const,
+      data: validCreateCartRequest,
+      merchantUrl: 'https://example.com',
+      orchestrator: 'shopify' as const,
+      headers: {
+        'PayPal-Commerce-Simulation': 'false'
+      }
+    };
+
+    await startSimulator(contextWithDisabledHeader, 'bypass');
+
+    // Verify the server was not started
+    expect(h.listenMock).not.toHaveBeenCalled();
+
+    // Verify the info log about simulator not starting
+    expect(h.infoSpy).toHaveBeenCalledWith(
+      'Simulator not started - conditions not met',
+      expect.objectContaining({
+        appEnv: 'test',
+        simulationHeader: 'false'
+      })
+    );
+  });
+
+  it('starts simulator when PayPal-Commerce-Simulation header is not present', async () => {
+    // Context without the header (default behavior)
+    await startSimulator({
+      type: 'create',
+      data: validCreateCartRequest,
+      merchantUrl: 'https://example.com',
+      orchestrator: 'shopify'
+    }, 'bypass');
+
+    // Verify the server was started
+    expect(h.listenMock).toHaveBeenCalled();
+  });
+
+  it('starts simulator when PayPal-Commerce-Simulation header is true', async () => {
+    // Create context with header that enables simulation
+    const contextWithEnabledHeader = {
+      type: 'create' as const,
+      data: validCreateCartRequest,
+      merchantUrl: 'https://example.com',
+      orchestrator: 'shopify' as const,
+      headers: {
+        'PayPal-Commerce-Simulation': 'true'
+      }
+    };
+
+    await startSimulator(contextWithEnabledHeader, 'bypass');
+
+    // Verify the server was started
+    expect(h.listenMock).toHaveBeenCalled();
+  });
+});
+
+describe('stopSimulator', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    // Set APP_ENV to 'test' to enable simulation
+    process.env.APP_ENV = 'test';
+  });
+
+  afterEach(() => {
+    // Clean up environment variable
+    delete process.env.APP_ENV;
+  });
+
+  it('stops the server if running', async () => {
+    // Ensure server is running
+    await startSimulator({ type: 'update', data: validUpdateCartRequest, merchantUrl: 'https://example.com', ecToken: 'test-ec-token', orchestrator: "shopify" }, 'bypass');
+    vi.clearAllMocks(); // ignore logs from start
+
+    stopSimulator();
+
+    expect(h.closeMock).toHaveBeenCalledTimes(1);
+    expect(h.infoSpy).toHaveBeenCalledWith('Simulator stopped.');
+  });
+
+  it('does nothing if the server is not running', () => {
+    // Immediately stopping without a start
+    stopSimulator();
+    // close should not be called
+    expect(h.closeMock).not.toHaveBeenCalled();
+  });
+});

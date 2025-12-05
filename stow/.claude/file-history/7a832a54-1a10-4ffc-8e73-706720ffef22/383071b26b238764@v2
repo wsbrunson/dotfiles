@@ -1,0 +1,61 @@
+import { APIGatewayRequestAuthorizerEventV2 } from "aws-lambda";
+import jwt from "jsonwebtoken";
+import { logger } from "shared/logger/logger";
+
+exports.handler = async (event: APIGatewayRequestAuthorizerEventV2) => {
+  const log = logger("AppContextAuthorizer", event);
+  const appContext = event.headers?.["paypal-application-context"];
+
+  if (!appContext || appContext.trim().length < 1) {
+    log.warn("AppContext is missing");
+    throw new Error("Unauthorized");
+  }
+
+  try {
+    const APP_ENV = process.env.APP_ENV;
+    const VERIFICATION_PEM = process.env.VERIFICATION_PEM;
+    const SANDBOX_VERIFICATION_PEM = process.env.SANDBOX_VERIFICATION_PEM;
+
+    if (!VERIFICATION_PEM) {
+      throw new Error("VERIFICATION_PEM environment variable is not set");
+    }
+
+    const regularKey =
+      "-----BEGIN PUBLIC KEY-----\n" +
+      VERIFICATION_PEM +
+      "\n-----END PUBLIC KEY-----";
+
+    log.info("Using public key for verification", {
+      hasRegularKey: !!regularKey,
+      hasSandboxKey: !!SANDBOX_VERIFICATION_PEM,
+      environment: APP_ENV,
+    });
+
+    try {
+      jwt.verify(appContext, regularKey, { algorithms: ["RS256"] });
+      log.info("JWT verified with regular PEM");
+    } catch (err) {
+      // If in test environment and we have sandbox PEM, try it as fallback
+      if (APP_ENV === 'test' && SANDBOX_VERIFICATION_PEM) {
+        const sandboxKey =
+          "-----BEGIN PUBLIC KEY-----\n" +
+          SANDBOX_VERIFICATION_PEM +
+          "\n-----END PUBLIC KEY-----";
+        jwt.verify(appContext, sandboxKey, { algorithms: ["RS256"] });
+        log.info("JWT verified with sandbox PEM");
+      } else {
+        throw err;
+      }
+    }
+
+    return {
+      isAuthorized: true,
+    };
+  } catch (err) {
+    log.error(
+      "JWT verification failed",
+      err instanceof Error ? err : new Error(String(err))
+    );
+    throw new Error("Unauthorized");
+  }
+};

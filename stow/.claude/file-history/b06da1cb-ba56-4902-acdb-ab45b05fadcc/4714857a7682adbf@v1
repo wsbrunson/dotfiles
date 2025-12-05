@@ -1,0 +1,129 @@
+// src/shared/middleware/parseRequestBodyWithZod.test.ts
+import { describe, it, expect, vi, beforeEach, type Mock } from 'vitest'
+import type { Context, Next } from 'hono'
+import type { ALBEvent } from 'aws-lambda'
+
+// ── Mock logger (create fns inside factory) ──
+vi.mock('../logger/logger', () => {
+  const factory = vi.fn(() => ({
+    info: vi.fn(),
+    error: vi.fn(),
+  }))
+  return { __esModule: true, logger: factory }
+})
+
+// Mock BadRequestError so we can assert on its payload
+vi.mock('shared/errors', () => {
+  class BadRequestError extends Error {
+    payload?: any
+    constructor(message: string, payload?: any) {
+      super(message)
+      this.name = 'BadRequestError'
+      this.payload = payload
+    }
+  }
+  return { __esModule: true, BadRequestError }
+})
+
+// ── Import SUT AFTER mocks ──
+import { parseRequestBodyWithZod } from './parseRequestBodyWithZod' // adjust if needed
+import { logger } from '../logger/logger'
+import { BadRequestError } from 'shared/errors'
+import { CreateCartRequestSchema } from 'shared/schemas' // <-- uses your real schema
+
+// ── Helpers ──
+function makeAlbEvent(body: any): ALBEvent {
+  return {
+    httpMethod: 'POST',
+    path: '/any',
+    headers: {},
+    multiValueHeaders: {},
+    queryStringParameters: null,
+    multiValueQueryStringParameters: null,
+    isBase64Encoded: false,
+    body,
+    requestContext: { elb: { targetGroupArn: 'arn:aws:elasticloadbalancing:xx:acct:tg/name/id' } },
+  } as any
+}
+
+function makeCtx(eventBody: any, extras?: Record<string, any>): Context {
+  const store = new Map<string, any>()
+  const c = {
+    env: { event: makeAlbEvent(eventBody) },
+    get: (k: string) => store.get(k),
+    set: (k: string, v: any) => { store.set(k, v) },
+    ...extras,
+  } as unknown as Context
+  return c
+}
+
+describe('parseRequestBodyWithZod', () => {
+  beforeEach(() => {
+    vi.clearAllMocks()
+  })
+
+  // A valid payload that satisfies CreateCartRequestSchema
+  const validPayload = {
+    cartId: 'cart-123',
+    merchantUrl: 'https://merchant.example',        // optional, but fine
+    products: [
+      {
+        productId: 'prod-1',
+        variantId: 'v-1',
+        quantity: 1,                                 // >= 1
+        // giftOptions optional
+      },
+    ],
+    // addresses/customer optional
+  }
+
+  it('parses valid JSON string, validates with Zod, sets c.set("data") and calls next()', async () => {
+    const c = makeCtx(JSON.stringify(validPayload))
+    const next: Next = vi.fn()
+
+    const mw = parseRequestBodyWithZod({ schema: CreateCartRequestSchema })
+    await mw(c, next)
+
+    // logger created and used
+    expect(logger).toHaveBeenCalledWith('ParseRequestBodyWithZod')
+    const loggerInstance = (logger as unknown as Mock).mock.results[0]!.value
+    expect(loggerInstance.info).toHaveBeenCalledWith(
+      'Parsing and validating request body',
+      { body: validPayload }
+    )
+
+    // data set + next called
+    expect(c.get('data')).toEqual(validPayload)
+    expect(next).toHaveBeenCalledTimes(1)
+  })
+
+  it('works with non-string body (already parsed object)', async () => {
+    const c = makeCtx(validPayload)                 // note: not a string
+    const next: Next = vi.fn()
+
+    const mw = parseRequestBodyWithZod({ schema: CreateCartRequestSchema })
+    await mw(c, next)
+
+    expect(c.get('data')).toEqual(validPayload)
+    expect(next).toHaveBeenCalledTimes(1)
+  })
+  
+  it('throws BadRequestError with "Issue parsing request" when body is invalid JSON', async () => {
+    const c = makeCtx('{"badJson": ')               // invalid JSON
+    const next: Next = vi.fn()
+
+    const mw = parseRequestBodyWithZod({ schema: CreateCartRequestSchema })
+
+    await expect(mw(c, next)).rejects.toBeInstanceOf(BadRequestError)
+
+    try {
+      await mw(c, next)
+    } catch (e: any) {
+      expect(e.name).toBe('BadRequestError')
+      // from middleware: message is "Invalid request body"; inner payload has .message
+      expect(e.message).toBe('Invalid request body')
+      expect(e.payload?.message).toBe('Issue parsing request')
+      expect(next).not.toHaveBeenCalled()
+    }
+  })
+})

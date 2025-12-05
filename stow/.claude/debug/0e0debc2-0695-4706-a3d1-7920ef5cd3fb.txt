@@ -1,0 +1,272 @@
+2025-12-04T19:57:41.587Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-12-04T19:57:41.587Z [DEBUG] Getting matching hook commands for SessionEnd with query: clear
+2025-12-04T19:57:41.587Z [DEBUG] Found 0 hook matchers in settings
+2025-12-04T19:57:41.587Z [DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+2025-12-04T19:57:41.589Z [DEBUG] Cleared all session hooks for session f83eec19-29c8-4ae5-a5d4-37e2a219c94a
+2025-12-04T19:57:41.606Z [DEBUG] Getting matching hook commands for SessionStart with query: clear
+2025-12-04T19:57:41.606Z [DEBUG] Found 0 hook matchers in settings
+2025-12-04T19:57:41.606Z [DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+2025-12-04T19:57:41.623Z [DEBUG] FileHistory: Added snapshot for e801f114-8e7f-4659-9462-853b3143d750, tracking 0 files
+2025-12-04T19:57:41.627Z [DEBUG] Rendering user message with 1 content blocks
+2025-12-04T19:57:41.627Z [DEBUG] Block 0: <command-name>/clear</command-name>
+            <command-message>clear</command-message>
+           ...
+2025-12-04T19:57:41.627Z [DEBUG] UserCommandMessage rendering: "clear" (args: "none")
+2025-12-04T19:57:41.627Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-12-04T19:57:42.545Z [DEBUG] npm view failed with code 1
+2025-12-04T19:57:42.545Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-04T19_57_41_742Z-debug-0.log
+2025-12-04T19:58:22.520Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-04T19:58:22.520Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-04T19:58:22.526Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-04T19:58:22.526Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-04T19:58:22.544Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-12-04T19:58:22.544Z [DEBUG] Found 0 hook matchers in settings
+2025-12-04T19:58:22.544Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-04T19:58:22.548Z [DEBUG] FileHistory: Making snapshot for message 38c7ccc4-61b7-4a8f-9012-437f52fa0b64
+2025-12-04T19:58:22.549Z [DEBUG] FileHistory: Added snapshot for 38c7ccc4-61b7-4a8f-9012-437f52fa0b64, tracking 0 files
+2025-12-04T19:58:23.075Z [ERROR] Error streaming, falling back to non-streaming mode: 400 Unsupported model: claude-3-5-haiku-20241022
+2025-12-04T19:58:23.509Z [ERROR] Error in non-streaming fallback: 400 Unsupported model: claude-3-5-haiku-20241022
+2025-12-04T19:58:23.509Z [ERROR] Error: Error: 400 Unsupported model: claude-3-5-haiku-20241022
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async IK9.a81.model (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:10432)
+    at async a81 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2139:1872)
+    at async IK9 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:10586)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:3631
+    at async Po1 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2037)
+    at async Fy (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:3602)
+2025-12-04T19:58:24.905Z [DEBUG] Stream started - received first chunk
+2025-12-04T19:58:27.352Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-04T19:58:27.354Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-04T19:58:27.354Z [DEBUG] Found 0 hook matchers in settings
+2025-12-04T19:58:27.354Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-04T19:58:27.492Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-04T19:58:27.492Z [DEBUG] Found 0 hook matchers in settings
+2025-12-04T19:58:27.492Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-04T19:58:27.513Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-04T19:58:27.513Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-04T19:58:27.515Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-04T19:58:27.515Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-04T19:58:27.965Z [ERROR] Error streaming, falling back to non-streaming mode: 400 Unsupported model: claude-3-5-haiku-20241022
+2025-12-04T19:58:28.382Z [ERROR] Error in non-streaming fallback: 400 Unsupported model: claude-3-5-haiku-20241022
+2025-12-04T19:58:28.382Z [ERROR] Error: Error: 400 Unsupported model: claude-3-5-haiku-20241022
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async IK9.a81.model (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:10432)
+    at async a81 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2139:1872)
+    at async IK9 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:10586)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:3631
+    at async Po1 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2037)
+    at async Fy (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:3602)
+2025-12-04T19:58:29.785Z [DEBUG] Stream started - received first chunk
+2025-12-04T19:58:30.845Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-04T19:58:30.848Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-04T19:58:30.848Z [DEBUG] Found 0 hook matchers in settings
+2025-12-04T19:58:30.848Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-04T19:58:31.018Z [ERROR] Error streaming, falling back to non-streaming mode: 400 Unsupported model: claude-3-5-haiku-20241022
+2025-12-04T19:58:31.163Z [ERROR] Error in non-streaming fallback: 400 Unsupported model: claude-3-5-haiku-20241022
+2025-12-04T19:58:31.163Z [ERROR] Error: Error: 400 Unsupported model: claude-3-5-haiku-20241022
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async IK9.a81.model (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:10432)
+    at async a81 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2139:1872)
+    at async IK9 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:10586)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:3631
+    at async Po1 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2037)
+    at async Fy (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:3602)
+2025-12-04T19:58:31.184Z [DEBUG] Permission suggestions for Bash: [
+  {
+    "type": "addRules",
+    "rules": [
+      {
+        "toolName": "Bash",
+        "ruleContent": "git show HEAD --no-stat"
+      }
+    ],
+    "behavior": "allow",
+    "destination": "localSettings"
+  }
+]
+2025-12-04T19:58:31.209Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-12-04T19:58:31.211Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-12-04T19:58:31.211Z [DEBUG] Found 0 hook matchers in settings
+2025-12-04T19:58:31.211Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-04T19:58:37.208Z [DEBUG] Getting matching hook commands for Notification with query: permission_prompt
+2025-12-04T19:58:37.208Z [DEBUG] Found 0 hook matchers in settings
+2025-12-04T19:58:37.208Z [DEBUG] Matched 0 unique hooks for query "permission_prompt" (0 before deduplication)
+2025-12-04T19:59:40.450Z [DEBUG] MCP server "atlassian": SSE connection dropped after 190175s uptime
+2025-12-04T19:59:40.457Z [DEBUG] MCP server "atlassian": Connection error: SSE error: TypeError: terminated: other side closed
+2025-12-04T19:59:43.594Z [DEBUG] MCP server "atlassian": Token expires in -360s, attempting proactive refresh
+2025-12-04T19:59:43.597Z [DEBUG] MCP server "atlassian": Starting token refresh
+2025-12-04T19:59:44.339Z [DEBUG] MCP server "atlassian": Found client info
+2025-12-04T19:59:45.428Z [DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+2025-12-04T19:59:45.555Z [DEBUG] MCP server "atlassian": Saving tokens
+2025-12-04T19:59:45.557Z [DEBUG] MCP server "atlassian": Token expires in: 3300
+2025-12-04T19:59:45.558Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-04T19:59:45.707Z [DEBUG] MCP server "atlassian": Token refreshed successfully
+2025-12-04T20:00:17.507Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-12-04T20:00:17.593Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-04T20:00:17.593Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-04T20:00:17.595Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-04T20:00:17.595Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-04T20:00:18.430Z [DEBUG] npm view failed with code 1
+2025-12-04T20:00:18.430Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-04T20_00_17_664Z-debug-0.log
+2025-12-04T20:00:19.864Z [DEBUG] Stream started - received first chunk
+2025-12-04T20:00:20.664Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-12-04T20:00:20.667Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-12-04T20:00:20.667Z [DEBUG] Found 0 hook matchers in settings
+2025-12-04T20:00:20.667Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-04T20:00:20.738Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-12-04T20:00:20.738Z [DEBUG] Found 0 hook matchers in settings
+2025-12-04T20:00:20.738Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-12-04T20:00:20.753Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-04T20:00:20.753Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-04T20:00:20.755Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-04T20:00:20.755Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-04T20:00:20.877Z [ERROR] Error streaming, falling back to non-streaming mode: 400 Unsupported model: claude-3-5-haiku-20241022
+2025-12-04T20:00:21.313Z [ERROR] Error in non-streaming fallback: 400 Unsupported model: claude-3-5-haiku-20241022
+2025-12-04T20:00:21.313Z [ERROR] Error: Error: 400 Unsupported model: claude-3-5-haiku-20241022
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async IK9.a81.model (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:10432)
+    at async a81 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2139:1872)
+    at async IK9 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:10586)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:3631
+    at async Po1 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2037)
+    at async Fy (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:3602)
+2025-12-04T20:00:22.953Z [DEBUG] Stream started - received first chunk
+2025-12-04T20:00:25.277Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-04T20:00:25.278Z [DEBUG] executePreToolHooks called for tool: Read
+2025-12-04T20:00:25.281Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-04T20:00:25.281Z [DEBUG] Found 0 hook matchers in settings
+2025-12-04T20:00:25.281Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-04T20:00:25.281Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-12-04T20:00:25.281Z [DEBUG] Found 0 hook matchers in settings
+2025-12-04T20:00:25.281Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-04T20:00:25.304Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-04T20:00:25.304Z [DEBUG] Found 0 hook matchers in settings
+2025-12-04T20:00:25.304Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-04T20:00:25.305Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-12-04T20:00:25.305Z [DEBUG] Found 0 hook matchers in settings
+2025-12-04T20:00:25.305Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-12-04T20:00:25.322Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-04T20:00:25.322Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-04T20:00:25.324Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-04T20:00:25.324Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-04T20:00:27.465Z [DEBUG] Stream started - received first chunk
+2025-12-04T20:00:47.638Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-12-04T20:00:47.638Z [DEBUG] Found 0 hook matchers in settings
+2025-12-04T20:00:47.638Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-04T20:01:47.879Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2025-12-04T20:01:47.879Z [DEBUG] Found 0 hook matchers in settings
+2025-12-04T20:01:47.879Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2025-12-04T20:02:30.629Z [DEBUG] Metrics opt-out check failed: No API key available
+2025-12-04T20:02:30.629Z [DEBUG] Metrics check failed, defaulting to disabled
+2025-12-04T20:02:30.629Z [DEBUG] Metrics export disabled by organization setting
+2025-12-04T20:30:18.662Z [DEBUG] npm view failed with code 1
+2025-12-04T20:30:18.662Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-04T20_30_17_812Z-debug-0.log
+2025-12-04T20:51:36.908Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-12-04T20:51:36.908Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-12-04T20:51:36.917Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-12-04T20:51:36.917Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-12-04T20:51:36.935Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-12-04T20:51:36.935Z [DEBUG] Found 0 hook matchers in settings
+2025-12-04T20:51:36.935Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-04T20:51:36.936Z [DEBUG] FileHistory: Making snapshot for message af8747b0-ac4c-431a-9993-5dea5a327b71
+2025-12-04T20:51:36.937Z [DEBUG] FileHistory: Added snapshot for af8747b0-ac4c-431a-9993-5dea5a327b71, tracking 0 files
+2025-12-04T20:51:37.496Z [ERROR] Error streaming, falling back to non-streaming mode: 400 Unsupported model: claude-3-5-haiku-20241022
+2025-12-04T20:51:38.008Z [ERROR] Error in non-streaming fallback: 400 Unsupported model: claude-3-5-haiku-20241022
+2025-12-04T20:51:38.008Z [ERROR] Error: Error: 400 Unsupported model: claude-3-5-haiku-20241022
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async IK9.a81.model (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:10432)
+    at async a81 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2139:1872)
+    at async IK9 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:10586)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:3631
+    at async Po1 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2037)
+    at async Fy (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:3602)
+2025-12-04T20:51:39.587Z [DEBUG] Stream started - received first chunk
+2025-12-04T20:52:01.409Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-12-04T20:52:01.409Z [DEBUG] Found 0 hook matchers in settings
+2025-12-04T20:52:01.409Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-04T20:52:01.412Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-04T20:52:01.412Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.70779.1764881521412
+2025-12-04T20:52:01.412Z [DEBUG] Preserving file permissions: 100644
+2025-12-04T20:52:01.417Z [DEBUG] Temp file written successfully, size: 57972 bytes
+2025-12-04T20:52:01.417Z [DEBUG] Applied original permissions to temp file
+2025-12-04T20:52:01.417Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.70779.1764881521412 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-04T20:52:01.420Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-12-04T20:52:30.680Z [DEBUG] Metrics opt-out check failed: No API key available
+2025-12-04T20:52:30.680Z [DEBUG] Metrics check failed, defaulting to disabled
+2025-12-04T20:52:30.680Z [DEBUG] Metrics export disabled by organization setting
+2025-12-04T21:00:18.644Z [DEBUG] npm view failed with code 1
+2025-12-04T21:00:18.644Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-04T21_00_17_750Z-debug-0.log
+2025-12-04T21:02:17.793Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-04T21:02:17.793Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.70779.1764882137793
+2025-12-04T21:02:17.793Z [DEBUG] Preserving file permissions: 100644
+2025-12-04T21:02:17.803Z [DEBUG] Temp file written successfully, size: 57972 bytes
+2025-12-04T21:02:17.803Z [DEBUG] Applied original permissions to temp file
+2025-12-04T21:02:17.803Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.70779.1764882137793 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-04T21:02:17.804Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-12-04T21:02:30.666Z [DEBUG] Metrics opt-out check failed: No API key available
+2025-12-04T21:02:30.666Z [DEBUG] Metrics check failed, defaulting to disabled
+2025-12-04T21:02:30.666Z [DEBUG] Metrics export disabled by organization setting

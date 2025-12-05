@@ -1,0 +1,183 @@
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { Hono } from 'hono';
+import { datadogTracing } from './datadogTracing';
+import type { ALBEvent, Context as LambdaContext } from 'aws-lambda';
+
+// Mock the tracer
+vi.mock('../instrumentation/datadog', () => ({
+  tracer: {
+    trace: vi.fn((name, options, callback) => callback()),
+  },
+}));
+
+describe('datadogTracing middleware', () => {
+  let mockEvent: ALBEvent;
+  let mockContext: LambdaContext;
+
+  beforeEach(() => {
+    mockEvent = {
+      httpMethod: 'POST',
+      path: '/test',
+      headers: {},
+      body: null,
+      isBase64Encoded: false,
+      requestContext: {
+        elb: {
+          targetGroupArn: 'arn:aws:elasticloadbalancing:us-east-1:123456789012:targetgroup/test/123',
+        },
+      },
+    } as ALBEvent;
+
+    mockContext = {
+      invokedFunctionArn: 'arn:aws:lambda:us-east-1:123456789012:function:test',
+      awsRequestId: 'test-request-id',
+      callbackWaitsForEmptyEventLoop: true,
+      functionName: 'test',
+      functionVersion: '1',
+      memoryLimitInMB: '128',
+      logGroupName: 'test',
+      logStreamName: 'test',
+      getRemainingTimeInMillis: () => 1000,
+      done: () => {},
+      fail: () => {},
+      succeed: () => {},
+    } as LambdaContext;
+  });
+
+  it('should add datadog tracing to Hono app', async () => {
+    const { tracer } = await import('../instrumentation/datadog');
+    const app = new Hono();
+
+    app.use('*', datadogTracing('test-service'));
+    app.post('/test', (c) => c.json({ success: true }));
+
+    // Simulate Hono handling a request with Lambda context
+    const req = new Request('http://localhost/test', {
+      method: 'POST',
+    });
+
+    const res = await app.fetch(req, {
+      event: mockEvent,
+      lambdaContext: mockContext,
+    });
+
+    expect(res.status).toBe(200);
+    expect(tracer.trace).toHaveBeenCalledWith(
+      'aws.lambda',
+      expect.objectContaining({
+        resource: 'POST test-service',
+        service: 'commerce-orchestrator',
+        type: 'serverless',
+        tags: {
+          function_arn: 'arn:aws:lambda:us-east-1:123456789012:function:test',
+          request_id: 'test-request-id',
+          service_name: 'test-service',
+        },
+      }),
+      expect.any(Function)
+    );
+  });
+
+  it('should extract HTTP method from event when available', async () => {
+    const { tracer } = await import('../instrumentation/datadog');
+    const app = new Hono();
+
+    app.use('*', datadogTracing('adorama'));
+    app.post('/cart', (c) => c.json({ id: '123' }));
+
+    const req = new Request('http://localhost/cart', {
+      method: 'POST',
+    });
+
+    await app.fetch(req, {
+      event: mockEvent,
+      lambdaContext: mockContext,
+    });
+
+    expect(tracer.trace).toHaveBeenCalledWith(
+      'aws.lambda',
+      expect.objectContaining({
+        resource: 'POST adorama',
+      }),
+      expect.any(Function)
+    );
+  });
+
+  it('should use request method when event httpMethod is missing', async () => {
+    const { tracer } = await import('../instrumentation/datadog');
+    const app = new Hono();
+
+    app.use('*', datadogTracing('wix'));
+    app.get('/status', (c) => c.text('OK'));
+
+    const eventWithoutMethod = { ...mockEvent, httpMethod: undefined } as unknown as ALBEvent;
+
+    const req = new Request('http://localhost/status', {
+      method: 'GET',
+    });
+
+    await app.fetch(req, {
+      event: eventWithoutMethod,
+      lambdaContext: mockContext,
+    });
+
+    expect(tracer.trace).toHaveBeenCalledWith(
+      'aws.lambda',
+      expect.objectContaining({
+        resource: 'GET wix',
+      }),
+      expect.any(Function)
+    );
+  });
+
+  it('should use DD_SERVICE env var if provided', async () => {
+    const { tracer } = await import('../instrumentation/datadog');
+    const originalEnv = process.env.DD_SERVICE;
+    process.env.DD_SERVICE = 'custom-service';
+
+    const app = new Hono();
+    app.use('*', datadogTracing('test'));
+    app.get('/', (c) => c.text('OK'));
+
+    const req = new Request('http://localhost/', { method: 'GET' });
+    await app.fetch(req, {
+      event: mockEvent,
+      lambdaContext: mockContext,
+    });
+
+    expect(tracer.trace).toHaveBeenCalledWith(
+      'aws.lambda',
+      expect.objectContaining({
+        service: 'custom-service',
+      }),
+      expect.any(Function)
+    );
+
+    // Restore env
+    if (originalEnv) {
+      process.env.DD_SERVICE = originalEnv;
+    } else {
+      delete process.env.DD_SERVICE;
+    }
+  });
+
+  it('should work with middleware chain', async () => {
+    const app = new Hono();
+    const authMiddleware = vi.fn(async (c, next) => {
+      await next();
+    });
+
+    app.use('*', datadogTracing('test'));
+    app.use('*', authMiddleware);
+    app.get('/protected', (c) => c.json({ data: 'secret' }));
+
+    const req = new Request('http://localhost/protected', { method: 'GET' });
+    const res = await app.fetch(req, {
+      event: mockEvent,
+      lambdaContext: mockContext,
+    });
+
+    expect(res.status).toBe(200);
+    expect(authMiddleware).toHaveBeenCalled();
+  });
+});

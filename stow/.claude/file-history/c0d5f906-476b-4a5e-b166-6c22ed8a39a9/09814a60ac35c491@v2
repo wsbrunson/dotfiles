@@ -1,0 +1,5143 @@
+
+########################
+## teams
+########################
+resource "pagerduty_team" "oac-team-gb-va-modxo" {
+  name        = "oac-team-gb-va-modxo"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "bt-network-tokens" {
+  name        = "BT - Network Tokens"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-bt-servicing" {
+  name        = "BT Servicing"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cci" {
+  name        = "CCI Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-postmortemserv" {
+  name        = "RCACentral Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sakathiresan" {
+  name        = "hw-cloud-engineering"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-yoye" {
+  name        = "hw-cloud-ops"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "hw-prod-support" {
+  name        = "HW Production Support"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "team-PSNB713" {
+  name        = "team-gitops"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "team-csse-reporting-isen" {
+  name        = "CSSE-Reporting-isen"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-kkgadamsetty" {
+  name        = "oac-team-kkgadamsetty"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-patronus" {
+  name        = "oac-team-patronus"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cs-ecmsdk" {
+  name        = "oac-team-ecmsdk"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cs-ecmcore" {
+  name        = "oac-team-ecmcore"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cs-search" {
+  name        = "oac-team-search"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cs-proactivepltfrm" {
+  name        = "oac-team-proactivepltfrm"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cs-contactrouting" {
+  name        = "oac-team-contactrouting"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-apigateway" {
+  name        = "OaC APIGateway"
+  description = "Managed by OaC in github, https://go/pd-config/"
+}
+
+resource "pagerduty_team" "oac-team-comms-decisioning" {
+  name        = "oac-team-comms-decisioning"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-dia-profile" {
+  name        = "oac-team-dia-profile"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-osanderson" {
+  name        = "oac-team-osanderson"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-p2p-android" {
+  name        = "oac-team-p2p-android"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-p2p-ios" {
+  name        = "oac-team-p2p-ios"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-p2p-web" {
+  name        = "oac-team-p2p-web"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-satmohan" {
+  name        = "oac-team-satmohan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-giving" {
+  name        = "oac-team-giving"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mkadubec" {
+  name        = "oac-team-mkadubec"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "eSRE-RISK-LECS-Support" {
+  name        = "eSRE RISK LECS Support"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-egualberto" {
+  name        = "oac-team-egualberto"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sudipghosh" {
+  name        = "oac-team-sudipghosh"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-surenkumar" {
+  name        = "oac-team-surenkumar"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sbagchi" {
+  name        = "oac-team-sbagchi"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pdevaraj" {
+  name        = "oac-team-pdevaraj"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vsardana" {
+  name        = "oac-team-vsardana"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sdavid" {
+  name        = "oac-team-sdavid"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-nrajarathinam" {
+  name        = "oac-team-nrajarathinam"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-fthangadurai" {
+  name        = "oac-team-fthangadurai"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sramamoorthy" {
+  name        = "oac-team-sramamoorthy"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-kushaasharma" {
+  name        = "oac-team-kushaasharma"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sdevulapalli" {
+  name        = "oac-team-sdevulapalli"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vsubramanian" {
+  name        = "oac-team-vsubramanian"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vesubramaniam" {
+  name        = "oac-team-vesubramaniam"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+
+resource "pagerduty_team" "oac-team-ppatakota" {
+  name        = "oac-team-ppatakota"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-grengarajan" {
+  name        = "oac-team-grengarajan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-aboorlagadda" {
+  name        = "oac-team-aboorlagadda"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bkumar" {
+  name        = "oac-team-bkumar"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-praparida" {
+  name        = "oac-team-praparida"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-skarupiahselvara" {
+  name        = "oac-team-skarupiahselvara"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ragani" {
+  name        = "oac-team-ragani"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-kausrinivasan" {
+  name        = "oac-team-kausrinivasan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-nilvyas" {
+  name        = "oac-team-nilvyas"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-adevaraj" {
+  name        = "oac-team-adevaraj"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bkaruppiah" {
+  name        = "oac-team-bkaruppiah"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-lokandukuri" {
+  name        = "oac-team-lokandukuri"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-munarayanan" {
+  name        = "oac-team-munarayanan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-anurulla" {
+  name        = "oac-team-anurulla"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-debajghosh" {
+  name        = "oac-team-debajghosh"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-jramamoorthy" {
+  name        = "oac-team-jramamoorthy"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-checkout-midtier" {
+  name        = "oac-team-checkout-midtier"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-checkoutorchserv" {
+  name        = "oac-team-checkoutorchserv"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-fkennedy" {
+  name        = "oac-team-fkennedy"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-topo" {
+  name        = "oac-team-topo"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-kafka" {
+  name        = "oac-team-kafka"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-allivingston" {
+  name        = "oac-team-allivingston"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-scatoe-fatcats" {
+  name        = "oac-team-scatoe-fatcats"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-scatoe-identity-sell" {
+  name        = "oac-team-scatoe-identity-sell"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ecg-mer" {
+  name        = "oac-team-ecg-mer"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-krbalasubra" {
+  name        = "oac-team-krbalasubra"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-nayang" {
+  name        = "oac-team-nayang"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bkunju" {
+  name        = "oac-team-bkunju"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mkoppa" {
+  name        = "oac-team-mkoppa"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-amirji" {
+  name        = "oac-team-amirji"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-swsingh" {
+  name        = "oac-team-swsingh"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+
+resource "pagerduty_team" "oac-team-bsaddy" {
+  name        = "oac-team-bsaddy"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rramasubbu" {
+  name        = "oac-team-rramasubbu"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-hseshadri" {
+  name        = "oac-team-hseshadri"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mgaonkar" {
+  name        = "oac-team-mgaonkar"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rsakthivel" {
+  name        = "oac-team-rsakthivel"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-revolve-credit-risk" {
+  name        = "oac-team-revolve-credit-risk"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-checkout-onetime-experiences" {
+  name        = "oac-team-checkout-onetime-experiences"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-swesthafer" {
+  name        = "oac-team-swesthafer"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-checkout-modxo" {
+  name        = "oac-team-checkout-modxo"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-checkout-modxo-billing" {
+  name        = "oac-team-checkout-modxo-billing"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-checkout-user-growth" {
+  name        = "oac-team-checkout-user-growth"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-huyong" {
+  name        = "oac-team-huyong"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pvenkatakrishnan" {
+  name        = "oac-team-pvenkatakrishnan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sauraverma" {
+  name        = "oac-team-sauraverma"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-kgulati" {
+  name        = "oac-team-kgulati"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pp-businessapp-mobile" {
+  name        = "PayPal Business App Mobile"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pp-mep" {
+  name        = "Merchant Experience and Personalization"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-businessapp" {
+  name        = "oac-team-businessapp"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-funds-management" {
+  name        = "Funds Management and MUMA"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-upaul" {
+  name        = "oac-team-upaul"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-kriprakash" {
+  name        = "oac-team-kriprakash"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-wpezzini" {
+  name        = "oac-team-wpezzini"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-skolluru" {
+  name        = "oac-team-skolluru"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-merchant-credit-risk" {
+  name        = "oac-team-merchant-credit-risk"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ccanton" {
+  name        = "oac-team-ccanton"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-Settings-backend" {
+  name        = "oac-team-Settings-backend"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-Settings-frontend" {
+  name        = "oac-team-Settings-frontend"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+
+resource "pagerduty_team" "oac-team-zhanzhang" {
+  name        = "oac-team-zhanzhang"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-agovindasamy" {
+  name        = "oac-team-agovindasamy"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-jmagats" {
+  name        = "oac-team-jmagats"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pkelley" {
+  name        = "oac-team-pkelley"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pkidambi" {
+  name        = "oac-team-pkidambi"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-nikulkarni" {
+  name        = "oac-team-nikulkarni"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-shwu" {
+  name        = "oac-team-shwu"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-awoodworth" {
+  name        = "oac-team-awoodworth"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cdesai" {
+  name        = "oac-team-cdesai"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cdesai-lta" {
+  name        = "oac-team-cdesai-lta"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-srirajendran" {
+  name        = "oac-team-srirajendran"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-srmeda" {
+  name        = "oac-team-srmeda"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sarabalasubr" {
+  name        = "oac-team-sarabalasubr"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-jaynatarajan" {
+  name        = "oac-team-jaynatarajan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rjogaraju" {
+  name        = "oac-team-rjogaraju"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sbhadra" {
+  name        = "oac-team-sbhadra"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mkutty" {
+  name        = "oac-team-mkutty"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-kasn" {
+  name        = "oac-team-kasn"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-salluru" {
+  name        = "oac-team-salluru"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rpravin" {
+  name        = "oac-team-rpravin"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-te-fmm" {
+  name        = "oac-team-te-fmm"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rtp-sv" {
+  name        = "oac-team-rtp-sv"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-te-rmm" {
+  name        = "oac-team-te-rmm"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-yranganathan" {
+  name        = "oac-team-yranganathan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-smadhavan" {
+  name        = "oac-team-smadhavan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-linuvarghese" {
+  name        = "oac-team-linuvarghese"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+
+resource "pagerduty_team" "oac-team-mtoro" {
+  name        = "oac-team-mtoro"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-lrangasamy" {
+  name        = "oac-team-lrangasamy"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vkukreja" {
+  name        = "oac-team-vkukreja"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ssufi" {
+  name        = "oac-team-ssufi"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pvaidyanathan" {
+  name        = "oac-team-pvaidyanathan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-anannataraja" {
+  name        = "oac-team-anannataraja"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-kartn" {
+  name        = "oac-team-kartn"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-jjaswal" {
+  name        = "oac-team-jjaswal"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-processors" {
+  name        = "oac-team-processors"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-kmeruva" {
+  name        = "oac-team-kmeruva"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-settlementnoncard" {
+  name        = "oac-team-settlementnoncard"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-settlementcard" {
+  name        = "oac-team-settlementcard"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-settlementinfra" {
+  name        = "oac-team-settlementinfra"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pkuricheti" {
+  name        = "oac-team-pkuricheti"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-slanka" {
+  name        = "oac-team-slanka"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-srivaidyanathan" {
+  name        = "oac-team-srivaidyanathan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bamishra" {
+  name        = "oac-team-bamishra"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-chepatel" {
+  name        = "oac-team-chepatel"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-deelumalai" {
+  name        = "oac-team-deelumalai"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-China-FSD-support" {
+  name        = "oac-team-China-FSD-support"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-Raptor-FSD-support" {
+  name        = "oac-team-Raptor-FSD-support"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-samerao" {
+  name        = "oac-team-samerao"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-psoni" {
+  name        = "oac-team-psoni"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-laschultz" {
+  name        = "oac-team-laschultz"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-divys" {
+  name        = "oac-team-divys"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-jhoelter" {
+  name        = "oac-team-jhoelter"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bbrahmandam" {
+  name        = "oac-team-bbrahmandam"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-csubramanian" {
+  name        = "oac-team-csubramanian"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-njohnas" {
+  name        = "oac-team-njohnas"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vkalaiselvan" {
+  name        = "oac-team-vkalaiselvan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-wengu" {
+  name        = "oac-team-wengu"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-asusarla" {
+  name        = "oac-team-asusarla"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vananthanarayana" {
+  name        = "oac-team-vananthanarayana"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-aranganathan" {
+  name        = "oac-team-aranganathan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sureramachandran" {
+  name        = "oac-team-sureramachandran"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vmahizhanathan" {
+  name        = "oac-team-vmahizhanathan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-anipandey" {
+  name        = "oac-team-anipandey"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-fedwards" {
+  name        = "oac-team-fedwards"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-jeharrell" {
+  name        = "oac-team-jeharrell"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ddamodharan" {
+  name        = "oac-team-ddamodharan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ssubramaniam" {
+  name        = "oac-team-ssubramaniam"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-duhaldar" {
+  name        = "oac-team-duhaldar"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-duhaldar-returnshub" {
+  name        = "oac-team-duhaldar-returnshub"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-loyaltyplatform" {
+  name        = "oac-team-loyaltyplatform"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-lchehab" {
+  name        = "oac-team-lchehab"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sanjesharma" {
+  name        = "oac-team-sanjesharma"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-luhyde" {
+  name        = "oac-team-luhyde"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mohamansari" {
+  name        = "oac-team-mohamansari"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-neemahajan" {
+  name        = "oac-team-neemahajan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-top" {
+  name        = "oac-team-top"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-payment-process-orchestration" {
+  name        = "oac-team-payment-process-orchestration"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-dvamakshy" {
+  name        = "oac-team-dvamakshy"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-srirakumar" {
+  name        = "oac-team-srirakumar"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-omkar" {
+  name        = "oac-team-omkar"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-chpereira" {
+  name        = "oac-team-chpereira"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ksubramaniam" {
+  name        = "oac-team-ksubramaniam"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sfaneeband" {
+  name        = "oac-team-sfaneeband"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-shoarora" {
+  name        = "oac-team-shoarora"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rpsidhu" {
+  name        = "oac-team-rpsidhu"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-garrazola" {
+  name        = "oac-team-garrazola"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mlinvilleengler" {
+  name        = "oac-team-mlinvilleengler"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ashpurohit" {
+  name        = "oac-team-ashpurohit"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-jkunze" {
+  name        = "oac-team-jkunze"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vthirunaukkarasu-screening" {
+  name        = "oac-team-vthirunaukkarasu-screening"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ipulappali" {
+  name        = "oac-team-ipulappali"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-wprasad" {
+  name        = "oac-team-wprasad"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-eaoki" {
+  name        = "oac-team-eaoki"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-amathavale" {
+  name        = "oac-team-amathavale"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-atalati" {
+  name        = "oac-team-atalati"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-kunmehta" {
+  name        = "oac-team-kunmehta"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-arudranand" {
+  name        = "oac-team-arudranand"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-kezheng" {
+  name        = "oac-team-kezheng"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ibarile" {
+  name        = "oac-team-ibarile"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-srchinta" {
+  name        = "oac-team-srchinta"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rrosanuru" {
+  name        = "oac-team-rrosanuru"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-jstarmer" {
+  name        = "oac-team-jstarmer"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-jmuthiyalu" {
+  name        = "oac-team-jmuthiyalu"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-brajagopalan" {
+  name        = "oac-team-brajagopalan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pchallapathi" {
+  name        = "oac-team-pchallapathi"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vvasujoseph" {
+  name        = "oac-team-vvasujoseph"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-debitcard-platform" {
+  name        = "oac-team-debitcard-platform"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-paypalhere" {
+  name        = "oac-team-paypalhere"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-aschhabra" {
+  name        = "oac-team-aschhabra"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-gbarton" {
+  name        = "oac-team-gbarton"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-brbeck" {
+  name        = "oac-team-brbeck"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+
+resource "pagerduty_team" "oac-team-malouis" {
+  name        = "oac-team-malouis"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-absaha" {
+  name        = "oac-team-absaha"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-jiaolu" {
+  name        = "oac-team-jiaolu"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-smannava" {
+  name        = "oac-team-smannava"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rababu" {
+  name        = "oac-team-rababu"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-xiaohan" {
+  name        = "oac-team-xiaohan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rababu-cs-genai" {
+  name        = "oac-team-rababu-cs-genai"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-atewari" {
+  name        = "oac-team-atewari"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-susomani" {
+  name        = "oac-team-susomani"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-robolla" {
+  name        = "oac-team-robolla"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-accountmanagement" {
+  name        = "oac-team-accountmanagement"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-msathuvacharipic" {
+  name        = "oac-team-msathuvacharipic"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-franchise" {
+  name        = "oac-team-franchise"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-josingh" {
+  name        = "oac-team-josingh"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-akannimarponnaia" {
+  name        = "oac-team-akannimarponnaia"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-urobertson" {
+  name        = "oac-team-urobertson"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-garamadugu" {
+  name        = "oac-team-garamadugu"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-dpenick" {
+  name        = "oac-team-dpenick"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-segopal" {
+  name        = "oac-team-segopal"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-srvenkataraman" {
+  name        = "oac-team-srvenkataraman"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-gbenneworth" {
+  name        = "oac-team-gbenneworth"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sisharma" {
+  name        = "oac-team-sisharma"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-aramani" {
+  name        = "oac-team-aramani"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-kejin" {
+  name        = "oac-team-kejin"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-lbijlsma" {
+  name        = "oac-team-lbijlsma"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-nchitalia" {
+  name        = "oac-team-nchitalia"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-spowar" {
+  name        = "oac-team-spowar"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-jmizzi" {
+  name        = "oac-team-jmizzi"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-dhkumar" {
+  name        = "oac-team-dhkumar"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ajayaraman" {
+  name        = "oac-team-ajayaraman"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sdas1" {
+  name        = "oac-team-sdas1"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-dmangipudi" {
+  name        = "oac-team-dmangipudi"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-satishk" {
+  name        = "oac-team-satishk"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-imalka" {
+  name        = "oac-team-imalka"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bcdc-trade" {
+  name        = "oac-team-bcdc-trade"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-hadeo" {
+  name        = "oac-team-hadeo"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mmishra" {
+  name        = "oac-team-mmishra"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-monrastogi" {
+  name        = "oac-team-monrastogi"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-agregovic" {
+  name        = "oac-team-agregovic"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-aegleston" {
+  name        = "oac-team-aegleston"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-gps-geo-expansion" {
+  name        = "oac-gps-geo-expansion"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-gswanson" {
+  name        = "oac-team-gswanson"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-svijendran" {
+  name        = "oac-team-svijendran"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vkumar5" {
+  name        = "oac-team-vkumar5"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-saadapu" {
+  name        = "oac-team-saadapu"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-saadapu-native" {
+  name        = "oac-team-saadapu-native"
+  description = "Native Organic Onboarding. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-onboarding-mfs" {
+  name        = "oac-team-onboarding-mfs"
+  description = "Native Onboarding Backend. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cons-onb-native-android" {
+  name        = "oac-team-cons-onb-native-android"
+  description = "Consumer Onboarding - Android Team. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cons-onb-native-ios" {
+  name        = "oac-team-cons-onb-native-ios"
+  description = "Consumer Onboarding - iOS Team. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-enemtsov" {
+  name        = "oac-team-enemtsov"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-shradhakrishnan" {
+  name        = "oac-team-shradhakrishnan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-didavis" {
+  name        = "oac-team-didavis"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rrajali" {
+  name        = "oac-team-rrajali"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ssadhasivam" {
+  name        = "oac-team-ssadhasivam"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-shjinnenahalli" {
+  name        = "oac-team-shjinnenahalli"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-prannamalai" {
+  name        = "oac-team-prannamalai"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sevani" {
+  name        = "oac-team-sevani"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-thganesan" {
+  name        = "oac-team-thganesan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-asheelapascal" {
+  name        = "oac-team-asheelapascal"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mjuarros" {
+  name        = "oac-team-mjuarros"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppunaroor" {
+  name        = "oac-team-ppunaroor"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-skeluri" {
+  name        = "oac-team-skeluri"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-dkhera" {
+  name        = "oac-team-dkhera"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rrsingh" {
+  name        = "oac-team-rrsingh"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-aemanueli" {
+  name        = "oac-team-aemanueli"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-latm" {
+  name        = "oac-team-latm"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-elmo" {
+  name        = "oac-team-elmo"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-elmo-secondary" {
+  name        = "oac-team-elmo-secondary"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-elmo-amer" {
+  name        = "oac-team-elmo-amer"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-elmo-emea" {
+  name        = "oac-team-elmo-emea"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vrangamani" {
+  name        = "oac-team-vrangamani"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vchirakkil" {
+  name        = "oac-team-vchirakkil"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-subalasubramania" {
+  name        = "oac-team-subalasubramania"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bribogard" {
+  name        = "oac-team-bribogard"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vmikkilineni" {
+  name        = "oac-team-vmikkilineni"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-annmarshall" {
+  name        = "oac-team-annmarshall"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-malagiri" {
+  name        = "oac-team-malagiri"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-laxsharma" {
+  name        = "oac-team-laxsharma"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-gdubey" {
+  name        = "oac-team-gdubey"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-jpfeifer" {
+  name        = "oac-team-jpfeifer"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bhmohan" {
+  name        = "oac-team-bhmohan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-jaggarwal" {
+  name        = "oac-team-jaggarwal"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ajbhat" {
+  name        = "oac-team-ajbhat"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-gbaliga" {
+  name        = "oac-team-gbaliga"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sacham" {
+  name        = "oac-team-sacham"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ddhiran" {
+  name        = "oac-team-ddhiran"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bavarghese" {
+  name        = "oac-team-bavarghese"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-saracherukupalli" {
+  name        = "oac-team-saracherukupalli"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-manpaul" {
+  name        = "oac-team-manpaul"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mzabaneh" {
+  name        = "oac-team-mzabaneh"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-umanoharan-cnt" {
+  name        = "oac-team-umanoharan-cnt"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rchandak-cnt" {
+  name        = "oac-team-rchandak-cnt"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-compliance-crypto-core" {
+  name        = "oac-team-compliance-crypto-core"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-dgorecha" {
+  name        = "oac-team-dgorecha"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bnagireddi" {
+  name        = "oac-team-bnagireddi"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-nidixit" {
+  name        = "oac-team-nidixit"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-shipandey" {
+  name        = "oac-team-shipandey"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-schenneerappa" {
+  name        = "oac-team-schenneerappa"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-huitli" {
+  name        = "oac-team-huitli"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-banatarajan" {
+  name        = "oac-team-banatarajan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bhsaxena" {
+  name        = "oac-team-bhsaxena"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sinuganti" {
+  name        = "oac-team-sinuganti"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bsoman" {
+  name        = "oac-team-bsoman"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-wedeng" {
+  name        = "oac-team-wedeng"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-manojaiswal" {
+  name        = "oac-team-manojaiswal"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-scesari" {
+  name        = "oac-team-scesari"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-snswamy" {
+  name        = "oac-team-snswamy"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-snswamy-complaintsmgmt" {
+  name        = "oac-team-snswamy-complaintsmgmt"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-snswamy-gccacomplaints" {
+  name        = "oac-team-snswamy-gccacomplaints"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-snswamy-eetools" {
+  name        = "oac-team-snswamy-eetools"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-raanchala" {
+  name        = "oac-team-raanchala"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-container-platform-experience" {
+  name        = "oac-team-container-platform-experience"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pkrishna" {
+  name        = "oac-team-pkrishna"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sukilari" {
+  name        = "oac-team-sukilari"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ahferguson" {
+  name        = "oac-team-ahferguson"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vijanakiraman" {
+  name        = "oac-team-vijanakiraman"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-svellaichamy" {
+  name        = "oac-team-svellaichamy"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bhaudakari" {
+  name        = "oac-team-bhaudakari"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-tshastri" {
+  name        = "oac-team-tshastri"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-akolukuluru" {
+  name        = "oac-team-akolukuluru"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-nickward" {
+  name        = "oac-team-nickward"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-srinivmanoharan" {
+  name        = "oac-team-srinivmanoharan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-jthomasdaniel" {
+  name        = "oac-team-jthomasdaniel"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-dmohanakumarchan" {
+  name        = "oac-team-dmohanakumarchan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mmariappan" {
+  name        = "oac-team-mmariappan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-hdoshi" {
+  name        = "oac-team-hdoshi"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-devens" {
+  name        = "oac-team-devens"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sremcpserv" {
+  name        = "oac-team-sremcpserv"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-dkrishnan" {
+  name        = "oac-team-dkrishnan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-kaselvaraj" {
+  name        = "oac-team-kaselvaraj"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-shsubramanian" {
+  name        = "oac-team-shsubramanian"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vkhanna" {
+  name        = "oac-team-vkhanna"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-dmadhavan" {
+  name        = "oac-team-dmadhavan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-agopalakrishna" {
+  name        = "oac-team-agopalakrishna"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sgerritz" {
+  name        = "oac-team-sgerritz"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-gbhatt" {
+  name        = "oac-team-gbhatt"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mwexler" {
+  name        = "oac-team-mwexler"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-lzhu3" {
+  name        = "oac-team-lzhu3"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rretineni" {
+  name        = "oac-team-rretineni"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-hsingh" {
+  name        = "oac-team-hsingh"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-aumin" {
+  name        = "oac-team-aumin"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-zhuang1" {
+  name        = "oac-team-zhuang1"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pengzhang" {
+  name        = "oac-team-pengzhang"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-amps-aiml-engineering-excellence-committee" {
+  name        = "oac-team-amps-aiml-engineering-excellence-committee"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-anren" {
+  name        = "oac-team-anren"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-jyang14" {
+  name        = "oac-team-jyang14"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-gc-ux" {
+  name        = "oac-team-gc-ux"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-gc-ux-native" {
+  name        = "oac-team-gc-ux-native"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pravanavarapu" {
+  name        = "oac-team-pravanavarapu"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pravdeshpande" {
+  name        = "oac-team-pravdeshpande"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ssooriyakanthan" {
+  name        = "oac-team-ssooriyakanthan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pix-prannamalai" {
+  name        = "oac-team-pix-prannamalai"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-fchen5" {
+  name        = "oac-team-fchen5"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-raas" {
+  name        = "oac-team-raas"
+  description = "Managed by OaX in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-tsanghvi" {
+  name        = "oac-team-tsanghvi"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-drathinasamy" {
+  name        = "oac-team-drathinasamy"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-gsharma" {
+  name        = "oac-team-gsharma"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-lolbrich" {
+  name        = "oac-team-lolbrich"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bbusby" {
+  name        = "oac-team-bbusby"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-salexander" {
+  name        = "oac-team-salexander"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ravidsharma" {
+  name        = "oac-team-ravidsharma"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-njayaramanven" {
+  name        = "oac-team-njayaramanven"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mshabtai" {
+  name        = "oac-team-mshabtai"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-akesharwani" {
+  name        = "oac-team-akesharwani"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vendasarathan" {
+  name        = "oac-team-vendasarathan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-jaugustine" {
+  name        = "oac-team-jaugustine"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-nmedija" {
+  name        = "Credit Production Engineering Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-arpanneerselvam" {
+  name        = "oac-team-arpanneerselvam"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-nkishenchoweth" {
+  name        = "oac-team-nkishenchoweth"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-merchantsettlement" {
+  name        = "Merchant Payouts and Debits platform"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mam" {
+  name        = "Managed Account"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rajaramakrishnan" {
+  name        = "oac-team-rajaramakrishnan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rambalaji" {
+  name        = "oac-team-rambalaji"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-hebachhawat" {
+  name        = "oac-team-hebachhawat"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-kashwani" {
+  name        = "oac-team-kashwani"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-anirao" {
+  name        = "oac-team-anirao"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-jesspark" {
+  name        = "oac-team-jesspark"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bhavipatel" {
+  name        = "oac-team-bhavipatel"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rsthakur" {
+  name        = "oac-team-rsthakur"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rnagaraj" {
+  name        = "oac-team-rnagaraj"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rkumar6" {
+  name        = "oac-team-rkumar6"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sbhaduri" {
+  name        = "oac-team-sbhaduri"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-prithomas" {
+  name        = "oac-team-prithomas"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ashaw" {
+  name        = "oac-team-ashaw"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-aarumugampalanis" {
+  name        = "oac-team-aarumugampalanis"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-kksridhar" {
+  name        = "oac-team-kksridhar"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-anpal" {
+  name        = "oac-team-anpal"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-nong" {
+  name        = "oac-team-nong"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-dkirichanski" {
+  name        = "oac-team-dkirichanski"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-kbipin" {
+  name        = "oac-team-kbipin"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-avchatterjee" {
+  name        = "oac-team-avchatterjee"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+
+resource "pagerduty_team" "oac-team-rule-operations" {
+  name        = "oac-team-rule-operations"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-asap" {
+  name        = "Team ASAP"
+  description = "Supports Nice Applications: Engage, Nexidia, NPM, WFM, EEM. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cgarber" {
+  name        = "oac-team-cgarber"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-kmaley" {
+  name        = "oac-team-kmaley"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-itportfolio" {
+  name        = "oac-team-itportfolio"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pranagarajan" {
+  name        = "oac-team-pranagarajan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mulakshmanan" {
+  name        = "oac-team-mulakshmanan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-zeyan" {
+  name        = "oac-team-zeyan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-dataops" {
+  name        = "oac-team-dataops"
+  description = "CIPDS GFC Data Operation Team."
+}
+
+resource "pagerduty_team" "oac-team-jedathoot" {
+  name        = "oac-team-jedathoot"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-iaod-insights-backend" {
+  name        = "oac-team-iaod-insights-backend"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-iaod-media-search" {
+  name        = "oac-team-iaod-media-search"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cipds-aiva-gfc-experience" {
+  name        = "oac-team-cipds-aiva-gfc-experience"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-iaod-web-inspection-and-automation" {
+  name        = "oac-team-iaod-web-inspection-and-automation"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cipds-staff" {
+  name        = "oac-team-cipds-staff"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-unifiedonboarding" {
+  name        = "oac-team-unifiedonboarding"
+  description = "Consumer Unified OnBoarding team. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-progressive-exp" {
+  name        = "oac-team-progressive-exp"
+  description = "Consumer Onboarding - Progressive Experience Team. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-paypal-dot-com" {
+  name        = "oac-team-paypal-dot-com"
+  description = "paypal.com Team. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-kill-legacy" {
+  name        = "oac-team-kill-legacy"
+  description = "Kill Legacy Team. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-lzhu3-service" {
+  name        = "oac-team-lzhu3-service"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-wallet-mfs" {
+  name        = "Wallet MFS"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-wallet-web" {
+  name        = "Wallet Web"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-wallet-ios" {
+  name        = "Wallet iOS"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-crypto-ios" {
+  name        = "Crypto Hub iOS"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-wallet-android" {
+  name        = "Wallet Android"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-crypto-android" {
+  name        = "Crypto Hub Android"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rcs" {
+  name        = "RCS - Remote Config System"
+  description = "Remote Config Support: https://go/remoteconfigsupport. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ucp" {
+  name        = "UCP - Unified Configuration Platform"
+  description = "UCP Support: https://go/config. Slack: #help-unifiedconfig. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pce" {
+  name        = "PCE - Product Configuration Engine"
+  description = "PCE support: #help-pce. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cdnx" {
+  name        = "CDNX"
+  description = "CDN Experiences, https://go/cdnx. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-webplatform" {
+  name        = "oac-team-webplatform"
+  description = "Web Platform - Node Infrastructure, https://go/webdocs. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vanbalagan" {
+  name        = "oac-team-vanbalagan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-kjanagiraman" {
+  name        = "oac-team-kjanagiraman"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vgayathri" {
+  name        = "oac-team-vgayathri"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-invoicecloud" {
+  name        = "oac-team-invoicecloud"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-asap-test" {
+  name        = "Team ASAP Test"
+  description = "Supports Nice Applications: Engage Lab, Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sharamanathan" {
+  name        = "oac-team-sharamanathan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pbalamurugan" {
+  name        = "oac-team-pbalamurugan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-lakssrinivasan" {
+  name        = "oac-team-lakssrinivasan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-p2pservices" {
+  name        = "oac-team-p2pservices"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-jnpatterson" {
+  name        = "oac-team-jnpatterson"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sallahverdiyeva" {
+  name        = "oac-team-sallahverdiyeva"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pacteraedge-operation" {
+  name        = "oac-team-pacteraedge-operation"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-aksbhatia" {
+  name        = "oac-team-aksbhatia"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ayumaheshwari" {
+  name        = "oac-team-ayumaheshwari"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-anooe" {
+  name        = "oac-team-anooe"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mbhavirisetty" {
+  name        = "oac-team-mbhavirisetty"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mvannur" {
+  name        = "oac-team-mvannur"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-afzashaikh" {
+  name        = "oac-team-afzashaikh"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-iyswn" {
+  name        = "oac-team-iyswn"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mansaini" {
+  name        = "oac-team-mansaini"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bbarick" {
+  name        = "oac-team-bbarick"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-saiahmed" {
+  name        = "oac-team-saiahmed"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-abimaurya" {
+  name        = "oac-team-abimaurya"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-accessengineering" {
+  name        = "Access Engineering (LDAP,OUD,Secretserver)"
+  description = "For Site OUD LDAP Oncall. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-SOAR-Security-Automation" {
+  name        = "SOAR Security Automation "
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-appsec-pd" {
+  name        = "Security-PD-AppSec"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppqa-smendoza" {
+  name        = "oac-team-ppqa-smendoza"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-corp-smendoza" {
+  name        = "oac-team-corp-smendoza"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-L2-agregovic" {
+  name        = "oac-team-L2-agregovic"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-L2-aksbhatia" {
+  name        = "oac-team-L2-aksbhatia"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-L2-chpereira" {
+  name        = "oac-team-L2-chpereira"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-L2-mohamansari" {
+  name        = "oac-team-L2-mohamansari"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mfrenkel" {
+  name        = "oac-team-mfrenkel"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-threat-engineering" {
+  name        = "Threat Management and Engineering"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-brcote" {
+  name        = "Honey - Security"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-giftcards" {
+  name        = "oac-team-giftcards"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-dtoscas" {
+  name        = "oac-team-dtoscas"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-L2-dtoscas" {
+  name        = "oac-team-L2-dtoscas"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vduraikkannu" {
+  name        = "oac-team-vduraikkannu"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mkattamuri" {
+  name        = "oac-team-mkattamuri"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-anerurkar" {
+  name        = "oac-team-anerurkar"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-dmp-ng" {
+  name        = "oac-team-dmp-ng"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-slakshmikanthan" {
+  name        = "oac-team-slakshmikanthan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bt_xoom_observability" {
+  name        = "BT Xoom Observability"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-domain_o11y" {
+  name        = "Domain O11y"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-observability-merchantmonitoring" {
+  name        = "SRCE Observability Merchant Monitoring"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-observability-data" {
+  name        = "SRCE Observability Data Track"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rtds" {
+  name        = "oac-team-rtds"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bizcfg" {
+  name        = "oac-team-bizcfg"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-HW-problem-management" {
+  name        = "HyperWallet-Problem-Management"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-billpay" {
+  name        = "HyperWallet-Billpay-Support"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cgargele" {
+  name        = "HyperWallet-Merchant-Reporting"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-HW-Reporting" {
+  name        = "HyperWallet-Reporting"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-Payouts-VAS" {
+  name        = "Payouts VAS and Compliance"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-hrpatel-HW" {
+  name        = "Deprecated Old Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-venmo" {
+  name        = "oac-team-venmo"
+  description = "Venmo team. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-infra-platform-venmo" {
+  name        = "oac-infra-platform-venmo"
+  description = "Infra Platform Venmo team. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "venmo-common-services-platform" {
+  name        = "venmo-common-services-platform"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-dsre-im" {
+  name        = "DSRE Incident Management"
+  description = "DSRE Incident Management Team. Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-crypto" {
+  name        = "Crypto Hub Backend"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-web-tnw" {
+  name        = "Crypto Hub Web"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ibarile-crypto-mgrs" {
+  name        = "Crypto Hub Managers"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-galaxiservice-operation" {
+  name        = "oac-team-galaxiservice-operation"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-iaodservice-operation" {
+  name        = "oac-team-iaodservice-operation"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-galaxidata-operation" {
+  name        = "oac-team-galaxidata-operation"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-galaxi-midas-service" {
+  name        = "oac-team-galaxi-midas-service"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cipds-sams-service" {
+  name        = "oac-team-cipds-sams-service"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-iaod-midas-service" {
+  name        = "oac-team-iaod-midas-service"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-iaoddata-operation" {
+  name        = "oac-team-iaoddata-operation"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-admc-udr" {
+  name        = "oac-team-admc-udr"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-billpay-payin" {
+  name        = "oac-team-billpay-payin"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-billpay-payout" {
+  name        = "oac-team-billpay-payout"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vwalia" {
+  name        = "oac-team-vwalia"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-lnyati" {
+  name        = "oac-team-lnyati"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-hwecs" {
+  name        = "Hyperwallet Enterprise Cyber Security "
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-dlp-engineering" {
+  name        = "DLP Engineering"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pcs" {
+  name        = "oac-team-pcs"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-dmali" {
+  name        = "oac-team-dmali"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-hearts" {
+  name        = "oac-team-hearts"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-raasdisputes" {
+  name        = "oac-team-raasdisputes"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pfnw" {
+  name        = "oac-team-pfnw"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-skynet" {
+  name        = "oac-team-skynet"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vabhardwaj" {
+  name        = "oac-team-vabhardwaj"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-tianywang" {
+  name        = "oac-team-tianywang"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-merchantreportinginsights" {
+  name        = "oac-team-merchantreportinginsights"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-oscar" {
+  name        = "oac-team-oscar"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bt-billpay-payoutsbridge" {
+  name        = "oac-team-bt-billpay-payoutsbridge"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-billpay-o11y-alerts" {
+  name        = "oac-team-billpay-o11y-alerts"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mkirana" {
+  name        = "oac-team-mkirana"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-grc-support" {
+  name        = "oac-team-grc-support"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-CISDC-L1" {
+  name        = "oac-team-CISDC-L1"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-deanthony" {
+  name        = "oac-team-deanthony"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pooagarwal" {
+  name        = "oac-team-pooagarwal"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sarudra" {
+  name        = "oac-team-sarudra"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-btdataingestionserv" {
+  name        = "oac-team-btdataingestionserv"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-nrt" {
+  name        = "oac-team-nrt"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-skabasi" {
+  name        = "oac-team-skabasi"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+
+resource "pagerduty_team" "oac-team-lkanagaraju" {
+  name        = "oac-team-lkanagaraju"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+
+resource "pagerduty_team" "oac-team-paswaminathan" {
+  name        = "oac-team-paswaminathan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+
+resource "pagerduty_team" "oac-team-csivakolundu" {
+  name        = "oac-team-csivakolundu"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+
+resource "pagerduty_team" "oac-team-caspowell" {
+  name        = "oac-team-caspowell"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+
+resource "pagerduty_team" "oac-team-gochockalingam" {
+  name        = "oac-team-gochockalingam"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+
+resource "pagerduty_team" "oac-team-tarul" {
+  name        = "oac-team-tarul"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-yyochpaz" {
+  name        = "oac-team-yyochpaz"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vindwivedi" {
+  name        = "oac-team-vindwivedi"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-activities" {
+  name        = "oac-team-activities"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-payflowAlerts" {
+  name        = "oac-team-payflowAlerts"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-payflowcore" {
+  name        = "oac-team-payflowcore"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ssundaravalli" {
+  name        = "oac-team-ssundaravalli"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-karnarasimhan" {
+  name        = "oac-team-karnarasimhan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sarichards" {
+  name        = "oac-team-sarichards"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-offersplatform" {
+  name        = "oac-team-offersplatform"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mikes" {
+  name        = "oac-team-mikes"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-checkout-dps" {
+  name        = "oac-team-checkout-dps"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-tndeo" {
+  name        = "oac-team-tndeo"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-crypto-tax-center" {
+  name        = "oac-team-crypto-tax-center"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-djgrayson" {
+  name        = "oac-team-djgrayson"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-armeenakshisunda" {
+  name        = "oac-team-armeenakshisunda"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cons-shopping-core" {
+  name        = "OaC Consumer Shopping Core"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-merchant-tools" {
+  name        = "OaC Merchant Tools"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-merchant-platform" {
+  name        = "OaC Merchant Platform"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-campaign-management" {
+  name        = "OaC Campaign Management"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-tagmanager" {
+  name        = "OaC Tag Manager"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-prsakharkar" {
+  name        = "oac-team-prsakharkar"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-prikaushik" {
+  name        = "oac-team-prikaushik"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-oalfares" {
+  name        = "oac-team-oalfares"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-karbutler" {
+  name        = "oac-team-karbutler"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-fastlane-sdk" {
+  name        = "oac-team-fastlane-sdk"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-fastlane-consumer" {
+  name        = "oac-team-fastlane-consumer"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-fastlane-bcdc" {
+  name        = "oac-team-fastlane-bcdc"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-fastlane-international" {
+  name        = "oac-team-fastlane-international"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ldetlefsen" {
+  name        = "oac-team-ldetlefsen"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ldetlefsen-web" {
+  name        = "oac-team-ldetlefsen-web"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ldetlefsen-ios" {
+  name        = "oac-team-ldetlefsen-ios"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ldetlefsen-android" {
+  name        = "oac-team-ldetlefsen-android"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-crns" {
+  name        = "oac-team-crns"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-uos" {
+  name        = "oac-team-uos"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-supanja" {
+  name        = "oac-team-supanja"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-payouts" {
+  name        = "oac-team-payouts"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-caascoresvcs" {
+  name        = "oac-team-caascoresvcs"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sshivarudrappa" {
+  name        = "oac-team-sshivarudrappa"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-kafkashoppingeventd" {
+  name        = "oac-team-kafkashoppingeventd"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-dottool" {
+  name        = "oac-team-dottool"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+
+resource "pagerduty_team" "oac-team-deremic" {
+  name        = "oac-team-deremic"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ecs-cloud-integrations" {
+  name        = "oac-team-ecs-cloud-integrations"
+  description = "Security for BU integrations. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bcdc" {
+  name        = "oac-team-bcdc"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-apfeifer" {
+  name        = "oac-team-apfeifer"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rababu-gems" {
+  name        = "oac-team-rababu-gems"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rababu-beyond" {
+  name        = "oac-team-rababu-beyond"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-Mobile-Technologies-Team" {
+  name        = "oac-team-Mobile-Technologies-Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-observability-infrastructure" {
+  name        = "SRCE Observability Infrastructure"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-observability-operations" {
+  name        = "SRCE Observability Operations"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-observability-domain-observability" {
+  name        = "Domain Observability"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mpoon" {
+  name        = "oac-team-mpoon"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-chirani-firco" {
+  name        = "oac-team-chirani-firco"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-photons-geo" {
+  name        = "oac-team-photons-geo"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bt-colabs-merchant-cost-optimization" {
+  name        = "BT-Colabs Merchant Cost Optimization"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-braintree" {
+  name        = "oac-team-braintree"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ccoe-gcp" {
+  name        = "oac-team-ccoe-gcp"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-reporting-reconcilation-insights" {
+  name        = "Reporting Reconcilation and Insights"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pix-be-shjinnenahalli" {
+  name        = "oac-team-pix-be-shjinnenahalli"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-manjjoshi" {
+  name        = "oac-team-manjjoshi"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-change-reliability" {
+  name        = "oac-team-change-reliability"
+  description = "Team Change Reliability, #team-change-reliability, #help-release-analysis"
+}
+
+resource "pagerduty_team" "oac-team-lighthouse" {
+  name        = "oac-team-lighthouse"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-umss" {
+  name        = "oac-team-umss"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-anganapathy" {
+  name        = "oac-team-anganapathy"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-milkyway" {
+  name        = "Milkyway"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-fraud-tools-auth" {
+  name        = "Braintree Fraud Tools Auth"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-fraud-tools-evaluation" {
+  name        = "Fraud Tools Evaluation"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-aiplatform" {
+  name        = "AIPlatform"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-aiplatform-ngre" {
+  name        = "AIPlatform-ngre"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-gml" {
+  name        = "oac-team-gml"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-genesis-api" {
+  name        = "Genesis API"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cell-orchestration" {
+  name        = "Cell-orchestration"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-L2-anganapathy" {
+  name        = "oac-team-L2-anganapathy"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-caas-core-services" {
+  name        = "caas-core-services"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bt-data-eng" {
+  name        = "oac-team-bt-data-engineering"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bt-data-eng-cw" {
+  name        = "oac-team-bt-data-eng-cw"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-devrunner" {
+  name        = "Devrunner"
+  description = "Devrunner team. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-openshare" {
+  name        = "Open Share Outbound"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-partnerlifecycle" {
+  name        = "Partner Lifecycle USET"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-partnerservicing" {
+  name        = "oac-team-partnerservicing"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-nebhavsar" {
+  name        = "oac-team-nebhavsar"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mpo" {
+  name        = "OaC MPO"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-spf" {
+  name        = "OaC SPF"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-zhencao" {
+  name        = "payment gryffindors team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-irshad" {
+  name        = "payment pioneers team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-luyazhang" {
+  name        = "oac-team-luyazhang"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-teshi" {
+  name        = "oac-team-teshi"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-jibao" {
+  name        = "oac-team-jibao"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-hsun2" {
+  name        = "oac-team-hsun2"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-hsun2-martech" {
+  name        = "oac-team-hsun2-martech"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-Payments-ops-ph2" {
+  name        = "oac-team-Payments-ops-ph2"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-kwang7" {
+  name        = "Kunlun Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-galaxy-jiangjian" {
+  name        = "oac-team-galaxy-jiangjian"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-viyao" {
+  name        = "oac-team-viyao"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-viyao-virtual-account" {
+  name        = "oac-team-viyao-virtual-account"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-viyao-virtual-account-orch-serv" {
+  name        = "oac-team-viyao-virtual-account-orch-serv"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-zhiyuali" {
+  name        = "oac-team-zhiyuali"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppcn-csi" {
+  name        = "oac-team-ppcn-csi"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-gopaymobile" {
+  name        = "GoPay Mobile"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-gopaymobile-backend" {
+  name        = "GoPay Mobile Backend"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-solution-goverance" {
+  name        = "Solution Goverance"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-crown" {
+  name        = "oac-team-crown"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-tesseract-support" {
+  name        = "Oac Team Tesseract Support"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-nyx" {
+  name        = "oac-team-nyx"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-chargehound" {
+  name        = "ChargeHound Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-yogesh" {
+  name        = "oac-team-yogesh"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-yajwei" {
+  name        = "oac-team-yajwei"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-yancjia" {
+  name        = "oac-team-yancjia"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-payment-tools-framework" {
+  name        = "oac-team-payment-tools-framework"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sdk-ppcp" {
+  name        = "Merchant Integrations Engineering PPCP web SDK"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-idac" {
+  name        = "oac-team-idac"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-gc-consolidation" {
+  name        = "oac-team-gc-consolidation"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-gc-escheatment" {
+  name        = "oac-team-gc-escheatment"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-edl-happyreturns" {
+  name        = "Happy Returns EDL Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-edl-chargehound" {
+  name        = "Chargehound EDL Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-edl-bcdc" {
+  name        = "BCDC EDL Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cspo" {
+  name        = "CSPO Operations Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cspo-keymaker" {
+  name        = "CSPO Keymaker Operations Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cspo-pki-ops" {
+  name        = "CSPO PKI Operations Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "payments-engineering-foundation" {
+  name        = "Payments Engineering Foundation"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "payments-engineering-quality" {
+  name        = "Payments Engineering Quality"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-dingyu" {
+  name        = "oac-team-dingyu"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-xinyhu" {
+  name        = "oac-team-xinyhu"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "caspian-edl-venmo-swift" {
+  name        = "caspian-edl-venmo-swift"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "ppcn-team-Payments-ops-ph2" {
+  name        = "ppcn-team-Payments-ops-ph2"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppcp-commercepymtplatform" {
+  name        = "oac-team-ppcp-commercepymtplatform"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppcp-usagebasedbilling" {
+  name        = "oac-team-ppcp-usagebasedbilling"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "caspian-edl-xoom-honey" {
+  name        = "caspian-edl-xoom-honey"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "dalm-onprem-team" {
+  name        = "DALM On-Prem Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "hyperwallet-cloudops-team" {
+  name        = "Hyperwallet CloudOps Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ds" {
+  name        = "oac-team-ds"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "soc-migrationhub-team" {
+  name        = "SoC Migration Hub Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "soc-adhub-team" {
+  name        = "SoC Ad Hub Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "voice-platform-team" {
+  name        = "Voice Platform Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-transformer" {
+  name        = "oac-team-transformer"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-anhp-web" {
+  name        = "oac-team-anhp-web"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-etljobsserv" {
+  name        = "oac-team-etljobsserv"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-nbehre" {
+  name        = "oac-team-nbehre"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-atrajan" {
+  name        = "oac-team-atrajan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-sadmurali" {
+  name        = "oac-team-sadmurali"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-rtb" {
+  name        = "RTB Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-arranganatha-screening" {
+  name = "oac-team-arranganatha-screening"
+}
+resource "pagerduty_team" "oac-team-aiml" {
+  name        = "oac-team-aiml"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-grizzlies" {
+  name        = "oac-team-grizzlies"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-deposit-platform" {
+  name        = "oac-team-deposit-platform"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-compliance-taxreporting-platform" {
+  name        = "oac-team-compliance-taxreporting-platform"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-jasross" {
+  name        = "Pay Later Upstream Messaging Production Support"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-bhdesai" {
+  name        = "Pay Later Merchant Production Support"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sgudipati" {
+  name        = "oac-team-sgudipati"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-payments-api" {
+  name        = "Checkout Payments and Post Payments API"
+  description = "Payments Team in Checkout layer. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-checkout-signup" {
+  name        = "Checkout Signup team"
+  description = "Checkout Signup team. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "dalm-neo-team" {
+  name        = "DALM Neo Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-te-sor" {
+  name        = "TE SOR Payments Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-prsuresh" {
+  name        = "oac-team-prsuresh"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "privacy-governance" {
+  name        = "Privacy Governance"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "privacy-trackmate" {
+  name        = "Privacy TrackMate"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mdxbatch" {
+  name        = "oac-team-mdxbatch"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "bcdc-crypto-platform" {
+  name        = "BCDC Crypto Platform"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rpt-chateau" {
+  name        = "oac-team-rpt-chateau"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-dmpops" {
+  name        = "oac-team-dmpops"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-anquan" {
+  name        = "oac-team-anquan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ce-subscriptions" {
+  name        = "oac-team-ce-subscriptions"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "ppcn-team-payment-ops" {
+  name        = "ppcn-team-payment-ops"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sarabaskaran" {
+  name        = "oac-team-sarabaskaran"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-shipping" {
+  name        = "oac-team-shipping"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-invoicing" {
+  name        = "oac-team-invoicing"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-invoicing-platform" {
+  name        = "oac-team-invoicing-platform"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-shaksrivastava" {
+  name        = "oac-team-shaksrivastava"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mfsincentiveserv" {
+  name        = "oac-team-mfsincentiveserv"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-reportingincidentsserv" {
+  name = "oac-team-reportingincidentsserv"
+}
+
+resource "pagerduty_team" "oac-team-consumer-personalization" {
+  name        = "oac-team-consumer-personalization"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-xo-dev-tools" {
+  name        = "oac-team-xo-dev-tools"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rmoka" {
+  name        = "oac-team-rmoka"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-abch" {
+  name        = "oac-team-abch"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-seethapar" {
+  name        = "oac-team-seethapar"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-srenarayanan" {
+  name        = "oac-team-srenarayanan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bt-bre-post-processing-funding" {
+  name        = "oac-team-bt-bre-post-processing-funding"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bt-post-processing-funding-low-urgency-testing" {
+  name        = "oac-team-bt-post-processing-funding-low-urgency-testing"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bt-bre-post-processing-pricing" {
+  name        = "oac-team-bt-bre-post-processing-pricing"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bt-bre-post-processing-disputes" {
+  name        = "oac-team-bt-bre-post-processing-disputes"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bt-aes-post-processing-reporting" {
+  name        = "oac-team-bt-aes-post-processing-reporting"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bt-post-processing-snowglobe" {
+  name        = "oac-team-bt-post-processing-snowglobe"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bt-disputes" {
+  name        = "oac-team-bt-disputes"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-altpay-liveops" {
+  name        = "oac-team-altpay-liveops"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "pst-securitynotifications" {
+  name        = "pst-securitynotifications"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+
+resource "pagerduty_team" "oac-team-nitgandhi" {
+  name        = "oac-team-nitgandhi"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-gc-craftsmanship" {
+  name        = "oac-team-gc-craftsmanship"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cp-gc-platform-policy" {
+  name        = "oac-team-cp-gc-platform-policy"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cp-gc-platform-process" {
+  name        = "oac-team-cp-gc-platform-process"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "pgtp-support" {
+  name        = "pgtp-support"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "arp-ops" {
+  name        = "arp-ops"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-wps" {
+  name        = "oac-team-wps"
+  description = "WPS engineers, Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cloud-services" {
+  name        = "oac-team-cloud-services"
+  description = "cloud-services engineers, Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-epa" {
+  name        = "oac-team-epa"
+  description = "EPA engineers, Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sysengg" {
+  name        = "oac-team-sysengg"
+  description = "CS Systems engineers, Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-intengg" {
+  name        = "oac-team-intengg"
+  description = "CS Ingeration engineers, Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "package-tracking" {
+  name        = "package-tracking"
+  description = "Package Tracking engineers, Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-braintree-eng-leadership" {
+  name        = "oac-team-braintree-eng-leadership"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bclassen" {
+  name        = "oac-team-bclassen"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-dougraham" {
+  name        = "oac-team-dougraham"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-homenav" {
+  name        = "oac-team-homenav"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-achreturns" {
+  name        = "oac-team-achreturns"
+  description = "ACHReturns team"
+}
+
+resource "pagerduty_team" "oac-team-risk-nbr" {
+  name        = "oac-team-risk-nbr"
+  description = "Negative Balance Recovery team managed by Karthick Venkatesan"
+}
+
+resource "pagerduty_team" "oac-team-schavali-shipmenttracking" {
+  name        = "oac-team-schavali-shipmenttracking"
+  description = "Shipment Tracking team managed by Srinivas"
+}
+
+resource "pagerduty_team" "oac-team-risk-shipmenttracking" {
+  name        = "oac-team-risk-shipmenttracking"
+  description = " Risk Shipment Tracking team"
+}
+
+resource "pagerduty_team" "oac-team-skarthikeya-lamborghini" {
+  name        = "oac-team-skarthikeya-lamborghini"
+  description = "Risk Experiences Lamborghini team managed by Surabhi Karthikeya"
+}
+
+resource "pagerduty_team" "oac-team-schavali-limitations" {
+  name        = "oac-team-schavali-limitations"
+  description = "Limitations team managed by Srinivas"
+}
+
+resource "pagerduty_team" "oac-team-risk-limitations" {
+  name        = "oac-team-risk-limitations"
+  description = "Risk Limitations team"
+}
+
+resource "pagerduty_team" "oac-team-schavali-lamborghini" {
+  name        = "oac-team-schavali-lamborghini"
+  description = "Risk Limitations Experiences team managed by Srinivas"
+}
+
+resource "pagerduty_team" "oac-team-fthangadurai-lamborghini" {
+  name        = "oac-team-fthangadurai-lamborghini"
+  description = "Risk Limitations Experiences team managed by Felicia"
+}
+
+resource "pagerduty_team" "oac-team-risk-generictransaction" {
+  name        = "oac-team-risk-generictransaction"
+  description = "GT team managed by Niraj Kumar Dixit"
+}
+resource "pagerduty_team" "oac-team-risk-invoicing" {
+  name        = "oac-team-risk-invoicing"
+  description = "Invoicing team managed by Karthick Venkatesan"
+}
+resource "pagerduty_team" "oac-team-risk-fifo" {
+  name        = "oac-team-risk-fifo"
+  description = "FIFO team managed by Karthick Venkatesan"
+}
+resource "pagerduty_team" "oac-team-risk-refunds" {
+  name        = "oac-team-risk-refunds"
+  description = "Refunds team managed by Karthick Venkatesan"
+}
+resource "pagerduty_team" "oac-team-customerinsightsserv" {
+  name        = "oac-team-customerinsightsserv"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-growthnodeweb" {
+  name        = "oac-team-growthnodeweb"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-growthDaemon" {
+  name        = "oac-team-growthDaemon"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-growthJava" {
+  name        = "oac-team-growthJava"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-growthnodeserv" {
+  name        = "oac-team-growthnodeserv"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-growthserv" {
+  name        = "oac-team-growthserv"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pdw" {
+  name        = "oac-team-pdw"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppcc" {
+  name        = "oac-team-ppcc"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppcc-mgmt" {
+  name        = "oac-team-ppcc-mgmt"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mrec-ppcc-mgmt" {
+  name        = "oac-team-mrec-ppcc-mgmt"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppcc-alerts" {
+  name        = "PPCC Alerts"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppcc-sb-alerts" {
+  name        = "PPCC-SB Alerts"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppcc-venmo-bu-alerts" {
+  name        = "PPCC Venmo BU Alerts"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppcc-braintree-bu-alerts" {
+  name        = "PPCC Braintree BU Alerts"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppcc-paypal-xoom-bu-alerts" {
+  name        = "PPCC Paypal Xoom BU Alerts"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppcc-testing" {
+  name        = "oac-team-ppcc-testing"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppcc-xim-core-testing" {
+  name        = "oac-team-ppcc-xim-core-testing"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppcc-prodops" {
+  name        = "oac-team-ppcc-prodops"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppcc-alerts-edo" {
+  name        = "PPCC Alerts for EDO"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppcc-alerts-testing" {
+  name        = "PPCC Alerts for testing"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-devqa-alerts-testing" {
+  name        = "DEV Alerts for testing"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-devqa-alerts" {
+  name        = "DEV Alerts"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-besx-alerts-testing" {
+  name        = "BESX Alerts for testing"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppcc-sb-alerts-testing" {
+  name        = "PPCC-SB Alerts for testing"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mrec-sb-alerts-testing" {
+  name        = "MREC-SB Alerts for testing"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppcc-xoom-bu-alerts" {
+  name        = "PPCC Xoom Alerts"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppcc-xoom-bu-alerts-testing" {
+  name        = "PPCC Xoom Alerts for testing"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-ppcc-bu-alerts" {
+  name        = "PPCC BU Alerts"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppcc-bu-alerts-testing" {
+  name        = "PPCC BU Alerts for testing"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppcc-venmo-bu-alerts-testing" {
+  name        = "PPCC Venmo BU Alerts for testing"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppcc-braintree-bu-alerts-testing" {
+  name        = "PPCC Braintree BU Alerts for testing"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppcc-paypal-xoom-bu-alerts-testing" {
+  name        = "PPCC PayPal Xoom BU Alerts for testing"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-comp-digital-safety" {
+  name        = "oac-team-comp-digital-safety"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+
+resource "pagerduty_team" "oac-team-holds-widget" {
+  name        = "Holds Widget"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-transferserv-pd" {
+  name        = "oac-team-transferserv-pd"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-devicewalletmgmtserv-pd" {
+  name        = "oac-team-devicewalletmgmtserv-pd"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-boomi" {
+  name        = "oac-team-boomi"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "ecs-css-application-operations" {
+  name        = "ECS CloudSecurity Application Operations"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "pcis-application-operations" {
+  name        = "PCIS CloudSecurity Application Operations"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pbhakthavalsalan" {
+  name        = "oac-team-pbhakthavalsalan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-snagabhatla" {
+  name        = "oac-team-snagabhatla"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+########################
+## /start Xoom PD Teams
+########################
+resource "pagerduty_team" "oac-team-xoom-webdev" {
+  name        = "oac-team-xoom-webdev"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-xoom-partnerships-engineering" {
+  name        = "oac-team-xoom-partnerships-engineering"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-xoom-partnerships-qa" {
+  name        = "oac-team-xoom-partnerships-qa"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-xoom-consumer-orchestration-layers" {
+  name        = "oac-team-xoom-consumer-orchestration-layers"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-xoom-remittance-platform" {
+  name        = "oac-team-xoom-remittance-platform"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-xoom-platform-communications" {
+  name        = "oac-team-xoom-platform-communications"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-xoom-platform-analytics" {
+  name        = "oac-team-xoom-platform-analytics"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-xoom-platform-core" {
+  name        = "oac-team-xoom-platform-core"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-xoom-platform-content-and-translation" {
+  name        = "oac-team-xoom-platform-content-and-translation"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-xoom-architecture" {
+  name        = "oac-team-xoom-architecture"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-xoom-mobile-engineering" {
+  name        = "oac-team-xoom-mobile-engineering"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-xoom-payments" {
+  name        = "oac-team-xoom-payments"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-xoom-finance" {
+  name        = "oac-team-xoom-finance"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-xoom-ict" {
+  name        = "oac-team-xoom-ict"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-xoom-weekdays-fci" {
+  name        = "oac-team-xoom-weekdays-fci"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+########################
+## /end Xoom PD Teams
+########################
+
+resource "pagerduty_team" "oac-team-sre-chaos" {
+  name        = "oac-team-sre-chaos"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-edp-nosqldb" {
+  name        = "oac-team-edp-nosqldb"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-taiji" {
+  name        = "oac-team-taiji"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-uno" {
+  name        = "oac-team-uno"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pscd" {
+  name        = "oac-team-pscd"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-gnarayanasamy" {
+  name        = "oac-team-gnarayanasamy"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+
+resource "pagerduty_team" "oac-team-gnarayanasamy-gems" {
+  name        = "gnarayanasamy-gems"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-gnarayanasamy-beyond" {
+  name        = "gnarayanasamy-beyond"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bleibowitz" {
+  name        = "oac-team-bleibowitz"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-appsec-automation" {
+  name        = "oac-team-appsec-automation"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-paypal-3as" {
+  name        = "oac-team-paypal-3as"
+  description = "PayPal3as Team. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ref-payouts" {
+  name        = "oac-team-ref-payouts"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ecs-masi" {
+  name        = "oac-team-ecs-masi"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-ashneyder" {
+  name        = "oac-team-ashneyder"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-problem-management" {
+  name        = "Problem Management"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rbac" {
+  name        = "Role Based Access Control"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-fp-chargehound" {
+  name        = "Chargehound FP Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-aajohar" {
+  name        = "Risk Infra SJC Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "ppcn-team-payment-moliu" {
+  name        = "ppcn-team-payment-moliu"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppcn-notebook" {
+  name        = "oac-team-ppcn-notebook"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "ppcn-team-payment-infra" {
+  name        = "ppcn-team-payment-infra"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-groupsplatformserv" {
+  name        = "oac-team-groupsplatformserv"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bt-brisk" {
+  name        = "oac-team-bt-brisk"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-tme-vuln-support" {
+  name        = "oac-team-tme-vuln-support"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rkulshreshtha" {
+  name        = "oac-team-rkulshreshtha"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ngrl-eng" {
+  name        = "oac-team-ngrl-eng"
+  description = "ngRL, Captcha Engineering"
+}
+
+resource "pagerduty_team" "oac-team-ngrl-ops" {
+  name        = "oac-team-ngrl-ops"
+  description = "ngRL, Captcha Operations"
+}
+
+resource "pagerduty_team" "oac-team-tme-sectools-support" {
+  name        = "oac-team-tme-sectools-support"
+  description = "XSOAR, Umbrealla, Defender, McAfee, ThreatConnect, Xpanse, IDS"
+}
+
+resource "pagerduty_team" "oac-team-edl-ppcn" {
+  name        = "oac-team-edl-ppcn"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-customer-success" {
+  name        = "oac-team-customer-success"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-crypto-trade" {
+  name        = "oac-team-crypto-trade"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-dwang7" {
+  name        = "oac-team-dwang7"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-xiangli4" {
+  name        = "oac-team-xiangli4"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-yinfeng" {
+  name        = "oac-team-yinfeng"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-galaxy" {
+  name        = "Galaxy Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bsi" {
+  name        = "AMPS BSI Support Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-lim" {
+  name        = "AMPS LIM Support Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-tdc" {
+  name        = "oac-team-tdc"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-yijzhu" {
+  name        = "oac-team-yijzhu"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bingliu" {
+  name        = "oac-team-bingliu"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-lzhang29" {
+  name        = "oac-team-lzhang29"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-risk-ff" {
+  name        = "oac-team-risk-ff"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-coptr-showback" {
+  name        = "oac-team-coptr-showback"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ers" {
+  name        = "oac-team-ers"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "bt-kek-admins" {
+  name        = "BT Key Encryption Key Administrators"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "dt-dais-dfs-la-tracking" {
+  name        = "dt-dais-dfs-la-tracking"
+  description = "Lighthouse Analytics Tracking team. You can reach out to us at dt-dais-dfs-la-tracking@paypal.com"
+}
+
+resource "pagerduty_team" "oac-team-cesp-messaging-ui-sdk" {
+  name        = "oac-team-cesp-messaging-ui-sdk"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-kmuruganandham" {
+  name        = "oac-team-kmuruganandham"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-msgplatformservices" {
+  name        = "oac-msgplatformservices"
+  description = "msgplatform services team. You can reach out to us at messagingplatformservices@paypal.com"
+}
+
+resource "pagerduty_team" "cai-core-platform" {
+  name        = "cai-core-platform"
+  description = "cai core platform Analytics Tracking team. You can reach out to us at dt-cai-sharks@paypal.com"
+}
+
+resource "pagerduty_team" "oac-team-jasothompson" {
+  name        = "oac-team-jasothompson"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-consumerrelationserv" {
+  name        = "oac-team-consumerrelationserv"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-seller-profile" {
+  name        = "Seller Profile Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "team-ppbl-backend" {
+  name        = "PPBL Backend Engineering"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "team-ppbl-ui" {
+  name        = "PPBL UI Engineering"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "team-ppwc-ui" {
+  name        = "PPWC UI Engineering"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "team-ppwc-backend" {
+  name        = "PPWC Backend Engineering"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-saranand" {
+  name        = "oac-team-saranand"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pcis-directors-plus" {
+  name        = "oac-team-pcis-directors-plus"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cipds-l1l2" {
+  name        = "oac-team-cipds-l1l2"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-crr" {
+  name        = "oac-team-crr"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-standin" {
+  name        = "oac-team-standin"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "esre-shadow-venmo-ic" {
+  name        = "eSRE Shadow for Venmo IC"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vili-leaders" {
+  name        = "oac-team-vili-leaders"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-no-code" {
+  name        = "No Code Payment Solution"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-shashshukla" {
+  name        = "oac-team-shashshukla"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pnc" {
+  name        = "oac-team-pnc"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+
+
+resource "pagerduty_team" "oac-team-mmohammed" {
+  name        = "oac-team-mmohammed"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-fred" {
+  name        = "oac-team-fred"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-benzene" {
+  name        = "Autonomous Cloud - Benzene"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-deployment-experience" {
+  name        = "Deployment Experience"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-costengine" {
+  name        = "oac-team-costengine"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-jbattala" {
+  name        = "oac-team-jbattala"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-skosuru" {
+  name        = "oac-team-skosuru"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-apagaria" {
+  name        = "oac-team-apagaria"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-vrepala" {
+  name        = "oac-team-vrepala"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-shradhakrishnan-gems" {
+  name        = "oac-team-shradhakrishnan-gems"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-shradhakrishnan-cs-services" {
+  name        = "oac-team-shradhakrishnan-cs-services"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-gadspacmanmerchant" {
+  name        = "GADS Pacman Merchant Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-raas-devops" {
+  name        = "RaaS DevOps Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-payments-data-platform" {
+  name        = "Payments Data Platform"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pne" {
+  name        = "oac-team-pne"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ragsharma" {
+  name        = "oac-team-ragsharma"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-asshinde" {
+  name        = "oac-team-asshinde"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rsundararajan" {
+  name        = "oac-team-rsundararajan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rugs" {
+  name        = "oac-team-rugs"
+  description = "Risk Unified Gateway Service Team. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-growth-markets-braintree-brazil" {
+  name        = "oac-team-growth-markets-braintree-brazil"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-artifactory" {
+  name        = "oac-team-artifactory"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-usahu" {
+  name        = "oac-team-usahu"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-venmo-orchestration-services" {
+  name        = "oac-team-venmo-orchestration-services"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-devnoc" {
+  name        = "oac-team-devnoc"
+  description = "DEVNOC Frontline Support: #devnoc-incident"
+}
+
+resource "pagerduty_team" "oac-team-CI" {
+  name        = "oac-team-CI"
+  description = "CI L2 Support Escalation"
+}
+
+resource "pagerduty_team" "oac-team-cp-gc-platform-processmgmt" {
+  name        = "oac-team-cp-gc-platform-processmgmt"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "venmo-social-experiences" {
+  name        = "venmo-social-experiences"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-harsingh" {
+  name        = "oac-team-harsingh"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ehe-merchant" {
+  name        = "MREC - Merchant Reliability Engineering"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-actpresentmentserv" {
+  name        = "oac-team-actpresentmentserv"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-zettle-onboarding-experience-stockholm" {
+  name        = "zettle-onboarding-experience-stockholm"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-tethered-id" {
+  name        = "oac-team-tethered-id"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-lrajangamiyer" {
+  name        = "oac-team-lrajangamiyer"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-aerospike" {
+  name        = "oac-team-aerospike"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-fastlane-secondary" {
+  name        = "oac-team-fastlane-sdk-secondary"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-checkout-backend" {
+  name        = "oac-team-checkout-backend"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-amps-sales-servicing" {
+  name        = "oac-team-amps-sales-servicing"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-salestech" {
+  name        = "oac-team-salestech"
+  description = "Sales Technology, Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vnarayanarao" {
+  name        = "oac-team-vnarayanarao"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-merchant-observability" {
+  name        = "Merchant Observability"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-svadyar" {
+  name        = "oac-team-svadyar"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-mirshadalam" {
+  name        = "oac-team-mirshadalam"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-hmurarka" {
+  name        = "oac-team-hmurarka"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-abhsant" {
+  name        = "oac-team-abhsant"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-peak-consumer-eng" {
+  name        = "oac-team-peak-consumer-eng"
+  description = "Peak consumer engineering team. You can reach out to us at peak-consumer-eng@paypal.com"
+}
+resource "pagerduty_team" "oac-team-occ" {
+  name        = "oac-team-occ"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-sales-merchant-portal" {
+  name        = "Sales Tech - Merchant Portal"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-uec" {
+  name        = "UEC-Unified Enterprise Customer Master"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-shopper-insights-api" {
+  name        = "Shopper Insights API"
+  description = "Shopper Insights API team inside Merchant Integrations department. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-shopify-payments" {
+  name        = "oac-team-shopify-payments"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-dhanv" {
+  name        = "oac-team-dhanv"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-gc-onboarding-provision" {
+  name        = "oac-team-gc-onboarding-provision"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-dias-amps-cmat-merchant-shopify-authrate-oncall" {
+  name        = "oac-team-dias-amps-cmat-merchant-shopify-authrate-oncall"
+  description = "AMPS Merchant engineering team. You can reach out to us at dl-pp-gds-art-merchant@paypal.com"
+}
+
+resource "pagerduty_team" "oac-team-jhazra" {
+  name        = "oac-team-jhazra"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-intime-online" {
+  name        = "oac-team-intime-online"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vectordb-milvus" {
+  name        = "oac-team-vectordb-milvus"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vectorsearch" {
+  name        = "oac-team-vectorsearch"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-gc-card-compliance" {
+  name        = "oac-team-gc-card-compliance"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppcp-intrepid-branded-partner" {
+  name        = "oac-team-ppcp-intrepid-branded-partner"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "isas-team-edgemarshaller" {
+  name        = "isas-team-edgemarshaller"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-nosql-rtds" {
+  name        = "NoSql RTDS"
+  description = "Managed by OaC in github, https://go/pd-config/"
+}
+
+resource "pagerduty_team" "oac-team-mfsconsumer" {
+  name        = "oac-team-mfsconsumer"
+  description = "Managed by OaC in github, https://go/pd-config/"
+}
+
+resource "pagerduty_team" "oac-team-dpe-jenkins-pipelines" {
+  name        = "DPE Jenkins Pipelines"
+  description = "Managed by OaC in github, https://go/pd-config/"
+}
+
+resource "pagerduty_team" "oac-team-dpp-harness-pipelines" {
+  name        = "DPP Harness Pipelines"
+  description = "Managed by OaC in github, https://go/pd-config/"
+}
+resource "pagerduty_team" "oac-team-dre-dataops" {
+  name        = "oac-team-dre-dataops"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-BTRE" {
+  name        = "oac-team-BTRE"
+  description = "BTRE Frontline Support: #BTRE-incident"
+}
+
+resource "pagerduty_team" "oac-team-nsakunia" {
+  name        = "oac-team-nsakunia"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cdp-dataops-analytics" {
+  name        = "oac-team-cdp-dataops-analytics"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ods-incredibles" {
+  name        = "oac-team-ods-incredibles"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-cmsdev" {
+  name        = "cmsdev"
+  description = "Managed by OaC in github, https://go/pd-config/"
+}
+resource "pagerduty_team" "oac-team-acs-edge-protection" {
+  name        = "oac-team-acs-edge-protection"
+  description = "Managed by OaC in github, https://go/pd-config/"
+}
+resource "pagerduty_team" "oac-team-idp" {
+  name        = "IDP Infrastructure"
+  description = "Managed by OaC in github, https://go/pd-config/"
+}
+
+resource "pagerduty_team" "oac-team-wallet-txn" {
+  name        = "Payments Wallet Transaction Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "privacy-dsr" {
+  name        = "Privacy Dsr"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-hchandrasekaran" {
+  name        = "oac-team-hchandrasekaran"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-veramaswamy" {
+  name        = "oac-team-veramaswamy"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-dpunukullu" {
+  name        = "oac-team-dpunukullu"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cloudnx" {
+  name        = "oac-team-cloudnx"
+  description = "CloudNX team. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "post-purchase-notifications-engineering" {
+  name        = "post-purchase-notifications-engineering"
+  description = "Post Purchase Notifications Engineering, Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-shasyed" {
+  name        = "oac-team-shasyed"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-deviceattestationserv" {
+  name        = "oac-team-deviceattestationserv"
+  description = "Team responsible for deviceattestationserv. Managed by OaC in github, https://go/pd-config/"
+}
+
+resource "pagerduty_team" "oac-team-mrec-sbtest" {
+  name        = "oac-team-mrec-sb-alerts"
+  description = "Team created for sandbox alerts. Managed by OaC in github, https://go/pd-config/"
+}
+
+resource "pagerduty_team" "oac-team-merchant-partner-tam" {
+  name        = "TAM On-Call Team"
+  description = "The Merchant and Partner TAMs team provides 24/7 technical assistance to ensure seamless operations and exceptional customer service. Our dedicated Technical Account Managers promptly resolve urgent issues and maintain high availability for our clients."
+}
+
+resource "pagerduty_team" "oac-team-gfci-l1l2" {
+  name        = "oac-team-gfci-l1l2"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-vp-live-support" {
+  name        = "oac-team-vp-live-support"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-rdayal" {
+  name        = "oac-team-rdayal"
+  description = "Global Pay Later - Mobile Engineering team. Managed by OaC in github, https://go/pd-config/"
+}
+
+resource "pagerduty_team" "oac-team-labr" {
+  name        = "oac-team-labr"
+  description = "Accounts Payable. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pef-instrument-new" {
+  name        = "oac-team-pef-instrument-new"
+  description = "Accounts Payable. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-yjajware" {
+  name        = "oac-team-yjajware"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-card-platform" {
+  name        = "oac-team-card-platform"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-risk-merchscrning" {
+  name        = "oac-team-risk-merchscrning"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-devstudio" {
+  name        = "oac-team-devstudio"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-demoportal" {
+  name        = "oac-team-demoportal"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppdocs" {
+  name        = "oac-team-ppdocs"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-preo" {
+  name        = "oac-team-preo"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-dpe-supergraph" {
+  name        = "oac-team-dpe-supergraph"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sridsubramanian" {
+  name        = "oac-team-sridsubramanian"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-devx" {
+  name        = "oac-team-devx"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bt-web-sdk" {
+  name        = "BT Web SDK"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-consumer-supergraph" {
+  name        = "oac-team-consumer-supergraph"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-consumerappnodeweb" {
+  name        = "oac-team-consumerappnodeweb"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-trackserv" {
+  name        = "oac-team-trackserv"
+  description = "TrackServ Team. You can reach out to us at cp-privacy-data-tracker@paypal.com"
+}
+
+resource "pagerduty_team" "oac-team-dai" {
+  name        = "oac-team-dai"
+  description = "DAI - Developer analytics team. Managed by OaC in github, https://go/pd-config/"
+}
+
+resource "pagerduty_team" "oac-team-sdev" {
+  name        = "oac-team-sdev"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-asengamalai" {
+  name        = "oac-team-asengamalai"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ppatodia" {
+  name        = "oac-team-ppatodia"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-nrps" {
+  name        = "oac-team-nrps"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bibhattarai" {
+  name        = "oac-team-bibhattarai"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-cp-gc-platform-counter" {
+  name        = "oac-team-cp-gc-platform-counter"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sjosephmannookot" {
+  name        = "pagerduty_team.oac-team-sjosephmannookot"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-gccvp-l1" {
+  name        = "oac-team-gccvp-l1"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "ads-engineering" {
+  name        = "ads-engineering"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "ads-client-engineering" {
+  name        = "ads-client-engineering"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pp-mobile-get-paid" {
+  name        = "Mobile Get Paid"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-app-switch-nfs" {
+  name        = "oac-team-app-switch-nfs"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "trailblazers" {
+  name        = "trailblazers"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-dkitner" {
+  name        = "oac-team-dkitner"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-consappplatformserv" {
+  name        = "oac-team-consappplatformserv"
+  description = "Team responsible for consappplatformserv. Managed by OaC in github, https://go/pd-config/"
+}
+
+resource "pagerduty_team" "oac-team-beam-le-eng" {
+  name        = "oac-team-beam-le-eng"
+  description = "BEAM Large Enterprises engineering team. You can reach out to us at beam-le-eng@paypal.com"
+}
+
+resource "pagerduty_team" "oac-team-venmo-incident-commanders" {
+  name        = "venmo-Incident Commanders"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-venmo-release-engineers" {
+  name        = "venmo-Release Engineers"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-venmo-sreinfr" {
+  name        = "venmo-SREINFR"
+  description = "Venmo SRE"
+}
+
+resource "pagerduty_team" "oac-team-ktummalapalli" {
+  name        = "oac-team-ktummalapalli"
+  description = "BNPL Jaguars team. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-consumer-loyalty" {
+  name        = "Consumer Loyalty"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-foundational-infra" {
+  name        = "Foundational-Infra"
+  description = "Foundational Infra Team. You can reach us at foundational-infra@paypal.com"
+}
+resource "pagerduty_team" "bt-pay-with-venmo" {
+  name        = "Braintree Pay with Venmo"
+  description = "BT PwV Team. Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-dpe-api-platform" {
+  name        = "oac-team-dpe-api-platform"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-merchant-gsa-tam" {
+  name        = "GSA TAM On-Call Team"
+  description = "The GSA Merchant TAM Team a team provides 24/7 technical assistance to ensure seamless operations and exceptional customer service."
+}
+resource "pagerduty_team" "oac-team-kmandalapu" {
+  name        = "oac-team-kmandalapu"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-xiaofu" {
+  name        = "oac-team-xiaofu"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-cp-mosaic" {
+  name        = "oac-team-cp-mosaic"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-degarg" {
+  name        = "oac-team-degarg"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-hehussain" {
+  name        = "oac-team-hehussain"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-apramanik" {
+  name        = "oac-team-apramanik"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-sarajan" {
+  name        = "oac-team-sarajan"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-pp-pos-ordering-compliance" {
+  name        = "PP POS Ordering and Compliance"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-compliance-abhgupta" {
+  name        = "oac-team-compliance-abhgupta"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-mmanubrolu" {
+  name        = "oac-team-mmanubrolu"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-tourguide-sdev" {
+  name        = "oac-team-tourguide-sdev"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-fti-braintree" {
+  name        = "FTI Braintree Team"
+  description = "FTI Braintree Team handles subledger integration. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "privacy-ccmp" {
+  name        = "Privacy CCMP"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-surr" {
+  name        = "oac-team-surr"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-identity-platform-authorization" {
+  name        = "Identity Authorization Platform"
+  description = "Platform Authorization team Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ob" {
+  name        = "oac-team-openbanking"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-comphcpviewmgmtserv" {
+  name        = "oac-team-comphcpviewmgmtserv"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-identity-platform-authnauth" {
+  name        = "Identity AuthNAuth Platform"
+  description = "Platform Authorization and Authentication team Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-elindstrom" {
+  name        = "Eric Lindstrom Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ccorcino" {
+  name        = "Charity Corcino Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-sslotnick" {
+  name        = "Steve Slotnick Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-prandesai" {
+  name        = "Pranjal Desai Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-bopalanisamy" {
+  name        = "oac-team-bopalanisamy"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-paypalgraph-oncall" {
+  name        = "oac-team-paypalgraph-oncall"
+  description = "Managed by OaC in github, https://go/pd-config/"
+}
+
+resource "pagerduty_team" "oac-team-paypalgraph-operations" {
+  name        = "oac-team-paypalgraph-operations"
+  description = "Managed by OaC in github, https://go/pd-config/"
+}
+
+resource "pagerduty_team" "oac-schedule-consappplatformserv" {
+  name        = "oac-schedule-consappplatformserv"
+  description = "Managed by OaC in github, https://go/pd-config/"
+}
+
+
+# Apollo Team - Unified IST and PST
+resource "pagerduty_team" "oac-team-apollo" {
+  name        = "Apollo Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-edge-automation" {
+  name        = "oac-team-edge-automation"
+  description = "Managed by OaC in github, https://go/pd-config/"
+}
+
+resource "pagerduty_team" "oac-team-champ" {
+  name = "oac-team-champ"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-arranganatha-lm" {
+  name        = "oac-team-arranganatha-lm"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "privacy-policy-engine" {
+  name        = "Privacy Policy Engine"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-zettle-web" {
+  name        = "zettle-web"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-fleetmgmt" {
+  name        = "oac-team-fleetmgmt"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-payment-experiences" {
+  name        = "payment-experiences"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-cons-profile-settings" {
+  name        = "cons-profile-settings"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+resource "pagerduty_team" "oac-team-ddeli" {
+  name = "ARMS and Ownership oncall team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-ambindal" {
+  name = "Ownership oncall team na and apac"
+  description = "Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-debit-card" {
+  name        = "oac-team-debit-card"
+  description = "Debit Card Team. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-commerce-orchestrator" {
+  name        = "Ownership for commerce ai project"
+  description = "Commerce Orchestrator Team. Managed by OaC in github, https://go/pd-config"
+}
+
+resource "pagerduty_team" "oac-team-commerce-orchestration" {
+  name        = "Commerce Orchestration Team"
+  description = "Managed by OaC in github, https://go/pd-config"
+}

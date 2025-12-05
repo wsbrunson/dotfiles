@@ -1,0 +1,79 @@
+import * as jwt from "jsonwebtoken";
+import { Logger } from "../logger";
+import { Request } from "express";
+
+const logger = new Logger({
+  service: "commerceonboardingserv-AppContextAuthorizer",
+  correlationId: "correlationId",
+});
+
+const parseKey = (key?: string): string => {
+  if (!key) {
+    throw new Error("Key is required");
+  }
+
+  if (key.includes("-----BEGIN") && key.includes("-----END")) {
+    return key;
+  }
+
+  return "-----BEGIN PUBLIC KEY-----\n" + key + "\n-----END PUBLIC KEY-----";
+};
+
+const hasValidApiKey = (request: Request): boolean => {
+
+  const internalHeader = request.headers["application-api-key"];
+
+  const apiKey = process.env.COMMERCE_ONBOARDING_API_KEY;
+
+  if(!apiKey){
+    logger.error("COMMERCE_ONBOARDING_API_KEY is not set in environment variables");
+  }
+
+  if (!internalHeader || !apiKey) {
+    return false;
+  }
+
+  return internalHeader === apiKey;
+};
+
+const verifyAppContextJwt = (appContext: string): boolean => {
+  const ENVIRONMENT = process.env.ENVIRONMENT;
+  const VERIFICATION_PEM = process.env.VERIFICATION_PEM;
+  const SANDBOX_VERIFICATION_PEM = process.env.SANDBOX_VERIFICATION_PEM;
+
+  try {
+    jwt.verify(appContext, parseKey(VERIFICATION_PEM), { algorithms: ["RS256"] });
+    return true;
+  } catch {
+    if (ENVIRONMENT === "test" && SANDBOX_VERIFICATION_PEM) {
+        jwt.verify(appContext, parseKey(SANDBOX_VERIFICATION_PEM), { algorithms: ["RS256"] });
+        return true;
+    } 
+
+    return false;
+  }
+};
+
+export const verifyAppContext = async (
+  request: Request,
+  log: Logger,
+): Promise<boolean> => {
+  try {
+    if (hasValidApiKey(request)) {
+      return true;
+    }
+    const appContext = request.headers["paypal-application-context"] as string;
+
+    if (!appContext || appContext.length < 1) {
+      log.warn("AppContext is missing");
+      return false;
+    }
+
+    return verifyAppContextJwt(appContext);
+  } catch (err) {
+    log.error("JWT verification failed", {
+      error: err instanceof Error ? err.message : String(err),
+    });
+    return false;
+  }
+};

@@ -1,0 +1,79 @@
+declare namespace Express {
+  export type LogLevel = "debug" | "info" | "warn" | "error";
+  export interface Request {
+    correlationId?: string;
+    log: (
+      level: LogLevel,
+      message: string,
+      additionalData?: Record<string, unknown>,
+    ) => void;
+    model: {
+      rootTxn: {
+        name: string;
+        data: Record<string, string | number | boolean>;
+      };
+    };
+    // https://github.paypal.com/Globalization-R/node-locale
+    locality: {
+      [key: string]: unknown;
+      country: string;
+      culture: string;
+      timezone: string;
+    };
+    requiredScopes?: string[];
+    securityContext?: object;
+  }
+}
+
+declare module "typhon";
+
+declare module "securitycontext-validation-paypal" {
+  import { RequestHandler } from "express";
+  function securityContextValidation(): RequestHandler;
+  export default securityContextValidation;
+}
+
+declare module "analytics-paypal";
+
+declare module "@paypalcorp/opentelemetry";
+declare module "@paypalcorp/juno-pmt" {
+  class JunoGen {
+    constructor(config: {
+      appName: string;
+      namespace: string;
+      lifetime: number;
+      enableRetry?: boolean;
+      maxPayloadSize?: number;
+      maxKeyLen?: number;
+    });
+    create(
+      key: string,
+      payload: string,
+      req: object,
+      ttl?: number,
+      options?: object,
+    ): Promise<void>;
+    get(
+      key: string,
+      req: object,
+      ttl?: number,
+      options?: object,
+    ): Promise<{ data: string | undefined }>;
+    update(
+      key: string,
+      payload: string,
+      req: object,
+      ttl?: number,
+      options?: object,
+    ): Promise<void>;
+    set(
+      key: string,
+      payload: string,
+      req: object,
+      ttl?: number,
+      options?: object,
+    ): Promise<void>;
+    destroy(key: string, req: object): Promise<void>;
+  }
+  export = JunoGen;
+}

@@ -1,0 +1,169 @@
+import * as jwt from "jsonwebtoken";
+import { ALBEvent } from "aws-lambda";
+import { Logger, logger } from "../logger/logger";
+import {
+  BadRequestError,
+  InternalServerError,
+  formatZodErrorDetails,
+  getCorrelationIdFromRequest,
+} from "../errors";
+import { ZodError } from "zod/v4";
+import { jwtPayloadSchema } from "../schemas/JwtSchema";
+
+const parseKey = (key?: string): string => {
+  if (!key) {
+    throw new Error("Key is required");
+  }
+
+  if (key.includes("-----BEGIN") && key.includes("-----END")) {
+    return key;
+  }
+
+  return "-----BEGIN PUBLIC KEY-----\n" + key + "\n-----END PUBLIC KEY-----";
+};
+
+const verifyAppContextJwt = (appContext: string): boolean => {
+  const APP_ENV = process.env.APP_ENV;
+  const VERIFICATION_PEM = process.env.VERIFICATION_PEM;
+  const SANDBOX_VERIFICATION_PEM = process.env.SANDBOX_VERIFICATION_PEM;
+
+  const verificationPEM = parseKey(VERIFICATION_PEM);
+
+  console.log("verifying app context JWT");
+
+  try {
+    jwt.verify(appContext, verificationPEM, { algorithms: ["RS256"] });
+    return true;
+  } catch {
+    if (APP_ENV === "test" && SANDBOX_VERIFICATION_PEM) {
+      const sandboxKey = parseKey(SANDBOX_VERIFICATION_PEM);
+      console.log("validating with sandbox PEM");
+      try {
+        jwt.verify(appContext, sandboxKey, { algorithms: ["RS256"] });
+        console.log("sandbox PEM success");
+        return true;
+      } catch (error) {
+        console.log(
+          "sandbox PEM failure",
+          error,
+          process.env.SANDBOX_VERIFICATION_PEM,
+        );
+        return false;
+      }
+    }
+
+    console.log("verification PEM failure; did not check sandbox");
+    return false;
+  }
+};
+
+export const verifyAppContext = (event: ALBEvent): boolean => {
+  const log = logger("AppContextAuthorizer", event);
+  const bypassAppContext =
+    event.headers?.["paypal-application-context-bypass-token"];
+  if (
+    bypassAppContext &&
+    bypassAppContext === process.env.GH_WORKFLOW_ACTIONS_KEY
+  ) {
+    log.info(
+      "GitHub Actions context verified, skipping app context verification",
+    );
+    return true;
+  }
+  try {
+    const appContext = event.headers?.["paypal-application-context"];
+    if (!appContext || appContext.length < 1) {
+      log.warn("AppContext is missing");
+      return false;
+    }
+
+    return verifyAppContextJwt(appContext);
+  } catch (err) {
+    log.error(
+      "JWT verification failed",
+      err instanceof Error ? err : new Error(String(err)),
+    );
+    return false;
+  }
+};
+
+export const parseJwtFromCartApi = ({
+  event,
+  logger,
+}: {
+  event: ALBEvent;
+  logger: Logger;
+}): any => {
+  logger.info("Verifying event headers", {
+    headers: event.headers,
+    hasHeaders: Boolean(event.headers),
+    headerKeys: event.headers ? Object.keys(event.headers) : [],
+  });
+  const authHeader =
+    event.headers?.["Authorization"] || event.headers?.["authorization"];
+
+  if (!authHeader || authHeader.length < 1) {
+    logger.error("Authorization header is missing or empty");
+    throw new InternalServerError(getCorrelationIdFromRequest(event), {
+      details: [
+        {
+          field: "Authorization",
+          description: "Authorization header is missing or empty",
+        },
+      ],
+    });
+  }
+  const token = authHeader.startsWith("Bearer ")
+    ? authHeader.slice(7)
+    : authHeader;
+
+  // Public Key for Cart API requests
+  const jwtPublicKey =
+    "-----BEGIN PUBLIC KEY-----\n" +
+    process.env.JWT_VERIFICATION_PEM +
+    "\n-----END PUBLIC KEY-----";
+
+  // Public Key for AWS requests (stage-accounts-commerce)
+  const jwtAwsPublicKey =
+    "-----BEGIN PUBLIC KEY-----\n" +
+    process.env.JWT_AWS_VERIFICATION_PEM +
+    "\n-----END PUBLIC KEY-----";
+
+  // Try verification with both keys
+  const isValid = verifyJwt(token, [jwtPublicKey, jwtAwsPublicKey]);
+
+  if (!isValid) {
+    logger.error("JWT verification failed with public keys");
+    throw new Error("JWT Verification failed with public keys");
+  }
+
+  // Decode and parse after successful verification
+  try {
+    const decoded = jwt.decode(token) as any;
+    const jwtData = jwtPayloadSchema.parse(decoded);
+    return jwtData;
+  } catch (err) {
+    if (err instanceof ZodError) {
+      throw new BadRequestError(getCorrelationIdFromRequest(event), {
+        details: formatZodErrorDetails(err),
+      });
+    }
+    logger.error(
+      "JWT decoding failed",
+      err instanceof Error ? err : new Error(String(err)),
+    );
+    throw new Error(`JWT decoding failed ${err}`);
+  }
+};
+
+const verifyJwt = (token: string, publicKeys: string[]): boolean => {
+  for (const key of publicKeys) {
+    try {
+      jwt.verify(token, key, { algorithms: ["RS256"] });
+      return true;
+    } catch {
+      continue;
+    }
+  }
+  return false;
+};

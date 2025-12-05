@@ -1,0 +1,2230 @@
+2025-11-25T19:35:33.048Z [DEBUG] Watching for changes in setting files /Users/wbrunson/.claude/settings.json, /Users/wbrunson/workspace/commerce-platform/.claude/settings.json, /Users/wbrunson/workspace/commerce-platform/.claude/settings.local.json...
+2025-11-25T19:35:33.147Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2025-11-25T19:35:33.147Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2025-11-25T19:35:33.147Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2025-11-25T19:35:33.147Z [DEBUG] [LSP SERVER MANAGER] initialize() called
+2025-11-25T19:35:33.147Z [DEBUG] [LSP SERVER MANAGER] Calling getAllLspServers()
+2025-11-25T19:35:33.163Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+2025-11-25T19:35:33.166Z [DEBUG] Applying permission update: Adding 82 allow rule(s) to destination 'projectSettings': ["Bash(awk:*)","Bash(cat:*)","Bash(cp:*)","Bash(diff:*)","Bash(eslint:*)","Bash(find:*)","Bash(gh api:*)","Bash(gh auth:*)","Bash(gh pr diff:*)","Bash(gh pr edit:*)","Bash(gh pr list:*)","Bash(gh pr view:*)","Bash(gh search prs:*)","Bash(git add:*)","Bash(git checkout:*)","Bash(git config:*)","Bash(git fetch:*)","Bash(git pull:*)","Bash(git push:*)","Bash(git rebase:*)","Bash(git stash:*)","Bash(grep:*)","Bash(ls:*)","Bash(mkdir:*)","Bash(npm install:*)","Bash(npm run:*)","Bash(npm test:*)","Bash(npx tsc:*)","Bash(npx vitest run:*)","Bash(pnpm -w run lint)","Bash(pnpm add:*)","Bash(pnpm build)","Bash(pnpm eslint:*)","Bash(pnpm install:*)","Bash(pnpm lint:*)","Bash(pnpm run eslint:*)","Bash(pnpm run lint:*)","Bash(pnpm test:*)","Bash(pnpm typecheck:*)","Bash(pnpm vitest run:*)","Bash(rg:*)","Bash(sed:*)","WebFetch(domain:academy.shopware.com)","WebFetch(domain:appexchange.salesforce.com)","WebFetch(domain:blog.demandware.com)","WebFetch(domain:codex.wordpress.org)","WebFetch(domain:developer.salesforce.com)","WebFetch(domain:developer.shopware.com)","WebFetch(domain:developer.woocommerce.com)","WebFetch(domain:developer.wordpress.org)","WebFetch(domain:docs.shopware.com)","WebFetch(domain:docs.woocommerce.com)","WebFetch(domain:documentation.b2c.commercecloud.salesforce.com)","WebFetch(domain:github.com)","WebFetch(domain:help.salesforce.com)","WebFetch(domain:infocenter.demandware.com)","WebFetch(domain:make.wordpress.org)","WebFetch(domain:medium.com)","WebFetch(domain:partners.salesforce.com)","WebFetch(domain:pnpm.io)","WebFetch(domain:salesforce.com)","WebFetch(domain:salesforce.stackexchange.com)","WebFetch(domain:store.shopware.com)","WebFetch(domain:trailhead.salesforce.com)","WebFetch(domain:woocommerce.com)","WebFetch(domain:woocommerce.github.io)","WebFetch(domain:wordpress.org)","WebFetch(domain:www.demandware.com)","WebFetch(domain:www.npmjs.com)","WebFetch(domain:www.salesforce.com)","WebFetch(domain:www.shopware.com)","WebFetch(domain:xchange.demandware.com)","mcp__atlassian__createJiraIssue","mcp__atlassian__editJiraIssue","mcp__atlassian__getAccessibleAtlassianResources","mcp__atlassian__getJiraIssue","mcp__atlassian__getJiraProjectIssueTypesMetadata","mcp__atlassian__getTransitionsForJiraIssue","mcp__atlassian__getVisibleJiraProjects","mcp__atlassian__lookupJiraAccountId","mcp__atlassian__searchJiraIssuesUsingJql","mcp__atlassian__transitionJiraIssue"]
+2025-11-25T19:35:33.166Z [DEBUG] Applying permission update: Adding 21 allow rule(s) to destination 'localSettings': ["Bash(gh repo clone:*)","Bash(gh repo view:*)","Bash(git log:*)","Bash(xargs sed:*)","Read(//Users/wbrunson/.claude/**)","Read(//Users/wbrunson/workspace/dotfiles/stow/.claude/**)","Bash(git show-branch:*)","WebFetch(domain:developers.openai.com)","Bash(pnpm generate:*)","Bash(node:*)","Bash(pnpm config get:*)","Bash(pnpm test:unit src/functions/acp/translate.test.ts)","Bash(npx eslint:*)","WebFetch(domain:docs.datadoghq.com)","Bash(curl:*)","Bash(aws logs filter-log-events:*)","WebFetch(domain:heyapi.dev)","Bash(npm start)","Bash(npm-registry-switch:*)","Bash(pnpm test:unit:*)","Bash(pnpm test:coverage:*)"]
+2025-11-25T19:35:33.167Z [DEBUG] Total LSP servers loaded: 0
+2025-11-25T19:35:33.170Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2025-11-25T19:35:33.170Z [DEBUG] LSP manager initialized with 0 servers
+2025-11-25T19:35:33.199Z [DEBUG] LSP server manager initialized successfully
+2025-11-25T19:35:33.199Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2025-11-25T19:35:33.206Z [DEBUG] Loading skills from directories: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/wbrunson/.claude/skills, project=/Users/wbrunson/workspace/commerce-platform/.claude/skills
+2025-11-25T19:35:33.206Z [DEBUG] >>>>> getPluginSkills CALLED <<<<<
+2025-11-25T19:35:33.376Z [DEBUG] Creating shell snapshot for zsh (/bin/zsh)
+2025-11-25T19:35:33.376Z [DEBUG] Looking for shell config file: /Users/wbrunson/.zshrc
+2025-11-25T19:35:33.376Z [DEBUG] Snapshots directory: /Users/wbrunson/.claude/shell-snapshots
+2025-11-25T19:35:33.376Z [DEBUG] Creating snapshot at: /Users/wbrunson/.claude/shell-snapshots/snapshot-zsh-1764099333376-yk1qyj.sh
+2025-11-25T19:35:33.376Z [DEBUG] Shell binary exists: true
+2025-11-25T19:35:33.376Z [DEBUG] Execution timeout: 10000ms
+2025-11-25T19:35:33.377Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/646e037d-7e86-478a-9555-52f8d51f0386-agent-646e037d-7e86-478a-9555-52f8d51f0386.json.tmp.65700.1764099333377
+2025-11-25T19:35:33.385Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-25T19:35:33.385Z [DEBUG] Renaming /Users/wbrunson/.claude/todos/646e037d-7e86-478a-9555-52f8d51f0386-agent-646e037d-7e86-478a-9555-52f8d51f0386.json.tmp.65700.1764099333377 to /Users/wbrunson/.claude/todos/646e037d-7e86-478a-9555-52f8d51f0386-agent-646e037d-7e86-478a-9555-52f8d51f0386.json
+2025-11-25T19:35:33.385Z [DEBUG] File /Users/wbrunson/.claude/todos/646e037d-7e86-478a-9555-52f8d51f0386-agent-646e037d-7e86-478a-9555-52f8d51f0386.json written atomically
+2025-11-25T19:35:33.386Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
+2025-11-25T19:35:33.386Z [DEBUG] Total plugin skills loaded: 0
+2025-11-25T19:35:33.386Z [DEBUG] Total plugin commands loaded: 0
+2025-11-25T19:35:33.386Z [DEBUG] Registered 0 hooks from 0 plugins
+2025-11-25T19:35:33.388Z [DEBUG] Loaded 0 unique skills (managed: 0, user: 0, project: 0, duplicates removed: 0)
+2025-11-25T19:35:33.388Z [DEBUG] getSkills returning: 0 skill dir commands, 0 plugin skills
+2025-11-25T19:35:33.425Z [DEBUG] Git remote URL: null
+2025-11-25T19:35:33.425Z [DEBUG] No git remote URL found
+2025-11-25T19:35:33.425Z [DEBUG] Not in a GitHub repository, skipping path mapping update
+2025-11-25T19:35:33.426Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg)
+2025-11-25T19:35:33.430Z [DEBUG] Total plugin agents loaded: 0
+2025-11-25T19:35:33.467Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T19:35:33.467Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764099333467
+2025-11-25T19:35:33.467Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T19:35:33.472Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T19:35:33.472Z [DEBUG] Applied original permissions to temp file
+2025-11-25T19:35:33.472Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764099333467 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T19:35:33.472Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T19:35:33.481Z [DEBUG] Getting matching hook commands for SessionStart with query: startup
+2025-11-25T19:35:33.481Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T19:35:33.481Z [DEBUG] Matched 0 unique hooks for query "startup" (0 before deduplication)
+2025-11-25T19:35:33.481Z [DEBUG] MCP server "atlassian": SSE transport initialized, awaiting connection
+2025-11-25T19:35:33.494Z [DEBUG] MCP server "atlassian": Starting connection with timeout of 30000ms
+2025-11-25T19:35:33.535Z [DEBUG] MCP server "atlassian": Token expires in -1380283s, attempting proactive refresh
+2025-11-25T19:35:33.535Z [DEBUG] MCP server "atlassian": Starting token refresh
+2025-11-25T19:35:33.554Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T19:35:33.554Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764099333554
+2025-11-25T19:35:33.554Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T19:35:33.557Z [DEBUG] Temp file written successfully, size: 57196 bytes
+2025-11-25T19:35:33.558Z [DEBUG] Applied original permissions to temp file
+2025-11-25T19:35:33.558Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764099333554 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T19:35:33.558Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T19:35:33.562Z [DEBUG] performStartupChecks called
+2025-11-25T19:35:33.562Z [DEBUG] Starting background plugin installations
+2025-11-25T19:35:33.563Z [DEBUG] performBackgroundPluginInstallations called
+2025-11-25T19:35:33.567Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-25T19:35:33.571Z [DEBUG] Setting installation status: 0 marketplaces, 0 installable plugins, 0 uninstallable plugins
+2025-11-25T19:35:33.573Z [DEBUG] Loaded plugins - Enabled: 0, Disabled: 0, Commands: 0, Agents: 0, Errors: 0
+2025-11-25T19:35:33.574Z [DEBUG] Shell snapshot created successfully (1496 bytes)
+2025-11-25T19:35:33.575Z [DEBUG] Getting matching hook commands for SubagentStart with query: Explore
+2025-11-25T19:35:33.575Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T19:35:33.575Z [DEBUG] Matched 0 unique hooks for query "Explore" (0 before deduplication)
+2025-11-25T19:35:33.576Z [DEBUG] Getting matching hook commands for SubagentStart with query: Plan
+2025-11-25T19:35:33.576Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T19:35:33.576Z [DEBUG] Matched 0 unique hooks for query "Plan" (0 before deduplication)
+2025-11-25T19:35:33.578Z [DEBUG] Summarizing all 103 messages (~50297 tokens)
+2025-11-25T19:35:33.695Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T19:35:33.695Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764099333695
+2025-11-25T19:35:33.695Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T19:35:33.699Z [DEBUG] Temp file written successfully, size: 57196 bytes
+2025-11-25T19:35:33.699Z [DEBUG] Applied original permissions to temp file
+2025-11-25T19:35:33.699Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764099333695 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T19:35:33.699Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T19:35:33.701Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T19:35:33.701Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764099333701
+2025-11-25T19:35:33.701Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T19:35:33.705Z [DEBUG] Temp file written successfully, size: 57196 bytes
+2025-11-25T19:35:33.705Z [DEBUG] Applied original permissions to temp file
+2025-11-25T19:35:33.705Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764099333701 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T19:35:33.705Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T19:35:33.709Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T19:35:33.709Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764099333709
+2025-11-25T19:35:33.709Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T19:35:33.712Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T19:35:33.712Z [DEBUG] Applied original permissions to temp file
+2025-11-25T19:35:33.712Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764099333709 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T19:35:33.712Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T19:35:34.246Z [DEBUG] MCP server "atlassian": Found client info
+2025-11-25T19:35:34.669Z [DEBUG] Stream started - received first chunk
+2025-11-25T19:35:34.918Z [DEBUG] MCP server "atlassian": Token refresh failed: Invalid refresh token
+2025-11-25T19:35:34.921Z [DEBUG] MCP server "atlassian": Token refresh failed, returning current tokens
+2025-11-25T19:35:34.923Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-11-25T19:35:34.925Z [DEBUG] MCP server "atlassian": Token length: 74
+2025-11-25T19:35:34.927Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-11-25T19:35:34.929Z [DEBUG] MCP server "atlassian": Expires in: -1380283s
+2025-11-25T19:35:34.935Z [DEBUG] Stream started - received first chunk
+2025-11-25T19:35:35.627Z [DEBUG] Stream started - received first chunk
+2025-11-25T19:35:35.803Z [DEBUG] MCP server "atlassian": Found client info
+2025-11-25T19:35:35.866Z [DEBUG] MCP server "atlassian": Token expires in -1380286s, attempting proactive refresh
+2025-11-25T19:35:35.867Z [DEBUG] MCP server "atlassian": Starting token refresh
+2025-11-25T19:35:36.107Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T19:35:36.107Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764099336107
+2025-11-25T19:35:36.107Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T19:35:36.114Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T19:35:36.114Z [DEBUG] Applied original permissions to temp file
+2025-11-25T19:35:36.114Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764099336107 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T19:35:36.114Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T19:35:36.202Z [DEBUG] MCP server "atlassian": Found client info
+2025-11-25T19:35:36.253Z [DEBUG] MCP server "atlassian": Token refresh failed: Invalid refresh token
+2025-11-25T19:35:36.254Z [DEBUG] MCP server "atlassian": Token refresh failed, returning current tokens
+2025-11-25T19:35:36.254Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-11-25T19:35:36.255Z [DEBUG] MCP server "atlassian": Token length: 74
+2025-11-25T19:35:36.255Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-11-25T19:35:36.255Z [DEBUG] MCP server "atlassian": Expires in: -1380286s
+2025-11-25T19:35:36.914Z [DEBUG] MCP server "atlassian": Found client info
+2025-11-25T19:35:36.982Z [DEBUG] MCP server "atlassian": Token expires in -1380287s, attempting proactive refresh
+2025-11-25T19:35:36.983Z [DEBUG] MCP server "atlassian": Starting token refresh
+2025-11-25T19:35:37.253Z [DEBUG] MCP server "atlassian": Found client info
+2025-11-25T19:35:37.261Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+2025-11-25T19:35:37.261Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T19:35:37.261Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-25T19:35:37.328Z [DEBUG] MCP server "atlassian": Token refresh failed: Invalid refresh token
+2025-11-25T19:35:37.328Z [DEBUG] MCP server "atlassian": Token refresh failed, returning current tokens
+2025-11-25T19:35:37.329Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-11-25T19:35:37.329Z [DEBUG] MCP server "atlassian": Token length: 74
+2025-11-25T19:35:37.330Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-11-25T19:35:37.330Z [DEBUG] MCP server "atlassian": Expires in: -1380287s
+2025-11-25T19:35:37.394Z [DEBUG] MCP server "atlassian": SSE Connection failed after 3930ms: {"url":"https://mcp.atlassian.com/v1/sse","error":"Invalid refresh token","errorType":"eZA","stack":"eZA: Invalid refresh token\n    at ht1 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1525:14921)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async ut1 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1525:23007)\n    at async ft1 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1525:16435)\n    at async bT (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1525:15368)\n    at async u01._authThenStart (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1525:24064)\n    at async u01.start (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1525:26127)\n    at async w01.connect (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1519:29890)\n    at async w01.connect (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1519:162485)"}
+2025-11-25T19:35:37.394Z [ERROR] MCP server "atlassian" eZA: Invalid refresh token
+2025-11-25T19:35:37.395Z [DEBUG] MCP server "atlassian": Connection failed after 3932ms: Invalid refresh token
+2025-11-25T19:35:37.396Z [ERROR] MCP server "atlassian" Connection failed: Invalid refresh token
+2025-11-25T19:35:37.404Z [DEBUG] Skills and commands included in Skill tool:
+2025-11-25T19:35:37.404Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-11-25T19:35:37.682Z [ERROR] Error: Error: 404 The specified resource does not exist.
+    at I9.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9527)
+    at XT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at XT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2698
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2196
+    at async m15 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async N12 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2129)
+    at async MOA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2194:52)
+    at async q81 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2194:261)
+2025-11-25T19:35:40.950Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+2025-11-25T19:35:40.950Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T19:35:40.950Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-25T19:35:57.461Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T19:35:57.461Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T19:35:57.463Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T19:35:57.463Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T19:35:57.483Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-25T19:35:57.483Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T19:35:57.483Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-25T19:35:57.486Z [DEBUG] FileHistory: Added snapshot for b7c41e41-8e33-404b-8f23-c9aa4725e6c2, tracking 0 files
+2025-11-25T19:35:57.505Z [DEBUG] Total plugin output styles loaded: 0
+2025-11-25T19:35:58.659Z [DEBUG] Stream started - received first chunk
+2025-11-25T19:35:59.844Z [DEBUG] Stream started - received first chunk
+2025-11-25T19:36:03.243Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-25T19:36:03.245Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-25T19:36:03.245Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T19:36:03.245Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-25T19:36:03.267Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-25T19:36:03.267Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T19:36:03.267Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-25T19:36:03.280Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T19:36:03.280Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T19:36:03.282Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T19:36:03.282Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T19:36:05.371Z [DEBUG] Stream started - received first chunk
+2025-11-25T19:36:07.650Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-11-25T19:36:07.653Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-11-25T19:36:07.653Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T19:36:07.653Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-25T19:36:10.013Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-11-25T19:36:10.013Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T19:36:10.013Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-25T19:36:10.024Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T19:36:10.024Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T19:36:10.026Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T19:36:10.026Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T19:36:11.421Z [DEBUG] Stream started - received first chunk
+2025-11-25T19:36:12.349Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-25T19:36:12.352Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-25T19:36:12.352Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T19:36:12.352Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-25T19:36:12.363Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-25T19:36:12.363Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T19:36:12.363Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-25T19:36:12.374Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T19:36:12.374Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T19:36:12.377Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T19:36:12.377Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T19:36:14.895Z [DEBUG] Stream started - received first chunk
+2025-11-25T19:36:20.847Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-25T19:36:20.849Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-25T19:36:20.849Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T19:36:20.849Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-25T19:36:20.855Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/646e037d-7e86-478a-9555-52f8d51f0386-agent-646e037d-7e86-478a-9555-52f8d51f0386.json.tmp.65700.1764099380855
+2025-11-25T19:36:20.855Z [DEBUG] Preserving file permissions: 100600
+2025-11-25T19:36:20.861Z [DEBUG] Temp file written successfully, size: 226 bytes
+2025-11-25T19:36:20.861Z [DEBUG] Applied original permissions to temp file
+2025-11-25T19:36:20.861Z [DEBUG] Renaming /Users/wbrunson/.claude/todos/646e037d-7e86-478a-9555-52f8d51f0386-agent-646e037d-7e86-478a-9555-52f8d51f0386.json.tmp.65700.1764099380855 to /Users/wbrunson/.claude/todos/646e037d-7e86-478a-9555-52f8d51f0386-agent-646e037d-7e86-478a-9555-52f8d51f0386.json
+2025-11-25T19:36:20.863Z [DEBUG] File /Users/wbrunson/.claude/todos/646e037d-7e86-478a-9555-52f8d51f0386-agent-646e037d-7e86-478a-9555-52f8d51f0386.json written atomically
+2025-11-25T19:36:20.871Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-25T19:36:20.871Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T19:36:20.871Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-25T19:36:20.882Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T19:36:20.882Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T19:36:20.885Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T19:36:20.885Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T19:36:23.196Z [ERROR] Error streaming, falling back to non-streaming mode: "Error streaming Claude messages response"
+2025-11-25T19:36:28.866Z [DEBUG] executePreToolHooks called for tool: Edit
+2025-11-25T19:36:28.870Z [DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+2025-11-25T19:36:28.870Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T19:36:28.870Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-25T19:36:28.889Z [DEBUG] FileHistory: Tracked file modification for /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/datadogMetrics.test.ts
+2025-11-25T19:36:28.892Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/datadogMetrics.test.ts.tmp.65700.1764099388892
+2025-11-25T19:36:28.892Z [DEBUG] Preserving file permissions: 100600
+2025-11-25T19:36:28.896Z [DEBUG] Temp file written successfully, size: 6956 bytes
+2025-11-25T19:36:28.896Z [DEBUG] Applied original permissions to temp file
+2025-11-25T19:36:28.896Z [DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/datadogMetrics.test.ts.tmp.65700.1764099388892 to /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/datadogMetrics.test.ts
+2025-11-25T19:36:28.897Z [DEBUG] File /Users/wbrunson/workspace/commerce-platform/commerce-orchestrator/lambda/src/shared/metrics/datadogMetrics.test.ts written atomically
+2025-11-25T19:36:28.909Z [DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+2025-11-25T19:36:28.909Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T19:36:28.909Z [DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+2025-11-25T19:36:28.931Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T19:36:28.931Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T19:36:28.934Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T19:36:28.934Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T19:36:31.104Z [DEBUG] Stream started - received first chunk
+2025-11-25T19:36:32.556Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-25T19:36:32.560Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-25T19:36:32.560Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T19:36:32.560Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T19:36:32.574Z [DEBUG] No session environment scripts found
+2025-11-25T19:36:33.855Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-25T19:36:33.855Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T19:36:33.855Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-25T19:36:33.876Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T19:36:33.876Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T19:36:33.879Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T19:36:33.879Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T19:36:34.485Z [DEBUG] Stream started - received first chunk
+2025-11-25T19:36:36.047Z [DEBUG] Stream started - received first chunk
+2025-11-25T19:36:38.315Z [DEBUG] executePreToolHooks called for tool: TodoWrite
+2025-11-25T19:36:38.317Z [DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+2025-11-25T19:36:38.317Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T19:36:38.317Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-25T19:36:38.325Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/646e037d-7e86-478a-9555-52f8d51f0386-agent-646e037d-7e86-478a-9555-52f8d51f0386.json.tmp.65700.1764099398325
+2025-11-25T19:36:38.325Z [DEBUG] Preserving file permissions: 100600
+2025-11-25T19:36:38.330Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-11-25T19:36:38.330Z [DEBUG] Applied original permissions to temp file
+2025-11-25T19:36:38.330Z [DEBUG] Renaming /Users/wbrunson/.claude/todos/646e037d-7e86-478a-9555-52f8d51f0386-agent-646e037d-7e86-478a-9555-52f8d51f0386.json.tmp.65700.1764099398325 to /Users/wbrunson/.claude/todos/646e037d-7e86-478a-9555-52f8d51f0386-agent-646e037d-7e86-478a-9555-52f8d51f0386.json
+2025-11-25T19:36:38.331Z [DEBUG] File /Users/wbrunson/.claude/todos/646e037d-7e86-478a-9555-52f8d51f0386-agent-646e037d-7e86-478a-9555-52f8d51f0386.json written atomically
+2025-11-25T19:36:38.338Z [DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+2025-11-25T19:36:38.338Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T19:36:38.338Z [DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+2025-11-25T19:36:38.351Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-25T19:36:38.351Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-25T19:36:38.353Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-25T19:36:38.353Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-25T19:36:40.215Z [DEBUG] Stream started - received first chunk
+2025-11-25T19:36:43.810Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-25T19:36:43.810Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T19:36:43.810Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-25T19:36:43.817Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T19:36:43.817Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764099403817
+2025-11-25T19:36:43.817Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T19:36:43.824Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T19:36:43.824Z [DEBUG] Applied original permissions to temp file
+2025-11-25T19:36:43.824Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764099403817 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T19:36:43.825Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T19:36:43.828Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T19:36:43.828Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764099403828
+2025-11-25T19:36:43.828Z [DEBUG] Preserving file permissions: 100644
+2025-11-25T19:36:43.831Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-25T19:36:43.831Z [DEBUG] Applied original permissions to temp file
+2025-11-25T19:36:43.831Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764099403828 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-25T19:36:43.832Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-25T19:37:43.818Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2025-11-25T19:37:43.818Z [DEBUG] Found 0 hook matchers in settings
+2025-11-25T19:37:43.818Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2025-11-25T19:40:33.104Z [DEBUG] Metrics opt-out check failed: No API key available
+2025-11-25T19:40:33.104Z [DEBUG] Metrics check failed, defaulting to disabled
+2025-11-25T19:40:33.104Z [DEBUG] Metrics export disabled by organization setting
+2025-11-25T21:20:33.115Z [DEBUG] Metrics opt-out check failed: No API key available
+2025-11-25T21:20:33.116Z [DEBUG] Metrics check failed, defaulting to disabled
+2025-11-25T21:20:33.116Z [DEBUG] Metrics export disabled by organization setting
+2025-11-26T00:43:23.615Z [DEBUG] npm view failed with code 1
+2025-11-26T00:43:23.615Z [DEBUG] npm stderr: (empty)
+2025-11-26T01:18:04.595Z [DEBUG] npm view failed with code 1
+2025-11-26T01:18:04.595Z [DEBUG] npm stderr: (empty)
+2025-11-26T01:52:38.701Z [DEBUG] npm view failed with code 1
+2025-11-26T01:52:38.701Z [DEBUG] npm stderr: (empty)
+2025-11-26T02:27:06.595Z [DEBUG] npm view failed with code 1
+2025-11-26T02:27:06.595Z [DEBUG] npm stderr: (empty)
+2025-11-26T03:00:39.578Z [DEBUG] npm view failed with code 1
+2025-11-26T03:00:39.578Z [DEBUG] npm stderr: (empty)
+2025-11-26T03:45:20.556Z [DEBUG] npm view failed with code 1
+2025-11-26T03:45:20.556Z [DEBUG] npm stderr: (empty)
+2025-11-26T04:16:35.557Z [DEBUG] npm view failed with code 1
+2025-11-26T04:16:35.557Z [DEBUG] npm stderr: (empty)
+2025-11-26T04:52:17.540Z [DEBUG] npm view failed with code 1
+2025-11-26T04:52:17.540Z [DEBUG] npm stderr: (empty)
+2025-11-26T05:27:30.529Z [DEBUG] npm view failed with code 1
+2025-11-26T05:27:30.529Z [DEBUG] npm stderr: (empty)
+2025-11-26T06:01:57.535Z [DEBUG] npm view failed with code 1
+2025-11-26T06:01:57.535Z [DEBUG] npm stderr: (empty)
+2025-11-26T06:33:54.529Z [DEBUG] npm view failed with code 1
+2025-11-26T06:33:54.529Z [DEBUG] npm stderr: (empty)
+2025-11-26T07:07:10.517Z [DEBUG] npm view failed with code 1
+2025-11-26T07:07:10.517Z [DEBUG] npm stderr: (empty)
+2025-11-26T07:41:02.594Z [DEBUG] npm view failed with code 1
+2025-11-26T07:41:02.594Z [DEBUG] npm stderr: (empty)
+2025-11-26T08:12:09.460Z [DEBUG] npm view failed with code 1
+2025-11-26T08:12:09.460Z [DEBUG] npm stderr: (empty)
+2025-11-26T08:46:08.428Z [DEBUG] npm view failed with code 1
+2025-11-26T08:46:08.428Z [DEBUG] npm stderr: (empty)
+2025-11-26T09:20:36.425Z [DEBUG] npm view failed with code 1
+2025-11-26T09:20:36.425Z [DEBUG] npm stderr: (empty)
+2025-11-26T09:53:28.419Z [DEBUG] npm view failed with code 1
+2025-11-26T09:53:28.419Z [DEBUG] npm stderr: (empty)
+2025-11-26T10:27:17.418Z [DEBUG] npm view failed with code 1
+2025-11-26T10:27:17.418Z [DEBUG] npm stderr: (empty)
+2025-11-26T11:01:22.421Z [DEBUG] npm view failed with code 1
+2025-11-26T11:01:22.421Z [DEBUG] npm stderr: (empty)
+2025-11-26T11:35:15.411Z [DEBUG] npm view failed with code 1
+2025-11-26T11:35:15.411Z [DEBUG] npm stderr: (empty)
+2025-11-26T12:06:46.385Z [DEBUG] npm view failed with code 1
+2025-11-26T12:06:46.385Z [DEBUG] npm stderr: (empty)
+2025-11-26T12:47:33.353Z [DEBUG] npm view failed with code 1
+2025-11-26T12:47:33.353Z [DEBUG] npm stderr: (empty)
+2025-11-26T13:18:16.364Z [DEBUG] npm view failed with code 1
+2025-11-26T13:18:16.364Z [DEBUG] npm stderr: (empty)
+2025-11-26T13:52:20.497Z [DEBUG] npm view failed with code 1
+2025-11-26T13:52:20.497Z [DEBUG] npm stderr: (empty)
+2025-11-26T14:36:16.375Z [DEBUG] npm view failed with code 1
+2025-11-26T14:36:16.375Z [DEBUG] npm stderr: (empty)
+2025-11-26T15:09:42.364Z [DEBUG] npm view failed with code 1
+2025-11-26T15:09:42.365Z [DEBUG] npm stderr: (empty)
+2025-11-26T15:51:06.301Z [DEBUG] npm view failed with code 1
+2025-11-26T15:51:06.301Z [DEBUG] npm stderr: (empty)
+2025-11-26T16:21:16.295Z [DEBUG] npm view failed with code 1
+2025-11-26T16:21:16.295Z [DEBUG] npm stderr: (empty)
+2025-11-26T16:53:21.303Z [DEBUG] npm view failed with code 1
+2025-11-26T16:53:21.303Z [DEBUG] npm stderr: (empty)
+2025-11-26T17:23:19.315Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T17:23:19.315Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T17:23:40.616Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T17:23:40.616Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764177820616
+2025-11-26T17:23:40.616Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T17:23:40.623Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T17:23:40.623Z [DEBUG] Applied original permissions to temp file
+2025-11-26T17:23:40.623Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764177820616 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T17:23:40.623Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T17:53:18.873Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T17:53:18.873Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T17:53:20.794Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T17:53:20.794Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764179600794
+2025-11-26T17:53:20.794Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T17:53:20.799Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T17:53:20.799Z [DEBUG] Applied original permissions to temp file
+2025-11-26T17:53:20.799Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764179600794 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T17:53:20.800Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T17:54:37.456Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T17:54:39.004Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T17:54:39.127Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T17:54:39.127Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T17:54:41.216Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T17:54:41.216Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764179681216
+2025-11-26T17:54:41.216Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T17:54:41.229Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T17:54:41.229Z [DEBUG] Applied original permissions to temp file
+2025-11-26T17:54:41.229Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764179681216 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T17:54:41.229Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T17:54:41.699Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/settings.json.tmp.65700.1764179681699
+2025-11-26T17:54:41.699Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T17:54:41.704Z [DEBUG] Temp file written successfully, size: 171 bytes
+2025-11-26T17:54:41.704Z [DEBUG] Applied original permissions to temp file
+2025-11-26T17:54:41.704Z [DEBUG] Renaming /Users/wbrunson/.claude/settings.json.tmp.65700.1764179681699 to /Users/wbrunson/.claude/settings.json
+2025-11-26T17:54:41.706Z [DEBUG] File /Users/wbrunson/.claude/settings.json written atomically
+2025-11-26T17:54:41.719Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T17:54:41.720Z [DEBUG] FileHistory: Making snapshot for message 9caee83f-6109-49ad-8678-688df852b2c5
+2025-11-26T17:54:41.726Z [DEBUG] FileHistory: Added snapshot for 9caee83f-6109-49ad-8678-688df852b2c5, tracking 1 files
+2025-11-26T17:54:41.728Z [DEBUG] Rendering user message with 1 content blocks
+2025-11-26T17:54:41.728Z [DEBUG] Block 0: <command-name>/model</command-name>
+            <command-message>model</command-message>
+           ...
+2025-11-26T17:54:41.728Z [DEBUG] UserCommandMessage rendering: "model" (args: "none")
+2025-11-26T17:54:41.728Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-11-26T17:54:41.743Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T17:54:41.743Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764179681743
+2025-11-26T17:54:41.743Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T17:54:41.747Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T17:54:41.747Z [DEBUG] Applied original permissions to temp file
+2025-11-26T17:54:41.747Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764179681743 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T17:54:41.749Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T17:54:43.461Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T17:54:43.461Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T17:54:45.448Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T17:54:45.448Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764179685448
+2025-11-26T17:54:45.448Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T17:54:45.452Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T17:54:45.452Z [DEBUG] Applied original permissions to temp file
+2025-11-26T17:54:45.452Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764179685448 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T17:54:45.454Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T17:55:57.469Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T17:55:57.469Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T17:55:57.473Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T17:55:57.473Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T17:55:57.488Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-26T17:55:57.488Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T17:55:57.488Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-26T17:55:57.490Z [DEBUG] FileHistory: Making snapshot for message df5843df-2d9c-46b8-8100-e14bcaa3dfa0
+2025-11-26T17:55:57.491Z [DEBUG] FileHistory: Added snapshot for df5843df-2d9c-46b8-8100-e14bcaa3dfa0, tracking 1 files
+2025-11-26T17:55:58.558Z [DEBUG] Stream started - received first chunk
+2025-11-26T17:55:59.790Z [DEBUG] Stream started - received first chunk
+2025-11-26T17:56:05.404Z [DEBUG] Metrics opt-out check failed: No API key available
+2025-11-26T17:56:05.404Z [DEBUG] Metrics check failed, defaulting to disabled
+2025-11-26T17:56:05.404Z [DEBUG] Metrics export disabled by organization setting
+2025-11-26T17:56:13.948Z [DEBUG] executePreToolHooks called for tool: Grep
+2025-11-26T17:56:13.951Z [DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+2025-11-26T17:56:13.951Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T17:56:13.951Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-26T17:56:14.360Z [DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+2025-11-26T17:56:14.360Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T17:56:14.360Z [DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+2025-11-26T17:56:14.375Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T17:56:14.375Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T17:56:14.378Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T17:56:14.378Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T17:56:16.451Z [DEBUG] Stream started - received first chunk
+2025-11-26T17:56:17.667Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-26T17:56:17.670Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-26T17:56:17.670Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T17:56:17.670Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T17:56:17.686Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-26T17:56:17.686Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T17:56:17.686Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T17:56:17.700Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T17:56:17.700Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T17:56:17.702Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T17:56:17.702Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T17:56:18.900Z [DEBUG] Stream started - received first chunk
+2025-11-26T17:56:27.574Z [DEBUG] Language not supported while highlighting code, falling back to markdown:
+2025-11-26T17:56:27.589Z [DEBUG] Language not supported while highlighting code, falling back to markdown:
+2025-11-26T17:56:27.627Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-26T17:56:27.627Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T17:56:27.627Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-26T17:56:27.633Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T17:56:27.633Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764179787633
+2025-11-26T17:56:27.633Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T17:56:27.638Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T17:56:27.638Z [DEBUG] Applied original permissions to temp file
+2025-11-26T17:56:27.638Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764179787633 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T17:56:27.638Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T17:56:27.641Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T17:56:27.641Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764179787641
+2025-11-26T17:56:27.641Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T17:56:27.645Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T17:56:27.645Z [DEBUG] Applied original permissions to temp file
+2025-11-26T17:56:27.645Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764179787641 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T17:56:27.645Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T17:57:27.633Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2025-11-26T17:57:27.633Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T17:57:27.633Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2025-11-26T17:59:43.416Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T17:59:43.416Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T17:59:43.420Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T17:59:43.420Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T17:59:43.432Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-26T17:59:43.432Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T17:59:43.432Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-26T17:59:43.434Z [DEBUG] FileHistory: Making snapshot for message d258a579-7b69-43b6-b89c-7ff23fd7ac05
+2025-11-26T17:59:43.434Z [DEBUG] FileHistory: Added snapshot for d258a579-7b69-43b6-b89c-7ff23fd7ac05, tracking 1 files
+2025-11-26T17:59:44.544Z [DEBUG] Stream started - received first chunk
+2025-11-26T17:59:45.385Z [DEBUG] Stream started - received first chunk
+2025-11-26T17:59:48.377Z [DEBUG] executePreToolHooks called for tool: Glob
+2025-11-26T17:59:48.380Z [DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+2025-11-26T17:59:48.380Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T17:59:48.380Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-26T17:59:50.705Z [DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+2025-11-26T17:59:50.705Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T17:59:50.705Z [DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+2025-11-26T17:59:50.715Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T17:59:50.715Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T17:59:50.718Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T17:59:50.718Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T17:59:52.845Z [DEBUG] Stream started - received first chunk
+2025-11-26T17:59:53.724Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-26T17:59:53.727Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-26T17:59:53.727Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T17:59:53.727Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T17:59:53.746Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-26T17:59:53.746Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T17:59:53.746Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T17:59:53.758Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T17:59:53.758Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T17:59:53.760Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T17:59:53.760Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T17:59:55.472Z [DEBUG] Stream started - received first chunk
+2025-11-26T17:59:57.741Z [DEBUG] executePreToolHooks called for tool: Read
+2025-11-26T17:59:57.743Z [DEBUG] Getting matching hook commands for PreToolUse with query: Read
+2025-11-26T17:59:57.743Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T17:59:57.743Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T17:59:57.757Z [DEBUG] Getting matching hook commands for PostToolUse with query: Read
+2025-11-26T17:59:57.757Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T17:59:57.757Z [DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+2025-11-26T17:59:57.770Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T17:59:57.770Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T17:59:57.772Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T17:59:57.772Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T17:59:59.002Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:00:09.904Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-26T18:00:09.904Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:00:09.904Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-26T18:00:09.911Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:00:09.911Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180009911
+2025-11-26T18:00:09.911Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:00:09.916Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:00:09.916Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:00:09.916Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180009911 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:00:09.916Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:00:09.921Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:00:09.921Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180009921
+2025-11-26T18:00:09.921Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:00:09.927Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:00:09.927Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:00:09.927Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180009921 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:00:09.929Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:01:05.403Z [DEBUG] Metrics opt-out check failed: No API key available
+2025-11-26T18:01:05.403Z [DEBUG] Metrics check failed, defaulting to disabled
+2025-11-26T18:01:05.403Z [DEBUG] Metrics export disabled by organization setting
+2025-11-26T18:01:09.910Z [DEBUG] Getting matching hook commands for Notification with query: idle_prompt
+2025-11-26T18:01:09.910Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:01:09.910Z [DEBUG] Matched 0 unique hooks for query "idle_prompt" (0 before deduplication)
+2025-11-26T18:04:06.161Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:04:06.161Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:04:06.163Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:04:06.163Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:04:06.172Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-26T18:04:06.172Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:04:06.172Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-26T18:04:06.174Z [DEBUG] FileHistory: Making snapshot for message aa8b296d-eb43-4492-8c97-6c6090685e30
+2025-11-26T18:04:06.174Z [DEBUG] FileHistory: Added snapshot for aa8b296d-eb43-4492-8c97-6c6090685e30, tracking 1 files
+2025-11-26T18:04:07.217Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:04:07.978Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:04:09.685Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T18:04:09.688Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T18:04:09.688Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:04:09.688Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:04:10.448Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:04:10.748Z [DEBUG] Permission suggestions for Bash: [
+  {
+    "type": "addRules",
+    "rules": [
+      {
+        "toolName": "Bash",
+        "ruleContent": "aws-profile:*"
+      }
+    ],
+    "behavior": "allow",
+    "destination": "localSettings"
+  }
+]
+2025-11-26T18:04:10.756Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-26T18:04:10.758Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-26T18:04:10.758Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:04:10.758Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:04:16.758Z [DEBUG] Getting matching hook commands for Notification with query: permission_prompt
+2025-11-26T18:04:16.758Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:04:16.758Z [DEBUG] Matched 0 unique hooks for query "permission_prompt" (0 before deduplication)
+2025-11-26T18:06:05.401Z [DEBUG] Metrics opt-out check failed: No API key available
+2025-11-26T18:06:05.402Z [DEBUG] Metrics check failed, defaulting to disabled
+2025-11-26T18:06:05.402Z [DEBUG] Metrics export disabled by organization setting
+2025-11-26T18:06:35.460Z [DEBUG] Persisting permission update: addRules to source 'localSettings'
+2025-11-26T18:06:35.460Z [DEBUG] Persisting 1 allow rule(s) to localSettings
+2025-11-26T18:06:35.464Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/.claude/settings.local.json.tmp.65700.1764180395464
+2025-11-26T18:06:35.464Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:06:35.469Z [DEBUG] Temp file written successfully, size: 869 bytes
+2025-11-26T18:06:35.469Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:06:35.469Z [DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/.claude/settings.local.json.tmp.65700.1764180395464 to /Users/wbrunson/workspace/commerce-platform/.claude/settings.local.json
+2025-11-26T18:06:35.471Z [DEBUG] File /Users/wbrunson/workspace/commerce-platform/.claude/settings.local.json written atomically
+2025-11-26T18:06:35.493Z [DEBUG] Applying permission update: Adding 1 allow rule(s) to destination 'localSettings': ["Bash(aws-profile:*)"]
+2025-11-26T18:06:35.499Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T18:06:35.566Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T18:06:35.566Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:06:35.566Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:06:35.586Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:06:35.586Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:06:35.588Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:06:35.588Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:06:36.512Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:06:37.733Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:06:38.466Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T18:06:38.469Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T18:06:38.469Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:06:38.469Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:06:39.205Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:06:39.342Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T18:06:39.342Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T18:06:39.433Z [DEBUG] Permission suggestions for Bash: [
+  {
+    "type": "addRules",
+    "rules": [
+      {
+        "toolName": "Bash",
+        "ruleContent": "source:*"
+      }
+    ],
+    "behavior": "allow",
+    "destination": "localSettings"
+  }
+]
+2025-11-26T18:06:39.440Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-26T18:06:39.442Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-26T18:06:39.442Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:06:39.442Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:06:41.578Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T18:06:42.069Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:06:42.069Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180402069
+2025-11-26T18:06:42.069Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:06:42.081Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:06:42.081Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:06:42.081Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180402069 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:06:42.081Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:06:42.967Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T18:06:42.967Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T18:06:45.417Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:06:45.417Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180405417
+2025-11-26T18:06:45.417Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:06:45.441Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:06:45.441Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:06:45.441Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180405417 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:06:45.442Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:06:53.208Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T18:06:53.208Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:06:53.208Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:06:53.223Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:06:53.223Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:06:53.226Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:06:53.226Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:06:54.140Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:06:55.023Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:06:57.846Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T18:06:57.849Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T18:06:57.849Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:06:57.849Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:06:58.689Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:06:59.166Z [DEBUG] Permission suggestions for Bash: [
+  {
+    "type": "addRules",
+    "rules": [
+      {
+        "toolName": "Bash",
+        "ruleContent": "AWS_PROFILE=PowerUser-699475925820 aws elbv2 describe-target-groups:*"
+      }
+    ],
+    "behavior": "allow",
+    "destination": "localSettings"
+  }
+]
+2025-11-26T18:06:59.178Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-26T18:06:59.180Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-26T18:06:59.180Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:06:59.180Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:07:04.165Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T18:07:05.739Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T18:07:05.739Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T18:07:06.956Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T18:07:06.956Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:07:06.956Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:07:06.975Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:07:06.975Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:07:06.977Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:07:06.977Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:07:07.721Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:07:07.721Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180427721
+2025-11-26T18:07:07.721Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:07:07.726Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:07:07.726Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:07:07.726Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180427721 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:07:07.727Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:07:07.975Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:07:08.759Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:07:12.710Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T18:07:12.713Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T18:07:12.713Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:07:12.713Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:07:13.712Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:07:14.201Z [DEBUG] Permission suggestions for Bash: [
+  {
+    "type": "addRules",
+    "rules": [
+      {
+        "toolName": "Bash",
+        "ruleContent": "AWS_PROFILE=PowerUser-699475925820 aws elbv2 describe-target-health:*"
+      }
+    ],
+    "behavior": "allow",
+    "destination": "localSettings"
+  }
+]
+2025-11-26T18:07:14.212Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-26T18:07:14.215Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-26T18:07:14.215Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:07:14.215Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:07:20.213Z [DEBUG] Getting matching hook commands for Notification with query: permission_prompt
+2025-11-26T18:07:20.213Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:07:20.213Z [DEBUG] Matched 0 unique hooks for query "permission_prompt" (0 before deduplication)
+2025-11-26T18:07:27.160Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T18:07:28.133Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T18:07:28.133Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:07:28.133Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:07:28.150Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T18:07:28.152Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T18:07:28.152Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:07:28.152Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:07:29.062Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:07:29.232Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T18:07:29.232Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T18:07:29.312Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:07:29.797Z [DEBUG] Permission suggestions for Bash: [
+  {
+    "type": "addRules",
+    "rules": [
+      {
+        "toolName": "Bash",
+        "ruleContent": "AWS_PROFILE=PowerUser-699475925820 aws lambda list-functions:*"
+      }
+    ],
+    "behavior": "allow",
+    "destination": "localSettings"
+  }
+]
+2025-11-26T18:07:29.809Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-26T18:07:29.811Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-26T18:07:29.811Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:07:29.811Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:07:31.137Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:07:31.137Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180451137
+2025-11-26T18:07:31.137Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:07:31.148Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:07:31.148Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:07:31.148Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180451137 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:07:31.149Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:07:48.257Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T18:07:48.271Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:07:48.271Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:07:48.275Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:07:48.275Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:07:49.995Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T18:07:49.995Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T18:07:50.202Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:07:51.892Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:07:51.892Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180471892
+2025-11-26T18:07:51.892Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:07:51.900Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:07:51.900Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:07:51.900Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180471892 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:07:51.903Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:07:52.465Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T18:07:52.468Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T18:07:52.468Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:07:52.468Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:07:53.718Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:07:54.218Z [DEBUG] Permission suggestions for Bash: [
+  {
+    "type": "addRules",
+    "rules": [
+      {
+        "toolName": "Bash",
+        "ruleContent": "AWS_PROFILE=PowerUser-699475925820 aws elbv2 describe-target-groups:*"
+      }
+    ],
+    "behavior": "allow",
+    "destination": "localSettings"
+  }
+]
+2025-11-26T18:07:54.231Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-26T18:07:54.234Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-26T18:07:54.234Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:07:54.234Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:08:00.232Z [DEBUG] Getting matching hook commands for Notification with query: permission_prompt
+2025-11-26T18:08:00.232Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:08:00.232Z [DEBUG] Matched 0 unique hooks for query "permission_prompt" (0 before deduplication)
+2025-11-26T18:08:16.203Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T18:08:17.526Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T18:08:17.526Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:08:17.526Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:08:17.544Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:08:17.544Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:08:17.547Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:08:17.547Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:08:17.843Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T18:08:17.843Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T18:08:18.714Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:08:19.618Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:08:19.618Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180499618
+2025-11-26T18:08:19.618Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:08:19.627Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:08:19.627Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:08:19.627Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180499618 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:08:19.628Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:08:32.272Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:08:33.949Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T18:08:33.952Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T18:08:33.952Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:08:33.952Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:08:34.883Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:08:35.362Z [DEBUG] Permission suggestions for Bash: [
+  {
+    "type": "addRules",
+    "rules": [
+      {
+        "toolName": "Bash",
+        "ruleContent": "AWS_PROFILE=PowerUser-699475925820 aws elbv2 describe-target-health:*"
+      }
+    ],
+    "behavior": "allow",
+    "destination": "localSettings"
+  }
+]
+2025-11-26T18:08:35.373Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-26T18:08:35.375Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-26T18:08:35.375Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:08:35.375Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:08:39.983Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T18:08:40.918Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T18:08:40.918Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:08:40.918Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:08:40.934Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:08:40.934Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:08:40.936Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:08:40.936Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:08:41.968Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:08:41.985Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T18:08:41.985Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T18:08:42.965Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:08:43.817Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:08:43.817Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180523817
+2025-11-26T18:08:43.817Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:08:43.825Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:08:43.825Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:08:43.825Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180523817 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:08:43.826Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:08:48.060Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T18:08:48.065Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T18:08:48.065Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:08:48.065Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:08:49.133Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:08:49.714Z [DEBUG] Permission suggestions for Bash: [
+  {
+    "type": "addRules",
+    "rules": [
+      {
+        "toolName": "Bash",
+        "ruleContent": "AWS_PROFILE=PowerUser-699475925820 aws lambda get-function:*"
+      }
+    ],
+    "behavior": "allow",
+    "destination": "localSettings"
+  }
+]
+2025-11-26T18:08:49.727Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-26T18:08:49.729Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-26T18:08:49.729Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:08:49.729Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:08:52.499Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T18:08:53.790Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T18:08:53.790Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:08:53.790Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:08:53.805Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T18:08:53.807Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T18:08:53.807Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:08:53.807Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:08:53.824Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-26T18:08:53.826Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-26T18:08:53.826Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:08:53.826Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:08:54.178Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T18:08:54.178Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T18:08:54.815Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:08:56.023Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:08:56.023Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180536023
+2025-11-26T18:08:56.023Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:08:56.029Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:08:56.029Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:08:56.029Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180536023 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:08:56.030Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:08:59.824Z [DEBUG] Getting matching hook commands for Notification with query: permission_prompt
+2025-11-26T18:08:59.824Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:08:59.824Z [DEBUG] Matched 0 unique hooks for query "permission_prompt" (0 before deduplication)
+2025-11-26T18:10:12.760Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T18:10:12.822Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T18:10:12.822Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:10:12.822Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:10:12.844Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:10:12.844Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:10:12.847Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:10:12.847Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:10:14.048Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:10:14.603Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T18:10:14.603Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T18:10:14.724Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:10:16.722Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:10:16.722Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180616722
+2025-11-26T18:10:16.722Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:10:16.727Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:10:16.727Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:10:16.727Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180616722 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:10:16.727Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:10:17.158Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T18:10:17.161Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T18:10:17.161Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:10:17.161Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:10:17.186Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-26T18:10:17.188Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-26T18:10:17.188Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:10:17.188Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:10:22.398Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T18:10:24.056Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T18:10:24.056Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:10:24.056Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:10:24.076Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:10:24.076Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:10:24.078Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:10:24.078Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:10:24.859Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T18:10:24.859Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T18:10:25.791Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:10:26.317Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:10:26.756Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:10:26.756Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180626756
+2025-11-26T18:10:26.756Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:10:26.763Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:10:26.763Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:10:26.763Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180626756 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:10:26.764Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:10:30.531Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T18:10:30.534Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T18:10:30.534Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:10:30.534Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:10:31.220Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:10:31.711Z [DEBUG] Permission suggestions for Bash: [
+  {
+    "type": "addRules",
+    "rules": [
+      {
+        "toolName": "Bash",
+        "ruleContent": "AWS_PROFILE=PowerUser-699475925820 aws elbv2 describe-load-balancers:*"
+      }
+    ],
+    "behavior": "allow",
+    "destination": "localSettings"
+  }
+]
+2025-11-26T18:10:31.723Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-26T18:10:31.726Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-26T18:10:31.726Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:10:31.726Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:10:33.652Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T18:10:34.822Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T18:10:34.822Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:10:34.822Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:10:34.837Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:10:34.837Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:10:34.839Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:10:34.839Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:10:35.326Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T18:10:35.326Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T18:10:35.415Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:10:37.004Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:10:37.181Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:10:37.181Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180637181
+2025-11-26T18:10:37.181Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:10:37.188Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:10:37.188Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:10:37.188Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180637181 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:10:37.188Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:10:43.866Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T18:10:43.869Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T18:10:43.869Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:10:43.869Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:10:43.913Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-26T18:10:43.915Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-26T18:10:43.915Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:10:43.915Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:10:49.912Z [DEBUG] Getting matching hook commands for Notification with query: permission_prompt
+2025-11-26T18:10:49.912Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:10:49.912Z [DEBUG] Matched 0 unique hooks for query "permission_prompt" (0 before deduplication)
+2025-11-26T18:10:59.789Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T18:11:00.891Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T18:11:00.891Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:11:00.891Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:11:00.909Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T18:11:00.912Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T18:11:00.912Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:11:00.912Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:11:00.937Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-26T18:11:00.939Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-26T18:11:00.939Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:11:00.939Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:11:01.469Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T18:11:01.469Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T18:11:01.928Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:11:03.463Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:11:03.463Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180663463
+2025-11-26T18:11:03.463Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:11:03.473Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:11:03.473Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:11:03.473Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180663463 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:11:03.474Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:11:05.402Z [DEBUG] Metrics opt-out check failed: No API key available
+2025-11-26T18:11:05.402Z [DEBUG] Metrics check failed, defaulting to disabled
+2025-11-26T18:11:05.402Z [DEBUG] Metrics export disabled by organization setting
+2025-11-26T18:11:06.937Z [DEBUG] Getting matching hook commands for Notification with query: permission_prompt
+2025-11-26T18:11:06.937Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:11:06.937Z [DEBUG] Matched 0 unique hooks for query "permission_prompt" (0 before deduplication)
+2025-11-26T18:11:24.162Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T18:11:25.381Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T18:11:25.381Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:11:25.381Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:11:25.400Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T18:11:25.402Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T18:11:25.402Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:11:25.402Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:11:25.425Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-26T18:11:25.428Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-26T18:11:25.428Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:11:25.428Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:11:25.926Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T18:11:25.926Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T18:11:26.347Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T18:11:26.355Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:11:27.213Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T18:11:27.213Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T18:11:27.361Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T18:11:27.361Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:11:27.361Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:11:27.383Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:11:27.383Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:11:27.385Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:11:27.385Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:11:27.822Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:11:27.822Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180687822
+2025-11-26T18:11:27.822Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:11:27.828Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:11:27.828Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:11:27.828Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180687822 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:11:27.829Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:11:28.148Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:11:28.465Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:11:28.465Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180688465
+2025-11-26T18:11:28.465Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:11:28.472Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:11:28.472Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:11:28.472Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180688465 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:11:28.473Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:11:29.436Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:11:38.256Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T18:11:38.258Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T18:11:38.258Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:11:38.258Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:11:39.381Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:11:39.871Z [DEBUG] Permission suggestions for Bash: [
+  {
+    "type": "addRules",
+    "rules": [
+      {
+        "toolName": "Bash",
+        "ruleContent": "AWS_PROFILE=PowerUser-699475925820 aws elbv2 describe-listeners:*"
+      }
+    ],
+    "behavior": "allow",
+    "destination": "localSettings"
+  }
+]
+2025-11-26T18:11:39.878Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-26T18:11:39.880Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-26T18:11:39.880Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:11:39.880Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:11:42.673Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T18:11:43.845Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T18:11:43.845Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:11:43.845Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:11:43.860Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:11:43.860Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:11:43.863Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:11:43.863Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:11:44.591Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:11:44.873Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T18:11:44.873Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T18:11:45.902Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:11:47.829Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:11:47.829Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180707829
+2025-11-26T18:11:47.829Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:11:47.835Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:11:47.835Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:11:47.835Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764180707829 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:11:47.835Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:11:48.519Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T18:11:48.522Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T18:11:48.522Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:11:48.522Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:11:49.359Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:11:49.505Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:11:49.985Z [DEBUG] Permission suggestions for Bash: [
+  {
+    "type": "addRules",
+    "rules": [
+      {
+        "toolName": "Bash",
+        "ruleContent": "AWS_PROFILE=PowerUser-699475925820 aws elbv2 describe-rules:*"
+      }
+    ],
+    "behavior": "allow",
+    "destination": "localSettings"
+  }
+]
+2025-11-26T18:11:49.996Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-26T18:11:49.998Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-26T18:11:49.998Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:11:49.998Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:11:55.997Z [DEBUG] Getting matching hook commands for Notification with query: permission_prompt
+2025-11-26T18:11:55.997Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:11:55.997Z [DEBUG] Matched 0 unique hooks for query "permission_prompt" (0 before deduplication)
+2025-11-26T18:16:05.401Z [DEBUG] Metrics opt-out check failed: No API key available
+2025-11-26T18:16:05.402Z [DEBUG] Metrics check failed, defaulting to disabled
+2025-11-26T18:16:05.402Z [DEBUG] Metrics export disabled by organization setting
+2025-11-26T18:19:25.729Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T18:19:28.204Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T18:19:28.204Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T18:19:28.419Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T18:19:28.419Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:19:28.419Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:19:28.440Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:19:28.440Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:19:28.443Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:19:28.443Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:19:29.920Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:19:30.447Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:19:31.229Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:19:31.229Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181171229
+2025-11-26T18:19:31.229Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:19:31.234Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:19:31.234Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:19:31.234Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181171229 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:19:31.234Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:19:34.699Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T18:19:34.701Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T18:19:34.701Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:19:34.701Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:19:35.889Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:19:36.386Z [DEBUG] Permission suggestions for Bash: [
+  {
+    "type": "addRules",
+    "rules": [
+      {
+        "toolName": "Bash",
+        "ruleContent": "AWS_PROFILE=PowerUser-699475925820 aws elbv2 describe-rules:*"
+      }
+    ],
+    "behavior": "allow",
+    "destination": "localSettings"
+  }
+]
+2025-11-26T18:19:36.399Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-26T18:19:36.402Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-26T18:19:36.402Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:19:36.402Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:19:39.571Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T18:19:40.874Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T18:19:40.874Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:19:40.874Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:19:40.892Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:19:40.892Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:19:40.895Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:19:40.895Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:19:41.499Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T18:19:41.499Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T18:19:42.024Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:19:43.223Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:19:43.473Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:19:43.473Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181183473
+2025-11-26T18:19:43.473Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:19:43.481Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:19:43.481Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:19:43.481Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181183473 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:19:43.482Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:19:45.029Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T18:19:45.032Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T18:19:45.032Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:19:45.032Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:19:45.978Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:19:46.471Z [DEBUG] Permission suggestions for Bash: [
+  {
+    "type": "addRules",
+    "rules": [
+      {
+        "toolName": "Bash",
+        "ruleContent": "AWS_PROFILE=PowerUser-699475925820 aws elbv2 describe-rules:*"
+      }
+    ],
+    "behavior": "allow",
+    "destination": "localSettings"
+  }
+]
+2025-11-26T18:19:46.478Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-26T18:19:46.480Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-26T18:19:46.480Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:19:46.480Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:19:48.610Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T18:19:50.041Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T18:19:50.041Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:19:50.041Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:19:50.057Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:19:50.057Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:19:50.060Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:19:50.060Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:19:50.280Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T18:19:50.280Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T18:19:50.630Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:19:52.104Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:19:52.104Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181192104
+2025-11-26T18:19:52.104Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:19:52.109Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:19:52.109Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:19:52.109Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181192104 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:19:52.110Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:19:52.137Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:19:53.933Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T18:19:53.935Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T18:19:53.935Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:19:53.935Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:19:53.956Z [DEBUG] Permission suggestions for Bash: [
+  {
+    "type": "addRules",
+    "rules": [
+      {
+        "toolName": "Bash",
+        "ruleContent": "AWS_PROFILE=PowerUser-699475925820 aws elbv2 describe-rules:*"
+      }
+    ],
+    "behavior": "allow",
+    "destination": "localSettings"
+  }
+]
+2025-11-26T18:19:53.965Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-26T18:19:53.968Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-26T18:19:53.968Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:19:53.968Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:19:55.008Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T18:19:56.251Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T18:19:56.251Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:19:56.251Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:19:56.267Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:19:56.267Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:19:56.269Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:19:56.269Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:19:56.981Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T18:19:56.981Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T18:19:57.211Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:19:57.561Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:19:58.794Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:19:58.794Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181198794
+2025-11-26T18:19:58.794Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:19:58.800Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:19:58.800Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:19:58.800Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181198794 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:19:58.801Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:20:04.447Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-26T18:20:04.447Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:20:04.447Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-26T18:20:04.451Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:20:04.451Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181204451
+2025-11-26T18:20:04.451Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:20:04.455Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:20:04.455Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:20:04.455Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181204451 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:20:04.455Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:20:04.457Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:20:04.457Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181204457
+2025-11-26T18:20:04.457Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:20:04.459Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:20:04.459Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:20:04.459Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181204457 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:20:04.460Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:21:05.395Z [DEBUG] Metrics opt-out check failed: No API key available
+2025-11-26T18:21:05.395Z [DEBUG] Metrics check failed, defaulting to disabled
+2025-11-26T18:21:05.395Z [DEBUG] Metrics export disabled by organization setting
+2025-11-26T18:22:38.743Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:22:38.743Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:22:38.747Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:22:38.747Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:22:38.759Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-26T18:22:38.759Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:22:38.759Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-26T18:22:38.760Z [DEBUG] FileHistory: Making snapshot for message f9c19124-0863-44dc-903f-fbc8faf6eb5c
+2025-11-26T18:22:38.761Z [DEBUG] FileHistory: Added snapshot for f9c19124-0863-44dc-903f-fbc8faf6eb5c, tracking 1 files
+2025-11-26T18:22:39.704Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:22:41.284Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:22:47.846Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T18:22:47.848Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T18:22:47.848Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:22:47.848Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:22:48.851Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:22:49.298Z [DEBUG] Permission suggestions for Bash: [
+  {
+    "type": "addRules",
+    "rules": [
+      {
+        "toolName": "Bash",
+        "ruleContent": "AWS_PROFILE=PowerUser-699475925820 aws elbv2 describe-load-balancers:*"
+      }
+    ],
+    "behavior": "allow",
+    "destination": "localSettings"
+  }
+]
+2025-11-26T18:22:49.310Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-26T18:22:49.312Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-26T18:22:49.312Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:22:49.312Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:22:51.328Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T18:22:52.482Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T18:22:52.482Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:22:52.482Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:22:52.498Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:22:52.498Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:22:52.501Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:22:52.501Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:22:52.968Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T18:22:52.968Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T18:22:53.081Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:22:54.395Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:22:54.839Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:22:54.839Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181374839
+2025-11-26T18:22:54.839Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:22:54.845Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:22:54.845Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:22:54.845Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181374839 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:22:54.846Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:23:00.493Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T18:23:00.495Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T18:23:00.495Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:23:00.495Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:23:00.514Z [DEBUG] Permission suggestions for Bash: [
+  {
+    "type": "addRules",
+    "rules": [
+      {
+        "toolName": "Bash",
+        "ruleContent": "AWS_PROFILE=PowerUser-699475925820 aws elbv2 describe-rules:*"
+      }
+    ],
+    "behavior": "allow",
+    "destination": "localSettings"
+  }
+]
+2025-11-26T18:23:00.522Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-26T18:23:00.524Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-26T18:23:00.524Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:23:00.524Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:23:06.523Z [DEBUG] Getting matching hook commands for Notification with query: permission_prompt
+2025-11-26T18:23:06.523Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:23:06.523Z [DEBUG] Matched 0 unique hooks for query "permission_prompt" (0 before deduplication)
+2025-11-26T18:23:14.368Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T18:23:15.667Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T18:23:15.667Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:23:15.667Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:23:15.683Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:23:15.683Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:23:15.686Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:23:15.686Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:23:16.034Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T18:23:16.034Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T18:23:16.693Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:23:17.537Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:23:18.097Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:23:18.097Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181398097
+2025-11-26T18:23:18.097Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:23:18.103Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:23:18.103Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:23:18.103Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181398097 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:23:18.104Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:23:25.108Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-26T18:23:25.108Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:23:25.108Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-26T18:23:25.113Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:23:25.113Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181405113
+2025-11-26T18:23:25.113Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:23:25.117Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:23:25.117Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:23:25.117Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181405113 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:23:25.118Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:23:25.132Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:23:25.132Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181405132
+2025-11-26T18:23:25.132Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:23:25.136Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:23:25.136Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:23:25.136Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181405132 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:23:25.138Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:23:52.862Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:23:52.862Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:23:52.865Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:23:52.865Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:23:52.878Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-26T18:23:52.878Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:23:52.878Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-26T18:23:52.880Z [DEBUG] FileHistory: Making snapshot for message aaa8397d-f408-4a7a-9109-6495395db616
+2025-11-26T18:23:52.881Z [DEBUG] FileHistory: Added snapshot for aaa8397d-f408-4a7a-9109-6495395db616, tracking 1 files
+2025-11-26T18:23:53.847Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:23:54.871Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:24:06.518Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-26T18:24:06.518Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:24:06.518Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-26T18:24:06.523Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:24:06.523Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181446523
+2025-11-26T18:24:06.523Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:24:06.528Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:24:06.528Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:24:06.528Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181446523 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:24:06.529Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:24:06.531Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:24:06.531Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181446531
+2025-11-26T18:24:06.531Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:24:06.534Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:24:06.534Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:24:06.534Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181446531 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:24:06.535Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:25:03.596Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:25:03.597Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:25:03.601Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:25:03.601Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:25:03.611Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-26T18:25:03.611Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:25:03.611Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-26T18:25:03.613Z [DEBUG] FileHistory: Making snapshot for message d64c5dc9-0f1a-4e1e-b973-ee048c81eb17
+2025-11-26T18:25:03.614Z [DEBUG] FileHistory: Added snapshot for d64c5dc9-0f1a-4e1e-b973-ee048c81eb17, tracking 1 files
+2025-11-26T18:25:04.645Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:25:06.082Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:25:10.732Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T18:25:10.738Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T18:25:10.738Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:25:10.738Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:25:10.767Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-26T18:25:10.772Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-26T18:25:10.772Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:25:10.772Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:25:16.767Z [DEBUG] Getting matching hook commands for Notification with query: permission_prompt
+2025-11-26T18:25:16.767Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:25:16.767Z [DEBUG] Matched 0 unique hooks for query "permission_prompt" (0 before deduplication)
+2025-11-26T18:25:17.038Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T18:25:17.065Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T18:25:17.065Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:25:17.065Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:25:17.087Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:25:17.087Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:25:17.089Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:25:17.089Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:25:17.943Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:25:19.352Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T18:25:19.352Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T18:25:19.388Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:25:20.763Z [DEBUG] executePreToolHooks called for tool: BashOutput
+2025-11-26T18:25:20.766Z [DEBUG] Getting matching hook commands for PreToolUse with query: BashOutput
+2025-11-26T18:25:20.766Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:25:20.766Z [DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+2025-11-26T18:25:20.778Z [DEBUG] Getting matching hook commands for PostToolUse with query: BashOutput
+2025-11-26T18:25:20.778Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:25:20.778Z [DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+2025-11-26T18:25:20.790Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:25:20.790Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:25:20.792Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:25:20.792Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:25:21.695Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:25:21.695Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181521695
+2025-11-26T18:25:21.695Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:25:21.704Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:25:21.704Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:25:21.704Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181521695 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:25:21.704Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:25:22.400Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:25:22.983Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-26T18:25:22.983Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:25:22.983Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-26T18:25:22.993Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:25:22.993Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181522993
+2025-11-26T18:25:22.993Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:25:22.997Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:25:22.997Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:25:22.997Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181522993 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:25:22.998Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:25:23.001Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:25:23.001Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181523001
+2025-11-26T18:25:23.001Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:25:23.007Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:25:23.007Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:25:23.007Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181523001 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:25:23.010Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:26:02.849Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:26:02.849Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:26:02.853Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:26:02.853Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:26:02.865Z [DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+2025-11-26T18:26:02.865Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:26:02.865Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-26T18:26:02.867Z [DEBUG] FileHistory: Making snapshot for message a28b6e80-5c6b-40e8-8576-a9907e292b23
+2025-11-26T18:26:02.867Z [DEBUG] FileHistory: Added snapshot for a28b6e80-5c6b-40e8-8576-a9907e292b23, tracking 1 files
+2025-11-26T18:26:03.713Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:26:04.932Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:26:05.393Z [DEBUG] Metrics opt-out check failed: No API key available
+2025-11-26T18:26:05.394Z [DEBUG] Metrics check failed, defaulting to disabled
+2025-11-26T18:26:05.394Z [DEBUG] Metrics export disabled by organization setting
+2025-11-26T18:26:06.136Z [DEBUG] executePreToolHooks called for tool: BashOutput
+2025-11-26T18:26:06.140Z [DEBUG] Getting matching hook commands for PreToolUse with query: BashOutput
+2025-11-26T18:26:06.140Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:26:06.140Z [DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+2025-11-26T18:26:06.158Z [DEBUG] Getting matching hook commands for PostToolUse with query: BashOutput
+2025-11-26T18:26:06.158Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:26:06.158Z [DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+2025-11-26T18:26:06.172Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:26:06.172Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:26:06.175Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:26:06.175Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:26:08.032Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:26:12.752Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T18:26:12.755Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T18:26:12.755Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:26:12.755Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:26:12.778Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-26T18:26:12.779Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-26T18:26:12.779Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:26:12.779Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:26:20.572Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T18:26:20.591Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:26:20.591Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:26:20.595Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:26:20.595Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:26:22.378Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T18:26:22.378Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T18:26:22.895Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:26:23.250Z [DEBUG] executePreToolHooks called for tool: BashOutput
+2025-11-26T18:26:23.253Z [DEBUG] Getting matching hook commands for PreToolUse with query: BashOutput
+2025-11-26T18:26:23.253Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:26:23.253Z [DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+2025-11-26T18:26:23.267Z [DEBUG] Getting matching hook commands for PostToolUse with query: BashOutput
+2025-11-26T18:26:23.267Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:26:23.267Z [DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+2025-11-26T18:26:23.281Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:26:23.281Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:26:23.283Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:26:23.283Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:26:24.305Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:26:24.305Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181584305
+2025-11-26T18:26:24.305Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:26:24.308Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:26:24.308Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:26:24.308Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181584305 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:26:24.308Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:26:25.974Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:26:31.252Z [DEBUG] Language not supported while highlighting code, falling back to markdown:
+2025-11-26T18:26:31.796Z [DEBUG] executePreToolHooks called for tool: BashOutput
+2025-11-26T18:26:31.799Z [DEBUG] Getting matching hook commands for PreToolUse with query: BashOutput
+2025-11-26T18:26:31.799Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:26:31.799Z [DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+2025-11-26T18:26:31.815Z [DEBUG] Getting matching hook commands for PostToolUse with query: BashOutput
+2025-11-26T18:26:31.815Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:26:31.815Z [DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+2025-11-26T18:26:31.827Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:26:31.827Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:26:31.829Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:26:31.829Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:26:33.964Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:26:35.260Z [DEBUG] executePreToolHooks called for tool: BashOutput
+2025-11-26T18:26:35.262Z [DEBUG] Getting matching hook commands for PreToolUse with query: BashOutput
+2025-11-26T18:26:35.262Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:26:35.262Z [DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+2025-11-26T18:26:35.273Z [DEBUG] Getting matching hook commands for PostToolUse with query: BashOutput
+2025-11-26T18:26:35.273Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:26:35.273Z [DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+2025-11-26T18:26:35.285Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:26:35.285Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:26:35.288Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:26:35.288Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:26:36.751Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:26:38.035Z [DEBUG] executePreToolHooks called for tool: BashOutput
+2025-11-26T18:26:38.037Z [DEBUG] Getting matching hook commands for PreToolUse with query: BashOutput
+2025-11-26T18:26:38.037Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:26:38.037Z [DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+2025-11-26T18:26:38.048Z [DEBUG] Getting matching hook commands for PostToolUse with query: BashOutput
+2025-11-26T18:26:38.048Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:26:38.048Z [DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+2025-11-26T18:26:38.060Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:26:38.060Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:26:38.062Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:26:38.062Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:26:40.090Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:26:40.604Z [DEBUG] executePreToolHooks called for tool: BashOutput
+2025-11-26T18:26:40.606Z [DEBUG] Getting matching hook commands for PreToolUse with query: BashOutput
+2025-11-26T18:26:40.606Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:26:40.606Z [DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+2025-11-26T18:26:40.623Z [DEBUG] Getting matching hook commands for PostToolUse with query: BashOutput
+2025-11-26T18:26:40.623Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:26:40.623Z [DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+2025-11-26T18:26:40.637Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:26:40.637Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:26:40.639Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:26:40.639Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:26:42.588Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:26:43.177Z [DEBUG] executePreToolHooks called for tool: BashOutput
+2025-11-26T18:26:43.179Z [DEBUG] Getting matching hook commands for PreToolUse with query: BashOutput
+2025-11-26T18:26:43.179Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:26:43.179Z [DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+2025-11-26T18:26:43.192Z [DEBUG] Getting matching hook commands for PostToolUse with query: BashOutput
+2025-11-26T18:26:43.192Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:26:43.192Z [DEBUG] Matched 0 unique hooks for query "BashOutput" (0 before deduplication)
+2025-11-26T18:26:43.206Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:26:43.206Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:26:43.208Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:26:43.208Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:26:45.531Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:26:47.448Z [DEBUG] executePreToolHooks called for tool: KillShell
+2025-11-26T18:26:47.450Z [DEBUG] Getting matching hook commands for PreToolUse with query: KillShell
+2025-11-26T18:26:47.450Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:26:47.450Z [DEBUG] Matched 0 unique hooks for query "KillShell" (0 before deduplication)
+2025-11-26T18:26:47.457Z [DEBUG] BackgroundShell 15695d kill requested
+2025-11-26T18:26:47.470Z [DEBUG] Getting matching hook commands for PostToolUse with query: KillShell
+2025-11-26T18:26:47.470Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:26:47.470Z [DEBUG] Matched 0 unique hooks for query "KillShell" (0 before deduplication)
+2025-11-26T18:26:47.482Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:26:47.482Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:26:47.484Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:26:47.484Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:26:49.944Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:26:52.287Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T18:26:52.289Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T18:26:52.289Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:26:52.289Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:26:53.376Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:26:53.477Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:26:53.965Z [DEBUG] Permission suggestions for Bash: [
+  {
+    "type": "addRules",
+    "rules": [
+      {
+        "toolName": "Bash",
+        "ruleContent": "AWS_PROFILE=PowerUser-699475925820 aws logs filter-log-events:*"
+      }
+    ],
+    "behavior": "allow",
+    "destination": "localSettings"
+  }
+]
+2025-11-26T18:26:53.976Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-26T18:26:53.978Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-26T18:26:53.978Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:26:53.978Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:27:11.979Z [DEBUG] Getting matching hook commands for Notification with query: permission_prompt
+2025-11-26T18:27:11.979Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:27:11.979Z [DEBUG] Matched 0 unique hooks for query "permission_prompt" (0 before deduplication)
+2025-11-26T18:27:27.410Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T18:27:27.431Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:27:27.431Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:27:27.435Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:27:27.435Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:27:29.621Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:27:30.426Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T18:27:30.426Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T18:27:32.207Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:27:32.207Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181652207
+2025-11-26T18:27:32.207Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:27:32.219Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:27:32.219Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:27:32.219Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181652207 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:27:32.220Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:27:38.527Z [DEBUG] executePreToolHooks called for tool: Bash
+2025-11-26T18:27:38.529Z [DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+2025-11-26T18:27:38.529Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:27:38.529Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:27:39.516Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:27:39.953Z [DEBUG] Permission suggestions for Bash: [
+  {
+    "type": "addRules",
+    "rules": [
+      {
+        "toolName": "Bash",
+        "ruleContent": "AWS_PROFILE=PowerUser-699475925820 aws lambda get-function-configuration:*"
+      }
+    ],
+    "behavior": "allow",
+    "destination": "localSettings"
+  }
+]
+2025-11-26T18:27:39.965Z [DEBUG] executePermissionRequestHooks called for tool: Bash
+2025-11-26T18:27:39.968Z [DEBUG] Getting matching hook commands for PermissionRequest with query: Bash
+2025-11-26T18:27:39.968Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:27:39.968Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:27:45.965Z [DEBUG] Getting matching hook commands for Notification with query: permission_prompt
+2025-11-26T18:27:45.965Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:27:45.965Z [DEBUG] Matched 0 unique hooks for query "permission_prompt" (0 before deduplication)
+2025-11-26T18:31:05.393Z [DEBUG] Metrics opt-out check failed: No API key available
+2025-11-26T18:31:05.394Z [DEBUG] Metrics check failed, defaulting to disabled
+2025-11-26T18:31:05.394Z [DEBUG] Metrics export disabled by organization setting
+2025-11-26T18:31:21.565Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-11-26T18:31:22.763Z [DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+2025-11-26T18:31:22.763Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:31:22.763Z [DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+2025-11-26T18:31:22.780Z [DEBUG] LSP Diagnostics: getLSPDiagnosticAttachments called
+2025-11-26T18:31:22.780Z [DEBUG] LSP Diagnostics: Checking registry - 0 pending
+2025-11-26T18:31:22.783Z [DEBUG] Hooks: Found 0 total hooks in registry
+2025-11-26T18:31:22.783Z [DEBUG] Hooks: checkForNewResponses returning 0 responses
+2025-11-26T18:31:23.280Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T18:31:23.280Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T18:31:23.808Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:31:24.990Z [DEBUG] Stream started - received first chunk
+2025-11-26T18:31:25.694Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:31:25.694Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181885694
+2025-11-26T18:31:25.694Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:31:25.702Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:31:25.702Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:31:25.702Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181885694 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:31:25.702Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:31:30.625Z [DEBUG] Language not supported while highlighting code, falling back to markdown:
+2025-11-26T18:31:30.626Z [DEBUG] Language not supported while highlighting code, falling back to markdown:
+2025-11-26T18:31:30.742Z [DEBUG] Getting matching hook commands for Stop with query: undefined
+2025-11-26T18:31:30.742Z [DEBUG] Found 0 hook matchers in settings
+2025-11-26T18:31:30.742Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-11-26T18:31:30.747Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:31:30.747Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181890747
+2025-11-26T18:31:30.747Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:31:30.756Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:31:30.756Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:31:30.756Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181890747 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:31:30.758Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:31:30.765Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:31:30.765Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181890765
+2025-11-26T18:31:30.765Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T18:31:30.769Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T18:31:30.769Z [DEBUG] Applied original permissions to temp file
+2025-11-26T18:31:30.769Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764181890765 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T18:31:30.770Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T18:36:05.369Z [DEBUG] Metrics opt-out check failed: No API key available
+2025-11-26T18:36:05.369Z [DEBUG] Metrics check failed, defaulting to disabled
+2025-11-26T18:36:05.369Z [DEBUG] Metrics export disabled by organization setting
+2025-11-26T19:01:24.289Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T19:01:24.289Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T19:01:27.362Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T19:01:27.362Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764183687362
+2025-11-26T19:01:27.362Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T19:01:27.370Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T19:01:27.370Z [DEBUG] Applied original permissions to temp file
+2025-11-26T19:01:27.370Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764183687362 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T19:01:27.372Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T19:31:24.546Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T19:31:24.546Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T19:31:28.283Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T19:31:28.283Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764185488283
+2025-11-26T19:31:28.283Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T19:31:28.291Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T19:31:28.291Z [DEBUG] Applied original permissions to temp file
+2025-11-26T19:31:28.291Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764185488283 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T19:31:28.294Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T20:01:24.000Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T20:01:24.000Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T20:01:26.517Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T20:01:26.518Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764187286518
+2025-11-26T20:01:26.518Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T20:01:26.523Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T20:01:26.524Z [DEBUG] Applied original permissions to temp file
+2025-11-26T20:01:26.524Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764187286518 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T20:01:26.525Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T20:31:24.338Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T20:31:24.338Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T20:31:26.879Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T20:31:26.879Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764189086879
+2025-11-26T20:31:26.879Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T20:31:26.883Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T20:31:26.883Z [DEBUG] Applied original permissions to temp file
+2025-11-26T20:31:26.883Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764189086879 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T20:31:26.884Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T21:01:24.574Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T21:01:24.574Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T21:01:27.222Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T21:01:27.222Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764190887222
+2025-11-26T21:01:27.223Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T21:01:27.231Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T21:01:27.232Z [DEBUG] Applied original permissions to temp file
+2025-11-26T21:01:27.232Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764190887222 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T21:01:27.232Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T21:31:24.141Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-26T21:31:24.141Z [DEBUG] AutoUpdater: Using local update method
+2025-11-26T21:31:26.918Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T21:31:26.918Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764192686918
+2025-11-26T21:31:26.918Z [DEBUG] Preserving file permissions: 100644
+2025-11-26T21:31:26.930Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-26T21:31:26.930Z [DEBUG] Applied original permissions to temp file
+2025-11-26T21:31:26.930Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764192686918 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-26T21:31:26.930Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-26T22:11:16.270Z [DEBUG] npm view failed with code 1
+2025-11-26T22:11:16.270Z [DEBUG] npm stderr: (empty)
+2025-11-26T22:41:43.263Z [DEBUG] npm view failed with code 1
+2025-11-26T22:41:43.263Z [DEBUG] npm stderr: (empty)
+2025-11-26T23:12:47.277Z [DEBUG] npm view failed with code 1
+2025-11-26T23:12:47.277Z [DEBUG] npm stderr: (empty)
+2025-11-26T23:49:33.262Z [DEBUG] npm view failed with code 1
+2025-11-26T23:49:33.262Z [DEBUG] npm stderr: (empty)
+2025-11-27T00:19:31.009Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-27T00:19:31.009Z [DEBUG] AutoUpdater: Using local update method
+2025-11-27T00:19:43.715Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-27T00:19:43.715Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764202783715
+2025-11-27T00:19:43.715Z [DEBUG] Preserving file permissions: 100644
+2025-11-27T00:19:43.725Z [DEBUG] Temp file written successfully, size: 57301 bytes
+2025-11-27T00:19:43.725Z [DEBUG] Applied original permissions to temp file
+2025-11-27T00:19:43.725Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.65700.1764202783715 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-27T00:19:43.726Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-27T01:03:33.169Z [DEBUG] npm view failed with code 1
+2025-11-27T01:03:33.169Z [DEBUG] npm stderr: (empty)
+2025-11-27T01:37:02.203Z [DEBUG] npm view failed with code 1
+2025-11-27T01:37:02.203Z [DEBUG] npm stderr: (empty)
+2025-11-27T02:11:50.326Z [DEBUG] npm view failed with code 1
+2025-11-27T02:11:50.326Z [DEBUG] npm stderr: (empty)
+2025-11-27T02:46:58.246Z [DEBUG] npm view failed with code 1
+2025-11-27T02:46:58.247Z [DEBUG] npm stderr: (empty)
+2025-11-27T03:20:22.219Z [DEBUG] npm view failed with code 1
+2025-11-27T03:20:22.219Z [DEBUG] npm stderr: (empty)
+2025-11-27T04:06:49.207Z [DEBUG] npm view failed with code 1
+2025-11-27T04:06:49.207Z [DEBUG] npm stderr: (empty)
+2025-11-27T04:39:44.202Z [DEBUG] npm view failed with code 1
+2025-11-27T04:39:44.202Z [DEBUG] npm stderr: (empty)
+2025-11-27T05:14:06.189Z [DEBUG] npm view failed with code 1
+2025-11-27T05:14:06.189Z [DEBUG] npm stderr: (empty)
+2025-11-27T05:47:14.177Z [DEBUG] npm view failed with code 1
+2025-11-27T05:47:14.177Z [DEBUG] npm stderr: (empty)
+2025-11-27T06:21:33.175Z [DEBUG] npm view failed with code 1
+2025-11-27T06:21:33.175Z [DEBUG] npm stderr: (empty)
+2025-11-27T06:54:29.152Z [DEBUG] npm view failed with code 1
+2025-11-27T06:54:29.152Z [DEBUG] npm stderr: (empty)
+2025-11-27T07:28:33.152Z [DEBUG] npm view failed with code 1
+2025-11-27T07:28:33.152Z [DEBUG] npm stderr: (empty)
+2025-11-27T08:02:39.270Z [DEBUG] npm view failed with code 1
+2025-11-27T08:02:39.271Z [DEBUG] npm stderr: (empty)
+2025-11-27T08:37:46.298Z [DEBUG] npm view failed with code 1
+2025-11-27T08:37:46.298Z [DEBUG] npm stderr: (empty)
+2025-11-27T09:09:43.158Z [DEBUG] npm view failed with code 1
+2025-11-27T09:09:43.158Z [DEBUG] npm stderr: (empty)
+2025-11-27T09:42:04.160Z [DEBUG] npm view failed with code 1
+2025-11-27T09:42:04.160Z [DEBUG] npm stderr: (empty)
+2025-11-27T10:15:43.138Z [DEBUG] npm view failed with code 1
+2025-11-27T10:15:43.138Z [DEBUG] npm stderr: (empty)
+2025-11-27T10:48:24.121Z [DEBUG] npm view failed with code 1
+2025-11-27T10:48:24.122Z [DEBUG] npm stderr: (empty)
+2025-11-27T11:20:45.106Z [DEBUG] npm view failed with code 1
+2025-11-27T11:20:45.106Z [DEBUG] npm stderr: (empty)
+2025-11-27T11:56:21.083Z [DEBUG] npm view failed with code 1
+2025-11-27T11:56:21.083Z [DEBUG] npm stderr: (empty)
+2025-11-27T12:26:51.068Z [DEBUG] npm view failed with code 1
+2025-11-27T12:26:51.068Z [DEBUG] npm stderr: (empty)
+2025-11-27T12:57:39.044Z [DEBUG] npm view failed with code 1
+2025-11-27T12:57:39.044Z [DEBUG] npm stderr: (empty)
+2025-11-27T13:29:06.057Z [DEBUG] npm view failed with code 1
+2025-11-27T13:29:06.057Z [DEBUG] npm stderr: (empty)
+2025-11-27T14:11:52.058Z [DEBUG] npm view failed with code 1
+2025-11-27T14:11:52.058Z [DEBUG] npm stderr: (empty)
+2025-11-27T14:41:52.035Z [DEBUG] npm view failed with code 1
+2025-11-27T14:41:52.035Z [DEBUG] npm stderr: (empty)
+2025-11-27T15:13:57.041Z [DEBUG] npm view failed with code 1
+2025-11-27T15:13:57.041Z [DEBUG] npm stderr: (empty)
+2025-11-27T15:47:51.049Z [DEBUG] npm view failed with code 1
+2025-11-27T15:47:51.049Z [DEBUG] npm stderr: (empty)
+2025-11-27T16:20:14.045Z [DEBUG] npm view failed with code 1
+2025-11-27T16:20:14.046Z [DEBUG] npm stderr: (empty)
+2025-11-27T16:54:12.047Z [DEBUG] npm view failed with code 1
+2025-11-27T16:54:12.047Z [DEBUG] npm stderr: (empty)
+2025-11-27T17:27:31.873Z [DEBUG] npm view failed with code 1
+2025-11-27T17:27:31.873Z [DEBUG] npm stderr: (empty)
+2025-11-27T17:57:57.894Z [DEBUG] npm view failed with code 1
+2025-11-27T17:57:57.894Z [DEBUG] npm stderr: (empty)
+2025-11-27T18:33:37.946Z [DEBUG] npm view failed with code 1
+2025-11-27T18:33:37.946Z [DEBUG] npm stderr: (empty)
+2025-11-27T19:14:09.984Z [DEBUG] npm view failed with code 1
+2025-11-27T19:14:09.985Z [DEBUG] npm stderr: (empty)
+2025-11-27T19:48:45.012Z [DEBUG] npm view failed with code 1
+2025-11-27T19:48:45.012Z [DEBUG] npm stderr: (empty)
+2025-11-27T20:32:06.057Z [DEBUG] npm view failed with code 1
+2025-11-27T20:32:06.057Z [DEBUG] npm stderr: (empty)
+2025-11-27T21:18:45.969Z [DEBUG] npm view failed with code 1
+2025-11-27T21:18:45.969Z [DEBUG] npm stderr: (empty)
+2025-11-27T21:55:59.961Z [DEBUG] npm view failed with code 1
+2025-11-27T21:55:59.961Z [DEBUG] npm stderr: (empty)
+2025-11-27T22:36:15.968Z [DEBUG] npm view failed with code 1
+2025-11-27T22:36:15.968Z [DEBUG] npm stderr: (empty)
+2025-11-27T23:18:29.955Z [DEBUG] npm view failed with code 1
+2025-11-27T23:18:29.955Z [DEBUG] npm stderr: (empty)
+2025-11-27T23:49:33.943Z [DEBUG] npm view failed with code 1
+2025-11-27T23:49:33.943Z [DEBUG] npm stderr: (empty)
+2025-11-28T00:21:42.913Z [DEBUG] npm view failed with code 1
+2025-11-28T00:21:42.913Z [DEBUG] npm stderr: (empty)
+2025-11-28T01:04:06.878Z [DEBUG] npm view failed with code 1
+2025-11-28T01:04:06.878Z [DEBUG] npm stderr: (empty)
+2025-11-28T01:35:34.852Z [DEBUG] npm view failed with code 1
+2025-11-28T01:35:34.852Z [DEBUG] npm stderr: (empty)
+2025-11-28T02:22:54.858Z [DEBUG] npm view failed with code 1
+2025-11-28T02:22:54.858Z [DEBUG] npm stderr: (empty)
+2025-11-28T02:57:05.862Z [DEBUG] npm view failed with code 1
+2025-11-28T02:57:05.862Z [DEBUG] npm stderr: (empty)
+2025-11-28T03:39:28.872Z [DEBUG] npm view failed with code 1
+2025-11-28T03:39:28.872Z [DEBUG] npm stderr: (empty)
+2025-11-28T04:11:19.865Z [DEBUG] npm view failed with code 1
+2025-11-28T04:11:19.865Z [DEBUG] npm stderr: (empty)
+2025-11-28T04:44:26.835Z [DEBUG] npm view failed with code 1
+2025-11-28T04:44:26.835Z [DEBUG] npm stderr: (empty)
+2025-11-28T05:15:00.837Z [DEBUG] npm view failed with code 1
+2025-11-28T05:15:00.837Z [DEBUG] npm stderr: (empty)
+2025-11-28T05:54:12.833Z [DEBUG] npm view failed with code 1
+2025-11-28T05:54:12.833Z [DEBUG] npm stderr: (empty)
+2025-11-28T06:27:03.819Z [DEBUG] npm view failed with code 1
+2025-11-28T06:27:03.819Z [DEBUG] npm stderr: (empty)
+2025-11-28T07:01:02.803Z [DEBUG] npm view failed with code 1
+2025-11-28T07:01:02.803Z [DEBUG] npm stderr: (empty)
+2025-11-28T07:35:54.812Z [DEBUG] npm view failed with code 1
+2025-11-28T07:35:54.812Z [DEBUG] npm stderr: (empty)
+2025-11-28T08:07:54.768Z [DEBUG] npm view failed with code 1
+2025-11-28T08:07:54.768Z [DEBUG] npm stderr: (empty)
+2025-11-28T08:40:31.781Z [DEBUG] npm view failed with code 1
+2025-11-28T08:40:31.781Z [DEBUG] npm stderr: (empty)
+2025-11-28T09:11:26.793Z [DEBUG] npm view failed with code 1
+2025-11-28T09:11:26.793Z [DEBUG] npm stderr: (empty)
+2025-11-28T09:46:31.792Z [DEBUG] npm view failed with code 1
+2025-11-28T09:46:31.792Z [DEBUG] npm stderr: (empty)
+2025-11-28T10:22:01.769Z [DEBUG] npm view failed with code 1
+2025-11-28T10:22:01.769Z [DEBUG] npm stderr: (empty)
+2025-11-28T10:54:55.761Z [DEBUG] npm view failed with code 1
+2025-11-28T10:54:55.761Z [DEBUG] npm stderr: (empty)
+2025-11-28T11:28:55.767Z [DEBUG] npm view failed with code 1
+2025-11-28T11:28:55.767Z [DEBUG] npm stderr: (empty)
+2025-11-28T12:01:12.744Z [DEBUG] npm view failed with code 1
+2025-11-28T12:01:12.744Z [DEBUG] npm stderr: (empty)
+2025-11-28T12:35:34.709Z [DEBUG] npm view failed with code 1
+2025-11-28T12:35:34.709Z [DEBUG] npm stderr: (empty)
+2025-11-28T13:17:53.703Z [DEBUG] npm view failed with code 1
+2025-11-28T13:17:53.703Z [DEBUG] npm stderr: (empty)
+2025-11-28T13:50:05.712Z [DEBUG] npm view failed with code 1
+2025-11-28T13:50:05.712Z [DEBUG] npm stderr: (empty)
+2025-11-28T14:29:10.720Z [DEBUG] npm view failed with code 1
+2025-11-28T14:29:10.720Z [DEBUG] npm stderr: (empty)
+2025-11-28T15:13:47.712Z [DEBUG] npm view failed with code 1
+2025-11-28T15:13:47.712Z [DEBUG] npm stderr: (empty)
+2025-11-28T15:45:51.680Z [DEBUG] npm view failed with code 1
+2025-11-28T15:45:51.680Z [DEBUG] npm stderr: (empty)
+2025-11-28T16:19:00.682Z [DEBUG] npm view failed with code 1
+2025-11-28T16:19:00.682Z [DEBUG] npm stderr: (empty)
+2025-11-28T16:51:11.683Z [DEBUG] npm view failed with code 1
+2025-11-28T16:51:11.683Z [DEBUG] npm stderr: (empty)
+2025-11-28T17:27:45.656Z [DEBUG] npm view failed with code 1
+2025-11-28T17:27:45.656Z [DEBUG] npm stderr: (empty)
+2025-11-28T18:02:05.629Z [DEBUG] npm view failed with code 1
+2025-11-28T18:02:05.629Z [DEBUG] npm stderr: (empty)
+2025-11-28T18:37:04.627Z [DEBUG] npm view failed with code 1
+2025-11-28T18:37:04.627Z [DEBUG] npm stderr: (empty)
+2025-11-28T19:19:43.613Z [DEBUG] npm view failed with code 1
+2025-11-28T19:19:43.613Z [DEBUG] npm stderr: (empty)
+2025-11-28T19:54:05.625Z [DEBUG] npm view failed with code 1
+2025-11-28T19:54:05.625Z [DEBUG] npm stderr: (empty)
+2025-11-28T20:24:05.634Z [DEBUG] npm view failed with code 1
+2025-11-28T20:24:05.634Z [DEBUG] npm stderr: (empty)
+2025-11-28T21:05:33.649Z [DEBUG] npm view failed with code 1
+2025-11-28T21:05:33.649Z [DEBUG] npm stderr: (empty)
+2025-11-28T21:47:13.643Z [DEBUG] npm view failed with code 1
+2025-11-28T21:47:13.643Z [DEBUG] npm stderr: (empty)
+2025-11-28T22:30:41.596Z [DEBUG] npm view failed with code 1
+2025-11-28T22:30:41.596Z [DEBUG] npm stderr: (empty)
+2025-11-28T23:00:41.608Z [DEBUG] npm view failed with code 1
+2025-11-28T23:00:41.608Z [DEBUG] npm stderr: (empty)
+2025-11-28T23:30:41.587Z [DEBUG] npm view failed with code 1
+2025-11-28T23:30:41.587Z [DEBUG] npm stderr: (empty)
+2025-11-29T00:00:41.591Z [DEBUG] npm view failed with code 1
+2025-11-29T00:00:41.591Z [DEBUG] npm stderr: (empty)
+2025-11-29T00:30:41.571Z [DEBUG] npm view failed with code 1
+2025-11-29T00:30:41.571Z [DEBUG] npm stderr: (empty)
+2025-11-29T01:00:41.582Z [DEBUG] npm view failed with code 1
+2025-11-29T01:00:41.582Z [DEBUG] npm stderr: (empty)
+2025-11-29T01:30:41.594Z [DEBUG] npm view failed with code 1
+2025-11-29T01:30:41.594Z [DEBUG] npm stderr: (empty)
+2025-11-29T02:04:35.619Z [DEBUG] npm view failed with code 1
+2025-11-29T02:04:35.619Z [DEBUG] npm stderr: (empty)
+2025-11-29T02:34:35.617Z [DEBUG] npm view failed with code 1
+2025-11-29T02:34:35.617Z [DEBUG] npm stderr: (empty)
+2025-11-29T03:04:35.632Z [DEBUG] npm view failed with code 1
+2025-11-29T03:04:35.632Z [DEBUG] npm stderr: (empty)
+2025-11-29T03:34:35.639Z [DEBUG] npm view failed with code 1
+2025-11-29T03:34:35.639Z [DEBUG] npm stderr: (empty)
+2025-11-29T04:04:35.628Z [DEBUG] npm view failed with code 1
+2025-11-29T04:04:35.628Z [DEBUG] npm stderr: (empty)
+2025-11-29T04:34:35.608Z [DEBUG] npm view failed with code 1
+2025-11-29T04:34:35.608Z [DEBUG] npm stderr: (empty)
+2025-11-29T05:04:35.588Z [DEBUG] npm view failed with code 1
+2025-11-29T05:04:35.588Z [DEBUG] npm stderr: (empty)
+2025-11-29T05:37:57.569Z [DEBUG] npm view failed with code 1
+2025-11-29T05:37:57.569Z [DEBUG] npm stderr: (empty)
+2025-11-29T06:07:57.596Z [DEBUG] npm view failed with code 1
+2025-11-29T06:07:57.596Z [DEBUG] npm stderr: (empty)
+2025-11-29T06:37:57.584Z [DEBUG] npm view failed with code 1
+2025-11-29T06:37:57.584Z [DEBUG] npm stderr: (empty)
+2025-11-29T07:07:57.577Z [DEBUG] npm view failed with code 1
+2025-11-29T07:07:57.578Z [DEBUG] npm stderr: (empty)
+2025-11-29T07:37:57.585Z [DEBUG] npm view failed with code 1
+2025-11-29T07:37:57.585Z [DEBUG] npm stderr: (empty)
+2025-11-29T08:14:18.574Z [DEBUG] npm view failed with code 1
+2025-11-29T08:14:18.574Z [DEBUG] npm stderr: (empty)
+2025-11-29T08:53:59.604Z [DEBUG] npm view failed with code 1
+2025-11-29T08:53:59.604Z [DEBUG] npm stderr: (empty)
+2025-11-29T09:23:59.598Z [DEBUG] npm view failed with code 1
+2025-11-29T09:23:59.598Z [DEBUG] npm stderr: (empty)
+2025-11-29T09:53:59.601Z [DEBUG] npm view failed with code 1
+2025-11-29T09:53:59.601Z [DEBUG] npm stderr: (empty)
+2025-11-29T10:37:26.573Z [DEBUG] npm view failed with code 1
+2025-11-29T10:37:26.573Z [DEBUG] npm stderr: (empty)
+2025-11-29T11:07:26.560Z [DEBUG] npm view failed with code 1
+2025-11-29T11:07:26.560Z [DEBUG] npm stderr: (empty)
+2025-11-29T11:37:26.600Z [DEBUG] npm view failed with code 1
+2025-11-29T11:37:26.600Z [DEBUG] npm stderr: (empty)
+2025-11-29T12:16:53.640Z [DEBUG] npm view failed with code 1
+2025-11-29T12:16:53.640Z [DEBUG] npm stderr: (empty)
+2025-11-29T12:46:53.591Z [DEBUG] npm view failed with code 1
+2025-11-29T12:46:53.591Z [DEBUG] npm stderr: (empty)
+2025-11-29T13:18:06.556Z [DEBUG] npm view failed with code 1
+2025-11-29T13:18:06.556Z [DEBUG] npm stderr: (empty)
+2025-11-29T13:48:06.558Z [DEBUG] npm view failed with code 1
+2025-11-29T13:48:06.558Z [DEBUG] npm stderr: (empty)
+2025-11-29T14:18:06.560Z [DEBUG] npm view failed with code 1
+2025-11-29T14:18:06.560Z [DEBUG] npm stderr: (empty)
+2025-11-29T14:48:06.552Z [DEBUG] npm view failed with code 1
+2025-11-29T14:48:06.552Z [DEBUG] npm stderr: (empty)
+2025-11-29T15:18:06.534Z [DEBUG] npm view failed with code 1
+2025-11-29T15:18:06.534Z [DEBUG] npm stderr: (empty)
+2025-11-29T15:48:06.541Z [DEBUG] npm view failed with code 1
+2025-11-29T15:48:06.541Z [DEBUG] npm stderr: (empty)
+2025-11-29T16:18:06.519Z [DEBUG] npm view failed with code 1
+2025-11-29T16:18:06.520Z [DEBUG] npm stderr: (empty)
+2025-11-29T16:48:06.563Z [DEBUG] npm view failed with code 1
+2025-11-29T16:48:06.563Z [DEBUG] npm stderr: (empty)
+2025-11-29T17:18:06.573Z [DEBUG] npm view failed with code 1
+2025-11-29T17:18:06.573Z [DEBUG] npm stderr: (empty)
+2025-11-29T17:48:06.600Z [DEBUG] npm view failed with code 1
+2025-11-29T17:48:06.600Z [DEBUG] npm stderr: (empty)
+2025-11-29T18:18:06.564Z [DEBUG] npm view failed with code 1
+2025-11-29T18:18:06.564Z [DEBUG] npm stderr: (empty)
+2025-11-29T18:57:28.572Z [DEBUG] npm view failed with code 1
+2025-11-29T18:57:28.572Z [DEBUG] npm stderr: (empty)
+2025-11-29T19:27:28.580Z [DEBUG] npm view failed with code 1
+2025-11-29T19:27:28.580Z [DEBUG] npm stderr: (empty)
+2025-11-29T19:57:51.504Z [DEBUG] npm view failed with code 1
+2025-11-29T19:57:51.504Z [DEBUG] npm stderr: (empty)
+2025-11-29T20:27:51.554Z [DEBUG] npm view failed with code 1
+2025-11-29T20:27:51.554Z [DEBUG] npm stderr: (empty)
+2025-11-29T20:57:51.556Z [DEBUG] npm view failed with code 1
+2025-11-29T20:57:51.556Z [DEBUG] npm stderr: (empty)
+2025-11-29T21:29:45.550Z [DEBUG] npm view failed with code 1
+2025-11-29T21:29:45.550Z [DEBUG] npm stderr: (empty)
+2025-11-29T21:59:45.558Z [DEBUG] npm view failed with code 1
+2025-11-29T21:59:45.558Z [DEBUG] npm stderr: (empty)
+2025-11-29T22:42:05.577Z [DEBUG] npm view failed with code 1
+2025-11-29T22:42:05.577Z [DEBUG] npm stderr: (empty)
+2025-11-29T23:12:05.597Z [DEBUG] npm view failed with code 1
+2025-11-29T23:12:05.597Z [DEBUG] npm stderr: (empty)
+2025-11-29T23:42:05.581Z [DEBUG] npm view failed with code 1
+2025-11-29T23:42:05.581Z [DEBUG] npm stderr: (empty)
+2025-11-30T00:16:34.530Z [DEBUG] npm view failed with code 1
+2025-11-30T00:16:34.530Z [DEBUG] npm stderr: (empty)
+2025-11-30T00:46:34.561Z [DEBUG] npm view failed with code 1
+2025-11-30T00:46:34.561Z [DEBUG] npm stderr: (empty)
+2025-11-30T01:17:48.575Z [DEBUG] npm view failed with code 1
+2025-11-30T01:17:48.575Z [DEBUG] npm stderr: (empty)
+2025-11-30T01:47:48.593Z [DEBUG] npm view failed with code 1
+2025-11-30T01:47:48.593Z [DEBUG] npm stderr: (empty)
+2025-11-30T02:17:48.553Z [DEBUG] npm view failed with code 1
+2025-11-30T02:17:48.553Z [DEBUG] npm stderr: (empty)
+2025-11-30T02:47:48.554Z [DEBUG] npm view failed with code 1
+2025-11-30T02:47:48.554Z [DEBUG] npm stderr: (empty)
+2025-11-30T03:17:48.490Z [DEBUG] npm view failed with code 1
+2025-11-30T03:17:48.490Z [DEBUG] npm stderr: (empty)
+2025-11-30T03:50:14.486Z [DEBUG] npm view failed with code 1
+2025-11-30T03:50:14.486Z [DEBUG] npm stderr: (empty)
+2025-11-30T04:34:31.553Z [DEBUG] npm view failed with code 1
+2025-11-30T04:34:31.553Z [DEBUG] npm stderr: (empty)
+2025-11-30T05:04:31.578Z [DEBUG] npm view failed with code 1
+2025-11-30T05:04:31.578Z [DEBUG] npm stderr: (empty)
+2025-11-30T05:45:04.583Z [DEBUG] npm view failed with code 1
+2025-11-30T05:45:04.583Z [DEBUG] npm stderr: (empty)
+2025-11-30T06:16:15.532Z [DEBUG] npm view failed with code 1
+2025-11-30T06:16:15.532Z [DEBUG] npm stderr: (empty)
+2025-11-30T06:46:15.489Z [DEBUG] npm view failed with code 1
+2025-11-30T06:46:15.489Z [DEBUG] npm stderr: (empty)
+2025-11-30T07:27:47.535Z [DEBUG] npm view failed with code 1
+2025-11-30T07:27:47.535Z [DEBUG] npm stderr: (empty)
+2025-11-30T08:13:02.547Z [DEBUG] npm view failed with code 1
+2025-11-30T08:13:02.547Z [DEBUG] npm stderr: (empty)
+2025-11-30T08:43:02.564Z [DEBUG] npm view failed with code 1
+2025-11-30T08:43:02.564Z [DEBUG] npm stderr: (empty)
+2025-11-30T09:20:54.572Z [DEBUG] npm view failed with code 1
+2025-11-30T09:20:54.572Z [DEBUG] npm stderr: (empty)
+2025-11-30T10:03:41.552Z [DEBUG] npm view failed with code 1
+2025-11-30T10:03:41.552Z [DEBUG] npm stderr: (empty)
+2025-11-30T10:33:41.538Z [DEBUG] npm view failed with code 1
+2025-11-30T10:33:41.538Z [DEBUG] npm stderr: (empty)
+2025-11-30T11:03:41.516Z [DEBUG] npm view failed with code 1
+2025-11-30T11:03:41.516Z [DEBUG] npm stderr: (empty)
+2025-11-30T11:37:11.528Z [DEBUG] npm view failed with code 1
+2025-11-30T11:37:11.528Z [DEBUG] npm stderr: (empty)
+2025-11-30T12:09:49.540Z [DEBUG] npm view failed with code 1
+2025-11-30T12:09:49.540Z [DEBUG] npm stderr: (empty)
+2025-11-30T12:39:49.555Z [DEBUG] npm view failed with code 1
+2025-11-30T12:39:49.555Z [DEBUG] npm stderr: (empty)
+2025-11-30T13:09:49.555Z [DEBUG] npm view failed with code 1
+2025-11-30T13:09:49.555Z [DEBUG] npm stderr: (empty)
+2025-11-30T13:48:24.544Z [DEBUG] npm view failed with code 1
+2025-11-30T13:48:24.544Z [DEBUG] npm stderr: (empty)
+2025-11-30T14:29:59.522Z [DEBUG] npm view failed with code 1
+2025-11-30T14:29:59.522Z [DEBUG] npm stderr: (empty)
+2025-11-30T14:59:59.514Z [DEBUG] npm view failed with code 1
+2025-11-30T14:59:59.514Z [DEBUG] npm stderr: (empty)
+2025-11-30T15:29:59.512Z [DEBUG] npm view failed with code 1
+2025-11-30T15:29:59.512Z [DEBUG] npm stderr: (empty)
+2025-11-30T15:59:59.499Z [DEBUG] npm view failed with code 1
+2025-11-30T15:59:59.499Z [DEBUG] npm stderr: (empty)
+2025-11-30T16:29:59.511Z [DEBUG] npm view failed with code 1
+2025-11-30T16:29:59.511Z [DEBUG] npm stderr: (empty)
+2025-11-30T17:07:00.456Z [DEBUG] npm view failed with code 1
+2025-11-30T17:07:00.456Z [DEBUG] npm stderr: (empty)
+2025-11-30T17:50:24.458Z [DEBUG] npm view failed with code 1
+2025-11-30T17:50:24.458Z [DEBUG] npm stderr: (empty)
+2025-11-30T18:31:04.485Z [DEBUG] npm view failed with code 1
+2025-11-30T18:31:04.485Z [DEBUG] npm stderr: (empty)
+2025-11-30T19:08:54.532Z [DEBUG] npm view failed with code 1
+2025-11-30T19:08:54.532Z [DEBUG] npm stderr: (empty)
+2025-11-30T19:38:54.496Z [DEBUG] npm view failed with code 1
+2025-11-30T19:38:54.496Z [DEBUG] npm stderr: (empty)
+2025-11-30T20:08:54.486Z [DEBUG] npm view failed with code 1
+2025-11-30T20:08:54.486Z [DEBUG] npm stderr: (empty)
+2025-11-30T20:48:29.491Z [DEBUG] npm view failed with code 1
+2025-11-30T20:48:29.491Z [DEBUG] npm stderr: (empty)
+2025-11-30T21:18:29.433Z [DEBUG] npm view failed with code 1
+2025-11-30T21:18:29.433Z [DEBUG] npm stderr: (empty)
+2025-11-30T21:52:24.419Z [DEBUG] npm view failed with code 1
+2025-11-30T21:52:24.419Z [DEBUG] npm stderr: (empty)
+2025-11-30T22:32:01.484Z [DEBUG] npm view failed with code 1
+2025-11-30T22:32:01.484Z [DEBUG] npm stderr: (empty)
+2025-11-30T23:05:51.477Z [DEBUG] npm view failed with code 1
+2025-11-30T23:05:51.477Z [DEBUG] npm stderr: (empty)
+2025-11-30T23:37:45.490Z [DEBUG] npm view failed with code 1
+2025-11-30T23:37:45.490Z [DEBUG] npm stderr: (empty)
+2025-12-01T00:07:52.482Z [DEBUG] npm view failed with code 1
+2025-12-01T00:07:52.482Z [DEBUG] npm stderr: (empty)
+2025-12-01T00:37:52.459Z [DEBUG] npm view failed with code 1
+2025-12-01T00:37:52.459Z [DEBUG] npm stderr: (empty)
+2025-12-01T01:07:52.326Z [DEBUG] npm view failed with code 1
+2025-12-01T01:07:52.326Z [DEBUG] npm stderr: (empty)
+2025-12-01T01:37:52.409Z [DEBUG] npm view failed with code 1
+2025-12-01T01:37:52.409Z [DEBUG] npm stderr: (empty)
+2025-12-01T02:07:52.427Z [DEBUG] npm view failed with code 1
+2025-12-01T02:07:52.427Z [DEBUG] npm stderr: (empty)
+2025-12-01T02:44:25.402Z [DEBUG] npm view failed with code 1
+2025-12-01T02:44:25.402Z [DEBUG] npm stderr: (empty)
+2025-12-01T03:14:25.465Z [DEBUG] npm view failed with code 1
+2025-12-01T03:14:25.465Z [DEBUG] npm stderr: (empty)
+2025-12-01T03:44:25.442Z [DEBUG] npm view failed with code 1
+2025-12-01T03:44:25.442Z [DEBUG] npm stderr: (empty)
+2025-12-01T04:24:41.474Z [DEBUG] npm view failed with code 1
+2025-12-01T04:24:41.475Z [DEBUG] npm stderr: (empty)
+2025-12-01T04:54:41.417Z [DEBUG] npm view failed with code 1
+2025-12-01T04:54:41.417Z [DEBUG] npm stderr: (empty)
+2025-12-01T05:24:41.430Z [DEBUG] npm view failed with code 1
+2025-12-01T05:24:41.430Z [DEBUG] npm stderr: (empty)
+2025-12-01T06:00:05.452Z [DEBUG] npm view failed with code 1
+2025-12-01T06:00:05.452Z [DEBUG] npm stderr: (empty)
+2025-12-01T06:30:05.491Z [DEBUG] npm view failed with code 1
+2025-12-01T06:30:05.491Z [DEBUG] npm stderr: (empty)
+2025-12-01T07:00:05.482Z [DEBUG] npm view failed with code 1
+2025-12-01T07:00:05.483Z [DEBUG] npm stderr: (empty)
+2025-12-01T07:32:40.457Z [DEBUG] npm view failed with code 1
+2025-12-01T07:32:40.457Z [DEBUG] npm stderr: (empty)
+2025-12-01T08:04:46.479Z [DEBUG] npm view failed with code 1
+2025-12-01T08:04:46.479Z [DEBUG] npm stderr: (empty)
+2025-12-01T08:34:46.483Z [DEBUG] npm view failed with code 1
+2025-12-01T08:34:46.483Z [DEBUG] npm stderr: (empty)
+2025-12-01T09:13:23.474Z [DEBUG] npm view failed with code 1
+2025-12-01T09:13:23.474Z [DEBUG] npm stderr: (empty)
+2025-12-01T09:56:24.432Z [DEBUG] npm view failed with code 1
+2025-12-01T09:56:24.432Z [DEBUG] npm stderr: (empty)
+2025-12-01T10:39:42.470Z [DEBUG] npm view failed with code 1
+2025-12-01T10:39:42.470Z [DEBUG] npm stderr: (empty)
+2025-12-01T11:22:46.439Z [DEBUG] npm view failed with code 1
+2025-12-01T11:22:46.439Z [DEBUG] npm stderr: (empty)
+2025-12-01T11:52:46.379Z [DEBUG] npm view failed with code 1
+2025-12-01T11:52:46.379Z [DEBUG] npm stderr: (empty)
+2025-12-01T12:37:39.415Z [DEBUG] npm view failed with code 1
+2025-12-01T12:37:39.415Z [DEBUG] npm stderr: (empty)
+2025-12-01T13:07:39.416Z [DEBUG] npm view failed with code 1
+2025-12-01T13:07:39.416Z [DEBUG] npm stderr: (empty)
+2025-12-01T13:50:55.422Z [DEBUG] npm view failed with code 1
+2025-12-01T13:50:55.423Z [DEBUG] npm stderr: (empty)
+2025-12-01T14:27:36.415Z [DEBUG] npm view failed with code 1
+2025-12-01T14:27:36.415Z [DEBUG] npm stderr: (empty)
+2025-12-01T14:57:36.424Z [DEBUG] npm view failed with code 1
+2025-12-01T14:57:36.424Z [DEBUG] npm stderr: (empty)
+2025-12-01T15:27:32.721Z [DEBUG] npm view failed with code 1
+2025-12-01T15:27:32.721Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-01T15_27_31_677Z-debug-0.log
+2025-12-01T15:49:15.227Z [DEBUG] Getting matching hook commands for SessionEnd with query: prompt_input_exit
+2025-12-01T15:49:15.227Z [DEBUG] Found 0 hook matchers in settings
+2025-12-01T15:49:15.227Z [DEBUG] Matched 0 unique hooks for query "prompt_input_exit" (0 before deduplication)

@@ -1,0 +1,119 @@
+import { emitDatadogMetricFireAndForget } from "../metrics/datadogMetrics";
+import type { Context } from "hono";
+import { routePath } from "hono/route";
+
+export type HttpRequestMetrics = {
+  method: string;
+  route: string;
+  platform?: string;
+  startTime: number;
+  env?: string;
+};
+
+type BaseMetricParams = {
+  method: string;
+  route: string;
+  platform?: string;
+  env?: string;
+};
+
+export function httpRequestInit(c: Context, platform?: string): HttpRequestMetrics {
+  const method = c.req.method;
+  const route = routePath(c) || c.req.path;
+  const env = process.env.ENVIRONMENT || process.env.NODE_ENV || 'unknown';
+
+  const baseParams: BaseMetricParams = {
+    method,
+    route,
+    platform,
+    env,
+  };
+
+  emitDatadogMetricFireAndForget('http.requests.count', baseParams, 1);
+
+  return {
+    method,
+    route,
+    platform,
+    startTime: performance.now(),
+    env,
+  };
+}
+
+export function httpRequestSuccess(
+  metrics: HttpRequestMetrics,
+  statusCode: number,
+  options?: {
+    merchant?: string;
+    partner?: string;
+    orchestrator?: string;
+  },
+): void {
+  const duration = performance.now() - metrics.startTime;
+
+  const successParams = {
+    method: metrics.method,
+    route: metrics.route,
+    platform: metrics.platform,
+    env: metrics.env,
+    status_code: statusCode.toString(),
+    status_class: getStatusClass(statusCode),
+    ...(options?.merchant && { merchant: options.merchant }),
+    ...(options?.partner && { partner: options.partner }),
+    ...(options?.orchestrator && { orchestrator: options.orchestrator }),
+  };
+
+  emitDatadogMetricFireAndForget('http.requests.success.count', successParams, 1);
+  emitDatadogMetricFireAndForget('http.request.duration', successParams, duration);
+}
+
+export function httpRequestError(
+  metrics: HttpRequestMetrics,
+  error: Error | number | unknown,
+  options?: {
+    merchant?: string;
+    partner?: string;
+    orchestrator?: string;
+  },
+): void {
+  const duration = performance.now() - metrics.startTime;
+
+  let statusCode = 500;
+  let errorType = 'unknown';
+
+  if (typeof error === 'number') {
+    statusCode = error;
+    errorType = 'http_error';
+  } else if (error instanceof Error) {
+    errorType = error.constructor.name;
+    if ('statusCode' in error && typeof error.statusCode === 'number') {
+      statusCode = error.statusCode;
+    } else if ('status' in error && typeof error.status === 'number') {
+      statusCode = error.status;
+    }
+  }
+
+  const errorParams = {
+    method: metrics.method,
+    route: metrics.route,
+    platform: metrics.platform,
+    env: metrics.env,
+    status_code: statusCode.toString(),
+    status_class: getStatusClass(statusCode),
+    error_type: errorType,
+    ...(options?.merchant && { merchant: options.merchant }),
+    ...(options?.partner && { partner: options.partner }),
+    ...(options?.orchestrator && { orchestrator: options.orchestrator }),
+  };
+
+  emitDatadogMetricFireAndForget('http.requests.error.count', errorParams, 1);
+  emitDatadogMetricFireAndForget('http.request.duration', errorParams, duration);
+}
+
+function getStatusClass(statusCode: number): string {
+  if (statusCode >= 200 && statusCode < 300) return '2xx';
+  if (statusCode >= 300 && statusCode < 400) return '3xx';
+  if (statusCode >= 400 && statusCode < 500) return '4xx';
+  if (statusCode >= 500 && statusCode < 600) return '5xx';
+  return 'unknown';
+}

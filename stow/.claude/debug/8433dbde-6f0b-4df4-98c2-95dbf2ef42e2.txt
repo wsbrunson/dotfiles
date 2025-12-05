@@ -1,0 +1,44 @@
+2025-11-22T16:56:00.364Z [DEBUG] Getting matching hook commands for SessionStart with query: clear
+2025-11-22T16:56:00.364Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T16:56:00.365Z [DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+2025-11-22T16:56:00.371Z [DEBUG] FileHistory: Added snapshot for 0f1c037d-eefc-40d8-89a8-c795ddcc4359, tracking 0 files
+2025-11-22T16:56:00.379Z [DEBUG] Rendering user message with 1 content blocks
+2025-11-22T16:56:00.379Z [DEBUG] Block 0: <command-name>/clear</command-name>
+            <command-message>clear</command-message>
+           ...
+2025-11-22T16:56:00.380Z [DEBUG] UserCommandMessage rendering: "clear" (args: "none")
+2025-11-22T16:56:00.380Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-11-22T16:56:00.397Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-22T16:56:00.397Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.41491.1763830560397
+2025-11-22T16:56:00.398Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T16:56:00.401Z [DEBUG] Temp file written successfully, size: 55135 bytes
+2025-11-22T16:56:00.401Z [DEBUG] Applied original permissions to temp file
+2025-11-22T16:56:00.401Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.41491.1763830560397 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-22T16:56:00.402Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-22T16:56:01.870Z [DEBUG] AutoUpdater: Detected installation type: npm-local
+2025-11-22T16:56:01.870Z [DEBUG] AutoUpdater: Using local update method
+2025-11-22T16:56:04.308Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-22T16:56:04.312Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.41491.1763830564312
+2025-11-22T16:56:04.313Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T16:56:04.323Z [DEBUG] Temp file written successfully, size: 55135 bytes
+2025-11-22T16:56:04.324Z [DEBUG] Applied original permissions to temp file
+2025-11-22T16:56:04.324Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.41491.1763830564312 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-22T16:56:04.325Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-11-22T16:56:05.901Z [DEBUG] Getting matching hook commands for SessionEnd with query: prompt_input_exit
+2025-11-22T16:56:05.902Z [DEBUG] Found 0 hook matchers in settings
+2025-11-22T16:56:05.903Z [DEBUG] Matched 0 unique hooks for query "prompt_input_exit" (0 before deduplication)
+2025-11-22T16:56:05.906Z [DEBUG] Cleaned up session snapshot: /Users/wbrunson/.claude/shell-snapshots/snapshot-zsh-1763505672247-yh57ro.sh
+2025-11-22T16:56:05.907Z [DEBUG] LSP server manager shut down successfully
+2025-11-22T16:56:05.907Z [DEBUG] Metrics opt-out check failed: No API key available
+2025-11-22T16:56:05.908Z [DEBUG] Metrics check failed, defaulting to disabled
+2025-11-22T16:56:05.908Z [DEBUG] Metrics export disabled by organization setting
+2025-11-22T16:56:05.908Z [DEBUG] BigQuery metrics exporter flush complete
+2025-11-22T16:56:05.909Z [DEBUG] BigQuery metrics exporter flush complete
+2025-11-22T16:56:05.909Z [DEBUG] BigQuery metrics exporter shutdown complete
+2025-11-22T16:56:05.913Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-22T16:56:05.913Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.41491.1763830565913
+2025-11-22T16:56:05.913Z [DEBUG] Preserving file permissions: 100644
+2025-11-22T16:56:05.920Z [DEBUG] Temp file written successfully, size: 55577 bytes
+2025-11-22T16:56:05.921Z [DEBUG] Applied original permissions to temp file
+2025-11-22T16:56:05.921Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.41491.1763830565913 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-11-22T16:56:05.923Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically

@@ -1,0 +1,69 @@
+import * as jwt from "jsonwebtoken";
+import { Logger } from "../logger";
+import { Request } from "express";
+
+const logger = new Logger({
+  service: "commerceonboardingserv-AppContextAuthorizer",
+  correlationId: "correlationId",
+});
+
+const hasValidApiKey = (request: Request): boolean => {
+
+  const internalHeader = request.headers["application-api-key"];
+
+  const apiKey = process.env.COMMERCE_ONBOARDING_API_KEY;
+
+  if(!apiKey){
+    logger.error("COMMERCE_ONBOARDING_API_KEY is not set in environment variables");
+  }
+
+  if (!internalHeader || !apiKey) {
+    return false;
+  }
+
+  return internalHeader === apiKey;
+};
+
+export const verifyAppContext = async (
+  request: Request,
+  log: Logger,
+): Promise<boolean> => {
+  try {
+    if (hasValidApiKey(request)) {
+      return true;
+    }
+    const appContext = request.headers["paypal-application-context"] as string;
+
+    if (!appContext || appContext.length < 1) {
+      log.warn("AppContext is missing");
+      return false;
+    }
+
+    const VERIFICATION_PEM = process.env.VERIFICATION_PEM;
+
+    if (!VERIFICATION_PEM) {
+      log.error("VERIFICATION_PEM is not set in environment variables");
+      return false;
+    }
+    const publicKey =
+      "-----BEGIN PUBLIC KEY-----\n" +
+      VERIFICATION_PEM +
+      "\n-----END PUBLIC KEY-----";
+
+    log.info("Using public key for verification", {
+      hasPublicKey: !!publicKey,
+    });
+
+    log.info("Verifying AppContext", {
+      hasVerificationPem: !!VERIFICATION_PEM,
+    });
+
+    jwt.verify(appContext, publicKey, { algorithms: ["RS256"] });
+    return true;
+  } catch (err) {
+    log.error("JWT verification failed", {
+      error: err instanceof Error ? err.message : String(err),
+    });
+    return false;
+  }
+};

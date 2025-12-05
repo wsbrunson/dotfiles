@@ -1,0 +1,358 @@
+import { describe, test, expect } from "vitest";
+import { performMask } from "./maskPii";
+
+describe("performMask", () => {
+  test.each([
+    {
+      input: { maskedKey: "can't see me" },
+      output: { maskedKey: "**********" },
+      case: "masks sensitive key",
+    },
+    {
+      input: { unmaskedKey: "visible" },
+      output: { unmaskedKey: "visible" },
+      case: "preserves allowed key",
+    },
+    {
+      input: { maskedKey: "can't see me", unmaskedKey: "visible" },
+      output: { maskedKey: "**********", unmaskedKey: "visible" },
+      case: "masks sensitive key and preserves allowed key",
+    },
+  ])("$case", ({ input, output }) => {
+    expect(performMask(input)).toEqual(output);
+  });
+
+  // it("should mask values for non-allowed keys", () => {
+  //   const input = {
+  //     sensitiveData: "secret value",
+  //     personalInfo: "user@example.com",
+  //   };
+
+  //   const result = performMask(input);
+
+  //   expect(result.sensitiveData).toBe("**********");
+  //   expect(result.personalInfo).toBe("**********");
+  // });
+
+  // it("should preserve values for allowed keys", () => {
+  //   const input = {
+  //     productId: "12345",
+  //     variantId: "variant-abc",
+  //     quantity: 3,
+  //     cartId: "cart-123",
+  //     orderId: "order-456",
+  //     correlationId: "corr-789",
+  //     status: "active",
+  //     message: "test message",
+  //   };
+
+  //   const result = performMask(input);
+
+  //   expect(result.productId).toBe("12345");
+  //   expect(result.variantId).toBe("variant-abc");
+  //   expect(result.quantity).toBe(3);
+  //   expect(result.cartId).toBe("cart-123");
+  //   expect(result.orderId).toBe("order-456");
+  //   expect(result.correlationId).toBe("corr-789");
+  //   expect(result.status).toBe("active");
+  //   expect(result.message).toBe("test message");
+  // });
+
+  // it("should recursively mask object values for allowed keys", () => {
+  //   const input = {
+  //     productId: { id: "12345", name: "Product" },
+  //     quantity: 3,
+  //   };
+
+  //   const result = performMask(input);
+
+  //   expect(result.productId).toEqual({ id: "12345", name: "Product" });
+  //   expect(result.quantity).toBe(3);
+  // });
+
+  // it("should handle nested objects recursively", () => {
+  //   const input = {
+  //     productId: "12345",
+  //     user: {
+  //       email: "user@example.com",
+  //       cartId: "cart-123",
+  //       profile: {
+  //         name: "John Doe",
+  //         orderId: "order-456",
+  //       },
+  //     },
+  //   };
+
+  //   const result = performMask(input);
+
+  //   expect(result.productId).toBe("12345");
+  //   expect(result.user).toBe("**********");
+  // });
+
+  // it("should handle arrays of primitives", () => {
+  //   const input = {
+  //     productIds: ["1", "2", "3"],
+  //     sensitiveList: ["secret1", "secret2"],
+  //   };
+
+  //   const result = performMask(input);
+
+  //   expect(result.productIds).toEqual(["1", "2", "3"]);
+  //   expect(result.sensitiveList).toEqual(["secret1", "secret2"]);
+  // });
+
+  // it("should handle arrays of objects", () => {
+  //   const input = {
+  //     items: [
+  //       { productId: "123", price: 10.99 },
+  //       { productId: "456", userEmail: "user@example.com" },
+  //     ],
+  //   };
+
+  //   const result = performMask(input);
+
+  //   expect(result.items).toEqual([
+  //     { productId: "123", price: "**********" },
+  //     { productId: "456", userEmail: "**********" },
+  //   ]);
+  // });
+
+  // it("should handle arrays with non-primitive values", () => {
+  //   const testDate = new Date("2023-01-01");
+  //   const testSymbol = Symbol("test");
+  //   const input = {
+  //     data: [
+  //       "string",
+  //       123,
+  //       true,
+  //       null,
+  //       undefined,
+  //       { nested: "object" },
+  //       testSymbol,
+  //       testDate,
+  //     ],
+  //   };
+
+  //   const result = performMask(input);
+
+  //   expect(result.data).toEqual([
+  //     "string",
+  //     123,
+  //     true,
+  //     null,
+  //     undefined,
+  //     { nested: "**********" },
+  //     "**********",
+  //     testDate,
+  //   ]);
+  // });
+
+  // it("should handle special body field with JSON string", () => {
+  //   const input = {
+  //     body: JSON.stringify({
+  //       email: "user@example.com",
+  //       productId: "123",
+  //       sensitive: "secret",
+  //     }),
+  //   };
+
+  //   const result = performMask(input);
+
+  //   const parsedBody = JSON.parse(result.body as string);
+  //   expect(parsedBody).toEqual({
+  //     email: "**********",
+  //     productId: "123",
+  //     sensitive: "**********",
+  //   });
+  // });
+
+  // it("should handle body field with invalid JSON", () => {
+  //   const input = {
+  //     body: "invalid json {",
+  //   };
+
+  //   const result = performMask(input);
+
+  //   expect(result.body).toBe("invalid json {");
+  // });
+
+  // it("should handle body field with non-string value", () => {
+  //   const input = {
+  //     body: { email: "user@example.com", productId: "123" },
+  //   };
+
+  //   const result = performMask(input);
+
+  //   expect(result.body).toEqual({
+  //     email: "**********",
+  //     productId: "123",
+  //   });
+  // });
+
+  // it("should handle circular references", () => {
+  //   const input: any = {
+  //     productId: "123",
+  //     circular: null,
+  //   };
+  //   input.circular = input;
+
+  //   const result = performMask(input);
+
+  //   expect(result.productId).toBe("123");
+  //   expect(result.circular).toBe("**********");
+  // });
+
+  // it("should handle circular references in arrays", () => {
+  //   const input: any = {
+  //     productId: "123",
+  //     items: [],
+  //   };
+  //   input.items.push(input);
+
+  //   const result = performMask(input);
+
+  //   expect(result.productId).toBe("123");
+  //   expect((result.items as any[])[0]).toEqual({
+  //     __circular__: true,
+  //     type: "Object",
+  //   });
+  // });
+
+  // it("should handle deep circular references", () => {
+  //   const input: any = {
+  //     level1: {
+  //       level2: {
+  //         productId: "123",
+  //         circular: null,
+  //       },
+  //     },
+  //   };
+  //   input.level1.level2.circular = input;
+
+  //   const result = performMask(input);
+
+  //   expect(result.level1).toBe("**********");
+  // });
+
+  // it("should preserve null and undefined values for allowed keys", () => {
+  //   const input = {
+  //     productId: null,
+  //     variantId: undefined,
+  //     quantity: null,
+  //     sensitiveData: null,
+  //     anotherSensitive: undefined,
+  //   };
+
+  //   const result = performMask(input);
+
+  //   expect(result.productId).toBeNull();
+  //   expect(result.variantId).toBeUndefined();
+  //   expect(result.quantity).toBeNull();
+  //   expect(result.sensitiveData).toBe("**********");
+  //   expect(result.anotherSensitive).toBe("**********");
+  // });
+
+  // it("should handle complex nested structure with mixed data types", () => {
+  //   const input = {
+  //     correlationId: "corr-123",
+  //     user: {
+  //       email: "user@example.com",
+  //       profile: {
+  //         name: "John Doe",
+  //         productIds: ["1", "2", "3"],
+  //         orders: [
+  //           { orderId: "order-1", amount: 100 },
+  //           { orderId: "order-2", secret: "hidden" },
+  //         ],
+  //       },
+  //     },
+  //     metadata: {
+  //       timestamp: new Date().toISOString(),
+  //       debugId: "debug-456",
+  //       internalData: {
+  //         apiKey: "secret-key",
+  //         correlationId: "nested-corr",
+  //       },
+  //     },
+  //   };
+
+  //   const result = performMask(input);
+
+  //   expect(result.correlationId).toBe("corr-123");
+  //   expect(result.user).toBe("**********");
+  //   expect(result.metadata).toBe("**********");
+  // });
+
+  // it("should handle objects with constructor names for circular reference tracking", () => {
+  //   class CustomClass {
+  //     constructor(
+  //       public productId: string,
+  //       public sensitiveData: string,
+  //     ) {}
+  //   }
+
+  //   const customInstance = new CustomClass("123", "secret");
+  //   const input: any = {
+  //     instance: customInstance,
+  //     circular: null,
+  //   };
+  //   input.circular = customInstance;
+  //   customInstance.circular = customInstance;
+
+  //   const result = performMask(input);
+
+  //   expect(result.instance).toBe("**********");
+  //   expect(result.circular).toBe("**********");
+  // });
+
+  // it("should handle edge case with empty objects and arrays", () => {
+  //   const input = {
+  //     emptyObject: {},
+  //     emptyArray: [],
+  //     productId: "123",
+  //   };
+
+  //   const result = performMask(input);
+
+  //   expect(result.emptyObject).toBe("**********");
+  //   expect(result.emptyArray).toEqual([]);
+  //   expect(result.productId).toBe("123");
+  // });
+
+  // it("should handle body field with nested objects in JSON", () => {
+  //   const input = {
+  //     body: JSON.stringify({
+  //       user: {
+  //         email: "user@example.com",
+  //         productId: "123",
+  //         orders: [{ orderId: "order-1", secret: "hidden" }],
+  //       },
+  //     }),
+  //   };
+
+  //   const result = performMask(input);
+
+  //   const parsedBody = JSON.parse(result.body as string);
+  //   expect(parsedBody.user).toBe("**********");
+  // });
+
+  // it("should preserve original object structure without modifying input", () => {
+  //   const input = {
+  //     productId: "123",
+  //     sensitiveData: "secret",
+  //     nested: {
+  //       email: "user@example.com",
+  //       cartId: "cart-456",
+  //     },
+  //   };
+
+  //   const result = performMask(input);
+
+  //   expect(result.productId).toBe("123");
+  //   expect(result.sensitiveData).toBe("**********");
+  //   expect(result.nested).toEqual({
+  //     email: "**********",
+  //     cartId: "cart-456",
+  //   });
+  // });
+});

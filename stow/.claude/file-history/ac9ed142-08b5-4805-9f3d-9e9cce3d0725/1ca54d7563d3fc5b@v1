@@ -1,0 +1,267 @@
+import { Context, Hono } from "hono";
+import { StatusCode } from "hono/utils/http-status";
+import { auth } from "../../shared/middleware/auth";
+import { requestLogger } from "../../shared/middleware/requestLogger";
+import { parseRequestBodyWithZod } from "../../shared/middleware/parseRequestBodyWithZod";
+import { createErrorHandler } from "../../shared/handlers/createErrorHandler";
+import { simulateRequests } from "../../shared/middleware/simulator";
+import { setStoreMetaData } from "../../shared/middleware/setStoreMetaData";
+import {
+  translatePayPalCartToCreateCheckoutSessionRequest,
+  translatePayPalCartToUpdateCheckoutSessionRequest,
+  translatePayPalCartToCompleteCheckoutSessionRequest,
+  translateCreateCheckoutSessionResponseToPayPalCart,
+  translateUpdateCheckoutSessionResponseToPayPalCart,
+  translateCompleteCheckoutSessionResponseToPayPalCart,
+} from "./translate";
+import { client } from "./openapi/generated/client.gen";
+import {
+  createCheckoutSessionSchema2 as createCheckoutSessionResponseSchema,
+  updateCheckoutSessionSchema2 as updateCheckoutSessionResponseSchema,
+  completeCheckoutSessionSchema2 as completeCheckoutSessionResponseSchema,
+} from "./openapi/generated/zod.gen";
+import { InternalServerError, BadRequestError } from "../../shared/errors";
+import {
+  payPalCartSchema,
+  type PayPalCart,
+} from "../../shared/schemas/openapi-schemas";
+import { getCorrelationIdFromRequest } from "../../shared/errors";
+import {
+  createCheckoutSession,
+  updateCheckoutSession,
+  completeCheckoutSession,
+} from "./openapi/generated";
+import { handlers } from "./openapi/mocks/handlers";
+import { createCommerceOnboardingService } from "../../shared/commerce-onboarding";
+import { httpMetricsMiddleware } from "../../shared/middleware/httpMetricsMiddleware";
+
+const app = new Hono();
+
+/**
+ * Helper function to get platform base URL from commerce-onboarding service
+ */
+async function getPlatformBaseUrl(c: Context): Promise<string> {
+  const storeMetaData = c.get("storeMetaData");
+  const correlationId = getCorrelationIdFromRequest(c.env.event);
+
+  if (!storeMetaData) {
+    throw new InternalServerError(correlationId, {
+      message:
+        "Store metadata not found. Ensure setStoreMetaData middleware is configured.",
+    });
+  }
+
+  const { honeyStoreId, platformName } = storeMetaData;
+
+  const commerceOnboardingService = createCommerceOnboardingService({
+    debugId: correlationId,
+  });
+
+  commerceOnboardingService.setStoreContext({
+    honeyStoreId,
+    platformName,
+    logger: console, // Using console for now, could be improved with proper logger
+  });
+
+  try {
+    // Use a private method access workaround, or we need to expose getStoreConfig publicly
+    const storeConfigs = await (
+      commerceOnboardingService as any
+    ).getStoreConfig();
+
+    if (!storeConfigs?.platformConfig?.integration?.baseUrl) {
+      throw new InternalServerError(correlationId, {
+        message: `Platform integration baseURL is not defined for platform: ${platformName}`,
+      });
+    }
+
+    return storeConfigs.platformConfig.integration.baseUrl;
+  } catch (error) {
+    throw new InternalServerError(correlationId, {
+      message: `Failed to fetch platform configuration: ${
+        error instanceof Error ? error.message : "Unknown error"
+      }`,
+    });
+  }
+}
+
+const BASE_PATH = "/commerceorchnodeserv/v1/acp";
+
+app.post(
+  `${BASE_PATH}/cart`,
+  requestLogger({ type: "acp" }),
+  httpMetricsMiddleware({ orchestrator: "acp" }),
+  auth,
+  setStoreMetaData(),
+  simulateRequests({ handlers: handlers as any }),
+  parseRequestBodyWithZod({ schema: payPalCartSchema }),
+  async (c: Context) => {
+    const paypalCart = c.get("data") as PayPalCart;
+    const correlationId = getCorrelationIdFromRequest(c.env.event);
+
+    const acpRequest =
+      translatePayPalCartToCreateCheckoutSessionRequest(paypalCart);
+
+    client.setConfig({
+      baseURL: await getPlatformBaseUrl(c),
+    });
+
+    const { data } = await createCheckoutSession({
+      body: acpRequest,
+      headers: {
+        Authorization: "Bearer dummy",
+        "Content-Type": "application/json",
+        "Idempotency-Key": paypalCart.id || `cart-${Date.now()}`,
+        "Request-Id": correlationId,
+        Signature: "dummy-signature",
+        Timestamp: new Date().toISOString(),
+        "API-Version": "1.0.0",
+      },
+      throwOnError: true,
+    });
+
+    if (!data) {
+      throw new InternalServerError(correlationId, {
+        message: "ACP create checkout session response is empty",
+      });
+    }
+    const validatedResponse = createCheckoutSessionResponseSchema.parse(data);
+
+    const resultCart =
+      translateCreateCheckoutSessionResponseToPayPalCart(validatedResponse);
+
+    c.status(201 as StatusCode);
+    return c.json(resultCart);
+  },
+);
+
+app.put(
+  `${BASE_PATH}/cart/:cartId`,
+  requestLogger({ type: "acp" }),
+  httpMetricsMiddleware({ orchestrator: "acp" }),
+  auth,
+  parseRequestBodyWithZod({ schema: payPalCartSchema }),
+  setStoreMetaData(),
+  simulateRequests({ handlers: handlers as any }),
+  async (c: Context) => {
+    try {
+      const paypalCart = c.get("data") as PayPalCart;
+      const cartId = c.req.param("cartId");
+      const correlationId = getCorrelationIdFromRequest(c.env.event);
+
+      const acpRequest =
+        translatePayPalCartToUpdateCheckoutSessionRequest(paypalCart);
+
+      client.setConfig({
+        baseURL: await getPlatformBaseUrl(c),
+      });
+
+      const { data } = await updateCheckoutSession({
+        path: {
+          checkout_session_id: cartId,
+        },
+        body: acpRequest,
+        headers: {
+          Authorization: "Bearer dummy",
+          "Content-Type": "application/json",
+          "Idempotency-Key": cartId,
+          "Request-Id": correlationId,
+          Signature: "dummy-signature", // TODO: Implement proper signature
+          Timestamp: new Date().toISOString(),
+          "API-Version": "1.0.0",
+        },
+      });
+
+      const validatedResponse = updateCheckoutSessionResponseSchema.parse(data);
+      const resultCart =
+        translateUpdateCheckoutSessionResponseToPayPalCart(validatedResponse);
+
+      c.status(200 as StatusCode);
+      return c.json(resultCart);
+    } catch (error) {
+      const correlationId = getCorrelationIdFromRequest(c.env.event);
+      if (error instanceof Error) {
+        throw new InternalServerError(correlationId, {
+          message: `ACP update cart failed: ${error.message}`,
+        });
+      }
+      throw new InternalServerError(correlationId, {
+        message: "ACP update cart failed",
+      });
+    }
+  },
+);
+
+app.post(
+  `${BASE_PATH}/cart/:cartId/complete`,
+  requestLogger({ type: "acp" }),
+  httpMetricsMiddleware({ orchestrator: "acp" }),
+  auth,
+  parseRequestBodyWithZod({ schema: payPalCartSchema }),
+  setStoreMetaData(),
+  async (c: Context) => {
+    try {
+      const paypalCart = c.get("data") as PayPalCart;
+      const cartId = c.req.param("cartId");
+      const correlationId = getCorrelationIdFromRequest(c.env.event);
+
+      const paymentToken = paypalCart.payment_method?.token;
+      if (!paymentToken) {
+        throw new BadRequestError(correlationId, {
+          details: [
+            {
+              description: "payment_method.token is missing or empty",
+            },
+          ],
+        });
+      }
+
+      const acpRequest = translatePayPalCartToCompleteCheckoutSessionRequest(
+        paypalCart,
+        paymentToken,
+      );
+
+      client.setConfig({
+        baseURL: await getPlatformBaseUrl(c),
+      });
+
+      const { data } = await completeCheckoutSession({
+        path: {
+          checkout_session_id: cartId,
+        },
+        body: acpRequest,
+        headers: {
+          Authorization: "Bearer dummy",
+          "Content-Type": "application/json",
+          "Idempotency-Key": cartId,
+          "Request-Id": correlationId,
+          Signature: "dummy-signature", // TODO: Implement proper signature
+          Timestamp: new Date().toISOString(),
+          "API-Version": "1.0.0",
+        },
+      });
+
+      const validatedResponse =
+        completeCheckoutSessionResponseSchema.parse(data);
+      const resultCart =
+        translateCompleteCheckoutSessionResponseToPayPalCart(validatedResponse);
+
+      c.status(200 as StatusCode);
+      return c.json(resultCart);
+    } catch (error) {
+      const correlationId = getCorrelationIdFromRequest(c.env.event);
+      if (error instanceof Error) {
+        throw new InternalServerError(correlationId, {
+          message: `ACP complete cart failed: ${error.message}`,
+        });
+      }
+      throw new InternalServerError(correlationId, {
+        message: "ACP complete cart failed",
+      });
+    }
+  },
+);
+
+app.onError(createErrorHandler("ACP"));
+
+export { app };

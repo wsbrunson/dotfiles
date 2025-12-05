@@ -1,0 +1,764 @@
+import { InternalServerError } from "../errors";
+import { logger } from "../logger/logger";
+import { CreateCartRequest, UpdateCartRequest } from "../schemas";
+import { PayPalCart } from "../schemas/openapi-schemas";
+import { PayPalOrderManager } from "./PayPalOrderManager";
+import { SecretsManagerHelper } from "./SecretsManagerHelper";
+import {
+  CompleteCartRequest,
+  CreateCartResponse,
+  PayPalCreateOrderRequest,
+  PayPalErrorResponse,
+  PayPalOrderResponse,
+  PayPalPatchOperation,
+  PayPalTokenResponse,
+  PurchaseUnit,
+  ShopifyAmount,
+} from "./paypalTestSchema";
+
+const log = logger("PayPalTestOrder");
+
+async function getPayPalOrdersSecrets(): Promise<{
+  clientId: string;
+  clientSecret: string;
+  host: string;
+}> {
+  if (!process.env.MOCK_SECRET_PATH) {
+    throw new Error("SECRET_PATH environment variable is not defined.");
+  }
+
+  const secretPath = process.env.MOCK_SECRET_PATH;
+  const secretsManager = SecretsManagerHelper.getInstance();
+
+  try {
+    const secrets = await secretsManager.getSecret(secretPath);
+    log.info("Retrieved secrets", { secretPath, hasSecret: !!secrets });
+
+    const mock = JSON.parse(secrets.mock || "{}");
+    log.info("Parsed mock config", {
+      hasMock: !!secrets.mock,
+      hasClientId: !!mock.client_id,
+      hasClientSecret: !!mock.client_secret,
+      hasHostname: !!mock.hostname
+    });
+
+    if (!mock.client_id || !mock.client_secret) {
+      throw new Error(`Missing PayPal credentials in secret at ${secretPath}. client_id: ${!!mock.client_id}, client_secret: ${!!mock.client_secret}`);
+    }
+
+    return {
+      clientId: mock.client_id,
+      clientSecret: mock.client_secret,
+      host: mock.hostname,
+    };
+  } catch (error) {
+    log.error("Failed to get PayPal secrets", { secretPath, error });
+    throw new InternalServerError("unknown", {
+      details: [
+        {
+          description:
+            "Failed to retrieve secrets to connect to PayPal Orders API",
+        },
+      ],
+    });
+  }
+}
+
+// =============================================================================
+// ERROR HANDLING
+// =============================================================================
+
+class PayPalApiError extends Error {
+  constructor(
+    message: string,
+    public statusCode: number,
+    public errorResponse?: PayPalErrorResponse
+  ) {
+    super(message);
+    this.name = "PayPalApiError";
+  }
+}
+
+// Function to generate random amount between $25 and $100
+const generateRandomAmount = (): number => {
+  return Math.round((Math.random() * (100 - 25) + 25) * 100) / 100; // Ensures two decimal places
+};
+
+// =============================================================================
+// ADAPTER FUNCTIONS
+// =============================================================================
+
+// Transform Shopify-compatible request to PayPal request
+function transformToPayPalOrderRequest(
+  request: CreateCartRequest
+): PayPalCreateOrderRequest {
+  // Generate a random amount between $25-$100
+  const amount = generateRandomAmount();
+  // Create purchase units from products
+  const purchaseUnits: PurchaseUnit[] = [
+    {
+      amount: {
+        currency_code: "USD", // Default to USD, can be customized based on needs
+        value: request.products
+          .reduce((total, product) => {
+            // Simple price calculation - in a real scenario this would use actual prices
+            const price = amount; // Mock price
+            return total + price * product.quantity;
+          }, 0)
+          .toFixed(2),
+        breakdown: {
+          item_total: {
+            currency_code: "USD",
+            value: request.products
+              .reduce((total, product) => {
+                const price = amount; // Mock price
+                return total + price * product.quantity;
+              }, 0)
+              .toFixed(2),
+          },
+        },
+      },
+      items: request.products.map((product) => ({
+        name: `Product ${product.productId}`,
+        unit_amount: {
+          currency_code: "USD",
+          value: amount.toFixed(2),
+        },
+        quantity: product.quantity.toString(),
+        category: "PHYSICAL_GOODS",
+      })),
+      shipping: request.shippingAddress
+        ? {
+          name: {
+            full_name:
+              request.customer?.firstName ||
+              `${request.customer?.firstName || ""} ${request.customer?.lastName || ""
+                }`.trim(),
+          },
+          address: {
+            address_line_1: request.shippingAddress.addressLine1,
+            address_line_2: request.shippingAddress.addressLine2 || "",
+            admin_area_1: request.shippingAddress.adminArea1 || "",
+            admin_area_2: request.shippingAddress.adminArea2 || "",
+            postal_code: request.shippingAddress.postalCode,
+            country_code: request.shippingAddress.countryCode,
+          },
+        }
+        : undefined,
+    },
+  ];
+
+  return {
+    intent: "CAPTURE",
+    purchase_units: purchaseUnits,
+    application_context: {
+      brand_name: "PayPal Test Store",
+      shipping_preference: request.shippingAddress
+        ? "SET_PROVIDED_ADDRESS"
+        : "NO_SHIPPING",
+      user_action: "PAY_NOW",
+      return_url: "https://example.com/return",
+      cancel_url: "https://example.com/cancel",
+    },
+  };
+}
+
+// Transform PayPal response to Shopify-compatible response
+function transformToShopifyResponse(
+  paypalResponse: PayPalOrderResponse
+): CreateCartResponse {
+  const totalAmount: ShopifyAmount = {
+    currencyCode:
+      paypalResponse.purchase_units?.[0]?.amount?.currency_code || "USD",
+    value: paypalResponse.purchase_units?.[0]?.amount?.value || "0.00",
+  };
+
+  return {
+    ecToken: paypalResponse.id, // Use PayPal order ID as ecToken
+    orderId: paypalResponse.id,
+    status: "success",
+    paymentMethodOptions: [
+      {
+        id: "paypal",
+        name: "PayPal",
+        description: "Pay with PayPal",
+        brand: "PayPal",
+        selected: true,
+      },
+    ],
+    totalAmount: totalAmount,
+  };
+}
+
+// Transform PayPalCart to PayPal request
+function transformToPayPalRequestV2(
+  request: PayPalCart
+): PayPalCreateOrderRequest {
+  // Generate a random amount between $25-$100
+  const amount = generateRandomAmount();
+
+  // Extract items from the PayPalCart
+  const items = request.items || [];
+
+  // Get currency from items or default to USD
+  const currencyCode = items[0]?.price?.currency_code || "USD";
+
+  // Create purchase units from PayPalCart items
+  const purchaseUnits: PurchaseUnit[] = [
+    {
+      amount: {
+        currency_code: currencyCode,
+        value: items
+          .reduce((total, item) => {
+            const price = amount; // Mock price
+            const quantity = item.quantity || 1;
+            return total + price * quantity;
+          }, 0)
+          .toFixed(2),
+        breakdown: {
+          item_total: {
+            currency_code: currencyCode,
+            value: items
+              .reduce((total, item) => {
+                const price = amount; // Mock price
+                const quantity = item.quantity || 1;
+                return total + price * quantity;
+              }, 0)
+              .toFixed(2),
+          },
+        },
+      },
+      items: items.map((item) => ({
+        name: item.name || `Product ${item.item_id}`,
+        unit_amount: {
+          currency_code: currencyCode,
+          value: amount.toFixed(2),
+        },
+        quantity: (item.quantity || 1).toString(),
+        category: "PHYSICAL_GOODS",
+      })),
+      shipping: request.shipping_address
+        ? {
+          name: {
+            full_name: request.customer?.name?.given_name && request.customer?.name?.surname
+              ? `${request.customer.name.given_name} ${request.customer.name.surname}`.trim()
+              : request.customer?.name?.given_name || request.customer?.name?.surname || "",
+          },
+          address: {
+            address_line_1: request.shipping_address.address_line_1 || "",
+            address_line_2: request.shipping_address.address_line_2 || "",
+            admin_area_1: request.shipping_address.admin_area_1 || "",
+            admin_area_2: request.shipping_address.admin_area_2 || "",
+            postal_code: request.shipping_address.postal_code || "",
+            country_code: request.shipping_address.country_code || "US",
+          },
+        }
+        : undefined,
+    },
+  ];
+
+  return {
+    intent: "CAPTURE",
+    purchase_units: purchaseUnits,
+    application_context: {
+      brand_name: "PayPal Test Store",
+      shipping_preference: request.shipping_address
+        ? "SET_PROVIDED_ADDRESS"
+        : "NO_SHIPPING",
+      user_action: "PAY_NOW",
+      return_url: "https://example.com/return",
+      cancel_url: "https://example.com/cancel",
+    },
+  };
+}
+
+// Transform PayPal response to V2-compatible PayPalCart response
+function transformToPayPalResponseV2(
+  paypalData: PayPalCreateOrderRequest | PayPalOrderResponse,
+  originalRequest: PayPalCart,
+): PayPalCart {
+  const purchaseUnit = paypalData.purchase_units?.[0];
+  const currencyCode = purchaseUnit?.amount?.currency_code || "USD";
+
+  // Extract amounts from purchase unit breakdown or use defaults
+  const itemTotal = purchaseUnit?.amount?.breakdown?.item_total?.value || "0";
+  const taxAmount = purchaseUnit?.amount?.breakdown?.tax_total?.value || "0";
+  const shippingAmount = purchaseUnit?.amount?.breakdown?.shipping?.value || "0";
+  const discountAmount = purchaseUnit?.amount?.breakdown?.discount?.value || "0";
+  const totalAmount = purchaseUnit?.amount?.value || "0";
+
+  // Build checkout fields from original request or create default terms acceptance
+  const checkoutFields = originalRequest.checkout_fields || [
+    {
+      type: "TERMS_ACCEPTANCE" as const,
+      status: "PENDING" as const,
+      context: {
+        type: "terms",
+        display_name: "Terms of Service",
+        policy_content: "Please accept the terms and conditions to continue."
+      }
+    }
+  ];
+
+  // Build available shipping options
+  const availableShippingOptions = originalRequest.available_shipping_options || [];
+  const cartId = originalRequest.id || `CART-${Date.now()}`;
+
+  return {
+    id: cartId,
+    status: "CREATED",
+    validation_status: "VALID",
+    validation_issues: [],
+    totals: {
+      subtotal: {
+        currency_code: currencyCode,
+        value: itemTotal,
+      },
+      discount: {
+        currency_code: currencyCode,
+        value: discountAmount,
+      },
+      shipping: {
+        currency_code: currencyCode,
+        value: shippingAmount,
+      },
+      tax: {
+        currency_code: currencyCode,
+        value: taxAmount,
+      },
+      custom_charges: {
+        currency_code: currencyCode,
+        value: "0",
+      },
+      total: {
+        currency_code: currencyCode,
+        value: totalAmount,
+      },
+    },
+    applied_coupons: [],
+    checkout_fields: checkoutFields,
+    available_shipping_options: availableShippingOptions,
+    items: originalRequest.items || [],
+    customer: originalRequest.customer,
+    shipping_address: originalRequest.shipping_address,
+    billing_address: originalRequest.billing_address || originalRequest.shipping_address
+  };
+}
+
+// Shopify-compatible create cart function
+async function createCart(
+  request: CreateCartRequest
+): Promise<CreateCartResponse> {
+  try {
+    const paypalRequest = transformToPayPalOrderRequest(request);
+    const paypalOrderManager = new PayPalOrderManager({
+      log,
+      secrets: await getPayPalOrdersSecrets(),
+    });
+
+    const paypalResponse = await paypalOrderManager.createOrder(paypalRequest);
+
+    // Transform response to Shopify format
+    return transformToShopifyResponse(paypalResponse);
+  } catch (error) {
+    throw new InternalServerError("unknown", {
+      details: [
+        {
+          description:
+            error instanceof Error
+              ? error.message
+              : "Failed to create cart from paypal order",
+        },
+      ],
+    });
+  }
+}
+
+// Shopify-compatible complete cart function
+async function completeCart(request: CompleteCartRequest): Promise<any> {
+  const orderId = request.paymentDetails.ecToken;
+  const orderUrl = `https://example.com/v2/checkout/orders/${orderId}`;
+
+  return {
+    transactionId: orderId,
+    ecToken: request.paymentDetails.ecToken,
+    reviewOrderPage: orderUrl,
+  };
+}
+
+// Shopify-compatible update cart function
+async function updateCart(
+  request: UpdateCartRequest,
+  cartId: string
+): Promise<CreateCartResponse> {
+  try {
+    let hasNonPatchableFields = false;
+
+    // Check operations for non-patchable paths
+    if (request.operations && request.operations.length > 0) {
+      for (const op of request.operations) {
+        // PayPal doesn't allow patching item quantities or amounts
+        if (op.path.includes("/products") && op.path.includes("/quantity")) {
+          log.info(
+            "Operation requires modifying non-patchable field (quantity)",
+            { path: op.path }
+          );
+          hasNonPatchableFields = true;
+          break;
+        }
+      }
+    }
+
+    // Check if cart data contains product updates
+    if (
+      request.cart &&
+      request.cart.products &&
+      request.cart.products.length > 0
+    ) {
+      log.info(
+        "Cart data contains product information, which is non-patchable"
+      );
+      hasNonPatchableFields = true;
+    }
+
+    // If we need to modify non-patchable fields, return an error
+    if (hasNonPatchableFields) {
+      log.info("Cannot update non-patchable fields, returning error");
+      return {
+        ecToken: cartId,
+        orderId: cartId,
+        status: "error",
+        errorDetails: {
+          errorCode: "NON_PATCHABLE_FIELDS",
+          message:
+            "Cannot update order with non-patchable fields (products, quantities, amounts)",
+        },
+        paymentMethodOptions: [],
+        totalAmount: { currencyCode: "USD", value: "0.00" } as ShopifyAmount,
+      };
+    }
+
+    // If we can use PATCH for the requested updates
+    log.info("Attempting to update fields that are patchable");
+
+    // Generate PayPal PATCH operations for patchable fields
+    const paypalOperations: PayPalPatchOperation[] = [];
+
+    // Build shipping patch operation similar to ACP handlers
+    if (request.cart && (request.cart.shippingAddress || request.cart.customer)) {
+      const address = request.cart.shippingAddress;
+      const customer = request.cart.customer;
+
+      // Build shipping object structure similar to ACP handlers
+      const shippingObject: any = {};
+
+      // Build address object if shipping address is provided
+      if (address) {
+        shippingObject.address = {
+          address_line_1: address.addressLine1 || "",
+          address_line_2: address.addressLine2 || "",
+          admin_area_1: address.adminArea1 || "",
+          admin_area_2: address.adminArea2 || "",
+          postal_code: address.postalCode || "",
+          country_code: address.countryCode || "US",
+        };
+      }
+
+      // Build name object if customer is provided
+      if (customer?.firstName || customer?.lastName) {
+        const fullName =
+          customer?.firstName ||
+          `${customer?.firstName || ""} ${customer?.lastName || ""}`.trim();
+
+        shippingObject.name = {
+          full_name: fullName,
+        };
+      }
+
+      // Add the shipping operation as a single patch (like ACP handlers)
+      if (Object.keys(shippingObject).length > 0) {
+        paypalOperations.push({
+          op: "replace",
+          path: "/purchase_units/@reference_id=='default'/shipping",
+          value: shippingObject,
+        });
+      }
+    }
+
+    // Add any other patchable operations here
+
+    log.info("Generated PayPal operations", {
+      operations: JSON.stringify(paypalOperations),
+    });
+
+    if (paypalOperations.length === 0) {
+      log.info("No patchable operations to perform, returning original cart");
+      // No operations to perform, return success with original cart ID
+      return {
+        ecToken: cartId,
+        orderId: cartId,
+        status: "success",
+        paymentMethodOptions: [
+          {
+            id: "paypal",
+            name: "PayPal",
+            description: "Pay with PayPal",
+            brand: "PayPal",
+            selected: true,
+          },
+        ],
+        totalAmount: { currencyCode: "USD", value: "0.00" } as ShopifyAmount,
+      };
+    }
+
+    try {
+      const paypalOrderManager = new PayPalOrderManager({
+        log,
+        secrets: await getPayPalOrdersSecrets(),
+      });
+
+      await paypalOrderManager.updateOrder({
+        orderId: cartId,
+        operations: paypalOperations,
+      });
+
+      return transformToShopifyResponse(
+        await paypalOrderManager.getOrder(cartId)
+      );
+    } catch (patchError) {
+      log.error("Error patching order", { error: patchError });
+
+      // Return error response instead of creating a new order
+      return {
+        ecToken: cartId,
+        orderId: cartId,
+        status: "error",
+        errorDetails: {
+          errorCode: "PATCH_ERROR",
+          message:
+            patchError instanceof Error
+              ? patchError.message
+              : "Error updating order",
+        },
+        paymentMethodOptions: [],
+        totalAmount: { currencyCode: "USD", value: "0.00" } as ShopifyAmount,
+      };
+    }
+  } catch (error) {
+    // Handle error and return a Shopify-compatible error response
+    log.error("Error updating cart", { error });
+    return {
+      ecToken: cartId,
+      orderId: cartId,
+      status: "error",
+      errorDetails: {
+        errorCode: "PAYPAL_ERROR",
+        message:
+          error instanceof Error ? error.message : "Unknown error occurred",
+      },
+      paymentMethodOptions: [],
+      totalAmount: { currencyCode: "USD", value: "0.00" } as ShopifyAmount,
+    };
+  }
+}
+
+// V2-compatible create cart function
+async function createCartV2(
+  request: PayPalCart
+): Promise<PayPalCart> {
+  try {
+    const paypalRequest = transformToPayPalRequestV2(request);
+    const cartResponse = transformToPayPalResponseV2(paypalRequest, request);
+    // If payment method is provided, create PayPal order
+    if (request.payment_method) {
+      const paypalOrderManager = new PayPalOrderManager({
+        log,
+        secrets: await getPayPalOrdersSecrets(),
+      });
+      const paypalOrder = await paypalOrderManager.createOrder(paypalRequest);
+      cartResponse.payment_method = {
+        type: "paypal",
+        token: paypalOrder.id,
+      };
+    }
+    return cartResponse;
+  } catch (error) {
+    throw new InternalServerError("unknown", {
+      details: [
+        {
+          description:
+            error instanceof Error
+              ? error.message
+              : "Failed to create cart from PayPal cart",
+        },
+      ],
+    });
+  }
+}
+
+// V2-compatible complete cart function
+async function completeCartV2(request: PayPalCart): Promise<PayPalCart> {
+  // For V2, we extract the cart ID and mark the cart as completed
+  const cartId = request.id || `CART-COMPLETE-${Date.now()}`;
+
+  return {
+    ...request,
+    id: cartId,
+    status: "COMPLETED",
+    validation_status: "VALID",
+    totals: request.totals || {
+      total: {
+        currency_code: request.items?.[0]?.price?.currency_code || "USD",
+        value: request.items?.reduce((sum, item) =>
+          sum + parseFloat(item.price?.value || "0") * (item.quantity || 1), 0
+        ).toFixed(2) || "0.00",
+      },
+    },
+  };
+}
+
+// V2-compatible update cart function
+async function updateCartV2(
+  request: PayPalCart,
+  cartId: string
+): Promise<PayPalCart> {
+  try {
+    // For V2, we need to determine if we can patch or need to recreate
+    // Since PayPalCart has items, if items have changed, we may need to recreate
+
+    // If no payment method, don't patch the order - just return the updated request
+    if (!request.payment_method) {
+      log.info("Skipping PayPal order patch - returning updated cart");
+      const updatedRequest = transformToPayPalRequestV2(request);
+      return transformToPayPalResponseV2(updatedRequest, request);
+    }
+
+    // Check if we have non-patchable changes (items, quantities, amounts)
+    let hasNonPatchableFields = false;
+
+    if (request.items && request.items.length > 0) {
+      log.info("Cart data contains item information, which is non-patchable");
+      hasNonPatchableFields = true;
+    }
+
+    // If we need to modify non-patchable fields, return an error
+    if (hasNonPatchableFields) {
+      log.info("Cannot update non-patchable fields, throwing error");
+      throw new InternalServerError("unknown", {
+        details: [
+          {
+            description: "Cannot update order with non-patchable fields (items, quantities, amounts)",
+          },
+        ],
+      });
+    }
+
+    // Generate PayPal PATCH operations for patchable fields (shipping address)
+    const paypalOperations: PayPalPatchOperation[] = [];
+
+    if (request.shipping_address || request.customer) {
+      const address = request.shipping_address;
+      const customer = request.customer;
+
+      // Build shipping object structure similar to ACP handlers
+      const shippingObject: any = {};
+
+      // Build address object if shipping address is provided
+      if (address) {
+        shippingObject.address = {
+          address_line_1: address.address_line_1 || "",
+          address_line_2: address.address_line_2 || "",
+          admin_area_1: address.admin_area_1 || "",
+          admin_area_2: address.admin_area_2 || "",
+          postal_code: address.postal_code || "",
+          country_code: address.country_code || "US",
+        };
+      }
+
+      // Build name object if customer is provided
+      if (customer?.name?.given_name || customer?.name?.surname) {
+        const fullName = customer?.name?.given_name && customer?.name?.surname
+          ? `${customer.name.given_name} ${customer.name.surname}`.trim()
+          : customer?.name?.given_name || customer?.name?.surname || "";
+
+        shippingObject.name = {
+          full_name: fullName,
+        };
+      }
+
+      // Add the shipping operation as a single patch (like ACP handlers)
+      if (Object.keys(shippingObject).length > 0) {
+        paypalOperations.push({
+          op: "replace",
+          path: "/purchase_units/@reference_id=='default'/shipping",
+          value: shippingObject,
+        });
+      }
+    }
+
+    log.info("Generated PayPal operations", {
+      operations: JSON.stringify(paypalOperations),
+    });
+
+    if (paypalOperations.length === 0) {
+      log.info("No patchable operations to perform, returning original cart");
+      return {
+        ...request,
+        id: cartId,
+        status: "READY",
+      };
+    }
+
+    try {
+      const paypalOrderManager = new PayPalOrderManager({
+        log,
+        secrets: await getPayPalOrdersSecrets(),
+      });
+
+      await paypalOrderManager.updateOrder({
+        orderId: cartId,
+        operations: paypalOperations,
+      });
+
+      const updatedOrder = await paypalOrderManager.getOrder(cartId);
+      return transformToPayPalResponseV2(updatedOrder, request);
+    } catch (patchError) {
+      log.error("Error patching order", { error: patchError });
+      throw new InternalServerError("unknown", {
+        details: [
+          {
+            description:
+              patchError instanceof Error
+                ? patchError.message
+                : "Error updating order",
+          },
+        ],
+      });
+    }
+  } catch (error) {
+    log.error("Error updating cart", { error });
+    throw new InternalServerError("unknown", {
+      details: [
+        {
+          description:
+            error instanceof Error ? error.message : "Unknown error occurred",
+        },
+      ],
+    });
+  }
+}
+
+export {
+  createCart,
+  createCartV2,
+  updateCart,
+  updateCartV2,
+  completeCart,
+  completeCartV2,
+  PayPalTokenResponse,
+  PayPalCreateOrderRequest,
+  PayPalOrderResponse,
+  PayPalApiError,
+  PayPalPatchOperation,
+  CreateCartRequest,
+};

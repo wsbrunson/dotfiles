@@ -1,0 +1,536 @@
+[DEBUG] Getting matching hook commands for SessionStart with query: clear
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+[DEBUG] FileHistory: Added snapshot for 0f7251cc-0084-4b65-bd2c-73bc59954fea, tracking 0 files
+[DEBUG] Rendering user message with 1 content blocks
+[DEBUG] Block 0: <command-name>/clear</command-name>
+            <command-message>clear</command-message>
+           ...
+[DEBUG] UserCommandMessage rendering: "clear" (args: "none")
+[DEBUG] isSkillFormat: false, prefix: "/"
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762358152450
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 49162 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762358152450 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762358152458
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 49273 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762358152458 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762358155213
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 49273 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762358155213 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message 3da6e4f0-4b48-4f40-aed1-958253685128
+[DEBUG] FileHistory: Added snapshot for 3da6e4f0-4b48-4f40-aed1-958253685128, tracking 0 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762358187316
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 49273 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762358187316 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762358187365
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 49273 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762358187365 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762358187374
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 49849 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762358187374 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message accb0c78-6fdb-45aa-bfd8-1ef1550aba2e
+[DEBUG] FileHistory: Added snapshot for accb0c78-6fdb-45aa-bfd8-1ef1550aba2e, tracking 0 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762358254290
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762358254290 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762358254295
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762358254295 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762358254301
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762358254301 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762358254305
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762358254305 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-ded4ce49-8414-4701-b211-da258d8918e3.json.tmp.1417.1762358254310
+[DEBUG] Temp file written successfully, size: 826 bytes
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-ded4ce49-8414-4701-b211-da258d8918e3.json.tmp.1417.1762358254310 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-ded4ce49-8414-4701-b211-da258d8918e3.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-ded4ce49-8414-4701-b211-da258d8918e3.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762358258920
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762358258920 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762358258927
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762358258927 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762358258932
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762358258932 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762358258939
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762358258939 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-ded4ce49-8414-4701-b211-da258d8918e3.json.tmp.1417.1762358258944
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 830 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-ded4ce49-8414-4701-b211-da258d8918e3.json.tmp.1417.1762358258944 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-ded4ce49-8414-4701-b211-da258d8918e3.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-ded4ce49-8414-4701-b211-da258d8918e3.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Glob
+[DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Glob
+[DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762358285359
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762358285359 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762358285366
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762358285366 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762358285372
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762358285372 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762358285379
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762358285379 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-ded4ce49-8414-4701-b211-da258d8918e3.json.tmp.1417.1762358285385
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 832 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-ded4ce49-8414-4701-b211-da258d8918e3.json.tmp.1417.1762358285385 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-ded4ce49-8414-4701-b211-da258d8918e3.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-ded4ce49-8414-4701-b211-da258d8918e3.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762358303302
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762358303302 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762358303308
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762358303308 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762358303314
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762358303314 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762358303320
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762358303320 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-ded4ce49-8414-4701-b211-da258d8918e3.json.tmp.1417.1762358303327
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 834 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-ded4ce49-8414-4701-b211-da258d8918e3.json.tmp.1417.1762358303327 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-ded4ce49-8414-4701-b211-da258d8918e3.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-ded4ce49-8414-4701-b211-da258d8918e3.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762358307390
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762358307390 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762358307397
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762358307397 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762358307401
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762358307401 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762358307408
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762358307408 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-ded4ce49-8414-4701-b211-da258d8918e3.json.tmp.1417.1762358307414
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 836 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-ded4ce49-8414-4701-b211-da258d8918e3.json.tmp.1417.1762358307414 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-ded4ce49-8414-4701-b211-da258d8918e3.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-ded4ce49-8414-4701-b211-da258d8918e3.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762358315193
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762358315193 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762358315208
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762358315208 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762358315213
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762358315213 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762358315219
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762358315219 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-ded4ce49-8414-4701-b211-da258d8918e3.json.tmp.1417.1762358315224
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-ded4ce49-8414-4701-b211-da258d8918e3.json.tmp.1417.1762358315224 to /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-ded4ce49-8414-4701-b211-da258d8918e3.json
+[DEBUG] File /Users/wbrunson/.claude/todos/ded4ce49-8414-4701-b211-da258d8918e3-agent-ded4ce49-8414-4701-b211-da258d8918e3.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[ERROR] Error: Error: Language not supported while highlighting code, falling back to markdown: hcl
+    at JD (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1175:4413)
+    at file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1175:4141
+    at Array.map (<anonymous>)
+    at MF (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1175:4132)
+    at ATQ (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1798:6306)
+    at Cw (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:73:19414)
+    at Ao (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:75:42806)
+    at T9 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:75:38347)
+    at Uc (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:75:38275)
+    at qw (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:75:38129)
+[ERROR] Error: Error: Language not supported while highlighting code, falling back to markdown: hcl
+    at JD (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1175:4413)
+    at file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1175:4141
+    at Array.map (<anonymous>)
+    at MF (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1175:4132)
+    at ATQ (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1798:6306)
+    at Cw (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:73:19414)
+    at Ao (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:75:42806)
+    at T9 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:75:38347)
+    at Uc (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:75:38275)
+    at qw (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:75:38129)
+[ERROR] Error: Error: Language not supported while highlighting code, falling back to markdown: hcl
+    at JD (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1175:4413)
+    at file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1175:4141
+    at Array.map (<anonymous>)
+    at MF (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1175:4132)
+    at ATQ (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1798:6306)
+    at Cw (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:73:19414)
+    at Ao (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:75:42806)
+    at T9 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:75:38347)
+    at Uc (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:75:38275)
+    at qw (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:75:38129)
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762358328129
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 49849 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762358328129 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762358328148
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 49849 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762358328148 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762358328155
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 50034 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762358328155 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Metrics opt-out check failed: No API key available
+[DEBUG] Metrics check failed, defaulting to disabled
+[DEBUG] Metrics export disabled by organization setting
+[DEBUG] MCP server "atlassian": SSE connection dropped after 592889s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] MCP server "atlassian": Token expires in -2295s, attempting proactive refresh
+[DEBUG] MCP server "atlassian": Starting token refresh
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762360021940
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 49162 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762360021940 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] MCP server "atlassian": Found client info
+[DEBUG] MCP server "atlassian": Token refresh successful, saving new tokens
+[DEBUG] MCP server "atlassian": Saving tokens
+[DEBUG] MCP server "atlassian": Token expires in: 3300
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Token refreshed successfully
+[DEBUG] MCP server "atlassian": SSE connection dropped after 593003s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 3208s
+[DEBUG] MCP server "atlassian": SSE connection dropped after 594217s uptime
+[DEBUG] MCP server "atlassian": Connection error: SSE error: undefined
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 1994s
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762361819726
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 49162 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762361819726 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762363619455
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 49162 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762363619455 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-local, using native: false
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-local, using native: false
+[DEBUG] Getting matching hook commands for SessionEnd with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)

@@ -1,0 +1,357 @@
+import 'shared/instrumentation/datadog';
+import { wrapHandlerWithTracing } from 'shared/instrumentation/wrapHandler';
+import {
+  completeCheckoutRequestSchema,
+} from "../../shared/schemas/openapi-schemas";
+import {
+  BadRequestError,
+  convertErrorToLambdaResponse,
+  getCorrelationIdFromRequest,
+  logAPIResponseError,
+  UnauthorizedError,
+} from "../../shared/errors";
+import { ALBEvent } from "aws-lambda";
+import { logger } from "../../shared/logger/logger";
+import { verifyAppContext } from "shared/helpers/AppContextAuthorizer";
+import { extractCartIdFromCompleteRoute } from "shared/helpers/extractCartId";
+import { getCacheImplementation } from "shared/cache/cacheFactory";
+import { WixClient } from "shared/wix/wix-client";
+import { Cache } from "shared/cache";
+import {
+  BaseMetricParams,
+  trackInitiatedPaymentFireAndForget,
+  trackFailedPaymentFireAndForget,
+  trackSuccessPaymentFireAndForget,
+} from "shared/metrics/emitMetric";
+import {
+  trackDatadogInitiatedPaymentFireAndForget,
+  trackDatadogSuccessPaymentFireAndForget,
+  trackDatadogFailedPaymentFireAndForget,
+} from "shared/metrics/emitDatadogMetric";
+import {
+  sendPaymentInitiatedAlarmMetricFireAndForget,
+  sendPaymentSuccessAlarmMetricFireAndForget,
+  sendPaymentFailureAlarmMetricFireAndForget,
+} from "shared/metrics/alarm-metrics";
+import { startSimulatorV2, stopSimulator } from "shared/simulator/server";
+import { isProduction } from "../../shared/utils";
+import { SecretsManagerHelper } from "shared/helpers/SecretsManagerHelper";
+
+// Lambda initialization - runs once per container cold start
+// When we move to single lambda, this duplication of code will be removed
+const initLog = logger("WixCompleteCart-Init");
+let wixClientId: string;
+let wixClientSecret: string;
+
+const initializeSecrets = async (): Promise<void> => {
+  const secretPath = process.env.SECRET_PATH;
+  if (!secretPath) {
+    throw new Error("SECRET_PATH environment variable is not set");
+  }
+
+  initLog.info("Fetching Wix secrets during Lambda initialization", { secretPath });
+  const secretsManager = SecretsManagerHelper.getInstance();
+  const secrets = await secretsManager.getSecret(secretPath);
+
+  wixClientId = secrets.clientId;
+  wixClientSecret = secrets.clientSecret;
+
+  if (!wixClientId || !wixClientSecret) {
+    throw new Error("Failed to retrieve Wix client credentials from secrets");
+  }
+
+  initLog.info("Wix secrets initialized successfully");
+};
+
+const secretsPromise = initializeSecrets();
+let cache: Cache;
+
+const handler = async (event: ALBEvent) => {
+  const overallStartTime = performance.now();
+  await secretsPromise;
+  const secretsDuration = performance.now() - overallStartTime;
+  const correlationId = getCorrelationIdFromRequest(event);
+  const log = logger("WixCompleteCart", event);
+
+  log.info("Secrets awaiting completed", {
+    correlationId,
+    duration: `${secretsDuration.toFixed(2)}ms`,
+  });
+
+  log.info("Lambda Function - wix-complete-cart - START", {
+    correlationId,
+    timestamp: new Date().toISOString(),
+    httpMethod: event.httpMethod,
+    path: event.path,
+    userAgent: event.headers?.["user-agent"],
+  });
+
+  // Initialize cache once at lambda initialization
+  if (!cache) {
+    cache = getCacheImplementation();
+  }
+
+  const baseMetricParams: BaseMetricParams = {
+    orchestrator: "Wix",
+    merchantUrl: "",
+  };
+
+  sendPaymentInitiatedAlarmMetricFireAndForget({
+    orchestrator: baseMetricParams.orchestrator,
+  });
+
+  try {
+    await trackInitiatedPaymentFireAndForget(baseMetricParams);
+    trackDatadogInitiatedPaymentFireAndForget({
+      ...baseMetricParams,
+      env: process.env.APP_ENV || "unknown",
+    });
+
+    // 1. Authorization
+    const authStartTime = performance.now();
+    const isAuthorized = verifyAppContext(event);
+    const authDuration = performance.now() - authStartTime;
+
+    log.info("Authorization completed", {
+      correlationId,
+      duration: `${authDuration.toFixed(2)}ms`,
+      authorized: isAuthorized,
+    });
+
+    if (!isAuthorized) {
+      log.error("Unauthorized access: AppContext verification failed", { correlationId });
+      throw new UnauthorizedError(correlationId, {
+        details: [
+          {
+            field: "AppContext",
+            description: "AppContext verification failed, resulting in unauthorized access.",
+          },
+        ],
+      });
+    }
+
+    // 2. Request parsing and validation
+    const validationStartTime = performance.now();
+    const body = typeof event.body === "string" ? JSON.parse(event.body) : event.body;
+
+    const data = completeCheckoutRequestSchema.parse(body);
+    const validationDuration = performance.now() - validationStartTime;
+
+    log.info("Request validation completed", {
+      correlationId,
+      duration: `${validationDuration.toFixed(2)}ms`,
+    });
+
+    if (!data.payment_method?.token) {
+      throw new BadRequestError(correlationId, {
+        details: [
+          {
+            description: "A valid payment token is required",
+          },
+        ],
+      });
+    }
+
+    if (!data.payment_method?.payer_id) {
+      throw new BadRequestError(correlationId, {
+        details: [
+          {
+            description: "A valid payer id is required",
+          },
+        ],
+      });
+    }
+
+    // 3. Cart ID extraction and cache lookup
+    const cacheStartTime = performance.now();
+    const cartId = extractCartIdFromCompleteRoute(event.path);
+
+    if (!cartId) {
+      throw new BadRequestError(correlationId, {
+        details: [
+          {
+            description: "Cart ID not found in path",
+          },
+        ],
+      });
+    }
+
+    // TEMP: Use cart id from cache temporarily
+    const cachedDataString = await cache.get(cartId);
+
+    if (!cachedDataString) {
+      throw new BadRequestError(correlationId, {
+        details: [
+          {
+            description: `No cached data found for the provided cartId: ${cartId}`,
+          },
+        ],
+      });
+    }
+
+    const cachedData = JSON.parse(cachedDataString);
+    const wixCartId = cachedData.wixResponse.id;
+
+    if (!wixCartId) {
+      throw new BadRequestError(correlationId, {
+        details: [
+          {
+            description: "Wix Cart ID not found in cache",
+          },
+        ],
+      });
+    }
+
+    const cacheDuration = performance.now() - cacheStartTime;
+
+    log.info("Cache operation completed", {
+      correlationId,
+      duration: `${cacheDuration.toFixed(2)}ms`,
+      cartId,
+      wixCartId,
+    });
+
+    // 4. Simulator setup
+    const simulatorStartTime = performance.now();
+    await startSimulatorV2({
+      type: 'complete',
+      data: {
+        ...cachedData.wixResponse,
+        payment_method: data.payment_method,
+      },
+      orchestrator: "wix",
+      platformBaseUrl: "https://www.wixapis.com/ecom/api",
+      headers: event.headers
+    });
+    const simulatorDuration = performance.now() - simulatorStartTime;
+
+    log.info("Simulator setup completed", {
+      correlationId,
+      duration: `${simulatorDuration.toFixed(2)}ms`,
+    });
+
+    // 5. Wix client creation and cart completion
+    const clientStartTime = performance.now();
+    const wixClient = await WixClient.create(event, wixClientId, wixClientSecret);
+    const clientDuration = performance.now() - clientStartTime;
+
+    log.info("Wix client created", {
+      correlationId,
+      duration: `${clientDuration.toFixed(2)}ms`,
+    });
+
+    const completeCartStartTime = performance.now();
+    const result = await wixClient.completeCart(
+      wixCartId,
+      data
+    );
+    const completeCartDuration = performance.now() - completeCartStartTime;
+
+    log.info("Wix completeCart completed", {
+      correlationId,
+      duration: `${completeCartDuration.toFixed(2)}ms`,
+      hasResult: !!result,
+    });
+
+    // 6. Response preparation and metrics
+    const finalDuration = performance.now() - overallStartTime;
+
+    log.info("Lambda Function - wix-complete-cart - COMPLETED", {
+      correlationId,
+      totalDuration: `${finalDuration.toFixed(2)}ms`,
+      breakdown: {
+        secrets: `${secretsDuration.toFixed(2)}ms`,
+        auth: `${authDuration.toFixed(2)}ms`,
+        validation: `${validationDuration.toFixed(2)}ms`,
+        cache: `${cacheDuration.toFixed(2)}ms`,
+        simulator: `${simulatorDuration.toFixed(2)}ms`,
+        client: `${clientDuration.toFixed(2)}ms`,
+        completeCart: `${completeCartDuration.toFixed(2)}ms`,
+      },
+      performance: {
+        statusCode: 200,
+        hasResult: !!result,
+      },
+    });
+
+    trackSuccessPaymentFireAndForget({
+      ...baseMetricParams,
+      status: "201",
+      duration: finalDuration,
+    });
+
+    // Check cart status for Datadog metrics
+    let isDatadogSuccess = true;
+    if (result?.status && result.status === "INCOMPLETE") {
+      isDatadogSuccess = false;
+      log.warn("Cart status indicates failure despite 200 HTTP status", {
+        correlationId,
+        httpStatus: 200,
+        cartStatus: result.status,
+      });
+    }
+
+    if (isDatadogSuccess) {
+      trackDatadogSuccessPaymentFireAndForget({
+        ...baseMetricParams,
+        env: process.env.APP_ENV || "unknown",
+        status: "201",
+        duration: finalDuration,
+      });
+    } else {
+      trackDatadogFailedPaymentFireAndForget({
+        ...baseMetricParams,
+        env: process.env.APP_ENV || "unknown",
+        status: "201",
+      });
+    }
+
+    sendPaymentSuccessAlarmMetricFireAndForget({
+      orchestrator: baseMetricParams.orchestrator,
+    });
+
+    return {
+      statusCode: 200,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(result),
+    };
+  } catch (e) {
+    const [apiError, errorResponse] = convertErrorToLambdaResponse(e, event);
+    logAPIResponseError(log, apiError);
+
+    const errorDuration = performance.now() - overallStartTime;
+
+    log.info("Lambda Function - wix-complete-cart - FAILED", {
+      correlationId,
+      totalDuration: `${errorDuration.toFixed(2)}ms`,
+      statusCode: errorResponse.statusCode,
+      errorType: apiError.constructor.name,
+      errorMessage: apiError.message,
+    });
+
+    await trackFailedPaymentFireAndForget({
+      ...baseMetricParams,
+      status: errorResponse.statusCode.toString(),
+    });
+
+    trackDatadogFailedPaymentFireAndForget({
+      ...baseMetricParams,
+      env: process.env.APP_ENV || "unknown",
+      status: errorResponse.statusCode.toString(),
+    });
+
+    sendPaymentFailureAlarmMetricFireAndForget({
+      orchestrator: baseMetricParams.orchestrator,
+    });
+
+    return errorResponse;
+  } finally {
+    // Only stop simulator if it was started (not in production)
+    if (!isProduction()) {
+      stopSimulator();
+    }
+  }
+};
+
+
+exports.handler = wrapHandlerWithTracing(handler);

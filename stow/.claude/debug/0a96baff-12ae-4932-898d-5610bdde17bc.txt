@@ -1,0 +1,567 @@
+2025-12-05T18:16:42.839Z [DEBUG] Watching for changes in setting files /Users/wbrunson/.claude/settings.json, /Users/wbrunson/workspace/dotfiles/.claude/settings.local.json...
+2025-12-05T18:16:42.920Z [DEBUG] [LSP MANAGER] initializeLspServerManager() called
+2025-12-05T18:16:42.920Z [DEBUG] [LSP MANAGER] Created manager instance, state=pending
+2025-12-05T18:16:42.920Z [DEBUG] [LSP MANAGER] Starting async initialization (generation 1)
+2025-12-05T18:16:42.920Z [DEBUG] [LSP SERVER MANAGER] initialize() called
+2025-12-05T18:16:42.920Z [DEBUG] [LSP SERVER MANAGER] Calling getAllLspServers()
+2025-12-05T18:16:42.931Z [DEBUG] Applying permission update: Adding 10 allow rule(s) to destination 'localSettings': ["WebFetch(domain:fishshell.com)","WebFetch(domain:statsapi.mlb.com)","WebFetch(domain:statsapi.mlb.com)","WebFetch(domain:statsapi.mlb.com)","WebFetch(domain:statsapi.mlb.com)","WebFetch(domain:statsapi.mlb.com)","Bash(cargo --version)","Bash(cargo:*)","WebFetch(domain:github.com)","Bash(git stash push:*)"]
+2025-12-05T18:16:42.932Z [DEBUG] Found 0 plugins (0 enabled, 0 disabled)
+2025-12-05T18:16:42.938Z [DEBUG] Total LSP servers loaded: 0
+2025-12-05T18:16:42.970Z [DEBUG] [LSP SERVER MANAGER] getAllLspServers returned 0 server(s)
+2025-12-05T18:16:42.970Z [DEBUG] LSP manager initialized with 0 servers
+2025-12-05T18:16:42.971Z [DEBUG] LSP server manager initialized successfully
+2025-12-05T18:16:42.971Z [DEBUG] LSP notification handlers registered successfully for all 0 server(s)
+2025-12-05T18:16:42.974Z [DEBUG] Loading skills from directories: managed=/Library/Application Support/ClaudeCode/.claude/skills, user=/Users/wbrunson/.claude/skills, project=/Users/wbrunson/workspace/dotfiles/.claude/skills
+2025-12-05T18:16:42.975Z [DEBUG] >>>>> getPluginSkills CALLED <<<<<
+2025-12-05T18:16:43.075Z [DEBUG] installed_plugins.json doesn't exist yet at /Users/wbrunson/.claude/plugins/installed_plugins.json, returning empty object
+2025-12-05T18:16:43.109Z [DEBUG] Creating shell snapshot for zsh (/bin/zsh)
+2025-12-05T18:16:43.109Z [DEBUG] Looking for shell config file: /Users/wbrunson/.zshrc
+2025-12-05T18:16:43.109Z [DEBUG] Snapshots directory: /Users/wbrunson/.claude/shell-snapshots
+2025-12-05T18:16:43.110Z [DEBUG] Creating snapshot at: /Users/wbrunson/.claude/shell-snapshots/snapshot-zsh-1764958603109-29dugh.sh
+2025-12-05T18:16:43.110Z [DEBUG] Shell binary exists: true
+2025-12-05T18:16:43.110Z [DEBUG] Execution timeout: 10000ms
+2025-12-05T18:16:43.111Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/0a96baff-12ae-4932-898d-5610bdde17bc-agent-0a96baff-12ae-4932-898d-5610bdde17bc.json.tmp.92112.1764958603111
+2025-12-05T18:16:43.116Z [DEBUG] Temp file written successfully, size: 2 bytes
+2025-12-05T18:16:43.116Z [DEBUG] Renaming /Users/wbrunson/.claude/todos/0a96baff-12ae-4932-898d-5610bdde17bc-agent-0a96baff-12ae-4932-898d-5610bdde17bc.json.tmp.92112.1764958603111 to /Users/wbrunson/.claude/todos/0a96baff-12ae-4932-898d-5610bdde17bc-agent-0a96baff-12ae-4932-898d-5610bdde17bc.json
+2025-12-05T18:16:43.116Z [DEBUG] File /Users/wbrunson/.claude/todos/0a96baff-12ae-4932-898d-5610bdde17bc-agent-0a96baff-12ae-4932-898d-5610bdde17bc.json written atomically
+2025-12-05T18:16:43.122Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-05T18:16:43.122Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.92112.1764958603122
+2025-12-05T18:16:43.122Z [DEBUG] Preserving file permissions: 100644
+2025-12-05T18:16:43.126Z [DEBUG] Temp file written successfully, size: 58077 bytes
+2025-12-05T18:16:43.127Z [DEBUG] Applied original permissions to temp file
+2025-12-05T18:16:43.127Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.92112.1764958603122 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-05T18:16:43.127Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-12-05T18:16:43.129Z [DEBUG] getPluginSkills: Processing 0 enabled plugins
+2025-12-05T18:16:43.129Z [DEBUG] Total plugin skills loaded: 0
+2025-12-05T18:16:43.129Z [DEBUG] Total plugin commands loaded: 0
+2025-12-05T18:16:43.129Z [DEBUG] Registered 0 hooks from 0 plugins
+2025-12-05T18:16:43.129Z [DEBUG] Loaded 0 unique skills (managed: 0, user: 0, project: 0, duplicates removed: 0)
+2025-12-05T18:16:43.131Z [DEBUG] getSkills returning: 0 skill dir commands, 0 plugin skills
+2025-12-05T18:16:43.148Z [DEBUG] Git remote URL: https://github.com/wsbrunson/dotfiles.git
+2025-12-05T18:16:43.148Z [DEBUG] Parsed repository: wsbrunson/dotfiles from https://github.com/wsbrunson/dotfiles.git
+2025-12-05T18:16:43.148Z [DEBUG] Parsed repository: wsbrunson/dotfiles from URL: https://github.com/wsbrunson/dotfiles.git
+2025-12-05T18:16:43.148Z [DEBUG] Path /Users/wbrunson/workspace/dotfiles already tracked for repo wsbrunson/dotfiles
+2025-12-05T18:16:43.158Z [DEBUG] Ripgrep first use test: PASSED (mode=builtin, path=/Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/vendor/ripgrep/arm64-darwin/rg)
+2025-12-05T18:16:43.160Z [DEBUG] Total plugin agents loaded: 0
+2025-12-05T18:16:43.186Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-05T18:16:43.186Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.92112.1764958603186
+2025-12-05T18:16:43.186Z [DEBUG] Preserving file permissions: 100644
+2025-12-05T18:16:43.190Z [DEBUG] Temp file written successfully, size: 58077 bytes
+2025-12-05T18:16:43.191Z [DEBUG] Applied original permissions to temp file
+2025-12-05T18:16:43.191Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.92112.1764958603186 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-05T18:16:43.191Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-12-05T18:16:43.201Z [DEBUG] Getting matching hook commands for SessionStart with query: startup
+2025-12-05T18:16:43.201Z [DEBUG] Found 0 hook matchers in settings
+2025-12-05T18:16:43.202Z [DEBUG] Matched 0 unique hooks for query "startup" (0 before deduplication)
+2025-12-05T18:16:43.202Z [DEBUG] MCP server "atlassian": SSE transport initialized, awaiting connection
+2025-12-05T18:16:43.214Z [DEBUG] MCP server "atlassian": Starting connection with timeout of 30000ms
+2025-12-05T18:16:43.247Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-05T18:16:43.247Z [DEBUG] MCP server "atlassian": Token length: 74
+2025-12-05T18:16:43.248Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-05T18:16:43.248Z [DEBUG] MCP server "atlassian": Expires in: 3126s
+2025-12-05T18:16:43.266Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-05T18:16:43.266Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.92112.1764958603266
+2025-12-05T18:16:43.266Z [DEBUG] Preserving file permissions: 100644
+2025-12-05T18:16:43.270Z [DEBUG] Temp file written successfully, size: 57972 bytes
+2025-12-05T18:16:43.270Z [DEBUG] Applied original permissions to temp file
+2025-12-05T18:16:43.270Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.92112.1764958603266 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-05T18:16:43.271Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-12-05T18:16:43.275Z [DEBUG] performStartupChecks called
+2025-12-05T18:16:43.275Z [DEBUG] Starting background plugin installations
+2025-12-05T18:16:43.275Z [DEBUG] performBackgroundPluginInstallations called
+2025-12-05T18:16:43.280Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-12-05T18:16:43.283Z [DEBUG] Setting installation status: 0 marketplaces, 0 installable plugins, 0 uninstallable plugins
+2025-12-05T18:16:43.284Z [DEBUG] Loaded plugins - Enabled: 0, Disabled: 0, Commands: 0, Agents: 0, Errors: 0
+2025-12-05T18:16:43.288Z [DEBUG] Shell snapshot created successfully (1484 bytes)
+2025-12-05T18:16:43.292Z [DEBUG] Getting matching hook commands for SubagentStart with query: Explore
+2025-12-05T18:16:43.292Z [DEBUG] Found 0 hook matchers in settings
+2025-12-05T18:16:43.292Z [DEBUG] Matched 0 unique hooks for query "Explore" (0 before deduplication)
+2025-12-05T18:16:43.293Z [DEBUG] Getting matching hook commands for SubagentStart with query: Plan
+2025-12-05T18:16:43.293Z [DEBUG] Found 0 hook matchers in settings
+2025-12-05T18:16:43.293Z [DEBUG] Matched 0 unique hooks for query "Plan" (0 before deduplication)
+2025-12-05T18:16:43.294Z [DEBUG] Summarizing all 28 messages (~4526 tokens)
+2025-12-05T18:16:43.480Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-05T18:16:43.480Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.92112.1764958603480
+2025-12-05T18:16:43.480Z [DEBUG] Preserving file permissions: 100644
+2025-12-05T18:16:43.485Z [DEBUG] Temp file written successfully, size: 57972 bytes
+2025-12-05T18:16:43.485Z [DEBUG] Applied original permissions to temp file
+2025-12-05T18:16:43.485Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.92112.1764958603480 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-05T18:16:43.486Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-12-05T18:16:43.489Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-05T18:16:43.489Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.92112.1764958603489
+2025-12-05T18:16:43.489Z [DEBUG] Preserving file permissions: 100644
+2025-12-05T18:16:43.493Z [DEBUG] Temp file written successfully, size: 57972 bytes
+2025-12-05T18:16:43.493Z [DEBUG] Applied original permissions to temp file
+2025-12-05T18:16:43.493Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.92112.1764958603489 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-05T18:16:43.494Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-12-05T18:16:43.496Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-05T18:16:43.496Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.92112.1764958603496
+2025-12-05T18:16:43.496Z [DEBUG] Preserving file permissions: 100644
+2025-12-05T18:16:43.499Z [DEBUG] Temp file written successfully, size: 58077 bytes
+2025-12-05T18:16:43.502Z [DEBUG] Applied original permissions to temp file
+2025-12-05T18:16:43.502Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.92112.1764958603496 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-05T18:16:43.502Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-12-05T18:16:44.020Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-05T18:16:44.022Z [DEBUG] MCP server "atlassian": Token length: 74
+2025-12-05T18:16:44.022Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-05T18:16:44.022Z [DEBUG] MCP server "atlassian": Expires in: 3125s
+2025-12-05T18:16:44.025Z [ERROR] Error streaming, falling back to non-streaming mode: 400 Unsupported model: claude-3-5-haiku-20241022
+2025-12-05T18:16:44.029Z [ERROR] Error streaming, falling back to non-streaming mode: 400 Unsupported model: claude-3-5-haiku-20241022
+2025-12-05T18:16:44.033Z [ERROR] Error streaming, falling back to non-streaming mode: 400 Unsupported model: claude-sonnet-4-20250514
+2025-12-05T18:16:44.276Z [DEBUG] Stream started - received first chunk
+2025-12-05T18:16:44.482Z [ERROR] Error in non-streaming fallback: 400 Unsupported model: claude-3-5-haiku-20241022
+2025-12-05T18:16:44.483Z [ERROR] Error: Error: 400 Unsupported model: claude-3-5-haiku-20241022
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async IK9.a81.model (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:10432)
+    at async a81 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2139:1872)
+    at async IK9 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:10586)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:3631
+    at async Po1 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2037)
+    at async Fy (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:3602)
+2025-12-05T18:16:44.489Z [ERROR] Error in non-streaming fallback: 400 Unsupported model: claude-sonnet-4-20250514
+2025-12-05T18:16:44.489Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async IK9.a81.model (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:10432)
+    at async a81 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2139:1872)
+    at async IK9 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:10586)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:3873
+    at async Po1 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2037)
+    at async JYA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:3843)
+2025-12-05T18:16:44.508Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+2025-12-05T18:16:44.508Z [DEBUG] Found 0 hook matchers in settings
+2025-12-05T18:16:44.508Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-05T18:16:44.508Z [ERROR] Error in non-streaming fallback: 400 Unsupported model: claude-3-5-haiku-20241022
+2025-12-05T18:16:44.509Z [ERROR] Error: Error: 400 Unsupported model: claude-3-5-haiku-20241022
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async IK9.a81.model (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:10432)
+    at async a81 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2139:1872)
+    at async IK9 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:10586)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:3631
+    at async Po1 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2037)
+    at async Fy (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3946:3602)
+2025-12-05T18:16:44.530Z [DEBUG] npm view failed with code 1
+2025-12-05T18:16:44.530Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T18_16_43_685Z-debug-0.log
+2025-12-05T18:16:44.687Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-05T18:16:44.688Z [DEBUG] MCP server "atlassian": Token length: 74
+2025-12-05T18:16:44.689Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-05T18:16:44.689Z [DEBUG] MCP server "atlassian": Expires in: 3124s
+2025-12-05T18:16:45.085Z [DEBUG] MCP server "atlassian": Successfully connected to sse server in 1905ms
+2025-12-05T18:16:45.087Z [DEBUG] MCP server "atlassian": Connection established with capabilities: {"hasTools":true,"hasPrompts":false,"hasResources":true,"serverVersion":{"name":"atlassian-mcp-server","version":"1.0.0"}}
+2025-12-05T18:16:45.173Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-05T18:16:45.174Z [DEBUG] MCP server "atlassian": Token length: 74
+2025-12-05T18:16:45.175Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-05T18:16:45.175Z [DEBUG] MCP server "atlassian": Expires in: 3124s
+2025-12-05T18:16:45.257Z [DEBUG] MCP server "atlassian": Returning tokens
+2025-12-05T18:16:45.258Z [DEBUG] MCP server "atlassian": Token length: 74
+2025-12-05T18:16:45.258Z [DEBUG] MCP server "atlassian": Has refresh token: true
+2025-12-05T18:16:45.259Z [DEBUG] MCP server "atlassian": Expires in: 3124s
+2025-12-05T18:16:45.715Z [ERROR] MCP server "atlassian" Failed to fetch resources: MCP error -32601: Method not found
+2025-12-05T18:16:45.869Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:45.875Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:45.876Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:45.878Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:45.879Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:45.880Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:46.160Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:46.170Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:46.176Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:46.182Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:46.186Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:46.187Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:46.189Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:46.190Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:46.196Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:46.197Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:46.198Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:46.199Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:46.200Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:46.202Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:46.203Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:46.206Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:46.207Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:46.208Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:46.209Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:46.210Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:46.214Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:46.675Z [DEBUG] Skills and commands included in Skill tool:
+2025-12-05T18:16:46.675Z [DEBUG] Slash commands included in SlashCommand tool:
+2025-12-05T18:16:46.740Z [DEBUG] Getting matching hook commands for SubagentStop with query: undefined
+2025-12-05T18:16:46.740Z [DEBUG] Found 0 hook matchers in settings
+2025-12-05T18:16:46.740Z [DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+2025-12-05T18:16:46.953Z [ERROR] Error: Error: 400 Unsupported model: claude-sonnet-4-20250514
+
+    at t2.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:459:9427)
+    at LT.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:2195)
+    at LT.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1312:5419)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2769
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2262
+    at async FB5 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1463:16949)
+    at async ZQ2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1464:2195)
+    at async $RA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:52)
+    at async M61 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2252:261)
+2025-12-05T18:16:47.145Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-05T18:16:47.145Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.92112.1764958607145
+2025-12-05T18:16:47.145Z [DEBUG] Preserving file permissions: 100644
+2025-12-05T18:16:47.150Z [DEBUG] Temp file written successfully, size: 58077 bytes
+2025-12-05T18:16:47.150Z [DEBUG] Applied original permissions to temp file
+2025-12-05T18:16:47.150Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.92112.1764958607145 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-05T18:16:47.159Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-12-05T18:16:48.052Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-12-05T18:16:52.575Z [DEBUG] Writing to temp file: /Users/wbrunson/.claude/settings.json.tmp.92112.1764958612575
+2025-12-05T18:16:52.575Z [DEBUG] Preserving file permissions: 100644
+2025-12-05T18:16:52.580Z [DEBUG] Temp file written successfully, size: 172 bytes
+2025-12-05T18:16:52.580Z [DEBUG] Applied original permissions to temp file
+2025-12-05T18:16:52.580Z [DEBUG] Renaming /Users/wbrunson/.claude/settings.json.tmp.92112.1764958612575 to /Users/wbrunson/.claude/settings.json
+2025-12-05T18:16:52.581Z [DEBUG] File /Users/wbrunson/.claude/settings.json written atomically
+2025-12-05T18:16:52.601Z [DEBUG] AutoUpdaterWrapper: Installation type: npm-local
+2025-12-05T18:16:52.602Z [DEBUG] FileHistory: Added snapshot for 39108a9b-8fa6-4476-a5c9-a5dc19c263fb, tracking 0 files
+2025-12-05T18:16:52.605Z [DEBUG] Rendering user message with 1 content blocks
+2025-12-05T18:16:52.605Z [DEBUG] Block 0: <command-name>/model</command-name>
+            <command-message>model</command-message>
+           ...
+2025-12-05T18:16:52.606Z [DEBUG] UserCommandMessage rendering: "model" (args: "none")
+2025-12-05T18:16:52.606Z [DEBUG] isSkillFormat: false, prefix: "/"
+2025-12-05T18:16:52.753Z [DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-05T18:16:52.753Z [DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.92112.1764958612753
+2025-12-05T18:16:52.753Z [DEBUG] Preserving file permissions: 100644
+2025-12-05T18:16:52.757Z [DEBUG] Temp file written successfully, size: 58077 bytes
+2025-12-05T18:16:52.757Z [DEBUG] Applied original permissions to temp file
+2025-12-05T18:16:52.757Z [DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.92112.1764958612753 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+2025-12-05T18:16:52.758Z [DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+2025-12-05T18:16:53.558Z [DEBUG] npm view failed with code 1
+2025-12-05T18:16:53.558Z [DEBUG] npm stderr: npm error code E401
+npm error Incorrect or missing password.
+npm error If you were trying to login, change your password, create an
+npm error authentication token or enable two-factor authentication then
+npm error that means you likely typed your password in incorrectly.
+npm error Please try again, or recover your password at:
+npm error   https://www.npmjs.com/forgot
+npm error
+npm error If you were doing some other operation then your saved credentials are
+npm error probably out of date. To correct this please try logging in again with:
+npm error   npm login
+npm error A complete log of this run can be found in: /Users/wbrunson/.npm/_logs/2025-12-05T18_16_52_885Z-debug-0.log
+2025-12-05T18:16:55.025Z [DEBUG] Getting matching hook commands for SessionEnd with query: prompt_input_exit
+2025-12-05T18:16:55.025Z [DEBUG] Found 0 hook matchers in settings
+2025-12-05T18:16:55.025Z [DEBUG] Matched 0 unique hooks for query "prompt_input_exit" (0 before deduplication)

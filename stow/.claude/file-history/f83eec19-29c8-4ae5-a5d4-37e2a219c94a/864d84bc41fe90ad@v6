@@ -1,0 +1,214 @@
+import { Router, Request, Response, NextFunction } from "express";
+import { router as checkoutOrchestrationRouter } from "./checkout/routes";
+import { ppGiftCardsOrchestrator } from "./pp-gift-cards/routes";
+import { mockOrchestrator } from "./mock/routes";
+import { errorHandler } from "./middlewares/errorHandler";
+import { validateRequestBodyWithZodSchema } from "./middlewares/requestValidators";
+import {
+  CreateCartRequestSchema,
+  CompleteCartRequestSchema,
+  type CreateCartRequest,
+  type CreateCartResponse,
+  type CompleteCartRequest,
+  UpdateCartRequest,
+  UpdateCartRequestSchema,
+} from "./schemas";
+import { setAttributesForActiveSpan } from "./instrumentation";
+import { logger } from "./utils/logger/logger";
+
+const authPaypal = require("auth-paypal");
+
+type Orchestrator = {
+  name: string;
+  createCart: (arg0: {
+    data: CreateCartRequest;
+    request: Request;
+  }) => Promise<CreateCartResponse>;
+  updateCart: (arg0: {
+    data: UpdateCartRequest;
+    request: Request;
+  }) => Promise<object>;
+  completeCart: (arg0: {
+    data: CompleteCartRequest;
+    request: Request;
+  }) => Promise<object>;
+  middlewares?: Array<
+    (req: Request, res: Response, next: NextFunction) => void | Promise<void>
+  >;
+};
+
+const orchestrators: Array<Orchestrator> = [
+  ppGiftCardsOrchestrator,
+  mockOrchestrator,
+];
+
+const appRouter = Router();
+
+const paypalAuthMiddleware = (
+  req: Request,
+  res: Response,
+  next: NextFunction,
+) => {
+  const auth = req.app.get("auth");
+  if (!auth || !auth.authorize) {
+    throw new Error("Auth middleware not properly configured");
+  }
+  return auth.authorize()(req, res, next);
+};
+
+for (const orchestrator of orchestrators) {
+  const orchestratorRouter = Router();
+  orchestratorRouter.post(
+    "/cart",
+    [validateRequestBodyWithZodSchema(CreateCartRequestSchema)],
+    async (request: Request, response: Response, next: NextFunction) => {
+      const data = CreateCartRequestSchema.parse(request.body);
+
+      try {
+        logger(`create_cart${orchestrator.name}`, request).info("create cart", {
+          cartId: data.cartId,
+          merchantUrl: data.merchantUrl,
+          products: data.products,
+          customer: data.customer,
+          shippingAddress: data.shippingAddress,
+          billingAddress: data.billingAddress,
+        });
+        const cartData = await orchestrator.createCart({
+          data,
+          request,
+        });
+        setAttributesForActiveSpan({
+          "cart.id": data.cartId,
+          "cart.merchant_url": data.merchantUrl,
+          "cart.hasShippingAddress": Boolean(data.shippingAddress),
+          "cart.hasBillingAddress": Boolean(data.billingAddress),
+          "cart.hasEmail": Boolean(data.customer?.email),
+          "cart.hasPhone": Boolean(data.customer?.phone),
+          ...data.products.reduce(
+            (acc, product, index) => ({
+              ...acc,
+              [`cart.products.${index}.id`]: product.productId,
+              [`cart.products.${index}.quantity`]: product.quantity,
+            }),
+            {},
+          ),
+        });
+
+        response.status(201).json(cartData);
+      } catch (error) {
+        next(error);
+      }
+    },
+  );
+  orchestratorRouter.patch(
+    "/cart/:id",
+    [validateRequestBodyWithZodSchema(UpdateCartRequestSchema)],
+    async (request: Request, response: Response, next: NextFunction) => {
+      const data = UpdateCartRequestSchema.parse(request.body);
+      try {
+        logger(`update_cart_${orchestrator.name}`, request).info(
+          "update cart",
+          {
+            cartId: data.cart.cartId,
+            merchantUrl: data.cart.merchantUrl,
+            products: data.cart.products,
+            customer: data.cart.customer,
+            shippingAddress: data.cart.shippingAddress,
+            billingAddress: data.cart.billingAddress,
+          },
+        );
+        const cartData = await orchestrator.updateCart({
+          data,
+          request,
+        });
+        setAttributesForActiveSpan({
+          "cart.id": data.cart.cartId,
+          "cart.merchant_url": data.cart.merchantUrl,
+          "cart.hasShippingAddress": Boolean(data.cart.shippingAddress),
+          "cart.hasBillingAddress": Boolean(data.cart.billingAddress),
+          "cart.hasEmail": Boolean(data.cart.customer?.email),
+          "cart.hasPhone": Boolean(data.cart.customer?.phone),
+          ...data.cart.products.reduce(
+            (acc, product, index) => ({
+              ...acc,
+              [`cart.products.${index}.id`]: product.productId,
+              [`cart.products.${index}.quantity`]: product.quantity,
+            }),
+            {},
+          ),
+        });
+        response.status(200).json(cartData);
+      } catch (error) {
+        next(error);
+      }
+    },
+  );
+  orchestratorRouter.post(
+    "/cart/:id/complete",
+    [validateRequestBodyWithZodSchema(CompleteCartRequestSchema)],
+    async (request: Request, response: Response, next: NextFunction) => {
+      const data = CompleteCartRequestSchema.parse(request.body);
+      logger(`complete_cart${orchestrator.name}`, request).info("create cart", {
+        cartId: data.cartId,
+        paymentDetails: {
+          ecToken: data.paymentDetails.ecToken,
+          paymentMethod: data.paymentDetails.paymentMethod,
+        },
+      });
+      try {
+        const cartData = await orchestrator.completeCart({
+          data,
+          request,
+        });
+        setAttributesForActiveSpan({
+          "cart.id": data.cartId,
+          "cart.payment_details.method": data.paymentDetails.paymentMethod,
+          "cart.payment_details.ec_token": data.paymentDetails?.ecToken,
+          ec_token: data.paymentDetails?.ecToken,
+        });
+
+        response.status(200).json(cartData);
+      } catch (error) {
+        next(error);
+      }
+    },
+  );
+
+  appRouter.use(
+    `/${orchestrator.name}`,
+    orchestrator.middlewares || [],
+    orchestratorRouter,
+  );
+}
+
+appRouter.use("/checkout", checkoutOrchestrationRouter);
+
+const removeSysPropertyFromResponse = (data: string) => {
+  try {
+    const json = JSON.parse(data);
+    if (json && json.sys) {
+      delete json.sys;
+    }
+
+    return JSON.stringify(json);
+  } catch {
+    // ignore
+  }
+};
+
+export default function (rootRouter: Router) {
+  rootRouter.use((_: Request, res: Response, next: NextFunction) => {
+    const originalSend = res.send;
+
+    // @ts-expect-error ignore
+    res.send = function (...args) {
+      const [data, ...rest] = args;
+      originalSend.apply(res, [removeSysPropertyFromResponse(data), ...rest]);
+    };
+    next();
+  });
+
+  rootRouter.use(paypalAuthMiddleware);
+  rootRouter.use("/commerceorchnodeserv", appRouter);
+  rootRouter.use(errorHandler);
+}

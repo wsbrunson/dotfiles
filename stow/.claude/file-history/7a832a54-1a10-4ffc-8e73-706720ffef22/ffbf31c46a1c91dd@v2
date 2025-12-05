@@ -1,0 +1,377 @@
+import { describe, it, expect, vi, beforeEach, afterEach } from 'vitest';
+import { verifyAppContext, parseJwtFromCartApi } from './AppContextAuthorizer';
+import { InternalServerError } from '../errors';
+import * as jwt from 'jsonwebtoken';
+import type { ALBEvent } from 'aws-lambda';
+
+// Mock jwt module
+vi.mock('jsonwebtoken', () => ({
+  verify: vi.fn(),
+  decode: vi.fn(),
+}));
+
+// Mock the errors module
+vi.mock('../errors', () => ({
+  InternalServerError: vi.fn(),
+  getCorrelationIdFromRequest: vi.fn(() => 'test-correlation-id'),
+}));
+
+describe('AppContextAuthorizer', () => {
+  let originalEnv: typeof process.env;
+
+  beforeEach(() => {
+    originalEnv = { ...process.env };
+    process.env.VERIFICATION_PEM = 'MIIB...test-key';
+    process.env.JWT_VERIFICATION_PEM = 'JWT_TEST_KEY';
+
+    vi.clearAllMocks();
+  });
+
+  afterEach(() => {
+    Object.keys(process.env).forEach(key => {
+      if (!(key in originalEnv)) {
+        delete process.env[key];
+      }
+    });
+    Object.assign(process.env, originalEnv);
+  });
+
+  describe('verifyAppContext', () => {
+    const mockEvent = {
+      headers: {
+        'paypal-application-context': 'valid.jwt.token',
+      },
+    } as any;
+
+    it('should return true when JWT verification succeeds', () => {
+      vi.mocked(jwt.verify).mockReturnValue({} as any);
+
+      const result = verifyAppContext(mockEvent);
+
+      expect(result).toBe(true);
+      expect(jwt.verify).toHaveBeenCalledWith(
+        'valid.jwt.token',
+        '-----BEGIN PUBLIC KEY-----\nMIIB...test-key\n-----END PUBLIC KEY-----',
+        { algorithms: ['RS256'] }
+      );
+    });
+
+    it('should return false when JWT verification fails', () => {
+      const jwtError = new Error('Invalid token');
+      vi.mocked(jwt.verify).mockImplementation(() => {
+        throw jwtError;
+      });
+
+      const result = verifyAppContext(mockEvent);
+
+      expect(result).toBe(false);
+    });
+
+    it('should return false when paypal-application-context header is missing', () => {
+      const eventWithoutHeader = {
+        headers: {},
+      } as any;
+
+      const result = verifyAppContext(eventWithoutHeader);
+
+      expect(result).toBe(false);
+      expect(jwt.verify).not.toHaveBeenCalled();
+    });
+
+    it('should return false when paypal-application-context header is empty', () => {
+      const eventWithEmptyHeader = {
+        headers: {
+          'paypal-application-context': '',
+        },
+      } as any;
+
+      const result = verifyAppContext(eventWithEmptyHeader);
+
+      expect(result).toBe(false);
+      expect(jwt.verify).not.toHaveBeenCalled();
+    });
+
+    it('should return false when headers object is undefined', () => {
+      const eventWithoutHeaders = {} as any;
+
+      const result = verifyAppContext(eventWithoutHeaders);
+
+      expect(result).toBe(false);
+      expect(jwt.verify).not.toHaveBeenCalled();
+    });
+
+    it('should construct public key correctly with PEM from environment', () => {
+      process.env.VERIFICATION_PEM = 'CUSTOM_PEM_DATA';
+      vi.mocked(jwt.verify).mockReturnValue({} as any);
+
+      verifyAppContext(mockEvent);
+
+      expect(jwt.verify).toHaveBeenCalledWith(
+        'valid.jwt.token',
+        '-----BEGIN PUBLIC KEY-----\nCUSTOM_PEM_DATA\n-----END PUBLIC KEY-----',
+        { algorithms: ['RS256'] }
+      );
+    });
+
+    it('should log public key and verification PEM for debugging', () => {
+      process.env.VERIFICATION_PEM = 'DEBUG_PEM';
+      vi.mocked(jwt.verify).mockReturnValue({} as any);
+
+      verifyAppContext(mockEvent);
+
+    });
+
+    it('should handle undefined VERIFICATION_PEM environment variable', () => {
+      delete process.env.VERIFICATION_PEM;
+      vi.mocked(jwt.verify).mockReturnValue({} as any);
+
+      const result = verifyAppContext(mockEvent);
+
+      // Should return false when VERIFICATION_PEM is undefined (error is caught and logged)
+      expect(result).toBe(false);
+      expect(jwt.verify).not.toHaveBeenCalled();
+    });
+
+    it('should use RS256 algorithm for JWT verification', () => {
+      vi.mocked(jwt.verify).mockReturnValue({} as any);
+
+      verifyAppContext(mockEvent);
+
+      expect(jwt.verify).toHaveBeenCalledWith(
+        expect.any(String),
+        expect.any(String),
+        { algorithms: ['RS256'] }
+      );
+    });
+
+    describe('Error scenarios', () => {
+      it('should handle JWT malformed error', () => {
+        const malformedError = new Error('jwt malformed') as any;
+        malformedError.name = 'JsonWebTokenError';
+        vi.mocked(jwt.verify).mockImplementation(() => {
+          throw malformedError;
+        });
+
+        const result = verifyAppContext(mockEvent);
+
+        expect(result).toBe(false);
+      });
+
+      it('should handle JWT expired error', () => {
+        const expiredError = new Error('jwt expired') as any;
+        expiredError.name = 'TokenExpiredError';
+        vi.mocked(jwt.verify).mockImplementation(() => {
+          throw expiredError;
+        });
+
+        const result = verifyAppContext(mockEvent);
+
+        expect(result).toBe(false);
+      });
+
+      it('should handle invalid signature error', () => {
+        const signatureError = new Error('invalid signature') as any;
+        signatureError.name = 'JsonWebTokenError';
+        vi.mocked(jwt.verify).mockImplementation(() => {
+          throw signatureError;
+        });
+
+        const result = verifyAppContext(mockEvent);
+
+        expect(result).toBe(false);
+      });
+    });
+
+    describe('Dual PEM Verification', () => {
+      beforeEach(() => {
+        process.env.VERIFICATION_PEM = 'MIIB...regular-key';
+        process.env.SANDBOX_VERIFICATION_PEM = 'MIIB...sandbox-key';
+      });
+
+      it('should use regular PEM first and succeed', () => {
+        process.env.APP_ENV = 'test';
+        vi.mocked(jwt.verify).mockReturnValue({} as any);
+
+        const result = verifyAppContext(mockEvent);
+
+        expect(result).toBe(true);
+        expect(jwt.verify).toHaveBeenCalledWith(
+          'valid.jwt.token',
+          '-----BEGIN PUBLIC KEY-----\nMIIB...regular-key\n-----END PUBLIC KEY-----',
+          { algorithms: ['RS256'] }
+        );
+      });
+
+      it('should fallback to sandbox PEM in test environment when regular fails', () => {
+        process.env.APP_ENV = 'test';
+        vi.mocked(jwt.verify)
+          .mockImplementationOnce(() => { throw new Error('Regular key failed'); })
+          .mockReturnValueOnce({} as any);
+
+        const result = verifyAppContext(mockEvent);
+
+        expect(result).toBe(true);
+        expect(jwt.verify).toHaveBeenCalledTimes(2);
+        expect(jwt.verify).toHaveBeenNthCalledWith(1,
+          'valid.jwt.token',
+          '-----BEGIN PUBLIC KEY-----\nMIIB...regular-key\n-----END PUBLIC KEY-----',
+          { algorithms: ['RS256'] }
+        );
+        expect(jwt.verify).toHaveBeenNthCalledWith(2,
+          'valid.jwt.token',
+          '-----BEGIN PUBLIC KEY-----\nMIIB...sandbox-key\n-----END PUBLIC KEY-----',
+          { algorithms: ['RS256'] }
+        );
+      });
+
+      it('should not try sandbox PEM in non-test environment', () => {
+        process.env.APP_ENV = 'prod';
+        vi.mocked(jwt.verify).mockImplementation(() => { throw new Error('Regular key failed'); });
+
+        const result = verifyAppContext(mockEvent);
+
+        expect(result).toBe(false);
+        expect(jwt.verify).toHaveBeenCalledTimes(1);
+        expect(jwt.verify).toHaveBeenCalledWith(
+          'valid.jwt.token',
+          '-----BEGIN PUBLIC KEY-----\nMIIB...regular-key\n-----END PUBLIC KEY-----',
+          { algorithms: ['RS256'] }
+        );
+      });
+
+      it('should not try sandbox PEM when SANDBOX_VERIFICATION_PEM is not set', () => {
+        process.env.APP_ENV = 'test';
+        delete process.env.SANDBOX_VERIFICATION_PEM;
+        vi.mocked(jwt.verify).mockImplementation(() => { throw new Error('Regular key failed'); });
+
+        const result = verifyAppContext(mockEvent);
+
+        expect(result).toBe(false);
+        expect(jwt.verify).toHaveBeenCalledTimes(1);
+      });
+
+      it('should return false when both PEMs fail in test environment', () => {
+        process.env.APP_ENV = 'test';
+        vi.mocked(jwt.verify)
+          .mockImplementationOnce(() => { throw new Error('Regular key failed'); })
+          .mockImplementationOnce(() => { throw new Error('Sandbox key failed'); });
+
+        const result = verifyAppContext(mockEvent);
+
+        expect(result).toBe(false);
+        expect(jwt.verify).toHaveBeenCalledTimes(2);
+      });
+    });
+  });
+
+  describe('parseJwtFromCartApi', () => {
+    const mockLogger = {
+      error: vi.fn(),
+      info: vi.fn(),
+      warn: vi.fn(),
+      debug: vi.fn(),
+      log: vi.fn(),
+    };
+
+    const createMockEvent = (headers: Record<string, string> = {}): ALBEvent => ({
+      requestContext: {
+        elb: {
+          targetGroupArn: 'test-arn',
+        },
+      },
+      httpMethod: 'POST',
+      path: '/test',
+      queryStringParameters: {},
+      headers,
+      body: '',
+      multiValueHeaders: {},
+      multiValueQueryStringParameters: {},
+      isBase64Encoded: false,
+    });
+
+    const mockJwtPayload = {
+      iss: 'paypal.com',
+      sub: 'merchant-123',
+      aud: 'shopware.com',
+      iat: Math.floor(Date.now() / 1000),
+      exp: Math.floor(Date.now() / 1000) + 3600,
+    };
+
+    beforeEach(() => {
+      vi.clearAllMocks();
+      process.env.JWT_VERIFICATION_PEM = 'JWT_TEST_KEY';
+    });
+
+    it('should successfully parse and return JWT payload when valid', () => {
+      const mockEvent = createMockEvent({
+        authorization: 'Bearer valid.jwt.token',
+      });
+
+      vi.mocked(jwt.verify).mockReturnValue({} as any);
+      vi.mocked(jwt.decode).mockReturnValue(mockJwtPayload);
+
+      const result = parseJwtFromCartApi({ event: mockEvent, logger: mockLogger });
+
+      expect(result).toEqual(mockJwtPayload);
+      expect(jwt.verify).toHaveBeenCalledWith(
+        'valid.jwt.token',
+        '-----BEGIN PUBLIC KEY-----\nJWT_TEST_KEY\n-----END PUBLIC KEY-----',
+        { algorithms: ['RS256'] }
+      );
+      expect(jwt.decode).toHaveBeenCalledWith('valid.jwt.token');
+    });
+
+    it('should throw InternalServerError when Authorization header is missing', () => {
+      const mockEvent = createMockEvent({});
+
+      expect(() => {
+        parseJwtFromCartApi({ event: mockEvent, logger: mockLogger });
+      }).toThrow();
+
+      expect(mockLogger.error).toHaveBeenCalledWith('Authorization header is missing or empty');
+      expect(InternalServerError).toHaveBeenCalledWith('test-correlation-id', {
+        details: [
+          {
+            field: 'Authorization',
+            description: 'Authorization header is missing or empty',
+          },
+        ],
+      });
+    });
+
+    it('should throw error when JWT verification fails', () => {
+      const mockEvent = createMockEvent({
+        authorization: 'Bearer invalid.jwt.token',
+      });
+
+      const jwtError = new Error('Invalid signature');
+      vi.mocked(jwt.verify).mockImplementation(() => {
+        throw jwtError;
+      });
+
+      expect(() => {
+        parseJwtFromCartApi({ event: mockEvent, logger: mockLogger });
+      }).toThrow('JWT Verification failed with public keys');
+
+      expect(mockLogger.error).toHaveBeenCalledWith('JWT verification failed with public keys');
+    });
+
+    it('should construct public key correctly with JWT_VERIFICATION_PEM from environment', () => {
+      process.env.JWT_VERIFICATION_PEM = 'CUSTOM_JWT_PEM_DATA';
+      const mockEvent = createMockEvent({
+        authorization: 'Bearer test.jwt.token',
+      });
+
+      vi.mocked(jwt.verify).mockReturnValue({} as any);
+      vi.mocked(jwt.decode).mockReturnValue(mockJwtPayload);
+
+      parseJwtFromCartApi({ event: mockEvent, logger: mockLogger });
+
+      expect(jwt.verify).toHaveBeenCalledWith(
+        'test.jwt.token',
+        '-----BEGIN PUBLIC KEY-----\nCUSTOM_JWT_PEM_DATA\n-----END PUBLIC KEY-----',
+        { algorithms: ['RS256'] }
+      );
+    });
+  });
+});

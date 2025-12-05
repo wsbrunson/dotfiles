@@ -1,0 +1,120 @@
+# Bash Scripting Guidelines for Tools
+
+## Bash Version Compatibility
+
+### Current System
+- **macOS Default**: bash 3.2.57 (shipped since 2007)
+- **Why it's old**: Apple stopped updating bash due to GPLv3 licensing in bash 4+
+- **Fish Shell**: Does NOT affect bash version (fish is a separate shell)
+
+### Bash Version Differences
+
+#### Bash 3.2 (macOS default) - RECOMMENDED TARGET
+- ✅ Basic arrays: `arr=()`, `arr+=("item")`
+- ✅ Parameter expansion: `${var%%pattern}`, `${var#pattern}`
+- ✅ Command substitution: `$(command)`
+- ❌ Associative arrays: `declare -A map`
+- ❌ `**` globbing (recursive)
+- ❌ `mapfile`/`readarray`
+
+#### Bash 4+ (via Homebrew)
+- ✅ All bash 3.2 features
+- ✅ Associative arrays: `declare -A map`
+- ✅ Recursive globbing: `**/*.txt`
+- ✅ `mapfile` for reading arrays
+
+### RECOMMENDATION: Target Bash 3.2
+
+**Always write scripts compatible with bash 3.2** for maximum portability:
+
+```bash
+#!/usr/bin/env bash
+set -euo pipefail
+
+# ✅ GOOD: Regular arrays (bash 3.2+)
+inputs=()
+inputs+=("key=value")
+
+# ❌ AVOID: Associative arrays (bash 4+ only)
+declare -A inputs
+inputs["key"]="value"
+
+# ✅ GOOD: Extract key from "key=value"
+for item in "${inputs[@]}"; do
+    key="${item%%=*}"
+    value="${item#*=}"
+done
+
+# ✅ GOOD: Check empty array safely
+if [[ ${#inputs[@]} -gt 0 ]]; then
+    echo "Inputs: ${inputs[*]}"
+else
+    echo "No inputs"
+fi
+```
+
+### Upgrading Bash (Optional)
+
+If you need bash 4+ features:
+
+```bash
+# Install newer bash
+brew install bash
+
+# Add to /etc/shells
+echo /usr/local/bin/bash | sudo tee -a /etc/shells
+
+# Change default shell (optional)
+chsh -s /usr/local/bin/bash
+
+# Use in scripts
+#!/usr/local/bin/bash  # or #!/usr/bin/env bash
+```
+
+### Testing Compatibility
+
+Always test scripts on the target bash version:
+
+```bash
+# Check current bash version
+echo $BASH_VERSION
+
+# Test with system bash explicitly
+/bin/bash script.sh
+
+# Test with Homebrew bash (if installed)
+/usr/local/bin/bash script.sh
+```
+
+### Best Practices
+
+1. **Target bash 3.2** unless you absolutely need newer features
+2. **Use `#!/usr/bin/env bash`** for better portability
+3. **Always use `set -euo pipefail`** for error handling
+4. **Test empty arrays safely** with `${#array[@]}`
+5. **Avoid `${array[*]}` with `set -u`** when array might be empty
+6. **Use parameter expansion** instead of external tools when possible
+
+### Common Pitfalls
+
+```bash
+# ❌ WRONG: Fails with "unbound variable" if array is empty
+echo "Items: ${array[*]}"
+
+# ✅ CORRECT: Safe empty array handling
+if [[ ${#array[@]} -gt 0 ]]; then
+    echo "Items: ${array[*]}"
+else
+    echo "No items"
+fi
+
+# ❌ WRONG: Associative arrays (bash 4+ only)
+declare -A config
+
+# ✅ CORRECT: Regular arrays with key=value strings
+config=()
+config+=("timeout=30")
+config+=("retries=3")
+```
+
+This ensures all tools in this directory work consistently across different macOS systems without requiring users to upgrade their bash installation.

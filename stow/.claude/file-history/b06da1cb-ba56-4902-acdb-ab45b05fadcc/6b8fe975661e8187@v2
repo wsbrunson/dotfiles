@@ -1,0 +1,249 @@
+// If you add a key here, its value will not be masked in the logs
+const ALLOWED_KEYS = new Set([
+  // key for testing purposes, do not remove
+  "unmaskedKey",
+  "productId",
+  "variantId",
+  "parent_id",
+  "quantity",
+  "body",
+  "cartId",
+  "orderId",
+  "pcaCartId",
+  "ecToken",
+  "oldOrderId",
+  "newOrderId",
+  "oldEcToken",
+  "newEcToken",
+  "paymentId",
+  "transactionId",
+  "checkoutShippingCorrelationId",
+  "checkoutWalletCorrelationId",
+  "client",
+  "code",
+  "correlationId",
+  "configs",
+  "data",
+  "debugId",
+  "debug-id",
+  "debug_id",
+  "description",
+  "details",
+  "domain",
+  "duration",
+  "err",
+  "error",
+  "errorName",
+  "event",
+  "eventPayload",
+  "extra",
+  "field",
+  "from",
+  "hasPublicKey",
+  "hasVerificationPem",
+  "headers",
+  "issue",
+  "issues",
+  "itemId",
+  "items",
+  "item_id",
+  "item_url",
+  "itemCount",
+  "itemIdType",
+  "itemIdLength",
+  "fullItem",
+  "level",
+  "localizedDescription",
+  "localizedMessage",
+  "merchantUrl",
+  "message",
+  "metricName",
+  "name",
+  "nonLocalizedMessage",
+  "orchestrator",
+  "paypalCartId",
+  "merchantCartId",
+  "proposal",
+  "record",
+  "rootTxn",
+  "scope",
+  "stack",
+  "status",
+  "statusCode",
+  "statusMessage",
+  "timestamp",
+  "to",
+  "type",
+  "value",
+  "queryString",
+  "eventName",
+  "duration",
+  "level",
+  "formattedResults",
+  "recordsMatched",
+  "recordsScanned",
+  "merchantName",
+  "endpoint",
+  "x-wix-debug-id",
+  "x-wix-request-id",
+  "GH_WORKFLOW_ACTIONS_KEY",
+  "githubActionContext",
+  "wixCartId",
+  "id",
+  "orderStatusUrl",
+  "catalogState",
+  "path",
+  "alarmName",
+  "namespace",
+  "metricName",
+  "action",
+  "reason",
+  "successRate",
+  "totalRequests",
+  "windowDuration",
+  "attempt",
+  "recordCount",
+  "requestId",
+  "debugId",
+  "newState",
+  "newStatus",
+  "currentStatus",
+  "previousStatus",
+  "enabled",
+  "service",
+  "orchestrator",
+  "correlationId",
+  "totalProcessed",
+  "totalOnboarded",
+  "totalFailed",
+  "messageId",
+  "limit",
+  "offset",
+  "count",
+  "errorType",
+  "op",
+  "flowForErrorType",
+  "shouldTriggerGetProposal",
+  "request",
+  "response",
+  "url",
+  "result",
+  "errorMessage",
+  "orderID",
+  "payerId",
+  "paymentToken",
+  "billingToken",
+  "nonce",
+  "paypalNonce",
+  "tokenizationKey",
+  "merchantAccountId",
+  "grandTotal",
+  "taxTotal",
+  "totalAmount",
+  "summary",
+  "shippingAddress",
+  "billingAddress",
+  "cartItems",
+  "shippingMethodsGroups",
+  "checkoutSession",
+  "paypalAccounts",
+  "paymentResource",
+  "redirectUrl",
+  "cached",
+  "path",
+  "DD_API_KEY",
+  "OTEL_EXPORTER_OTLP_HEADERS",
+  "traceId",
+  "spanId",
+  "datadogTraceUrl",
+  "honeyStoreId",
+  "platformName",
+  "baseUrl",
+  "paypal-commerce-simulation",
+  "isTestEnv",
+  "isSimulationHeaderFalse",
+  "isSimulationBypassEmail",
+]);
+
+const MASK_VALUE = "**********";
+
+function isAllowedKey(key: string): boolean {
+  return ALLOWED_KEYS.has(key);
+}
+
+function isAllowedValue(value: unknown): boolean {
+  return (
+    value === null ||
+    value === undefined ||
+    typeof value === "string" ||
+    typeof value === "number" ||
+    typeof value === "boolean"
+  );
+}
+
+export function performMask(
+  obj: Record<string, unknown>,
+  seenObjects = new WeakMap<object, boolean>(),
+): Record<string, unknown> {
+  // Protect against null or non-object values
+  if (!obj || typeof obj !== "object") {
+    return obj;
+  }
+
+  // Check for circular references
+  if (seenObjects.has(obj)) {
+    return { __circular__: true, type: obj.constructor?.name || "Object" };
+  }
+
+  // Mark this object as seen
+  seenObjects.set(obj, true);
+
+  Object.entries(obj).forEach(([key, value]) => {
+    // Special handling for 'body' field that might contain JSON with sensitive data
+    if (key === "body" && typeof value === "string") {
+      try {
+        const parsed = JSON.parse(value);
+        if (parsed && typeof parsed === "object") {
+          // Recursively mask the parsed object
+          const masked = performMask(parsed);
+          obj[key] = JSON.stringify(masked);
+          return;
+        }
+      } catch {
+        // Not valid JSON, continue with normal processing
+      }
+    }
+
+    // If value is an array, map through it
+    if (value && Array.isArray(value)) {
+      obj[key] = value.map((v) => {
+        if (v && typeof v === "object") {
+          // Check if we've seen this object before
+          if (seenObjects.has(v)) {
+            return {
+              __circular__: true,
+              type: v.constructor?.name || "Object",
+            };
+          }
+          // If value is an object, recursively mask it with the seen objects map
+          return performMask(v as Record<string, unknown>, seenObjects);
+        } else if (!isAllowedValue(v)) {
+          // If item is not a primitive value, mask it
+          return MASK_VALUE;
+        } else {
+          return v;
+        }
+      });
+    } else if (value && typeof value === "object") {
+      // Always recursively process objects regardless of key name
+      // The individual primitive values inside will be masked based on their own keys
+      obj[key] = performMask(value as Record<string, unknown>, seenObjects);
+    } else if (!isAllowedKey(key)) {
+      // Mask if key is not allowed (for primitive values)
+      obj[key] = MASK_VALUE;
+    }
+    // If key is allowed and value is primitive, keep it as-is
+  });
+
+  return obj;
+}

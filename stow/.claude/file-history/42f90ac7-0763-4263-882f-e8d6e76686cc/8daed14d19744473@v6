@@ -1,0 +1,404 @@
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { httpRequestInit, httpRequestSuccess, httpRequestError } from './honoMetrics';
+import * as datadogMetrics from '../metrics/datadogMetrics';
+import { routePath } from 'hono/route';
+
+vi.mock('../metrics/datadogMetrics', () => ({
+  emitDatadogMetricFireAndForget: vi.fn(),
+}));
+
+vi.mock('hono/route', () => ({
+  routePath: vi.fn(),
+}));
+const createMockContext = (method: string, path: string) => ({
+  req: {
+    method,
+    path,
+  },
+  res: {
+    status: 200,
+  },
+  set: vi.fn(),
+  get: vi.fn(),
+});
+
+describe('Hono Metrics', () => {
+  beforeEach(() => {
+    vi.clearAllMocks();
+    vi.spyOn(performance, 'now').mockReturnValue(1000);
+    process.env.ENVIRONMENT = 'test';
+  });
+
+  describe('httpRequestInit', () => {
+    it('should emit http.requests.count metric and return tracking object', () => {
+      const mockContext = createMockContext('GET', '/api/cart/123');
+      vi.mocked(routePath).mockReturnValue('/api/cart/:id');
+
+      const result = httpRequestInit(mockContext as any, 'shopify');
+
+      expect(datadogMetrics.emitDatadogMetricFireAndForget).toHaveBeenCalledWith(
+        'http.requests.count',
+        {
+          method: 'GET',
+          route: '/api/cart/:id',
+          platform: 'shopify',
+          env: 'test',
+        },
+        1
+      );
+
+      expect(result).toEqual({
+        method: 'GET',
+        route: '/api/cart/:id',
+        platform: 'shopify',
+        startTime: 1000,
+        env: 'test',
+      });
+    });
+
+    it('should work without platform parameter', () => {
+      const mockContext = createMockContext('POST', '/cart');
+      vi.mocked(routePath).mockReturnValue('/cart');
+
+      const result = httpRequestInit(mockContext as any);
+
+      expect(datadogMetrics.emitDatadogMetricFireAndForget).toHaveBeenCalledWith(
+        'http.requests.count',
+        {
+          method: 'POST',
+          route: '/cart',
+          platform: undefined,
+          env: 'test',
+        },
+        1
+      );
+
+      expect(result.platform).toBeUndefined();
+    });
+
+    it('should use routePath for route pattern', () => {
+      const mockContext = createMockContext('GET', '/cart/550e8400-e29b-41d4-a716-446655440000');
+      vi.mocked(routePath).mockReturnValue('/cart/:uuid');
+
+      const result = httpRequestInit(mockContext as any, 'wix');
+
+      expect(result.route).toBe('/cart/:uuid');
+    });
+
+    it('should fall back to request path if routePath returns null', () => {
+      const mockContext = createMockContext('PUT', '/api/v1/cart/123/items/456');
+      vi.mocked(routePath).mockReturnValue(null);
+
+      const result = httpRequestInit(mockContext as any, 'bigcommerce');
+
+      expect(result.route).toBe('/api/v1/cart/123/items/456');
+    });
+
+    it('should handle root path', () => {
+      const mockContext = createMockContext('GET', '/');
+      vi.mocked(routePath).mockReturnValue('/');
+
+      const result = httpRequestInit(mockContext as any);
+
+      expect(result.route).toBe('/');
+    });
+
+    it('should use NODE_ENV fallback for environment', () => {
+      delete process.env.ENVIRONMENT;
+      process.env.NODE_ENV = 'development';
+      vi.mocked(routePath).mockReturnValue('/test');
+
+      const mockContext = createMockContext('GET', '/test');
+      const result = httpRequestInit(mockContext as any);
+
+      expect(result.env).toBe('development');
+    });
+  });
+
+  describe('httpRequestSuccess', () => {
+    it('should emit success and duration metrics', () => {
+      vi.spyOn(performance, 'now').mockReturnValue(1500);
+
+      const metrics = {
+        method: 'POST',
+        route: '/api/cart',
+        platform: 'shopify',
+        startTime: 1000,
+        env: 'test',
+      };
+
+      httpRequestSuccess(metrics, 201);
+
+      expect(datadogMetrics.emitDatadogMetricFireAndForget).toHaveBeenCalledWith(
+        'http.requests.success.count',
+        {
+          method: 'POST',
+          route: '/api/cart',
+          platform: 'shopify',
+          env: 'test',
+          status_code: '201',
+          status_class: '2xx',
+        },
+        1
+      );
+
+      expect(datadogMetrics.emitDatadogMetricFireAndForget).toHaveBeenCalledWith(
+        'http.request.duration',
+        {
+          method: 'POST',
+          route: '/api/cart',
+          platform: 'shopify',
+          env: 'test',
+          status_code: '201',
+          status_class: '2xx',
+        },
+        500
+      );
+    });
+
+    it('should classify status codes correctly', () => {
+      const metrics = {
+        method: 'GET',
+        route: '/test',
+        platform: 'wix',
+        startTime: 1000,
+        env: 'test',
+      };
+      httpRequestSuccess(metrics, 200);
+      expect(datadogMetrics.emitDatadogMetricFireAndForget).toHaveBeenCalledWith(
+        expect.any(String),
+        expect.objectContaining({ status_class: '2xx' }),
+        expect.any(Number)
+      );
+
+      httpRequestSuccess(metrics, 302);
+      expect(datadogMetrics.emitDatadogMetricFireAndForget).toHaveBeenCalledWith(
+        expect.any(String),
+        expect.objectContaining({ status_class: '3xx' }),
+        expect.any(Number)
+      );
+
+      httpRequestSuccess(metrics, 404);
+      expect(datadogMetrics.emitDatadogMetricFireAndForget).toHaveBeenCalledWith(
+        expect.any(String),
+        expect.objectContaining({ status_class: '4xx' }),
+        expect.any(Number)
+      );
+
+      httpRequestSuccess(metrics, 500);
+      expect(datadogMetrics.emitDatadogMetricFireAndForget).toHaveBeenCalledWith(
+        expect.any(String),
+        expect.objectContaining({ status_class: '5xx' }),
+        expect.any(Number)
+      );
+    });
+
+    it('should include merchant, partner, orchestrator when provided', () => {
+      const metrics = {
+        method: 'POST',
+        route: '/api/cart',
+        platform: 'shopify',
+        startTime: 1000,
+        env: 'test',
+      };
+
+      httpRequestSuccess(metrics, 200, {
+        merchant: 'test-merchant',
+        partner: 'test-partner',
+        orchestrator: 'test-orchestrator',
+      });
+
+      expect(datadogMetrics.emitDatadogMetricFireAndForget).toHaveBeenCalledWith(
+        'http.requests.success.count',
+        expect.objectContaining({
+          merchant: 'test-merchant',
+          partner: 'test-partner',
+          orchestrator: 'test-orchestrator',
+        }),
+        1
+      );
+    });
+
+    it('should not include merchant, partner, orchestrator when not provided', () => {
+      const metrics = {
+        method: 'POST',
+        route: '/api/cart',
+        platform: 'shopify',
+        startTime: 1000,
+        env: 'test',
+      };
+
+      httpRequestSuccess(metrics, 200);
+
+      expect(datadogMetrics.emitDatadogMetricFireAndForget).toHaveBeenCalledWith(
+        'http.requests.success.count',
+        expect.not.objectContaining({
+          merchant: expect.anything(),
+          partner: expect.anything(),
+          orchestrator: expect.anything(),
+        }),
+        1
+      );
+    });
+  });
+
+  describe('httpRequestError', () => {
+    const baseMetrics = {
+      method: 'POST',
+      route: '/api/cart',
+      platform: 'shopify',
+      startTime: 1000,
+      env: 'test',
+    };
+
+    beforeEach(() => {
+      vi.spyOn(performance, 'now').mockReturnValue(1750);
+    });
+
+    it('should handle Error objects', () => {
+      const error = new Error('Something went wrong');
+
+      httpRequestError(baseMetrics, error);
+
+      expect(datadogMetrics.emitDatadogMetricFireAndForget).toHaveBeenCalledWith(
+        'http.requests.error.count',
+        {
+          method: 'POST',
+          route: '/api/cart',
+          platform: 'shopify',
+          env: 'test',
+          status_code: '500',
+          status_class: '5xx',
+          error_type: 'Error',
+        },
+        1
+      );
+
+      expect(datadogMetrics.emitDatadogMetricFireAndForget).toHaveBeenCalledWith(
+        'http.request.duration',
+        expect.objectContaining({ status_code: '500' }),
+        750
+      );
+    });
+
+    it('should handle Error objects with statusCode property', () => {
+      const error = new Error('Not found') as any;
+      error.statusCode = 404;
+
+      httpRequestError(baseMetrics, error);
+
+      expect(datadogMetrics.emitDatadogMetricFireAndForget).toHaveBeenCalledWith(
+        'http.requests.error.count',
+        expect.objectContaining({
+          status_code: '404',
+          status_class: '4xx',
+          error_type: 'Error',
+        }),
+        1
+      );
+    });
+
+    it('should handle Error objects with status property', () => {
+      const error = new Error('Bad request') as any;
+      error.status = 400;
+
+      httpRequestError(baseMetrics, error);
+
+      expect(datadogMetrics.emitDatadogMetricFireAndForget).toHaveBeenCalledWith(
+        'http.requests.error.count',
+        expect.objectContaining({
+          status_code: '400',
+          status_class: '4xx',
+          error_type: 'Error',
+        }),
+        1
+      );
+    });
+
+    it('should handle numeric status codes directly', () => {
+      httpRequestError(baseMetrics, 422);
+
+      expect(datadogMetrics.emitDatadogMetricFireAndForget).toHaveBeenCalledWith(
+        'http.requests.error.count',
+        expect.objectContaining({
+          status_code: '422',
+          status_class: '4xx',
+          error_type: 'http_error',
+        }),
+        1
+      );
+    });
+
+    it('should handle custom Error classes', () => {
+      class ValidationError extends Error {
+        constructor(message: string) {
+          super(message);
+          this.name = 'ValidationError';
+        }
+      }
+
+      const error = new ValidationError('Invalid input');
+
+      httpRequestError(baseMetrics, error);
+
+      expect(datadogMetrics.emitDatadogMetricFireAndForget).toHaveBeenCalledWith(
+        'http.requests.error.count',
+        expect.objectContaining({
+          error_type: 'ValidationError',
+        }),
+        1
+      );
+    });
+
+    it('should handle unknown error types', () => {
+      httpRequestError(baseMetrics, 'string error');
+
+      expect(datadogMetrics.emitDatadogMetricFireAndForget).toHaveBeenCalledWith(
+        'http.requests.error.count',
+        expect.objectContaining({
+          status_code: '500',
+          status_class: '5xx',
+          error_type: 'unknown',
+        }),
+        1
+      );
+    });
+
+    it('should include merchant, partner, orchestrator when provided', () => {
+      const error = new Error('Something went wrong');
+
+      httpRequestError(baseMetrics, error, {
+        merchant: 'test-merchant',
+        partner: 'test-partner',
+        orchestrator: 'test-orchestrator',
+      });
+
+      expect(datadogMetrics.emitDatadogMetricFireAndForget).toHaveBeenCalledWith(
+        'http.requests.error.count',
+        expect.objectContaining({
+          merchant: 'test-merchant',
+          partner: 'test-partner',
+          orchestrator: 'test-orchestrator',
+        }),
+        1
+      );
+    });
+
+    it('should not include merchant, partner, orchestrator when not provided', () => {
+      const error = new Error('Something went wrong');
+
+      httpRequestError(baseMetrics, error);
+
+      expect(datadogMetrics.emitDatadogMetricFireAndForget).toHaveBeenCalledWith(
+        'http.requests.error.count',
+        expect.not.objectContaining({
+          merchant: expect.anything(),
+          partner: expect.anything(),
+          orchestrator: expect.anything(),
+        }),
+        1
+      );
+    });
+  });
+
+});

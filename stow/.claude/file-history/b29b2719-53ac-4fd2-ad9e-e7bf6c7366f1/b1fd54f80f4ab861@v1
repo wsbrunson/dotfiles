@@ -1,0 +1,437 @@
+import { z } from "zod/v4";
+import axios from "axios";
+import { Request } from "express";
+import qs from "qs";
+import {
+  CreateCartRequest,
+  CreateCartResponseSchema,
+  UpdateCartRequest,
+} from "../schemas";
+import { AxiosError } from "axios";
+
+export const MockCartSchema = z.object({
+  items: z.array(
+    z.object({
+      name: z.string(),
+      description: z.string(),
+      unit_amount: z.object({
+        currency_code: z.string(),
+        value: z.string(),
+      }),
+      quantity: z.string(),
+      category: z.string(),
+      sku: z.string(),
+      url: z.string(),
+    }),
+  ),
+  shippingOptions: CreateCartResponseSchema.shape.shippingOptions,
+  amount: z.object({
+    currency_code: z.string(),
+    value: z.string(),
+    breakdown: z.object({
+      item_total: z.object({
+        currency_code: z.string(),
+        value: z.string(),
+      }),
+      shipping: z.object({
+        currency_code: z.string(),
+        value: z.string(),
+      }),
+      tax_total: z.object({
+        currency_code: z.string(),
+        value: z.string(),
+      }),
+    }),
+  }),
+});
+type MockCart = z.infer<typeof MockCartSchema>;
+
+export const CachedCartSchema = z.object({
+  accessToken: z.string(),
+  ecToken: z.string(),
+  cart: MockCartSchema,
+});
+export type CachedCart = z.infer<typeof CachedCartSchema>;
+
+const TAX_RATE = 0.06;
+const ITEM_PRICE = 4.99;
+
+export class MockRequestClient {
+  async createCart(data: CreateCartRequest): Promise<MockCart> {
+    const quantity = data.products[0]?.quantity || 1;
+    const selectedShippingOption = 1.0;
+    const itemTotal = ITEM_PRICE * quantity;
+    const subTotal = itemTotal + selectedShippingOption;
+    const tax = subTotal * TAX_RATE;
+    const total = subTotal + tax;
+
+    return Promise.resolve({
+      items: [
+        {
+          name: "VOLVE Wireless Headphones",
+          description: "High-quality wireless headphones",
+          unit_amount: {
+            currency_code: "USD",
+            value: ITEM_PRICE.toFixed(2).toString(),
+          },
+          quantity: quantity.toString(),
+          category: "PHYSICAL_GOODS",
+          sku: "00000000-0000-0000-0000-000000000000",
+          url: "https://shayh566.wixstudio.com/paypal-real/product-page/volve-wireless-headphones",
+        },
+      ],
+      shippingOptions: [
+        {
+          id: "1",
+          label: "Standard Shipping",
+          amount: {
+            value: selectedShippingOption.toFixed(2).toString(),
+            currency: "USD",
+          },
+          type: "Standard",
+          selected: true,
+        },
+        {
+          id: "2",
+          label: "Express Shipping",
+          amount: {
+            value: "10.00",
+            currency: "USD",
+          },
+          type: "Express",
+          selected: false,
+        },
+      ],
+      amount: {
+        currency_code: "USD",
+        value: total.toFixed(2).toString(),
+        breakdown: {
+          item_total: {
+            currency_code: "USD",
+            value: itemTotal.toFixed(2).toString(),
+          },
+          shipping: {
+            currency_code: "USD",
+            value: selectedShippingOption.toFixed(2).toString(),
+          },
+          tax_total: {
+            currency_code: "USD",
+            value: tax.toFixed(2).toString(),
+          },
+        },
+      },
+    });
+  }
+
+  /**
+   * Retrieves an OAuth2 access token using client credentials.
+   */
+  async getAccessToken(
+    req: Request,
+    {
+      clientId,
+      clientSecret,
+      hostname,
+    }: { clientId: string; clientSecret: string; hostname: string },
+  ): Promise<string | undefined> {
+    const data = qs.stringify({ grant_type: "client_credentials" });
+    const auth =
+      "Basic " + Buffer.from(`${clientId}:${clientSecret}`).toString("base64");
+
+    try {
+      const response = await axios.request({
+        method: "post",
+        maxBodyLength: Infinity,
+        url: `${hostname}/v1/oauth2/token`,
+        headers: {
+          Authorization: auth,
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        data,
+      });
+
+      return response.data.access_token;
+    } catch (error) {
+      req.log(
+        "error",
+        `Error fetching access token: ${(error as Error).message}`,
+      );
+      throw error;
+    }
+  }
+
+  async createEcToken({
+    cart,
+    cartRequest,
+    request,
+    accessToken,
+    hostname,
+  }: {
+    cartRequest: CreateCartRequest;
+    cart: MockCart;
+    request: Request;
+    accessToken: string;
+    hostname: string;
+  }): Promise<string | undefined> {
+    try {
+      const response = await axios.post(
+        `${hostname}/v2/checkout/orders`,
+        {
+          intent: "CAPTURE",
+          payment_source: {
+            paypal: {
+              experience_context: {
+                return_url: "https://example.com/returnUrl",
+                cancel_url: "https://example.com/cancelUrl",
+                contact_preference: "UPDATE_CONTACT_INFO",
+              },
+            },
+          },
+          purchase_units: [
+            {
+              invoice_id: "90210",
+              amount: cart.amount,
+              items: cart.items,
+              ...(cartRequest.shippingAddress
+                ? {
+                    shipping: {
+                      address: {
+                        address_line_1:
+                          cartRequest.shippingAddress.addressLine1,
+                        address_line_2:
+                          cartRequest.shippingAddress.addressLine2 || null,
+                        admin_area_2: cartRequest.shippingAddress.adminArea2,
+                        admin_area_1: cartRequest.shippingAddress.adminArea1,
+                        postal_code: cartRequest.shippingAddress.postalCode,
+                        country_code: cartRequest.shippingAddress.countryCode,
+                      },
+                    },
+                  }
+                : {}),
+            },
+          ],
+        },
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+            "Content-Type": "application/json",
+            "User-Agent": "insomnia/11.5.0",
+          },
+        },
+      );
+
+      return response.data.id;
+    } catch (error) {
+      let correlationId = "";
+      let errorDetails;
+
+      if (error instanceof AxiosError) {
+        correlationId = error.response?.headers["paypal-debug-id"];
+        errorDetails = error.response?.data;
+      }
+
+      request.log("error", `Error creating order - debug_id: ${correlationId}`);
+
+      if (errorDetails) {
+        request.log(
+          "error",
+          `name: ${errorDetails.name}, issue: ${errorDetails.details[0].issue}, description: ${errorDetails.details[0].description}`,
+        );
+      }
+
+      throw error;
+    }
+  }
+
+  async updateCart({
+    updatedCart,
+    cachedCart,
+  }: {
+    updatedCart: UpdateCartRequest["cart"];
+    cachedCart: CachedCart;
+  }): Promise<MockCart> {
+    const selectedShippingOptionString =
+      updatedCart.shippingOptions?.find(({ selected }) => selected)?.amount
+        .value || "0";
+    const selectedShippingOptionValue = parseFloat(
+      selectedShippingOptionString,
+    );
+    const quantity = updatedCart.products?.[0].quantity || 1;
+    const itemTotal = ITEM_PRICE * quantity;
+    const subTotal = itemTotal + selectedShippingOptionValue;
+    const tax = subTotal * TAX_RATE;
+    const total = subTotal + tax;
+
+    return Promise.resolve({
+      items: cachedCart.cart.items.map((item) => ({
+        ...item,
+        quantity: quantity.toString(),
+      })),
+      shippingOptions: updatedCart.shippingOptions,
+      amount: {
+        currency_code: "USD",
+        value: total.toFixed(2).toString(),
+        breakdown: {
+          item_total: {
+            currency_code: "USD",
+            value: itemTotal.toFixed(2).toString(),
+          },
+          shipping: {
+            currency_code: "USD",
+            value: selectedShippingOptionValue.toFixed(2).toString(),
+          },
+          tax_total: {
+            currency_code: "USD",
+            value: tax.toFixed(2).toString(),
+          },
+        },
+      },
+    });
+  }
+
+  async updateEcToken({
+    cartRequest,
+    cart,
+    hostname,
+    ecToken,
+    accessToken,
+    request,
+  }: {
+    cartRequest: UpdateCartRequest["cart"];
+    cart: MockCart;
+    hostname: string;
+    ecToken: string;
+    accessToken: string;
+    request: Request;
+  }): Promise<void> {
+    try {
+      const { shippingAddress } = cartRequest;
+      const response = await axios.patch(
+        `${hostname}/v2/checkout/orders/${ecToken}`,
+        [
+          shippingAddress
+            ? {
+                op: "replace",
+                path: "/purchase_units/@reference_id=='default'/shipping/address",
+                value: {
+                  ...(shippingAddress?.addressLine1
+                    ? { address_line_1: shippingAddress.addressLine1 }
+                    : {}),
+                  ...(shippingAddress?.addressLine2
+                    ? { address_line_2: shippingAddress.addressLine2 }
+                    : {}),
+                  ...(shippingAddress?.adminArea1
+                    ? { admin_area_1: shippingAddress.adminArea1 }
+                    : {}),
+                  ...(shippingAddress?.adminArea2
+                    ? { admin_area_2: shippingAddress.adminArea2 }
+                    : {}),
+                  ...(shippingAddress?.postalCode
+                    ? { postal_code: shippingAddress.postalCode }
+                    : {}),
+                  ...(shippingAddress?.countryCode
+                    ? { country_code: shippingAddress.countryCode }
+                    : {}),
+                },
+              }
+            : undefined,
+          cart.amount
+            ? {
+                op: "replace",
+                path: "/purchase_units/@reference_id=='default'/amount",
+                value: cart.amount,
+              }
+            : undefined,
+          cart.items
+            ? {
+                op: "replace",
+                path: "/purchase_units/@reference_id=='default'/items",
+                value: cart.items,
+              }
+            : undefined,
+        ].filter(Boolean),
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+            "Content-Type": "application/json",
+            "User-Agent": "insomnia/11.5.0",
+          },
+        },
+      );
+
+      return response.data.id;
+    } catch (error) {
+      let correlationId = "";
+      let errorDetails;
+
+      if (error instanceof AxiosError) {
+        correlationId = error.response?.headers["paypal-debug-id"];
+        errorDetails = error.response?.data;
+      }
+
+      request.log(
+        "error",
+        `Error updating order - debug_id: ${correlationId}, token: ${ecToken}`,
+      );
+
+      if (errorDetails) {
+        request.log(
+          "error",
+          `name: ${errorDetails.name}, issue: ${errorDetails.details[0].issue}, description: ${errorDetails.details[0].description}`,
+        );
+      }
+
+      throw error;
+    }
+  }
+
+  async captureOrder({
+    ecToken,
+    accessToken,
+    hostname,
+    request,
+  }: {
+    ecToken: string;
+    accessToken: string;
+    hostname: string;
+    request: Request;
+  }): Promise<{ id: string }> {
+    try {
+      const response = await axios.post(
+        `${hostname}/v2/checkout/orders/${ecToken}/capture`,
+        {},
+        {
+          headers: {
+            Authorization: `Bearer ${accessToken}`,
+            "Content-Type": "application/json",
+            "PayPal-Request-Id": request.correlationId || "",
+          },
+        },
+      );
+
+      return response.data;
+    } catch (error) {
+      let correlationId = "";
+      let errorDetails;
+
+      if (error instanceof AxiosError) {
+        correlationId = error.response?.headers["paypal-debug-id"];
+        errorDetails = error.response?.data;
+      }
+
+      request.log(
+        "error",
+        `Error capturing order - debug_id: ${correlationId}, token: ${ecToken}`,
+      );
+
+      if (errorDetails) {
+        request.log(
+          "error",
+          `name: ${errorDetails.name}, issue: ${errorDetails.details[0].issue}, description: ${errorDetails.details[0].description}`,
+        );
+      }
+
+      throw error;
+    }
+  }
+}

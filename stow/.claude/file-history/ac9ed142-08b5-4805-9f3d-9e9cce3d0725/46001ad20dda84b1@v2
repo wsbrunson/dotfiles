@@ -1,0 +1,254 @@
+import {
+  BadRequestError,
+  convertErrorToLambdaResponse,
+  getCorrelationIdFromRequest,
+  logAPIResponseError,
+} from "shared/errors";
+import { ALBEvent, APIGatewayProxyStructuredResultV2 } from "aws-lambda";
+import { parseJwtFromCartApi } from "shared/helpers/AppContextAuthorizer";
+import { PayPalCartSchema } from "@paypal/commerce-cart-zod";
+import { createCommerceOnboardingService } from "shared/commerce-onboarding";
+import { logger } from "shared/logger/logger";
+import {
+  BaseMetricParams,
+  trackInitiatedAddCartFireAndForget,
+  trackFailedAddCartFireAndForget,
+} from "shared/metrics/emitMetric";
+import {
+  trackDatadogInitiatedAddCartFireAndForget,
+  trackDatadogSuccessAddCartFireAndForget,
+  trackDatadogFailedAddCartFireAndForget,
+} from "shared/metrics/emitDatadogMetric";
+import { extractExternalIdsFromJwt } from "shared/helpers";
+import { getCacheImplementation } from "shared/cache/cacheFactory";
+import { Cache } from "../../shared/cache";
+import { startSimulatorV2, stopSimulator } from "shared/simulator/server";
+import { wrapHandlerWithTracing } from "shared/instrumentation";
+import {
+  httpRequestInit,
+  httpRequestSuccess,
+  httpRequestError,
+  commerceOrchestratorRequestInit,
+  commerceOrchestratorRequestSuccess,
+  commerceOrchestratorRequestError,
+} from "shared/metrics/httpMetrics";
+
+const cache: Cache = getCacheImplementation();
+
+// Create a mock context for httpMetrics functions that need route information
+const createMockContext = (event: ALBEvent) => {
+  return {
+    req: {
+      method: event.httpMethod || "POST",
+      path: "/commerceorchnodeserv/v1/generic/cart",
+    },
+  };
+};
+
+const handler = async (
+  event: ALBEvent,
+): Promise<APIGatewayProxyStructuredResultV2> => {
+  const overallStartTime = performance.now();
+  const log = logger("GenericCreateCart", event);
+  log.info("Received event", { event });
+
+  // Initialize HTTP metrics
+  const mockContext = createMockContext(event);
+  const httpMetrics = httpRequestInit({ c: mockContext as any });
+  let commerceMetrics = commerceOrchestratorRequestInit({
+    orchestrator: "generic",
+  });
+
+  let orchestrator = "Unknown";
+
+  const baseMetricParams: BaseMetricParams = {
+    orchestrator,
+  };
+
+  try {
+    const jwt = parseJwtFromCartApi({ event, logger: log });
+    // TEMP: Cart api is sending ".com" at the end of "aud" field ...
+    orchestrator = jwt.aud.replace(/\.com$/, "") || "unknown";
+    const { encryptedMerchantId, honeyStoreId } = extractExternalIdsFromJwt(
+      jwt,
+      log,
+    );
+    baseMetricParams.orchestrator = orchestrator;
+    baseMetricParams.encryptedMerchantId = encryptedMerchantId;
+    baseMetricParams.honeyStoreId = honeyStoreId;
+
+    trackInitiatedAddCartFireAndForget(baseMetricParams);
+    trackDatadogInitiatedAddCartFireAndForget({
+      ...baseMetricParams,
+      env: process.env.APP_ENV || "unknown",
+    });
+
+    const body =
+      typeof event.body === "string" ? JSON.parse(event.body) : event.body;
+
+    log.info("Event body", { body });
+
+    const data = PayPalCartSchema.parse(body);
+
+    const commerceOnboardingService = createCommerceOnboardingService({
+      debugId: getCorrelationIdFromRequest(event),
+      cache,
+    });
+
+    commerceOnboardingService.setStoreContext({
+      honeyStoreId,
+      platformName: orchestrator, // this is only for the hardcoded configs
+      logger: log,
+    });
+
+    log.info("Commerce Onboarding Service", baseMetricParams);
+
+    // Get store config to update commerce metrics with merchant and partner info
+    try {
+      const storeConfig = await commerceOnboardingService.getStoreConfig();
+      commerceMetrics = {
+        ...commerceMetrics,
+        merchant: storeConfig.storeConfig.name,
+        partner: storeConfig.platformConfig.name,
+      };
+    } catch (storeConfigError) {
+      log.warn("Failed to get store config for metrics", { error: storeConfigError });
+    }
+
+    try {
+      // Convert null values to undefined for simulator compatibility
+      const simulatorData = JSON.parse(
+        JSON.stringify(data, (_key, value) =>
+          value === null ? undefined : value,
+        ),
+      );
+      const platformBaseUrl =
+        await commerceOnboardingService.getPlatformApiBaseUrl();
+      if (platformBaseUrl) {
+        await startSimulatorV2({
+          type: "create",
+          data: simulatorData,
+          orchestrator: "generic",
+          platformBaseUrl,
+          headers: event.headers,
+        });
+      }
+    } catch (e) {
+      log.error("Failed to start simulator", { error: e });
+    }
+
+    const commerceServiceStartTime = performance.now();
+    const createCartResponse = await commerceOnboardingService.createCart({
+      data,
+      event,
+    });
+    const duration = performance.now() - commerceServiceStartTime;
+
+    const cart = {
+      ...data,
+      ...createCartResponse,
+    };
+
+    const paypalCartId = data.id;
+    const merchantCartId = createCartResponse.id;
+
+    log.info("Generic Merchant Create Cart Response", {
+      createCartResponse,
+      honeyStoreId,
+      timestamp: new Date().toISOString(),
+      duration,
+    });
+
+    if (paypalCartId && merchantCartId) {
+      log.info("Mapping cart ids", {
+        paypalCartId,
+        merchantCartId,
+        name: orchestrator,
+      });
+      cache.set(paypalCartId, JSON.stringify(cart));
+    } else {
+      log.error("Missing cart ID(s), cannot cache the cart mapping", {
+        paypalCartId: paypalCartId ?? "missing",
+        merchantCartId: merchantCartId ?? "missing",
+      });
+      const debugId = getCorrelationIdFromRequest(event);
+      throw new BadRequestError(debugId, {
+        details: [
+          {
+            description: `paypalCartId is ${paypalCartId ?? "missing"}`,
+          },
+          {
+            description: `merchantCartId is ${merchantCartId ?? "missing"}`,
+          },
+        ],
+      });
+    }
+
+    const finalDuration = performance.now() - overallStartTime;
+
+    // Check cart status for Datadog metrics
+    let isDatadogSuccess = true;
+    if (
+      createCartResponse?.status &&
+      createCartResponse.status === "INCOMPLETE"
+    ) {
+      isDatadogSuccess = false;
+      log.warn("Cart status indicates failure despite 201 HTTP status", {
+        httpStatus: 201,
+        cartStatus: createCartResponse.status,
+      });
+    }
+
+    if (isDatadogSuccess) {
+      trackDatadogSuccessAddCartFireAndForget({
+        ...baseMetricParams,
+        env: process.env.APP_ENV || "unknown",
+        status: "201",
+        duration: finalDuration,
+      });
+    } else {
+      trackDatadogFailedAddCartFireAndForget({
+        ...baseMetricParams,
+        env: process.env.APP_ENV || "unknown",
+        status: "201",
+      });
+    }
+
+    // Emit HTTP metrics for success
+    httpRequestSuccess({ metrics: httpMetrics, statusCode: 201 });
+    commerceOrchestratorRequestSuccess({ metrics: commerceMetrics, statusCode: 201 });
+
+    return {
+      statusCode: 201,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(createCartResponse),
+    };
+  } catch (e) {
+    const [apiError, errorResponse] = convertErrorToLambdaResponse(e, event);
+    logAPIResponseError(log, apiError);
+
+    // Emit HTTP metrics for error
+    httpRequestError({ metrics: httpMetrics, error: e });
+    commerceOrchestratorRequestError({
+      metrics: commerceMetrics,
+      error: e,
+      statusCode: errorResponse.statusCode
+    });
+
+    trackFailedAddCartFireAndForget({
+      ...baseMetricParams,
+      status: errorResponse.statusCode.toString(),
+    });
+
+    trackDatadogFailedAddCartFireAndForget({
+      ...baseMetricParams,
+      env: process.env.APP_ENV || "unknown",
+      status: errorResponse.statusCode.toString(),
+    });
+
+    return errorResponse;
+  } finally {
+    stopSimulator();
+  }
+};
+exports.handler = wrapHandlerWithTracing(handler);

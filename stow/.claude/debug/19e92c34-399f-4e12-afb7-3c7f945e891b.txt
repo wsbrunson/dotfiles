@@ -1,0 +1,1998 @@
+[DEBUG] Getting matching hook commands for SessionStart with query: clear
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "clear" (0 before deduplication)
+[DEBUG] FileHistory: Added snapshot for b2afb057-7efb-4613-8cb2-50c6c257a502, tracking 0 files
+[DEBUG] Rendering user message with 1 content blocks
+[DEBUG] Block 0: <command-name>/clear</command-name>
+            <command-message>clear</command-message>
+           ...
+[DEBUG] UserCommandMessage rendering: "clear" (args: "none")
+[DEBUG] isSkillFormat: false, prefix: "/"
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762292873849
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48744 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762292873849 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762292873855
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48855 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762292873855 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] npm view failed with code 1
+[DEBUG] npm stderr: (empty)
+[ERROR] Error: Error: {"stack":"Error: PeriodicExportingMetricReader: metrics export failed (error Error: getaddrinfo ENOTFOUND otelmetrics-pp-observability.us-central1.gcp.dev.paypalinc.com)\n    at qlQ._doRun (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1943:154069)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async qlQ._runOnce (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1943:153306)","message":"PeriodicExportingMetricReader: metrics export failed (error Error: getaddrinfo ENOTFOUND otelmetrics-pp-observability.us-central1.gcp.dev.paypalinc.com)","name":"Error"}
+    at Ad1.error (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1984:49442)
+    at sv1.error (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1943:12446)
+    at file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1943:61433
+    at ofI (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1943:61979)
+    at qlQ._runOnce (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1943:153539)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message a10cb4d8-bfd0-4d88-8a96-571a0404e104
+[DEBUG] FileHistory: Added snapshot for a10cb4d8-bfd0-4d88-8a96-571a0404e104, tracking 0 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[ERROR] Error streaming, falling back to non-streaming mode: Connection error.
+[ERROR] Error streaming, falling back to non-streaming mode: Connection error.
+[ERROR] Error: Error: {"stack":"Error: PeriodicExportingMetricReader: metrics export failed (error Error: getaddrinfo ENOTFOUND otelmetrics-pp-observability.us-central1.gcp.dev.paypalinc.com)\n    at qlQ._doRun (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1943:154069)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async qlQ._runOnce (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1943:153306)","message":"PeriodicExportingMetricReader: metrics export failed (error Error: getaddrinfo ENOTFOUND otelmetrics-pp-observability.us-central1.gcp.dev.paypalinc.com)","name":"Error"}
+    at Ad1.error (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1984:49442)
+    at sv1.error (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1943:12446)
+    at file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1943:61433
+    at ofI (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1943:61979)
+    at qlQ._runOnce (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1943:153539)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762292912181
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48855 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762292912181 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[ERROR] Error in non-streaming fallback: Request was aborted.
+[ERROR] Error: Error: Request was aborted.
+    at AbortSignal.Z (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1818:2891)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:827:20)
+    at AbortSignal.dispatchEvent (node:internal/event_target:762:26)
+    at runAbort (node:internal/abort_controller:447:10)
+    at abortSignal (node:internal/abort_controller:433:3)
+    at AbortController.abort (node:internal/abort_controller:466:5)
+    at DI (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2849:61662)
+    at file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2840:3290
+    at file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:194:499
+    at Q.batchedUpdates (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:75:51068)
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762292912215
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48855 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762292912215 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762292912227
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48993 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762292912227 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[ERROR] Error: Error: {"stack":"Error: PeriodicExportingMetricReader: metrics export failed (error Error: getaddrinfo ENOTFOUND otelmetrics-pp-observability.us-central1.gcp.dev.paypalinc.com)\n    at qlQ._doRun (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1943:154069)\n    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)\n    at async qlQ._runOnce (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1943:153306)","message":"PeriodicExportingMetricReader: metrics export failed (error Error: getaddrinfo ENOTFOUND otelmetrics-pp-observability.us-central1.gcp.dev.paypalinc.com)","name":"Error"}
+    at Ad1.error (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1984:49442)
+    at sv1.error (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1943:12446)
+    at file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1943:61433
+    at ofI (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1943:61979)
+    at qlQ._runOnce (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1943:153539)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+[DEBUG] Metrics opt-out check failed: No API key available
+[DEBUG] Metrics check failed, defaulting to disabled
+[DEBUG] Metrics export disabled by organization setting
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762294678031
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48744 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762294678031 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message f1ceb021-5917-45ce-90e6-c32af6751fe0
+[DEBUG] FileHistory: Added snapshot for f1ceb021-5917-45ce-90e6-c32af6751fe0, tracking 0 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762295817424
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48744 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762295817424 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762295817456
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48744 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762295817456 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762295817467
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48856 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762295817467 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message cab71db4-c34e-4d64-9b53-f11882c39099
+[DEBUG] FileHistory: Added snapshot for cab71db4-c34e-4d64-9b53-f11882c39099, tracking 0 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762295894444
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762295894444 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762295894452
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762295894452 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762295894457
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762295894457 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762295894462
+[DEBUG] Temp file written successfully, size: 841 bytes
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762295894462 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Glob
+[DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Glob
+[DEBUG] Getting matching hook commands for PreToolUse with query: Glob
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Glob
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Glob" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[ERROR] Error: Error: 404 The specified resource does not exist.
+    at D4.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:203:83170)
+    at uy.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:2117)
+    at uy.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:5330)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async XFA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1311:8767)
+    at async nb2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3390:1653)
+    at async Object.call (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3399:1001)
+    at async vj6 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2685:65482)
+    at async Eq2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2685:62539)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2685:61708
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762295913299
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762295913299 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762295913307
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762295913307 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762295913313
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762295913313 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762295913317
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 845 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762295913317 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[ERROR] Error: Error: 404 The specified resource does not exist.
+    at D4.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:203:83170)
+    at uy.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:2117)
+    at uy.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:5330)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async XFA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1311:8767)
+    at async nb2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3390:1653)
+    at async Object.call (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3399:1001)
+    at async Bq (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:725:1185)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1265:1379
+[ERROR] Error: Error: 404 The specified resource does not exist.
+    at D4.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:203:83170)
+    at uy.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:2117)
+    at uy.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:5330)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async XFA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1311:8767)
+    at async nb2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3390:1653)
+    at async Object.call (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3399:1001)
+    at async Bq (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:725:1185)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1265:1379
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[ERROR] Error: Error: 404 The specified resource does not exist.
+    at D4.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:203:83170)
+    at uy.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:2117)
+    at uy.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:5330)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async XFA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1311:8767)
+    at async nb2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3390:1653)
+    at async Object.call (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3399:1001)
+    at async Bq (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:725:1185)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1265:1379
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[ERROR] Error: Error: 404 The specified resource does not exist.
+    at D4.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:203:83170)
+    at uy.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:2117)
+    at uy.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:5330)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async XFA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1311:8767)
+    at async nb2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3390:1653)
+    at async Object.call (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3399:1001)
+    at async Bq (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:725:1185)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1265:1379
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[ERROR] Error: Error: 404 The specified resource does not exist.
+    at D4.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:203:83170)
+    at uy.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:2117)
+    at uy.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:5330)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async XFA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1311:8767)
+    at async nb2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3390:1653)
+    at async Object.call (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3399:1001)
+    at async vj6 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2685:65482)
+    at async Eq2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2685:62539)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:2685:61708
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762295948797
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762295948797 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762295948809
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762295948809 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762295948820
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762295948820 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762295948828
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 847 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762295948828 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[ERROR] Error: Error: 404 The specified resource does not exist.
+    at D4.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:203:83170)
+    at uy.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:2117)
+    at uy.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:5330)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async XFA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1311:8767)
+    at async nb2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3390:1653)
+    at async Object.call (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3399:1001)
+    at async Bq (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:725:1185)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1265:1379
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762295965590
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762295965590 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762295965599
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762295965599 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762295965603
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762295965603 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762295965606
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 849 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762295965606 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Metrics opt-out check failed: No API key available
+[DEBUG] Metrics check failed, defaulting to disabled
+[DEBUG] Metrics export disabled by organization setting
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] FileHistory: Tracked file modification for /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json.tmp.1417.1762296022352
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 84506 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json.tmp.1417.1762296022352 to /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json.tmp.1417.1762296048985
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 85066 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json.tmp.1417.1762296048985 to /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762296054626
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762296054626 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762296054637
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762296054637 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762296054642
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762296054642 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762296054650
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762296054650 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762296071270
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48744 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762296071270 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762296071299
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48744 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762296071299 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762296071307
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 49020 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762296071307 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message 15cc99b4-56ca-4a03-9e9b-28af37a79234
+[DEBUG] FileHistory: Added snapshot for 15cc99b4-56ca-4a03-9e9b-28af37a79234, tracking 1 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[ERROR] Error: Error: 404 The specified resource does not exist.
+    at D4.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:203:83170)
+    at uy.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:2117)
+    at uy.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:5330)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async XFA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1311:8767)
+    at async nb2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3390:1653)
+    at async Object.call (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3399:1001)
+    at async Bq (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:725:1185)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1265:1379
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[ERROR] Error: Error: 404 The specified resource does not exist.
+    at D4.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:203:83170)
+    at uy.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:2117)
+    at uy.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:5330)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async XFA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1311:8767)
+    at async nb2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3390:1653)
+    at async Object.call (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3399:1001)
+    at async Bq (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:725:1185)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1265:1379
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Grep
+[DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Grep
+[DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Grep
+[DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Grep
+[DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[ERROR] Error: Error: 404 The specified resource does not exist.
+    at D4.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:203:83170)
+    at uy.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:2117)
+    at uy.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:5330)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async XFA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1311:8767)
+    at async nb2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3390:1653)
+    at async Object.call (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3399:1001)
+    at async Bq (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:725:1185)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1265:1379
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[ERROR] Error: Error: 404 The specified resource does not exist.
+    at D4.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:203:83170)
+    at uy.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:2117)
+    at uy.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:5330)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async XFA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1311:8767)
+    at async nb2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3390:1653)
+    at async Object.call (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3399:1001)
+    at async Bq (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:725:1185)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1265:1379
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[ERROR] Error: Error: 404 The specified resource does not exist.
+    at D4.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:203:83170)
+    at uy.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:2117)
+    at uy.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:5330)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async XFA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1311:8767)
+    at async nb2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3390:1653)
+    at async Object.call (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3399:1001)
+    at async Bq (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:725:1185)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1265:1379
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Grep
+[DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Grep
+[DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Grep
+[DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[ERROR] Error: Error: 404 The specified resource does not exist.
+    at D4.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:203:83170)
+    at uy.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:2117)
+    at uy.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:5330)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async XFA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1311:8767)
+    at async nb2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3390:1653)
+    at async Object.call (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3399:1001)
+    at async Bq (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:725:1185)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1265:1379
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Grep
+[DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762296194475
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 49020 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762296194475 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762296194500
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 49020 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762296194500 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762296194509
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 49247 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762296194509 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Notification with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Metrics opt-out check failed: No API key available
+[DEBUG] Metrics check failed, defaulting to disabled
+[DEBUG] Metrics export disabled by organization setting
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message 94d6dc25-748d-451f-8219-1e4a461778dc
+[DEBUG] FileHistory: Added snapshot for 94d6dc25-748d-451f-8219-1e4a461778dc, tracking 1 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762296310365
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762296310365 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762296310373
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762296310373 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762296310381
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762296310381 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762296310385
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 190 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762296310385 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762296333630
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762296333630 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762296333642
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762296333642 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762296333647
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762296333647 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762296333654
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762296333654 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762296337828
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 49247 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762296337828 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762296337852
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 49247 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762296337852 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762296337864
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 49404 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762296337864 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message e5a9520d-2227-4475-94c9-38cb36071719
+[DEBUG] FileHistory: Added snapshot for e5a9520d-2227-4475-94c9-38cb36071719, tracking 1 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762296409213
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762296409213 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762296409224
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762296409224 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762296409229
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762296409229 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762296409237
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 196 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762296409237 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[ERROR] Error: Error: 404 The specified resource does not exist.
+    at D4.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:203:83170)
+    at uy.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:2117)
+    at uy.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:5330)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async XFA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1311:8767)
+    at async nb2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3390:1653)
+    at async Object.call (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3399:1001)
+    at async Bq (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:725:1185)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1265:1379
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[ERROR] Error: Error: 404 The specified resource does not exist.
+    at D4.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:203:83170)
+    at uy.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:2117)
+    at uy.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:5330)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async XFA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1311:8767)
+    at async nb2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3390:1653)
+    at async Object.call (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3399:1001)
+    at async Bq (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:725:1185)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1265:1379
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762296458513
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762296458513 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762296458519
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762296458519 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762296458524
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762296458524 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762296458531
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762296458531 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762296465383
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 49404 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762296465383 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762296465426
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 49404 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762296465426 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762296465438
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 49599 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762296465438 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Notification with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762296478983
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 49599 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762296478983 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Metrics opt-out check failed: No API key available
+[DEBUG] Metrics check failed, defaulting to disabled
+[DEBUG] Metrics export disabled by organization setting
+[DEBUG] MCP server "atlassian": SSE connection dropped after 530305s uptime
+[DEBUG] MCP server "atlassian": Connection reset - server may have crashed or restarted
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 3278s
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762297750469
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 49599 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762297750469 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message 4eb69d7f-a912-4c7b-8e10-3e3f7a08e98c
+[DEBUG] FileHistory: Added snapshot for 4eb69d7f-a912-4c7b-8e10-3e3f7a08e98c, tracking 1 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762297768651
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762297768651 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762297768660
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762297768660 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762297768665
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762297768665 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762297768672
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 280 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762297768672 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Grep
+[DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Grep
+[DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Grep
+[DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Grep
+[DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[ERROR] Error: Error: 404 The specified resource does not exist.
+    at D4.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:203:83170)
+    at uy.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:2117)
+    at uy.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:5330)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async XFA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1311:8767)
+    at async nb2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3390:1653)
+    at async Object.call (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3399:1001)
+    at async Bq (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:725:1185)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1265:1379
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json.tmp.1417.1762297817195
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 85074 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json.tmp.1417.1762297817195 to /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Grep
+[DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[ERROR] Error: Error: 404 The specified resource does not exist.
+    at D4.generate (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:203:83170)
+    at uy.makeStatusError (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:2117)
+    at uy.makeRequest (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:357:5330)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async XFA (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1311:8767)
+    at async nb2 (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3390:1653)
+    at async Object.call (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:3399:1001)
+    at async Bq (file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:725:1185)
+    at async file:///Users/wbrunson/workspace/dotfiles/stow/.claude/local/node_modules/@anthropic-ai/claude-code/cli.js:1265:1379
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Write
+[DEBUG] Getting matching hook commands for PreToolUse with query: Write
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+[DEBUG] FileHistory: Tracked file modification for /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api-streamlined.postman_collection.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api-streamlined.postman_collection.json.tmp.1417.1762297856050
+[DEBUG] Temp file written successfully, size: 1789 bytes
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api-streamlined.postman_collection.json.tmp.1417.1762297856050 to /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api-streamlined.postman_collection.json
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api-streamlined.postman_collection.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Write
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Write" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json.tmp.1417.1762297901854
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 11104 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json.tmp.1417.1762297901854 to /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json.tmp.1417.1762297950611
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 24202 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json.tmp.1417.1762297950611 to /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762297966551
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762297966551 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762297966561
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762297966561 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762297966570
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762297966570 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762297966574
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762297966574 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Metrics opt-out check failed: No API key available
+[DEBUG] Metrics check failed, defaulting to disabled
+[DEBUG] Metrics export disabled by organization setting
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Bash
+[DEBUG] Getting matching hook commands for PreToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Bash
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Bash" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762297989154
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48744 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762297989154 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762297989175
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48744 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762297989175 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762297989187
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48977 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762297989187 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Getting matching hook commands for UserPromptSubmit with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] FileHistory: Making snapshot for message fd2439e6-daa3-49f0-bdd9-57ec9dae7a6a
+[DEBUG] FileHistory: Missing tracked file: agent-commerce/v1/postman/merchant-cart-api-streamlined.postman_collection.json
+[DEBUG] FileHistory: Added snapshot for fd2439e6-daa3-49f0-bdd9-57ec9dae7a6a, tracking 2 files
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762298030912
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762298030912 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762298030919
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762298030919 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762298030923
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762298030923 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762298030935
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 210 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762298030935 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json.tmp.1417.1762298037739
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 24188 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json.tmp.1417.1762298037739 to /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json.tmp.1417.1762298045964
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 24185 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json.tmp.1417.1762298045964 to /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Edit
+[DEBUG] Getting matching hook commands for PreToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json.tmp.1417.1762298050434
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 24173 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json.tmp.1417.1762298050434 to /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json
+[DEBUG] File /Users/wbrunson/workspace/commerce-platform/agent-commerce/v1/postman/merchant-cart-api.postman_collection.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: Edit
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Edit" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Grep
+[DEBUG] Getting matching hook commands for PreToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Grep
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Grep" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: Read
+[DEBUG] Getting matching hook commands for PreToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Getting matching hook commands for PostToolUse with query: Read
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "Read" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] executePreToolHooks called for tool: TodoWrite
+[DEBUG] Getting matching hook commands for PreToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762298066073
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json.tmp.1417.1762298066073 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-71f6f60d-dbd7-4c4f-b95f-779afde29504.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762298066078
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json.tmp.1417.1762298066078 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-9a68c35c-ba27-4117-8c76-a4e282309acb.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762298066084
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json.tmp.1417.1762298066084 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-02aead30-7985-40f9-bc78-d9da00bddbbf.json written atomically
+[DEBUG] Writing to temp file: /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762298066088
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 2 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json.tmp.1417.1762298066088 to /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json
+[DEBUG] File /Users/wbrunson/.claude/todos/19e92c34-399f-4e12-afb7-3c7f945e891b-agent-19e92c34-399f-4e12-afb7-3c7f945e891b.json written atomically
+[DEBUG] Getting matching hook commands for PostToolUse with query: TodoWrite
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "TodoWrite" (0 before deduplication)
+[DEBUG] Hooks: getAsyncHookResponseAttachments called
+[DEBUG] Hooks: checkForNewResponses called
+[DEBUG] Hooks: Found 0 total hooks in registry
+[DEBUG] Hooks: checkForNewResponses returning 0 responses
+[DEBUG] Skills and commands included in Skill tool:
+[DEBUG] Slash commands included in SlashCommand tool:
+[DEBUG] Stream started - received first chunk
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762298074532
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48977 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762298074532 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Getting matching hook commands for Stop with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762298074555
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 48977 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762298074555 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762298074566
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 49106 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762298074566 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] Metrics opt-out check failed: No API key available
+[DEBUG] Metrics check failed, defaulting to disabled
+[DEBUG] Metrics export disabled by organization setting
+[DEBUG] AutoUpdater: Detected installation type: npm-local
+[DEBUG] AutoUpdater: Using local update method
+[DEBUG] Writing through symlink: /Users/wbrunson/.claude.json -> /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] Writing to temp file: /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762298278896
+[DEBUG] Preserving file permissions: 100644
+[DEBUG] Temp file written successfully, size: 49106 bytes
+[DEBUG] Applied original permissions to temp file
+[DEBUG] Renaming /Users/wbrunson/workspace/dotfiles/stow/.claude.json.tmp.1417.1762298278896 to /Users/wbrunson/workspace/dotfiles/stow/.claude.json
+[DEBUG] File /Users/wbrunson/workspace/dotfiles/stow/.claude.json written atomically
+[DEBUG] MCP server "atlassian": SSE connection dropped after 531177s uptime
+[DEBUG] MCP server "atlassian": Connection error: SSE error: TypeError: terminated: other side closed
+[DEBUG] MCP server "atlassian": Returning tokens
+[DEBUG] MCP server "atlassian": Token length: 74
+[DEBUG] MCP server "atlassian": Has refresh token: true
+[DEBUG] MCP server "atlassian": Expires in: 2406s
+[DEBUG] AutoUpdaterWrapper: Installation type: npm-local, using native: false
+[DEBUG] Getting matching hook commands for SessionEnd with query: undefined
+[DEBUG] Found 0 hook matchers in settings
+[DEBUG] Matched 0 unique hooks for query "no match query" (0 before deduplication)

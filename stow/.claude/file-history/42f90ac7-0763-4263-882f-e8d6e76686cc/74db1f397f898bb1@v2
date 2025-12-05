@@ -1,0 +1,189 @@
+import { emitDatadogMetricFireAndForget } from "../metrics/datadogMetrics";
+import type { Context } from "hono";
+
+export type HonoRequestMetrics = {
+  method: string;
+  route: string;
+  platform?: string;
+  startTime: number;
+  env?: string;
+};
+
+type BaseMetricParams = {
+  method: string;
+  route: string;
+  platform?: string;
+  env?: string;
+};
+
+/**
+ * Initializes request tracking for Hono routes
+ * Emits http.requests.count metric to track total incoming requests
+ *
+ * @param c - Hono context object
+ * @param platform - Platform identifier (e.g., 'wix', 'shopify', 'bigcommerce')
+ * @returns HonoRequestMetrics object to pass to success/error functions
+ *
+ * @example
+ * ```typescript
+ * app.use('*', async (c, next) => {
+ *   const metrics = honoRequestInit(c, 'wix');
+ *   c.set('requestMetrics', metrics);
+ *   await next();
+ * });
+ * ```
+ */
+export function honoRequestInit(c: Context, platform?: string): HonoRequestMetrics {
+  const method = c.req.method;
+  const route = normalizeRoute(c.req.path);
+  const env = process.env.ENVIRONMENT || process.env.NODE_ENV || 'unknown';
+
+  const baseParams: BaseMetricParams = {
+    method,
+    route,
+    platform,
+    env,
+  };
+
+  // Emit total request count
+  emitDatadogMetricFireAndForget('http.requests.count', baseParams, 1);
+
+  return {
+    method,
+    route,
+    platform,
+    startTime: performance.now(),
+    env,
+  };
+}
+
+/**
+ * Tracks successful request completion
+ * Emits http.requests.success.count and http.request.duration metrics
+ *
+ * @param metrics - Request metrics from honoRequestInit
+ * @param statusCode - HTTP status code (200, 201, etc.)
+ *
+ * @example
+ * ```typescript
+ * app.use('*', async (c, next) => {
+ *   const metrics = c.get('requestMetrics') as HonoRequestMetrics;
+ *   try {
+ *     await next();
+ *     honoRequestSuccess(metrics, c.res.status);
+ *   } catch (error) {
+ *     honoRequestError(metrics, error);
+ *   }
+ * });
+ * ```
+ */
+export function honoRequestSuccess(
+  metrics: HonoRequestMetrics,
+  statusCode: number,
+): void {
+  const duration = performance.now() - metrics.startTime;
+
+  const successParams = {
+    method: metrics.method,
+    route: metrics.route,
+    platform: metrics.platform,
+    env: metrics.env,
+    status_code: statusCode.toString(),
+    status_class: getStatusClass(statusCode),
+  };
+
+  // Emit success count
+  emitDatadogMetricFireAndForget('http.requests.success.count', successParams, 1);
+
+  // Emit request duration in milliseconds
+  emitDatadogMetricFireAndForget('http.request.duration', successParams, duration);
+}
+
+/**
+ * Tracks failed request completion
+ * Emits http.requests.error.count and http.request.duration metrics
+ *
+ * @param metrics - Request metrics from honoRequestInit
+ * @param error - Error object or status code for the failure
+ *
+ * @example
+ * ```typescript
+ * app.use('*', async (c, next) => {
+ *   const metrics = c.get('requestMetrics') as HonoRequestMetrics;
+ *   try {
+ *     await next();
+ *     honoRequestSuccess(metrics, c.res.status);
+ *   } catch (error) {
+ *     honoRequestError(metrics, error);
+ *   }
+ * });
+ * ```
+ */
+export function honoRequestError(
+  metrics: HonoRequestMetrics,
+  error: Error | number | unknown,
+): void {
+  const duration = performance.now() - metrics.startTime;
+
+  // Determine status code from error
+  let statusCode = 500; // default to internal server error
+  let errorType = 'unknown';
+
+  if (typeof error === 'number') {
+    statusCode = error;
+    errorType = 'http_error';
+  } else if (error instanceof Error) {
+    errorType = error.constructor.name;
+    // Try to extract status code from error if it has one
+    if ('statusCode' in error && typeof error.statusCode === 'number') {
+      statusCode = error.statusCode;
+    } else if ('status' in error && typeof error.status === 'number') {
+      statusCode = error.status;
+    }
+  }
+
+  const errorParams = {
+    method: metrics.method,
+    route: metrics.route,
+    platform: metrics.platform,
+    env: metrics.env,
+    status_code: statusCode.toString(),
+    status_class: getStatusClass(statusCode),
+    error_type: errorType,
+  };
+
+  // Emit error count
+  emitDatadogMetricFireAndForget('http.requests.error.count', errorParams, 1);
+
+  // Emit request duration in milliseconds (even for errors)
+  emitDatadogMetricFireAndForget('http.request.duration', errorParams, duration);
+}
+
+/**
+ * Normalizes route paths for consistent metrics
+ * Replaces dynamic segments with placeholders to avoid high cardinality
+ */
+function normalizeRoute(path: string): string {
+  return path
+    // Replace UUIDs with placeholder
+    .replace(/\/[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}/gi, '/:uuid')
+    // Replace numeric IDs with placeholder
+    .replace(/\/\d+/g, '/:id')
+    // Replace other dynamic segments that look like IDs
+    .replace(/\/[a-zA-Z0-9_-]{20,}/g, '/:token')
+    // Clean up multiple slashes
+    .replace(/\/+/g, '/')
+    // Remove trailing slash
+    .replace(/\/$/, '') || '/';
+}
+
+/**
+ * Maps HTTP status codes to status classes for grouping
+ */
+function getStatusClass(statusCode: number): string {
+  if (statusCode >= 200 && statusCode < 300) return '2xx';
+  if (statusCode >= 300 && statusCode < 400) return '3xx';
+  if (statusCode >= 400 && statusCode < 500) return '4xx';
+  if (statusCode >= 500 && statusCode < 600) return '5xx';
+  return 'unknown';
+}

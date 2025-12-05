@@ -1,0 +1,73 @@
+import { Router, Request, Response, NextFunction } from "express";
+import { CheckoutOrchestrationController } from "./controller";
+import {
+  validateRequestBodyWithZodSchema,
+  validateRequestWithPayPalStandard,
+} from "../middlewares/requestValidators";
+import {
+  WalletRequestSchema,
+  ApprovePurchaseRequestSchema,
+  ShippingRequestSchema,
+  ExternalCardApprovalRequestSchema,
+  CardApprovalRequestHeaderSchema,
+} from "./schemas";
+
+const checkoutOrchestrationController = new CheckoutOrchestrationController();
+
+// Helper function to get auth middleware from app context
+const getAuthMiddleware = (req: Request) => {
+  const auth = req.app.get('auth');
+  if (!auth || !auth.authorize) {
+    throw new Error('Auth middleware not properly configured');
+  }
+  return auth.authorize();
+};
+
+export const router = Router();
+
+router.post(
+  "/wallet",
+  (req: Request, res: Response, next: NextFunction) => {
+    // Apply auth middleware for security context validation
+    return getAuthMiddleware(req)(req, res, next);
+  },
+  [validateRequestBodyWithZodSchema(WalletRequestSchema)],
+  checkoutOrchestrationController.getWalletInformation,
+);
+router.post(
+  "/shipping",
+  (req: Request, res: Response, next: NextFunction) => {
+    // Apply auth middleware for security context validation
+    return getAuthMiddleware(req)(req, res, next);
+  },
+  [validateRequestBodyWithZodSchema(ShippingRequestSchema)],
+  checkoutOrchestrationController.getShippingInformation,
+);
+router.post(
+  "/wallet-and-shipping",
+  (req: Request, res: Response, next: NextFunction) => {
+    // Apply auth middleware for security context validation
+    return getAuthMiddleware(req)(req, res, next);
+  },
+  [validateRequestBodyWithZodSchema(WalletRequestSchema)],
+  checkoutOrchestrationController.getWalletInformation, // Using existing method for now
+);
+router.post(
+  "/approve",
+  (req: Request, res: Response, next: NextFunction) => {
+    // Apply auth middleware for security context validation
+    return getAuthMiddleware(req)(req, res, next);
+  },
+  [validateRequestBodyWithZodSchema(ApprovePurchaseRequestSchema)],
+  checkoutOrchestrationController.approvePaymentForSelectedInstrumentAndShippingAddress,
+);
+router.post(
+  "/card/approve",
+  [
+    validateRequestWithPayPalStandard(
+      ExternalCardApprovalRequestSchema,
+      CardApprovalRequestHeaderSchema,
+    ),
+  ],
+  checkoutOrchestrationController.approvePaymentForSelectedCard,
+);

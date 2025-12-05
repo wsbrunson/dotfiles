@@ -1,0 +1,316 @@
+import 'shared/instrumentation/datadog';
+import { wrapHandlerWithTracing } from 'shared/instrumentation/wrapHandler';
+
+import { payPalCartSchema } from "../../shared/schemas/openapi-schemas";
+import {
+  getCorrelationIdFromRequest,
+  UnauthorizedError,
+  convertErrorToLambdaResponse,
+  logAPIResponseError,
+  BadRequestError,
+} from "../../shared/errors";
+import { logger } from "../../shared/logger/logger";
+import { Cache } from "../../shared/cache";
+import { getCacheImplementation } from "shared/cache/cacheFactory";
+import { verifyAppContext } from "shared/helpers/AppContextAuthorizer";
+import { extractCartIdFromPath } from "shared/helpers/extractCartId";
+import { WixClient } from "shared/wix/wix-client";
+import { startSimulatorV2, stopSimulator } from "shared/simulator/server";
+import {
+  sendUpdateCartInitiatedAlarmMetric,
+  sendUpdateCartSuccessAlarmMetric,
+  sendUpdateCartFailureAlarmMetric,
+} from "shared/metrics/alarm-metrics";
+import {
+  BaseMetricParams,
+  trackInitiatedUpdateCart,
+  trackSuccessUpdateCart,
+  trackFailedUpdateCart,
+} from "shared/metrics/emitMetric";
+import {
+  trackDatadogInitiatedUpdateCartFireAndForget,
+  trackDatadogSuccessUpdateCartFireAndForget,
+  trackDatadogFailedUpdateCartFireAndForget,
+} from "shared/metrics/emitDatadogMetric";
+import { ALBEvent, APIGatewayProxyStructuredResultV2 } from "aws-lambda";
+import { ZodError } from "zod";
+import { isProduction } from "../../shared/utils";
+import { SecretsManagerHelper } from "shared/helpers/SecretsManagerHelper";
+
+// Lambda initialization - runs once per container cold start
+// When we move to single lambda, this duplication of code will be removed
+const initLog = logger("WixUpdateCart-Init");
+let wixClientId: string;
+let wixClientSecret: string;
+
+const initializeSecrets = async (): Promise<void> => {
+  const secretPath = process.env.SECRET_PATH;
+  if (!secretPath) {
+    throw new Error("SECRET_PATH environment variable is not set");
+  }
+
+  initLog.info("Fetching Wix secrets during Lambda initialization", { secretPath });
+  const secretsManager = SecretsManagerHelper.getInstance();
+  const secrets = await secretsManager.getSecret(secretPath);
+
+  wixClientId = secrets.clientId;
+  wixClientSecret = secrets.clientSecret;
+
+  if (!wixClientId || !wixClientSecret) {
+    throw new Error("Failed to retrieve Wix client credentials from secrets");
+  }
+
+  initLog.info("Wix secrets initialized successfully");
+};
+
+const secretsPromise = initializeSecrets();
+
+const handler = async (
+  event: ALBEvent
+): Promise<APIGatewayProxyStructuredResultV2> => {
+  const overallStartTime = performance.now();
+  await secretsPromise;
+  const debugId = getCorrelationIdFromRequest(event);
+  const log = logger("WixUpdateCart", event);
+  log.info("Received event", { debugId, event });
+
+  const baseMetricParams: BaseMetricParams = {
+    orchestrator: "Wix",
+    merchantUrl: "",
+  };
+  await sendUpdateCartInitiatedAlarmMetric({
+    orchestrator: baseMetricParams.orchestrator,
+  });
+
+  try {
+    const isAuthorized = verifyAppContext(event);
+
+    if (!isAuthorized) {
+      log.error("Unauthorized access: AppContext verification failed");
+      throw new UnauthorizedError(getCorrelationIdFromRequest(event), {
+        details: [
+          {
+            field: "AppContext",
+            description:
+              "AppContext verification failed, resulting in unauthorized access.",
+          },
+        ],
+      });
+    }
+
+    // Extract cartId from path using helper
+    const cartId = extractCartIdFromPath(event.path);
+
+    if (!cartId) {
+      throw new BadRequestError(debugId, {
+        details: [
+          {
+            field: "cartId",
+            description: "Cart ID is required in the path",
+          },
+        ],
+      });
+    }
+
+    const body =
+      typeof event.body === "string" ? JSON.parse(event.body) : event.body;
+    log.info("Parsed body", { body });
+
+    let data;
+    try {
+      data = payPalCartSchema.parse(body);
+    } catch (error) {
+      if (error instanceof ZodError) {
+        throw new BadRequestError(debugId, {
+          details: error.issues.map((issue) => ({
+            description: `${issue.path.join(".")} is ${issue.message}`,
+          })),
+        });
+      }
+      throw error;
+    }
+    log.info("Validated inputRequestData", { data });
+
+    baseMetricParams.merchantUrl = (data as any).merchant_url || "";
+
+    await trackInitiatedUpdateCart(baseMetricParams);
+    trackDatadogInitiatedUpdateCartFireAndForget({
+      ...baseMetricParams,
+      env: process.env.APP_ENV || "unknown",
+    });
+
+    log.info("UpdateCartInitiated", {
+      level: "info",
+      timestamp: overallStartTime,
+      event: "UpdateCartInitiated",
+      message: "UpdateCartInitiated",
+      ...baseMetricParams,
+    });
+
+    // Simulator setup (skip in production for performance)
+    const simulatorStartTime = performance.now();
+    if (!isProduction()) {
+      await startSimulatorV2({
+        type: "update",
+        data,
+        orchestrator: "wix",
+        platformBaseUrl: "https://www.wixapis.com/ecom/api",
+        headers: event.headers,
+      });
+    }
+    const simulatorDuration = performance.now() - simulatorStartTime;
+
+    log.info("Simulator setup completed", {
+      debugId,
+      duration: `${simulatorDuration.toFixed(2)}ms`,
+      skipped: isProduction(),
+    });
+
+    // Get cached data to retrieve Wix cart ID
+    const cache: Cache = getCacheImplementation();
+    const cachedDataString = await cache.get(cartId);
+
+    if (!cachedDataString) {
+      throw new BadRequestError(debugId, {
+        details: [
+          {
+            description: `No cached data found for the provided cartId: ${cartId}`,
+          },
+        ],
+      });
+    }
+
+    const cachedData = JSON.parse(cachedDataString);
+    const wixCartId = cachedData.wixResponse.id;
+    log.info("Wix Cart ID, Cart Api Cart Id", { wixCartId, cartId });
+
+    if (!wixCartId) {
+      throw new BadRequestError(debugId, {
+        details: [
+          {
+            description: "Wix Cart ID not found in cache",
+          },
+        ],
+      });
+    }
+
+    const wixClient = await WixClient.create(event, wixClientId, wixClientSecret);
+
+    // Update cart in Wix using the client with the Wix cart ID from cache
+    const wixCartData = await wixClient.updateCart(wixCartId, data);
+
+    // Cache the merged request and Wix response for updated cart
+    const updatedCachedData = {
+      originalRequest: data,
+      wixResponse: wixCartData,
+    };
+    await cache.set(
+      cartId,
+      JSON.stringify(updatedCachedData)
+    );
+
+    log.info("Wix Update Cart Response", {
+      wixCartData,
+      timestamp: new Date().toISOString(),
+    });
+
+    log.info("Order Details", { wixCartData });
+
+    const finalDuration = performance.now() - overallStartTime;
+
+    await trackSuccessUpdateCart({
+      ...baseMetricParams,
+      status: "200",
+      duration: finalDuration,
+    });
+
+    // Check cart status for Datadog metrics
+    let isDatadogSuccess = true;
+    if (wixCartData?.status && wixCartData.status === "INCOMPLETE") {
+      isDatadogSuccess = false;
+      log.warn("Cart status indicates failure despite 200 HTTP status", {
+        debugId,
+        httpStatus: 200,
+        cartStatus: wixCartData.status,
+      });
+    }
+
+    if (isDatadogSuccess) {
+      trackDatadogSuccessUpdateCartFireAndForget({
+        ...baseMetricParams,
+        env: process.env.APP_ENV || "unknown",
+        status: "200",
+        duration: finalDuration,
+      });
+    } else {
+      trackDatadogFailedUpdateCartFireAndForget({
+        ...baseMetricParams,
+        env: process.env.APP_ENV || "unknown",
+        status: "200",
+      });
+    }
+
+    await sendUpdateCartSuccessAlarmMetric({
+      orchestrator: baseMetricParams.orchestrator,
+    });
+
+    log.info("UpdateCartSuccess", {
+      level: "info",
+      message: "UpdateCartSuccess",
+      timestamp: overallStartTime,
+      event: "UpdateCartSuccess",
+      ...baseMetricParams,
+      status: "200",
+      duration: finalDuration,
+    });
+
+    return {
+      statusCode: 200,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(wixCartData),
+    };
+  } catch (e) {
+    await sendUpdateCartFailureAlarmMetric({
+      orchestrator: "Wix",
+    });
+
+    const [apiError, errorResponse] = convertErrorToLambdaResponse(e, event);
+    logAPIResponseError(log, apiError);
+
+    await trackFailedUpdateCart({
+      ...baseMetricParams,
+      status: errorResponse.statusCode.toString(),
+    });
+
+    trackDatadogFailedUpdateCartFireAndForget({
+      ...baseMetricParams,
+      env: process.env.APP_ENV || "unknown",
+      status: errorResponse.statusCode.toString(),
+    });
+
+    log.info("UpdateCartFailure", {
+      level: "info",
+      debugId: debugId,
+      timestamp: overallStartTime,
+      event: "UpdateCartFailure",
+      message: "UpdateCartFailed",
+      orchestrator: baseMetricParams.orchestrator,
+      merchantUrl: baseMetricParams.merchantUrl,
+      status: errorResponse.statusCode.toString(),
+      duration: performance.now() - overallStartTime,
+    });
+
+    log.error(
+      "Error in handler",
+      e instanceof Error ? e : new Error(String(e))
+    );
+    return errorResponse;
+  } finally {
+    if (!isProduction()) {
+      stopSimulator();
+    }
+  }
+};
+
+
+exports.handler = wrapHandlerWithTracing(handler);

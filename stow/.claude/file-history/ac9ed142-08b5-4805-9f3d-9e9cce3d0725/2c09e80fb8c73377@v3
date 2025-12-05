@@ -1,0 +1,124 @@
+import { Context, Hono } from 'hono';
+import { logger } from 'shared/logger/logger';
+import { auth } from 'shared/middleware/auth';
+import { datadogTracing } from 'shared/middleware/datadogTracing';
+import { ALBEvent } from 'aws-lambda';
+import { FirmlyController } from 'shared/firmly/controllers';
+import { payPalCartSchema, completeCheckoutRequestSchema } from 'shared/schemas/openapi-schemas';
+import { StatusCode } from 'hono/utils/http-status';
+import { requestLogger } from 'shared/middleware/requestLogger';
+import { parseRequestBodyWithZod } from 'shared/middleware/parseRequestBodyWithZod';
+import { cartMetrics } from 'shared/middleware/cartMetrics';
+import { createErrorHandler } from 'shared/handlers/createErrorHandler';
+import { paymentMetrics } from 'shared/middleware/paymentMetrics';
+import { updateCartMetrics } from 'shared/middleware/updateCartMetric';
+import { startSimulatorV2, stopSimulator } from "shared/simulator/server";
+import { datadogCartMetrics, datadogUpdateCartMetrics, datadogPaymentMetrics } from 'shared/middleware/datadogMetrics';
+import { httpMetricsMiddleware } from 'shared/middleware/httpMetricsMiddleware';
+
+const log = logger("Firmly");
+const app = new Hono();
+const firmlyController = new FirmlyController({ logger: log });
+
+
+const BASE_PATH = '/commerceorchnodeserv/v2/firmly';
+app.post(
+    `${BASE_PATH}/cart`,
+    requestLogger({ type: 'firmly' }),
+    httpMetricsMiddleware({ orchestrator: 'firmly', partner: "firmly" }),
+    datadogTracing('firmly'),
+    auth,
+    parseRequestBodyWithZod({ schema: payPalCartSchema }),
+    cartMetrics({ orchestrator: 'Firmly' }),
+    datadogCartMetrics({ orchestrator: 'Firmly' }),
+    async (c: Context) => {
+        const event = c.env.event as unknown as ALBEvent;
+        const data = c.get('data');
+           try {
+            await startSimulatorV2({
+                type: 'create',
+                data,
+                orchestrator: "firmly",
+                platformBaseUrl: data.items?.[0]?.item_url || "https://api.firmly.work",
+                headers: event.headers
+            });
+            const cartData = await firmlyController.createCart({ data: data, event: event });
+            c.status(201 as StatusCode);
+            return c.json(cartData);
+        } finally {
+            stopSimulator();
+        }
+    }
+);
+
+app.post(
+    `${BASE_PATH}/cart/:cartId/complete`,
+    requestLogger({ type: 'firmly' }),
+    httpMetricsMiddleware({ orchestrator: 'firmly', partner: "firmly", merchant: "firmly" }),
+    datadogTracing('firmly'),
+    auth,
+    parseRequestBodyWithZod({ schema: completeCheckoutRequestSchema }),
+    paymentMetrics({ orchestrator: 'Firmly' }),
+    datadogPaymentMetrics({ orchestrator: 'Firmly' }),
+    async (c: Context) => {
+        const event = c.env.event as unknown as ALBEvent;
+        const data = c.get('data');
+           try {
+                await startSimulatorV2({
+                type: 'complete',
+                data,
+                orchestrator: "firmly",
+                platformBaseUrl: data.items?.[0]?.item_url || "https://api.firmly.work",
+                headers: event.headers
+            });
+        const completeCart = await firmlyController.completeCart({ data: data, event: event });
+        c.status(201 as StatusCode);
+        return c.json(completeCart);
+         } 
+         finally {
+            stopSimulator();
+        }
+    }
+);
+
+
+app.put(
+    `${BASE_PATH}/cart/:cartId`,
+    requestLogger({ type: 'firmly' }),
+    httpMetricsMiddleware({ orchestrator: 'firmly', partner: "firmly" }),
+    datadogTracing('firmly'),
+    auth,
+    parseRequestBodyWithZod({ schema: payPalCartSchema }),
+    updateCartMetrics({ orchestrator: 'Firmly' }),
+    datadogUpdateCartMetrics({ orchestrator: 'Firmly' }),
+    async (c: Context) => {
+        log.info('Updating Firmly cart', {  });
+        const event = c.env.event as unknown as ALBEvent;
+        const cartId = c.req.param('cartId');
+        const data = c.get('data');
+
+        // Ensure the cart ID from the URL matches the one in the body
+        // or add it if not present
+        const dataWithCartId = { ...data, id: cartId };
+        log.info('Updating Firmly cart', { cartId, dataWithCartId });
+        try {
+                await startSimulatorV2({
+                type: 'update',
+                data,
+                orchestrator: "firmly",
+                platformBaseUrl: data.items?.[0]?.item_url || "https://api.firmly.work",
+                headers: event.headers
+            });
+        const updateCart = await firmlyController.updateCart({ data: dataWithCartId, event: event });
+        c.status(200 as StatusCode);
+        return c.json(updateCart);
+         }
+         finally {
+            stopSimulator();
+        }
+    }
+);
+
+app.onError(createErrorHandler('Firmly'));
+
+export { app };

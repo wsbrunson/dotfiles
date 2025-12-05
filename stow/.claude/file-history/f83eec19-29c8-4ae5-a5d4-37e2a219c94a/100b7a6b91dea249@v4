@@ -1,0 +1,31 @@
+/* eslint-disable no-console */
+
+import express from "express";
+import bodyParser from "body-parser";
+import setupRoutes from "../../../src/routes";
+
+export function setupTestApp() {
+  // Create Express app
+  const app = express();
+
+  // Add mock logger middleware
+  app.use((req, res, next) => {
+    (req as any).log = (level: string, message: string, data?: any) => {
+      console.log(
+        `[${level.toUpperCase()}] ${message}`,
+        data ? JSON.stringify(data, null, 2) : "",
+      );
+    };
+    next();
+  });
+
+  // Add body parser middleware
+  app.use(bodyParser.json());
+  app.use(bodyParser.urlencoded({ extended: true }));
+
+  setupRoutes(app);
+
+  return {
+    app,
+  };
+}

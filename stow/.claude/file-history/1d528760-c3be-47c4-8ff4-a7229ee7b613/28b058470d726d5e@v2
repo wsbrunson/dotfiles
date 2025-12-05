@@ -1,0 +1,151 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+# AWS CloudWatch Logs CLI Tool
+# Simplifies working with CloudWatch logs
+#
+# Usage: aws-logs --tail [options]
+
+show_usage() {
+    cat << EOF
+AWS CloudWatch Logs Tool
+
+Usage:
+  aws-logs --tail <log-group>         # Tail logs from specific log group
+  aws-logs --tail --list              # List available log groups first
+  aws-logs --help                     # Show this help
+
+Options for --tail:
+  --follow                            # Follow logs in real-time (default)
+  --since <time>                      # Start time (e.g., 1h, 30m, 2d)
+  --filter <pattern>                  # Filter logs with pattern
+
+Examples:
+  aws-logs --tail /aws/lambda/my-function
+  aws-logs --tail /aws/lambda/my-function --since 1h
+  aws-logs --tail /aws/lambda/my-function --filter ERROR
+  aws-logs --tail --list
+
+Note: Uses your current AWS profile. Switch with: aws-profile --env <env> | source
+EOF
+}
+
+list_log_groups() {
+    echo "Available CloudWatch log groups:"
+    aws logs describe-log-groups --query 'logGroups[].logGroupName' --output table
+}
+
+tail_logs() {
+    local log_group=""
+    local since_time="1h"
+    local follow=true
+    local filter_pattern=""
+    local list_only=false
+
+    # Parse tail-specific arguments
+    while [[ $# -gt 0 ]]; do
+        case "$1" in
+            --list)
+                list_only=true
+                shift
+                ;;
+            --since)
+                if [[ $# -lt 2 ]]; then
+                    echo "Error: --since requires a time value (e.g., 1h, 30m, 2d)"
+                    exit 1
+                fi
+                since_time="$2"
+                shift 2
+                ;;
+            --filter)
+                if [[ $# -lt 2 ]]; then
+                    echo "Error: --filter requires a pattern"
+                    exit 1
+                fi
+                filter_pattern="$2"
+                shift 2
+                ;;
+            --no-follow)
+                follow=false
+                shift
+                ;;
+            --follow)
+                follow=true
+                shift
+                ;;
+            -*)
+                echo "Error: Unknown option '$1'"
+                show_usage
+                exit 1
+                ;;
+            *)
+                if [[ -z "$log_group" ]]; then
+                    log_group="$1"
+                else
+                    echo "Error: Multiple log groups specified. Only one is supported."
+                    exit 1
+                fi
+                shift
+                ;;
+        esac
+    done
+
+    if [[ "$list_only" == true ]]; then
+        list_log_groups
+        return 0
+    fi
+
+    if [[ -z "$log_group" ]]; then
+        echo "Error: Log group name is required"
+        echo ""
+        show_usage
+        exit 1
+    fi
+
+    # Build AWS logs tail command
+    local cmd_args=("aws" "logs" "tail" "$log_group")
+
+    if [[ "$follow" == true ]]; then
+        cmd_args+=("--follow")
+    fi
+
+    if [[ -n "$since_time" ]]; then
+        cmd_args+=("--since" "$since_time")
+    fi
+
+    if [[ -n "$filter_pattern" ]]; then
+        cmd_args+=("--filter-pattern" "$filter_pattern")
+    fi
+
+    echo "# Tailing logs from: $log_group"
+    if [[ -n "$filter_pattern" ]]; then
+        echo "# Filter pattern: $filter_pattern"
+    fi
+    echo "# Since: $since_time"
+    echo "# Follow mode: $follow"
+    echo ""
+
+    # Execute the command
+    "${cmd_args[@]}"
+}
+
+# Main script logic
+if [[ $# -eq 0 ]]; then
+    show_usage
+    exit 1
+fi
+
+case "$1" in
+    --tail)
+        shift
+        tail_logs "$@"
+        ;;
+    --help|-h)
+        show_usage
+        ;;
+    *)
+        echo "Error: Unknown command '$1'"
+        show_usage
+        exit 1
+        ;;
+esac

@@ -1,0 +1,145 @@
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import type { Context, Next } from 'hono';
+import type { ALBEvent } from 'aws-lambda';
+
+const logMock = {
+  info: vi.fn(),
+  error: vi.fn(),
+};
+
+vi.mock('../logger/logger', () => ({
+  logger: vi.fn(() => logMock),
+}));
+
+vi.mock('shared/metrics/emitMetric', () => ({
+  trackInitiatedUpdateCart: vi.fn(),
+  trackSuccessUpdateCart: vi.fn(),
+}));
+
+vi.mock('shared/metrics/alarm-metrics', () => ({
+  sendUpdateCartInitiatedAlarmMetric: vi.fn(),
+  sendUpdateCartSuccessAlarmMetric: vi.fn(),
+}));
+import {
+  trackInitiatedUpdateCart,
+  trackSuccessUpdateCart,
+} from 'shared/metrics/emitMetric';
+import {
+  sendUpdateCartInitiatedAlarmMetric,
+  sendUpdateCartSuccessAlarmMetric,
+} from 'shared/metrics/alarm-metrics';
+import { updateCartMetrics } from './updateCartMetric';
+
+describe('updateCartMetrics', () => {
+  let mockContext: Context;
+  let mockEvent: ALBEvent;
+
+  beforeEach(() => {
+    vi.clearAllMocks();
+    vi.spyOn(performance, 'now').mockReturnValue(1500);
+
+    mockEvent = {
+      requestContext: { requestId: 'mockRequestId' },
+    } as unknown as ALBEvent;
+
+    const logMock = {
+      info: vi.fn(),
+      error: vi.fn(),
+    };
+
+    mockContext = {
+      env: { event: mockEvent },
+      get: vi.fn((key: string) => {
+        if (key === 'debugId') return 'mockDebugId';
+        if (key === 'overallStartTime') return 1000;
+        if (key === 'data') return { merchantUrl: 'https://mock-merchant.com' };
+        if (key === 'storeMetaData') return {};
+        if (key === 'logger') return logMock;
+        return undefined;
+      }),
+      res: undefined as unknown as Response,
+    } as unknown as Context;
+  });
+
+  it('logs initiation, emits initiated metrics, and calls next()', async () => {
+    const orchestrator = 'mockOrchestrator';
+
+    const next: Next = vi.fn(async () => { /* no-op */ });
+
+    const mw = updateCartMetrics({ orchestrator });
+    await mw(mockContext, next);
+
+    expect(sendUpdateCartInitiatedAlarmMetric).toHaveBeenCalledWith({ orchestrator });
+    expect(trackInitiatedUpdateCart).toHaveBeenCalledWith({
+      orchestrator,
+      merchantUrl: 'https://mock-merchant.com',
+      encryptedMerchantId: undefined,
+      honeyStoreId: undefined,
+    });
+
+    const logMock = mockContext.get('logger');
+    expect(logMock.info).toHaveBeenCalledWith('update-cart-start', {
+      orchestrator,
+      merchantUrl: 'https://mock-merchant.com',
+      encryptedMerchantId: undefined,
+      honeyStoreId: undefined,
+    });
+
+    expect(next).toHaveBeenCalled();
+  });
+
+  it('tracks success metrics when downstream sets a 2xx response', async () => {
+    const orchestrator = 'mockOrchestrator';
+
+    const next: Next = vi.fn(async () => {
+      mockContext.res = new Response('ok', { status: 200 });
+    });
+
+    const mw = updateCartMetrics({ orchestrator });
+    await mw(mockContext, next);
+
+    expect(trackSuccessUpdateCart).toHaveBeenCalledWith({
+      orchestrator,
+      merchantUrl: 'https://mock-merchant.com',
+      encryptedMerchantId: undefined,
+      honeyStoreId: undefined,
+      status: '200',
+      duration: 500,
+    });
+    expect(sendUpdateCartSuccessAlarmMetric).toHaveBeenCalledWith({ orchestrator });
+
+    const logMock = mockContext.get('logger');
+    expect(logMock.info).toHaveBeenCalledWith('update-cart-success', {
+      orchestrator,
+      merchantUrl: 'https://mock-merchant.com',
+      encryptedMerchantId: undefined,
+      honeyStoreId: undefined,
+      status: 200,
+      duration: 500,
+      response: 'ok',
+    });
+  });
+
+  it('does NOT track success metrics when status is non-2xx', async () => {
+    const orchestrator = 'mockOrchestrator';
+
+    const next: Next = vi.fn(async () => {
+      mockContext.res = new Response('err', { status: 500 });
+    });
+
+    const mw = updateCartMetrics({ orchestrator });
+    await mw(mockContext, next);
+
+    expect(trackSuccessUpdateCart).not.toHaveBeenCalled();
+    expect(sendUpdateCartSuccessAlarmMetric).not.toHaveBeenCalled();
+
+    const logMock = mockContext.get('logger');
+    expect(logMock.info).toHaveBeenCalledWith('update-cart-start', {
+      orchestrator,
+      merchantUrl: 'https://mock-merchant.com',
+      encryptedMerchantId: undefined,
+      honeyStoreId: undefined,
+    });
+    expect(logMock.info).not.toHaveBeenCalledWith('update-cart-success', expect.any(Object));
+  });
+});

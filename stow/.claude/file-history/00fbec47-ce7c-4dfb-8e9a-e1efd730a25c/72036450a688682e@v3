@@ -1,0 +1,358 @@
+# Datadog Monitor for Lambda Response Time (P90)
+# This monitor tracks the 90th percentile response time for commerce-orchestrator lambdas
+# and alerts when response times exceed thresholds
+
+# Local variables for environment-specific thresholds
+locals {
+  lambda_p90_thresholds = {
+    prod = {
+      critical = 5000
+      warning  = 4000
+    }
+    test = {
+      critical = 6000
+      warning  = 5000
+    }
+    sandbox = {
+      critical = 7000
+      warning  = 6000
+    }
+  }
+
+  # Get current environment thresholds
+  current_critical_threshold = lookup(local.lambda_p90_thresholds[local.environment], "critical", 5000)
+  current_warning_threshold  = lookup(local.lambda_p90_thresholds[local.environment], "warning", 4000)
+
+  # Environment-specific Slack channels
+  slack_channel = local.environment == "prod" ? "@slack-commerce-ai-alerts" : "@slack-commerce-ai-datadog-alerts-test-env"
+
+  # Environment-specific Datadog URLs
+  datadog_base_url = local.environment == "prod" ? "https://zettle-prod.datadoghq.eu" : "https://zettle-stage.datadoghq.eu"
+
+  # Metric query fragments to avoid repetition
+  add_cart_success_metric    = "sum:commerce_orchestrator.add_cart_success{env:${local.environment}}"
+  add_cart_failure_metric    = "sum:commerce_orchestrator.add_cart_failure{env:${local.environment}}"
+  update_cart_success_metric = "sum:commerce_orchestrator.update_cart_success{env:${local.environment}}"
+  update_cart_failure_metric = "sum:commerce_orchestrator.update_cart_failure{env:${local.environment}}"
+  payment_success_metric     = "sum:commerce_orchestrator.payment_success{env:${local.environment}}"
+  payment_failure_metric     = "sum:commerce_orchestrator.payment_failure{env:${local.environment}}"
+}
+
+resource "datadog_monitor" "lambda_response_time_p90" {
+  name    = "Lambda Response Time P90 - commerce-orchestrator"
+  type    = "metric alert"
+  message = <<-EOT
+## 🚨 Response Time Critical Alert
+
+**Service**: {{resource_name.name}}
+**Environment**: ${local.environment}
+**Response Time**: {{value}}ms (threshold: 5000ms)
+**Severity**: Critical
+
+${local.slack_channel}
+EOT
+
+  # Query: p90 of trace duration by resource_name, evaluated every 5 minutes
+  query = "avg(last_5m):p90:trace.aws.lambda{service:commerce-orchestrator} by {resource_name} > 5"
+
+  # Monitor thresholds (in milliseconds)
+  monitor_thresholds {
+    critical = 5 # 5 seconds
+    warning  = 4 # 4 seconds
+  }
+
+  # Notification settings
+  notify_no_data      = false
+  notify_audit        = true
+  timeout_h           = 0
+  include_tags        = true
+  require_full_window = false
+  new_group_delay     = 60
+
+  # Evaluation settings
+  evaluation_delay = 60 # Wait 60 seconds before evaluating (allows for data ingestion)
+
+  # Tags for organization
+  tags = concat(
+    [
+      "monitor_type:performance",
+      "severity:critical"
+    ],
+    local.team_tags,
+    [for key, value in local.default_tags : "${key}:${value}"]
+  )
+
+  # Priority (1-5, where 1 is highest)
+  priority = 1
+}
+
+# Output monitor IDs for reference
+output "datadog_monitor_lambda_p90_id" {
+  description = "ID of the Lambda P90 response time monitor"
+  value       = datadog_monitor.lambda_response_time_p90.id
+}
+
+# Monitor: Create Cart Success Rate (< 100%) by Lambda Resource (resource_name)
+resource "datadog_monitor" "create_cart_success_rate_resource" {
+  name = "Create Cart Success Rate < 100% (Lambda Resource) - commerce-orchestrator"
+  type = "query alert"
+
+  message = <<-EOT
+## 🚨 Create Cart Errors Detected
+
+**❌ Failing Resource**: `{{resource_name.name}}`
+**🌍 Environment**: ${local.environment}
+Current Failure Count: {{value}}
+**🎯 Expected**: 100%
+
+---
+
+### 📈 Error Metrics (Last 5 minutes)
+
+Query the following metrics in Datadog for detailed breakdown:
+- **Failures**: `sum:commerce_orchestrator.add_cart_failure{env:${local.environment},resource_name:{{resource_name.name}}}`
+- **Successes**: `sum:commerce_orchestrator.add_cart_success{env:${local.environment},resource_name:{{resource_name.name}}}`
+
+---
+
+### 🔍 Debugging Steps
+
+1. **View APM Service**: [Datadog APM](${local.datadog_base_url}/apm/services/commerce-orchestrator/operations)
+   - Filter by: `resource_name:{{resource_name.name}}`
+   - Look for error traces (red indicators)
+
+2. **Check Error Logs**: [Datadog Logs](${local.datadog_base_url}/logs)
+   - Query: `service:commerce-orchestrator resource_name:{{resource_name.name}} @metric_name:add_cart_failure`
+   - Time range: Last 15 minutes
+
+3. **View Metrics Explorer**: [Datadog Metrics](${local.datadog_base_url}/metric/explorer)
+   - Copy this query: `sum:commerce_orchestrator.add_cart_failure{env:${local.environment},resource_name:{{resource_name.name}}}.as_count()`
+
+4. **Investigate by Orchestrator Tag**:
+   - Check if failures are concentrated in specific orchestrator (Wix, Shopify, BigCommerce, etc.)
+   - Query: `sum:commerce_orchestrator.add_cart_failure{*} by {orchestrator}.as_count()`
+
+---
+
+### 📋 Quick Links
+- **Dashboard**: [Commerce Orchestrator Dashboard](${local.datadog_base_url}/dashboard/)
+- **APM Service Map**: [Service Dependencies](${local.datadog_base_url}/apm/map?service=commerce-orchestrator)
+
+${local.slack_channel}
+EOT
+
+  # Success rate grouped by resource_name
+  # Alert if there are any failures (failure count > 0)
+  # Note: Counters (|c) are stored as rates, so we need .as_count() to convert back to total count
+  query = "sum(last_5m):sum:commerce_orchestrator.add_cart_failure{env:${local.environment}} by {resource_name}.as_count().fill(zero) > 0"
+
+  monitor_thresholds {
+    critical = 0 # Alert when failures > 0
+  }
+
+  on_missing_data      = "resolve" # Auto-resolve when no failure data (failures = 0)
+  notify_audit         = true
+  timeout_h            = 0
+  renotify_interval    = 5         # Re-notify every 5 minutes while in ALERT state
+  renotify_occurrences = 0         # Always renotify, no limit
+  renotify_statuses    = ["alert"] # Renotify while in alert state
+  include_tags         = true
+  require_full_window  = false
+  evaluation_delay     = 60 # Faster detection (1 minute)
+  new_group_delay      = 60 # Wait 60s before alerting on new resource_name
+
+  tags = concat(
+    [
+      "monitor_type:reliability",
+      "operation:create_cart",
+      "dimension:resource_name",
+      "severity:critical"
+    ],
+    local.team_tags,
+    [for key, value in local.default_tags : "${key}:${value}"]
+  )
+
+  priority = 1
+}
+
+# Monitor: Update Cart Success Rate (< 100%) by Lambda Resource (resource_name)
+resource "datadog_monitor" "update_cart_success_rate_resource" {
+  name = "Update Cart Success Rate < 100% (Lambda Resource) - commerce-orchestrator"
+  type = "query alert"
+
+  message = <<-EOT
+## 🚨 Update Cart Errors Detected
+
+**❌ Failing Resource**: `{{resource_name.name}}`
+**🌍 Environment**: ${local.environment}
+Current Failure Count: {{value}}
+**🎯 Expected**: 100%
+
+---
+
+### 📈 Error Metrics (Last 5 minutes)
+
+Query the following metrics in Datadog for detailed breakdown:
+- **Failures**: `sum:commerce_orchestrator.update_cart_failure{env:${local.environment},resource_name:{{resource_name.name}}}`
+- **Successes**: `sum:commerce_orchestrator.update_cart_success{env:${local.environment},resource_name:{{resource_name.name}}}`
+
+---
+
+### 🔍 Debugging Steps
+
+1. **View APM Service**: [Datadog APM](${local.datadog_base_url}/apm/services/commerce-orchestrator/operations)
+   - Filter by: `resource_name:{{resource_name.name}}`
+   - Look for error traces (red indicators)
+
+2. **Check Error Logs**: [Datadog Logs](${local.datadog_base_url}/logs)
+   - Query: `service:commerce-orchestrator resource_name:{{resource_name.name}} @metric_name:update_cart_failure`
+   - Time range: Last 15 minutes
+
+3. **View Metrics Explorer**: [Datadog Metrics](${local.datadog_base_url}/metric/explorer)
+   - Copy this query: `sum:commerce_orchestrator.update_cart_failure{env:${local.environment},resource_name:{{resource_name.name}}}.as_count()`
+
+4. **Investigate by Orchestrator Tag**:
+   - Check if failures are concentrated in specific orchestrator (Wix, Shopify, BigCommerce, etc.)
+   - Query: `sum:commerce_orchestrator.update_cart_failure{*} by {orchestrator}.as_count()`
+
+---
+
+### 📋 Quick Links
+- **Dashboard**: [Commerce Orchestrator Dashboard](${local.datadog_base_url}/dashboard/)
+- **APM Service Map**: [Service Dependencies](${local.datadog_base_url}/apm/map?service=commerce-orchestrator)
+
+${local.slack_channel}
+EOT
+
+  # Alert if there are any failures (failure count > 0)
+  # Note: Counters (|c) are stored as rates, so we need .as_count() to convert back to total count
+  query = "sum(last_5m):sum:commerce_orchestrator.update_cart_failure{env:${local.environment}} by {resource_name}.as_count().fill(zero) > 0"
+
+  monitor_thresholds {
+    critical = 0 # Alert when failures > 0
+  }
+
+  on_missing_data      = "resolve" # Auto-resolve when no failure data (failures = 0)
+  notify_audit         = true
+  timeout_h            = 0
+  renotify_interval    = 5         # Re-notify every 5 minutes while in ALERT state
+  renotify_occurrences = 0         # Always renotify, no limit
+  renotify_statuses    = ["alert"] # Renotify while in alert state
+  include_tags         = true
+  require_full_window  = false
+  evaluation_delay     = 60 # Faster detection (1 minute)
+  new_group_delay      = 60 # Wait 60s before alerting on new resource_name
+
+  tags = concat(
+    [
+      "monitor_type:reliability",
+      "operation:update_cart",
+      "dimension:resource_name",
+      "severity:critical"
+    ],
+    local.team_tags,
+    [for key, value in local.default_tags : "${key}:${value}"]
+  )
+
+  priority = 1
+}
+
+# Monitor: Payment/Complete Success Rate (< 100%) by Lambda Resource (resource_name)
+resource "datadog_monitor" "payment_success_rate_resource" {
+  name = "Payment/Complete Success Rate < 100% (Lambda Resource) - commerce-orchestrator"
+  type = "query alert"
+
+  message = <<-EOT
+## 🚨 Payment/Complete Errors Detected
+
+**❌ Failing Resource**: `{{resource_name.name}}`
+**🌍 Environment**: ${local.environment}
+Current Failure Count: {{value}}
+**🎯 Expected**: 100%
+
+
+---
+
+### 📈 Error Metrics (Last 5 minutes)
+
+Query the following metrics in Datadog for detailed breakdown:
+- **Failures**: `sum:commerce_orchestrator.payment_failure{env:${local.environment},resource_name:{{resource_name.name}}}`
+- **Successes**: `sum:commerce_orchestrator.payment_success{env:${local.environment},resource_name:{{resource_name.name}}}`
+
+---
+
+### 🔍 Debugging Steps
+
+1. **View APM Service**: [Datadog APM](${local.datadog_base_url}/apm/services/commerce-orchestrator/operations)
+   - Filter by: `resource_name:{{resource_name.name}}`
+   - Look for error traces (red indicators)
+
+2. **Check Error Logs**: [Datadog Logs](${local.datadog_base_url}/logs)
+   - Query: `service:commerce-orchestrator resource_name:{{resource_name.name}} @metric_name:payment_failure`
+   - Time range: Last 15 minutes
+
+3. **View Metrics Explorer**: [Datadog Metrics](${local.datadog_base_url}/metric/explorer)
+   - Copy this query: `sum:commerce_orchestrator.payment_failure{env:${local.environment},resource_name:{{resource_name.name}}}.as_count()`
+
+4. **Investigate by Orchestrator Tag**:
+   - Check if failures are concentrated in specific orchestrator (Wix, Shopify, BigCommerce, etc.)
+   - Query: `sum:commerce_orchestrator.payment_failure{*} by {orchestrator}.as_count()`
+
+---
+
+### 📋 Quick Links
+- **Dashboard**: [Commerce Orchestrator Dashboard](${local.datadog_base_url}/dashboard/)
+- **APM Service Map**: [Service Dependencies](${local.datadog_base_url}/apm/map?service=commerce-orchestrator)
+
+${local.slack_channel}
+EOT
+
+  # Alert if there are any failures (failure count > 0)
+  # Note: Counters (|c) are stored as rates, so we need .as_count() to convert back to total count
+  query = "sum(last_5m):sum:commerce_orchestrator.payment_failure{env:${local.environment}} by {resource_name}.as_count().fill(zero) > 0"
+
+  monitor_thresholds {
+    critical = 0 # Alert when failures > 0
+  }
+
+  on_missing_data      = "resolve" # Auto-resolve when no failure data (failures = 0)
+  notify_audit         = true
+  timeout_h            = 0
+  renotify_interval    = 5         # Re-notify every 5 minutes while in ALERT state
+  renotify_occurrences = 0         # Always renotify, no limit
+  renotify_statuses    = ["alert"] # Renotify while in alert state
+  include_tags         = true
+  require_full_window  = false
+  evaluation_delay     = 60 # Faster detection (1 minute)
+  new_group_delay      = 60 # Wait 60s before alerting on new resource_name
+
+  tags = concat(
+    [
+      "monitor_type:reliability",
+      "operation:payment_complete",
+      "dimension:resource_name",
+      "severity:critical"
+    ],
+    local.team_tags,
+    [for key, value in local.default_tags : "${key}:${value}"]
+  )
+
+  priority = 1
+}
+
+output "datadog_monitor_create_cart_success_rate_resource_id" {
+  description = "ID of Create Cart Success Rate monitor (Lambda Resource)"
+  value       = datadog_monitor.create_cart_success_rate_resource.id
+}
+
+output "datadog_monitor_update_cart_success_rate_resource_id" {
+  description = "ID of Update Cart Success Rate monitor (Lambda Resource)"
+  value       = datadog_monitor.update_cart_success_rate_resource.id
+}
+
+output "datadog_monitor_payment_success_rate_resource_id" {
+  description = "ID of Payment/Complete Success Rate monitor (Lambda Resource)"
+  value       = datadog_monitor.payment_success_rate_resource.id
+}
+
+

@@ -1,0 +1,460 @@
+# ADR: Merchant Post-Purchase Webhook System
+
+## Status
+
+**Draft** - Pending Review
+
+## Context
+
+The commerce platform currently operates via synchronous request-response patterns where merchants receive order data only at checkout completion. There is no mechanism for merchants to notify the platform about post-purchase order changes (shipments, cancellations, refunds, etc.).
+
+For agentic commerce scenarios, LLM partners need visibility into order lifecycle events so AI agents can proactively inform customers about their orders without requiring the customer to ask.
+
+**Architecture Principle**: These webhooks are lightweight proxies. Merchants send order updates → Lambda validates and transforms → forwards to LLM partner. Minimal business logic.
+
+## Decision
+
+Implement a webhook ingestion system using AWS Lambda functions following the established handler patterns in `commerce-orchestrator/lambda/`.
+
+### Webhook Event Types
+
+| Event Type | Description | Trigger Scenario |
+|------------|-------------|------------------|
+| `ORDER_SHIPPED` | Order has shipped with tracking | Carrier pickup or first scan |
+| `ORDER_DELIVERED` | Order delivered to customer | Carrier delivery confirmation |
+| `ORDER_CANCELLED` | Order cancelled before shipment | Merchant or customer cancellation |
+| `ORDER_REFUNDED` | Full or partial refund issued | Refund processed |
+| `ITEM_RETURNED` | Item(s) returned to merchant | Return received/processed |
+| `FULFILLMENT_DELAYED` | Shipping delay notification | Expected delivery changed |
+
+### System Architecture
+
+```
+┌─────────────┐     ┌─────────────────────┐     ┌─────────────────┐     ┌─────────────────┐
+│   Merchant  │────▶│  ALB + Lambda       │────▶│  Transformation │────▶│  LLM Partner    │
+│   System    │     │  (Webhook Ingress)  │     │  Layer          │     │  Notification   │
+└─────────────┘     └─────────────────────┘     └─────────────────┘     └─────────────────┘
+       │                     │                          │                        │
+       │                     ▼                          │                        │
+       │            ┌─────────────────┐                 │                        │
+       │            │  Auth + Validate│                 │                        │
+       │            │  (JWT + Zod)    │                 │                        │
+       │            └─────────────────┘                 │                        │
+       │                     │                          │                        │
+       │                     ▼                          ▼                        │
+       │            ┌─────────────────┐        ┌─────────────────┐              │
+       │            │  Metrics        │        │  Map to Partner │              │
+       │            │  (CloudWatch)   │        │  Schema         │              │
+       │            └─────────────────┘        └─────────────────┘              │
+       │                                                                         │
+       └─────────────────────────────────────────────────────────────────────────┘
+                        merchant_order_number links request to order
+```
+
+### Lambda Handler Structure
+
+Following the established handler pattern from `commerce-orchestrator/lambda/`:
+
+```typescript
+// POST /webhooks/order-events
+exports.handler = async (event: ALBEvent): Promise<APIGatewayProxyStructuredResultV2> => {
+  const debugId = getCorrelationIdFromRequest(event);
+  const log = logger("MerchantWebhook", event);
+
+  try {
+    // 1. Authenticate merchant
+    const merchantContext = await authenticateMerchant(event);
+
+    // 2. Parse and validate webhook payload
+    const body = typeof event.body === "string" ? JSON.parse(event.body) : event.body;
+    const webhookEvent = MerchantWebhookEventSchema.parse(body);
+
+    // 3. Track receipt
+    await trackWebhookReceived({
+      eventType: webhookEvent.event_type,
+      merchantId: merchantContext.merchantId,
+    });
+
+    // 4. Transform to partner format
+    const partnerPayload = transformToPartnerSchema(webhookEvent, merchantContext);
+
+    // 5. Forward to LLM partner
+    await notifyLLMPartner(partnerPayload);
+
+    // 6. Track success
+    await trackWebhookProcessed({ eventType: webhookEvent.event_type, status: "success" });
+
+    return {
+      statusCode: 202,
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ received: true, event_id: webhookEvent.event_id }),
+    };
+  } catch (error) {
+    const [apiError, errorResponse] = convertErrorToLambdaResponse(error, event);
+    logAPIResponseError(log, apiError);
+    await trackWebhookProcessed({ status: "failed" });
+    return errorResponse;
+  }
+};
+```
+
+---
+
+## Data Schema Design
+
+### Layer 1: Merchant Request Schema (Inbound)
+
+What merchants send to us:
+
+```typescript
+const MerchantWebhookEventSchema = z.object({
+  // Event metadata
+  event_id: z.string().uuid(),
+  event_type: z.enum([
+    "ORDER_SHIPPED",
+    "ORDER_DELIVERED",
+    "ORDER_CANCELLED",
+    "ORDER_REFUNDED",
+    "ITEM_RETURNED",
+    "FULFILLMENT_DELAYED",
+  ]),
+  event_timestamp: z.string().datetime(),
+
+  // Order identification - links to original checkout
+  merchant_order_number: z.string().min(1).max(256),
+
+  // Event-specific payload (discriminated union)
+  payload: z.discriminatedUnion("event_type", [
+    OrderShippedPayloadSchema,
+    OrderDeliveredPayloadSchema,
+    OrderCancelledPayloadSchema,
+    OrderRefundedPayloadSchema,
+    ItemReturnedPayloadSchema,
+    FulfillmentDelayedPayloadSchema,
+  ]),
+});
+
+// Event-specific payloads
+const OrderShippedPayloadSchema = z.object({
+  event_type: z.literal("ORDER_SHIPPED"),
+  carrier: z.string(),
+  tracking_number: z.string(),
+  tracking_url: z.string().url().optional(),
+  shipped_items: z.array(z.object({
+    sku: z.string(),
+    quantity: z.number().int().positive(),
+  })),
+  estimated_delivery: z.string().datetime().optional(),
+});
+
+const OrderDeliveredPayloadSchema = z.object({
+  event_type: z.literal("ORDER_DELIVERED"),
+  delivered_at: z.string().datetime(),
+  delivery_location: z.enum(["FRONT_DOOR", "MAILBOX", "LOCKER", "SIGNED", "OTHER"]).optional(),
+  signature_name: z.string().optional(),
+});
+
+const OrderCancelledPayloadSchema = z.object({
+  event_type: z.literal("ORDER_CANCELLED"),
+  cancelled_by: z.enum(["MERCHANT", "CUSTOMER"]),
+  reason: z.string().optional(),
+  cancelled_items: z.array(z.object({
+    sku: z.string(),
+    quantity: z.number().int().positive(),
+  })).optional(), // If not provided, entire order cancelled
+});
+
+const OrderRefundedPayloadSchema = z.object({
+  event_type: z.literal("ORDER_REFUNDED"),
+  refund_type: z.enum(["FULL", "PARTIAL"]),
+  refund_amount: z.object({
+    value: z.string(),
+    currency_code: z.string().length(3),
+  }),
+  refunded_items: z.array(z.object({
+    sku: z.string(),
+    quantity: z.number().int().positive(),
+  })).optional(),
+  reason: z.string().optional(),
+});
+
+const ItemReturnedPayloadSchema = z.object({
+  event_type: z.literal("ITEM_RETURNED"),
+  return_status: z.enum(["INITIATED", "IN_TRANSIT", "RECEIVED", "PROCESSED"]),
+  returned_items: z.array(z.object({
+    sku: z.string(),
+    quantity: z.number().int().positive(),
+  })),
+  return_tracking_number: z.string().optional(),
+  refund_issued: z.boolean(),
+});
+
+const FulfillmentDelayedPayloadSchema = z.object({
+  event_type: z.literal("FULFILLMENT_DELAYED"),
+  original_estimated_delivery: z.string().datetime(),
+  new_estimated_delivery: z.string().datetime(),
+  reason: z.string().optional(),
+});
+```
+
+### Layer 2: LLM Partner Notification Schema (Outbound)
+
+What we send to LLM partners:
+
+```typescript
+const LLMPartnerNotificationSchema = z.object({
+  // Routing info for the LLM partner
+  notification_id: z.string().uuid(),
+  notification_type: z.literal("ORDER_UPDATE"),
+  timestamp: z.string().datetime(),
+
+  // Order context - enables LLM to correlate with original purchase
+  order_context: z.object({
+    merchant_order_number: z.string(),
+    merchant_name: z.string(),
+    merchant_id: z.string(),
+    original_purchase_timestamp: z.string().datetime().optional(),
+  }),
+
+  // Human-readable summary for LLM consumption
+  update_summary: z.object({
+    event_type: z.string(),
+    headline: z.string(),        // e.g., "Your order has shipped!"
+    details: z.string(),         // e.g., "Tracking: 1Z999..."
+    action_url: z.string().url().optional(),
+    next_expected_event: z.string().optional(),
+  }),
+
+  // Structured data for programmatic use
+  structured_data: z.object({
+    event_type: z.string(),
+    // Event-specific fields flattened
+    // Carrier, tracking, amounts, etc.
+  }).passthrough(),
+});
+```
+
+### Transformation Logic
+
+```typescript
+function transformToPartnerSchema(
+  webhookEvent: MerchantWebhookEvent,
+  merchantContext: MerchantContext
+): LLMPartnerNotification {
+  return {
+    notification_id: crypto.randomUUID(),
+    notification_type: "ORDER_UPDATE",
+    timestamp: new Date().toISOString(),
+
+    order_context: {
+      merchant_order_number: webhookEvent.merchant_order_number,
+      merchant_name: merchantContext.merchantName,
+      merchant_id: merchantContext.merchantId,
+    },
+
+    update_summary: generateHumanReadableSummary(webhookEvent),
+
+    structured_data: {
+      event_type: webhookEvent.event_type,
+      ...webhookEvent.payload,
+    },
+  };
+}
+
+function generateHumanReadableSummary(event: MerchantWebhookEvent): UpdateSummary {
+  switch (event.event_type) {
+    case "ORDER_SHIPPED":
+      return {
+        event_type: "ORDER_SHIPPED",
+        headline: "Your order has shipped!",
+        details: `Carrier: ${event.payload.carrier}. Tracking: ${event.payload.tracking_number}`,
+        action_url: event.payload.tracking_url,
+        next_expected_event: "ORDER_DELIVERED",
+      };
+    // ... other cases
+  }
+}
+```
+
+---
+
+## TODO: Authentication & Authorization
+
+> **Decision Required**: Define auth mechanism for merchant webhook requests
+
+### Options Under Consideration
+
+| Option | Pros | Cons |
+|--------|------|------|
+| **Webhook Signing (HMAC-SHA256)** | Industry standard, stateless verification | Key distribution required |
+| **mTLS (Mutual TLS)** | Strong identity, no shared secrets | Complex cert management |
+| **API Key + IP Allowlist** | Simple to implement | IP management overhead |
+| **OAuth2 Client Credentials** | Leverages existing PayPal OAuth | Additional token exchange |
+
+### Questions to Resolve
+
+1. Do we reuse existing merchant credentials from `commerce-onboarding` service?
+2. Do we issue new webhook-specific credentials during merchant onboarding?
+3. What is the key rotation strategy?
+4. How do we handle auth failures - silent drop vs. retry notification?
+
+### Placeholder Implementation
+
+```typescript
+async function authenticateMerchant(event: ALBEvent): Promise<MerchantContext> {
+  // TODO: Implement based on auth decision
+  //
+  // Option A: Webhook Signature
+  // const signature = event.headers["x-paypal-webhook-signature"];
+  // const verified = verifyHmacSignature(event.body, signature, merchantSecret);
+  //
+  // Option B: JWT Bearer Token
+  // const token = extractBearerToken(event.headers.authorization);
+  // const claims = await verifyJwt(token);
+  //
+  // Option C: mTLS
+  // const clientCert = event.requestContext.identity?.clientCert;
+  // const merchantId = await lookupMerchantByCert(clientCert);
+
+  throw new Error("Auth mechanism not yet implemented");
+}
+```
+
+---
+
+## API Endpoint Design
+
+### Endpoint
+
+```
+POST /v1/webhooks/order-events
+```
+
+### Headers
+
+| Header | Required | Description |
+|--------|----------|-------------|
+| `Content-Type` | Yes | Must be `application/json` |
+| `Authorization` | TBD | Auth mechanism TBD |
+| `X-PayPal-Webhook-Signature` | TBD | HMAC signature if using signing |
+| `X-Idempotency-Key` | Recommended | Prevent duplicate processing |
+
+### Response Codes
+
+| Code | Meaning |
+|------|---------|
+| `202 Accepted` | Webhook received and queued for processing |
+| `400 Bad Request` | Invalid payload (validation failed) |
+| `401 Unauthorized` | Auth failed |
+| `409 Conflict` | Duplicate `event_id` |
+| `422 Unprocessable` | Valid JSON but unknown `merchant_order_number` |
+| `429 Too Many Requests` | Rate limit exceeded |
+| `500 Internal Error` | Processing failure (merchant should retry) |
+
+### Idempotency
+
+- `event_id` serves as idempotency key
+- Duplicate events within 24h window return `202` without reprocessing
+- Use Redis/DynamoDB for deduplication tracking
+
+---
+
+## Observability
+
+### Metrics (CloudWatch + Datadog)
+
+Following established patterns from `commerce-orchestrator/lambda/src/shared/metrics/`:
+
+```typescript
+// Webhook lifecycle metrics
+trackWebhookReceived({ eventType, merchantId });
+trackWebhookValidated({ eventType, merchantId, valid: boolean });
+trackWebhookTransformed({ eventType, merchantId });
+trackWebhookForwarded({ eventType, merchantId, partnerId, latency });
+trackWebhookProcessed({ eventType, merchantId, status: "success" | "failed" });
+
+// Aggregate metrics
+trackWebhookLatency({ p50, p95, p99 });
+trackWebhookErrorRate({ merchantId, eventType });
+```
+
+### Logging
+
+Structured JSON logs with PII masking (following existing logger patterns):
+
+```json
+{
+  "level": "info",
+  "message": "Webhook processed",
+  "correlation_id": "abc-123",
+  "event_type": "ORDER_SHIPPED",
+  "merchant_id": "M123",
+  "merchant_order_number": "[MASKED]",
+  "latency_ms": 45,
+  "timestamp": "2024-01-15T10:30:00Z"
+}
+```
+
+---
+
+## File Structure
+
+Following the established `commerce-orchestrator/lambda/` conventions:
+
+```
+commerce-orchestrator/lambda/src/
+├── functions/
+│   └── merchant-webhooks/
+│       ├── index.ts              # Lambda handler
+│       ├── package.json          # Function-specific deps
+│       └── tsconfig.json
+├── shared/
+│   └── schemas/
+│       ├── merchant-webhook-event.ts    # Inbound schema
+│       └── llm-partner-notification.ts  # Outbound schema
+│   └── webhooks/
+│       ├── transformer.ts        # Merchant → Partner transformation
+│       ├── partner-client.ts     # LLM partner HTTP client
+│       └── deduplication.ts      # Idempotency handling
+```
+
+---
+
+## Consequences
+
+### Benefits
+
+- Merchants can notify the platform of order changes asynchronously
+- LLM partners receive structured, actionable order updates
+- AI agents can proactively inform customers about order status
+- Lightweight architecture aligned with existing Lambda patterns
+
+### Tradeoffs
+
+- Additional endpoint to secure and monitor
+- Dependency on merchant integration quality (webhook reliability)
+- Need to handle webhook retries and ordering
+
+### Risks
+
+- Merchants may send webhooks out of order (e.g., `DELIVERED` before `SHIPPED`)
+- LLM partner availability affects webhook processing
+- Unknown `merchant_order_number` requires fallback handling
+
+---
+
+## Open Questions
+
+1. **Order Lookup**: Should we validate `merchant_order_number` against a stored order, or trust merchant data?
+2. **Retry Policy**: If LLM partner is unavailable, do we queue and retry? Use SQS/EventBridge?
+3. **Multi-Partner**: Do different LLM partners need different notification schemas?
+4. **Webhook Registration**: Do merchants explicitly register for specific event types, or receive all?
+
+---
+
+## References
+
+- Existing handler patterns: `commerce-orchestrator/lambda/src/functions/shopify-complete-cart/`
+- Schema patterns: `commerce-orchestrator/lambda/src/shared/schemas/`
+- Metrics patterns: `commerce-orchestrator/lambda/src/shared/metrics/`
+- Error handling: `commerce-orchestrator/lambda/src/shared/errors/`

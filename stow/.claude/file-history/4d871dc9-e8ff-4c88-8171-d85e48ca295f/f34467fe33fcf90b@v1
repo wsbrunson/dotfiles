@@ -1,0 +1,262 @@
+import { z } from "zod/v4";
+import { Request } from "express";
+import { applyPatch, Operation } from "fast-json-patch";
+import {
+  CompleteCartRequest,
+  CreateCartRequest,
+  CreateCartResponseSchema,
+  UpdateCartRequest,
+} from "../schemas";
+import { CachedCart, CachedCartSchema, MockRequestClient } from "./mock-client";
+import { logEvent } from "../utils/calUtil";
+import { InternalServerError, NotFoundError } from "../errors";
+import { SecretsManager } from "../secrets";
+import type { Cache } from "../cache";
+
+type OrderResponse = z.infer<typeof CreateCartResponseSchema>;
+
+export class MockController {
+  cache: Cache;
+  secretsManager: SecretsManager;
+  config: { clientId: string; clientSecret: string; hostname: string };
+
+  constructor({
+    cache,
+    secretsManager,
+  }: {
+    cache: Cache;
+    secretsManager: SecretsManager;
+  }) {
+    this.cache = cache;
+    this.secretsManager = secretsManager;
+
+    this.config = {
+      clientId: this.secretsManager.get("mock-orchestrator-client-id") || "",
+      clientSecret:
+        this.secretsManager.get("mock-orchestrator-client-secret") || "",
+      hostname: this.secretsManager.get("mock-orchestrator-hostname") || "",
+    };
+  }
+
+  createCart = async ({
+    data,
+    request,
+  }: {
+    data: CreateCartRequest;
+    request: Request;
+  }) => {
+    try {
+      const client = new MockRequestClient();
+
+      const cart = await client.createCart(data);
+
+      const accessToken = await client.getAccessToken(request, this.config);
+      if (!accessToken) {
+        throw new InternalServerError(request?.correlationId || "", {
+          message: "Failed to get access token",
+        });
+      }
+
+      const ecToken = await client.createEcToken({
+        cart,
+        cartRequest: data,
+        request,
+        accessToken,
+        hostname: this.config.hostname,
+      });
+
+      if (!ecToken) {
+        throw new InternalServerError(request?.correlationId || "", {
+          message: "Failed to create ecToken",
+        });
+      }
+
+      logEvent({
+        message: "EcToken",
+        ecToken,
+        timestamp: new Date().toISOString(),
+      });
+
+      const orderDetails: OrderResponse = {
+        ecToken,
+        status: "success",
+        paymentMethodOptions: [
+          {
+            type: "PAYPAL",
+            description: "PayPal",
+          },
+        ],
+        shippingOptions: cart.shippingOptions,
+        totalAmount: {
+          currency: "USD",
+          value: cart.amount.value,
+        },
+        taxAmount: {
+          currency: "USD",
+          value: cart.amount.breakdown.tax_total.value,
+        },
+      };
+
+      const cachedCart = {
+        accessToken,
+        ecToken,
+        cart,
+      } as CachedCart;
+
+      await this.cache.set(data.cartId, JSON.stringify(cachedCart), request);
+
+      return orderDetails;
+    } catch (error) {
+      throw new InternalServerError(request?.correlationId || "", {
+        message: `failed to create cart ${(error as Error).message}`,
+      });
+    }
+  };
+
+  updateCart = async ({
+    data,
+    request,
+  }: {
+    data: UpdateCartRequest;
+    request: Request;
+  }): Promise<OrderResponse> => {
+    let updatedCart;
+    try {
+      const patchResult = applyPatch(
+        data.cart,
+        data.operations as Operation[],
+        false, // validateOperation
+        false, // mutateDocument - don't mutate original
+      );
+      updatedCart = patchResult.newDocument as UpdateCartRequest["cart"];
+      request.log("info", "applied JSON Patch operations");
+    } catch (error) {
+      throw new InternalServerError(request?.correlationId || "", {
+        message: `failed to apply JSON PATCH cart: ${(error as Error).message}`,
+      });
+    }
+
+    let cachedCart;
+    try {
+      const rawValue = await this.cache.get(data.cart.cartId, request);
+
+      if (!rawValue) {
+        throw new NotFoundError(request.correlationId || "", {
+          message: "Cart not found in cache",
+        });
+      }
+
+      cachedCart = CachedCartSchema.parse(JSON.parse(rawValue));
+      request.log("info", "pulled cart from cache and parsed");
+    } catch (error) {
+      throw new InternalServerError(request?.correlationId || "", {
+        message: `failed to parse cached cart: ${(error as Error).message}`,
+      });
+    }
+
+    const client = new MockRequestClient();
+
+    const refreshedCart = await client.updateCart({
+      updatedCart,
+      cachedCart,
+    });
+    request.log("info", "refreshed cart with cached and updated values");
+
+    await client.updateEcToken({
+      cartRequest: data.cart,
+      cart: refreshedCart,
+      hostname: this.config.hostname,
+      ecToken: cachedCart.ecToken,
+      accessToken: cachedCart.accessToken,
+      request,
+    });
+    request.log("info", "updated ec-token");
+
+    const refreshedCachedCart = {
+      ...cachedCart,
+      cart: refreshedCart,
+    } as CachedCart;
+
+    await this.cache.set(
+      request.params.id,
+      JSON.stringify(refreshedCachedCart),
+      request,
+    );
+    request.log("info", "set refreshed cart in cache");
+
+    return {
+      ecToken: cachedCart.ecToken,
+      status: "success",
+      paymentMethodOptions: [
+        {
+          type: "PAYPAL",
+          description: "PayPal",
+        },
+      ],
+      shippingOptions: refreshedCart.shippingOptions,
+      totalAmount: {
+        currency: "USD",
+        value: refreshedCart.amount.value,
+      },
+      taxAmount: {
+        currency: "USD",
+        value: refreshedCart.amount.breakdown.tax_total.value,
+      },
+    };
+  };
+
+  completeCart = async ({
+    data,
+    request,
+  }: {
+    data: CompleteCartRequest;
+    request: Request;
+  }) => {
+    try {
+      const cacheResult = await this.cache.get(
+        data.cartId || request.params.id,
+        request,
+      );
+
+      if (!cacheResult) {
+        throw new NotFoundError(request?.correlationId || "", {
+          message: "Cart not found in cache",
+        });
+      }
+
+      // Parse the cacheResult first
+      const parsedCacheResult = JSON.parse(cacheResult);
+
+      logEvent({
+        message: "Cache Result",
+        requestBody: JSON.stringify(parsedCacheResult, null, 2),
+        timestamp: new Date().toISOString(),
+      });
+
+      const cachedCart = CachedCartSchema.parse(parsedCacheResult);
+
+      const client = new MockRequestClient();
+
+      await client.captureOrder({
+        ecToken: cachedCart.ecToken,
+        accessToken: cachedCart.accessToken,
+        hostname: this.config.hostname,
+        request,
+      });
+
+      request.log("info", "PayPal order captured successfully");
+
+      const completeCartResponse = {
+        transactionId: "merchant-order-123ABC",
+        ecToken: data.paymentDetails.ecToken,
+        reviewOrderPage: "https://example.com/review-order",
+      };
+
+      return completeCartResponse;
+    } catch (error) {
+      throw new InternalServerError(request?.correlationId || "", {
+        message: `failed to complete cart ${(error as Error).message}`,
+      });
+    }
+  };
+}

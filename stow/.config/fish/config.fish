@@ -2,6 +2,11 @@
 # Fish Shell Configuration
 # ==============================================================================
 
+# Source secrets file if it exists (not tracked by git)
+if test -f ~/.config/fish/secrets.fish
+    source ~/.config/fish/secrets.fish
+end
+
 # Disable fish greeting
 set fish_greeting ""
 
@@ -26,6 +31,7 @@ end
 fish_add_path ~/workspace/dotfiles/scripts
 fish_add_path ~/workspace/tools
 fish_add_path /opt/homebrew/bin
+fish_add_path ~/.local/bin
 
 ### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
 set --export --prepend PATH "/Users/wbrunson/.rd/bin"
@@ -45,9 +51,13 @@ if test $is_work_machine = true
     
     # Anthropic API configuration for work
     set -x ANTHROPIC_BASE_URL "REDACTED_URL"
-    set -x ANTHROPIC_AUTH_TOKEN "REDACTED_TOKEN"
-    set -x ANTHROPIC_MODEL "claude-sonnet-4-20250514"
-    set -x ANTHROPIC_SMALL_FAST_MODEL "claude-3-5-haiku-20241022"
+    
+    # Corporate SSL certificate configuration
+    set -gx SSL_CERT_FILE "$HOME/.local/certs/combined-ca-bundle.pem"
+    set -gx SSL_CERT_DIR "$HOME/.local/certs"
+    set -gx REQUESTS_CA_BUNDLE "$HOME/.local/certs/combined-ca-bundle.pem"
+    set -gx CURL_CA_BUNDLE "$HOME/.local/certs/combined-ca-bundle.pem"
+    set -gx NODE_EXTRA_CA_CERTS "$HOME/.local/certs/combined-ca-bundle.pem"
 end
 
 # ==============================================================================
@@ -96,3 +106,10 @@ alias vimdiff="nvim -d"
 # Set default editors
 set -gx EDITOR nvim
 set -gx VISUAL nvim
+
+# pnpm
+set -gx PNPM_HOME "/Users/wbrunson/Library/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+# pnpm end

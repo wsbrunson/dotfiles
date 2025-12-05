@@ -1,0 +1,398 @@
+import { describe, it, beforeEach, afterEach, vi, expect } from "vitest";
+import { ALBEvent } from "aws-lambda";
+import { getMockALBEvent } from "../../shared/test-utils/mockALBEvent";
+import { FirmlyController } from "../../shared/firmly/controllers";
+
+import { verifyAppContext } from "../../shared/helpers/AppContextAuthorizer";
+import { getCacheImplementation } from "../../shared/cache/cacheFactory";
+import {
+  trackInitiatedUpdateCart,
+  trackSuccessUpdateCart,
+  trackFailedUpdateCart,
+} from "../../shared/metrics/emitMetric";
+// @ts-ignore: Using CommonJS exports syntax
+import { handler } from "./index";
+
+vi.mock("../../shared/firmly/controllers");
+vi.mock("../../shared/cache/cacheFactory");
+vi.mock("../../shared/helpers/AppContextAuthorizer");
+vi.mock("../../shared/metrics/emitMetric");
+vi.mock("../../shared/metrics/alarm-metrics");
+
+const validUpdateCartRequest = {
+  id: "firmly-cart-1",
+  items: [
+    {
+      item_id: "item-1",
+      item_url: "https://merchant.com/item-1",
+      quantity: 5,
+    },
+  ],
+  shipping_address: {
+    address_line_1: "456 Oak St",
+    address_line_2: "Suite 200",
+    admin_area_2: "San Francisco",
+    admin_area_1: "CA",
+    postal_code: "94102",
+    country_code: "US",
+  },
+  customer: {
+    name: { given_name: "Bob", surname: "Johnson" },
+    phone: { country_code: "1", national_number: "5559876543" },
+    email_address: "bob@example.com",
+  },
+  available_shipping_options: [
+    {
+      id: "standard",
+      name: "Standard Shipping",
+      price: { currency_code: "USD", value: "5.00" },
+      is_selected: false,
+    },
+    {
+      id: "express",
+      name: "Express Shipping",
+      price: { currency_code: "USD", value: "10.00" },
+      is_selected: true,
+    },
+  ],
+};
+
+describe("Firmly Update Cart Lambda Handler", () => {
+  let mockEvent: ALBEvent;
+  let mockFirmlyController: any;
+  let mockCache: any;
+
+  beforeEach(() => {
+    mockEvent = getMockALBEvent({
+      body: JSON.stringify(validUpdateCartRequest),
+      headers: {
+        "paypal-application-context": "valid-token",
+      },
+    });
+
+    vi.mocked(verifyAppContext).mockReturnValue(true);
+
+    vi.mocked(trackInitiatedUpdateCart).mockResolvedValue(undefined);
+    vi.mocked(trackSuccessUpdateCart).mockResolvedValue(undefined);
+    vi.mocked(trackFailedUpdateCart).mockResolvedValue(undefined);
+
+    // Mock FirmlyController
+    mockFirmlyController = {
+      updateCart: vi.fn().mockResolvedValue({
+        id: "firmly-cart-1",
+        status: "CREATED",
+        items: [
+          {
+            item_id: "item-1",
+            item_url: "https://merchant.com/item-1",
+            quantity: 5,
+          },
+        ],
+        totals: {
+          shipping: { currency_code: "USD", value: "10.00" },
+          tax: { currency_code: "USD", value: "2.50" },
+          subtotal: { currency_code: "USD", value: "50.00" },
+          total: { currency_code: "USD", value: "62.50" },
+        },
+        payment_method: {
+          type: "paypal",
+          token: "updated-paypal-token",
+        },
+      }),
+    };
+
+    vi.mocked(FirmlyController).mockImplementation(() => mockFirmlyController);
+
+    // Mock cache
+    mockCache = {
+      set: vi.fn().mockResolvedValue(undefined),
+      get: vi.fn().mockResolvedValue(
+        JSON.stringify({
+          client: {
+            domain: "merchant.com",
+            accessToken: "test-token",
+            cookies: "test-cookies",
+          },
+          response: {
+            id: "firmly-cart-1",
+            status: "CREATED",
+            totals: {
+              shipping: { currency_code: "USD", value: "5.00" },
+              tax: { currency_code: "USD", value: "1.00" },
+              subtotal: { currency_code: "USD", value: "20.00" },
+              total: { currency_code: "USD", value: "26.00" },
+            },
+            items: [
+              {
+                item_id: "item-1",
+                item_url: "https://merchant.com/item-1",
+                quantity: 2,
+              },
+            ],
+          },
+        })
+      ),
+    };
+    vi.mocked(getCacheImplementation).mockReturnValue(mockCache);
+  });
+
+  afterEach(() => {
+    vi.clearAllMocks();
+  });
+
+  it("should update a cart successfully", async () => {
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(200);
+    const body = JSON.parse(response.body);
+    expect(body).toMatchObject({
+      id: "firmly-cart-1",
+      status: "CREATED",
+      items: expect.arrayContaining([
+        expect.objectContaining({
+          item_id: "item-1",
+          quantity: 5,
+        }),
+      ]),
+      payment_method: expect.objectContaining({
+        type: "paypal",
+        token: "updated-paypal-token",
+      }),
+      totals: expect.objectContaining({
+        shipping: expect.any(Object),
+        tax: expect.any(Object),
+        subtotal: expect.any(Object),
+        total: expect.any(Object),
+      }),
+    });
+
+    expect(FirmlyController).toHaveBeenCalled();
+    expect(mockFirmlyController.updateCart).toHaveBeenCalledWith({
+      data: expect.objectContaining({
+        id: "firmly-cart-1",
+        items: expect.any(Array),
+      }),
+      event: mockEvent,
+    });
+  });
+
+  it("should throw UnauthorizedError when app context verification fails", async () => {
+    vi.mocked(verifyAppContext).mockReturnValue(false);
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(401);
+    expect(JSON.parse(response.body)).toMatchObject({
+      message: expect.stringContaining("Unauthorized"),
+    });
+
+    expect(mockFirmlyController.updateCart).not.toHaveBeenCalled();
+  });
+
+  it("should handle invalid request schema", async () => {
+    const invalidRequest = {
+      id: "valid-cart",
+      items: "not-an-array",
+    };
+
+    mockEvent = getMockALBEvent({
+      body: JSON.stringify(invalidRequest),
+      headers: {
+        "paypal-application-context": "valid-token",
+      },
+    });
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(400);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody.name).toBe("BadRequestError");
+    expect(responseBody.details).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          description: expect.stringContaining("items"),
+        }),
+      ])
+    );
+  });
+
+  it("should handle errors during cart update", async () => {
+    mockFirmlyController.updateCart = vi
+      .fn()
+      .mockRejectedValue(new Error("Network error"));
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(500);
+    expect(JSON.parse(response.body)).toMatchObject({
+      name: "InternalServerError",
+    });
+  });
+
+  it("should track metrics for successful operations", async () => {
+    await handler(mockEvent);
+
+    expect(trackInitiatedUpdateCart).toHaveBeenCalledWith({
+      orchestrator: "Firmly",
+      merchantUrl: "merchant.com",
+    });
+
+    expect(trackSuccessUpdateCart).toHaveBeenCalledWith({
+      orchestrator: "Firmly",
+      merchantUrl: "merchant.com",
+      status: "201",
+      duration: expect.any(Number),
+    });
+  });
+
+  it("should track metrics for failed operations", async () => {
+    mockFirmlyController.updateCart = vi
+      .fn()
+      .mockRejectedValue(new Error("Network error"));
+
+    await handler(mockEvent);
+
+    expect(trackInitiatedUpdateCart).toHaveBeenCalledWith({
+      orchestrator: "Firmly",
+      merchantUrl: "merchant.com",
+    });
+
+    expect(trackFailedUpdateCart).toHaveBeenCalledWith({
+      orchestrator: "Firmly",
+      merchantUrl: "merchant.com",
+      status: "500",
+    });
+  });
+
+  it("should handle malformed JSON in request body", async () => {
+    mockEvent = getMockALBEvent({
+      body: '{"id": "test", "malformed": }',
+      headers: {
+        "paypal-application-context": "valid-token",
+      },
+    });
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(500);
+    expect(JSON.parse(response.body)).toMatchObject({
+      name: "InternalServerError",
+    });
+  });
+
+  it("should extract merchant URL from item URL", async () => {
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(200);
+    expect(trackInitiatedUpdateCart).toHaveBeenCalledWith(
+      expect.objectContaining({
+        merchantUrl: "merchant.com",
+      })
+    );
+  });
+
+  it("should handle items without item_url gracefully", async () => {
+    const requestWithoutItemUrl = {
+      ...validUpdateCartRequest,
+      items: [
+        {
+          item_id: "item-1",
+          quantity: 5,
+          // No item_url
+        },
+      ],
+    };
+
+    mockEvent = getMockALBEvent({
+      body: JSON.stringify(requestWithoutItemUrl),
+      headers: {
+        "paypal-application-context": "valid-token",
+      },
+    });
+
+    await handler(mockEvent);
+
+    expect(trackInitiatedUpdateCart).toHaveBeenCalledWith(
+      expect.objectContaining({
+        merchantUrl: "",
+      })
+    );
+  });
+
+  it("should handle requests without cart ID gracefully", async () => {
+    const requestWithoutId = {
+      ...validUpdateCartRequest,
+      id: undefined,
+    };
+
+    mockEvent = getMockALBEvent({
+      body: JSON.stringify(requestWithoutId),
+      headers: {
+        "paypal-application-context": "valid-token",
+      },
+    });
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(200);
+  });
+
+  it("should properly format the response body", async () => {
+    const response = await handler(mockEvent);
+
+    expect(response).toMatchObject({
+      statusCode: 200,
+      headers: { "Content-Type": "application/json" },
+      body: expect.any(String),
+    });
+
+    const body = JSON.parse(response.body);
+    expect(body).toBeDefined();
+  });
+
+  it("should handle shipping options in request", async () => {
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(200);
+
+    expect(mockFirmlyController.updateCart).toHaveBeenCalledWith({
+      data: expect.objectContaining({
+        available_shipping_options: expect.arrayContaining([
+          expect.objectContaining({
+            id: "express",
+            name: "Express Shipping",
+            is_selected: true,
+          }),
+        ]),
+      }),
+      event: mockEvent,
+    });
+  });
+
+  it("should handle empty items array", async () => {
+    const requestWithEmptyItems = {
+      ...validUpdateCartRequest,
+      items: [],
+    };
+
+    mockEvent = getMockALBEvent({
+      body: JSON.stringify(requestWithEmptyItems),
+      headers: {
+        "paypal-application-context": "valid-token",
+      },
+    });
+
+    const response = await handler(mockEvent);
+
+    expect(response.statusCode).toBe(400);
+    const responseBody = JSON.parse(response.body);
+    expect(responseBody.name).toBe("BadRequestError");
+    expect(responseBody.details).toEqual(
+      expect.arrayContaining([
+        expect.objectContaining({
+          description: expect.stringContaining("Too small"),
+        }),
+      ])
+    );
+  });
+});

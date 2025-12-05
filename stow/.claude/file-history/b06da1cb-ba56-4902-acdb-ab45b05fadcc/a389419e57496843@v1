@@ -1,0 +1,77 @@
+import { describe, it, expect, vi, beforeEach } from 'vitest';
+import { auth } from './auth';
+import { verifyAppContext } from 'shared/helpers/AppContextAuthorizer';
+import { logger } from 'shared/logger/logger';
+import { UnauthorizedError } from '../errors';
+
+vi.mock('shared/helpers/AppContextAuthorizer', () => ({
+    verifyAppContext: vi.fn(),
+}));
+
+vi.mock('shared/logger/logger', () => ({
+    logger: vi.fn(() => ({
+        info: vi.fn(),
+        error: vi.fn(),
+    })),
+}));
+
+describe('Auth Middleware', () => {
+    const mockNext = vi.fn();
+    const mockLogger = {
+        info: vi.fn(),
+        error: vi.fn(),
+    };
+
+    beforeEach(() => {
+        vi.clearAllMocks();
+        (logger as any).mockReturnValue(mockLogger);
+    });
+
+    it('should allow authorized requests', async () => {
+        // Mock `verifyAppContext` to return true
+        (verifyAppContext as any).mockReturnValue(true);
+
+        const mockContext = {
+            env: {
+                event: { /* Mock ALBEvent */ },
+            },
+            json: vi.fn(),
+        };
+
+        await auth(mockContext as any, mockNext);
+
+        // Verify logger calls
+        expect(mockLogger.info).toHaveBeenCalledWith('Auth middleware invoked - Start');
+        expect(mockLogger.info).toHaveBeenCalledWith('Auth context verification result: ', { isAuthorized: true });
+        expect(mockLogger.info).toHaveBeenCalledWith('Auth middleware invoked - Authorized');
+
+        // Verify `next` was called
+        expect(mockNext).toHaveBeenCalledTimes(1);
+
+        // Verify `json` was not called
+        expect(mockContext.json).not.toHaveBeenCalled();
+    });
+
+    it('should block unauthorized requests', async () => {
+        // Mock `verifyAppContext` to return false
+        (verifyAppContext as any).mockReturnValue(false);
+
+        const mockContext = {
+            env: {
+                event: { /* Mock ALBEvent */ },
+            },
+            json: vi.fn(),
+        };
+
+       await expect(auth(mockContext as any, mockNext)).rejects.toBeInstanceOf(UnauthorizedError)
+
+
+        // Verify logger calls
+        expect(mockLogger.info).toHaveBeenCalledWith('Auth middleware invoked - Start');
+        expect(mockLogger.info).toHaveBeenCalledWith('Auth context verification result: ', { isAuthorized: false });
+        expect(mockLogger.error).toHaveBeenCalledWith('Unauthorized access: AppContext verification failed');
+        // should NOT call next or write a response
+        expect(mockNext).not.toHaveBeenCalled();
+        expect(mockContext.json).not.toHaveBeenCalled();
+    });
+});
