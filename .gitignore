@@ -1,14 +1,21 @@
 .DS_Store
 
-/stow/.vim/plugged/
-/stow/.vim/undodir/
-/stow/.claude/local/
-/stow/.claude/projects/
-/stow/.claude/shell-snapshots/
-/stow/.claude/statsig/
-/stow/.claude/todos/
-/stow/.config/fish/fish_variables
-/stow/.config/configstore
+# Nix build output
+result
+
+# Vim
+/config/vim/plugged/
+/config/vim/undodir/
+
+# Claude Code (not tracked - managed separately)
+/config/claude/
+/config/claude.json
+
+# Fish
+/config/fish/fish_variables
+
+# Misc
+/config/configstore
 
 .env
 .customrc
