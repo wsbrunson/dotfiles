@@ -1,5 +1,5 @@
 {
-  description = "Shane's nix-darwin system flake";
+  description = "Shane's multi-system Nix configuration";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
@@ -16,26 +16,49 @@
   };
 
   outputs = inputs@{ self, nixpkgs, nix-darwin, home-manager }:
-  let
-    username = "shanebrunson";
-  in
   {
-    darwinConfigurations."snake-charmer" = nix-darwin.lib.darwinSystem {
+    # =========================================================================
+    # macOS (nix-darwin)
+    # =========================================================================
+
+    darwinConfigurations."snake-charmer" = let
+      username = "shanebrunson";
+      dotfilesPath = "/Users/${username}/workspace/dotfiles";
+    in nix-darwin.lib.darwinSystem {
       system = "aarch64-darwin";
       specialArgs = { inherit inputs username; };
       modules = [
-        ./nix/darwin.nix
+        ./hosts/snake-charmer
         home-manager.darwinModules.home-manager
         {
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
-          home-manager.extraSpecialArgs = { inherit inputs username; };
-          home-manager.users.${username} = import ./nix/home.nix;
+          home-manager.extraSpecialArgs = { inherit inputs username dotfilesPath; };
+          home-manager.users.${username} = import ./hosts/snake-charmer/home.nix;
         }
       ];
     };
 
-    # Convenience alias for darwin-rebuild
-    darwinConfigurations.default = self.darwinConfigurations."snake-charmer";
+    # =========================================================================
+    # NixOS
+    # =========================================================================
+
+    nixosConfigurations."cottonmouth" = let
+      username = "shane";
+      dotfilesPath = "/home/${username}/workspace/dotfiles";
+    in nixpkgs.lib.nixosSystem {
+      system = "x86_64-linux";
+      specialArgs = { inherit inputs username; };
+      modules = [
+        ./hosts/cottonmouth
+        home-manager.nixosModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.extraSpecialArgs = { inherit inputs username dotfilesPath; };
+          home-manager.users.${username} = import ./hosts/cottonmouth/home.nix;
+        }
+      ];
+    };
   };
 }
