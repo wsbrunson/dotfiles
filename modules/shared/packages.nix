@@ -1,6 +1,6 @@
 # Shared system packages for all hosts
 
-{ pkgs, ... }:
+{ pkgs, lib, ... }:
 
 {
   environment.systemPackages = with pkgs; [
@@ -29,8 +29,8 @@
 
     # AI tools
     claude-code
-
-    # Terminal
+  ] ++ lib.optionals pkgs.stdenv.isLinux [
+    # Terminal (Linux only - macOS uses Homebrew cask)
     ghostty
   ];
 }

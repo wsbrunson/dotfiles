@@ -38,6 +38,7 @@
     # GUI applications
     casks = [
       "1password"
+      "ghostty"
       "google-chrome"
       "numi"
       "rectangle"
