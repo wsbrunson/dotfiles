@@ -60,5 +60,20 @@
         }
       ];
     };
+
+    # =========================================================================
+    # Standalone home-manager (for non-NixOS Linux)
+    # =========================================================================
+
+    homeConfigurations."shane@adsb-pi" = let
+      system = "aarch64-linux";
+      pkgs = nixpkgs.legacyPackages.${system};
+      username = "shane";
+      dotfilesPath = "/home/${username}/workspace/dotfiles";
+    in home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      extraSpecialArgs = { inherit inputs username dotfilesPath; };
+      modules = [ ./hosts/adsb-pi/home.nix ];
+    };
   };
 }

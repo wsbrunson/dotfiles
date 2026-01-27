@@ -8,6 +8,7 @@
     ./fish.nix
     ./git.nix
     ./neovim.nix
+    ./packages.nix
     ./starship.nix
   ];
 

@@ -5,7 +5,6 @@
 {
   imports = [
     ./hardware-configuration.nix
-    ../../modules/shared/packages.nix
   ];
 
   # =============================================================================
