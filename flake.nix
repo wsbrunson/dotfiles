@@ -44,7 +44,7 @@
     # =========================================================================
 
     nixosConfigurations."cottonmouth" = let
-      username = "shane";
+      username = "nixos";
       dotfilesPath = "/home/${username}/workspace/dotfiles";
     in nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
