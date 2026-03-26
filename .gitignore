@@ -2,11 +2,9 @@
 
 /stow/.vim/plugged/
 /stow/.vim/undodir/
-/stow/.claude/local/
-/stow/.claude/projects/
-/stow/.claude/shell-snapshots/
-/stow/.claude/statsig/
-/stow/.claude/todos/
+/stow/.claude/
+/stow/.claude.json
+/stow/.claude.json.backup
 /stow/.config/fish/fish_variables
 /stow/.config/fish/secrets.fish
 /stow/.config/configstore

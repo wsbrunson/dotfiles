@@ -1,8 +1,0 @@
-{
-  "model": "opus",
-  "statusLine": {
-    "type": "command",
-    "command": "python3 ~/.claude/scripts/claude-code-status-line.py"
-  },
-  "alwaysThinkingEnabled": false
-}

@@ -1,4 +1,0 @@
-# Datadog Team Module for Commerce Orchestrator
-# This module manages the Datadog team configuration
-
-# No additional configuration needed - all resources are defined in commerce-orchestrator-team.tf

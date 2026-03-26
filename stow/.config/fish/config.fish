@@ -49,9 +49,8 @@ if test $is_work_machine = true
     # PayPal-specific NPM mirror
     set -x NVM_NODEJS_ORG_MIRROR "https://artifactory.paypalcorp.com/artifactory/nodejs-dist"
     
-    # Anthropic API configuration for work
-    set -x ANTHROPIC_BASE_URL "REDACTED_URL"
-    
+    # Anthropic API configuration for work (stored in secrets.fish)
+
     # Corporate SSL certificate configuration
     set -gx SSL_CERT_FILE "$HOME/.local/certs/combined-ca-bundle.pem"
     set -gx SSL_CERT_DIR "$HOME/.local/certs"
