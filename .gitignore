@@ -11,8 +11,12 @@ result
 /config/claude/
 /config/claude.json
 
+# Stow (legacy - replaced by home-manager)
+/stow/
+
 # Fish
 /config/fish/fish_variables
+**/secrets.fish
 
 # Misc
 /config/configstore

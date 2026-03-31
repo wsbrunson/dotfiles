@@ -1,4 +1,4 @@
-# snake-charmer: macOS (nix-darwin) system configuration
+# work-mac: macOS (nix-darwin) system configuration
 
 { pkgs, username, ... }:
 
@@ -26,7 +26,14 @@
       upgrade = true;
     };
 
+    caskArgs.appdir = "~/Applications";
+
+    taps = [
+      "mlb-rs/mlbt"
+    ];
+
     brews = [
+      "mlb-rs/mlbt/mlbt"
     ];
 
     # GUI applications

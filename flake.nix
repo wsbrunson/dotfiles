@@ -39,6 +39,25 @@
       ];
     };
 
+    darwinConfigurations."work-mac" = let
+      username = "wbrunson";
+      dotfilesPath = "/Users/${username}/workspace/dotfiles";
+    in nix-darwin.lib.darwinSystem {
+      system = "aarch64-darwin";
+      specialArgs = { inherit inputs username; };
+      modules = [
+        ./hosts/work-mac
+        home-manager.darwinModules.home-manager
+        {
+          home-manager.useGlobalPkgs = true;
+          home-manager.useUserPackages = true;
+          home-manager.backupFileExtension = "backup";
+          home-manager.extraSpecialArgs = { inherit inputs username dotfilesPath; };
+          home-manager.users.${username} = import ./hosts/work-mac/home.nix;
+        }
+      ];
+    };
+
     # =========================================================================
     # NixOS
     # =========================================================================

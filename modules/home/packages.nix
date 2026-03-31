@@ -17,7 +17,7 @@
     tree
     jq
     ripgrep
-    terraform
+    # terraform  # builds from source; Go module downloads fail behind corporate SSL inspection
     yq
 
     # TUI
@@ -30,7 +30,7 @@
     television     # file search : https://github.com/alexpasmantier/television
 
     # AI tools
-    claude-code
+    # claude-code  # installed separately; npm download fails behind corporate SSL inspection
   ] ++ lib.optionals pkgs.stdenv.isLinux [
     # Linux-only packages
     bluetui   # bluetooth : https://github.com/pythops/bluetui

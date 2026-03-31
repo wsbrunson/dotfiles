@@ -19,9 +19,9 @@
         src = pkgs.fishPlugins.bass.src;
       }
     ];
-    # Nix paths (needed for standalone home-manager on non-NixOS)
+    # Nix paths
     shellInit = ''
-      fish_add_path --prepend ~/.nix-profile/bin /nix/var/nix/profiles/default/bin
+      fish_add_path --prepend /etc/profiles/per-user/$USER/bin /run/current-system/sw/bin /nix/var/nix/profiles/default/bin
     '';
     # Source our existing config
     interactiveShellInit = builtins.readFile ../../config/fish/config.fish;

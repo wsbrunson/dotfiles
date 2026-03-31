@@ -25,11 +25,8 @@ end
 # Add paths in order of preference (most specific first)
 fish_add_path ~/workspace/dotfiles/scripts
 fish_add_path ~/workspace/tools
+fish_add_path ~/.local/bin
 fish_add_path /opt/homebrew/bin
-
-### MANAGED BY RANCHER DESKTOP START (DO NOT EDIT)
-set --export --prepend PATH "/Users/wbrunson/.rd/bin"
-### MANAGED BY RANCHER DESKTOP END (DO NOT EDIT)
 
 # Used by the z directory utility
 set -U Z_DATA $HOME/.local/share/z/data
@@ -42,22 +39,18 @@ set -U Z_DATA_DIR $HOME/.local/share/z
 if test $is_work_machine = true
     # PayPal-specific NPM mirror
     set -x NVM_NODEJS_ORG_MIRROR "https://artifactory.paypalcorp.com/artifactory/nodejs-dist"
-    
-    # Anthropic API configuration for work
-    set -x ANTHROPIC_BASE_URL "https://aiplatform.dev51.cbf.dev.paypalinc.com/cosmosai/llm/v1"
-    set -x ANTHROPIC_AUTH_TOKEN "***REDACTED***"
-    set -x ANTHROPIC_MODEL "claude-sonnet-4-20250514"
-    set -x ANTHROPIC_SMALL_FAST_MODEL "claude-3-5-haiku-20241022"
+    # Corporate CA bundle for Node.js
+    set -x NODE_EXTRA_CA_CERTS ~/.local/certs/combined-ca-bundle.pem
+end
+
+# Source secrets (API tokens, etc.) - this file is gitignored
+if test -f ~/.config/fish/secrets.fish
+    source ~/.config/fish/secrets.fish
 end
 
 # ==============================================================================
 # Development Tools
 # ==============================================================================
-
-# Mise (development environment manager) - used on all machines
-if command -v mise >/dev/null
-    mise activate fish | source
-end
 
 # Node Version Manager - only on work machines
 if test $is_work_machine = true
