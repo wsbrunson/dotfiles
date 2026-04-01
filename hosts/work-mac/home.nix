@@ -26,4 +26,7 @@
     # (reset + set) which nix attrs can't express
     { path = "~/.gitconfig-paypal"; }
   ];
+
+  # Corporate CA bundle for SSL
+  programs.git.settings.http.sslCAInfo = "~/.local/certs/combined-ca-bundle.pem";
 }
