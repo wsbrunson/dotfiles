@@ -1,13 +1,25 @@
 .DS_Store
 
-/stow/.vim/plugged/
-/stow/.vim/undodir/
-/stow/.claude/
-/stow/.claude.json
-/stow/.claude.json.backup
-/stow/.config/fish/fish_variables
-/stow/.config/fish/secrets.fish
-/stow/.config/configstore
+# Nix build output
+result
+
+# Vim
+/config/vim/plugged/
+/config/vim/undodir/
+
+# Claude Code (not tracked - managed separately)
+/config/claude/
+/config/claude.json
+
+# Stow (legacy - replaced by home-manager)
+/stow/
+
+# Fish
+/config/fish/fish_variables
+**/secrets.fish
+
+# Misc
+/config/configstore
 
 .env
 .customrc

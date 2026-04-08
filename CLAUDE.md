@@ -1,95 +1,168 @@
 # Dotfiles Repository
 
-This repository contains personal configuration files managed using GNU Stow.
+This repository contains personal configuration files managed using **Nix**, **nix-darwin**, and **home-manager**.
 
 ## Quick Start
 
 ```bash
-# Install Homebrew packages
-brew bundle
+# 1. Install Nix (Determinate Systems installer)
+curl --proto '=https' --tlsv1.2 -sSf -L https://install.determinate.systems/nix | sh
 
-# Symlink all dotfiles to home directory
-stow -t ~/ stow
+# 2. Install Homebrew (for GUI apps)
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-# Install mise-managed tools
-mise install
+# 3. Bootstrap nix-darwin (first time only, use your host name)
+nix run nix-darwin -- switch --flake ~/workspace/dotfiles#work-mac
+
+# 4. Rebuild after changes
+darwin-rebuild switch --flake ~/workspace/dotfiles#work-mac
 ```
 
 ## Repository Structure
 
 ```
 dotfiles/
-├── Brewfile              # Homebrew packages and casks
+├── flake.nix             # Nix flake entry point (defines all hosts)
+├── flake.lock            # Locked dependencies
+├── hosts/                # Host-specific configurations
+│   ├── snake-charmer/    # Personal Mac (nix-darwin)
+│   │   ├── default.nix   # System config
+│   │   └── home.nix      # User config
+│   ├── work-mac/         # Work Mac (nix-darwin)
+│   │   ├── default.nix   # System config (work Homebrew casks, mlbt)
+│   │   └── home.nix      # User config (work git includes, PayPal GitHub)
+│   └── cottonmouth/      # NixOS server
+│       ├── default.nix   # System config
+│       └── home.nix      # User config
+├── modules/              # Shared, reusable modules
+│   └── home/             # Home-manager modules (all hosts import these)
+│       ├── default.nix   # Imports all submodules
+│       ├── fish.nix      # Fish shell
+│       ├── git.nix       # Git + delta
+│       ├── neovim.nix    # Neovim/LazyVim
+│       ├── packages.nix  # CLI packages
+│       └── starship.nix  # Starship prompt
+├── config/               # Config files linked by home-manager
+│   ├── fish/             # Fish shell config
+│   ├── nvim/             # Neovim (LazyVim) config
+│   ├── ghostty/          # Ghostty terminal config
+│   ├── starship.toml     # Starship prompt config
+│   └── ...
 ├── scripts/              # Utility scripts (added to PATH)
-│   ├── aws-profile       # AWS profile switcher
-│   ├── base64-json       # Base64 JSON decoder
-│   ├── bootstrap.sh      # Initial machine setup
-│   └── convert-aif-to-wav.sh
-├── stow/                 # Stow-managed dotfiles (symlinked to ~/)
-│   ├── .claude/          # Claude Code configuration
-│   │   ├── CLAUDE.md     # Claude Code instructions
-│   │   ├── agents/       # Custom Claude agents
-│   │   ├── plugins/      # Claude plugins
-│   │   └── settings.json
-│   ├── .claude.json      # Claude Code settings
-│   ├── .config/          # XDG config directory
-│   │   ├── fish/         # Fish shell config
-│   │   ├── ghostty/      # Ghostty terminal config
-│   │   ├── mise/         # mise tool version manager
-│   │   ├── nvim/         # Neovim (LazyVim) config
-│   │   ├── starship.toml # Starship prompt config
-│   │   └── ...
-│   ├── .gitconfig        # Git configuration
-│   └── .vim/             # Legacy vim files
 ├── fonts/                # Custom fonts
-├── iterm/                # iTerm2 preferences and themes
-└── config/               # Misc config files
+└── iterm/                # iTerm2 preferences
 ```
 
-## How Stow Works
+## How It Works
 
-GNU Stow creates symlinks from a source directory to a target directory. Running:
+### Multi-Host Architecture
+
+Each host has its own directory under `hosts/` with:
+- `default.nix` — system-level config (packages, Homebrew casks, macOS settings)
+- `home.nix` — user-level config that imports shared modules and adds host-specific overrides
+
+Shared configuration lives in `modules/home/` and is imported by all hosts.
+
+### Rebuilding
+
+Target a specific host with `#hostname`:
+```bash
+# Work Mac
+darwin-rebuild switch --flake ~/workspace/dotfiles#work-mac
+
+# Personal Mac
+darwin-rebuild switch --flake ~/workspace/dotfiles#snake-charmer
+
+# NixOS
+sudo nixos-rebuild switch --flake ~/workspace/dotfiles#cottonmouth
+```
+
+### nix-darwin (hosts/*/default.nix)
+Manages system-level configuration:
+- **System packages**: CLI tools installed via Nix
+- **Homebrew casks**: GUI apps (1Password, Ghostty, VS Code, etc.)
+- **macOS settings**: Dock, Finder, keyboard preferences
+- **Shell**: Sets fish as default login shell
+
+### home-manager (hosts/*/home.nix + modules/home/)
+Manages user-level configuration:
+- **Fish shell**: Plugins (z, fzf-fish, bass) and config
+- **Git**: User settings, delta integration, aliases
+- **Neovim**: Enabled with LazyVim config linked
+- **Starship**: Prompt configuration
+- **Dotfile linking**: Links files from `config/` to `~/.config/`
+
+## Secrets
+
+API tokens and credentials go in `~/.config/fish/secrets.fish`. This file is:
+- Sourced by fish on startup (via `config/fish/config.fish`)
+- Listed in `.gitignore` — never committed
+- Must be created manually on each machine
+
+Example:
+```fish
+set -gx ANTHROPIC_BASE_URL "https://..."
+set -gx ANTHROPIC_AUTH_TOKEN "..."
+```
+
+## Daily Usage
 
 ```bash
-stow -t ~/ stow
+# Rebuild system after config changes
+darwin-rebuild switch --flake ~/workspace/dotfiles#work-mac
+
+# Update flake inputs (nixpkgs, home-manager, etc.)
+nix flake update
+
+# Garbage collect old generations
+nix-collect-garbage -d
 ```
 
-Creates symlinks in your home directory (`~/`) pointing to files in the `stow/` folder:
-- `stow/.config/fish/config.fish` → `~/.config/fish/config.fish`
-- `stow/.claude/CLAUDE.md` → `~/.claude/CLAUDE.md`
-- etc.
+## Adding Packages
 
-### Managing Dotfiles
-
-**Add a new config file:**
-1. Move the file from `~/` to `stow/` preserving the path
-2. Run `stow -t ~/ stow` to create the symlink
-
-**Remove a symlinked file:**
-```bash
-stow -t ~/ -D stow  # Unstow (remove symlinks)
+**CLI tools** — Add to `home.packages` in `modules/home/packages.nix`:
+```nix
+home.packages = with pkgs; [
+  ripgrep  # example
+];
 ```
 
-**Re-stow after changes:**
-```bash
-stow -t ~/ -R stow  # Restow (remove and recreate symlinks)
+**GUI apps** — Add to `homebrew.casks` in the host's `default.nix`:
+```nix
+homebrew.casks = [
+  "discord"  # example
+];
 ```
+
+## Adding Config Files
+
+Config files in `config/` are linked to `~/.config/` by home-manager.
+
+To add a new config:
+1. Add the file to `config/myapp/`
+2. Add linking in `modules/home/` (or the host's `home.nix` if host-specific):
+```nix
+xdg.configFile."myapp" = {
+  source = ../../config/myapp;
+  recursive = true;
+};
+```
+3. Rebuild: `darwin-rebuild switch --flake ~/workspace/dotfiles#work-mac`
 
 ## Key Tools
 
 - **Fish Shell**: Primary shell with custom config
 - **Neovim**: Editor using LazyVim distribution
 - **Starship**: Cross-shell prompt
-- **mise**: Development tool version manager (replaces asdf/nvm)
-- **Ghostty/iTerm2**: Terminal emulators
+- **Ghostty**: Primary terminal emulator
+- **Nix**: Declarative package management (replaces Homebrew for CLI tools)
 
 ## Scripts
 
-Scripts in `scripts/` are automatically available in PATH (added via fish config):
-
+Scripts in `scripts/` are automatically available in PATH:
 - `aws-profile`: Switch between AWS profiles
 - `base64-json`: Decode base64-encoded JSON
 
 ## Work vs Personal Environment
 
-The fish config automatically detects work machines (hostname contains "paypal" or user is "wbrunson") and applies work-specific settings like NPM mirrors and API configurations.
+The fish config detects work machines (hostname contains "paypal" or user is "wbrunson") and applies work-specific settings like NPM mirrors. Secrets (API tokens) are loaded from `~/.config/fish/secrets.fish` on all machines.

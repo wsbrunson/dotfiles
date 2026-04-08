@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:docs.anthropic.com)",
+      "Bash(./scripts/aws-profile:*)",
+      "Read(//Users/shanebrunson/.claude/plugins/**)",
+      "Bash(nvim:*)",
+      "Bash(brew bundle dump:*)",
+      "WebFetch(domain:github.com)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(git push)",
+      "Bash(gh auth:*)"
+    ],
+    "deny": [],
+    "ask": []
+  },
+  "enableAllProjectMcpServers": true,
+  "enabledMcpjsonServers": [
+    "atlassian"
+  ]
+}
