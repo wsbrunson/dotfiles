@@ -10,13 +10,15 @@
       "Bash(git add:*)",
       "Bash(git commit:*)",
       "Bash(git push)",
-      "Bash(gh auth:*)"
+      "Bash(gh auth:*)",
+      "Bash(sudo nixos-rebuild:*)",
+      "Bash(tailscale status:*)",
+      "Bash(systemctl status:*)",
+      "Bash(sudo systemctl restart:*)"
     ],
     "deny": [],
     "ask": []
   },
   "enableAllProjectMcpServers": true,
-  "enabledMcpjsonServers": [
-    "atlassian"
-  ]
+  "enabledMcpjsonServers": []
 }
