@@ -1,0 +1,45 @@
+[user]
+	email = brunson.ws@gmail.com
+	name = Shane Brunson
+
+[init]
+	defaultBranch = main
+
+[pull]
+	rebase = true
+
+[push]
+	autoSetupRemote = true
+
+[core]
+	editor = nvim
+	pager = delta
+
+[interactive]
+	diffFilter = delta --color-only
+
+[delta]
+	navigate = true
+	side-by-side = true
+	line-numbers = true
+
+[credential]
+	helper =
+	helper = !/usr/bin/env gh auth git-credential
+
+[alias]
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+
+# Work Config
+[http]
+	sslCAInfo = /Users/wbrunson/.local/certs/combined-ca-bundle.pem
+	sslVerify = false
+[includeIf "gitdir:~/workspace/internal/"]
+	path = ~/.gitconfig-internal
+[includeIf "gitdir:~/workspace/one-paypal/"]
+	path = ~/.gitconfig-one-paypal
+[include]
+	path = ~/.gitconfig-paypal
