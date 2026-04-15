@@ -47,4 +47,12 @@ fi
 echo "Installing fisher plugins..."
 fish -c "fisher install < ~/.config/fish/fish_plugins"
 
+# ==============================================================================
+# SSH permissions
+# ==============================================================================
+
+echo "Setting SSH permissions..."
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/config
+
 echo "Done! Restart your terminal to use fish."
